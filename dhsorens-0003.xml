@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="default.xsl"?>
+<fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+  <fr:frontmatter>
+    <fr:anchor>282</fr:anchor>
+    <fr:addr type="user">dhsorens-0003</fr:addr>
+    <fr:route>dhsorens-0003.xml</fr:route>
+    <fr:title text="Notes">Notes</fr:title>
+    <fr:authors>
+      <fr:author>
+        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:meta name="toc">true</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:anchor>243</fr:anchor>
+        <fr:addr type="user">dhsorens-phd</fr:addr>
+        <fr:route>dhsorens-phd.xml</fr:route>
+        <fr:title text="PhD Thesis">PhD Thesis</fr:title>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>6</fr:month>
+          <fr:day>13</fr:day>
+        </fr:date>
+        <fr:authors>
+          <fr:author>
+            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:p>From October 2019 until December 2023, I was a PhD student at the University of Cambridge. I started my PhD trying to look at the Adam's Spectral Sequence in HoTT (ambitious, by what I'm given to understand), but life and covid lockdowns happened. I ended up pivoting into interactive theorem proving, thinking about financial smart contracts and their specifications.</fr:p>
+        <fr:p>I got into using interactive theorem provers (ITPs)—in particular <fr:link type="external" href="https://rocq-prover.org">Rocq</fr:link>, and <fr:link type="external" href="http://lean-lang.org">Lean</fr:link> more recently—because</fr:p>
+        <fr:p>I learned a lot during my PhD.</fr:p>
+        <fr:p>As a PhD student
+    
+    My <fr:link type="external" href="docs/sorensen-phd-thesis.pdf">PhD thesis</fr:link> ...</fr:p>
+        <fr:link type="external" href="https://github.com/dhsorens">GitHub Repo</fr:link>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:anchor>245</fr:anchor>
+        <fr:addr type="user">dhsorens-msc</fr:addr>
+        <fr:route>dhsorens-msc.xml</fr:route>
+        <fr:title text="Notes from MSc in Algebraic Topology">Notes from MSc in Algebraic Topology</fr:title>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>6</fr:month>
+          <fr:day>12</fr:day>
+        </fr:date>
+        <fr:authors>
+          <fr:author>
+            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:p>These notes are pieces of my MSc in algebraic topology (2017).</fr:p>
+        <fr:ul><fr:li><fr:link type="external" href="docs/sorensen-fiber-bundles.pdf">An introduction to fiber bundles.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-principal-bundles.pdf">An introduction to principal bundles.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-characteristic-classes.pdf">An introduction to characteristic classes.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-local-coefficients.pdf">An introduction to systems of local (twisted) coefficients.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-homotopy-groups-spheres.pdf">Homotopy groups of spheres.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-algebraic-k-theory.pdf">Introduction to Algebraic K-theory.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-serre-spectral-sequence.pdf">Introduction to the Serre Spectral Sequence.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-classification-vector-bundles.pdf">Classification of vector bundles over the projective line.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-stability-theorems-persistent.pdf">Stability theorems for persistent homology.</fr:link></fr:li></fr:ul>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Backlinks">Backlinks</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>284</fr:anchor>
+            <fr:addr type="user">index</fr:addr>
+            <fr:route>index.xml</fr:route>
+            <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD Thesis">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the (rather philosophical) problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles.</fr:p>
+            <fr:p>Here you can see my <fr:link type="local" href="dhsorens-pubs.xml" addr="dhsorens-pubs" title="Peer-Reviewed Publications">publications</fr:link>, <fr:link type="local" href="dhsorens-talks.xml" addr="dhsorens-talks" title="Talks">talks</fr:link>, and <fr:link type="local" href="dhsorens-0003.xml" addr="dhsorens-0003" title="Notes">notes</fr:link>.</fr:p>
+            <fr:p><fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link> | <fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link></fr:p>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>249</fr:anchor>
+                <fr:addr type="user">dhsorens-pubs</fr:addr>
+                <fr:route>dhsorens-pubs.xml</fr:route>
+                <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:ol><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10634444?casa_token=-EkCXOOQn70AAAAA:W09Gm3MRunig0B0OPcVH5cnj-0GIbG5iDiILHbBc1aBnsH3WIV8BlM0XPs3-mvRRhDru02ey">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <fr:em>Global, robust and comparable digital carbon assets</fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10634343&amp;casa_token=cDelpFS1UkUAAAAA:NM3efLgRpxrrqAxDoq_bT_8ckBV3gFsUL9zKInWwo6zMAmPhIZoOv8L-UgWdGs7iWl5IPrFESQ&amp;tag=1">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="external" href="https://ledger.pitt.edu/ojs/ledger/article/view/294">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10174866">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Butt, K., Sorensen, D. <fr:em>Streamlining Classical Consensus</fr:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link type="external" href="https://www.inderscienceonline.com/doi/abs/10.1504/IJBC.2020.112508">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Establishing Standards for Consensus on Blockchains</fr:em>. ICBC (2019). [<fr:link type="external" href="https://link.springer.com/chapter/10.1007/978-3-030-23404-1_2">link</fr:link>]</fr:li>
+
+    
+    <fr:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <fr:em>Extensions and applications of equitable decompositions for graphs with symmetries</fr:em>. Linear Algebra and its Applications 532 (2017). [<fr:link type="external" href="https://www.sciencedirect.com/science/article/pii/S0024379517304093">link</fr:link>]</fr:li></fr:ol>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>251</fr:anchor>
+                <fr:addr type="user">dhsorens-talks</fr:addr>
+                <fr:route>dhsorens-talks.xml</fr:route>
+                <fr:title text="Talks">Talks</fr:title>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p>
+                  <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, CA.</fr:li>
+        <fr:li>(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:li>
+        <fr:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. FMBC, April 2024, Luxembourg.</fr:li>
+        <fr:li>Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:li>
+        <fr:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</fr:li>
+        <fr:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</fr:li>
+        <fr:li>K framework and type theory. RCon, May 2019, Berlin.</fr:li></fr:ul>
+                </fr:p>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>
