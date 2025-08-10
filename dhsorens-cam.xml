@@ -315,7 +315,7 @@
                         <fr:meta name="toc">true</fr:meta>
                       </fr:frontmatter>
                       <fr:mainmatter>
-                        <fr:p>Here is my <fr:link type="external" href="docs/sorensen-phd-thesis.pdf">PhD thesis</fr:link> and the associated <fr:link type="external" href="https://github.com/dhsorens/FinCert">GitHub repo</fr:link>.</fr:p>
+                        <fr:p>Here is my <fr:link type="external" href="docs/sorensen-phd-thesis.pdf">PhD thesis</fr:link> and the associated <fr:link type="external" href="https://github.com/dhsorens/FinCert">GitHub repo</fr:link>. More information (including citation instructions) can be found using its DOI: <fr:link type="external" href="https://doi.org/10.17863/cam.118487">10.17863/CAM.118487</fr:link>.</fr:p>
                       </fr:mainmatter>
                       <fr:backmatter />
                     </fr:tree>
