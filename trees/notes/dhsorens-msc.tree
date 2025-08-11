@@ -1,0 +1,28 @@
+\title{MSc in Algebraic Topology}
+\author{dhsorens}
+\date{2025-06-12}
+\meta{toc}{true}
+
+\p{
+    I did my [MSc](dhsorens-msc) during the 2016-2017 academic year at [St Peter's College](dhsorens-spc), [Oxford](dhsorens-oxf). The course spanned through areas of pure mathematics and theoretical computer science. I focused mostly on algebraic topology, homotopy theory, homological algebra, and category theory. Chris Douglas and Andre Henriques were two standout professors to whom I am very grateful.
+}
+
+\p{
+    My [MSc dissertation](docs/sorensen-msc-dissertation.pdf) was essentially commentary on one of Oscar Randal-William's papers on \em{tautological rings} on the connected sums of n-dimensional tauri. It deals with spectral sequences (in particular the Serre spectral sequence) and characteristic classes, among other things. The paper in question proved a result for odd-dimensional spheres, and my masters dissertation was an exploration on why the proof failed to generalize to the even-dimensional case.
+}
+
+\p{
+    I have my [MSc dissertation](docs/sorensen-msc-dissertation.pdf) here, but the dissertation included introductory appendices to various useful topics, which I have separated into their individual notes below.
+}
+
+\ul{
+    \li{[An introduction to fiber bundles.](docs/sorensen-fiber-bundles.pdf)}
+    \li{[An introduction to principal bundles.](docs/sorensen-principal-bundles.pdf)}
+    \li{[An introduction to characteristic classes.](docs/sorensen-characteristic-classes.pdf)}
+    \li{[An introduction to systems of local (twisted) coefficients.](docs/sorensen-local-coefficients.pdf)}
+    \li{[Homotopy groups of spheres.](docs/sorensen-homotopy-groups-spheres.pdf)}
+    \li{[Introduction to Algebraic K-theory.](docs/sorensen-algebraic-k-theory.pdf)}
+    \li{[Introduction to the Serre Spectral Sequence.](docs/sorensen-serre-spectral-sequence.pdf)}
+    \li{[Classification of vector bundles over the projective line.](docs/sorensen-classification-vector-bundles.pdf)}
+    \li{[Stability theorems for persistent homology.](docs/sorensen-stability-theorems-persistent.pdf)}
+}

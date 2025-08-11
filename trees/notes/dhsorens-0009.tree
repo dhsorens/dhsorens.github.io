@@ -1,0 +1,28 @@
+\title{The Background to my PhD Thesis}
+\author{dhsorens}
+\date{2025-06-15}
+\meta{toc}{true}
+
+\p{
+    From October 2019 until December 2023, I was a PhD student at the [University of Cambridge](dhsorens-cam). I started my PhD trying to look at the Adam's Spectral Sequence in [HoTT](dhsorens-hott) (ambitious, by what I'm given to understand), but life and covid lockdowns happened. I ended up pivoting into interactive theorem proving, thinking about financial smart contracts and their specifications.
+}
+
+\p{
+    The main question that haunted me during my PhD was this: We can prove software correct with regards to a specification, but how does one know that a \em{specification} is correct? What could a notion of "correctness" even look like for software specifications?
+}
+
+\p{
+    What followed was a prolonged meditation on the nature of the process of going from ideas and intuition into concrete implementation. My research was mostly an exploration on the formal tools used to write formal specifications. I was particularly fascinated by the use of interactive theorem provers (ITPs)—[Rocq](dhsorens-rocq), [Lean](dhsorens-lean), [Isabelle/HOL](dhsorens-0006) and the like—to specify smart contracts because of their extreme flexibility and versatility. You can state and prove \em{anything} in these, which can be thrilling but also provides a huge amount of flexibility.
+}
+
+\p{
+    At the same time, the formalization of mathematics (in [Lean](dhsorens-lean)) was beginning to catch my attention. The computer lab at the time had a weekly seminar on the formalization of mathematics, which I could attend when it didn't conflict with my commitments with [Clare choir](dhsorens-cccc). While I knew I was not interested in actually doing the formalization myself, I was unquestionably drawn into the research of those that were—in particular, the observations they made about the intricacies of going from pen-and-paper proofs to formal proofs.
+}
+
+\p{
+    Mathematicians were finding small, nuanced, and implicit assumptions made and expressed intuitively through notation and definitions that all mathematicians seemed to understand and get, but that had to be both discovered and made explicit during the process of formalization. I really started to learn the role of intuition that a mathematician undergoes when they codify a new mathematical concept into a formal definition—both in the realm of pen-and-paper mathematics as well as in the realm of formal proof.
+}
+
+\p{
+    It was during this time that I started to experiment with formal definitions and structures that are common to mathematics, and highly useful for mathematical definitions, for the specification and verification of smart contracts. The structures and definitions I chose, mostly from very basic [category theory](dhsorens-0007), play a heavy role in modern theories of computation and programming languages but do not feature in specifications themselves (\em{e.g.} from a behavioral perspective).
+}

@@ -1,0 +1,12 @@
+\title{Preprints}
+\author{dhsorens}
+\meta{toc}{true}
+
+\let\preprint[authors][title][venue][year][link]{
+    \li{\authors. \em{\title}. \venue (\year). [[preprint](\link)]}
+}
+
+\ul{
+    \preprint{Butt, K., Sorensen, D., Stay, M.}{Casanova}{arxiv.1812.02232}{2018}{https://arxiv.org/abs/1812.02232}
+    \preprint{Maric, O., Lochbihler, A., Sorensen, D.}{CantonCoin: Gaining Horizontal Scalability and Privacy with Distributed Commits Instead of Global Consensus}{}{2019}{docs/cantoncoin.pdf}
+}
