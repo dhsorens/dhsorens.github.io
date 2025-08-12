@@ -2,7 +2,8 @@
 \author{dhsorens}
 \meta{toc}{true}
 
-\p{
+\p{Some selected talks:
+    
     \ul{
         \li{Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.}
         \li{(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.}

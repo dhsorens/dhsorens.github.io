@@ -373,15 +373,15 @@
                 <fr:meta name="toc">true</fr:meta>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p>
-                  <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.</fr:li>
+                <fr:p>Some selected talks:
+    
+    <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.</fr:li>
         <fr:li>(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:li>
         <fr:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. FMBC, April 2024, Luxembourg.</fr:li>
         <fr:li><fr:link type="external" href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></fr:li>
         <fr:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</fr:li>
         <fr:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</fr:li>
-        <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=NZ2ETPurRFU">K framework and type theory. RCon, May 2019, Berlin.</fr:link></fr:li></fr:ul>
-                </fr:p>
+        <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=NZ2ETPurRFU">K framework and type theory. RCon, May 2019, Berlin.</fr:link></fr:li></fr:ul></fr:p>
                 <fr:p>I also keep some of <fr:link type="local" href="dhsorens-slides.xml" addr="dhsorens-slides" title="Slides">my slides here</fr:link>.</fr:p>
               </fr:mainmatter>
               <fr:backmatter />
@@ -1940,15 +1940,15 @@
                 <fr:meta name="toc">true</fr:meta>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p>
-                  <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.</fr:li>
+                <fr:p>Some selected talks:
+    
+    <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.</fr:li>
         <fr:li>(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:li>
         <fr:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. FMBC, April 2024, Luxembourg.</fr:li>
         <fr:li><fr:link type="external" href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></fr:li>
         <fr:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</fr:li>
         <fr:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</fr:li>
-        <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=NZ2ETPurRFU">K framework and type theory. RCon, May 2019, Berlin.</fr:link></fr:li></fr:ul>
-                </fr:p>
+        <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=NZ2ETPurRFU">K framework and type theory. RCon, May 2019, Berlin.</fr:link></fr:li></fr:ul></fr:p>
                 <fr:p>I also keep some of <fr:link type="local" href="dhsorens-slides.xml" addr="dhsorens-slides" title="Slides">my slides here</fr:link>.</fr:p>
               </fr:mainmatter>
               <fr:backmatter />
@@ -2249,15 +2249,15 @@
             <fr:meta name="toc">true</fr:meta>
           </fr:frontmatter>
           <fr:mainmatter>
-            <fr:p>
-              <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.</fr:li>
+            <fr:p>Some selected talks:
+    
+    <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.</fr:li>
         <fr:li>(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:li>
         <fr:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. FMBC, April 2024, Luxembourg.</fr:li>
         <fr:li><fr:link type="external" href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></fr:li>
         <fr:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</fr:li>
         <fr:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</fr:li>
-        <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=NZ2ETPurRFU">K framework and type theory. RCon, May 2019, Berlin.</fr:link></fr:li></fr:ul>
-            </fr:p>
+        <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=NZ2ETPurRFU">K framework and type theory. RCon, May 2019, Berlin.</fr:link></fr:li></fr:ul></fr:p>
             <fr:p>I also keep some of <fr:link type="local" href="dhsorens-slides.xml" addr="dhsorens-slides" title="Slides">my slides here</fr:link>.</fr:p>
           </fr:mainmatter>
           <fr:backmatter />
