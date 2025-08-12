@@ -1,3 +1,7 @@
 \title{Structured Pools for Tokenized Carbon Credits}
 \taxon{Publication}
 \meta{external}{https://ieeexplore.ieee.org/abstract/document/10174866}
+
+\p{
+    \em{Paper Abstract:} Tokenized carbon credits are of growing relevance to voluntary carbon markets, but because tokenized carbon credits are typically NFTs, they suffer from low liquidity and high price volatility on-chain. Current solutions pool carbon credits to enable greater liquidity, but are incomplete. We present a novel pooling mechanism which we call a structured pool, which addresses issues with current pooling techniques.
+}

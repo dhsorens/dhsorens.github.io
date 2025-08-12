@@ -10,7 +10,9 @@
     <fr:authors />
     <fr:meta name="external">https://ledger.pitt.edu/ojs/ledger/article/view/294</fr:meta>
   </fr:frontmatter>
-  <fr:mainmatter />
+  <fr:mainmatter>
+    <fr:p><fr:em>Paper Abstract:</fr:em> Blockchains are well-suited for tokenizing, trading, and retiring voluntary carbon credits. However, tokenized carbon credits are a heterogeneous body of tokens on the blockchain, which hampers some key goals of the industry. We give a detailed exposition of the current state of tokenized carbon credits and the surrounding blockchain-based ecosystem, with the goal of clarifying current impediments to token interoperability and trading with high liquidity.</fr:p>
+  </fr:mainmatter>
   <fr:backmatter>
     <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>

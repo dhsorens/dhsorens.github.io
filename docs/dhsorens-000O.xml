@@ -10,7 +10,9 @@
     <fr:authors />
     <fr:meta name="external">https://ieeexplore.ieee.org/abstract/document/10174866</fr:meta>
   </fr:frontmatter>
-  <fr:mainmatter />
+  <fr:mainmatter>
+    <fr:p><fr:em>Paper Abstract:</fr:em> Tokenized carbon credits are of growing relevance to voluntary carbon markets, but because tokenized carbon credits are typically NFTs, they suffer from low liquidity and high price volatility on-chain. Current solutions pool carbon credits to enable greater liquidity, but are incomplete. We present a novel pooling mechanism which we call a structured pool, which addresses issues with current pooling techniques.</fr:p>
+  </fr:mainmatter>
   <fr:backmatter>
     <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>

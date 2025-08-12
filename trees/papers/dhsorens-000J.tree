@@ -1,3 +1,7 @@
 \title{Formally Specifying Contract Optimizations With Bisimulations in Coq}
 \taxon{Publication}
 \meta{external}{https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11}
+
+\p{
+    \em{Paper Abstract:} The efficacy of formal verification of smart contracts depends on being able to correctly specify and carry out the verification of optimized code. However, code optimized for performance is rarely optimized for intelligibility, which can make formally verifying optimized code difficult and costly. To address this issue, we present a formal tool for reasoning about an optimized contract in terms of its reference implementation. This tool reduces the work of formally verifying an optimized contract to proving behavioral equivalence to the reference implementation.
+}
