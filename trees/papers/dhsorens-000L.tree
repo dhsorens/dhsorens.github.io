@@ -1,0 +1,7 @@
+\title{(In)Correct Smart Contract Specifications}
+\taxon{Publication}
+\meta{external}{https://ieeexplore.ieee.org/abstract/document/10634444}
+
+\p{
+    \em{Paper Abstract:} Poorly specified smart contracts can be vulnerable to attacks on faulty design. Formal methods are currently unable to address these vulnerabilities because they are not vulnerabilities of incorrect code, but of incorrect specification. We are thus in need of a paradigm shift in how we specify and verify smart contracts which allows for a rigorous and accurate notion of a contract specification’s correctness. We submit that correctness includes appropriate cryptoeconomic behaviors, which are generally out of scope of a contract’s specification. We advocate for an approach to contract specification consisting of contract axiomatization and metaspecification, and illustrate with an example.
+}
