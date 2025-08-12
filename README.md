@@ -1,18 +1,22 @@
 # Website (Forester)
 
-This is the code for updating my personal website. To update, compile and upload the contents of `output/` onto a web server.
-
 To compile and view (locally)
 
 ```bash
-    view.sh
+    ./view.sh
 ```
 
 To make a new note:
 ```bash
-    new.sh
+    ./new.sh
 ```
 this will automatically generate a new tree (?) and index it properly; you can transclude trees into each other from there.
+
+To commit a change, run:
+```bash
+    ./commit.sh "my message here"
+```
+This is here because forester outputs things into an `output/` directory, but we want to run it from the `docs/` directory (bc github).
 
 Some commands [are here](cmds.md). 
 
