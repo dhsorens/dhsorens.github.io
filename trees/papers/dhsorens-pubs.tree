@@ -7,15 +7,15 @@
 }
 
 \ul{
-    \paper{Sorensen, D}{[Formally Specifying Contract Optimizations With Bisimulations in Coq](dhsorens-000J)}{FMBC (ETAPS)}{2025}{https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11}
-    \paper{Sorensen, D}{[Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq](dhsorens-000K)}{FMBC (ETAPS)}{2024}{https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7}
-    \paper{Sorensen, D}{[(In)Correct Smart Contract Specifications](dhsorens-000L)}{ICBC}{2024}{https://ieeexplore.ieee.org/abstract/document/10634444}
-    \paper{Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A}{[Global, robust and comparable digital carbon assets](dhsorens-000M)}{ICBC}{2024}{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10634343}
-    \paper{Sorensen, D}{[Tokenized Carbon Credits](dhsorens-000N)}{Ledger}{2023}{https://ledger.pitt.edu/ojs/ledger/article/view/294}
-    \paper{Sorensen, D}{[Structured Pools for Tokenized Carbon Credits](dhsorens-000O)}{ICBC CryptoEx}{2023}{https://ieeexplore.ieee.org/abstract/document/10174866}
-    \paper{Butt, K., Sorensen, D}{[Streamlining Classical Consensus](dhsorens-000P)}{International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4}{2019}{https://www.inderscienceonline.com/doi/abs/10.1504/IJBC.2020.112508}
-    \paper{Sorensen, D}{[Establishing Standards for Consensus on Blockchains](dhsorens-000Q)}{ICBC}{2019}{https://link.springer.com/chapter/10.1007/978-3-030-23404-1_2}
-    \paper{A. Francis, D. Smith, D. Sorensen and B. Webb}{[Extensions and applications of equitable decompositions for graphs with symmetries](dhsorens-000R)}{Linear Algebra and its Applications 532}{2017}{https://www.sciencedirect.com/science/article/pii/S0024379517304093}
+    \paper{Sorensen, D}{Formally Specifying Contract Optimizations With Bisimulations in Coq}{FMBC (ETAPS)}{2025}{dhsorens-000J}
+    \paper{Sorensen, D}{Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq}{FMBC (ETAPS)}{2024}{dhsorens-000K}
+    \paper{Sorensen, D}{(In)Correct Smart Contract Specifications}{ICBC}{2024}{dhsorens-000L}
+    \paper{Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A}{Global, robust and comparable digital carbon assets}{ICBC}{2024}{dhsorens-000M}
+    \paper{Sorensen, D}{Tokenized Carbon Credits}{Ledger}{2023}{dhsorens-000N}
+    \paper{Sorensen, D}{Structured Pools for Tokenized Carbon Credits}{ICBC CryptoEx}{2023}{dhsorens-000O}
+    \paper{Butt, K., Sorensen, D}{Streamlining Classical Consensus}{International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4}{2019}{dhsorens-000P}
+    \paper{Sorensen, D}{Establishing Standards for Consensus on Blockchains}{ICBC}{2019}{dhsorens-000Q}
+    \paper{A. Francis, D. Smith, D. Sorensen and B. Webb}{Extensions and applications of equitable decompositions for graphs with symmetries}{Linear Algebra and its Applications 532}{2017}{dhsorens-000R}
 }
 
 \p{
