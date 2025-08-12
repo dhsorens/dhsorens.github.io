@@ -1,0 +1,19 @@
+\title{Talks}
+\author{dhsorens}
+\meta{toc}{true}
+
+\p{
+    \ul{
+        \li{Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.}
+        \li{(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.}
+        \li{Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. FMBC, April 2024, Luxembourg.}
+        \li{[Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.](https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/)}
+        \li{Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.}
+        \li{Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.}
+        \li{[K framework and type theory. RCon, May 2019, Berlin.](https://www.youtube.com/watch?v=NZ2ETPurRFU)}
+    }
+}
+
+\p{
+    I also keep some of [my slides here](dhsorens-slides).
+}

@@ -1,0 +1,25 @@
+\title{Links and Referencing my PhD Thesis}
+\author{dhsorens}
+\date{2025-06-15}
+\meta{toc}{true}
+
+\p{
+    Here is my [PhD thesis](docs/sorensen-phd-thesis.pdf) and the associated [GitHub repo](https://github.com/dhsorens/FinCert). More information (including citation instructions) can be found using its DOI: [10.17863/CAM.118487](https://doi.org/10.17863/cam.118487).
+}
+
+%\p{
+%    To cite it, please use the following BibTex code:
+%}
+
+%\code{
+%@phdthesis{sorensen-phd-thesis,
+%    author = {Sorensen, D},
+%    editor = {Madhavapeddy, A and Srinivasan, K},
+%    title = {Formal Tools for Specifying Financial Smart Contracts},
+%    url = {https://github.com/dhsorens/FinCert},
+%    filedyear = {2023},
+%    filedmonth = {Sep},
+%    filedday = {22},
+%    keyword = {blockchain}
+%}
+%}

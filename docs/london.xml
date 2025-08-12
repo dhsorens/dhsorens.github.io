@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="default.xsl"?>
+<fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+  <fr:frontmatter>
+    <fr:anchor>406</fr:anchor>
+    <fr:addr type="user">london</fr:addr>
+    <fr:route>london.xml</fr:route>
+    <fr:title text="London">London</fr:title>
+    <fr:taxon>Place</fr:taxon>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>6</fr:month>
+      <fr:day>14</fr:day>
+    </fr:date>
+    <fr:authors />
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:anchor>407</fr:anchor>
+        <fr:addr type="user">dhsorens-0004</fr:addr>
+        <fr:route>dhsorens-0004.xml</fr:route>
+        <fr:title text="The Barbican">The Barbican</fr:title>
+        <fr:taxon>Place</fr:taxon>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>6</fr:month>
+          <fr:day>14</fr:day>
+        </fr:date>
+        <fr:authors>
+          <fr:author>
+            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter />
+      <fr:backmatter />
+    </fr:tree>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Backlinks">Backlinks</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>409</fr:anchor>
+            <fr:addr type="user">dhsorens</fr:addr>
+            <fr:route>dhsorens.xml</fr:route>
+            <fr:title text="Derek Sorensen">Derek Sorensen</fr:title>
+            <fr:taxon>Person</fr:taxon>
+            <fr:authors />
+            <fr:meta name="orcid">0000-0003-4937-6984</fr:meta>
+            <fr:meta name="external">https://www.github.com/dhsorens</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>Mathematician and computer scientist.
+    <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> in computer science with <fr:link type="local" href="avsm.xml" addr="avsm" title="Anil Madhavapeddy">Anil Madhavapeddy</fr:link> at the Universiy of Cambridge, in formal methods applied to smart contracts.
+    <fr:link type="local" href="london.xml" addr="london" title="London">London</fr:link>-based.</fr:p>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>404</fr:anchor>
+                <fr:addr type="user">dhsorens-0005</fr:addr>
+                <fr:route>dhsorens-0005.xml</fr:route>
+                <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>14</fr:day>
+                </fr:date>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                  <fr:frontmatter>
+                    <fr:anchor>345</fr:anchor>
+                    <fr:addr type="user">dhsorens-000H</fr:addr>
+                    <fr:route>dhsorens-000H.xml</fr:route>
+                    <fr:title text="Undergraduate in Mathematics">Undergraduate in Mathematics</fr:title>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>6</fr:month>
+                      <fr:day>15</fr:day>
+                    </fr:date>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter />
+                  <fr:backmatter />
+                </fr:tree>
+                <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                  <fr:frontmatter>
+                    <fr:anchor>347</fr:anchor>
+                    <fr:addr type="user">dhsorens-000I</fr:addr>
+                    <fr:route>dhsorens-000I.xml</fr:route>
+                    <fr:title text="Year in Moscow">Year in Moscow</fr:title>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>6</fr:month>
+                      <fr:day>15</fr:day>
+                    </fr:date>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <fr:p>I spent my final year as an undergraduate in <fr:link type="external" href="dhsorens-moscow">Moscow</fr:link>, studying mathematics at the <fr:link type="local" href="dhsorens-000F.xml" addr="dhsorens-000F" title="Independent University of Moscow">Independent University of Moscow</fr:link> and the <fr:link type="local" href="dhsorens-000G.xml" addr="dhsorens-000G" title="Higher School of Economics">Higher School of Economics</fr:link> as part of the Math in Moscow program.
+    During that time, I learned Russian by teaching kids at church, taking courses, and spending time with as many Russians as I could.</fr:p>
+                    <fr:p>The Russians are very intense mathematically. The courses met once a week for three hours each, with a five minute tea break in the middle. They called it the "Russian brainstorm." While my undergraduate education was of very high quality (no complaints really), this was another level and I was forced to be much more independent mathematically.</fr:p>
+                    <fr:p>I had one professor in particular, Alexei Gorinov, who was educated in the French tradition and taught topology exceptionally well. He built off the interest in topology cultivated during my undergraduate. His problem sets in particular were exceptional, and I still keep the links for his <fr:link type="external" href="https://topology1hsemim201516.wordpress.com">Toplogy I</fr:link> and <fr:link type="external" href="https://topology2hsemim201516.wordpress.com">Topology II</fr:link> courses on hand. Gorinov's courses have left a lasting impact on me.</fr:p>
+                    <fr:p>During this time, I also got into <fr:link type="local" href="dhsorens-0007.xml" addr="dhsorens-0007" title="Category Theory">category theory</fr:link> by reading Awodey's <fr:link type="external" href="https://github.com/geelon/type-theory/blob/master/awodey-category-theory.pdf">Category Theory</fr:link> on my own. The courses, and my independent study, prepared me for my <fr:link type="local" href="dhsorens-msc.xml" addr="dhsorens-msc" title="MSc in Algebraic Topology">masters degree</fr:link> the following year.</fr:p>
+                  </fr:mainmatter>
+                  <fr:backmatter />
+                </fr:tree>
+                <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                  <fr:frontmatter>
+                    <fr:anchor>349</fr:anchor>
+                    <fr:addr type="user">dhsorens-msc</fr:addr>
+                    <fr:route>dhsorens-msc.xml</fr:route>
+                    <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>6</fr:month>
+                      <fr:day>12</fr:day>
+                    </fr:date>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <fr:p>I did my <fr:link type="local" href="dhsorens-msc.xml" addr="dhsorens-msc" title="MSc in Algebraic Topology">MSc</fr:link> at <fr:link type="local" href="dhsorens-oxf.xml" addr="dhsorens-oxf" title="University of Oxford">Oxford</fr:link>, at <fr:link type="local" href="dhsorens-spc.xml" addr="dhsorens-spc" title="St. Peter's College, University of Oxford">St Peter's College</fr:link>.
+    I focused on algebraic topology.</fr:p>
+                    <fr:p>My <fr:link type="external" href="docs/sorensen-msc-dissertation.pdf">MSc dissertation</fr:link>.</fr:p>
+                    <fr:p>These notes are pieces of my MSc in algebraic topology (2017) from the <fr:link type="local" href="dhsorens-oxf.xml" addr="dhsorens-oxf" title="University of Oxford">University of Oxford</fr:link>.</fr:p>
+                    <fr:ul><fr:li><fr:link type="external" href="docs/sorensen-fiber-bundles.pdf">An introduction to fiber bundles.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-principal-bundles.pdf">An introduction to principal bundles.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-characteristic-classes.pdf">An introduction to characteristic classes.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-local-coefficients.pdf">An introduction to systems of local (twisted) coefficients.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-homotopy-groups-spheres.pdf">Homotopy groups of spheres.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-algebraic-k-theory.pdf">Introduction to Algebraic K-theory.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-serre-spectral-sequence.pdf">Introduction to the Serre Spectral Sequence.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-classification-vector-bundles.pdf">Classification of vector bundles over the projective line.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="docs/sorensen-stability-theorems-persistent.pdf">Stability theorems for persistent homology.</fr:link></fr:li></fr:ul>
+                  </fr:mainmatter>
+                  <fr:backmatter />
+                </fr:tree>
+                <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                  <fr:frontmatter>
+                    <fr:anchor>351</fr:anchor>
+                    <fr:addr type="user">dhsorens-phd</fr:addr>
+                    <fr:route>dhsorens-phd.xml</fr:route>
+                    <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>6</fr:month>
+                      <fr:day>13</fr:day>
+                    </fr:date>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                      <fr:frontmatter>
+                        <fr:anchor>264</fr:anchor>
+                        <fr:addr type="user">dhsorens-0009</fr:addr>
+                        <fr:route>dhsorens-0009.xml</fr:route>
+                        <fr:title text="The Background to my PhD Thesis">The Background to my PhD Thesis</fr:title>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>6</fr:month>
+                          <fr:day>15</fr:day>
+                        </fr:date>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <fr:p>From October 2019 until December 2023, I was a PhD student at the <fr:link type="local" href="dhsorens-cam.xml" addr="dhsorens-cam" title="University of Cambridge">University of Cambridge</fr:link>. I started my PhD trying to look at the Adam's Spectral Sequence in <fr:link type="local" href="dhsorens-hott.xml" addr="dhsorens-hott" title="Homotopy Type Theory (HoTT)">HoTT</fr:link> (ambitious, by what I'm given to understand), but life and covid lockdowns happened. I ended up pivoting into interactive theorem proving, thinking about financial smart contracts and their specifications.</fr:p>
+                        <fr:p>The main question that haunted me during my PhD was this: We can prove software correct with regards to a specification, but how does one know that a <fr:em>specification</fr:em> is correct? What could a notion of "correctness" even look like for software specifications?</fr:p>
+                        <fr:p>What followed was a prolonged meditation on the nature of the process of going from ideas and intuition into concrete implementation. My research was mostly an exploration on the formal tools used to write formal specifications. I was particularly fascinated by the use of interactive theorem provers (ITPs)—<fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link>, <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>, <fr:link type="local" href="dhsorens-0006.xml" addr="dhsorens-0006" title="Isabelle/HOL">Isabelle/HOL</fr:link> and the like—to specify smart contracts because of their extreme flexibility and versatility. You can state and prove <fr:em>anything</fr:em> in these, which can be thrilling but also provides a huge amount of flexibility.</fr:p>
+                        <fr:p>At the same time, the formalization of mathematics (in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>) was beginning to catch my attention. The computer lab at the time had a weekly seminar on the formalization of mathematics, which I could attend when it didn't conflict with my commitments with <fr:link type="local" href="dhsorens-cccc.xml" addr="dhsorens-cccc" title="Choir of Clare College">Clare choir</fr:link>. While I knew I was not interested in actually doing the formalization myself, I was unquestionably drawn into the research of those that were—in particular, the observations they made about the intricacies of going from pen-and-paper proofs to formal proofs.</fr:p>
+                        <fr:p>Mathematicians were finding small, nuanced, and implicit assumptions made and expressed intuitively through notation and definitions that all mathematicians seemed to understand and get, but that had to be both discovered and made explicit during the process of formalization. I really started to learn the role of intuition that a mathematician undergoes when they codify a new mathematical concept into a formal definition—both in the realm of pen-and-paper mathematics as well as in the realm of formal proof.</fr:p>
+                        <fr:p>It was during this time that I started to experiment with formal definitions and structures that are common to mathematics, and highly useful for mathematical definitions, for the specification and verification of smart contracts. The structures and definitions I chose, mostly from very basic <fr:link type="local" href="dhsorens-0007.xml" addr="dhsorens-0007" title="Category Theory">category theory</fr:link>, play a heavy role in modern theories of computation and programming languages but do not feature in specifications themselves (<fr:em>e.g.</fr:em> from a behavioral perspective).</fr:p>
+                      </fr:mainmatter>
+                      <fr:backmatter />
+                    </fr:tree>
+                    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                      <fr:frontmatter>
+                        <fr:anchor>266</fr:anchor>
+                        <fr:addr type="user">dhsorens-000A</fr:addr>
+                        <fr:route>dhsorens-000A.xml</fr:route>
+                        <fr:title text="The Main Contributions of my PhD Thesis">The Main Contributions of my PhD Thesis</fr:title>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>6</fr:month>
+                          <fr:day>15</fr:day>
+                        </fr:date>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <fr:p>My PhD thesis proposes two different ways of handling the problem of a specification's <fr:em>correctness</fr:em>.
+    Both draw heavily on the theoretically robust nature of <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link>.</fr:p>
+                        <fr:p>The first is through what I would informally call the "meta work," where the specification itself is treated like a mathematical object to study and prove correctness, like the software we're trying to prove correct. This uses prose and specification to articulate desired behaviors of a smart contract that are already easy to define, <fr:em>e.g.</fr:em> desirable economic or game-theoretic properties.</fr:p>
+                        <fr:p>The second is through the use of abstract tools that approximate the desired behavior.
+    My first motivating example is that of a smart contract upgrade.
+    When upgrading any software, intuitively we understand an updated version as incrementally different from a previous version—we're adding feature X, Y, and Z, fixing bugs, removing outdated functionality. 
+    All of this frames conversation and understanding of the new software in terms of the old.
+    Why not then apply that to the formal specification?</fr:p>
+                        <fr:p>I introduced the notion of a <fr:em>contract morphism</fr:em>, or a formal structural relationship between two contracts that could be used in specification. The term "morphism" is <fr:link type="local" href="dhsorens-0007.xml" addr="dhsorens-0007" title="Category Theory">category-theoretic</fr:link>, and is a general mathematical way of establishing a relationship between two objects.
+    Once this formal relationship is established, proofs of one contract can be transported over that relationship to another contract.
+    If the morphism is <fr:em>invertible</fr:em>, then the formal relationship establishes an equivalence of contracts, which could be useful <fr:em>e.g.</fr:em> for proving optimized code correct with regards to a reference implementation.
+    The morphism allows one to use a <fr:em>contract</fr:em> as a specification, something which can be far more intuitive than using prose.</fr:p>
+                        <fr:p>All of this is encapsulated fairly well in <fr:link type="external" href="slides/spec-correct.pdf">the slides of this talk</fr:link>.</fr:p>
+                      </fr:mainmatter>
+                      <fr:backmatter />
+                    </fr:tree>
+                    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                      <fr:frontmatter>
+                        <fr:anchor>268</fr:anchor>
+                        <fr:addr type="user">dhsorens-0008</fr:addr>
+                        <fr:route>dhsorens-0008.xml</fr:route>
+                        <fr:title text="The Papers of My PhD Thesis">The Papers of My PhD Thesis</fr:title>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>6</fr:month>
+                          <fr:day>15</fr:day>
+                        </fr:date>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <fr:p>
+                          <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11">link</fr:link>]</fr:li>
+
+        
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7">link</fr:link>]</fr:li>
+
+        
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10634444?casa_token=-EkCXOOQn70AAAAA:W09Gm3MRunig0B0OPcVH5cnj-0GIbG5iDiILHbBc1aBnsH3WIV8BlM0XPs3-mvRRhDru02ey">link</fr:link>]</fr:li>
+
+        
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="external" href="https://ledger.pitt.edu/ojs/ledger/article/view/294">link</fr:link>]</fr:li>
+
+        
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10174866">link</fr:link>]</fr:li></fr:ul>
+                        </fr:p>
+                      </fr:mainmatter>
+                      <fr:backmatter />
+                    </fr:tree>
+                    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                      <fr:frontmatter>
+                        <fr:anchor>270</fr:anchor>
+                        <fr:addr type="user">dhsorens-000C</fr:addr>
+                        <fr:route>dhsorens-000C.xml</fr:route>
+                        <fr:title text="Links and Referencing my PhD Thesis">Links and Referencing my PhD Thesis</fr:title>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>6</fr:month>
+                          <fr:day>15</fr:day>
+                        </fr:date>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <fr:p>Here is my <fr:link type="external" href="docs/sorensen-phd-thesis.pdf">PhD thesis</fr:link> and the associated <fr:link type="external" href="https://github.com/dhsorens/FinCert">GitHub repo</fr:link>.</fr:p>
+                      </fr:mainmatter>
+                      <fr:backmatter />
+                    </fr:tree>
+                  </fr:mainmatter>
+                  <fr:backmatter />
+                </fr:tree>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

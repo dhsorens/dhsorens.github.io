@@ -1,0 +1,12 @@
+\title{Derek Sorensen}
+\taxon{Person}
+\meta{orcid}{0000-0003-4937-6984}
+\meta{external}{https://www.github.com/dhsorens}
+
+\p{
+    Mathematician and computer scientist.
+    [PhD](dhsorens-phd) in computer science with [Anil Madhavapeddy](avsm) at the [Universiy of Cambridge](dhsorens-cam), in formal methods applied to financial smart contracts.
+    [London](dhsorens-london)-based.
+}
+
+\transclude{dhsorens-0005}

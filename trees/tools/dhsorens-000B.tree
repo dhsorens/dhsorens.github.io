@@ -1,0 +1,8 @@
+\title{Interactive Theorem Provers}
+\author{dhsorens}
+\date{2025-06-15}
+\meta{toc}{true}
+
+\transclude{dhsorens-lean}
+\transclude{dhsorens-rocq}
+\transclude{dhsorens-0006}

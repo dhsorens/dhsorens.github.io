@@ -1,0 +1,12 @@
+\title{Homotopy Type Theory (HoTT)}
+\author{dhsorens}
+\meta{toc}{true}
+\date{2025-06-15}
+
+\p{
+    Homotopy Type Theory (HoTT) is a type theory whose types can be interpreted (usefully) as topological spaces, complete with loop spaces, homology, and homotopy groups. I got into it as I was moving into computer science from a pure-mathematical [background](dhsorens-0005) focused mostly on algebraic topology.
+}
+
+\p{
+    [The HoTT book](http://homotopytypetheory.org/book/) is the best introduction that I know of.
+}

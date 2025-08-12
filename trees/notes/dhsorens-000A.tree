@@ -1,0 +1,32 @@
+\title{The Main Contributions of my PhD Thesis}
+\author{dhsorens}
+\date{2025-06-15}
+\meta{toc}{true}
+
+\p{
+    My PhD thesis proposes two different ways of handling the problem of a specification's \em{correctness}.
+    Both draw heavily on the theoretically robust nature of [proof assistants](dhsorens-000B).
+}
+
+\p{
+    The first is through what I would informally call the "meta work," where the specification itself is treated like a mathematical object to study and prove correctness, like the software we're trying to prove correct. This uses prose and specification to articulate desired behaviors of a smart contract that are already easy to define, \em{e.g.} desirable economic or game-theoretic properties.
+}
+
+\p{
+    The second is through the use of abstract tools that approximate the desired behavior.
+    My first motivating example is that of a smart contract upgrade.
+    When upgrading any software, intuitively we understand an updated version as incrementally different from a previous version—we're adding feature X, Y, and Z, fixing bugs, removing outdated functionality. 
+    All of this frames conversation and understanding of the new software in terms of the old.
+    Why not then apply that to the formal specification?
+}
+
+\p{
+    I introduced the notion of a \em{contract morphism}, or a formal structural relationship between two contracts that could be used in specification. The term "morphism" is [category-theoretic](dhsorens-0007), and is a general mathematical way of establishing a relationship between two objects.
+    Once this formal relationship is established, proofs of one contract can be transported over that relationship to another contract.
+    If the morphism is \em{invertible}, then the formal relationship establishes an equivalence of contracts, which could be useful \em{e.g.} for proving optimized code correct with regards to a reference implementation.
+    The morphism allows one to use a \em{contract} as a specification, something which can be far more intuitive than using prose.
+}
+
+\p{
+    All of this is encapsulated fairly well in [the slides of this talk](slides/spec-correct.pdf).
+}
