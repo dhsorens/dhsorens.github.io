@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>400</fr:anchor>
+    <fr:anchor>402</fr:anchor>
     <fr:addr type="user">dhsorens-0005</fr:addr>
     <fr:route>dhsorens-0005.xml</fr:route>
     <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -261,7 +261,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>402</fr:anchor>
+            <fr:anchor>404</fr:anchor>
             <fr:addr type="user">dhsorens</fr:addr>
             <fr:route>dhsorens.xml</fr:route>
             <fr:title text="Derek Sorensen">Derek Sorensen</fr:title>
@@ -276,7 +276,7 @@
     <fr:link type="local" href="dhsorens-london.xml" addr="dhsorens-london" title="London">London</fr:link>-based.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>403</fr:anchor>
+                <fr:anchor>405</fr:anchor>
                 <fr:addr type="user">dhsorens-0005</fr:addr>
                 <fr:route>dhsorens-0005.xml</fr:route>
                 <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -542,7 +542,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>405</fr:anchor>
+            <fr:anchor>407</fr:anchor>
             <fr:addr type="user">dhsorens-hott</fr:addr>
             <fr:route>dhsorens-hott.xml</fr:route>
             <fr:title text="Homotopy Type Theory (HoTT)">Homotopy Type Theory (HoTT)</fr:title>

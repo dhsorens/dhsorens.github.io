@@ -302,7 +302,7 @@
             <fr:meta name="toc">true</fr:meta>
           </fr:frontmatter>
           <fr:mainmatter>
-            <fr:p>My favorite introductory book is Awodey's <fr:link type="external" href="https://github.com/geelon/type-theory/blob/master/awodey-category-theory.pdf"><fr:em>Category Theory</fr:em></fr:link>.</fr:p>
+            <fr:p>My favorite introductory book on the subject is Awodey's <fr:link type="external" href="https://github.com/geelon/type-theory/blob/master/awodey-category-theory.pdf"><fr:em>Category Theory</fr:em></fr:link>.</fr:p>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
