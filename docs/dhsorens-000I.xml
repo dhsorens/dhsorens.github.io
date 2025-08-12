@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>355</fr:anchor>
+    <fr:anchor>357</fr:anchor>
     <fr:addr type="user">dhsorens-000I</fr:addr>
     <fr:route>dhsorens-000I.xml</fr:route>
     <fr:title text="Year in Moscow">Year in Moscow</fr:title>
@@ -34,7 +34,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>357</fr:anchor>
+            <fr:anchor>359</fr:anchor>
             <fr:addr type="user">dhsorens-0005</fr:addr>
             <fr:route>dhsorens-0005.xml</fr:route>
             <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -297,7 +297,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>359</fr:anchor>
+            <fr:anchor>361</fr:anchor>
             <fr:addr type="user">dhsorens-0007</fr:addr>
             <fr:route>dhsorens-0007.xml</fr:route>
             <fr:title text="Category Theory">Category Theory</fr:title>
@@ -320,7 +320,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>361</fr:anchor>
+            <fr:anchor>363</fr:anchor>
             <fr:addr type="user">dhsorens-000G</fr:addr>
             <fr:route>dhsorens-000G.xml</fr:route>
             <fr:title text="Higher School of Economics">Higher School of Economics</fr:title>
@@ -342,7 +342,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>363</fr:anchor>
+            <fr:anchor>365</fr:anchor>
             <fr:addr type="user">dhsorens-000F</fr:addr>
             <fr:route>dhsorens-000F.xml</fr:route>
             <fr:title text="Independent University of Moscow">Independent University of Moscow</fr:title>
@@ -364,7 +364,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>365</fr:anchor>
+            <fr:anchor>367</fr:anchor>
             <fr:addr type="user">dhsorens-moscow</fr:addr>
             <fr:route>dhsorens-moscow.xml</fr:route>
             <fr:title text="Moscow">Moscow</fr:title>
@@ -379,7 +379,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>366</fr:anchor>
+                <fr:anchor>368</fr:anchor>
                 <fr:addr type="user">dhsorens-000F</fr:addr>
                 <fr:route>dhsorens-000F.xml</fr:route>
                 <fr:title text="Independent University of Moscow">Independent University of Moscow</fr:title>
@@ -401,7 +401,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>368</fr:anchor>
+                <fr:anchor>370</fr:anchor>
                 <fr:addr type="user">dhsorens-000G</fr:addr>
                 <fr:route>dhsorens-000G.xml</fr:route>
                 <fr:title text="Higher School of Economics">Higher School of Economics</fr:title>
@@ -426,7 +426,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>370</fr:anchor>
+            <fr:anchor>372</fr:anchor>
             <fr:addr type="user">dhsorens-msc</fr:addr>
             <fr:route>dhsorens-msc.xml</fr:route>
             <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>

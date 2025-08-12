@@ -2,7 +2,7 @@
 \author{dhsorens}
 
 \p{
-  I am a mathematician and computer scientist. My [PhD](dhsorens-phd) was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in Lean.
+  I am a mathematician and computer scientist. My [PhD](dhsorens-phd) was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in [Lean](dhsorens-lean).
 }
 
 \p{Here you can see my [publications](dhsorens-pubs), [talks](dhsorens-talks), [notes](dhsorens-notes), and [bio](dhsorens).}

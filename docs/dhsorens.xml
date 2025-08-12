@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>478</fr:anchor>
+    <fr:anchor>480</fr:anchor>
     <fr:addr type="user">dhsorens</fr:addr>
     <fr:route>dhsorens.xml</fr:route>
     <fr:title text="Derek Sorensen">Derek Sorensen</fr:title>
@@ -17,7 +17,7 @@
     <fr:link type="local" href="dhsorens-london.xml" addr="dhsorens-london" title="London">London</fr:link>-based.</fr:p>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>403</fr:anchor>
+        <fr:anchor>405</fr:anchor>
         <fr:addr type="user">dhsorens-0005</fr:addr>
         <fr:route>dhsorens-0005.xml</fr:route>
         <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -279,7 +279,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>479</fr:anchor>
+            <fr:anchor>481</fr:anchor>
             <fr:addr type="user">index</fr:addr>
             <fr:route>index.xml</fr:route>
             <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
@@ -290,7 +290,7 @@
             </fr:authors>
           </fr:frontmatter>
           <fr:mainmatter>
-            <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in Lean.</fr:p>
+            <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
             <fr:p>Here you can see my <fr:link type="local" href="dhsorens-pubs.xml" addr="dhsorens-pubs" title="Peer-Reviewed Publications">publications</fr:link>, <fr:link type="local" href="dhsorens-talks.xml" addr="dhsorens-talks" title="Talks">talks</fr:link>, <fr:link type="local" href="dhsorens-notes.xml" addr="dhsorens-notes" title="Notes">notes</fr:link>, and <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">bio</fr:link>.</fr:p>
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
@@ -400,7 +400,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>481</fr:anchor>
+            <fr:anchor>483</fr:anchor>
             <fr:addr type="user">dhsorens-london</fr:addr>
             <fr:route>dhsorens-london.xml</fr:route>
             <fr:title text="London">London</fr:title>
@@ -415,7 +415,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>408</fr:anchor>
+                <fr:anchor>410</fr:anchor>
                 <fr:addr type="user">dhsorens-0004</fr:addr>
                 <fr:route>dhsorens-0004.xml</fr:route>
                 <fr:title text="The Barbican">The Barbican</fr:title>
@@ -440,7 +440,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>482</fr:anchor>
+            <fr:anchor>484</fr:anchor>
             <fr:addr type="user">dhsorens-cam</fr:addr>
             <fr:route>dhsorens-cam.xml</fr:route>
             <fr:title text="University of Cambridge">University of Cambridge</fr:title>
@@ -524,7 +524,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>484</fr:anchor>
+            <fr:anchor>486</fr:anchor>
             <fr:addr type="user">dhsorens-phd</fr:addr>
             <fr:route>dhsorens-phd.xml</fr:route>
             <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -669,7 +669,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>486</fr:anchor>
+            <fr:anchor>488</fr:anchor>
             <fr:addr type="user">avsm</fr:addr>
             <fr:route>avsm.xml</fr:route>
             <fr:title text="Anil Madhavapeddy">Anil Madhavapeddy</fr:title>
@@ -694,7 +694,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>487</fr:anchor>
+            <fr:anchor>489</fr:anchor>
             <fr:addr type="user">dhsorens-000D</fr:addr>
             <fr:route>dhsorens-000D.xml</fr:route>
             <fr:title text="Education">Education</fr:title>
@@ -717,7 +717,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>489</fr:anchor>
+            <fr:anchor>491</fr:anchor>
             <fr:addr type="user">dhsorens-hott</fr:addr>
             <fr:route>dhsorens-hott.xml</fr:route>
             <fr:title text="Homotopy Type Theory (HoTT)">Homotopy Type Theory (HoTT)</fr:title>
@@ -741,7 +741,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>491</fr:anchor>
+            <fr:anchor>493</fr:anchor>
             <fr:addr type="user">dhsorens-000B</fr:addr>
             <fr:route>dhsorens-000B.xml</fr:route>
             <fr:title text="Interactive Theorem Provers">Interactive Theorem Provers</fr:title>
@@ -835,7 +835,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>493</fr:anchor>
+            <fr:anchor>495</fr:anchor>
             <fr:addr type="user">dhsorens-0006</fr:addr>
             <fr:route>dhsorens-0006.xml</fr:route>
             <fr:title text="Isabelle/HOL">Isabelle/HOL</fr:title>
@@ -859,7 +859,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>495</fr:anchor>
+            <fr:anchor>497</fr:anchor>
             <fr:addr type="user">dhsorens-000C</fr:addr>
             <fr:route>dhsorens-000C.xml</fr:route>
             <fr:title text="Links and Referencing my PhD Thesis">Links and Referencing my PhD Thesis</fr:title>
@@ -882,7 +882,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>497</fr:anchor>
+            <fr:anchor>499</fr:anchor>
             <fr:addr type="user">dhsorens-0008</fr:addr>
             <fr:route>dhsorens-0008.xml</fr:route>
             <fr:title text="The Papers of My PhD Thesis">The Papers of My PhD Thesis</fr:title>
@@ -919,7 +919,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>499</fr:anchor>
+            <fr:anchor>501</fr:anchor>
             <fr:addr type="user">dhsorens-0009</fr:addr>
             <fr:route>dhsorens-0009.xml</fr:route>
             <fr:title text="The Background to my PhD Thesis">The Background to my PhD Thesis</fr:title>
@@ -947,7 +947,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>501</fr:anchor>
+            <fr:anchor>503</fr:anchor>
             <fr:addr type="user">dhsorens-000A</fr:addr>
             <fr:route>dhsorens-000A.xml</fr:route>
             <fr:title text="The Main Contributions of my PhD Thesis">The Main Contributions of my PhD Thesis</fr:title>
@@ -982,7 +982,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>503</fr:anchor>
+            <fr:anchor>505</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -1006,7 +1006,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>505</fr:anchor>
+            <fr:anchor>507</fr:anchor>
             <fr:addr type="user">dhsorens-rocq</fr:addr>
             <fr:route>dhsorens-rocq.xml</fr:route>
             <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
@@ -1030,7 +1030,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>507</fr:anchor>
+            <fr:anchor>509</fr:anchor>
             <fr:addr type="user">dhsorens-000H</fr:addr>
             <fr:route>dhsorens-000H.xml</fr:route>
             <fr:title text="Undergraduate in Mathematics">Undergraduate in Mathematics</fr:title>
@@ -1056,7 +1056,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>509</fr:anchor>
+            <fr:anchor>511</fr:anchor>
             <fr:addr type="user">dhsorens-000E</fr:addr>
             <fr:route>dhsorens-000E.xml</fr:route>
             <fr:title text="Work History">Work History</fr:title>
@@ -1079,7 +1079,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>511</fr:anchor>
+            <fr:anchor>513</fr:anchor>
             <fr:addr type="user">dhsorens-000I</fr:addr>
             <fr:route>dhsorens-000I.xml</fr:route>
             <fr:title text="Year in Moscow">Year in Moscow</fr:title>
@@ -1106,7 +1106,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>513</fr:anchor>
+            <fr:anchor>515</fr:anchor>
             <fr:addr type="user">dhsorens-0007</fr:addr>
             <fr:route>dhsorens-0007.xml</fr:route>
             <fr:title text="Category Theory">Category Theory</fr:title>
@@ -1129,7 +1129,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>515</fr:anchor>
+            <fr:anchor>517</fr:anchor>
             <fr:addr type="user">dhsorens-cccc</fr:addr>
             <fr:route>dhsorens-cccc.xml</fr:route>
             <fr:title text="Choir of Clare College">Choir of Clare College</fr:title>
@@ -1151,7 +1151,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>517</fr:anchor>
+            <fr:anchor>519</fr:anchor>
             <fr:addr type="user">dhsorens-clare</fr:addr>
             <fr:route>dhsorens-clare.xml</fr:route>
             <fr:title text="Clare College, University of Cambridge">Clare College, University of Cambridge</fr:title>
@@ -1196,7 +1196,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>519</fr:anchor>
+            <fr:anchor>521</fr:anchor>
             <fr:addr type="user">dhsorens-000G</fr:addr>
             <fr:route>dhsorens-000G.xml</fr:route>
             <fr:title text="Higher School of Economics">Higher School of Economics</fr:title>
@@ -1218,7 +1218,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>521</fr:anchor>
+            <fr:anchor>523</fr:anchor>
             <fr:addr type="user">dhsorens-000F</fr:addr>
             <fr:route>dhsorens-000F.xml</fr:route>
             <fr:title text="Independent University of Moscow">Independent University of Moscow</fr:title>
@@ -1240,7 +1240,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>523</fr:anchor>
+            <fr:anchor>525</fr:anchor>
             <fr:addr type="user">dhsorens-0005</fr:addr>
             <fr:route>dhsorens-0005.xml</fr:route>
             <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -1494,7 +1494,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>525</fr:anchor>
+            <fr:anchor>527</fr:anchor>
             <fr:addr type="user">dhsorens-spc</fr:addr>
             <fr:route>dhsorens-spc.xml</fr:route>
             <fr:title text="St. Peter's College, University of Oxford">St. Peter's College, University of Oxford</fr:title>
@@ -1516,7 +1516,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>527</fr:anchor>
+            <fr:anchor>529</fr:anchor>
             <fr:addr type="user">dhsorens-0004</fr:addr>
             <fr:route>dhsorens-0004.xml</fr:route>
             <fr:title text="The Barbican">The Barbican</fr:title>
@@ -1538,7 +1538,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>529</fr:anchor>
+            <fr:anchor>531</fr:anchor>
             <fr:addr type="user">dhsorens-cam</fr:addr>
             <fr:route>dhsorens-cam.xml</fr:route>
             <fr:title text="University of Cambridge">University of Cambridge</fr:title>
@@ -1622,7 +1622,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>531</fr:anchor>
+            <fr:anchor>533</fr:anchor>
             <fr:addr type="user">dhsorens-oxf</fr:addr>
             <fr:route>dhsorens-oxf.xml</fr:route>
             <fr:title text="University of Oxford">University of Oxford</fr:title>
@@ -1667,7 +1667,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>533</fr:anchor>
+            <fr:anchor>535</fr:anchor>
             <fr:addr type="user">dhsorens-phd</fr:addr>
             <fr:route>dhsorens-phd.xml</fr:route>
             <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -1812,7 +1812,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>535</fr:anchor>
+            <fr:anchor>537</fr:anchor>
             <fr:addr type="user">dhsorens-msc</fr:addr>
             <fr:route>dhsorens-msc.xml</fr:route>
             <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>
@@ -1846,7 +1846,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>537</fr:anchor>
+            <fr:anchor>539</fr:anchor>
             <fr:addr type="user">index</fr:addr>
             <fr:route>index.xml</fr:route>
             <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
@@ -1857,7 +1857,7 @@
             </fr:authors>
           </fr:frontmatter>
           <fr:mainmatter>
-            <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in Lean.</fr:p>
+            <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
             <fr:p>Here you can see my <fr:link type="local" href="dhsorens-pubs.xml" addr="dhsorens-pubs" title="Peer-Reviewed Publications">publications</fr:link>, <fr:link type="local" href="dhsorens-talks.xml" addr="dhsorens-talks" title="Talks">talks</fr:link>, <fr:link type="local" href="dhsorens-notes.xml" addr="dhsorens-notes" title="Notes">notes</fr:link>, and <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">bio</fr:link>.</fr:p>
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
@@ -1958,7 +1958,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>539</fr:anchor>
+            <fr:anchor>541</fr:anchor>
             <fr:addr type="user">dhsorens-notes</fr:addr>
             <fr:route>dhsorens-notes.xml</fr:route>
             <fr:title text="Notes">Notes</fr:title>
@@ -1972,7 +1972,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>443</fr:anchor>
+                <fr:anchor>445</fr:anchor>
                 <fr:addr type="user">dhsorens-phd</fr:addr>
                 <fr:route>dhsorens-phd.xml</fr:route>
                 <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -2117,7 +2117,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>445</fr:anchor>
+                <fr:anchor>447</fr:anchor>
                 <fr:addr type="user">dhsorens-msc</fr:addr>
                 <fr:route>dhsorens-msc.xml</fr:route>
                 <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>
@@ -2154,7 +2154,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>541</fr:anchor>
+            <fr:anchor>543</fr:anchor>
             <fr:addr type="user">dhsorens-pubs</fr:addr>
             <fr:route>dhsorens-pubs.xml</fr:route>
             <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -2197,7 +2197,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>543</fr:anchor>
+            <fr:anchor>545</fr:anchor>
             <fr:addr type="user">dhsorens-preprints</fr:addr>
             <fr:route>dhsorens-preprints.xml</fr:route>
             <fr:title text="Preprints">Preprints</fr:title>
@@ -2218,7 +2218,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>545</fr:anchor>
+            <fr:anchor>547</fr:anchor>
             <fr:addr type="user">dhsorens-slides</fr:addr>
             <fr:route>dhsorens-slides.xml</fr:route>
             <fr:title text="Slides">Slides</fr:title>
@@ -2237,7 +2237,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>547</fr:anchor>
+            <fr:anchor>549</fr:anchor>
             <fr:addr type="user">dhsorens-talks</fr:addr>
             <fr:route>dhsorens-talks.xml</fr:route>
             <fr:title text="Talks">Talks</fr:title>
