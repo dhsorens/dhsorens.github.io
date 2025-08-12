@@ -5,6 +5,8 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
+forester build forest.toml
+
 # Rename output to docs
 if [ -d output ]; then
     mv output docs

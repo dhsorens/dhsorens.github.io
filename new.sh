@@ -1,3 +1,4 @@
 #!/bin/bash
 
-forester new forest.toml --dest=trees/notes/ --prefix=dhsorens
+DEST_DIR="${1:-notes}"
+forester new forest.toml --dest="trees/$DEST_DIR/" --prefix=dhsorens
