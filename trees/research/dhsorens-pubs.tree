@@ -6,7 +6,7 @@
     \li{\authors. \em{\title}. \venue (\year). [[link](\link)]}
 }
 
-\ol{
+\ul{
     \paper{Sorensen, D}{Formally Specifying Contract Optimizations With Bisimulations in Coq}{FMBC (ETAPS)}{2025}{dhsorens-000J}
     \paper{Sorensen, D}{Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq}{FMBC (ETAPS)}{2024}{dhsorens-000K}
     \paper{Sorensen, D}{(In)Correct Smart Contract Specifications}{ICBC}{2024}{dhsorens-000L}
