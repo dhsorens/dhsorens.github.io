@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>614</fr:anchor>
+    <fr:anchor>626</fr:anchor>
     <fr:addr type="user">dhsorens-talks</fr:addr>
     <fr:route>dhsorens-talks.xml</fr:route>
     <fr:title text="Talks">Talks</fr:title>
@@ -34,7 +34,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>616</fr:anchor>
+            <fr:anchor>628</fr:anchor>
             <fr:addr type="user">index</fr:addr>
             <fr:route>index.xml</fr:route>
             <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
@@ -47,6 +47,7 @@
           <fr:mainmatter>
             <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
             <fr:p>Here you can see my <fr:link type="local" href="dhsorens-pubs.xml" addr="dhsorens-pubs" title="Peer-Reviewed Publications">publications</fr:link>, <fr:link type="local" href="dhsorens-talks.xml" addr="dhsorens-talks" title="Talks">talks</fr:link>, <fr:link type="local" href="dhsorens-notes.xml" addr="dhsorens-notes" title="Notes">notes</fr:link>, and <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">bio</fr:link>.</fr:p>
+            <fr:p>My <fr:link type="local" href="dhsorens-rsrch.xml" addr="dhsorens-rsrch" title="Research">research</fr:link>.</fr:p>
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
@@ -155,7 +156,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>618</fr:anchor>
+            <fr:anchor>630</fr:anchor>
             <fr:addr type="user">index</fr:addr>
             <fr:route>index.xml</fr:route>
             <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
@@ -168,6 +169,7 @@
           <fr:mainmatter>
             <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
             <fr:p>Here you can see my <fr:link type="local" href="dhsorens-pubs.xml" addr="dhsorens-pubs" title="Peer-Reviewed Publications">publications</fr:link>, <fr:link type="local" href="dhsorens-talks.xml" addr="dhsorens-talks" title="Talks">talks</fr:link>, <fr:link type="local" href="dhsorens-notes.xml" addr="dhsorens-notes" title="Notes">notes</fr:link>, and <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">bio</fr:link>.</fr:p>
+            <fr:p>My <fr:link type="local" href="dhsorens-rsrch.xml" addr="dhsorens-rsrch" title="Research">research</fr:link>.</fr:p>
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
@@ -276,7 +278,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>620</fr:anchor>
+            <fr:anchor>632</fr:anchor>
             <fr:addr type="user">dhsorens-slides</fr:addr>
             <fr:route>dhsorens-slides.xml</fr:route>
             <fr:title text="Slides">Slides</fr:title>

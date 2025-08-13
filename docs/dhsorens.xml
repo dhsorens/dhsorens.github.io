@@ -292,6 +292,7 @@
           <fr:mainmatter>
             <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
             <fr:p>Here you can see my <fr:link type="local" href="dhsorens-pubs.xml" addr="dhsorens-pubs" title="Peer-Reviewed Publications">publications</fr:link>, <fr:link type="local" href="dhsorens-talks.xml" addr="dhsorens-talks" title="Talks">talks</fr:link>, <fr:link type="local" href="dhsorens-notes.xml" addr="dhsorens-notes" title="Notes">notes</fr:link>, and <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">bio</fr:link>.</fr:p>
+            <fr:p>My <fr:link type="local" href="dhsorens-rsrch.xml" addr="dhsorens-rsrch" title="Research">research</fr:link>.</fr:p>
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
@@ -1859,6 +1860,7 @@
           <fr:mainmatter>
             <fr:p>I am a mathematician and computer scientist. My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in formal specification of smart contracts in Coq, focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles. These days, I am mostly interested in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
             <fr:p>Here you can see my <fr:link type="local" href="dhsorens-pubs.xml" addr="dhsorens-pubs" title="Peer-Reviewed Publications">publications</fr:link>, <fr:link type="local" href="dhsorens-talks.xml" addr="dhsorens-talks" title="Talks">talks</fr:link>, <fr:link type="local" href="dhsorens-notes.xml" addr="dhsorens-notes" title="Notes">notes</fr:link>, and <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">bio</fr:link>.</fr:p>
+            <fr:p>My <fr:link type="local" href="dhsorens-rsrch.xml" addr="dhsorens-rsrch" title="Research">research</fr:link>.</fr:p>
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
@@ -2219,6 +2221,67 @@
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
             <fr:anchor>550</fr:anchor>
+            <fr:addr type="user">dhsorens-rsrch</fr:addr>
+            <fr:route>dhsorens-rsrch.xml</fr:route>
+            <fr:title text="Research">Research</fr:title>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>My <fr:link type="external" href="docs/sorensen-research-statement.pdf">research statement</fr:link>.</fr:p>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>552</fr:anchor>
+                <fr:addr type="user">dhsorens-pubs</fr:addr>
+                <fr:route>dhsorens-pubs.xml</fr:route>
+                <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <fr:em>Global, robust and comparable digital carbon assets</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000M.xml" addr="dhsorens-000M" title="Global, robust and comparable digital carbon assets">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Butt, K., Sorensen, D. <fr:em>Streamlining Classical Consensus</fr:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link type="local" href="dhsorens-000P.xml" addr="dhsorens-000P" title="Streamlining Classical Consensus">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Establishing Standards for Consensus on Blockchains</fr:em>. ICBC (2019). [<fr:link type="local" href="dhsorens-000Q.xml" addr="dhsorens-000Q" title="Establishing Standards for Consensus on Blockchains">link</fr:link>]</fr:li>
+
+    
+    <fr:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <fr:em>Extensions and applications of equitable decompositions for graphs with symmetries</fr:em>. Linear Algebra and its Applications 532 (2017). [<fr:link type="local" href="dhsorens-000R.xml" addr="dhsorens-000R" title="Extensions and applications of equitable decompositions for graphs with symmetries">link</fr:link>]</fr:li></fr:ul>
+                <fr:p>I also keep some <fr:link type="local" href="dhsorens-preprints.xml" addr="dhsorens-preprints" title="Preprints">preprints</fr:link> on record.</fr:p>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>554</fr:anchor>
             <fr:addr type="user">dhsorens-slides</fr:addr>
             <fr:route>dhsorens-slides.xml</fr:route>
             <fr:title text="Slides">Slides</fr:title>
@@ -2237,7 +2300,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>552</fr:anchor>
+            <fr:anchor>556</fr:anchor>
             <fr:addr type="user">dhsorens-talks</fr:addr>
             <fr:route>dhsorens-talks.xml</fr:route>
             <fr:title text="Talks">Talks</fr:title>
