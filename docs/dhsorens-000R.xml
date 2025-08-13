@@ -32,7 +32,7 @@
             <fr:meta name="toc">true</fr:meta>
           </fr:frontmatter>
           <fr:mainmatter>
-            <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
+            <fr:ol><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
 
     
     <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">link</fr:link>]</fr:li>
@@ -56,7 +56,7 @@
     <fr:li>Sorensen, D. <fr:em>Establishing Standards for Consensus on Blockchains</fr:em>. ICBC (2019). [<fr:link type="local" href="dhsorens-000Q.xml" addr="dhsorens-000Q" title="Establishing Standards for Consensus on Blockchains">link</fr:link>]</fr:li>
 
     
-    <fr:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <fr:em>Extensions and applications of equitable decompositions for graphs with symmetries</fr:em>. Linear Algebra and its Applications 532 (2017). [<fr:link type="local" href="dhsorens-000R.xml" addr="dhsorens-000R" title="Extensions and applications of equitable decompositions for graphs with symmetries">link</fr:link>]</fr:li></fr:ul>
+    <fr:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <fr:em>Extensions and applications of equitable decompositions for graphs with symmetries</fr:em>. Linear Algebra and its Applications 532 (2017). [<fr:link type="local" href="dhsorens-000R.xml" addr="dhsorens-000R" title="Extensions and applications of equitable decompositions for graphs with symmetries">link</fr:link>]</fr:li></fr:ol>
             <fr:p>I also keep some <fr:link type="local" href="dhsorens-preprints.xml" addr="dhsorens-preprints" title="Preprints">preprints</fr:link> on record.</fr:p>
           </fr:mainmatter>
           <fr:backmatter />
