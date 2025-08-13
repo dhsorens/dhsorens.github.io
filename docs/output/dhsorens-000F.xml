@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>397</fr:anchor>
+    <fr:anchor>411</fr:anchor>
     <fr:addr type="user">dhsorens-000F</fr:addr>
     <fr:route>dhsorens-000F.xml</fr:route>
     <fr:title text="Independent University of Moscow">Independent University of Moscow</fr:title>
@@ -29,7 +29,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>399</fr:anchor>
+            <fr:anchor>413</fr:anchor>
             <fr:addr type="user">dhsorens-moscow</fr:addr>
             <fr:route>dhsorens-moscow.xml</fr:route>
             <fr:title text="Moscow">Moscow</fr:title>
@@ -44,7 +44,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>368</fr:anchor>
+                <fr:anchor>382</fr:anchor>
                 <fr:addr type="user">dhsorens-000F</fr:addr>
                 <fr:route>dhsorens-000F.xml</fr:route>
                 <fr:title text="Independent University of Moscow">Independent University of Moscow</fr:title>
@@ -66,7 +66,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>370</fr:anchor>
+                <fr:anchor>384</fr:anchor>
                 <fr:addr type="user">dhsorens-000G</fr:addr>
                 <fr:route>dhsorens-000G.xml</fr:route>
                 <fr:title text="Higher School of Economics">Higher School of Economics</fr:title>
@@ -100,7 +100,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>400</fr:anchor>
+            <fr:anchor>414</fr:anchor>
             <fr:addr type="user">dhsorens-000I</fr:addr>
             <fr:route>dhsorens-000I.xml</fr:route>
             <fr:title text="Year in Moscow">Year in Moscow</fr:title>
