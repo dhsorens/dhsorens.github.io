@@ -14,7 +14,7 @@
     <fr:authors />
   </fr:frontmatter>
   <fr:mainmatter>
-    <fr:p>Proposition and proof, especially in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> and <fr:link type="external" href="dhsoresn-rocq">Rocq</fr:link>, catch my attention from various angles. 
+    <fr:p>Proposition and proof, especially in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> and <fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link>, catch my attention from various angles. 
     This is my most recent research statement as a <fr:link type="external" href="docs/sorensen-research-statement.pdf">PDF</fr:link>.</fr:p>
   </fr:mainmatter>
   <fr:backmatter>
@@ -52,7 +52,7 @@
                 <fr:authors />
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p>Proposition and proof, especially in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> and <fr:link type="external" href="dhsoresn-rocq">Rocq</fr:link>, catch my attention from various angles. 
+                <fr:p>Proposition and proof, especially in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> and <fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link>, catch my attention from various angles. 
     This is my most recent research statement as a <fr:link type="external" href="docs/sorensen-research-statement.pdf">PDF</fr:link>.</fr:p>
               </fr:mainmatter>
               <fr:backmatter />
@@ -100,6 +100,33 @@
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>245</fr:anchor>
+                <fr:addr type="user">dhsorens-talks</fr:addr>
+                <fr:route>dhsorens-talks.xml</fr:route>
+                <fr:title text="Talks">Talks</fr:title>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p>Some selected talks:
+    
+    <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.</fr:li>
+        <fr:li>(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:li>
+        <fr:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. FMBC, April 2024, Luxembourg.</fr:li>
+        <fr:li><fr:link type="external" href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></fr:li>
+        <fr:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</fr:li>
+        <fr:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</fr:li>
+        <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=NZ2ETPurRFU">K framework and type theory. RCon, May 2019, Berlin.</fr:link></fr:li></fr:ul></fr:p>
+                <fr:p>I also keep some of <fr:link type="local" href="dhsorens-slides.xml" addr="dhsorens-slides" title="Slides">my slides here</fr:link>.</fr:p>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
@@ -114,7 +141,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>245</fr:anchor>
+            <fr:anchor>247</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -133,6 +160,30 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <fr:link type="external" href="http://lean-lang.org">http://lean-lang.org</fr:link>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>249</fr:anchor>
+            <fr:addr type="user">dhsorens-rocq</fr:addr>
+            <fr:route>dhsorens-rocq.xml</fr:route>
+            <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
+            <fr:taxon>Tool</fr:taxon>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>15</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:link type="external" href="https://rocq-prover.org">https://rocq-prover.org</fr:link>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
