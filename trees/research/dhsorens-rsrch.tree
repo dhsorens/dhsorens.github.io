@@ -2,8 +2,5 @@
 \author{dhsorens}
 \meta{toc}{true}
 
-\p{
-    My [research statement](docs/sorensen-research-statement.pdf).
-}
-
+\transclude{dhsorens-000S}
 \transclude{dhsorens-pubs}
