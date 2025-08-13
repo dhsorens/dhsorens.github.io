@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="default.xsl"?>
+<fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+  <fr:frontmatter>
+    <fr:anchor>582</fr:anchor>
+    <fr:addr type="user">dhsorens-000M</fr:addr>
+    <fr:route>dhsorens-000M.xml</fr:route>
+    <fr:title text="Global, robust and comparable digital carbon assets">Global, robust and comparable digital carbon assets</fr:title>
+    <fr:taxon>Publication</fr:taxon>
+    <fr:authors />
+    <fr:meta name="external">https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10634343</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:p><fr:em>Paper Abstract:</fr:em> Carbon credits purchased in the voluntary carbon market allow unavoidable emissions, such as international flights for essential travel, to be offset by an equivalent climate benefit, such as avoiding emissions from tropical deforestation. However, many concerns regarding the credibility of these offsetting claims have been raised. Moreover, the credit market is manual, therefore inefficient and unscalable, and non-fungible, therefore illiquid. To address these issues, we propose an efficient digital methodology that combines remote sensing data, modern econometric techniques, and on-chain certification and trading to create a new digital carbon asset (the PACT stablecoin) against which carbon offsetting claims can be transparently verified. PACT stablecoins are produced as outputs from a reproducible computational pipeline for estimating the climate benefits of carbon offset projects that not only quantifies the CO2 emissions involved, but also allows for similar credits to be pooled based on their co-benefits such as biodiversity and jurisdictional attributes, increasing liquidity through fungibility within pools. We implement and evaluate the PACT carbon stablecoin on the Tezos blockchain, which is designed to facilitate low-cost transactions while minimizing environmental impact. Our implementation includes a contract for a registry for tracking issuance, ownership, and retirement of credits, and a custodian contract to bridge on-chain and off-chain transactions. Our work brings scale and trust to the voluntary carbon market by providing a transparent, scalable, and efficient framework for high-integrity carbon credit transactions.</fr:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Backlinks">Backlinks</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>583</fr:anchor>
+            <fr:addr type="user">dhsorens-pubs</fr:addr>
+            <fr:route>dhsorens-pubs.xml</fr:route>
+            <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <fr:em>Global, robust and comparable digital carbon assets</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000M.xml" addr="dhsorens-000M" title="Global, robust and comparable digital carbon assets">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Butt, K., Sorensen, D. <fr:em>Streamlining Classical Consensus</fr:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link type="local" href="dhsorens-000P.xml" addr="dhsorens-000P" title="Streamlining Classical Consensus">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em>Establishing Standards for Consensus on Blockchains</fr:em>. ICBC (2019). [<fr:link type="local" href="dhsorens-000Q.xml" addr="dhsorens-000Q" title="Establishing Standards for Consensus on Blockchains">link</fr:link>]</fr:li>
+
+    
+    <fr:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <fr:em>Extensions and applications of equitable decompositions for graphs with symmetries</fr:em>. Linear Algebra and its Applications 532 (2017). [<fr:link type="local" href="dhsorens-000R.xml" addr="dhsorens-000R" title="Extensions and applications of equitable decompositions for graphs with symmetries">link</fr:link>]</fr:li></fr:ul>
+            <fr:p>I also keep some <fr:link type="local" href="dhsorens-preprints.xml" addr="dhsorens-preprints" title="Preprints">preprints</fr:link> on record.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

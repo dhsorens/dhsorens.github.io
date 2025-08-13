@@ -1,7 +1,0 @@
-\title{Streamlining Classical Consensus}
-\taxon{Publication}
-\meta{external}{https://www.inderscienceonline.com/doi/abs/10.1504/IJBC.2020.112508}
-
-\p{
-    \em{Paper Abstract:} Classical consensus protocols, generally based on rounds of voting, tend to be unscalable because of sheer message volume. Blockchain-style consensus has emerged to solve this problem, but there is still a gaping need for faster, more scalable, and reliably safe consensus protocols. We show that many classical consensus protocols give rise naturally to a directed acyclic graph (DAG), which we call the message DAG. We restructure two classical consensus protocols via the message DAG, consolidating message rounds with new messages, to achieve manifestly improved scalability. The second protocol lends itself to a scalable blockchain consensus protocol with strong safety and liveness guarantees. We also present a technique to generalise other message-based, classical consensus protocols.
-}

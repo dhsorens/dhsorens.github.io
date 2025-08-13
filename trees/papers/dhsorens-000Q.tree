@@ -1,7 +1,0 @@
-\title{Establishing Standards for Consensus on Blockchains}
-\taxon{Publication}
-\meta{external}{https://link.springer.com/chapter/10.1007/978-3-030-23404-1_2}
-
-\p{
-    \em{Paper Abstract:} We survey six popular blockchain consensus algorithms, showing that the blockchain community does not have well-established theoretical foundations. We consolidate and unify these foundational notions, establishing high quality standards and exploring the comparative relationship between foundations used on these different algorithms. The framework established here is meant to be used by academic and industrial blockchain researchers as a foundation for the theory of consensus.
-}

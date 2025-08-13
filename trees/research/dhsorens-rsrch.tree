@@ -1,0 +1,9 @@
+\title{Research}
+\author{dhsorens}
+\meta{toc}{true}
+
+\p{
+    My [research statement](docs/sorensen-research-statement.pdf).
+}
+
+\transclude{dhsorens-pubs}
