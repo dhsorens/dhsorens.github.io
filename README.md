@@ -17,6 +17,7 @@ To commit a change, run:
     ./commit.sh "my message here"
 ```
 This is here because forester outputs things into an `output/` directory, but we want to run it from the `docs/` directory (bc github).
+To build and contribute to this site from the repo, first clone and then change the `docs/` directory to `output/`.
 
 Some commands [are here](cmds.md). 
 
