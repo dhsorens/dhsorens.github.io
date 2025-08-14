@@ -8,12 +8,7 @@ fi
 forester build forest.toml
 
 # Rename output to docs
-if [ -d output ]; then
-    mv output docs
-else
-    echo "Directory 'output' does not exist."
-    exit 1
-fi
+git mv output docs
 
 # Add all changes
 git add .
@@ -22,4 +17,4 @@ git add .
 git commit -m "$1"
 
 # Rename docs back to output
-mv docs output
+git mv docs output
