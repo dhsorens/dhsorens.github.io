@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>315</fr:anchor>
+    <fr:anchor>305</fr:anchor>
     <fr:addr type="user">dhsorens-000C</fr:addr>
     <fr:route>dhsorens-000C.xml</fr:route>
     <fr:title text="Links and Referencing my PhD Thesis">Links and Referencing my PhD Thesis</fr:title>
@@ -30,7 +30,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>317</fr:anchor>
+            <fr:anchor>307</fr:anchor>
             <fr:addr type="user">dhsorens-phd</fr:addr>
             <fr:route>dhsorens-phd.xml</fr:route>
             <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>

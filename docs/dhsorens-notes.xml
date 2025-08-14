@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>606</fr:anchor>
+    <fr:anchor>602</fr:anchor>
     <fr:addr type="user">dhsorens-notes</fr:addr>
     <fr:route>dhsorens-notes.xml</fr:route>
     <fr:title text="Notes">Notes</fr:title>
@@ -16,7 +16,7 @@
   <fr:mainmatter>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>464</fr:anchor>
+        <fr:anchor>460</fr:anchor>
         <fr:addr type="user">dhsorens-phd</fr:addr>
         <fr:route>dhsorens-phd.xml</fr:route>
         <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -161,7 +161,7 @@
     </fr:tree>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>466</fr:anchor>
+        <fr:anchor>462</fr:anchor>
         <fr:addr type="user">dhsorens-msc</fr:addr>
         <fr:route>dhsorens-msc.xml</fr:route>
         <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>
@@ -203,7 +203,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>608</fr:anchor>
+            <fr:anchor>604</fr:anchor>
             <fr:addr type="user">index</fr:addr>
             <fr:route>index.xml</fr:route>
             <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>

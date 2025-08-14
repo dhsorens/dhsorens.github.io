@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>598</fr:anchor>
+    <fr:anchor>594</fr:anchor>
     <fr:addr type="user">dhsorens-000J</fr:addr>
     <fr:route>dhsorens-000J.xml</fr:route>
     <fr:title text="Formally Specifying Contract Optimizations With Bisimulations in Coq">Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:title>
@@ -22,7 +22,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>599</fr:anchor>
+            <fr:anchor>595</fr:anchor>
             <fr:addr type="user">dhsorens-0008</fr:addr>
             <fr:route>dhsorens-0008.xml</fr:route>
             <fr:title text="The Papers of My PhD Thesis">The Papers of My PhD Thesis</fr:title>
@@ -59,7 +59,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>601</fr:anchor>
+            <fr:anchor>597</fr:anchor>
             <fr:addr type="user">dhsorens-pubs</fr:addr>
             <fr:route>dhsorens-pubs.xml</fr:route>
             <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>

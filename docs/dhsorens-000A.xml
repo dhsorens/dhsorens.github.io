@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>346</fr:anchor>
+    <fr:anchor>336</fr:anchor>
     <fr:addr type="user">dhsorens-000A</fr:addr>
     <fr:route>dhsorens-000A.xml</fr:route>
     <fr:title text="The Main Contributions of my PhD Thesis">The Main Contributions of my PhD Thesis</fr:title>
@@ -42,7 +42,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>348</fr:anchor>
+            <fr:anchor>338</fr:anchor>
             <fr:addr type="user">dhsorens-phd</fr:addr>
             <fr:route>dhsorens-phd.xml</fr:route>
             <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -196,7 +196,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>350</fr:anchor>
+            <fr:anchor>340</fr:anchor>
             <fr:addr type="user">dhsorens-000B</fr:addr>
             <fr:route>dhsorens-000B.xml</fr:route>
             <fr:title text="Interactive Theorem Provers">Interactive Theorem Provers</fr:title>
@@ -215,7 +215,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>301</fr:anchor>
+                <fr:anchor>291</fr:anchor>
                 <fr:addr type="user">dhsorens-lean</fr:addr>
                 <fr:route>dhsorens-lean.xml</fr:route>
                 <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -239,7 +239,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>303</fr:anchor>
+                <fr:anchor>293</fr:anchor>
                 <fr:addr type="user">dhsorens-rocq</fr:addr>
                 <fr:route>dhsorens-rocq.xml</fr:route>
                 <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
@@ -263,7 +263,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>305</fr:anchor>
+                <fr:anchor>295</fr:anchor>
                 <fr:addr type="user">dhsorens-0006</fr:addr>
                 <fr:route>dhsorens-0006.xml</fr:route>
                 <fr:title text="Isabelle/HOL">Isabelle/HOL</fr:title>
@@ -290,7 +290,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>352</fr:anchor>
+            <fr:anchor>342</fr:anchor>
             <fr:addr type="user">dhsorens-0007</fr:addr>
             <fr:route>dhsorens-0007.xml</fr:route>
             <fr:title text="Category Theory">Category Theory</fr:title>

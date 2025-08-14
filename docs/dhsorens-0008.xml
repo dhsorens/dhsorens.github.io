@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>319</fr:anchor>
+    <fr:anchor>309</fr:anchor>
     <fr:addr type="user">dhsorens-0008</fr:addr>
     <fr:route>dhsorens-0008.xml</fr:route>
     <fr:title text="The Papers of My PhD Thesis">The Papers of My PhD Thesis</fr:title>
@@ -44,7 +44,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>321</fr:anchor>
+            <fr:anchor>311</fr:anchor>
             <fr:addr type="user">dhsorens-phd</fr:addr>
             <fr:route>dhsorens-phd.xml</fr:route>
             <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -198,7 +198,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>323</fr:anchor>
+            <fr:anchor>313</fr:anchor>
             <fr:addr type="user">dhsorens-000L</fr:addr>
             <fr:route>dhsorens-000L.xml</fr:route>
             <fr:title text="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications</fr:title>
@@ -213,7 +213,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>324</fr:anchor>
+            <fr:anchor>314</fr:anchor>
             <fr:addr type="user">dhsorens-000J</fr:addr>
             <fr:route>dhsorens-000J.xml</fr:route>
             <fr:title text="Formally Specifying Contract Optimizations With Bisimulations in Coq">Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:title>
@@ -228,7 +228,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>325</fr:anchor>
+            <fr:anchor>315</fr:anchor>
             <fr:addr type="user">dhsorens-000O</fr:addr>
             <fr:route>dhsorens-000O.xml</fr:route>
             <fr:title text="Structured Pools for Tokenized Carbon Credits">Structured Pools for Tokenized Carbon Credits</fr:title>
@@ -243,7 +243,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>326</fr:anchor>
+            <fr:anchor>316</fr:anchor>
             <fr:addr type="user">dhsorens-000N</fr:addr>
             <fr:route>dhsorens-000N.xml</fr:route>
             <fr:title text="Tokenized Carbon Credits">Tokenized Carbon Credits</fr:title>
@@ -258,7 +258,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>327</fr:anchor>
+            <fr:anchor>317</fr:anchor>
             <fr:addr type="user">dhsorens-000K</fr:addr>
             <fr:route>dhsorens-000K.xml</fr:route>
             <fr:title text="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:title>

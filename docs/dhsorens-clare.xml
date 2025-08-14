@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>407</fr:anchor>
+    <fr:anchor>405</fr:anchor>
     <fr:addr type="user">dhsorens-clare</fr:addr>
     <fr:route>dhsorens-clare.xml</fr:route>
     <fr:title text="Clare College, University of Cambridge">Clare College, University of Cambridge</fr:title>
@@ -52,7 +52,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>409</fr:anchor>
+            <fr:anchor>407</fr:anchor>
             <fr:addr type="user">dhsorens-cam</fr:addr>
             <fr:route>dhsorens-cam.xml</fr:route>
             <fr:title text="University of Cambridge">University of Cambridge</fr:title>

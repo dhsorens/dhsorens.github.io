@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>664</fr:anchor>
+    <fr:anchor>660</fr:anchor>
     <fr:addr type="user">dhsorens-000K</fr:addr>
     <fr:route>dhsorens-000K.xml</fr:route>
     <fr:title text="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:title>
@@ -22,7 +22,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>665</fr:anchor>
+            <fr:anchor>661</fr:anchor>
             <fr:addr type="user">dhsorens-0008</fr:addr>
             <fr:route>dhsorens-0008.xml</fr:route>
             <fr:title text="The Papers of My PhD Thesis">The Papers of My PhD Thesis</fr:title>
@@ -59,7 +59,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>667</fr:anchor>
+            <fr:anchor>663</fr:anchor>
             <fr:addr type="user">dhsorens-pubs</fr:addr>
             <fr:route>dhsorens-pubs.xml</fr:route>
             <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>

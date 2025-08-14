@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>421</fr:anchor>
+    <fr:anchor>419</fr:anchor>
     <fr:addr type="user">dhsorens-0005</fr:addr>
     <fr:route>dhsorens-0005.xml</fr:route>
     <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -21,7 +21,7 @@
   <fr:mainmatter>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>291</fr:anchor>
+        <fr:anchor>364</fr:anchor>
         <fr:addr type="user">dhsorens-000H</fr:addr>
         <fr:route>dhsorens-000H.xml</fr:route>
         <fr:title text="Undergraduate in Mathematics">Undergraduate in Mathematics</fr:title>
@@ -47,7 +47,7 @@
     </fr:tree>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>293</fr:anchor>
+        <fr:anchor>366</fr:anchor>
         <fr:addr type="user">dhsorens-000I</fr:addr>
         <fr:route>dhsorens-000I.xml</fr:route>
         <fr:title text="Year in Moscow">Year in Moscow</fr:title>
@@ -74,7 +74,7 @@
     </fr:tree>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>295</fr:anchor>
+        <fr:anchor>368</fr:anchor>
         <fr:addr type="user">dhsorens-msc</fr:addr>
         <fr:route>dhsorens-msc.xml</fr:route>
         <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>
@@ -108,7 +108,7 @@
     </fr:tree>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>297</fr:anchor>
+        <fr:anchor>370</fr:anchor>
         <fr:addr type="user">dhsorens-phd</fr:addr>
         <fr:route>dhsorens-phd.xml</fr:route>
         <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -261,7 +261,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>423</fr:anchor>
+            <fr:anchor>421</fr:anchor>
             <fr:addr type="user">dhsorens</fr:addr>
             <fr:route>dhsorens.xml</fr:route>
             <fr:title text="Derek Sorensen">Derek Sorensen</fr:title>
@@ -276,7 +276,7 @@
     <fr:link type="local" href="dhsorens-london.xml" addr="dhsorens-london" title="London">London</fr:link>-based.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>424</fr:anchor>
+                <fr:anchor>422</fr:anchor>
                 <fr:addr type="user">dhsorens-0005</fr:addr>
                 <fr:route>dhsorens-0005.xml</fr:route>
                 <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -295,7 +295,7 @@
               <fr:mainmatter>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>291</fr:anchor>
+                    <fr:anchor>364</fr:anchor>
                     <fr:addr type="user">dhsorens-000H</fr:addr>
                     <fr:route>dhsorens-000H.xml</fr:route>
                     <fr:title text="Undergraduate in Mathematics">Undergraduate in Mathematics</fr:title>
@@ -321,7 +321,7 @@
                 </fr:tree>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>293</fr:anchor>
+                    <fr:anchor>366</fr:anchor>
                     <fr:addr type="user">dhsorens-000I</fr:addr>
                     <fr:route>dhsorens-000I.xml</fr:route>
                     <fr:title text="Year in Moscow">Year in Moscow</fr:title>
@@ -348,7 +348,7 @@
                 </fr:tree>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>295</fr:anchor>
+                    <fr:anchor>368</fr:anchor>
                     <fr:addr type="user">dhsorens-msc</fr:addr>
                     <fr:route>dhsorens-msc.xml</fr:route>
                     <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>
@@ -382,7 +382,7 @@
                 </fr:tree>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>297</fr:anchor>
+                    <fr:anchor>370</fr:anchor>
                     <fr:addr type="user">dhsorens-phd</fr:addr>
                     <fr:route>dhsorens-phd.xml</fr:route>
                     <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -528,39 +528,6 @@
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
-          </fr:mainmatter>
-          <fr:backmatter />
-        </fr:tree>
-      </fr:mainmatter>
-      <fr:backmatter />
-    </fr:tree>
-    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
-      <fr:frontmatter>
-        <fr:title text="Backlinks">Backlinks</fr:title>
-        <fr:authors />
-      </fr:frontmatter>
-      <fr:mainmatter>
-        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
-          <fr:frontmatter>
-            <fr:anchor>426</fr:anchor>
-            <fr:addr type="user">dhsorens-hott</fr:addr>
-            <fr:route>dhsorens-hott.xml</fr:route>
-            <fr:title text="Homotopy Type Theory (HoTT)">Homotopy Type Theory (HoTT)</fr:title>
-            <fr:date>
-              <fr:year>2025</fr:year>
-              <fr:month>6</fr:month>
-              <fr:day>15</fr:day>
-            </fr:date>
-            <fr:authors>
-              <fr:author>
-                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
-              </fr:author>
-            </fr:authors>
-            <fr:meta name="toc">true</fr:meta>
-          </fr:frontmatter>
-          <fr:mainmatter>
-            <fr:p>Homotopy Type Theory (HoTT) is a type theory whose types can be interpreted (usefully) as topological spaces, complete with loop spaces, homology, and homotopy groups. I got into it as I was moving into computer science from a pure-mathematical <fr:link type="local" href="dhsorens-0005.xml" addr="dhsorens-0005" title="Intellectual and Educational Bio">background</fr:link> focused mostly on algebraic topology.</fr:p>
-            <fr:p><fr:link type="external" href="http://homotopytypetheory.org/book/">The HoTT book</fr:link> is the best introduction that I know of.</fr:p>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
