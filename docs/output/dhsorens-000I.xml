@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>371</fr:anchor>
+    <fr:anchor>376</fr:anchor>
     <fr:addr type="user">dhsorens-000I</fr:addr>
     <fr:route>dhsorens-000I.xml</fr:route>
     <fr:title text="Year in Moscow">Year in Moscow</fr:title>
@@ -34,7 +34,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>373</fr:anchor>
+            <fr:anchor>378</fr:anchor>
             <fr:addr type="user">dhsorens-0005</fr:addr>
             <fr:route>dhsorens-0005.xml</fr:route>
             <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -263,19 +263,19 @@
                   </fr:frontmatter>
                   <fr:mainmatter>
                     <fr:p>
-                      <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11">link</fr:link>]</fr:li>
+                      <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10634444?casa_token=-EkCXOOQn70AAAAA:W09Gm3MRunig0B0OPcVH5cnj-0GIbG5iDiILHbBc1aBnsH3WIV8BlM0XPs3-mvRRhDru02ey">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="external" href="https://ledger.pitt.edu/ojs/ledger/article/view/294">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10174866">link</fr:link>]</fr:li></fr:ul>
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">link</fr:link>]</fr:li></fr:ul>
                     </fr:p>
                   </fr:mainmatter>
                   <fr:backmatter />
@@ -297,7 +297,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>375</fr:anchor>
+            <fr:anchor>380</fr:anchor>
             <fr:addr type="user">dhsorens-0007</fr:addr>
             <fr:route>dhsorens-0007.xml</fr:route>
             <fr:title text="Category Theory">Category Theory</fr:title>
@@ -320,7 +320,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>377</fr:anchor>
+            <fr:anchor>382</fr:anchor>
             <fr:addr type="user">dhsorens-000G</fr:addr>
             <fr:route>dhsorens-000G.xml</fr:route>
             <fr:title text="Higher School of Economics">Higher School of Economics</fr:title>
@@ -342,7 +342,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>379</fr:anchor>
+            <fr:anchor>384</fr:anchor>
             <fr:addr type="user">dhsorens-000F</fr:addr>
             <fr:route>dhsorens-000F.xml</fr:route>
             <fr:title text="Independent University of Moscow">Independent University of Moscow</fr:title>
@@ -364,7 +364,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>381</fr:anchor>
+            <fr:anchor>386</fr:anchor>
             <fr:addr type="user">dhsorens-moscow</fr:addr>
             <fr:route>dhsorens-moscow.xml</fr:route>
             <fr:title text="Moscow">Moscow</fr:title>
@@ -379,7 +379,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>382</fr:anchor>
+                <fr:anchor>387</fr:anchor>
                 <fr:addr type="user">dhsorens-000F</fr:addr>
                 <fr:route>dhsorens-000F.xml</fr:route>
                 <fr:title text="Independent University of Moscow">Independent University of Moscow</fr:title>
@@ -401,7 +401,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>384</fr:anchor>
+                <fr:anchor>389</fr:anchor>
                 <fr:addr type="user">dhsorens-000G</fr:addr>
                 <fr:route>dhsorens-000G.xml</fr:route>
                 <fr:title text="Higher School of Economics">Higher School of Economics</fr:title>
@@ -426,7 +426,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>386</fr:anchor>
+            <fr:anchor>391</fr:anchor>
             <fr:addr type="user">dhsorens-msc</fr:addr>
             <fr:route>dhsorens-msc.xml</fr:route>
             <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>

@@ -20,19 +20,19 @@
   </fr:frontmatter>
   <fr:mainmatter>
     <fr:p>
-      <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11">link</fr:link>]</fr:li>
+      <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10634444?casa_token=-EkCXOOQn70AAAAA:W09Gm3MRunig0B0OPcVH5cnj-0GIbG5iDiILHbBc1aBnsH3WIV8BlM0XPs3-mvRRhDru02ey">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="external" href="https://ledger.pitt.edu/ojs/ledger/article/view/294">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10174866">link</fr:link>]</fr:li></fr:ul>
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">link</fr:link>]</fr:li></fr:ul>
     </fr:p>
   </fr:mainmatter>
   <fr:backmatter>
@@ -167,23 +167,107 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <fr:p>
-                  <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11">link</fr:link>]</fr:li>
+                  <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10634444?casa_token=-EkCXOOQn70AAAAA:W09Gm3MRunig0B0OPcVH5cnj-0GIbG5iDiILHbBc1aBnsH3WIV8BlM0XPs3-mvRRhDru02ey">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="external" href="https://ledger.pitt.edu/ojs/ledger/article/view/294">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10174866">link</fr:link>]</fr:li></fr:ul>
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">link</fr:link>]</fr:li></fr:ul>
                 </fr:p>
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Related">Related</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>323</fr:anchor>
+            <fr:addr type="user">dhsorens-000L</fr:addr>
+            <fr:route>dhsorens-000L.xml</fr:route>
+            <fr:title text="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications</fr:title>
+            <fr:taxon>Publication</fr:taxon>
+            <fr:authors />
+            <fr:meta name="external">https://ieeexplore.ieee.org/abstract/document/10634444</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:em>Paper Abstract:</fr:em> Poorly specified smart contracts can be vulnerable to attacks on faulty design. Formal methods are currently unable to address these vulnerabilities because they are not vulnerabilities of incorrect code, but of incorrect specification. We are thus in need of a paradigm shift in how we specify and verify smart contracts which allows for a rigorous and accurate notion of a contract specification’s correctness. We submit that correctness includes appropriate cryptoeconomic behaviors, which are generally out of scope of a contract’s specification. We advocate for an approach to contract specification consisting of contract axiomatization and metaspecification, and illustrate with an example.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>324</fr:anchor>
+            <fr:addr type="user">dhsorens-000J</fr:addr>
+            <fr:route>dhsorens-000J.xml</fr:route>
+            <fr:title text="Formally Specifying Contract Optimizations With Bisimulations in Coq">Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:title>
+            <fr:taxon>Publication</fr:taxon>
+            <fr:authors />
+            <fr:meta name="external">https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:em>Paper Abstract:</fr:em> The efficacy of formal verification of smart contracts depends on being able to correctly specify and carry out the verification of optimized code. However, code optimized for performance is rarely optimized for intelligibility, which can make formally verifying optimized code difficult and costly. To address this issue, we present a formal tool for reasoning about an optimized contract in terms of its reference implementation. This tool reduces the work of formally verifying an optimized contract to proving behavioral equivalence to the reference implementation.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>325</fr:anchor>
+            <fr:addr type="user">dhsorens-000O</fr:addr>
+            <fr:route>dhsorens-000O.xml</fr:route>
+            <fr:title text="Structured Pools for Tokenized Carbon Credits">Structured Pools for Tokenized Carbon Credits</fr:title>
+            <fr:taxon>Publication</fr:taxon>
+            <fr:authors />
+            <fr:meta name="external">https://ieeexplore.ieee.org/abstract/document/10174866</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:em>Paper Abstract:</fr:em> Tokenized carbon credits are of growing relevance to voluntary carbon markets, but because tokenized carbon credits are typically NFTs, they suffer from low liquidity and high price volatility on-chain. Current solutions pool carbon credits to enable greater liquidity, but are incomplete. We present a novel pooling mechanism which we call a structured pool, which addresses issues with current pooling techniques.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>326</fr:anchor>
+            <fr:addr type="user">dhsorens-000N</fr:addr>
+            <fr:route>dhsorens-000N.xml</fr:route>
+            <fr:title text="Tokenized Carbon Credits">Tokenized Carbon Credits</fr:title>
+            <fr:taxon>Publication</fr:taxon>
+            <fr:authors />
+            <fr:meta name="external">https://ledger.pitt.edu/ojs/ledger/article/view/294</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:em>Paper Abstract:</fr:em> Blockchains are well-suited for tokenizing, trading, and retiring voluntary carbon credits. However, tokenized carbon credits are a heterogeneous body of tokens on the blockchain, which hampers some key goals of the industry. We give a detailed exposition of the current state of tokenized carbon credits and the surrounding blockchain-based ecosystem, with the goal of clarifying current impediments to token interoperability and trading with high liquidity.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>327</fr:anchor>
+            <fr:addr type="user">dhsorens-000K</fr:addr>
+            <fr:route>dhsorens-000K.xml</fr:route>
+            <fr:title text="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:title>
+            <fr:taxon>Publication</fr:taxon>
+            <fr:authors />
+            <fr:meta name="external">https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:em>Paper Abstract:</fr:em> Smart contract upgrades are costly from a verification perspective and can be a meaningful source of vulnerabilities when done incorrectly. Unfortunately, there is no established, formal framework through which one can reason about contracts as they undergo upgrades, though much work has been done to verify standalone smart contracts. Instead, one must repeat the full verification process for each contract upgrade, something which relies heavily on fallible intuition, can lead to unexpected vulnerabilities, and drives up the cost of formally verifying smart contracts. We propose a formal framework for contract upgrades in ConCert, a Coq-based smart contract verification tool. Central to this framework is our notion of a contract morphism, a theoretical tool which we introduce to formally encode structural relationships between smart contracts, and with which we can formally specify and verify an upgraded contract relative to its previous versions. We argue that ours is a natural framework for specifying and verifying contract upgrades, and hope to offer a first step towards rigorous, efficient specification and verification of contract upgrades.</fr:p>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>

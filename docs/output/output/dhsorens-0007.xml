@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>374</fr:anchor>
+    <fr:anchor>388</fr:anchor>
     <fr:addr type="user">dhsorens-0007</fr:addr>
     <fr:route>dhsorens-0007.xml</fr:route>
     <fr:title text="Category Theory">Category Theory</fr:title>
@@ -30,7 +30,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>376</fr:anchor>
+            <fr:anchor>390</fr:anchor>
             <fr:addr type="user">dhsorens-0009</fr:addr>
             <fr:route>dhsorens-0009.xml</fr:route>
             <fr:title text="The Background to my PhD Thesis">The Background to my PhD Thesis</fr:title>
@@ -58,7 +58,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>378</fr:anchor>
+            <fr:anchor>392</fr:anchor>
             <fr:addr type="user">dhsorens-000A</fr:addr>
             <fr:route>dhsorens-000A.xml</fr:route>
             <fr:title text="The Main Contributions of my PhD Thesis">The Main Contributions of my PhD Thesis</fr:title>
@@ -93,7 +93,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>380</fr:anchor>
+            <fr:anchor>394</fr:anchor>
             <fr:addr type="user">dhsorens-000I</fr:addr>
             <fr:route>dhsorens-000I.xml</fr:route>
             <fr:title text="Year in Moscow">Year in Moscow</fr:title>

@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>365</fr:anchor>
+    <fr:anchor>370</fr:anchor>
     <fr:addr type="user">dhsorens-000H</fr:addr>
     <fr:route>dhsorens-000H.xml</fr:route>
     <fr:title text="Undergraduate in Mathematics">Undergraduate in Mathematics</fr:title>
@@ -33,7 +33,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>367</fr:anchor>
+            <fr:anchor>372</fr:anchor>
             <fr:addr type="user">dhsorens-0005</fr:addr>
             <fr:route>dhsorens-0005.xml</fr:route>
             <fr:title text="Intellectual and Educational Bio">Intellectual and Educational Bio</fr:title>
@@ -262,19 +262,19 @@
                   </fr:frontmatter>
                   <fr:mainmatter>
                     <fr:p>
-                      <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11">link</fr:link>]</fr:li>
+                      <fr:ul><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10634444?casa_token=-EkCXOOQn70AAAAA:W09Gm3MRunig0B0OPcVH5cnj-0GIbG5iDiILHbBc1aBnsH3WIV8BlM0XPs3-mvRRhDru02ey">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="external" href="https://ledger.pitt.edu/ojs/ledger/article/view/294">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">link</fr:link>]</fr:li>
 
         
-    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10174866">link</fr:link>]</fr:li></fr:ul>
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">link</fr:link>]</fr:li></fr:ul>
                     </fr:p>
                   </fr:mainmatter>
                   <fr:backmatter />
