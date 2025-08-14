@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="default.xsl"?>
+<fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+  <fr:frontmatter>
+    <fr:anchor>573</fr:anchor>
+    <fr:addr type="user">dhsorens-000J</fr:addr>
+    <fr:route>dhsorens-000J.xml</fr:route>
+    <fr:title text="Formally Specifying Contract Optimizations With Bisimulations in Coq">Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:title>
+    <fr:taxon>Publication</fr:taxon>
+    <fr:authors />
+    <fr:meta name="external">https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter />
+  <fr:backmatter>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Backlinks">Backlinks</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>574</fr:anchor>
+            <fr:addr type="user">dhsorens-pubs</fr:addr>
+            <fr:route>dhsorens-pubs.xml</fr:route>
+            <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:ul><fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:link></fr:em>. FMBC (ETAPS) (2025). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:link></fr:em>. FMBC (ETAPS) (2024). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications</fr:link></fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10634444">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <fr:em><fr:link type="local" href="dhsorens-000M.xml" addr="dhsorens-000M" title="Global, robust and comparable digital carbon assets">Global, robust and comparable digital carbon assets</fr:link></fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10634343">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">Tokenized Carbon Credits</fr:link></fr:em>. Ledger (2023). [<fr:link type="external" href="https://ledger.pitt.edu/ojs/ledger/article/view/294">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">Structured Pools for Tokenized Carbon Credits</fr:link></fr:em>. ICBC CryptoEx (2023). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10174866">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Butt, K., Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000P.xml" addr="dhsorens-000P" title="Streamlining Classical Consensus">Streamlining Classical Consensus</fr:link></fr:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link type="external" href="https://www.inderscienceonline.com/doi/abs/10.1504/IJBC.2020.112508">link</fr:link>]</fr:li>
+
+    
+    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000Q.xml" addr="dhsorens-000Q" title="Establishing Standards for Consensus on Blockchains">Establishing Standards for Consensus on Blockchains</fr:link></fr:em>. ICBC (2019). [<fr:link type="external" href="https://link.springer.com/chapter/10.1007/978-3-030-23404-1_2">link</fr:link>]</fr:li>
+
+    
+    <fr:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <fr:em><fr:link type="local" href="dhsorens-000R.xml" addr="dhsorens-000R" title="Extensions and applications of equitable decompositions for graphs with symmetries">Extensions and applications of equitable decompositions for graphs with symmetries</fr:link></fr:em>. Linear Algebra and its Applications 532 (2017). [<fr:link type="external" href="https://www.sciencedirect.com/science/article/pii/S0024379517304093">link</fr:link>]</fr:li></fr:ul>
+            <fr:p>I also keep some <fr:link type="local" href="dhsorens-preprints.xml" addr="dhsorens-preprints" title="Preprints">preprints</fr:link> on record.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

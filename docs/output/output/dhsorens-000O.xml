@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>611</fr:anchor>
+    <fr:anchor>635</fr:anchor>
     <fr:addr type="user">dhsorens-000O</fr:addr>
     <fr:route>dhsorens-000O.xml</fr:route>
     <fr:title text="Structured Pools for Tokenized Carbon Credits">Structured Pools for Tokenized Carbon Credits</fr:title>
@@ -10,7 +10,9 @@
     <fr:authors />
     <fr:meta name="external">https://ieeexplore.ieee.org/abstract/document/10174866</fr:meta>
   </fr:frontmatter>
-  <fr:mainmatter />
+  <fr:mainmatter>
+    <fr:p><fr:em>Paper Abstract:</fr:em> Tokenized carbon credits are of growing relevance to voluntary carbon markets, but because tokenized carbon credits are typically NFTs, they suffer from low liquidity and high price volatility on-chain. Current solutions pool carbon credits to enable greater liquidity, but are incomplete. We present a novel pooling mechanism which we call a structured pool, which addresses issues with current pooling techniques.</fr:p>
+  </fr:mainmatter>
   <fr:backmatter>
     <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
@@ -20,7 +22,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>612</fr:anchor>
+            <fr:anchor>636</fr:anchor>
             <fr:addr type="user">dhsorens-pubs</fr:addr>
             <fr:route>dhsorens-pubs.xml</fr:route>
             <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -32,31 +34,31 @@
             <fr:meta name="toc">true</fr:meta>
           </fr:frontmatter>
           <fr:mainmatter>
-            <fr:ul><fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:link></fr:em>. FMBC (ETAPS) (2025). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11">link</fr:link>]</fr:li>
+            <fr:ol><fr:li>Sorensen, D. <fr:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:em>. FMBC (ETAPS) (2025). [<fr:link type="local" href="dhsorens-000J.xml" addr="dhsorens-000J" title="Formally Specifying Contract Optimizations With Bisimulations in Coq">link</fr:link>]</fr:li>
 
     
-    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:link></fr:em>. FMBC (ETAPS) (2024). [<fr:link type="external" href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:em>. FMBC (ETAPS) (2024). [<fr:link type="local" href="dhsorens-000K.xml" addr="dhsorens-000K" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">link</fr:link>]</fr:li>
 
     
-    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications</fr:link></fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10634444">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>(In)Correct Smart Contract Specifications</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">link</fr:link>]</fr:li>
 
     
-    <fr:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <fr:em><fr:link type="local" href="dhsorens-000M.xml" addr="dhsorens-000M" title="Global, robust and comparable digital carbon assets">Global, robust and comparable digital carbon assets</fr:link></fr:em>. ICBC (2024). [<fr:link type="external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10634343">link</fr:link>]</fr:li>
+    <fr:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <fr:em>Global, robust and comparable digital carbon assets</fr:em>. ICBC (2024). [<fr:link type="local" href="dhsorens-000M.xml" addr="dhsorens-000M" title="Global, robust and comparable digital carbon assets">link</fr:link>]</fr:li>
 
     
-    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">Tokenized Carbon Credits</fr:link></fr:em>. Ledger (2023). [<fr:link type="external" href="https://ledger.pitt.edu/ojs/ledger/article/view/294">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Tokenized Carbon Credits</fr:em>. Ledger (2023). [<fr:link type="local" href="dhsorens-000N.xml" addr="dhsorens-000N" title="Tokenized Carbon Credits">link</fr:link>]</fr:li>
 
     
-    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">Structured Pools for Tokenized Carbon Credits</fr:link></fr:em>. ICBC CryptoEx (2023). [<fr:link type="external" href="https://ieeexplore.ieee.org/abstract/document/10174866">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Structured Pools for Tokenized Carbon Credits</fr:em>. ICBC CryptoEx (2023). [<fr:link type="local" href="dhsorens-000O.xml" addr="dhsorens-000O" title="Structured Pools for Tokenized Carbon Credits">link</fr:link>]</fr:li>
 
     
-    <fr:li>Butt, K., Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000P.xml" addr="dhsorens-000P" title="Streamlining Classical Consensus">Streamlining Classical Consensus</fr:link></fr:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link type="external" href="https://www.inderscienceonline.com/doi/abs/10.1504/IJBC.2020.112508">link</fr:link>]</fr:li>
+    <fr:li>Butt, K., Sorensen, D. <fr:em>Streamlining Classical Consensus</fr:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link type="local" href="dhsorens-000P.xml" addr="dhsorens-000P" title="Streamlining Classical Consensus">link</fr:link>]</fr:li>
 
     
-    <fr:li>Sorensen, D. <fr:em><fr:link type="local" href="dhsorens-000Q.xml" addr="dhsorens-000Q" title="Establishing Standards for Consensus on Blockchains">Establishing Standards for Consensus on Blockchains</fr:link></fr:em>. ICBC (2019). [<fr:link type="external" href="https://link.springer.com/chapter/10.1007/978-3-030-23404-1_2">link</fr:link>]</fr:li>
+    <fr:li>Sorensen, D. <fr:em>Establishing Standards for Consensus on Blockchains</fr:em>. ICBC (2019). [<fr:link type="local" href="dhsorens-000Q.xml" addr="dhsorens-000Q" title="Establishing Standards for Consensus on Blockchains">link</fr:link>]</fr:li>
 
     
-    <fr:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <fr:em><fr:link type="local" href="dhsorens-000R.xml" addr="dhsorens-000R" title="Extensions and applications of equitable decompositions for graphs with symmetries">Extensions and applications of equitable decompositions for graphs with symmetries</fr:link></fr:em>. Linear Algebra and its Applications 532 (2017). [<fr:link type="external" href="https://www.sciencedirect.com/science/article/pii/S0024379517304093">link</fr:link>]</fr:li></fr:ul>
+    <fr:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <fr:em>Extensions and applications of equitable decompositions for graphs with symmetries</fr:em>. Linear Algebra and its Applications 532 (2017). [<fr:link type="local" href="dhsorens-000R.xml" addr="dhsorens-000R" title="Extensions and applications of equitable decompositions for graphs with symmetries">link</fr:link>]</fr:li></fr:ol>
             <fr:p>I also keep some <fr:link type="local" href="dhsorens-preprints.xml" addr="dhsorens-preprints" title="Preprints">preprints</fr:link> on record.</fr:p>
           </fr:mainmatter>
           <fr:backmatter />

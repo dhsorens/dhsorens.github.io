@@ -10,10 +10,10 @@
 
 \p{
     \ul{
-        \paper{Sorensen, D}{Formally Specifying Contract Optimizations With Bisimulations in Coq}{FMBC (ETAPS)}{2025}{https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2025.11}
-        \paper{Sorensen, D}{Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq}{FMBC (ETAPS)}{2024}{https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.FMBC.2024.7}
-        \paper{Sorensen, D}{(In)Correct Smart Contract Specifications}{ICBC}{2024}{https://ieeexplore.ieee.org/abstract/document/10634444?casa_token=-EkCXOOQn70AAAAA:W09Gm3MRunig0B0OPcVH5cnj-0GIbG5iDiILHbBc1aBnsH3WIV8BlM0XPs3-mvRRhDru02ey}
-        \paper{Sorensen, D}{Tokenized Carbon Credits}{Ledger}{2023}{https://ledger.pitt.edu/ojs/ledger/article/view/294}
-        \paper{Sorensen, D}{Structured Pools for Tokenized Carbon Credits}{ICBC CryptoEx}{2023}{https://ieeexplore.ieee.org/abstract/document/10174866}    
+        \paper{Sorensen, D}{Formally Specifying Contract Optimizations With Bisimulations in Coq}{FMBC (ETAPS)}{2025}{dhsorens-000J}
+        \paper{Sorensen, D}{Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq}{FMBC (ETAPS)}{2024}{dhsorens-000K}
+        \paper{Sorensen, D}{(In)Correct Smart Contract Specifications}{ICBC}{2024}{dhsorens-000L}
+        \paper{Sorensen, D}{Tokenized Carbon Credits}{Ledger}{2023}{dhsorens-000N}
+        \paper{Sorensen, D}{Structured Pools for Tokenized Carbon Credits}{ICBC CryptoEx}{2023}{dhsorens-000O}
     }
 }
