@@ -433,7 +433,9 @@
                 </fr:authors>
                 <fr:meta name="toc">true</fr:meta>
               </fr:frontmatter>
-              <fr:mainmatter />
+              <fr:mainmatter>
+                <fr:p>The Barbican is a post-war, brutalist masterpiece in central London, complete with a library, cinema, performance venues, and residences.</fr:p>
+              </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
           </fr:mainmatter>
@@ -1533,7 +1535,9 @@
             </fr:authors>
             <fr:meta name="toc">true</fr:meta>
           </fr:frontmatter>
-          <fr:mainmatter />
+          <fr:mainmatter>
+            <fr:p>The Barbican is a post-war, brutalist masterpiece in central London, complete with a library, cinema, performance venues, and residences.</fr:p>
+          </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
