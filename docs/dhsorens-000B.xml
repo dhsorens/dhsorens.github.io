@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="default.xsl"?>
+<fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+  <fr:frontmatter>
+    <fr:anchor>299</fr:anchor>
+    <fr:addr type="user">dhsorens-000B</fr:addr>
+    <fr:route>dhsorens-000B.xml</fr:route>
+    <fr:title text="Interactive Theorem Provers">Interactive Theorem Provers</fr:title>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>6</fr:month>
+      <fr:day>15</fr:day>
+    </fr:date>
+    <fr:authors>
+      <fr:author>
+        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:meta name="toc">true</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:anchor>301</fr:anchor>
+        <fr:addr type="user">dhsorens-lean</fr:addr>
+        <fr:route>dhsorens-lean.xml</fr:route>
+        <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
+        <fr:taxon>Tool</fr:taxon>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>6</fr:month>
+          <fr:day>15</fr:day>
+        </fr:date>
+        <fr:authors>
+          <fr:author>
+            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:link type="external" href="http://lean-lang.org">http://lean-lang.org</fr:link>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:anchor>303</fr:anchor>
+        <fr:addr type="user">dhsorens-rocq</fr:addr>
+        <fr:route>dhsorens-rocq.xml</fr:route>
+        <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
+        <fr:taxon>Tool</fr:taxon>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>6</fr:month>
+          <fr:day>15</fr:day>
+        </fr:date>
+        <fr:authors>
+          <fr:author>
+            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:link type="external" href="https://rocq-prover.org">https://rocq-prover.org</fr:link>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:anchor>305</fr:anchor>
+        <fr:addr type="user">dhsorens-0006</fr:addr>
+        <fr:route>dhsorens-0006.xml</fr:route>
+        <fr:title text="Isabelle/HOL">Isabelle/HOL</fr:title>
+        <fr:taxon>Tool</fr:taxon>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>6</fr:month>
+          <fr:day>15</fr:day>
+        </fr:date>
+        <fr:authors>
+          <fr:author>
+            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:p><fr:link type="external" href="https://www.isa-afp.org">Archive of Formal Proofs</fr:link> and the <fr:link type="external" href="https://isabelle.in.tum.de">prover</fr:link>.</fr:p>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Backlinks">Backlinks</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>307</fr:anchor>
+            <fr:addr type="user">dhsorens-000A</fr:addr>
+            <fr:route>dhsorens-000A.xml</fr:route>
+            <fr:title text="The Main Contributions of my PhD Thesis">The Main Contributions of my PhD Thesis</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>15</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>My PhD thesis proposes two different ways of handling the problem of a specification's <fr:em>correctness</fr:em>.
+    Both draw heavily on the theoretically robust nature of <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link>.</fr:p>
+            <fr:p>The first is through what I would informally call the "meta work," where the specification itself is treated like a mathematical object to study and prove correctness, like the software we're trying to prove correct. This uses prose and specification to articulate desired behaviors of a smart contract that are already easy to define, <fr:em>e.g.</fr:em> desirable economic or game-theoretic properties.</fr:p>
+            <fr:p>The second is through the use of abstract tools that approximate the desired behavior.
+    My first motivating example is that of a smart contract upgrade.
+    When upgrading any software, intuitively we understand an updated version as incrementally different from a previous version—we're adding feature X, Y, and Z, fixing bugs, removing outdated functionality. 
+    All of this frames conversation and understanding of the new software in terms of the old.
+    Why not then apply that to the formal specification?</fr:p>
+            <fr:p>I introduced the notion of a <fr:em>contract morphism</fr:em>, or a formal structural relationship between two contracts that could be used in specification. The term "morphism" is <fr:link type="local" href="dhsorens-0007.xml" addr="dhsorens-0007" title="Category Theory">category-theoretic</fr:link>, and is a general mathematical way of establishing a relationship between two objects.
+    Once this formal relationship is established, proofs of one contract can be transported over that relationship to another contract.
+    If the morphism is <fr:em>invertible</fr:em>, then the formal relationship establishes an equivalence of contracts, which could be useful <fr:em>e.g.</fr:em> for proving optimized code correct with regards to a reference implementation.
+    The morphism allows one to use a <fr:em>contract</fr:em> as a specification, something which can be far more intuitive than using prose.</fr:p>
+            <fr:p>All of this is encapsulated fairly well in <fr:link type="external" href="slides/spec-correct.pdf">the slides of this talk</fr:link>.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>
