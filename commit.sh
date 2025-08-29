@@ -7,8 +7,12 @@ fi
 
 forester build forest.toml
 
+cp output/fukkr-favicon/android-chrome-192x192.png output/android-chrome-192x192.png
+cp output/fukkr-favicon/android-chrome-512x512.png output/android-chrome-512x512.png
+cp output/fukkr-favicon/apple-touch-icon.png output/apple-touch-icon.png
+
 # Rename output to docs
-git mv output docs
+mv output docs
 
 # Add all changes
 git add .
@@ -17,4 +21,4 @@ git add .
 git commit -m "$1"
 
 # Rename docs back to output
-git mv docs output
+mv docs output
