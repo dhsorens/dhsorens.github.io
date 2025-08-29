@@ -8,7 +8,7 @@ fi
 forester build forest.toml
 
 # Rename output to docs
-git mv output docs
+mv output docs
 
 # Add all changes
 git add .
@@ -17,4 +17,4 @@ git add .
 git commit -m "$1"
 
 # Rename docs back to output
-git mv docs output
+mv docs output
