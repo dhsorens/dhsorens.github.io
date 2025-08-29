@@ -7,6 +7,10 @@ fi
 
 forester build forest.toml
 
+cp output/fukkr-favicon/apple-touch-icon.png output/apple-touch-icon.png
+cp output/fukkr-favicon/android-chrome-512x512.png output/android-chrome-512x512.png
+cp output/fukkr-favicon/android-chrome-192x192.png output/android-chrome-192x192.png
+
 # Rename output to docs
 git mv output docs
 
