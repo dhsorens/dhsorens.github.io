@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>239</fr:anchor>
+    <fr:anchor>452</fr:anchor>
     <fr:addr type="user">dhsorens-000T</fr:addr>
     <fr:route>dhsorens-000T.xml</fr:route>
     <fr:title text="Some Notes in Algebraic Topology">Some Notes in Algebraic Topology</fr:title>
@@ -38,7 +38,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>241</fr:anchor>
+            <fr:anchor>454</fr:anchor>
             <fr:addr type="user">dhsorens-msc</fr:addr>
             <fr:route>dhsorens-msc.xml</fr:route>
             <fr:title text="MSc in Algebraic Topology">MSc in Algebraic Topology</fr:title>
@@ -60,7 +60,7 @@
             <fr:p>I have my dissertation <fr:link type="external" href="docs/sorensen-msc-dissertation.pdf">here</fr:link>, but the dissertation included introductory appendices to various useful topics, which I have separated into their individual notes below.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>243</fr:anchor>
+                <fr:anchor>279</fr:anchor>
                 <fr:addr type="user">dhsorens-000T</fr:addr>
                 <fr:route>dhsorens-000T.xml</fr:route>
                 <fr:title text="Some Notes in Algebraic Topology">Some Notes in Algebraic Topology</fr:title>
