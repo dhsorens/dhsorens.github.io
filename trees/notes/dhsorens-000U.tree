@@ -1,0 +1,16 @@
+\title{Formal Specification and Verification}
+\author{dhsorens}
+\date{2025-08-29}
+\meta{toc}{true}
+
+\p{
+    Most of my formal research work is in [formal specification and verification](dhsorens-000X), especially in [proof assistants](dhsorens-000B) like [Lean](dhsorens-lean), [Rocq](dhsorens-rocq), and the like.
+
+    I have spent a lot of time thinking about [smart contract](dhsorens-000Y) design, specification, and verification.
+    % They are interesting for several reasons, as described below.
+
+    % I also think a lot about [type theory and formal proof](dhsorens-000V) more broadly.
+}
+
+\transclude{dhsorens-000W} % smart contracts 
+\transclude{dhsorens-0015} % fv in proof assistants, more broadly

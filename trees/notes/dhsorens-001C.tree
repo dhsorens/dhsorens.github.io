@@ -1,0 +1,13 @@
+\title{Work Bio}
+\author{dhsorens}
+\date{2025-09-03}
+\meta{toc}{true}
+
+% TODO summary of all my jobs, and the associated projects that I've worked on
+
+\p{
+    For a conscise summary of my work experience, see my [resume](docs/sorensen-resume.pdf).
+}
+
+\transclude{dhsorens-0018}
+

@@ -1,8 +1,12 @@
-\title{Work History}
+\title{Work}
 \author{dhsorens}
 \date{2025-06-15}
 \meta{toc}{true}
 
+% TODO summary of all my jobs, and the associated projects that I've worked on
+
 \p{
-    See my [resume](docs/sorensen-resume.pdf).
+    See my [resume](docs/sorensen-resume.pdf), and a [work bio](dhsorens-001C).
 }
+
+% \transclude{dhsorens-0018}

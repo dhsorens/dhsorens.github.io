@@ -1,0 +1,17 @@
+\title{Formal Verification in Proof Assistants}
+\author{dhsorens}
+\date{2025-09-02}
+\meta{toc}{true}
+
+\p{
+    Speaking more broadly, [formal verification](dhsorens-000X) in [proof assistants](dhsorens-000B) is interesting because in the robustly mathematical setting provided by proof assistants, one can state and prove arbitrary properties—in other words, almost \em{anything}.
+
+    In some ways, this is a blessing and a curse.
+    Much like with programming languages, being able to state and do arbitrary things is not always an advantage.
+    Formal counterparts of informal specifications can vary widely, without an obvious way to compare them or evaluate them for correctness (see the Introduction of my [PhD thesis](docs/sorensen-phd-thesis.pdf)).
+
+}
+
+\p{
+    In my [PhD](dhsorens-phd) and subsequent writings (e.g. [this paper](dhsorens-000L) or my [research statement](docs/sorensen-research-statement.pdf)), I have argued that the robustly mathematical setting of proof assistants offers us an opportunity for unmatched rigor, but we must draw on mathematical practice and tradition and use them in a more sophisticated way than we are using them now.
+}
