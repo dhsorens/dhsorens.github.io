@@ -1,0 +1,13 @@
+\title{Formalization of Mathematics}
+\author{dhsorens}
+\date{2025-09-02}
+\meta{toc}{true}
+
+\p{
+    There has been a great deal of community-driven work in the formalization of mathematics in [Lean](dhsorens-lean), [Rocq](dhsorens-rocq), [Isabelle/HOL](dhsorens-0006), and [Agda](dhsorens-0014).
+}
+
+\transclude{dhsorens-0010} % formalization in Lean
+\transclude{dhsorens-0011} % formalization in Rocq
+\transclude{dhsorens-0012} % formalization in Isabelle/HOL
+\transclude{dhsorens-0013} % formalization in Agda

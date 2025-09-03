@@ -4,7 +4,7 @@
 \meta{toc}{true}
 
 \p{
-    My PhD thesis proposes two different ways of handling the problem of a specification's \em{correctness}.
+    My [PhD thesis](docs/sorensen-phd-thesis.pdf) proposes two different ways of handling the problem of a specification's \em{correctness}.
     Both draw heavily on the theoretically robust nature of [proof assistants](dhsorens-000B).
 }
 

@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>493</fr:anchor>
+    <fr:anchor>729</fr:anchor>
     <fr:addr type="user">dhsorens-000L</fr:addr>
     <fr:route>dhsorens-000L.xml</fr:route>
     <fr:title text="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications</fr:title>
@@ -22,7 +22,62 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>494</fr:anchor>
+            <fr:anchor>730</fr:anchor>
+            <fr:addr type="user">dhsorens-0015</fr:addr>
+            <fr:route>dhsorens-0015.xml</fr:route>
+            <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>Speaking more broadly, <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link> is interesting because in the robustly mathematical setting provided by proof assistants, one can state and prove arbitrary properties—in other words, almost <fr:em>anything</fr:em>.
+
+    In some ways, this is a blessing and a curse.
+    Much like with programming languages, being able to state and do arbitrary things is not always an advantage.
+    Formal counterparts of informal specifications can vary widely, without an obvious way to compare them or evaluate them for correctness (see the Introduction of my <fr:link type="external" href="docs/sorensen-phd-thesis.pdf">PhD thesis</fr:link>).</fr:p>
+            <fr:p>In my <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> and subsequent writings (e.g. <fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">this paper</fr:link> or my <fr:link type="external" href="docs/sorensen-research-statement.pdf">research statement</fr:link>), I have argued that the robustly mathematical setting of proof assistants offers us an opportunity for unmatched rigor, but we must draw on mathematical practice and tradition and use them in a more sophisticated way than we are using them now.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>732</fr:anchor>
+            <fr:addr type="user">dhsorens-000W</fr:addr>
+            <fr:route>dhsorens-000W.xml</fr:route>
+            <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>29</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> are programs that execute on the blockchain.
+    They are interesting from the perspective of formal specification and verification because:</fr:p>
+            <fr:ol><fr:li>they are risk- and property-dense,</fr:li>
+    <fr:li>they are typically small in size, with a deterministic and well-defined execution environment, making them feasible to formally reason about in a short time frame, and</fr:li>
+    <fr:li>they often manage huge sums of money (so the incentives line up).</fr:li></fr:ol>
+            <fr:p>Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely interesting (and <fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">nontrivial</fr:link>) specifications, which warrants a study not only of the science of going from specification to verification (formal proof), but of the <fr:em>specifications themselves</fr:em> as independent, mathematical objects.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>734</fr:anchor>
             <fr:addr type="user">dhsorens-0008</fr:addr>
             <fr:route>dhsorens-0008.xml</fr:route>
             <fr:title text="The Papers of My PhD Thesis">The Papers of My PhD Thesis</fr:title>
@@ -59,7 +114,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>496</fr:anchor>
+            <fr:anchor>736</fr:anchor>
             <fr:addr type="user">dhsorens-pubs</fr:addr>
             <fr:route>dhsorens-pubs.xml</fr:route>
             <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
