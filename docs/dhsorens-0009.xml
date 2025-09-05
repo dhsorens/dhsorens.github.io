@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>547</fr:anchor>
+    <fr:anchor>615</fr:anchor>
     <fr:addr type="user">dhsorens-0009</fr:addr>
     <fr:route>dhsorens-0009.xml</fr:route>
     <fr:title text="The Background to my PhD Thesis">The Background to my PhD Thesis</fr:title>
@@ -22,7 +22,7 @@
     <fr:p>From October 2019 until December 2023, I was a PhD student at the <fr:link type="local" href="dhsorens-cam.xml" addr="dhsorens-cam" title="University of Cambridge">University of Cambridge</fr:link>. I started my PhD trying to look at the Adam's Spectral Sequence in <fr:link type="local" href="dhsorens-hott.xml" addr="dhsorens-hott" title="Homotopy Type Theory (HoTT)">HoTT</fr:link> (ambitious, by what I'm given to understand), but life and covid lockdowns happened. I ended up pivoting into interactive theorem proving, thinking about financial smart contracts and their specifications.</fr:p>
     <fr:p>The main question that haunted me during my PhD was this: We can prove software correct with regards to a specification, but how does one know that a <fr:em>specification</fr:em> is correct? What could a notion of "correctness" even look like for software specifications?</fr:p>
     <fr:p>What followed was a prolonged meditation on the nature of the process of going from ideas and intuition into concrete implementation. My research was mostly an exploration on the formal tools used to write formal specifications. I was particularly fascinated by the use of interactive theorem provers (ITPs)—<fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link>, <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>, <fr:link type="local" href="dhsorens-0006.xml" addr="dhsorens-0006" title="Isabelle/HOL">Isabelle/HOL</fr:link> and the like—to specify smart contracts because of their extreme flexibility and versatility. You can state and prove <fr:em>anything</fr:em> in these, which can be thrilling but also provides a huge amount of flexibility.</fr:p>
-    <fr:p>At the same time, the formalization of mathematics (in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>) was beginning to catch my attention. The computer lab at the time had a weekly seminar on the formalization of mathematics, which I could attend when it didn't conflict with my commitments with <fr:link type="local" href="dhsorens-cccc.xml" addr="dhsorens-cccc" title="Choir of Clare College">Clare choir</fr:link>. While I knew I was not interested in actually doing the formalization myself, I was unquestionably drawn into the research of those that were—in particular, the observations they made about the intricacies of going from pen-and-paper proofs to formal proofs.</fr:p>
+    <fr:p>At the same time, the formalization of mathematics (in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>) was <fr:link type="local" href="dhsorens-0017.xml" addr="dhsorens-0017" title="How the Formalization of Mathematics Relates to my Work">beginning to catch my attention</fr:link>. The computer lab at the time had a weekly seminar on the formalization of mathematics, which I could attend when it didn't conflict with my commitments with <fr:link type="local" href="dhsorens-cccc.xml" addr="dhsorens-cccc" title="Choir of Clare College">Clare choir</fr:link>. While I knew I was not interested in actually doing the formalization myself, I was unquestionably drawn into the research of those that were—in particular, the observations they made about the intricacies of going from pen-and-paper proofs to formal proofs.</fr:p>
     <fr:p>Mathematicians were finding small, nuanced, and implicit assumptions made and expressed intuitively through notation and definitions that all mathematicians seemed to understand and get, but that had to be both discovered and made explicit during the process of formalization. I really started to learn the role of intuition that a mathematician undergoes when they codify a new mathematical concept into a formal definition—both in the realm of pen-and-paper mathematics as well as in the realm of formal proof.</fr:p>
     <fr:p>It was during this time that I started to experiment with formal definitions and structures that are common to mathematics, and highly useful for mathematical definitions, for the specification and verification of smart contracts. The structures and definitions I chose, mostly from very basic <fr:link type="local" href="dhsorens-0007.xml" addr="dhsorens-0007" title="Category Theory">category theory</fr:link>, play a heavy role in modern theories of computation and programming languages but do not feature in specifications themselves (<fr:em>e.g.</fr:em> from a behavioral perspective).</fr:p>
   </fr:mainmatter>
@@ -35,7 +35,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>549</fr:anchor>
+            <fr:anchor>617</fr:anchor>
             <fr:addr type="user">dhsorens-phd</fr:addr>
             <fr:route>dhsorens-phd.xml</fr:route>
             <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
@@ -54,7 +54,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>253</fr:anchor>
+                <fr:anchor>275</fr:anchor>
                 <fr:addr type="user">dhsorens-000C</fr:addr>
                 <fr:route>dhsorens-000C.xml</fr:route>
                 <fr:title text="Links and Referencing my PhD Thesis">Links and Referencing my PhD Thesis</fr:title>
@@ -77,7 +77,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>255</fr:anchor>
+                <fr:anchor>277</fr:anchor>
                 <fr:addr type="user">dhsorens-0009</fr:addr>
                 <fr:route>dhsorens-0009.xml</fr:route>
                 <fr:title text="The Background to my PhD Thesis">The Background to my PhD Thesis</fr:title>
@@ -97,7 +97,7 @@
                 <fr:p>From October 2019 until December 2023, I was a PhD student at the <fr:link type="local" href="dhsorens-cam.xml" addr="dhsorens-cam" title="University of Cambridge">University of Cambridge</fr:link>. I started my PhD trying to look at the Adam's Spectral Sequence in <fr:link type="local" href="dhsorens-hott.xml" addr="dhsorens-hott" title="Homotopy Type Theory (HoTT)">HoTT</fr:link> (ambitious, by what I'm given to understand), but life and covid lockdowns happened. I ended up pivoting into interactive theorem proving, thinking about financial smart contracts and their specifications.</fr:p>
                 <fr:p>The main question that haunted me during my PhD was this: We can prove software correct with regards to a specification, but how does one know that a <fr:em>specification</fr:em> is correct? What could a notion of "correctness" even look like for software specifications?</fr:p>
                 <fr:p>What followed was a prolonged meditation on the nature of the process of going from ideas and intuition into concrete implementation. My research was mostly an exploration on the formal tools used to write formal specifications. I was particularly fascinated by the use of interactive theorem provers (ITPs)—<fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link>, <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>, <fr:link type="local" href="dhsorens-0006.xml" addr="dhsorens-0006" title="Isabelle/HOL">Isabelle/HOL</fr:link> and the like—to specify smart contracts because of their extreme flexibility and versatility. You can state and prove <fr:em>anything</fr:em> in these, which can be thrilling but also provides a huge amount of flexibility.</fr:p>
-                <fr:p>At the same time, the formalization of mathematics (in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>) was beginning to catch my attention. The computer lab at the time had a weekly seminar on the formalization of mathematics, which I could attend when it didn't conflict with my commitments with <fr:link type="local" href="dhsorens-cccc.xml" addr="dhsorens-cccc" title="Choir of Clare College">Clare choir</fr:link>. While I knew I was not interested in actually doing the formalization myself, I was unquestionably drawn into the research of those that were—in particular, the observations they made about the intricacies of going from pen-and-paper proofs to formal proofs.</fr:p>
+                <fr:p>At the same time, the formalization of mathematics (in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>) was <fr:link type="local" href="dhsorens-0017.xml" addr="dhsorens-0017" title="How the Formalization of Mathematics Relates to my Work">beginning to catch my attention</fr:link>. The computer lab at the time had a weekly seminar on the formalization of mathematics, which I could attend when it didn't conflict with my commitments with <fr:link type="local" href="dhsorens-cccc.xml" addr="dhsorens-cccc" title="Choir of Clare College">Clare choir</fr:link>. While I knew I was not interested in actually doing the formalization myself, I was unquestionably drawn into the research of those that were—in particular, the observations they made about the intricacies of going from pen-and-paper proofs to formal proofs.</fr:p>
                 <fr:p>Mathematicians were finding small, nuanced, and implicit assumptions made and expressed intuitively through notation and definitions that all mathematicians seemed to understand and get, but that had to be both discovered and made explicit during the process of formalization. I really started to learn the role of intuition that a mathematician undergoes when they codify a new mathematical concept into a formal definition—both in the realm of pen-and-paper mathematics as well as in the realm of formal proof.</fr:p>
                 <fr:p>It was during this time that I started to experiment with formal definitions and structures that are common to mathematics, and highly useful for mathematical definitions, for the specification and verification of smart contracts. The structures and definitions I chose, mostly from very basic <fr:link type="local" href="dhsorens-0007.xml" addr="dhsorens-0007" title="Category Theory">category theory</fr:link>, play a heavy role in modern theories of computation and programming languages but do not feature in specifications themselves (<fr:em>e.g.</fr:em> from a behavioral perspective).</fr:p>
               </fr:mainmatter>
@@ -105,7 +105,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>257</fr:anchor>
+                <fr:anchor>279</fr:anchor>
                 <fr:addr type="user">dhsorens-000A</fr:addr>
                 <fr:route>dhsorens-000A.xml</fr:route>
                 <fr:title text="The Main Contributions of my PhD Thesis">The Main Contributions of my PhD Thesis</fr:title>
@@ -140,7 +140,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>259</fr:anchor>
+                <fr:anchor>281</fr:anchor>
                 <fr:addr type="user">dhsorens-0008</fr:addr>
                 <fr:route>dhsorens-0008.xml</fr:route>
                 <fr:title text="The Papers of My PhD Thesis">The Papers of My PhD Thesis</fr:title>
@@ -189,7 +189,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>551</fr:anchor>
+            <fr:anchor>619</fr:anchor>
             <fr:addr type="user">dhsorens-000V</fr:addr>
             <fr:route>dhsorens-000V.xml</fr:route>
             <fr:title text="Type Theory and Formal Proof">Type Theory and Formal Proof</fr:title>
@@ -221,7 +221,220 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>553</fr:anchor>
+            <fr:anchor>621</fr:anchor>
+            <fr:addr type="user">dhsorens-0017</fr:addr>
+            <fr:route>dhsorens-0017.xml</fr:route>
+            <fr:title text="How the Formalization of Mathematics Relates to my Work">How the Formalization of Mathematics Relates to my Work</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>259</fr:anchor>
+                <fr:addr type="user">dhsorens-001F</fr:addr>
+                <fr:route>dhsorens-001F.xml</fr:route>
+                <fr:title text="Proposition and Proof in Mathematics and Computer Science">Proposition and Proof in Mathematics and Computer Science</fr:title>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p><fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">Proof assistants</fr:link> are one link by which the notions of proposition and proof are relevant to computer scientists and mathematicians alike. Computer scientists use proof assistants, such as Coq or Lean, to formally verify code whose security is paramount by stating and proving theorems. Mathematicians increasingly use proof assistants in a project to <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">formalize both classical and modern mathematics</fr:link>.</fr:p>
+                <fr:p>However, proposition and proof for mathematicians and computer scientists often do not much resemble each other, both in how proofs are engineered as well as in the kinds of propositions formalized.
+    Unless software specifications are explicitly mathematical, like in the case of <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification by proving those propositions true. These sorts of propositions comprising the specification are informed by experience and best practices, but typically not any formal, underlying theory. In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.</fr:p>
+                <fr:p>These differences are, in my mind, well worth meditating on.
+    My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in some ways an attempt to reconcile the mathematical approach to stating and proving theorems; the jury is still out for me as to whether that is actually useful.</fr:p>
+                <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                  <fr:frontmatter>
+                    <fr:anchor>247</fr:anchor>
+                    <fr:addr type="user">dhsorens-001H</fr:addr>
+                    <fr:route>dhsorens-001H.xml</fr:route>
+                    <fr:title text="The Computer Scientist's Approach to Proposition and Proof">The Computer Scientist's Approach to Proposition and Proof</fr:title>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>5</fr:day>
+                    </fr:date>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <fr:p>Some software or computer logic is both highly technical and explicitly mathematical.
+    Depending on the level of computation, the goal of a bit of code—maybe something backing a <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero-knowledge proof</fr:link> or the design of a chip—may be extremely easy to state precisely because the purpose of the software is expressly technical and/or mathematical.
+    In these cases, the <fr:em>specification</fr:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.</fr:p>
+                    <fr:p>However, software does much more than mathematical computation.
+    As it gets higher in abstraction, software can become a social and financial intermediary between people, or even an agent of its own.
+    The interface by which we use technology is software;
+    the flow of a sales team's CRM is software;
+    the media by which news gets reported and propagated is software.
+    Software makes music, tells stories, implements art and design;
+    it manages money and communication between people.</fr:p>
+                    <fr:p>At these higher layers of abstraction, software can become difficult to specify <fr:em>correctly</fr:em>.
+    By this I mean that the intended and desired behavior of software can be difficult to articulate in prose or in formal language.</fr:p>
+                    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                      <fr:frontmatter>
+                        <fr:anchor>249</fr:anchor>
+                        <fr:addr type="user">dhsorens-001M</fr:addr>
+                        <fr:route>dhsorens-001M.xml</fr:route>
+                        <fr:title text="Specifying Large Language Models (LLMs)">Specifying Large Language Models (LLMs)</fr:title>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>9</fr:month>
+                          <fr:day>5</fr:day>
+                        </fr:date>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <fr:p>Consider the problem of specifying the "correct" behavior of a large language model like Chat GPT.
+    The technologists who have built these LLMs are probably more aware than anyone—no one <fr:em>really</fr:em> knows what the correct behavior of an artificial intelligence is or should be.
+    We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would rather it not produce even though it could do so in principle within the bounds of being helpful, knowledgeable, and honest.
+    These things include somewhat-universally-agreed-upon things like child porn and slanderous and libelous deep fakes.
+    In more of a grey area, they increasingly also include politically inconvenient facts or references to certain events in history about which we remain sensitive.</fr:p>
+                        <fr:p>In other words, we want the LLM to be kind, or to have a value system of some kind.
+    An LLM should not encourage someone to kill themselves.
+    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).</fr:p>
+                        <fr:p>The problem with asking an LLM to behave ethically is <fr:em>who</fr:em> is to say what is right, and good, and true? <fr:em>What</fr:em> value system should dominate?
+    People will have different philosophies on what they think the behavior of an LLM should be, but we are far from any point of consensus on what that should be.
+    Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align itself with that.
+    (Think of the film <fr:em>I, Robot</fr:em> as a meditation on the unintended (and disasterous, tyranical) consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)</fr:p>
+                        <fr:p>I would argue that the problem of correctly specifying an LLM is the problem that religion tends to address—one of value, meaning, and knowing goodness.
+    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form—much less in prose, and even less a <fr:em>formal</fr:em> specification.</fr:p>
+                      </fr:mainmatter>
+                      <fr:backmatter />
+                    </fr:tree>
+                    <fr:p>The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>.</fr:p>
+                    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                      <fr:frontmatter>
+                        <fr:anchor>251</fr:anchor>
+                        <fr:addr type="user">dhsorens-001J</fr:addr>
+                        <fr:route>dhsorens-001J.xml</fr:route>
+                        <fr:title text="Smart Contract Specifications">Smart Contract Specifications</fr:title>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>9</fr:month>
+                          <fr:day>5</fr:day>
+                        </fr:date>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <fr:p />
+                      </fr:mainmatter>
+                      <fr:backmatter />
+                    </fr:tree>
+                  </fr:mainmatter>
+                  <fr:backmatter />
+                </fr:tree>
+                <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                  <fr:frontmatter>
+                    <fr:anchor>253</fr:anchor>
+                    <fr:addr type="user">dhsorens-001G</fr:addr>
+                    <fr:route>dhsorens-001G.xml</fr:route>
+                    <fr:title text="The Mathematician's Approach to Proposition and Proof">The Mathematician's Approach to Proposition and Proof</fr:title>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>5</fr:day>
+                    </fr:date>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <fr:p>Mathematicians craft propositions and proofs</fr:p>
+                    <fr:p>For example, consider the history of the definition of <fr:em>compactness</fr:em> in mathematics.</fr:p>
+                    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                      <fr:frontmatter>
+                        <fr:anchor>243</fr:anchor>
+                        <fr:addr type="user">dhsorens-001I</fr:addr>
+                        <fr:route>dhsorens-001I.xml</fr:route>
+                        <fr:title text="Compactness: Definition and Theory">Compactness: Definition and Theory</fr:title>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>9</fr:month>
+                          <fr:day>5</fr:day>
+                        </fr:date>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <fr:p />
+                      </fr:mainmatter>
+                      <fr:backmatter />
+                    </fr:tree>
+                  </fr:mainmatter>
+                  <fr:backmatter />
+                </fr:tree>
+                <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                  <fr:frontmatter>
+                    <fr:anchor>255</fr:anchor>
+                    <fr:addr type="user">dhsorens-001K</fr:addr>
+                    <fr:route>dhsorens-001K.xml</fr:route>
+                    <fr:title text="Similarities and Differences">Similarities and Differences</fr:title>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>5</fr:day>
+                    </fr:date>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <fr:p>Ultimately,</fr:p>
+                  </fr:mainmatter>
+                  <fr:backmatter />
+                </fr:tree>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>623</fr:anchor>
             <fr:addr type="user">dhsorens-hott</fr:addr>
             <fr:route>dhsorens-hott.xml</fr:route>
             <fr:title text="Homotopy Type Theory (HoTT)">Homotopy Type Theory (HoTT)</fr:title>
@@ -244,7 +457,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>555</fr:anchor>
+            <fr:anchor>625</fr:anchor>
             <fr:addr type="user">dhsorens-0006</fr:addr>
             <fr:route>dhsorens-0006.xml</fr:route>
             <fr:title text="Isabelle/HOL">Isabelle/HOL</fr:title>
@@ -268,7 +481,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>557</fr:anchor>
+            <fr:anchor>627</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -292,7 +505,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>559</fr:anchor>
+            <fr:anchor>629</fr:anchor>
             <fr:addr type="user">dhsorens-rocq</fr:addr>
             <fr:route>dhsorens-rocq.xml</fr:route>
             <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
@@ -316,7 +529,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>561</fr:anchor>
+            <fr:anchor>631</fr:anchor>
             <fr:addr type="user">dhsorens-0007</fr:addr>
             <fr:route>dhsorens-0007.xml</fr:route>
             <fr:title text="Category Theory">Category Theory</fr:title>
@@ -339,7 +552,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>563</fr:anchor>
+            <fr:anchor>633</fr:anchor>
             <fr:addr type="user">dhsorens-cccc</fr:addr>
             <fr:route>dhsorens-cccc.xml</fr:route>
             <fr:title text="Choir of Clare College">Choir of Clare College</fr:title>
@@ -361,7 +574,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>565</fr:anchor>
+            <fr:anchor>635</fr:anchor>
             <fr:addr type="user">dhsorens-cam</fr:addr>
             <fr:route>dhsorens-cam.xml</fr:route>
             <fr:title text="University of Cambridge">University of Cambridge</fr:title>
@@ -381,7 +594,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>490</fr:anchor>
+                <fr:anchor>556</fr:anchor>
                 <fr:addr type="user">avsm</fr:addr>
                 <fr:route>avsm.xml</fr:route>
                 <fr:title text="Anil Madhavapeddy">Anil Madhavapeddy</fr:title>
@@ -397,7 +610,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>491</fr:anchor>
+                <fr:anchor>557</fr:anchor>
                 <fr:addr type="user">dhsorens-clare</fr:addr>
                 <fr:route>dhsorens-clare.xml</fr:route>
                 <fr:title text="Clare College, University of Cambridge">Clare College, University of Cambridge</fr:title>
@@ -417,7 +630,7 @@
               <fr:mainmatter>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>493</fr:anchor>
+                    <fr:anchor>559</fr:anchor>
                     <fr:addr type="user">dhsorens-cccc</fr:addr>
                     <fr:route>dhsorens-cccc.xml</fr:route>
                     <fr:title text="Choir of Clare College">Choir of Clare College</fr:title>

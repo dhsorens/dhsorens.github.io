@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="default.xsl"?>
+<fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+  <fr:frontmatter>
+    <fr:anchor>287</fr:anchor>
+    <fr:addr type="user">dhsorens-001J</fr:addr>
+    <fr:route>dhsorens-001J.xml</fr:route>
+    <fr:title text="Smart Contract Specifications">Smart Contract Specifications</fr:title>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>9</fr:month>
+      <fr:day>5</fr:day>
+    </fr:date>
+    <fr:authors>
+      <fr:author>
+        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:meta name="toc">true</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:p />
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Context">Context</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>289</fr:anchor>
+            <fr:addr type="user">dhsorens-001H</fr:addr>
+            <fr:route>dhsorens-001H.xml</fr:route>
+            <fr:title text="The Computer Scientist's Approach to Proposition and Proof">The Computer Scientist's Approach to Proposition and Proof</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>5</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>Some software or computer logic is both highly technical and explicitly mathematical.
+    Depending on the level of computation, the goal of a bit of code—maybe something backing a <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero-knowledge proof</fr:link> or the design of a chip—may be extremely easy to state precisely because the purpose of the software is expressly technical and/or mathematical.
+    In these cases, the <fr:em>specification</fr:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.</fr:p>
+            <fr:p>However, software does much more than mathematical computation.
+    As it gets higher in abstraction, software can become a social and financial intermediary between people, or even an agent of its own.
+    The interface by which we use technology is software;
+    the flow of a sales team's CRM is software;
+    the media by which news gets reported and propagated is software.
+    Software makes music, tells stories, implements art and design;
+    it manages money and communication between people.</fr:p>
+            <fr:p>At these higher layers of abstraction, software can become difficult to specify <fr:em>correctly</fr:em>.
+    By this I mean that the intended and desired behavior of software can be difficult to articulate in prose or in formal language.</fr:p>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>249</fr:anchor>
+                <fr:addr type="user">dhsorens-001M</fr:addr>
+                <fr:route>dhsorens-001M.xml</fr:route>
+                <fr:title text="Specifying Large Language Models (LLMs)">Specifying Large Language Models (LLMs)</fr:title>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p>Consider the problem of specifying the "correct" behavior of a large language model like Chat GPT.
+    The technologists who have built these LLMs are probably more aware than anyone—no one <fr:em>really</fr:em> knows what the correct behavior of an artificial intelligence is or should be.
+    We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would rather it not produce even though it could do so in principle within the bounds of being helpful, knowledgeable, and honest.
+    These things include somewhat-universally-agreed-upon things like child porn and slanderous and libelous deep fakes.
+    In more of a grey area, they increasingly also include politically inconvenient facts or references to certain events in history about which we remain sensitive.</fr:p>
+                <fr:p>In other words, we want the LLM to be kind, or to have a value system of some kind.
+    An LLM should not encourage someone to kill themselves.
+    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).</fr:p>
+                <fr:p>The problem with asking an LLM to behave ethically is <fr:em>who</fr:em> is to say what is right, and good, and true? <fr:em>What</fr:em> value system should dominate?
+    People will have different philosophies on what they think the behavior of an LLM should be, but we are far from any point of consensus on what that should be.
+    Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align itself with that.
+    (Think of the film <fr:em>I, Robot</fr:em> as a meditation on the unintended (and disasterous, tyranical) consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)</fr:p>
+                <fr:p>I would argue that the problem of correctly specifying an LLM is the problem that religion tends to address—one of value, meaning, and knowing goodness.
+    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form—much less in prose, and even less a <fr:em>formal</fr:em> specification.</fr:p>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+            <fr:p>The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>.</fr:p>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>251</fr:anchor>
+                <fr:addr type="user">dhsorens-001J</fr:addr>
+                <fr:route>dhsorens-001J.xml</fr:route>
+                <fr:title text="Smart Contract Specifications">Smart Contract Specifications</fr:title>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p />
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

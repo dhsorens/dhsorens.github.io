@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>415</fr:anchor>
+    <fr:anchor>481</fr:anchor>
     <fr:addr type="user">dhsorens-000X</fr:addr>
     <fr:route>dhsorens-000X.xml</fr:route>
     <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -31,7 +31,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>417</fr:anchor>
+            <fr:anchor>483</fr:anchor>
             <fr:addr type="user">dhsorens-0018</fr:addr>
             <fr:route>dhsorens-0018.xml</fr:route>
             <fr:title text="Summary of Work and Projects">Summary of Work and Projects</fr:title>
@@ -58,7 +58,7 @@
     In my day-to-day, I still do a lot of work in the design, construction, and formal verification of smart contracts.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>243</fr:anchor>
+                <fr:anchor>317</fr:anchor>
                 <fr:addr type="user">dhsorens-0019</fr:addr>
                 <fr:route>dhsorens-0019.xml</fr:route>
                 <fr:title text="Pre-PhD (2017-2019)">Pre-PhD (2017-2019)</fr:title>
@@ -86,7 +86,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>245</fr:anchor>
+                <fr:anchor>319</fr:anchor>
                 <fr:addr type="user">dhsorens-001A</fr:addr>
                 <fr:route>dhsorens-001A.xml</fr:route>
                 <fr:title text="During the PhD (2019-2023)">During the PhD (2019-2023)</fr:title>
@@ -111,7 +111,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>247</fr:anchor>
+                <fr:anchor>321</fr:anchor>
                 <fr:addr type="user">dhsorens-001B</fr:addr>
                 <fr:route>dhsorens-001B.xml</fr:route>
                 <fr:title text="Post PhD (2024 - Present)">Post PhD (2024 - Present)</fr:title>
@@ -136,7 +136,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>249</fr:anchor>
+                <fr:anchor>323</fr:anchor>
                 <fr:addr type="user">dhsorens-001E</fr:addr>
                 <fr:route>dhsorens-001E.xml</fr:route>
                 <fr:title text="Looking Forward">Looking Forward</fr:title>
@@ -166,7 +166,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>419</fr:anchor>
+            <fr:anchor>485</fr:anchor>
             <fr:addr type="user">dhsorens-0015</fr:addr>
             <fr:route>dhsorens-0015.xml</fr:route>
             <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -194,7 +194,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>421</fr:anchor>
+            <fr:anchor>487</fr:anchor>
             <fr:addr type="user">dhsorens-000U</fr:addr>
             <fr:route>dhsorens-000U.xml</fr:route>
             <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -216,7 +216,7 @@
     I have spent a lot of time thinking about <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contract</fr:link> design, specification, and verification.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>309</fr:anchor>
+                <fr:anchor>369</fr:anchor>
                 <fr:addr type="user">dhsorens-000W</fr:addr>
                 <fr:route>dhsorens-000W.xml</fr:route>
                 <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
@@ -243,7 +243,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>311</fr:anchor>
+                <fr:anchor>371</fr:anchor>
                 <fr:addr type="user">dhsorens-0015</fr:addr>
                 <fr:route>dhsorens-0015.xml</fr:route>
                 <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -283,7 +283,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>423</fr:anchor>
+            <fr:anchor>489</fr:anchor>
             <fr:addr type="user">dhsorens-000B</fr:addr>
             <fr:route>dhsorens-000B.xml</fr:route>
             <fr:title text="Interactive Theorem Provers">Interactive Theorem Provers</fr:title>
@@ -302,7 +302,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>297</fr:anchor>
+                <fr:anchor>267</fr:anchor>
                 <fr:addr type="user">dhsorens-lean</fr:addr>
                 <fr:route>dhsorens-lean.xml</fr:route>
                 <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -326,7 +326,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>299</fr:anchor>
+                <fr:anchor>269</fr:anchor>
                 <fr:addr type="user">dhsorens-rocq</fr:addr>
                 <fr:route>dhsorens-rocq.xml</fr:route>
                 <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
@@ -350,7 +350,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>301</fr:anchor>
+                <fr:anchor>271</fr:anchor>
                 <fr:addr type="user">dhsorens-0006</fr:addr>
                 <fr:route>dhsorens-0006.xml</fr:route>
                 <fr:title text="Isabelle/HOL">Isabelle/HOL</fr:title>
@@ -377,7 +377,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>425</fr:anchor>
+            <fr:anchor>491</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -401,7 +401,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>427</fr:anchor>
+            <fr:anchor>493</fr:anchor>
             <fr:addr type="user">dhsorens-rocq</fr:addr>
             <fr:route>dhsorens-rocq.xml</fr:route>
             <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>

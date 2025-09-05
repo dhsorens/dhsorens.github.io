@@ -2,3 +2,5 @@
 \author{dhsorens}
 \date{2025-09-02}
 \meta{toc}{true}
+
+\transclude{dhsorens-001F} % proposition and proof for mathmos/compscis

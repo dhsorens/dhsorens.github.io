@@ -1,0 +1,16 @@
+\title{The Mathematician's Approach to Proposition and Proof}
+\author{dhsorens}
+\date{2025-09-05}
+\meta{toc}{true}
+
+% how does the mathematician know that their definition or thing is .. correct?
+% feedback loop with theory 
+\p{
+    Mathematicians craft propositions and proofs 
+}
+
+\p{
+    For example, consider the history of the definition of \em{compactness} in mathematics.
+}
+
+\transclude{dhsorens-001I}
