@@ -5,12 +5,42 @@
 
 % how does the mathematician know that their definition or thing is .. correct?
 % feedback loop with theory 
+% Mathematicians craft propositions and proofs 
+
+
 \p{
-    Mathematicians craft propositions and proofs 
+    Professional mathematicians spend their time proving theorems.
+    Many people imagine professional mathematicians as doing enormous calculations, using esoteric symbols, on a chalkboard to derive equations.
+    However, the reality for many (if not most) professional mathematicians is that day to day work consists of proving theorems.
+    A proof of a theorem, fundamentally, is an \em{argument}, written in prose, that justifies the truth or falsehood of a proposition by logical means.
+    % Equally importantly, they spend their time defining (or discovering) what needs to be proved by articulating new definitions and stating conjectures.
 }
 
 \p{
-    For example, consider the history of the definition of \em{compactness} in mathematics.
+    A lot of work, skill, and creativity goes into finding a proof for a theorem.
+    Conjectures can go unsolved for hundreds of years, requiring huge feats of intelligence to solve.
+    However, this is not the full story.
+    Most people overlook, and are surprised by, the fact that articulating the \em{correct} theorem statement, or conjecture, that one sets as a goal to prove is just as difficult, if not more, than finding a proof of that theorem.
+    In my (limited) experience, it is much harder.
 }
 
-\transclude{dhsorens-001I}
+\p{
+    A mathematician will start with an intuitive idea, for which there may not yet be appropriate or adequate technical language or symbols to describe it.
+    He will go through a cycle of experimenting with a definition, or a conjecture, that attempts to capture the idea he's after.
+    He will then test out the \em{consequences} of this definition or conjecture by either proving theorems with it, trying to prove the theorem itself, or looking at its consequences in the mathematical theory more broadly.
+}
+
+\p{
+    This will kick off a process which is broadly intuitive, though crucially informed by feedback with the relevant mathematical theory, of aiming at a definition or conjecture, testing its fit, and adjusting it.
+    It can take the mathematical community as a whole several iterations to actually get the process right.
+    As a particularly interesting example, consider the history of the definition of [\em{compactness}](dhsorens-001I) in mathematics.
+}
+
+\p{
+    Most fundamentally, a mathematician's job is to bring in novel and useful abstract concepts, capture them in their appropriate definitions or conjectures, and place them appropriately in the corpus of mathematical theory.
+    Philosophers do this, often by inventing new technical terminology;
+    scientists do this by defining new methods and measurements;
+    artists do this but instead of technical terms and symbols, they use an artistic medium.
+}
+
+% \transclude{dhsorens-001I}

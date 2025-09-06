@@ -4,5 +4,19 @@
 \meta{toc}{true}
 
 \p{
-    
+    [Smart contracts](dhsorens-000Y) can have deceptively difficult specifications.
+}
+
+\transclude{dhsorens-001N}
+
+\p{
+    The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
+    The best contract specifications of smart contracts use time-tested approaches to capture the most important aspects of code security—\em{e.g.} solvency, sovereignty, or key safety properties.
+    % If there is a liquidity pool of some kind involved, then a formal specification might target solvency properties, or properties of sovereignty over one's assets.
+}
+
+\p{
+    The primary point I'm making here with the (somewhat lengthy) discussion on smart contracts and their specifications is that software specification can range from highly technical and mathematical to highly intuitive and prose-based.
+    The example of [Dexter2](dhsorens-001N) that I gave is probably still addressable with mathematical specifications;
+    but at higher levels of abstraction, and in instances where software becomes more social and human-oriented, specifications get more difficult to write rigorously because there is no clearly defined, articulable theory with which one can use to derive the correctness of one's specification.
 }

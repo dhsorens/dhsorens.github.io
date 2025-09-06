@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>471</fr:anchor>
+    <fr:anchor>536</fr:anchor>
     <fr:addr type="user">dhsorens-000Y</fr:addr>
     <fr:route>dhsorens-000Y.xml</fr:route>
     <fr:title text="Smart Contracts">Smart Contracts</fr:title>
@@ -24,9 +24,8 @@
     intermediary between financial parties. These include contracts collectively referred to as decentralized
     finance (DeFi), and come in many forms, including decentralized exchanges (DEXs), automated market
     makers (AMMs), crypto lending, synthetics (including stablecoins), yield farming, crypto insurance
-    protocols, and cross-chain bridges. Financial smart contracts frequently manage huge quantities
-    of money, making it essential for the underlying code to be rigorously tested and verified to ensure its
-    correctness and security.</fr:p>
+    protocols, and cross-chain bridges.</fr:p>
+    <fr:p />
   </fr:mainmatter>
   <fr:backmatter>
     <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
@@ -37,10 +36,100 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>473</fr:anchor>
+            <fr:anchor>538</fr:anchor>
+            <fr:addr type="user">dhsorens-001Q</fr:addr>
+            <fr:route>dhsorens-001Q.xml</fr:route>
+            <fr:title text="Incorrect Specifications">Incorrect Specifications</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>6</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>Incorrect software specifications are a problem because
+    they invalidate the security guarantees offered by <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link>, 
+    offer a false sense of security,
+    misguide developers,
+    and most importantly open code up to vulnerabilities.
+    In the case of <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>, poor specifications are a <fr:link type="local" href="dhsorens-001P.xml" addr="dhsorens-001P" title="Smart Contract Vulnerabilities Due to Poor Specification">common source of catastrophic vulnerabilities and losses of funds</fr:link>.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>540</fr:anchor>
+            <fr:addr type="user">dhsorens-001J</fr:addr>
+            <fr:route>dhsorens-001J.xml</fr:route>
+            <fr:title text="Smart Contract Specifications">Smart Contract Specifications</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>5</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> can have deceptively difficult specifications.</fr:p>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>251</fr:anchor>
+                <fr:addr type="user">dhsorens-001N</fr:addr>
+                <fr:route>dhsorens-001N.xml</fr:route>
+                <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p>To illustrate, consider the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">formal verification work on Dexter2</fr:link>, an AMM on the Tezos blockchain. Dexter2 has been formally verified by at least three different groups using three different formal verification tools.
+
+    Each was based on the same informal specification. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.</fr:p>
+                <fr:p>However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:</fr:p>
+                <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
+                <fr:p>where <fr:tex display="inline"><![CDATA[x]]></fr:tex> represents the quantity held by the contract of the token being traded in, <fr:tex display="inline"><![CDATA[y]]></fr:tex> represents the quantity held by the contract of the token being traded out, and <fr:tex display="inline"><![CDATA[k]]></fr:tex> is a constant. The tokens held by the contract come from liquidity providers, which are investors who deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees. That <fr:tex display="inline"><![CDATA[k]]></fr:tex> is constant means that a trade of <fr:tex display="inline"><![CDATA[\Delta  x]]></fr:tex> of one token yields <fr:tex display="inline"><![CDATA[\Delta  y]]></fr:tex> of another such that the product from above stays constant at <fr:tex display="inline"><![CDATA[k]]></fr:tex>:</fr:p>
+                <fr:tex display="block"><![CDATA[(x+ \Delta  x)(y− \Delta  y) = k.]]></fr:tex>
+                <fr:p>Buterin argued that an AMM that trades along this indifference curve features efficient price discovery. He also argued that it can properly incentivize liquidity providers by charging a <fr:tex display="inline"><![CDATA[0.3]]></fr:tex>% fee on each trade to give to them.</fr:p>
+                <fr:p>We can probably convince ourselves that the informal specification of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the informal specification or its formal counterparts actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve <fr:tex display="inline"><![CDATA[xy= k]]></fr:tex>.
+    It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.</fr:p>
+                <fr:p>There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the three formalizations of Dexter2’s informal specification reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.</fr:p>
+                <fr:p>Furthermore, were we to try to formally specify some of the aforementioned high-level economic and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go about doing so. Most specification languages and models of computation are too low-level to easily admit clear specifications of such properties. What model or framework would we use, for example, to specify that Dexter2 facilitate an efficient market?</fr:p>
+                <fr:p>As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2 routinely manage billions of USD worth of funds, much is also at risk in case of a bug. Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of the economic properties that we have just mentioned, directly or indirectly. It is, however, not obvious that these properties hold by reading any of the aforementioned specifications.</fr:p>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+            <fr:p>The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
+    The best contract specifications of smart contracts use time-tested approaches to capture the most important aspects of code security—<fr:em>e.g.</fr:em> solvency, sovereignty, or key safety properties.</fr:p>
+            <fr:p>The primary point I'm making here with the (somewhat lengthy) discussion on smart contracts and their specifications is that software specification can range from highly technical and mathematical to highly intuitive and prose-based.
+    The example of <fr:link type="local" href="dhsorens-001N.xml" addr="dhsorens-001N" title="Case Study: Dexter2">Dexter2</fr:link> that I gave is probably still addressable with mathematical specifications;
+    but at higher levels of abstraction, and in instances where software becomes more social and human-oriented, specifications get more difficult to write rigorously because there is no clearly defined, articulable theory with which one can use to derive the correctness of one's specification.</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>542</fr:anchor>
             <fr:addr type="user">dhsorens-001H</fr:addr>
             <fr:route>dhsorens-001H.xml</fr:route>
-            <fr:title text="The Computer Scientist's Approach to Proposition and Proof">The Computer Scientist's Approach to Proposition and Proof</fr:title>
+            <fr:title text="The Computer Scientist's Approach to Proposition and Proof (About Software)">The Computer Scientist's Approach to Proposition and Proof (About Software)</fr:title>
             <fr:date>
               <fr:year>2025</fr:year>
               <fr:month>9</fr:month>
@@ -68,10 +157,10 @@
     By this I mean that the intended and desired behavior of software can be difficult to articulate in prose or in formal language.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>249</fr:anchor>
+                <fr:anchor>247</fr:anchor>
                 <fr:addr type="user">dhsorens-001M</fr:addr>
                 <fr:route>dhsorens-001M.xml</fr:route>
-                <fr:title text="Specifying Large Language Models (LLMs)">Specifying Large Language Models (LLMs)</fr:title>
+                <fr:title text="How to Specify a Large Language Model?">How to Specify a Large Language Model?</fr:title>
                 <fr:date>
                   <fr:year>2025</fr:year>
                   <fr:month>9</fr:month>
@@ -102,10 +191,13 @@
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
-            <fr:p>The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>.</fr:p>
+            <fr:p>The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>.
+    What we will find is that smart contracts lie at a rich intersection between low-level, technical properties and high-level, more "human" properties.
+    Can we reasonably <fr:link type="local" href="dhsorens-000W.xml" addr="dhsorens-000W" title="Smart Contract Design, Specification, and Verification">specify smart contracts</fr:link> in a rigorous and correct way?
+    How can we strengthen their specifications to be more clear, accurate, and useful?</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>251</fr:anchor>
+                <fr:anchor>249</fr:anchor>
                 <fr:addr type="user">dhsorens-001J</fr:addr>
                 <fr:route>dhsorens-001J.xml</fr:route>
                 <fr:title text="Smart Contract Specifications">Smart Contract Specifications</fr:title>
@@ -122,16 +214,85 @@
                 <fr:meta name="toc">true</fr:meta>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p />
+                <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> can have deceptively difficult specifications.</fr:p>
+                <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                  <fr:frontmatter>
+                    <fr:anchor>251</fr:anchor>
+                    <fr:addr type="user">dhsorens-001N</fr:addr>
+                    <fr:route>dhsorens-001N.xml</fr:route>
+                    <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>5</fr:day>
+                    </fr:date>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <fr:p>To illustrate, consider the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">formal verification work on Dexter2</fr:link>, an AMM on the Tezos blockchain. Dexter2 has been formally verified by at least three different groups using three different formal verification tools.
+
+    Each was based on the same informal specification. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.</fr:p>
+                    <fr:p>However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:</fr:p>
+                    <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
+                    <fr:p>where <fr:tex display="inline"><![CDATA[x]]></fr:tex> represents the quantity held by the contract of the token being traded in, <fr:tex display="inline"><![CDATA[y]]></fr:tex> represents the quantity held by the contract of the token being traded out, and <fr:tex display="inline"><![CDATA[k]]></fr:tex> is a constant. The tokens held by the contract come from liquidity providers, which are investors who deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees. That <fr:tex display="inline"><![CDATA[k]]></fr:tex> is constant means that a trade of <fr:tex display="inline"><![CDATA[\Delta  x]]></fr:tex> of one token yields <fr:tex display="inline"><![CDATA[\Delta  y]]></fr:tex> of another such that the product from above stays constant at <fr:tex display="inline"><![CDATA[k]]></fr:tex>:</fr:p>
+                    <fr:tex display="block"><![CDATA[(x+ \Delta  x)(y− \Delta  y) = k.]]></fr:tex>
+                    <fr:p>Buterin argued that an AMM that trades along this indifference curve features efficient price discovery. He also argued that it can properly incentivize liquidity providers by charging a <fr:tex display="inline"><![CDATA[0.3]]></fr:tex>% fee on each trade to give to them.</fr:p>
+                    <fr:p>We can probably convince ourselves that the informal specification of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the informal specification or its formal counterparts actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve <fr:tex display="inline"><![CDATA[xy= k]]></fr:tex>.
+    It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.</fr:p>
+                    <fr:p>There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the three formalizations of Dexter2’s informal specification reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.</fr:p>
+                    <fr:p>Furthermore, were we to try to formally specify some of the aforementioned high-level economic and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go about doing so. Most specification languages and models of computation are too low-level to easily admit clear specifications of such properties. What model or framework would we use, for example, to specify that Dexter2 facilitate an efficient market?</fr:p>
+                    <fr:p>As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2 routinely manage billions of USD worth of funds, much is also at risk in case of a bug. Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of the economic properties that we have just mentioned, directly or indirectly. It is, however, not obvious that these properties hold by reading any of the aforementioned specifications.</fr:p>
+                  </fr:mainmatter>
+                  <fr:backmatter />
+                </fr:tree>
+                <fr:p>The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
+    The best contract specifications of smart contracts use time-tested approaches to capture the most important aspects of code security—<fr:em>e.g.</fr:em> solvency, sovereignty, or key safety properties.</fr:p>
+                <fr:p>The primary point I'm making here with the (somewhat lengthy) discussion on smart contracts and their specifications is that software specification can range from highly technical and mathematical to highly intuitive and prose-based.
+    The example of <fr:link type="local" href="dhsorens-001N.xml" addr="dhsorens-001N" title="Case Study: Dexter2">Dexter2</fr:link> that I gave is probably still addressable with mathematical specifications;
+    but at higher levels of abstraction, and in instances where software becomes more social and human-oriented, specifications get more difficult to write rigorously because there is no clearly defined, articulable theory with which one can use to derive the correctness of one's specification.</fr:p>
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>253</fr:anchor>
+                <fr:addr type="user">dhsorens-001Q</fr:addr>
+                <fr:route>dhsorens-001Q.xml</fr:route>
+                <fr:title text="Incorrect Specifications">Incorrect Specifications</fr:title>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>6</fr:day>
+                </fr:date>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p>Incorrect software specifications are a problem because
+    they invalidate the security guarantees offered by <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link>, 
+    offer a false sense of security,
+    misguide developers,
+    and most importantly open code up to vulnerabilities.
+    In the case of <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>, poor specifications are a <fr:link type="local" href="dhsorens-001P.xml" addr="dhsorens-001P" title="Smart Contract Vulnerabilities Due to Poor Specification">common source of catastrophic vulnerabilities and losses of funds</fr:link>.</fr:p>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+            <fr:p>Considering this, what is the role of formal proposition and proof (formal verification), especially in <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link>, applied to software vulnerabilities?
+    How do we address the issue of incorrect specification?</fr:p>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>475</fr:anchor>
+            <fr:anchor>544</fr:anchor>
             <fr:addr type="user">dhsorens-0018</fr:addr>
             <fr:route>dhsorens-0018.xml</fr:route>
             <fr:title text="Summary of Work and Projects">Summary of Work and Projects</fr:title>
@@ -158,7 +319,7 @@
     In my day-to-day, I still do a lot of work in the design, construction, and formal verification of smart contracts.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>317</fr:anchor>
+                <fr:anchor>375</fr:anchor>
                 <fr:addr type="user">dhsorens-0019</fr:addr>
                 <fr:route>dhsorens-0019.xml</fr:route>
                 <fr:title text="Pre-PhD (2017-2019)">Pre-PhD (2017-2019)</fr:title>
@@ -186,7 +347,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>319</fr:anchor>
+                <fr:anchor>377</fr:anchor>
                 <fr:addr type="user">dhsorens-001A</fr:addr>
                 <fr:route>dhsorens-001A.xml</fr:route>
                 <fr:title text="During the PhD (2019-2023)">During the PhD (2019-2023)</fr:title>
@@ -211,7 +372,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>321</fr:anchor>
+                <fr:anchor>379</fr:anchor>
                 <fr:addr type="user">dhsorens-001B</fr:addr>
                 <fr:route>dhsorens-001B.xml</fr:route>
                 <fr:title text="Post PhD (2024 - Present)">Post PhD (2024 - Present)</fr:title>
@@ -236,7 +397,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>323</fr:anchor>
+                <fr:anchor>381</fr:anchor>
                 <fr:addr type="user">dhsorens-001E</fr:addr>
                 <fr:route>dhsorens-001E.xml</fr:route>
                 <fr:title text="Looking Forward">Looking Forward</fr:title>
@@ -266,7 +427,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>477</fr:anchor>
+            <fr:anchor>546</fr:anchor>
             <fr:addr type="user">dhsorens-000U</fr:addr>
             <fr:route>dhsorens-000U.xml</fr:route>
             <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -288,7 +449,7 @@
     I have spent a lot of time thinking about <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contract</fr:link> design, specification, and verification.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>369</fr:anchor>
+                <fr:anchor>427</fr:anchor>
                 <fr:addr type="user">dhsorens-000W</fr:addr>
                 <fr:route>dhsorens-000W.xml</fr:route>
                 <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
@@ -304,8 +465,7 @@
                 </fr:authors>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> are programs that execute on the blockchain.
-    They are interesting from the perspective of formal specification and verification because:</fr:p>
+                <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> are interesting from the perspective of formal specification and verification because:</fr:p>
                 <fr:ol><fr:li>they are risk- and property-dense,</fr:li>
     <fr:li>they are typically small in size, with a deterministic and well-defined execution environment, making them feasible to formally reason about in a short time frame, and</fr:li>
     <fr:li>they often manage huge sums of money (so the incentives line up).</fr:li></fr:ol>
@@ -315,7 +475,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>371</fr:anchor>
+                <fr:anchor>429</fr:anchor>
                 <fr:addr type="user">dhsorens-0015</fr:addr>
                 <fr:route>dhsorens-0015.xml</fr:route>
                 <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -346,7 +506,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>479</fr:anchor>
+            <fr:anchor>548</fr:anchor>
             <fr:addr type="user">dhsorens-000W</fr:addr>
             <fr:route>dhsorens-000W.xml</fr:route>
             <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
@@ -362,8 +522,7 @@
             </fr:authors>
           </fr:frontmatter>
           <fr:mainmatter>
-            <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> are programs that execute on the blockchain.
-    They are interesting from the perspective of formal specification and verification because:</fr:p>
+            <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> are interesting from the perspective of formal specification and verification because:</fr:p>
             <fr:ol><fr:li>they are risk- and property-dense,</fr:li>
     <fr:li>they are typically small in size, with a deterministic and well-defined execution environment, making them feasible to formally reason about in a short time frame, and</fr:li>
     <fr:li>they often manage huge sums of money (so the incentives line up).</fr:li></fr:ol>

@@ -1,4 +1,4 @@
-\title{The Computer Scientist's Approach to Proposition and Proof}
+\title{The Computer Scientist's Approach to Proposition and Proof (About Software)}
 \author{dhsorens}
 \date{2025-09-05}
 \meta{toc}{true}
@@ -30,6 +30,16 @@
 
 \p{
     The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: [smart contracts](dhsorens-000Y).
+    What we will find is that smart contracts lie at a rich intersection between low-level, technical properties and high-level, more "human" properties.
+    Can we reasonably [specify smart contracts](dhsorens-000W) in a rigorous and correct way?
+    How can we strengthen their specifications to be more clear, accurate, and useful? 
 }
 
 \transclude{dhsorens-001J} % smart contract specification
+
+\transclude{dhsorens-001Q} % incorrect specifications
+
+\p{
+    Considering this, what is the role of formal proposition and proof (formal verification), especially in [proof assistants](dhsorens-000B), applied to software vulnerabilities?
+    How do we address the issue of incorrect specification?
+}

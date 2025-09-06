@@ -3,8 +3,8 @@
 \date{2025-08-29}
 
 \p{
-    [Smart contracts](dhsorens-000Y) are programs that execute on the blockchain.
-    They are interesting from the perspective of formal specification and verification because:
+    % [Smart contracts](dhsorens-000Y) are programs that execute on the blockchain.
+    [Smart contracts](dhsorens-000Y) are interesting from the perspective of formal specification and verification because:
 }
 \ol{
     \li{they are risk- and property-dense,}

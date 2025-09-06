@@ -9,7 +9,9 @@
     intermediary between financial parties. These include contracts collectively referred to as decentralized
     finance (DeFi), and come in many forms, including decentralized exchanges (DEXs), automated market
     makers (AMMs), crypto lending, synthetics (including stablecoins), yield farming, crypto insurance
-    protocols, and cross-chain bridges. Financial smart contracts frequently manage huge quantities
-    of money, making it essential for the underlying code to be rigorously tested and verified to ensure its
-    correctness and security.
+    protocols, and cross-chain bridges.
+}
+
+\p{
+    % Financial smart contracts frequently manage huge quantities of money, making it essential for the underlying code to be rigorously tested and verified to ensure its correctness and security.
 }

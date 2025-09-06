@@ -4,20 +4,37 @@
 \meta{toc}{true}
 
 \p{
-    [Proof assistants](dhsorens-000B) are one link by which the notions of proposition and proof are relevant to computer scientists and mathematicians alike. Computer scientists use proof assistants, such as Coq or Lean, to formally verify code whose security is paramount by stating and proving theorems. Mathematicians increasingly use proof assistants in a project to [formalize both classical and modern mathematics](dhsorens-0010).
+    [Proof assistants](dhsorens-000B) are one link by which the notions of proposition and proof are relevant to computer scientists and mathematicians alike. Computer scientists use proof assistants, such as [Rocq](dhsorens-rocq) or [Lean](dhsorens-lean), to formally verify code whose security is paramount by stating and proving theorems. Mathematicians increasingly use proof assistants in a project to [formalize both classical and modern mathematics](dhsorens-000Z).
 }
 
 \p{
     However, proposition and proof for mathematicians and computer scientists often do not much resemble each other, both in how proofs are engineered as well as in the kinds of propositions formalized.
-    Unless software specifications are explicitly mathematical, like in the case of [zero-knowledge proofs](dhsorens-001L), computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification by proving those propositions true. These sorts of propositions comprising the specification are informed by experience and best practices, but typically not any formal, underlying theory. In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.
+    Unless software specifications are explicitly mathematical, for example like in the case of [zero-knowledge proofs](dhsorens-001L), computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification by supplying proofs of each of the propositions. These sorts of propositions comprising the specification are informed by experience and best practices, but [frequently not any formal, underlying theory](dhsorens-001H). In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.
 }
 
 \p{
     % Broadly speaking, I would characterize the mathematical and computer scientific approaches in the following (deeply unrigorously derived) ways.
     These differences are, in my mind, well worth meditating on.
-    My [PhD](dhsorens-phd) was in some ways an attempt to reconcile the mathematical approach to stating and proving theorems; the jury is still out for me as to whether that is actually useful.
+    My [PhD](dhsorens-phd) was in some ways an attempt to reconcile the mathematical approach to stating and proving theorems for [some specific software applications](dhsorens-000W); the jury is still out for me as to whether that is actually useful.
+}
+
+\p{
+    I think the most fruitful way to start is with proposition and proof in a purely mathematical contest; from there, we can see the nuances of specification as we move into software at higher and higher levels of abstraction and involvement in daily, human life.
+    My goal here is to explore the process of forming software specifications, arguing that rigorous software specification gets harder as the purpose of the software moves from mathematics and computation to playing social, political, and economic roles.
+}
+
+\transclude{dhsorens-001G} % proposition and proof for mathematicians 
+
+\p{
+    Crafting new definitions in mathematics is a strictly abstract and technical endeavor. The great advantage of doing work in mathematics is that the "world" in which one operates is extremely clearly defined and has virtually no ambiguities.
+}
+
+\p{
+    When one goes to state and prove things about software, one finds one's self in a world slightly less abstract, pure, and well-defined than the world of mathematics.
+    This is precisely where the difficulty of proposition and proof relating to software comes into play.
 }
 
 \transclude{dhsorens-001H} % proposition and proof for computer scientists 
-\transclude{dhsorens-001G} % proposition and proof for mathematicians 
-\transclude{dhsorens-001K} % similarities and differences
+
+
+\transclude{dhsorens-001K} % the issue of incorrect specification -- proof assistants?

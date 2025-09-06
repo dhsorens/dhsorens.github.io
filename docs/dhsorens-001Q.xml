@@ -2,14 +2,14 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>277</fr:anchor>
-    <fr:addr type="user">dhsorens-001M</fr:addr>
-    <fr:route>dhsorens-001M.xml</fr:route>
-    <fr:title text="How to Specify a Large Language Model?">How to Specify a Large Language Model?</fr:title>
+    <fr:anchor>243</fr:anchor>
+    <fr:addr type="user">dhsorens-001Q</fr:addr>
+    <fr:route>dhsorens-001Q.xml</fr:route>
+    <fr:title text="Incorrect Specifications">Incorrect Specifications</fr:title>
     <fr:date>
       <fr:year>2025</fr:year>
       <fr:month>9</fr:month>
-      <fr:day>5</fr:day>
+      <fr:day>6</fr:day>
     </fr:date>
     <fr:authors>
       <fr:author>
@@ -19,20 +19,12 @@
     <fr:meta name="toc">true</fr:meta>
   </fr:frontmatter>
   <fr:mainmatter>
-    <fr:p>Consider the problem of specifying the "correct" behavior of a large language model like Chat GPT.
-    The technologists who have built these LLMs are probably more aware than anyone—no one <fr:em>really</fr:em> knows what the correct behavior of an artificial intelligence is or should be.
-    We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would rather it not produce even though it could do so in principle within the bounds of being helpful, knowledgeable, and honest.
-    These things include somewhat-universally-agreed-upon things like child porn and slanderous and libelous deep fakes.
-    In more of a grey area, they increasingly also include politically inconvenient facts or references to certain events in history about which we remain sensitive.</fr:p>
-    <fr:p>In other words, we want the LLM to be kind, or to have a value system of some kind.
-    An LLM should not encourage someone to kill themselves.
-    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).</fr:p>
-    <fr:p>The problem with asking an LLM to behave ethically is <fr:em>who</fr:em> is to say what is right, and good, and true? <fr:em>What</fr:em> value system should dominate?
-    People will have different philosophies on what they think the behavior of an LLM should be, but we are far from any point of consensus on what that should be.
-    Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align itself with that.
-    (Think of the film <fr:em>I, Robot</fr:em> as a meditation on the unintended (and disasterous, tyranical) consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)</fr:p>
-    <fr:p>I would argue that the problem of correctly specifying an LLM is the problem that religion tends to address—one of value, meaning, and knowing goodness.
-    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form—much less in prose, and even less a <fr:em>formal</fr:em> specification.</fr:p>
+    <fr:p>Incorrect software specifications are a problem because
+    they invalidate the security guarantees offered by <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link>, 
+    offer a false sense of security,
+    misguide developers,
+    and most importantly open code up to vulnerabilities.
+    In the case of <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>, poor specifications are a <fr:link type="local" href="dhsorens-001P.xml" addr="dhsorens-001P" title="Smart Contract Vulnerabilities Due to Poor Specification">common source of catastrophic vulnerabilities and losses of funds</fr:link>.</fr:p>
   </fr:mainmatter>
   <fr:backmatter>
     <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
@@ -43,7 +35,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>279</fr:anchor>
+            <fr:anchor>245</fr:anchor>
             <fr:addr type="user">dhsorens-001H</fr:addr>
             <fr:route>dhsorens-001H.xml</fr:route>
             <fr:title text="The Computer Scientist's Approach to Proposition and Proof (About Software)">The Computer Scientist's Approach to Proposition and Proof (About Software)</fr:title>
@@ -204,6 +196,89 @@
             </fr:tree>
             <fr:p>Considering this, what is the role of formal proposition and proof (formal verification), especially in <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link>, applied to software vulnerabilities?
     How do we address the issue of incorrect specification?</fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Related">Related</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>255</fr:anchor>
+            <fr:addr type="user">dhsorens-001P</fr:addr>
+            <fr:route>dhsorens-001P.xml</fr:route>
+            <fr:title text="Smart Contract Vulnerabilities Due to Poor Specification">Smart Contract Vulnerabilities Due to Poor Specification</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>6</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter />
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>257</fr:anchor>
+            <fr:addr type="user">dhsorens-000Y</fr:addr>
+            <fr:route>dhsorens-000Y.xml</fr:route>
+            <fr:title text="Smart Contracts">Smart Contracts</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>Smart contracts are programs stored on a blockchain that automatically execute when certain predefined
+    conditions are met. <fr:em>Financial smart contracts</fr:em> are broadly defined as smart contracts that serve as a digital
+    intermediary between financial parties. These include contracts collectively referred to as decentralized
+    finance (DeFi), and come in many forms, including decentralized exchanges (DEXs), automated market
+    makers (AMMs), crypto lending, synthetics (including stablecoins), yield farming, crypto insurance
+    protocols, and cross-chain bridges.</fr:p>
+            <fr:p />
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>259</fr:anchor>
+            <fr:addr type="user">dhsorens-000X</fr:addr>
+            <fr:route>dhsorens-000X.xml</fr:route>
+            <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>1</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>Formal verification is the practice of mathematically proving code to be <fr:em>correct</fr:em> with regards to a specification (a formal description).
+    This can be done in many ways, most interestingly (in my opinion) within <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">interactive theorem provers</fr:link> like <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> or <fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link>.</fr:p>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
