@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>1100</fr:anchor>
+    <fr:anchor>1112</fr:anchor>
     <fr:addr type="user">dhsorens-rsrch</fr:addr>
     <fr:route>dhsorens-rsrch.xml</fr:route>
     <fr:title text="Research">Research</fr:title>
@@ -16,7 +16,7 @@
   <fr:mainmatter>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>531</fr:anchor>
+        <fr:anchor>539</fr:anchor>
         <fr:addr type="user">dhsorens-000S</fr:addr>
         <fr:route>dhsorens-000S.xml</fr:route>
         <fr:title text="Research Statement">Research Statement</fr:title>
@@ -35,7 +35,7 @@
     </fr:tree>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>532</fr:anchor>
+        <fr:anchor>540</fr:anchor>
         <fr:addr type="user">dhsorens-pubs</fr:addr>
         <fr:route>dhsorens-pubs.xml</fr:route>
         <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -78,7 +78,7 @@
     </fr:tree>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>534</fr:anchor>
+        <fr:anchor>542</fr:anchor>
         <fr:addr type="user">dhsorens-talks</fr:addr>
         <fr:route>dhsorens-talks.xml</fr:route>
         <fr:title text="Talks">Talks</fr:title>
@@ -113,7 +113,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1102</fr:anchor>
+            <fr:anchor>1114</fr:anchor>
             <fr:addr type="user">dhsorens-0017</fr:addr>
             <fr:route>dhsorens-0017.xml</fr:route>
             <fr:title text="How the Formalization of Mathematics Relates to my Work">How the Formalization of Mathematics Relates to my Work</fr:title>
@@ -136,7 +136,7 @@ Proof assistants are also the tool used in the <fr:link type="local" href="dhsor
 This has prompted some thinking on the subject.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>303</fr:anchor>
+                <fr:anchor>319</fr:anchor>
                 <fr:addr type="user">dhsorens-001F</fr:addr>
                 <fr:route>dhsorens-001F.xml</fr:route>
                 <fr:title text="Proposition and Proof in Mathematics and Computer Science">Proposition and Proof in Mathematics and Computer Science</fr:title>
@@ -155,14 +155,16 @@ This has prompted some thinking on the subject.</fr:p>
               <fr:mainmatter>
                 <fr:p><fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">Proof assistants</fr:link> are one link by which the notions of proposition and proof are relevant to computer scientists and mathematicians alike. Computer scientists use proof assistants, such as <fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link> or <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>, to formally verify code whose security is paramount by stating and proving theorems. Mathematicians increasingly use proof assistants in a project to <fr:link type="local" href="dhsorens-000Z.xml" addr="dhsorens-000Z" title="Formalization of Mathematics">formalize both classical and modern mathematics</fr:link>.</fr:p>
                 <fr:p>However, proposition and proof for mathematicians and computer scientists often do not much resemble each other, both in how proofs are engineered as well as in the kinds of propositions formalized.
-    Unless software specifications are explicitly mathematical, for example like in the case of <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification by supplying proofs of each of the propositions. These sorts of propositions comprising the specification are informed by experience and best practices, but <fr:link type="local" href="dhsorens-001H.xml" addr="dhsorens-001H" title="The Computer Scientist's Approach to Proposition and Proof (About Software)">frequently not any formal, underlying theory</fr:link>. In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.</fr:p>
-                <fr:p>These differences are, in my mind, well worth meditating on.
+    Unless software specifications are explicitly mathematical, for example like in the case of <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
+    These sorts of propositions comprising the specification are informed by experience and best practices, but <fr:link type="local" href="dhsorens-001H.xml" addr="dhsorens-001H" title="The Computer Scientist's Approach to Proposition and Proof (About Software)">frequently not any formal, underlying theory</fr:link>. In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.
+    These differences are, in my mind, well worth meditating on.
     My <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> was in some ways an attempt to reconcile the mathematical approach to stating and proving theorems for <fr:link type="local" href="dhsorens-000W.xml" addr="dhsorens-000W" title="Smart Contract Design, Specification, and Verification">some specific software applications</fr:link>; the jury is still out for me as to whether that is actually useful.</fr:p>
-                <fr:p>I think the most fruitful way to start is with proposition and proof in a purely mathematical contest; from there, we can see the nuances of specification as we move into software at higher and higher levels of abstraction and involvement in daily, human life.
-    My goal here is to explore the process of forming software specifications, arguing that rigorous software specification gets harder as the purpose of the software moves from mathematics and computation to playing social, political, and economic roles.</fr:p>
+                <fr:p>We'll start this discussion is with proposition and proof in a purely mathematical context;
+    from there, we can see the nuances of specification as we move into software at higher and higher levels of abstraction and involvement in daily, human life.
+    My goal here is to explore the process of forming software specifications, arguing that rigorous software specification gets harder as the purpose of the software moves from mathematical computation to playing social, political, and economic roles in the world.</fr:p>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>285</fr:anchor>
+                    <fr:anchor>301</fr:anchor>
                     <fr:addr type="user">dhsorens-001G</fr:addr>
                     <fr:route>dhsorens-001G.xml</fr:route>
                     <fr:title text="The Mathematician's Approach to Proposition and Proof">The Mathematician's Approach to Proposition and Proof</fr:title>
@@ -191,7 +193,7 @@ This has prompted some thinking on the subject.</fr:p>
                     <fr:p>A mathematician will start with an intuitive idea, for which there may not yet be appropriate or adequate technical language or symbols to describe it.
     He will go through a cycle of experimenting with a definition, or a conjecture, that attempts to capture the idea he's after.
     He will then test out the <fr:em>consequences</fr:em> of this definition or conjecture by either proving theorems with it, trying to prove the theorem itself, or looking at its consequences in the mathematical theory more broadly.</fr:p>
-                    <fr:p>This will kick off a process which is broadly intuitive, though crucially informed by feedback with the relevant mathematical theory, of aiming at a definition or conjecture, testing its fit, and adjusting it.
+                    <fr:p>This will kick off a process which is broadly intuitive, informed by feedback with the relevant mathematical theory, of aiming at a definition or conjecture, testing its fit, and adjusting it.
     It can take the mathematical community as a whole several iterations to actually get the process right.
     As a particularly interesting example, consider the history of the definition of <fr:link type="local" href="dhsorens-001I.xml" addr="dhsorens-001I" title="Compactness: Definition and Theory"><fr:em>compactness</fr:em></fr:link> in mathematics.</fr:p>
                     <fr:p>Most fundamentally, a mathematician's job is to bring in novel and useful abstract concepts, capture them in their appropriate definitions or conjectures, and place them appropriately in the corpus of mathematical theory.
@@ -202,11 +204,11 @@ This has prompted some thinking on the subject.</fr:p>
                   <fr:backmatter />
                 </fr:tree>
                 <fr:p>Crafting new definitions in mathematics is a strictly abstract and technical endeavor. The great advantage of doing work in mathematics is that the "world" in which one operates is extremely clearly defined and has virtually no ambiguities.</fr:p>
-                <fr:p>When one goes to state and prove things about software, one finds one's self in a world slightly less abstract, pure, and well-defined than the world of mathematics.
+                <fr:p>When one goes to state and prove things about software, one finds one's self in a world that can be a lot less abstract, pure, and well-defined than the world of mathematics.
     This is precisely where the difficulty of proposition and proof relating to software comes into play.</fr:p>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>287</fr:anchor>
+                    <fr:anchor>303</fr:anchor>
                     <fr:addr type="user">dhsorens-001H</fr:addr>
                     <fr:route>dhsorens-001H.xml</fr:route>
                     <fr:title text="The Computer Scientist's Approach to Proposition and Proof (About Software)">The Computer Scientist's Approach to Proposition and Proof (About Software)</fr:title>
@@ -223,21 +225,19 @@ This has prompted some thinking on the subject.</fr:p>
                     <fr:meta name="toc">true</fr:meta>
                   </fr:frontmatter>
                   <fr:mainmatter>
-                    <fr:p>Some software or computer logic is both highly technical and explicitly mathematical.
-    Depending on the level of computation, the goal of a bit of code—maybe something backing a <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero-knowledge proof</fr:link> or the design of a chip—may be extremely easy to state precisely because the purpose of the software is expressly technical and/or mathematical.
+                    <fr:p>Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
+    For example, chip design or software implementing <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
     In these cases, the <fr:em>specification</fr:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.</fr:p>
                     <fr:p>However, software does much more than mathematical computation.
-    As it gets higher in abstraction, software can become a social and financial intermediary between people, or even an agent of its own.
-    The interface by which we use technology is software;
-    the flow of a sales team's CRM is software;
-    the media by which news gets reported and propagated is software.
-    Software makes music, tells stories, implements art and design;
-    it manages money and communication between people.</fr:p>
-                    <fr:p>At these higher layers of abstraction, software can become difficult to specify <fr:em>correctly</fr:em>.
-    By this I mean that the intended and desired behavior of software can be difficult to articulate in prose or in formal language.</fr:p>
+    As it gets higher in abstraction, software can become a social and financial intermediary between people or even an agent of its own.
+    Software runs human-computer interfaces,  the flow of a sales team's CRM, and the media by which news gets reported and propagated.
+    Software makes music, tells stories, implements art and design.
+    It manages money and communication between people.
+    In these cases, the intended behavior of software doesn't always have a clear and definable formal specification couched in mathematical terms.
+    Instead, at these higher layers of abstraction, software can become difficult to specify—or describe in a formal language—<fr:em>correctly</fr:em>.</fr:p>
                     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                       <fr:frontmatter>
-                        <fr:anchor>247</fr:anchor>
+                        <fr:anchor>261</fr:anchor>
                         <fr:addr type="user">dhsorens-001M</fr:addr>
                         <fr:route>dhsorens-001M.xml</fr:route>
                         <fr:title text="How to Specify a Large Language Model?">How to Specify a Large Language Model?</fr:title>
@@ -254,20 +254,20 @@ This has prompted some thinking on the subject.</fr:p>
                         <fr:meta name="toc">true</fr:meta>
                       </fr:frontmatter>
                       <fr:mainmatter>
-                        <fr:p>Consider the problem of specifying the "correct" behavior of a large language model like Chat GPT.
+                        <fr:p>Consider the (perhaps extreme) problem of specifying the "correct" behavior of a large language model like Chat GPT.
     The technologists who have built these LLMs are probably more aware than anyone—no one <fr:em>really</fr:em> knows what the correct behavior of an artificial intelligence is or should be.
     We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would rather it not produce even though it could do so in principle within the bounds of being helpful, knowledgeable, and honest.
     These things include somewhat-universally-agreed-upon things like child porn and slanderous and libelous deep fakes.
-    In more of a grey area, they increasingly also include politically inconvenient facts or references to certain events in history about which we remain sensitive.</fr:p>
+    In more of a grey area, they can also include politically inconvenient facts or references to certain events in history about which we remain sensitive.</fr:p>
                         <fr:p>In other words, we want the LLM to be kind, or to have a value system of some kind.
     An LLM should not encourage someone to kill themselves.
-    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).</fr:p>
-                        <fr:p>The problem with asking an LLM to behave ethically is <fr:em>who</fr:em> is to say what is right, and good, and true? <fr:em>What</fr:em> value system should dominate?
+    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).
+    The problem with asking an LLM to behave ethically is <fr:em>who</fr:em> is to say what is right, and good, and true? <fr:em>What</fr:em> value system should dominate?
     People will have different philosophies on what they think the behavior of an LLM should be, but we are far from any point of consensus on what that should be.
     Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align itself with that.
-    (Think of the film <fr:em>I, Robot</fr:em> as a meditation on the unintended (and disasterous, tyranical) consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)</fr:p>
+    (Think of the film <fr:em>I, Robot</fr:em> as a meditation on the unintended—and disasterous, tyranical—consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)</fr:p>
                         <fr:p>I would argue that the problem of correctly specifying an LLM is the problem that religion tends to address—one of value, meaning, and knowing goodness.
-    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form—much less in prose, and even less a <fr:em>formal</fr:em> specification.</fr:p>
+    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form, much less in prose, and even less a <fr:em>formal</fr:em> specification.</fr:p>
                       </fr:mainmatter>
                       <fr:backmatter />
                     </fr:tree>
@@ -277,7 +277,7 @@ This has prompted some thinking on the subject.</fr:p>
     How can we strengthen their specifications to be more clear, accurate, and useful?</fr:p>
                     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                       <fr:frontmatter>
-                        <fr:anchor>249</fr:anchor>
+                        <fr:anchor>263</fr:anchor>
                         <fr:addr type="user">dhsorens-001J</fr:addr>
                         <fr:route>dhsorens-001J.xml</fr:route>
                         <fr:title text="Smart Contract Specifications">Smart Contract Specifications</fr:title>
@@ -297,7 +297,7 @@ This has prompted some thinking on the subject.</fr:p>
                         <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> can have deceptively difficult specifications.</fr:p>
                         <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                           <fr:frontmatter>
-                            <fr:anchor>251</fr:anchor>
+                            <fr:anchor>265</fr:anchor>
                             <fr:addr type="user">dhsorens-001N</fr:addr>
                             <fr:route>dhsorens-001N.xml</fr:route>
                             <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
@@ -313,33 +313,28 @@ This has prompted some thinking on the subject.</fr:p>
                             </fr:authors>
                           </fr:frontmatter>
                           <fr:mainmatter>
-                            <fr:p>To illustrate, consider the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">formal verification work on Dexter2</fr:link>, an AMM on the Tezos blockchain. Dexter2 has been formally verified by at least three different groups using three different formal verification tools.
-
-    Each was based on the same informal specification. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.</fr:p>
+                            <fr:p>To illustrate, consider the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">formal verification work on Dexter2</fr:link>, an AMM on the Tezos blockchain. Dexter2 has been formally verified by <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">at least three different groups using three different formal verification tools</fr:link>.
+    Each was based on the <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">same informal specification</fr:link>. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.</fr:p>
                             <fr:p>However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:</fr:p>
                             <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
                             <fr:p>where <fr:tex display="inline"><![CDATA[x]]></fr:tex> represents the quantity held by the contract of the token being traded in, <fr:tex display="inline"><![CDATA[y]]></fr:tex> represents the quantity held by the contract of the token being traded out, and <fr:tex display="inline"><![CDATA[k]]></fr:tex> is a constant. The tokens held by the contract come from liquidity providers, which are investors who deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees. That <fr:tex display="inline"><![CDATA[k]]></fr:tex> is constant means that a trade of <fr:tex display="inline"><![CDATA[\Delta  x]]></fr:tex> of one token yields <fr:tex display="inline"><![CDATA[\Delta  y]]></fr:tex> of another such that the product from above stays constant at <fr:tex display="inline"><![CDATA[k]]></fr:tex>:</fr:p>
                             <fr:tex display="block"><![CDATA[(x+ \Delta  x)(y− \Delta  y) = k.]]></fr:tex>
                             <fr:p>Buterin argued that an AMM that trades along this indifference curve features efficient price discovery. He also argued that it can properly incentivize liquidity providers by charging a <fr:tex display="inline"><![CDATA[0.3]]></fr:tex>% fee on each trade to give to them.</fr:p>
-                            <fr:p>We can probably convince ourselves that the informal specification of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the informal specification or its formal counterparts actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve <fr:tex display="inline"><![CDATA[xy= k]]></fr:tex>.
+                            <fr:p>We can probably convince ourselves that the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">informal specification</fr:link> of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">informal specification or its formal counterparts</fr:link> actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve <fr:tex display="inline"><![CDATA[xy= k]]></fr:tex>.
     It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.</fr:p>
-                            <fr:p>There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the three formalizations of Dexter2’s informal specification reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.</fr:p>
+                            <fr:p>There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">three formalizations of Dexter2’s informal specification</fr:link> reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.</fr:p>
                             <fr:p>Furthermore, were we to try to formally specify some of the aforementioned high-level economic and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go about doing so. Most specification languages and models of computation are too low-level to easily admit clear specifications of such properties. What model or framework would we use, for example, to specify that Dexter2 facilitate an efficient market?</fr:p>
                             <fr:p>As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2 routinely manage billions of USD worth of funds, much is also at risk in case of a bug. Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of the economic properties that we have just mentioned, directly or indirectly. It is, however, not obvious that these properties hold by reading any of the aforementioned specifications.</fr:p>
                           </fr:mainmatter>
                           <fr:backmatter />
                         </fr:tree>
-                        <fr:p>The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
-    The best contract specifications of smart contracts use time-tested approaches to capture the most important aspects of code security—<fr:em>e.g.</fr:em> solvency, sovereignty, or key safety properties.</fr:p>
-                        <fr:p>The primary point I'm making here with the (somewhat lengthy) discussion on smart contracts and their specifications is that software specification can range from highly technical and mathematical to highly intuitive and prose-based.
-    The example of <fr:link type="local" href="dhsorens-001N.xml" addr="dhsorens-001N" title="Case Study: Dexter2">Dexter2</fr:link> that I gave is probably still addressable with mathematical specifications;
-    but at higher levels of abstraction, and in instances where software becomes more social and human-oriented, specifications get more difficult to write rigorously because there is no clearly defined, articulable theory with which one can use to derive the correctness of one's specification.</fr:p>
+                        <fr:p>The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.</fr:p>
                       </fr:mainmatter>
                       <fr:backmatter />
                     </fr:tree>
                     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                       <fr:frontmatter>
-                        <fr:anchor>253</fr:anchor>
+                        <fr:anchor>267</fr:anchor>
                         <fr:addr type="user">dhsorens-001Q</fr:addr>
                         <fr:route>dhsorens-001Q.xml</fr:route>
                         <fr:title text="Incorrect Specifications">Incorrect Specifications</fr:title>
@@ -357,11 +352,11 @@ This has prompted some thinking on the subject.</fr:p>
                       </fr:frontmatter>
                       <fr:mainmatter>
                         <fr:p>Incorrect software specifications are a problem because
-    they invalidate the security guarantees offered by <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link>, 
+    they can invalidate the security guarantees offered by <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link>, 
     offer a false sense of security,
     misguide developers,
     and most importantly open code up to vulnerabilities.
-    In the case of <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>, poor specifications are a <fr:link type="local" href="dhsorens-001P.xml" addr="dhsorens-001P" title="Smart Contract Vulnerabilities Due to Poor Specification">common source of catastrophic vulnerabilities and losses of funds</fr:link>.</fr:p>
+    Indeed, for <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contracts</fr:link>, poor specifications are a <fr:link type="local" href="dhsorens-001P.xml" addr="dhsorens-001P" title="Smart Contract Vulnerabilities Due to Poor Specification">common source of catastrophic vulnerabilities and losses of funds</fr:link>.</fr:p>
                       </fr:mainmatter>
                       <fr:backmatter />
                     </fr:tree>
@@ -372,7 +367,7 @@ This has prompted some thinking on the subject.</fr:p>
                 </fr:tree>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>289</fr:anchor>
+                    <fr:anchor>305</fr:anchor>
                     <fr:addr type="user">dhsorens-001K</fr:addr>
                     <fr:route>dhsorens-001K.xml</fr:route>
                     <fr:title text="Proof Assistants and the Issue of Incorrect Specification">Proof Assistants and the Issue of Incorrect Specification</fr:title>
@@ -390,13 +385,13 @@ This has prompted some thinking on the subject.</fr:p>
                   </fr:frontmatter>
                   <fr:mainmatter>
                     <fr:p><fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">Proof assistants</fr:link> give us a formal and robustly mathematical environment in which to prove mathematical theorems and arbitrary properties of programs.
-    Virtually anything that can be stated; true propositions can all in principle be proved.</fr:p>
-                    <fr:p>You would think that this would make proof assistants the silver bullet to software security:
-    Since you could truly state and prove any desirable security or performance property, if the tools are good enough you might think that they are precisely what's needed to make high-assurance software absolutely bullet-proof.</fr:p>
-                    <fr:p>The reality is, however, that not all desirable properties can be clearly stated.
-    Some will need a great deal of formal infrastructure built up.
-    For others, it's not even obvious that formal statements are the right tool to use for them.</fr:p>
-                    <fr:p>Computer science has a long history of using diagrams, pictures, and other tools of abstraction to specify computation.
+    Virtually anything that can be stated; true propositions can all in principle be proved.
+    You would think that this would make proof assistants the silver bullet to software security:
+    Since you could truly state and prove any desirable security or performance property, if the tools are good enough you might think that they are precisely what's needed to make high-assurance software absolutely bullet-proof.
+    The reality is, however, it is difficult to write a complete specification; desirable properties of some software can be extremely difficult to articulate.</fr:p>
+                    <fr:p>Some software will need a great deal of formal infrastructure built up to write provably correct specifications.
+    For others, it's not even obvious that formal statements are the right tool to use for them.
+    Computer science has a long history of using diagrams, pictures, and other tools of abstraction to specify computation.
     Maybe a proof assistant is powerful enough to formalize any abstract framework? Maybe it's powerful enough to do this?
     If it is, how do we proceed? How do we coax that power out so that all desirable properties of software can be clearly articulated, specified and ultimately formally proved?</fr:p>
                   </fr:mainmatter>
@@ -410,7 +405,7 @@ This has prompted some thinking on the subject.</fr:p>
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1104</fr:anchor>
+            <fr:anchor>1116</fr:anchor>
             <fr:addr type="user">index</fr:addr>
             <fr:route>index.xml</fr:route>
             <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
@@ -426,7 +421,7 @@ This has prompted some thinking on the subject.</fr:p>
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>458</fr:anchor>
+                <fr:anchor>464</fr:anchor>
                 <fr:addr type="user">dhsorens-000D</fr:addr>
                 <fr:route>dhsorens-000D.xml</fr:route>
                 <fr:title text="Education">Education</fr:title>
@@ -449,7 +444,7 @@ This has prompted some thinking on the subject.</fr:p>
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>460</fr:anchor>
+                <fr:anchor>466</fr:anchor>
                 <fr:addr type="user">dhsorens-pubs</fr:addr>
                 <fr:route>dhsorens-pubs.xml</fr:route>
                 <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -492,7 +487,7 @@ This has prompted some thinking on the subject.</fr:p>
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>462</fr:anchor>
+                <fr:anchor>468</fr:anchor>
                 <fr:addr type="user">dhsorens-talks</fr:addr>
                 <fr:route>dhsorens-talks.xml</fr:route>
                 <fr:title text="Talks">Talks</fr:title>
@@ -519,7 +514,7 @@ This has prompted some thinking on the subject.</fr:p>
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>464</fr:anchor>
+                <fr:anchor>470</fr:anchor>
                 <fr:addr type="user">dhsorens-000E</fr:addr>
                 <fr:route>dhsorens-000E.xml</fr:route>
                 <fr:title text="Work">Work</fr:title>

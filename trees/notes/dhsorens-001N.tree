@@ -3,9 +3,8 @@
 \date{2025-09-05}
 
 \p{
-    To illustrate, consider the [formal verification work on Dexter2](dhsorens-001O), an AMM on the Tezos blockchain. Dexter2 has been formally verified by at least three different groups using three different formal verification tools.
-
-    Each was based on the same informal specification. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.
+    To illustrate, consider the [formal verification work on Dexter2](dhsorens-001O), an AMM on the Tezos blockchain. Dexter2 has been formally verified by [at least three different groups using three different formal verification tools](dhsorens-0010).
+    Each was based on the [same informal specification](dhsorens-0010). The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.
 }
 
 \p{
@@ -25,12 +24,12 @@
 }
 
 \p{
-    We can probably convince ourselves that the informal specification of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the informal specification or its formal counterparts actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve #{xy= k}.
+    We can probably convince ourselves that the [informal specification](dhsorens-001O) of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the [informal specification or its formal counterparts](dhsorens-001O) actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve #{xy= k}.
     It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.
 }
 
 \p{
-    There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the three formalizations of Dexter2’s informal specification reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.
+    There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the [three formalizations of Dexter2’s informal specification](dhsorens-001O) reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.
 }
 
 \p{   

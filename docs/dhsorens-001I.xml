@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>273</fr:anchor>
+    <fr:anchor>289</fr:anchor>
     <fr:addr type="user">dhsorens-001I</fr:addr>
     <fr:route>dhsorens-001I.xml</fr:route>
     <fr:title text="Compactness: Definition and Theory">Compactness: Definition and Theory</fr:title>
@@ -30,7 +30,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>275</fr:anchor>
+            <fr:anchor>291</fr:anchor>
             <fr:addr type="user">dhsorens-001G</fr:addr>
             <fr:route>dhsorens-001G.xml</fr:route>
             <fr:title text="The Mathematician's Approach to Proposition and Proof">The Mathematician's Approach to Proposition and Proof</fr:title>
@@ -59,7 +59,7 @@
             <fr:p>A mathematician will start with an intuitive idea, for which there may not yet be appropriate or adequate technical language or symbols to describe it.
     He will go through a cycle of experimenting with a definition, or a conjecture, that attempts to capture the idea he's after.
     He will then test out the <fr:em>consequences</fr:em> of this definition or conjecture by either proving theorems with it, trying to prove the theorem itself, or looking at its consequences in the mathematical theory more broadly.</fr:p>
-            <fr:p>This will kick off a process which is broadly intuitive, though crucially informed by feedback with the relevant mathematical theory, of aiming at a definition or conjecture, testing its fit, and adjusting it.
+            <fr:p>This will kick off a process which is broadly intuitive, informed by feedback with the relevant mathematical theory, of aiming at a definition or conjecture, testing its fit, and adjusting it.
     It can take the mathematical community as a whole several iterations to actually get the process right.
     As a particularly interesting example, consider the history of the definition of <fr:link type="local" href="dhsorens-001I.xml" addr="dhsorens-001I" title="Compactness: Definition and Theory"><fr:em>compactness</fr:em></fr:link> in mathematics.</fr:p>
             <fr:p>Most fundamentally, a mathematician's job is to bring in novel and useful abstract concepts, capture them in their appropriate definitions or conjectures, and place them appropriately in the corpus of mathematical theory.

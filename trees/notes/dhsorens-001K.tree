@@ -6,20 +6,15 @@
 \p{
     [Proof assistants](dhsorens-000B) give us a formal and robustly mathematical environment in which to prove mathematical theorems and arbitrary properties of programs.
     Virtually anything that can be stated; true propositions can all in principle be proved.
-}
-
-\p{
     You would think that this would make proof assistants the silver bullet to software security:
     Since you could truly state and prove any desirable security or performance property, if the tools are good enough you might think that they are precisely what's needed to make high-assurance software absolutely bullet-proof.
+    The reality is, however, it is difficult to write a complete specification; desirable properties of some software can be extremely difficult to articulate.
+    % that not all desirable properties can be clearly stated.
 }
 
 \p{
-    The reality is, however, that not all desirable properties can be clearly stated.
-    Some will need a great deal of formal infrastructure built up.
+    Some software will need a great deal of formal infrastructure built up to write provably correct specifications.
     For others, it's not even obvious that formal statements are the right tool to use for them.
-}
-
-\p{
     Computer science has a long history of using diagrams, pictures, and other tools of abstraction to specify computation.
     Maybe a proof assistant is powerful enough to formalize any abstract framework? Maybe it's powerful enough to do this?
     If it is, how do we proceed? How do we coax that power out so that all desirable properties of software can be clearly articulated, specified and ultimately formally proved?
