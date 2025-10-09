@@ -119,7 +119,7 @@
         <fr:meta name="toc">true</fr:meta>
       </fr:frontmatter>
       <fr:mainmatter>
-        <fr:p>I am also interested more broadly in type theory and formal proof, especially as they relate to <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link>. This has included some <fr:link type="local" href="dhsorens-0009.xml" addr="dhsorens-0009" title="The Background to my PhD Thesis">preliminary work</fr:link> in <fr:link type="local" href="dhsorens-hott.xml" addr="dhsorens-hott" title="Homotopy Type Theory (HoTT)">HoTT</fr:link> on the formal side, but ongoing work in the <fr:link type="local" href="dhsorens-000Z.xml" addr="dhsorens-000Z" title="Formalization of Mathematics">formalization of mathematics</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> is deeply interesting to me as a <fr:link type="local" href="dhsorens-0017.xml" addr="dhsorens-0017" title="How the Formalization of Mathematics Relates to my Work">peripheral development to my work</fr:link>.</fr:p>
+        <fr:p>I am also interested more broadly in type theory and formal proof, especially as they relate to <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link>. This has included some <fr:link type="local" href="dhsorens-0009.xml" addr="dhsorens-0009" title="The Background to my PhD Thesis">preliminary work</fr:link> in <fr:link type="local" href="dhsorens-hott.xml" addr="dhsorens-hott" title="Homotopy Type Theory (HoTT)">HoTT</fr:link> on the formal side, but ongoing work in the <fr:link type="local" href="dhsorens-000Z.xml" addr="dhsorens-000Z" title="Formalization of Mathematics">formalization of mathematics</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> is deeply interesting to me as a <fr:link type="local" href="dhsorens-0017.xml" addr="dhsorens-0017" title="How the Formalization of Mathematics Relates to My Work">peripheral development to my work</fr:link>.</fr:p>
       </fr:mainmatter>
       <fr:backmatter />
     </fr:tree>
@@ -301,7 +301,7 @@
                 <fr:meta name="toc">true</fr:meta>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p>See my latest on <fr:link type="local" href="dhsorens-0017.xml" addr="dhsorens-0017" title="How the Formalization of Mathematics Relates to my Work">How the Formalization of Mathematics Relates to my Work</fr:link> and the nuances of <fr:link type="local" href="dhsorens-001J.xml" addr="dhsorens-001J" title="Smart Contract Specification">Smart Contract Specification</fr:link>.</fr:p>
+                <fr:p>See my latest on <fr:link type="local" href="dhsorens-0017.xml" addr="dhsorens-0017" title="How the Formalization of Mathematics Relates to My Work">How the Formalization of Mathematics Relates to My Work</fr:link> and the nuances of <fr:link type="local" href="dhsorens-001J.xml" addr="dhsorens-001J" title="Smart Contract Specification">Smart Contract Specification</fr:link>.</fr:p>
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
