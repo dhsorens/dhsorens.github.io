@@ -1,0 +1,13 @@
+\title{Incorrect Specifications}
+\author{dhsorens}
+\date{2025-09-06}
+\meta{toc}{true}
+
+\p{
+    Incorrect software specifications are a problem because
+    they can invalidate the security guarantees offered by [formal verification](dhsorens-000X), 
+    offer a false sense of security,
+    misguide developers,
+    and most importantly open code up to vulnerabilities.
+    Indeed, for [smart contracts](dhsorens-000Y), poor specifications are a [common source of catastrophic vulnerabilities and losses of funds](dhsorens-001P).
+}

@@ -3,8 +3,8 @@
 \date{2025-08-29}
 
 \p{
-    [Smart contracts](dhsorens-000Y) are programs that execute on the blockchain.
-    They are interesting from the perspective of formal specification and verification because:
+    % [Smart contracts](dhsorens-000Y) are programs that execute on the blockchain.
+    [Smart contracts](dhsorens-000Y) are interesting from the perspective of formal specification and verification because:
 }
 \ol{
     \li{they are risk- and property-dense,}
@@ -12,5 +12,5 @@
     \li{they often manage huge sums of money (so the incentives line up).}
 }
 \p{
-    Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely interesting (and [nontrivial](dhsorens-000L)) specifications, which warrants a study not only of the science of going from specification to verification (formal proof), but of the \em{specifications themselves} as independent, mathematical objects.
+    Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely [interesting (and nontrivia) specifications](dhsorens-001J), which warrants a study not only of the science of going from specification to verification (formal proof), but of the \em{specifications themselves} as independent, mathematical objects.
 }

@@ -1,0 +1,43 @@
+\title{The Computer Scientist's Approach to Proposition and Proof (About Software)}
+\author{dhsorens}
+\date{2025-09-05}
+\meta{toc}{true}
+
+% The feedback loop for software is different from that of mathematicians because there often isn't a theory with which one can probe, and test their definitions.
+
+\p{
+    Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
+    % Some software or computer logic is both highly technical and explicitly mathematical.
+    % Depending on the level of computation, the goal of a bit of code—maybe something backing a
+    For example, chip design or software implementing [zero-knowledge proofs](dhsorens-001L) will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    In these cases, the \em{specification} tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
+}
+
+\p{
+    However, software does much more than mathematical computation.
+    As it gets higher in abstraction, software can become a social and financial intermediary between people or even an agent of its own.
+    Software runs human-computer interfaces,  the flow of a sales team's CRM, and the media by which news gets reported and propagated.
+    Software makes music, tells stories, implements art and design.
+    It manages money and communication between people.
+    In these cases, the intended behavior of software doesn't always have a clear and definable formal specification couched in mathematical terms.
+    Instead, at these higher layers of abstraction, software can become difficult to specify—or describe in a formal language—\em{correctly}.
+    % By this I mean that the intended and desired behavior of software can be difficult to articulate in prose or in formal language.
+}
+
+\transclude{dhsorens-001M} % AI alignment/specification
+
+\p{
+    The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: [smart contracts](dhsorens-000Y).
+    What we will find is that smart contracts lie at a rich intersection between low-level, technical properties and high-level, more "human" properties.
+    Can we reasonably [specify smart contracts](dhsorens-000W) in a rigorous and correct way?
+    How can we strengthen their specifications to be more clear, accurate, and useful? 
+}
+
+\transclude{dhsorens-001J} % smart contract specification
+
+\transclude{dhsorens-001Q} % incorrect specifications
+
+\p{
+    Considering this, what is the role of formal proposition and proof (formal verification), especially in [proof assistants](dhsorens-000B), applied to software vulnerabilities?
+    How do we address the issue of incorrect specification?
+}

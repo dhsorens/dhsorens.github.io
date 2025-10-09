@@ -12,5 +12,6 @@
     % I also think a lot about [type theory and formal proof](dhsorens-000V) more broadly.
 }
 
-\transclude{dhsorens-000W} % smart contracts 
+% \transclude{dhsorens-000Y} % smart contracts
+\transclude{dhsorens-000W} % smart contract specification and verification
 \transclude{dhsorens-0015} % fv in proof assistants, more broadly

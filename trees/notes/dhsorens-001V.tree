@@ -1,0 +1,19 @@
+\title{Mango Markets (2022)}
+\author{dhsorens}
+\date{2025-10-09}
+
+\p{
+    Finally, Mango Markets, a Solana-based DEX, was attacked in October 2022 for approximately 116
+    million USD in contract assets. The attack consisted of a complicated and subtle trading strategy
+    which only a sophisticated trader would be able to see and exploit. [CoinDesk reported](https://www.coindesk.com/markets/2022/10/12/how-market-manipulation-led-to-a-100m-exploit-on-solana-defi-exchange-mango) that the
+    attacker did everything within the parameters of the platform’s design. Avraham Eisenberg, [the
+    attacker](https://solscan.io/account/CQvKSNnYtPTZfQRQ5jkHq8q2swJyRsdQLcFcj3EmKFfX), [wrote](https://x.com/avi_eisen/status/1581326199682265088):
+}
+
+\p{
+    \em{
+        "I believe all of our actions were legal open market actions, using the protocol as designed, even
+        if the development team did not fully anticipate all the consequences of setting parameters the
+        way they are."
+    } [(link)](https://x.com/avi_eisen/status/1581326199682265088)
+}
