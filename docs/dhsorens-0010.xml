@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>507</fr:anchor>
+    <fr:anchor>511</fr:anchor>
     <fr:addr type="user">dhsorens-0010</fr:addr>
     <fr:route>dhsorens-0010.xml</fr:route>
     <fr:title text="Formalization of Mathematics in Lean">Formalization of Mathematics in Lean</fr:title>
@@ -27,7 +27,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>509</fr:anchor>
+            <fr:anchor>513</fr:anchor>
             <fr:addr type="user">dhsorens-000Z</fr:addr>
             <fr:route>dhsorens-000Z.xml</fr:route>
             <fr:title text="Formalization of Mathematics">Formalization of Mathematics</fr:title>
@@ -139,7 +139,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>511</fr:anchor>
+            <fr:anchor>515</fr:anchor>
             <fr:addr type="user">dhsorens-001N</fr:addr>
             <fr:route>dhsorens-001N.xml</fr:route>
             <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
