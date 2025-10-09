@@ -115,7 +115,7 @@
                   <fr:mainmatter>
                     <fr:p>Speaking more broadly, <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link> is interesting because in the robustly mathematical setting provided by proof assistants, one can state and prove arbitrary properties.
 
-    In some ways, this is a blessing and a curse.
+    This may be a blessing and a curse.
     Much like with programming languages, being able to state and do arbitrary things is not always an advantage.
     
     Due to the extreme flexibility, formal counterparts of informal specifications can vary widely without an obvious way to compare them or evaluate them for correctness or practical utility (for more on this see the introduction to my <fr:link type="external" href="docs/sorensen-phd-thesis.pdf">PhD thesis</fr:link>).</fr:p>
