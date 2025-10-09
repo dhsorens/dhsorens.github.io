@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>367</fr:anchor>
+    <fr:anchor>402</fr:anchor>
     <fr:addr type="user">dhsorens-001G</fr:addr>
     <fr:route>dhsorens-001G.xml</fr:route>
     <fr:title text="The Mathematician's Approach to Proposition and Proof">The Mathematician's Approach to Proposition and Proof</fr:title>
@@ -48,7 +48,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>369</fr:anchor>
+            <fr:anchor>404</fr:anchor>
             <fr:addr type="user">dhsorens-001F</fr:addr>
             <fr:route>dhsorens-001F.xml</fr:route>
             <fr:title text="Proposition and Proof in Mathematics and Computer Science">Proposition and Proof in Mathematics and Computer Science</fr:title>
@@ -76,7 +76,7 @@
     My goal here is to explore the process of forming software specifications, arguing that rigorous software specification gets harder as the purpose of the software moves from mathematical computation to playing social, political, and economic roles in the world.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>257</fr:anchor>
+                <fr:anchor>277</fr:anchor>
                 <fr:addr type="user">dhsorens-001G</fr:addr>
                 <fr:route>dhsorens-001G.xml</fr:route>
                 <fr:title text="The Mathematician's Approach to Proposition and Proof">The Mathematician's Approach to Proposition and Proof</fr:title>
@@ -120,7 +120,7 @@
     This is precisely where the difficulty of proposition and proof relating to software comes into play.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>259</fr:anchor>
+                <fr:anchor>279</fr:anchor>
                 <fr:addr type="user">dhsorens-001H</fr:addr>
                 <fr:route>dhsorens-001H.xml</fr:route>
                 <fr:title text="The Computer Scientist's Approach to Proposition and Proof (About Software)">The Computer Scientist's Approach to Proposition and Proof (About Software)</fr:title>
@@ -149,7 +149,7 @@
     Instead, at these higher layers of abstraction, software can become difficult to specify—or describe in a formal language—<fr:em>correctly</fr:em>.</fr:p>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>261</fr:anchor>
+                    <fr:anchor>281</fr:anchor>
                     <fr:addr type="user">dhsorens-001M</fr:addr>
                     <fr:route>dhsorens-001M.xml</fr:route>
                     <fr:title text="How to Specify a Large Language Model?">How to Specify a Large Language Model?</fr:title>
@@ -189,10 +189,10 @@
     How can we strengthen their specifications to be more clear, accurate, and useful?</fr:p>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>263</fr:anchor>
+                    <fr:anchor>283</fr:anchor>
                     <fr:addr type="user">dhsorens-001J</fr:addr>
                     <fr:route>dhsorens-001J.xml</fr:route>
-                    <fr:title text="Smart Contract Specifications">Smart Contract Specifications</fr:title>
+                    <fr:title text="Smart Contract Specification">Smart Contract Specification</fr:title>
                     <fr:date>
                       <fr:year>2025</fr:year>
                       <fr:month>9</fr:month>
@@ -206,10 +206,10 @@
                     <fr:meta name="toc">true</fr:meta>
                   </fr:frontmatter>
                   <fr:mainmatter>
-                    <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> can have deceptively difficult specifications.</fr:p>
+                    <fr:p><fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">Smart contracts</fr:link> can have <fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications">deceptively difficult specifications</fr:link>.</fr:p>
                     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                       <fr:frontmatter>
-                        <fr:anchor>265</fr:anchor>
+                        <fr:anchor>269</fr:anchor>
                         <fr:addr type="user">dhsorens-001N</fr:addr>
                         <fr:route>dhsorens-001N.xml</fr:route>
                         <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
@@ -225,7 +225,7 @@
                         </fr:authors>
                       </fr:frontmatter>
                       <fr:mainmatter>
-                        <fr:p>To illustrate, consider the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">formal verification work on Dexter2</fr:link>, an AMM on the Tezos blockchain. Dexter2 has been formally verified by <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">at least three different groups using three different formal verification tools</fr:link>.
+                        <fr:p>Dexter2 is an AMM on the Tezos blockchain that has been formally verified by <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">at least three different groups using three different formal verification tools</fr:link>.
     Each was based on the <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">same informal specification</fr:link>. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.</fr:p>
                         <fr:p>However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:</fr:p>
                         <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
@@ -241,12 +241,182 @@
                       <fr:backmatter />
                     </fr:tree>
                     <fr:p>The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.</fr:p>
+                    <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                      <fr:frontmatter>
+                        <fr:anchor>271</fr:anchor>
+                        <fr:addr type="user">dhsorens-001P</fr:addr>
+                        <fr:route>dhsorens-001P.xml</fr:route>
+                        <fr:title text="Smart Contract Vulnerabilities Due to Poor Specification">Smart Contract Vulnerabilities Due to Poor Specification</fr:title>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>9</fr:month>
+                          <fr:day>6</fr:day>
+                        </fr:date>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <fr:p>Smart contracts are vulnerable due to incorrect code, but equally due to incorrect specification (or design).
+    There are more examples of this that can possibly be included here, but I have written up a few examples.
+    We would recognize each of these exploits as attacks, despite the fact that the contracts were functioning
+    as specified, which tells us that the specifications were erroneous as they did not accurately capture the
+    intended economic behaviors. To the contrary, they permitted unintended and pathological behavior.</fr:p>
+                        <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                          <fr:frontmatter>
+                            <fr:anchor>243</fr:anchor>
+                            <fr:addr type="user">dhsorens-001T</fr:addr>
+                            <fr:route>dhsorens-001T.xml</fr:route>
+                            <fr:title text="Beanstalk Hack (2022)">Beanstalk Hack (2022)</fr:title>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <fr:p>Beanstalk is (was) an Ethereum-based stablecoin protocol which uses a decentralized governance protocol.
+    This governance protocol features an emergency commit function, which gives a supermajority of governance votes power to quickly respond to an emergency by approving and executing a proposal in one single vote. The goal of said
+    emergency commit function is to allow governance to respond quickly to an emergency, providing added
+    security in the face of unforeseen vulnerabilities.</fr:p>
+                            <fr:p>In a turn of grim irony, this very emergency response mechanism turned out to be the source of a
+    catastrophic exploit. On April 17, 2022, an attacker used a flash loan to temporarily buy a supermajority
+    of governance tokens and execute a proposal, draining the contract of <fr:link type="external" href="https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7">approximately 77 million USD in
+    lost contract assets</fr:link>
+     A flash loan is a loan mediated by a smart contract and issued for the duration
+    of a single, atomic transaction. Due to its atomicity, a flash loan removes the creditor’s risk of debt
+    default, and thus enables enormous, uncollateralized loans. For example, the Aave flash loan pool has had
+    in excess of 1 billion USD which can be loaned out.
+    Flash loans can introduce unintuitive contract behavior, deviating from that of traditional markets. Importantly, the Beanstalk attack leveraged the unexpected behavior due to the availability of flash loans, exploiting the faulty design of the governance mechanism rather than incorrect code.</fr:p>
+                          </fr:mainmatter>
+                          <fr:backmatter />
+                        </fr:tree>
+                        <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                          <fr:frontmatter>
+                            <fr:anchor>245</fr:anchor>
+                            <fr:addr type="user">dhsorens-001U</fr:addr>
+                            <fr:route>dhsorens-001U.xml</fr:route>
+                            <fr:title text="Spartan Protocol and Pancake Bunny Hack (2021)">Spartan Protocol and Pancake Bunny Hack (2021)</fr:title>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <fr:p>More examples of successful flash loan attacks include
+    attacks on the Spartan Protocol and Pancake Bunny, two DeFi contracts on the Binance Smart Chain
+    (BSC). Attackers used flash loans to make huge trades and temporarily manipulate market prices of
+    certain assets. Both of these contracts used these market prices in the contract logic, and in both cases
+    this lead to pathological—though, again, correct according to the flawed specification—contract behavior.
+    In May 2021, an attacker <fr:link type="external" href="https://bscscan.com/tx/0xb64ae25b0d836c25d115a9368319902c972a0215bd108ae17b1b9617dfb93af8">drained</fr:link> the Spartan Protocol contract for a profit of roughly the <fr:link type="external" href="https://peckshield-94632.medium.com/the-spartan-incident-root-cause-analysis-b14135d3415f">equivalent of 30 million USD</fr:link>. Another <fr:link type="external" href="https://bscscan.com/address/0x158c244b62058330f2c328c720b072d8db2c612f">attacker</fr:link> <fr:link type="external" href="https://x.com/PancakeBunnyFin/status/1395173389208334342">drained</fr:link> Pancake Bunny of 114k WBNB and 697k BUNNY tokens, amounting to about <fr:link type="external" href="https://cointelegraph.com/news/pancakebunny-tanks-96-following-200m-flash-loan-exploit">45 million USD at the time in lost funds</fr:link>.</fr:p>
+                          </fr:mainmatter>
+                          <fr:backmatter />
+                        </fr:tree>
+                        <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                          <fr:frontmatter>
+                            <fr:anchor>247</fr:anchor>
+                            <fr:addr type="user">dhsorens-001V</fr:addr>
+                            <fr:route>dhsorens-001V.xml</fr:route>
+                            <fr:title text="Mango Markets (2022)">Mango Markets (2022)</fr:title>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <fr:p>Finally, Mango Markets, a Solana-based DEX, was attacked in October 2022 for approximately 116
+    million USD in contract assets. The attack consisted of a complicated and subtle trading strategy
+    which only a sophisticated trader would be able to see and exploit. <fr:link type="external" href="https://www.coindesk.com/markets/2022/10/12/how-market-manipulation-led-to-a-100m-exploit-on-solana-defi-exchange-mango">CoinDesk reported</fr:link> that the
+    attacker did everything within the parameters of the platform’s design. Avraham Eisenberg, <fr:link type="external" href="https://solscan.io/account/CQvKSNnYtPTZfQRQ5jkHq8q2swJyRsdQLcFcj3EmKFfX">the
+    attacker</fr:link>, <fr:link type="external" href="https://x.com/avi_eisen/status/1581326199682265088">wrote</fr:link>:</fr:p>
+                            <fr:p><fr:em>"I believe all of our actions were legal open market actions, using the protocol as designed, even
+        if the development team did not fully anticipate all the consequences of setting parameters the
+        way they are."</fr:em> <fr:link type="external" href="https://x.com/avi_eisen/status/1581326199682265088">(link)</fr:link></fr:p>
+                          </fr:mainmatter>
+                          <fr:backmatter />
+                        </fr:tree>
+                        <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                          <fr:frontmatter>
+                            <fr:anchor>249</fr:anchor>
+                            <fr:addr type="user">dhsorens-001W</fr:addr>
+                            <fr:route>dhsorens-001W.xml</fr:route>
+                            <fr:title text="Nomad (2022)">Nomad (2022)</fr:title>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <fr:p>Nomad is (was) a cross-chain bridge protocol. In August 2022, <fr:link type="external" href="https://x.com/samczsun/status/1554252024723546112">more than 500 hacker addresses exploited a bug</fr:link> introduced by a faulty upgrade to one of the Nomad smart contracts. The upgrade incorrectly added the null address (<fr:code>0x000...000</fr:code>) as a trusted root, which turned off
+    a key safety check, allowing anyone to withdraw arbitrary amounts of funds from the Nomad contract to
+    their wallet by calling the contract with a particular payload. The <fr:link type="external" href="https://etherscan.io/tx/0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460">attack</fr:link> resulted in 190 million USD
+    in lost funds.</fr:p>
+                          </fr:mainmatter>
+                          <fr:backmatter />
+                        </fr:tree>
+                        <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+                          <fr:frontmatter>
+                            <fr:anchor>251</fr:anchor>
+                            <fr:addr type="user">dhsorens-001X</fr:addr>
+                            <fr:route>dhsorens-001X.xml</fr:route>
+                            <fr:title text="Uranium (2021) and NowSwap (2021)">Uranium (2021) and NowSwap (2021)</fr:title>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <fr:p>Similarly, Uranium Finance, an AMM, suffered a costly exploit after a faulty
+    contract upgrade. The original contract contained a constant, <fr:code>k</fr:code>, equal to <fr:code>1_000</fr:code> in three different places,
+    which was used to price trades. The update changed this value to <fr:code>10_000</fr:code> in two places but not the
+    third, presumably to calculate trades with higher precision. The result of this was that the attacker could
+    swap virtually nothing in for 98% of the total balance of any output token, which <fr:link type="external" href="https://web.archive.org/web/20230201114526/https://uraniumfinance.medium.com/exploit-d3a88921531c">resulted in a loss of 50
+    million USD of contract funds</fr:link>. NowSwap, a nearly identical application, upgraded <fr:link type="external" href="https://www.halborn.com/blog/post/explained-the-nowswap-protocol-hack-september-2021">with the same
+    error</fr:link> and incurred a loss of 1 million USD.</fr:p>
+                          </fr:mainmatter>
+                          <fr:backmatter />
+                        </fr:tree>
+                      </fr:mainmatter>
+                      <fr:backmatter />
+                    </fr:tree>
                   </fr:mainmatter>
                   <fr:backmatter />
                 </fr:tree>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>267</fr:anchor>
+                    <fr:anchor>285</fr:anchor>
                     <fr:addr type="user">dhsorens-001Q</fr:addr>
                     <fr:route>dhsorens-001Q.xml</fr:route>
                     <fr:title text="Incorrect Specifications">Incorrect Specifications</fr:title>
@@ -279,7 +449,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>269</fr:anchor>
+                <fr:anchor>287</fr:anchor>
                 <fr:addr type="user">dhsorens-001K</fr:addr>
                 <fr:route>dhsorens-001K.xml</fr:route>
                 <fr:title text="Proof Assistants and the Issue of Incorrect Specification">Proof Assistants and the Issue of Incorrect Specification</fr:title>
@@ -323,7 +493,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>371</fr:anchor>
+            <fr:anchor>406</fr:anchor>
             <fr:addr type="user">dhsorens-001I</fr:addr>
             <fr:route>dhsorens-001I.xml</fr:route>
             <fr:title text="Compactness: Definition and Theory">Compactness: Definition and Theory</fr:title>

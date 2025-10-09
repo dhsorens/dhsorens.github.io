@@ -12,5 +12,5 @@
     \li{they often manage huge sums of money (so the incentives line up).}
 }
 \p{
-    Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely interesting (and [nontrivial](dhsorens-000L)) specifications, which warrants a study not only of the science of going from specification to verification (formal proof), but of the \em{specifications themselves} as independent, mathematical objects.
+    Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely [interesting (and nontrivia) specifications](dhsorens-001J), which warrants a study not only of the science of going from specification to verification (formal proof), but of the \em{specifications themselves} as independent, mathematical objects.
 }

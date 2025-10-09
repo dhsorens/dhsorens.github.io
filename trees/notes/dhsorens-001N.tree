@@ -3,7 +3,7 @@
 \date{2025-09-05}
 
 \p{
-    To illustrate, consider the [formal verification work on Dexter2](dhsorens-001O), an AMM on the Tezos blockchain. Dexter2 has been formally verified by [at least three different groups using three different formal verification tools](dhsorens-0010).
+    Dexter2 is an AMM on the Tezos blockchain that has been formally verified by [at least three different groups using three different formal verification tools](dhsorens-0010).
     Each was based on the [same informal specification](dhsorens-0010). The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.
 }
 

@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>522</fr:anchor>
+    <fr:anchor>557</fr:anchor>
     <fr:addr type="user">dhsorens-0010</fr:addr>
     <fr:route>dhsorens-0010.xml</fr:route>
     <fr:title text="Formalization of Mathematics in Lean">Formalization of Mathematics in Lean</fr:title>
@@ -27,7 +27,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>524</fr:anchor>
+            <fr:anchor>559</fr:anchor>
             <fr:addr type="user">dhsorens-000Z</fr:addr>
             <fr:route>dhsorens-000Z.xml</fr:route>
             <fr:title text="Formalization of Mathematics">Formalization of Mathematics</fr:title>
@@ -47,7 +47,7 @@
             <fr:p>There has been a great deal of community-driven work in the formalization of mathematics in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>, <fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link>, <fr:link type="local" href="dhsorens-0006.xml" addr="dhsorens-0006" title="Isabelle/HOL">Isabelle/HOL</fr:link>, and <fr:link type="local" href="dhsorens-0014.xml" addr="dhsorens-0014" title="Agda">Agda</fr:link>.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>343</fr:anchor>
+                <fr:anchor>373</fr:anchor>
                 <fr:addr type="user">dhsorens-0010</fr:addr>
                 <fr:route>dhsorens-0010.xml</fr:route>
                 <fr:title text="Formalization of Mathematics in Lean">Formalization of Mathematics in Lean</fr:title>
@@ -67,7 +67,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>345</fr:anchor>
+                <fr:anchor>375</fr:anchor>
                 <fr:addr type="user">dhsorens-0011</fr:addr>
                 <fr:route>dhsorens-0011.xml</fr:route>
                 <fr:title text="Formalization of Mathematics in Rocq">Formalization of Mathematics in Rocq</fr:title>
@@ -87,7 +87,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>347</fr:anchor>
+                <fr:anchor>377</fr:anchor>
                 <fr:addr type="user">dhsorens-0012</fr:addr>
                 <fr:route>dhsorens-0012.xml</fr:route>
                 <fr:title text="Formalization of Mathematics in Isabelle/HOL">Formalization of Mathematics in Isabelle/HOL</fr:title>
@@ -107,7 +107,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>349</fr:anchor>
+                <fr:anchor>379</fr:anchor>
                 <fr:addr type="user">dhsorens-0013</fr:addr>
                 <fr:route>dhsorens-0013.xml</fr:route>
                 <fr:title text="Formalization of Mathematics in Agda">Formalization of Mathematics in Agda</fr:title>
@@ -139,7 +139,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>526</fr:anchor>
+            <fr:anchor>561</fr:anchor>
             <fr:addr type="user">dhsorens-001N</fr:addr>
             <fr:route>dhsorens-001N.xml</fr:route>
             <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
@@ -155,7 +155,7 @@
             </fr:authors>
           </fr:frontmatter>
           <fr:mainmatter>
-            <fr:p>To illustrate, consider the <fr:link type="local" href="dhsorens-001O.xml" addr="dhsorens-001O" title="Dexter2 Specification and Verification">formal verification work on Dexter2</fr:link>, an AMM on the Tezos blockchain. Dexter2 has been formally verified by <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">at least three different groups using three different formal verification tools</fr:link>.
+            <fr:p>Dexter2 is an AMM on the Tezos blockchain that has been formally verified by <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">at least three different groups using three different formal verification tools</fr:link>.
     Each was based on the <fr:link type="local" href="dhsorens-0010.xml" addr="dhsorens-0010" title="Formalization of Mathematics in Lean">same informal specification</fr:link>. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.</fr:p>
             <fr:p>However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:</fr:p>
             <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
