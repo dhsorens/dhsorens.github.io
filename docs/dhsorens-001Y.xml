@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="default.xsl"?>
+<fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+  <fr:frontmatter>
+    <fr:anchor>239</fr:anchor>
+    <fr:addr type="user">dhsorens-001Y</fr:addr>
+    <fr:route>dhsorens-001Y.xml</fr:route>
+    <fr:title text="Publicity">Publicity</fr:title>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>10</fr:month>
+      <fr:day>15</fr:day>
+    </fr:date>
+    <fr:authors>
+      <fr:author>
+        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:p>Here are some links to interviews and op-eds that I have done:</fr:p>
+    <fr:strong>Op-eds:</fr:strong>
+    <fr:ul><fr:li>Why Consensus Isn't Just a Blockchain Thing (The Daily Hodl) [<fr:link type="external" href="https://dailyhodl.com/2019/04/16/why-consensus-isnt-just-a-blockchain-thing/">link</fr:link>]</fr:li>
+    <fr:li>This Awful Bitcoin Stat Guarantees It Is Not Crypto's Future (CCN) [<fr:link type="external" href="https://web.archive.org/web/20190624060813/https://www.ccn.com/this-awful-bitcoin-stat-guarantees-its-not-cryptos-future-mathematician/">web archive link</fr:link>]</fr:li>
+    <fr:li>Why The World Cant All Be On One Cryptocurrency (Crypto News Review) [<fr:link type="external" href="https://web.archive.org/web/20220707012625/https://cryptonewsreview.com/why-the-world-cant-all-be-on-one-cryptocurrency/">web archive link</fr:link>]</fr:li>
+    <fr:li>Bitcoins Price Follows Trading Volume Almost Exactly. Is This a Problem? (Coin Codex) [<fr:link type="external" href="https://web.archive.org/web/20220819225923/https://coincodex.com/article/3553/bitcoins-price-follows-trading-volume-almost-exactly-is-this-a-problem/">web archive link</fr:link>]</fr:li>
+    <fr:li>Le Prix de Bitcoin Suit le Volume des Transactions Presque Exactement. Est-ce Un Problème? (Block Blog) [<fr:link type="external" href="https://web.archive.org/web/20210919083358/https://blockblog.fr/le-prix-de-bitcoin-suit-le-volume-des-transactions-presque-exactement-est-ce-un-probleme/">web archive</fr:link>]</fr:li>
+    <fr:li>What Should Crypto Do With Traditional Finance? (Irish Tech News) [<fr:link type="external" href="https://irishtechnews.ie/what-should-crypto-do-with-traditional-finance/">link</fr:link>]</fr:li></fr:ul>
+    <fr:strong>Interviews/Podcasts:</fr:strong>
+    <fr:ul><fr:li>Proactive Investors Interview [<fr:link type="external" href="https://www.proactiveinvestors.com/companies/stocktube/13348/pyrofex-corp-mathematician-explains-what-is-driving-the-bitcoin-surge-13348.html">link</fr:link>]</fr:li>
+    <fr:li>Lab Radio Interview: A Deeper Look at Building Blockchains, Algorithms, and Proofs. [<fr:link type="external" href="https://labradio.libsyn.com/ep-63-a-deeper-look-at-building-blockchains-algorithms-and-proofs">link</fr:link>]</fr:li>
+    <fr:li>Newconomy Media Interview [<fr:link type="external" href="https://www.youtube.com/watch?v=RcwQ25zhw3s">link</fr:link>]</fr:li>
+    <fr:li>Consensus Collaborative Learning Guest Appearance [<fr:link type="external" href="https://www.youtube.com/watch?v=EkuPWUrWLOA">link</fr:link>]</fr:li></fr:ul>
+    <fr:strong>Quotes:</fr:strong>
+    <fr:ul><fr:li>Bitcoin Shows Strength by Bouncing Back After Breather (Forbes) [<fr:link type="external" href="https://www.forbes.com/sites/cbovaird/2019/05/23/bitcoin-shows-strength-by-bouncing-back-after-breather/#6a9cf7ab67b9">link</fr:link>]</fr:li>
+    <fr:li>Litecoin Climbs 16% To Reach Highest Since Mid-May (Forbes) [<fr:link type="external" href="https://www.forbes.com/sites/cbovaird/2019/05/24/litecoin-climbs-16-to-reach-highest-since-mid-may/#736019361d1e">link</fr:link>]</fr:li></fr:ul>
+  </fr:mainmatter>
+  <fr:backmatter />
+</fr:tree>
