@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>628</fr:anchor>
+    <fr:anchor>632</fr:anchor>
     <fr:addr type="user">dhsorens-000U</fr:addr>
     <fr:route>dhsorens-000U.xml</fr:route>
     <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -24,7 +24,7 @@
     I have spent a lot of time thinking about <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contract</fr:link> design, specification, and verification.</fr:p>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>486</fr:anchor>
+        <fr:anchor>490</fr:anchor>
         <fr:addr type="user">dhsorens-000W</fr:addr>
         <fr:route>dhsorens-000W.xml</fr:route>
         <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
@@ -50,7 +50,7 @@
     </fr:tree>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>488</fr:anchor>
+        <fr:anchor>492</fr:anchor>
         <fr:addr type="user">dhsorens-0015</fr:addr>
         <fr:route>dhsorens-0015.xml</fr:route>
         <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -89,7 +89,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>630</fr:anchor>
+            <fr:anchor>634</fr:anchor>
             <fr:addr type="user">dhsorens-notes</fr:addr>
             <fr:route>dhsorens-notes.xml</fr:route>
             <fr:title text="Notes">Notes</fr:title>
@@ -107,7 +107,7 @@
     But I continue to be interested in <fr:link type="local" href="dhsorens-0015.xml" addr="dhsorens-0015" title="Formal Verification in Proof Assistants">software verification more broadly</fr:link>, the ongoing work to <fr:link type="local" href="dhsorens-000Z.xml" addr="dhsorens-000Z" title="Formalization of Mathematics">formalize mathematics</fr:link>, and other developments in using <fr:link type="local" href="dhsorens-000B.xml" addr="dhsorens-000B" title="Interactive Theorem Provers">proof assistants</fr:link>.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>484</fr:anchor>
+                <fr:anchor>488</fr:anchor>
                 <fr:addr type="user">dhsorens-000U</fr:addr>
                 <fr:route>dhsorens-000U.xml</fr:route>
                 <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -129,7 +129,7 @@
     I have spent a lot of time thinking about <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contract</fr:link> design, specification, and verification.</fr:p>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>486</fr:anchor>
+                    <fr:anchor>490</fr:anchor>
                     <fr:addr type="user">dhsorens-000W</fr:addr>
                     <fr:route>dhsorens-000W.xml</fr:route>
                     <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
@@ -155,7 +155,7 @@
                 </fr:tree>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>488</fr:anchor>
+                    <fr:anchor>492</fr:anchor>
                     <fr:addr type="user">dhsorens-0015</fr:addr>
                     <fr:route>dhsorens-0015.xml</fr:route>
                     <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -189,7 +189,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>490</fr:anchor>
+                <fr:anchor>494</fr:anchor>
                 <fr:addr type="user">dhsorens-000V</fr:addr>
                 <fr:route>dhsorens-000V.xml</fr:route>
                 <fr:title text="Type Theory and Formal Proof">Type Theory and Formal Proof</fr:title>
@@ -224,7 +224,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>632</fr:anchor>
+            <fr:anchor>636</fr:anchor>
             <fr:addr type="user">dhsorens-000Y</fr:addr>
             <fr:route>dhsorens-000Y.xml</fr:route>
             <fr:title text="Smart Contracts">Smart Contracts</fr:title>
@@ -253,7 +253,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>634</fr:anchor>
+            <fr:anchor>638</fr:anchor>
             <fr:addr type="user">dhsorens-000X</fr:addr>
             <fr:route>dhsorens-000X.xml</fr:route>
             <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -277,7 +277,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>636</fr:anchor>
+            <fr:anchor>640</fr:anchor>
             <fr:addr type="user">dhsorens-000B</fr:addr>
             <fr:route>dhsorens-000B.xml</fr:route>
             <fr:title text="Interactive Theorem Provers">Interactive Theorem Provers</fr:title>
@@ -296,7 +296,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>359</fr:anchor>
+                <fr:anchor>363</fr:anchor>
                 <fr:addr type="user">dhsorens-lean</fr:addr>
                 <fr:route>dhsorens-lean.xml</fr:route>
                 <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -320,7 +320,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>361</fr:anchor>
+                <fr:anchor>365</fr:anchor>
                 <fr:addr type="user">dhsorens-rocq</fr:addr>
                 <fr:route>dhsorens-rocq.xml</fr:route>
                 <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
@@ -344,7 +344,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>363</fr:anchor>
+                <fr:anchor>367</fr:anchor>
                 <fr:addr type="user">dhsorens-0006</fr:addr>
                 <fr:route>dhsorens-0006.xml</fr:route>
                 <fr:title text="Isabelle/HOL">Isabelle/HOL</fr:title>
@@ -371,7 +371,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>638</fr:anchor>
+            <fr:anchor>642</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -395,7 +395,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>640</fr:anchor>
+            <fr:anchor>644</fr:anchor>
             <fr:addr type="user">dhsorens-rocq</fr:addr>
             <fr:route>dhsorens-rocq.xml</fr:route>
             <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>

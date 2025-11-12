@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>678</fr:anchor>
+    <fr:anchor>682</fr:anchor>
     <fr:addr type="user">dhsorens-000S</fr:addr>
     <fr:route>dhsorens-000S.xml</fr:route>
     <fr:title text="Research Statement">Research Statement</fr:title>
@@ -26,7 +26,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>679</fr:anchor>
+            <fr:anchor>683</fr:anchor>
             <fr:addr type="user">dhsorens-rsrch</fr:addr>
             <fr:route>dhsorens-rsrch.xml</fr:route>
             <fr:title text="Research">Research</fr:title>
@@ -40,7 +40,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>593</fr:anchor>
+                <fr:anchor>597</fr:anchor>
                 <fr:addr type="user">dhsorens-000S</fr:addr>
                 <fr:route>dhsorens-000S.xml</fr:route>
                 <fr:title text="Research Statement">Research Statement</fr:title>
@@ -59,7 +59,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>594</fr:anchor>
+                <fr:anchor>598</fr:anchor>
                 <fr:addr type="user">dhsorens-pubs</fr:addr>
                 <fr:route>dhsorens-pubs.xml</fr:route>
                 <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -102,7 +102,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>596</fr:anchor>
+                <fr:anchor>600</fr:anchor>
                 <fr:addr type="user">dhsorens-talks</fr:addr>
                 <fr:route>dhsorens-talks.xml</fr:route>
                 <fr:title text="Talks">Talks</fr:title>
@@ -141,7 +141,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>681</fr:anchor>
+            <fr:anchor>685</fr:anchor>
             <fr:addr type="user">dhsorens-0015</fr:addr>
             <fr:route>dhsorens-0015.xml</fr:route>
             <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -181,7 +181,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>683</fr:anchor>
+            <fr:anchor>687</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -205,7 +205,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>685</fr:anchor>
+            <fr:anchor>689</fr:anchor>
             <fr:addr type="user">dhsorens-rocq</fr:addr>
             <fr:route>dhsorens-rocq.xml</fr:route>
             <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
