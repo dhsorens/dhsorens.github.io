@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>1158</fr:anchor>
+    <fr:anchor>1166</fr:anchor>
     <fr:addr type="user">dhsorens-pubs</fr:addr>
     <fr:route>dhsorens-pubs.xml</fr:route>
     <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -50,7 +50,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1160</fr:anchor>
+            <fr:anchor>1168</fr:anchor>
             <fr:addr type="user">index</fr:addr>
             <fr:route>index.xml</fr:route>
             <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
@@ -66,7 +66,7 @@
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/derekhsorensen/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>257</fr:anchor>
+                <fr:anchor>243</fr:anchor>
                 <fr:addr type="user">dhsorens-001S</fr:addr>
                 <fr:route>dhsorens-001S.xml</fr:route>
                 <fr:title text="Featured Article">Featured Article</fr:title>
@@ -89,7 +89,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>259</fr:anchor>
+                <fr:anchor>245</fr:anchor>
                 <fr:addr type="user">dhsorens-000D</fr:addr>
                 <fr:route>dhsorens-000D.xml</fr:route>
                 <fr:title text="Education">Education</fr:title>
@@ -112,7 +112,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>261</fr:anchor>
+                <fr:anchor>247</fr:anchor>
                 <fr:addr type="user">dhsorens-pubs</fr:addr>
                 <fr:route>dhsorens-pubs.xml</fr:route>
                 <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -155,7 +155,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>263</fr:anchor>
+                <fr:anchor>249</fr:anchor>
                 <fr:addr type="user">dhsorens-talks</fr:addr>
                 <fr:route>dhsorens-talks.xml</fr:route>
                 <fr:title text="Talks">Talks</fr:title>
@@ -182,7 +182,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>265</fr:anchor>
+                <fr:anchor>251</fr:anchor>
                 <fr:addr type="user">dhsorens-000E</fr:addr>
                 <fr:route>dhsorens-000E.xml</fr:route>
                 <fr:title text="Work">Work</fr:title>
@@ -203,12 +203,49 @@
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>253</fr:anchor>
+                <fr:addr type="user">dhsorens-001Y</fr:addr>
+                <fr:route>dhsorens-001Y.xml</fr:route>
+                <fr:title text="Publicity">Publicity</fr:title>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>11</fr:month>
+                  <fr:day>11</fr:day>
+                </fr:date>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p>Quotes:</fr:p>
+                <fr:ol><fr:li><fr:link type="external" href="https://www.forbes.com/sites/cbovaird/2019/05/23/bitcoin-shows-strength-by-bouncing-back-after-breather/#6a9cf7ab67b9">Bitcoin Shows Strength by Bouncing Back After Breather (Forbes)</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="https://www.forbes.com/sites/cbovaird/2019/05/24/litecoin-climbs-16-to-reach-highest-since-mid-may/#736019361d1e">Litecoin Climbs 16% To Reach Highest Since Mid-May (Forbes)</fr:link></fr:li></fr:ol>
+                <fr:p>Interviews/Podcasts:</fr:p>
+                <fr:ol><fr:li><fr:link type="external" href="https://www.proactiveinvestors.com/companies/stocktube/13348/pyrofex-corp-mathematician-explains-what-is-driving-the-bitcoin-surge-13348.html">Proactive Investors Interview</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="https://labradio.libsyn.com/ep-63-a-deeper-look-at-building-blockchains-algorithms-and-proofs">Lab Radio Interview: A Deeper Look at Building Blockchains, Algorithms, and Proofs.</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=RcwQ25zhw3s">Newconomy Media Interview</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="https://www.youtube.com/watch?v=EkuPWUrWLOA">Consensus Collaborative Learning Guest Appearance</fr:link></fr:li></fr:ol>
+                <fr:p>Op-eds:</fr:p>
+                <fr:ul><fr:li><fr:link type="external" href="https://dailyhodl.com/2019/04/16/why-consensus-isnt-just-a-blockchain-thing/">Why Consensus Isn't Just a Blockchain Thing (The Daily Hodl)</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="https://web.archive.org/web/20190624060813/https://www.ccn.com/this-awful-bitcoin-stat-guarantees-its-not-cryptos-future-mathematician/">This Awful Bitcoin Stat Guarantees It Is Not Crypto's Future (CCN)</fr:link> [web archive]</fr:li>
+    <fr:li><fr:link type="external" href="https://web.archive.org/web/20220707012625/https://cryptonewsreview.com/why-the-world-cant-all-be-on-one-cryptocurrency/">Why The World Cant All Be On One Cryptocurrency (Crypto News Review)</fr:link> [web archive]</fr:li>
+    <fr:li><fr:link type="external" href="https://web.archive.org/web/20220819225923/https://coincodex.com/article/3553/bitcoins-price-follows-trading-volume-almost-exactly-is-this-a-problem/">Bitcoins Price Follows Trading Volume Almost Exactly. Is This a Problem? (Coin Codex)</fr:link> [web archive]</fr:li>
+    <fr:li><fr:link type="external" href="https://web.archive.org/web/20210919083358/https://blockblog.fr/le-prix-de-bitcoin-suit-le-volume-des-transactions-presque-exactement-est-ce-un-probleme/">Le Prix de Bitcoin Suit le Volume des Transactions Presque Exactement. Est-ce Un Problème? (Block Blog)</fr:link> [web archive]</fr:li>
+    <fr:li><fr:link type="external" href="https://irishtechnews.ie/what-should-crypto-do-with-traditional-finance/">What Should Crypto Do With Traditional Finance? (Irish Tech News)</fr:link></fr:li></fr:ul>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1162</fr:anchor>
+            <fr:anchor>1170</fr:anchor>
             <fr:addr type="user">dhsorens-rsrch</fr:addr>
             <fr:route>dhsorens-rsrch.xml</fr:route>
             <fr:title text="Research">Research</fr:title>
@@ -222,7 +259,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>591</fr:anchor>
+                <fr:anchor>597</fr:anchor>
                 <fr:addr type="user">dhsorens-000S</fr:addr>
                 <fr:route>dhsorens-000S.xml</fr:route>
                 <fr:title text="Research Statement">Research Statement</fr:title>
@@ -241,7 +278,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>592</fr:anchor>
+                <fr:anchor>598</fr:anchor>
                 <fr:addr type="user">dhsorens-pubs</fr:addr>
                 <fr:route>dhsorens-pubs.xml</fr:route>
                 <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -284,7 +321,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>594</fr:anchor>
+                <fr:anchor>600</fr:anchor>
                 <fr:addr type="user">dhsorens-talks</fr:addr>
                 <fr:route>dhsorens-talks.xml</fr:route>
                 <fr:title text="Talks">Talks</fr:title>
@@ -323,7 +360,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1164</fr:anchor>
+            <fr:anchor>1172</fr:anchor>
             <fr:addr type="user">dhsorens-000L</fr:addr>
             <fr:route>dhsorens-000L.xml</fr:route>
             <fr:title text="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications</fr:title>
@@ -338,7 +375,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1165</fr:anchor>
+            <fr:anchor>1173</fr:anchor>
             <fr:addr type="user">dhsorens-000Q</fr:addr>
             <fr:route>dhsorens-000Q.xml</fr:route>
             <fr:title text="Establishing Standards for Consensus on Blockchains">Establishing Standards for Consensus on Blockchains</fr:title>
@@ -353,7 +390,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1166</fr:anchor>
+            <fr:anchor>1174</fr:anchor>
             <fr:addr type="user">dhsorens-000R</fr:addr>
             <fr:route>dhsorens-000R.xml</fr:route>
             <fr:title text="Extensions and applications of equitable decompositions for graphs with symmetries">Extensions and applications of equitable decompositions for graphs with symmetries</fr:title>
@@ -366,7 +403,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1167</fr:anchor>
+            <fr:anchor>1175</fr:anchor>
             <fr:addr type="user">dhsorens-000J</fr:addr>
             <fr:route>dhsorens-000J.xml</fr:route>
             <fr:title text="Formally Specifying Contract Optimizations With Bisimulations in Coq">Formally Specifying Contract Optimizations With Bisimulations in Coq</fr:title>
@@ -381,7 +418,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1168</fr:anchor>
+            <fr:anchor>1176</fr:anchor>
             <fr:addr type="user">dhsorens-000M</fr:addr>
             <fr:route>dhsorens-000M.xml</fr:route>
             <fr:title text="Global, robust and comparable digital carbon assets">Global, robust and comparable digital carbon assets</fr:title>
@@ -396,7 +433,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1169</fr:anchor>
+            <fr:anchor>1177</fr:anchor>
             <fr:addr type="user">dhsorens-preprints</fr:addr>
             <fr:route>dhsorens-preprints.xml</fr:route>
             <fr:title text="Preprints">Preprints</fr:title>
@@ -417,7 +454,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1171</fr:anchor>
+            <fr:anchor>1179</fr:anchor>
             <fr:addr type="user">dhsorens-000P</fr:addr>
             <fr:route>dhsorens-000P.xml</fr:route>
             <fr:title text="Streamlining Classical Consensus">Streamlining Classical Consensus</fr:title>
@@ -432,7 +469,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1172</fr:anchor>
+            <fr:anchor>1180</fr:anchor>
             <fr:addr type="user">dhsorens-000O</fr:addr>
             <fr:route>dhsorens-000O.xml</fr:route>
             <fr:title text="Structured Pools for Tokenized Carbon Credits">Structured Pools for Tokenized Carbon Credits</fr:title>
@@ -447,7 +484,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1173</fr:anchor>
+            <fr:anchor>1181</fr:anchor>
             <fr:addr type="user">dhsorens-000N</fr:addr>
             <fr:route>dhsorens-000N.xml</fr:route>
             <fr:title text="Tokenized Carbon Credits">Tokenized Carbon Credits</fr:title>
@@ -462,7 +499,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1174</fr:anchor>
+            <fr:anchor>1182</fr:anchor>
             <fr:addr type="user">dhsorens-000K</fr:addr>
             <fr:route>dhsorens-000K.xml</fr:route>
             <fr:title text="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq">Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</fr:title>

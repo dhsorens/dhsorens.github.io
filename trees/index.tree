@@ -15,3 +15,4 @@
 \transclude{dhsorens-pubs} % publications
 \transclude{dhsorens-talks} % talks
 \transclude{dhsorens-000E} % work history
+\transclude{dhsorens-001Y} % publicity
