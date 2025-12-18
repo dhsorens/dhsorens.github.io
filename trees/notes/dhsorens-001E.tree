@@ -14,5 +14,5 @@
 %}
 
 \p{
-    As of November 2025 I joined the Ethereum Foundation, working on [Protocol Snarkification](https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA). This mostly consists of formally specifying and verifying ZK primitives in [Lean](dhsorens-lean).
+    As of November 2025 I joined the Ethereum Foundation, working on [Protocol Snarkification](dhsorens-0020). This mostly consists of formally specifying and verifying ZK primitives in [Lean](dhsorens-lean).
 }
