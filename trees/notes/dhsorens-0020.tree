@@ -1,0 +1,13 @@
+\title{Protocol Snarkification}
+\author{dhsorens}
+\meta{toc}{true}
+\date{2025-12-18}
+
+\p{
+    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate [zero knowledge proofs](dhsorens-001L) into every layer of the Ethereum protocol. I contribute to this via [formal verification](dhsorens-000X).
+}
+
+\ul{
+    \li{[https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA](https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA)}
+    \li{[http://verified-zkevm.org](http://verified-zkevm.org)}
+}

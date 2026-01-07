@@ -1,0 +1,9 @@
+\title{Certora}
+\taxon{Institution}
+\author{dhsorens}
+\meta{toc}{true}
+\date{2025-11-22}
+
+\p{
+    [Certora](http://certora.com) is a world-class smart contract auditing firm that uses the [Certora Prover](https://www.certora.com/prover) to formally verify EVM and SVM smart contracts.
+}

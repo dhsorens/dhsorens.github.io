@@ -1,14 +1,18 @@
-\title{Looking Forward}
+\title{Ethereum Foundation (2025 - Present)}
 \author{dhsorens}
-\date{2025-09-03}
+\date{2025-11-22}
+
+%\p{
+%    I am currently looking for the right place to really settle in and produce world-class work, with a world-class team.
+%
+%    My ideal job would:
+%    \ul{
+%        \li{Produce something lasting, meaningful and world-class, in collaboration with peers and colleagues.}
+%        \li{Be a constant process of honing expertise, with active input, with the ability to communicate that with colleagues and/or clients.}
+ %       \li{Consist mostly of deep, focused work with relatively few interruptions.}
+%    }
+%}
 
 \p{
-    I am currently looking for the right place to really settle in and produce world-class work, with a world-class team.
-
-    My ideal job would:
-    \ul{
-        \li{Produce something lasting, meaningful and world-class, in collaboration with peers and colleagues.}
-        \li{Be a constant process of honing expertise, with active input, with the ability to communicate that with colleagues and/or clients.}
-        \li{Consist mostly of deep, focused work with relatively few interruptions.}
-    }
+    As of November 2025 I joined the Ethereum Foundation, working on [Protocol Snarkification](dhsorens-0020). This mostly consists of formally specifying and verifying ZK primitives in [Lean](dhsorens-lean).
 }
