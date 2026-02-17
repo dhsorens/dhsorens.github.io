@@ -126,10 +126,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <fr:p>There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
-                <fr:p />
-                <fr:p>Some links:</fr:p>
-                <fr:ul><fr:li><fr:link type="external" href="https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA">https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA</fr:link></fr:li>
-    <fr:li><fr:link type="external" href="http://verified-zkevm.org">http://verified-zkevm.org</fr:link></fr:li></fr:ul>
+                <fr:p>See <fr:link type="external" href="http://verified-zkevm.org">our website</fr:link> for more information.</fr:p>
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>

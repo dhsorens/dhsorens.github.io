@@ -8,11 +8,11 @@
 }
 
 \p{
-    
+    See [our website](http://verified-zkevm.org) for more information.
 }
 
-\p{Some links:}
-\ul{
-    \li{[https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA](https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA)}
-    \li{[http://verified-zkevm.org](http://verified-zkevm.org)}
-}
+% \p{Some links:}
+% \ul{
+%    \li{[https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA](https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA)}
+%    \li{[http://verified-zkevm.org](http://verified-zkevm.org)}
+% }
