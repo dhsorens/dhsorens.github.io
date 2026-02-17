@@ -4,10 +4,15 @@
 \date{2025-12-18}
 
 \p{
-    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate [zero knowledge proofs](dhsorens-001L) into every layer of the Ethereum protocol. I contribute to this via [formal verification](dhsorens-000X).
+    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate [zero knowledge proofs](dhsorens-001L) into every layer of the Ethereum protocol. I contribute to this via [formal verification](dhsorens-000X) in [Lean](dhsorens-lean).
 }
 
-\ul{
-    \li{[https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA](https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA)}
-    \li{[http://verified-zkevm.org](http://verified-zkevm.org)}
+\p{
+    See [our website](http://verified-zkevm.org) for more information.
 }
+
+% \p{Some links:}
+% \ul{
+%    \li{[https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA](https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA)}
+%    \li{[http://verified-zkevm.org](http://verified-zkevm.org)}
+% }
