@@ -5,8 +5,10 @@
 \p{Some selected talks:
     
     \ul{
+        \li{[Correct and Computable Specifications in Lean. EthCC[9], March 2026, Cannes, France.](dhsorens-0023)}
+        \li{[Safely Snarkifying the Ethereum Protocol. EthCC[9], March 2026, Cannes, France.](dhsorens-0022)}
         \li{Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.}
-        \li{(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.}
+        \li{[(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.](dhsorens-0024)}
         \li{Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. FMBC, April 2024, Luxembourg.}
         \li{[Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.](https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/)}
         \li{Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.}
