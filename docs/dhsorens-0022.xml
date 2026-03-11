@@ -16,7 +16,10 @@
   </fr:frontmatter>
   <fr:mainmatter>
     <fr:p><fr:em>Abstract:</fr:em> I will discuss ongoing work to safely snarkify the Ethereum protocol using formal verification. Expect to learn how formal verification delivers high-assurance code, and how we're using it on zkVMs, SNARKS, and the rest of the Ethereum protocol.</fr:p>
-    <fr:link type="external" href="media/derek-sorensen-ethcc%5B9%5D.png">speaker image</fr:link>
+    <fr:p>links:
+    <fr:ul><fr:li><fr:link type="external" href="media/derek-sorensen-ethcc%5B9%5D.png">speaker image</fr:link></fr:li>
+        <fr:li><fr:link type="external" href="https://ethcc.io/speakers/derek-sorensen">link to speaker profile on the event</fr:link></fr:li>
+        <fr:li><fr:link type="external" href="https://ethcc.io">event link</fr:link></fr:li></fr:ul></fr:p>
   </fr:mainmatter>
   <fr:backmatter>
     <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">

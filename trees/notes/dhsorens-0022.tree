@@ -4,4 +4,10 @@
 
 \p{\em{Abstract:} I will discuss ongoing work to safely snarkify the Ethereum protocol using formal verification. Expect to learn how formal verification delivers high-assurance code, and how we're using it on zkVMs, SNARKS, and the rest of the Ethereum protocol.}
 
-[speaker image](media/derek-sorensen-ethcc[9].png)
+\p{links:
+    \ul{
+        \li{[speaker image](media/derek-sorensen-ethcc[9].png)}
+        \li{[link to speaker profile on the event](https://ethcc.io/speakers/derek-sorensen)}
+        \li{[event link](https://ethcc.io)}
+    }
+}
