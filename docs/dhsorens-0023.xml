@@ -12,7 +12,11 @@
       <fr:month>4</fr:month>
       <fr:day>20</fr:day>
     </fr:date>
-    <fr:authors />
+    <fr:authors>
+      <fr:author>
+        <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
   </fr:frontmatter>
   <fr:mainmatter>
     <fr:p><fr:em>Abstract:</fr:em> The efficacy of formal verification depends on high quality specifications which are both correct and complete. This talk will ask: What is an ideal specification? How do we evaluate and improve our specifications? And how can Lean help us achieve the highest-assurance software possible?</fr:p>
@@ -27,7 +31,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>240</fr:anchor>
+            <fr:anchor>241</fr:anchor>
             <fr:addr type="user">dhsorens-talks</fr:addr>
             <fr:route>dhsorens-talks.xml</fr:route>
             <fr:title text="Talks">Talks</fr:title>
