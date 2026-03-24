@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>723</fr:anchor>
+    <fr:anchor>741</fr:anchor>
     <fr:addr type="user">dhsorens-000S</fr:addr>
     <fr:route>dhsorens-000S.xml</fr:route>
     <fr:title text="Research Statement">Research Statement</fr:title>
@@ -26,7 +26,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>724</fr:anchor>
+            <fr:anchor>742</fr:anchor>
             <fr:addr type="user">dhsorens-rsrch</fr:addr>
             <fr:route>dhsorens-rsrch.xml</fr:route>
             <fr:title text="Research">Research</fr:title>
@@ -40,7 +40,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>634</fr:anchor>
+                <fr:anchor>652</fr:anchor>
                 <fr:addr type="user">dhsorens-000S</fr:addr>
                 <fr:route>dhsorens-000S.xml</fr:route>
                 <fr:title text="Research Statement">Research Statement</fr:title>
@@ -59,7 +59,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>635</fr:anchor>
+                <fr:anchor>653</fr:anchor>
                 <fr:addr type="user">dhsorens-pubs</fr:addr>
                 <fr:route>dhsorens-pubs.xml</fr:route>
                 <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -102,7 +102,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>637</fr:anchor>
+                <fr:anchor>655</fr:anchor>
                 <fr:addr type="user">dhsorens-talks</fr:addr>
                 <fr:route>dhsorens-talks.xml</fr:route>
                 <fr:title text="Talks">Talks</fr:title>
@@ -116,9 +116,11 @@
               <fr:mainmatter>
                 <fr:p>Some selected talks:
     
-    <fr:ul><fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. FMBC 2025, May 2025, Hamilton, Canada.</fr:li>
-        <fr:li>(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:li>
-        <fr:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. FMBC, April 2024, Luxembourg.</fr:li>
+    <fr:ul><fr:li><fr:link type="local" href="dhsorens-0023.xml" addr="dhsorens-0023" title="Correct and Computable Specifications in Lean">Correct and Computable Specifications in Lean</fr:link>. <fr:link type="external" href="https://beneficial-ai-foundation.github.io/SVIL2026/">SViL26</fr:link>, April 2026, Paris, France.</fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0022.xml" addr="dhsorens-0022" title="Safely Snarkifying the Ethereum Protocol">Safely Snarkifying the Ethereum Protocol</fr:link>. <fr:link type="external" href="https://ethcc.io">EthCC[9]</fr:link>, March 2026, Cannes, France.</fr:li>
+        <fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. <fr:link type="external" href="https://fmbc.gitlab.io/2025">FMBC 2025</fr:link>, May 2025, Hamilton, Canada.</fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0024.xml" addr="dhsorens-0024" title="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:link></fr:li>
+        <fr:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. <fr:link type="external" href="https://fmbc.gitlab.io/2024">FMBC 2024</fr:link>, April 2024, Luxembourg.</fr:li>
         <fr:li><fr:link type="external" href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></fr:li>
         <fr:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</fr:li>
         <fr:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</fr:li>
@@ -141,7 +143,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>726</fr:anchor>
+            <fr:anchor>744</fr:anchor>
             <fr:addr type="user">dhsorens-0015</fr:addr>
             <fr:route>dhsorens-0015.xml</fr:route>
             <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -181,7 +183,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>728</fr:anchor>
+            <fr:anchor>746</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
@@ -205,7 +207,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>730</fr:anchor>
+            <fr:anchor>748</fr:anchor>
             <fr:addr type="user">dhsorens-rocq</fr:addr>
             <fr:route>dhsorens-rocq.xml</fr:route>
             <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>

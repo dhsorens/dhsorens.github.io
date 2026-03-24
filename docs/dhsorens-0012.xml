@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>610</fr:anchor>
+    <fr:anchor>628</fr:anchor>
     <fr:addr type="user">dhsorens-0012</fr:addr>
     <fr:route>dhsorens-0012.xml</fr:route>
     <fr:title text="Formalization of Mathematics in Isabelle/HOL">Formalization of Mathematics in Isabelle/HOL</fr:title>
@@ -27,7 +27,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>612</fr:anchor>
+            <fr:anchor>630</fr:anchor>
             <fr:addr type="user">dhsorens-000Z</fr:addr>
             <fr:route>dhsorens-000Z.xml</fr:route>
             <fr:title text="Formalization of Mathematics">Formalization of Mathematics</fr:title>
@@ -47,7 +47,7 @@
             <fr:p>There has been a great deal of community-driven work in the formalization of mathematics in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>, <fr:link type="local" href="dhsorens-rocq.xml" addr="dhsorens-rocq" title="The Rocq Theorem Prover">Rocq</fr:link>, <fr:link type="local" href="dhsorens-0006.xml" addr="dhsorens-0006" title="Isabelle/HOL">Isabelle/HOL</fr:link>, and <fr:link type="local" href="dhsorens-0014.xml" addr="dhsorens-0014" title="Agda">Agda</fr:link>.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>432</fr:anchor>
+                <fr:anchor>450</fr:anchor>
                 <fr:addr type="user">dhsorens-0010</fr:addr>
                 <fr:route>dhsorens-0010.xml</fr:route>
                 <fr:title text="Formalization of Mathematics in Lean">Formalization of Mathematics in Lean</fr:title>
@@ -67,7 +67,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>434</fr:anchor>
+                <fr:anchor>452</fr:anchor>
                 <fr:addr type="user">dhsorens-0011</fr:addr>
                 <fr:route>dhsorens-0011.xml</fr:route>
                 <fr:title text="Formalization of Mathematics in Rocq">Formalization of Mathematics in Rocq</fr:title>
@@ -87,7 +87,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>436</fr:anchor>
+                <fr:anchor>454</fr:anchor>
                 <fr:addr type="user">dhsorens-0012</fr:addr>
                 <fr:route>dhsorens-0012.xml</fr:route>
                 <fr:title text="Formalization of Mathematics in Isabelle/HOL">Formalization of Mathematics in Isabelle/HOL</fr:title>
@@ -107,7 +107,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>438</fr:anchor>
+                <fr:anchor>456</fr:anchor>
                 <fr:addr type="user">dhsorens-0013</fr:addr>
                 <fr:route>dhsorens-0013.xml</fr:route>
                 <fr:title text="Formalization of Mathematics in Agda">Formalization of Mathematics in Agda</fr:title>

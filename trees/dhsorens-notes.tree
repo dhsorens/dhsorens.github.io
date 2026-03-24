@@ -13,9 +13,10 @@
 }
 
 \p{
-    I recently started work on formally verifying [all things zero-knowledge](dhsorens-0020) on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics as before.
+    I recently started work on formally verifying [all things zero-knowledge](dhsorens-0020) on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
 }
 
+\transclude{dhsorens-0025} % Computable Specifications
 \transclude{dhsorens-0020} % Protocol Snarkification
 % \transclude{dhsorens-0017} % Specification and Verification
 \transclude{dhsorens-000U} % formal verification

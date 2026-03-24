@@ -1,0 +1,16 @@
+\title{Computable Specifications}
+\author{dhsorens}
+\date{2026-03-11}
+
+\p{
+    In the first few months of 2026, most of work has been on [CompPoly](https://github.com/Verified-zkEVM/CompPoly), a formally verified
+    model of computable polynomials in Lean.
+    The purpose of CompPoly is to provide a computable base for the specs in [Arklib](https://github.com/Verified-zkEVM/ArkLib).
+}
+
+\p{
+    Why make a formal specification computable? A formal specification is a description of the correct computational behavior of a program.
+    The propositions comprising a specification become more and more expressive and accurate as they incorporate computational primitives.
+    What then is the most accurate description of correct program behavior?
+    \em{A correct program.}
+}
