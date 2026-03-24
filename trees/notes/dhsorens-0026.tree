@@ -18,14 +18,14 @@
     Accomplishments:
     \ul{
         \li{CompPoly roadmap established and merged [in this pull request](https://github.com/Verified-zkEVM/CompPoly/pull/16)}
-        \li{Became the lead contributor of CompPoly, established style guides and standards for contribution, integrated into CI}
+        \li{Contributed a lot to CompPoly, established style guides and standards for contribution, integrated into CI, and built out a lot more theory with the help of collaborators, old and new.}
         \li{CompPoly Phase 1 of the Roadmap completed - see the [Zulip announcement](https://leanprover.zulipchat.com/#narrow/channel/523410-ArkLib/topic/CompPoly.20Phase.201.20Status/with/578352136)}
         \li{We have some basic examples of extraction from Rust to Lean (thank you RV) that we can hopefully build on.}
     }
 
     Events:
     \ul{
-        \li{Giving two talks at EthCC[9], one with Alex Hicks and one with }
+        \li{Giving two talks at EthCC[9], one (maybe two?) with Alex Hicks and one on my own.}
         \li{Invited to give a talk at SViL26 with Leo de Moura, Son Ho, and Karthikeyan Bhargavan in April.}
     }
 

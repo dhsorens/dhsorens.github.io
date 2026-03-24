@@ -20,12 +20,12 @@
     <fr:p>We attended HACS and RWC26 in Taipei in early March, which was extremely productive. I learned a lot about Hax and Aeneas, verified compilers, and cryptography in general. Got strong insights for the upcoming work, and had a chance to evangelize our work on CompPoly. Bolton Bailey and I had a great conversation about the (many many) applications of computable polynomials in Lean. I hope that we can upstream CompPoly to CSLib and have many people using and maintaining it.</fr:p>
     <fr:p>Accomplishments:
     <fr:ul><fr:li>CompPoly roadmap established and merged <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/pull/16">in this pull request</fr:link></fr:li>
-        <fr:li>Became the lead contributor of CompPoly, established style guides and standards for contribution, integrated into CI</fr:li>
+        <fr:li>Contributed a lot to CompPoly, established style guides and standards for contribution, integrated into CI, and built out a lot more theory with the help of collaborators, old and new.</fr:li>
         <fr:li>CompPoly Phase 1 of the Roadmap completed - see the <fr:link type="external" href="https://leanprover.zulipchat.com/#narrow/channel/523410-ArkLib/topic/CompPoly.20Phase.201.20Status/with/578352136">Zulip announcement</fr:link></fr:li>
         <fr:li>We have some basic examples of extraction from Rust to Lean (thank you RV) that we can hopefully build on.</fr:li></fr:ul>
 
     Events:
-    <fr:ul><fr:li>Giving two talks at EthCC[9], one with Alex Hicks and one with</fr:li>
+    <fr:ul><fr:li>Giving two talks at EthCC[9], one (maybe two?) with Alex Hicks and one on my own.</fr:li>
         <fr:li>Invited to give a talk at SViL26 with Leo de Moura, Son Ho, and Karthikeyan Bhargavan in April.</fr:li></fr:ul>
 
     Next: I am responsible to see CompPoly make it through Phase 2 by the summer, though I will likely not be doing as much coding on it. Instead, I'll take a coordinating role and make sure the codebase fits together well and that the incoming code is high quality. We will likely have 8-10 contributors for Phase 2, which is exciting! This will be serious progress. We continue to integrate AI into our pipelines, successfully. I am currently looking for another chunk of technical work to do while I manage the CompPoly stuff, possibly contributing to <fr:link type="external" href="https://github.com/zksecurity/evm-asm">evm-asm</fr:link>.</fr:p>
@@ -71,12 +71,12 @@
                 <fr:p>We attended HACS and RWC26 in Taipei in early March, which was extremely productive. I learned a lot about Hax and Aeneas, verified compilers, and cryptography in general. Got strong insights for the upcoming work, and had a chance to evangelize our work on CompPoly. Bolton Bailey and I had a great conversation about the (many many) applications of computable polynomials in Lean. I hope that we can upstream CompPoly to CSLib and have many people using and maintaining it.</fr:p>
                 <fr:p>Accomplishments:
     <fr:ul><fr:li>CompPoly roadmap established and merged <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/pull/16">in this pull request</fr:link></fr:li>
-        <fr:li>Became the lead contributor of CompPoly, established style guides and standards for contribution, integrated into CI</fr:li>
+        <fr:li>Contributed a lot to CompPoly, established style guides and standards for contribution, integrated into CI, and built out a lot more theory with the help of collaborators, old and new.</fr:li>
         <fr:li>CompPoly Phase 1 of the Roadmap completed - see the <fr:link type="external" href="https://leanprover.zulipchat.com/#narrow/channel/523410-ArkLib/topic/CompPoly.20Phase.201.20Status/with/578352136">Zulip announcement</fr:link></fr:li>
         <fr:li>We have some basic examples of extraction from Rust to Lean (thank you RV) that we can hopefully build on.</fr:li></fr:ul>
 
     Events:
-    <fr:ul><fr:li>Giving two talks at EthCC[9], one with Alex Hicks and one with</fr:li>
+    <fr:ul><fr:li>Giving two talks at EthCC[9], one (maybe two?) with Alex Hicks and one on my own.</fr:li>
         <fr:li>Invited to give a talk at SViL26 with Leo de Moura, Son Ho, and Karthikeyan Bhargavan in April.</fr:li></fr:ul>
 
     Next: I am responsible to see CompPoly make it through Phase 2 by the summer, though I will likely not be doing as much coding on it. Instead, I'll take a coordinating role and make sure the codebase fits together well and that the incoming code is high quality. We will likely have 8-10 contributors for Phase 2, which is exciting! This will be serious progress. We continue to integrate AI into our pipelines, successfully. I am currently looking for another chunk of technical work to do while I manage the CompPoly stuff, possibly contributing to <fr:link type="external" href="https://github.com/zksecurity/evm-asm">evm-asm</fr:link>.</fr:p>
