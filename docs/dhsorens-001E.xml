@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>308</fr:anchor>
+    <fr:anchor>332</fr:anchor>
     <fr:addr type="user">dhsorens-001E</fr:addr>
     <fr:route>dhsorens-001E.xml</fr:route>
     <fr:title text="Ethereum Foundation (2025 - Present)">Ethereum Foundation (2025 - Present)</fr:title>
@@ -29,7 +29,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>310</fr:anchor>
+            <fr:anchor>334</fr:anchor>
             <fr:addr type="user">dhsorens-0018</fr:addr>
             <fr:route>dhsorens-0018.xml</fr:route>
             <fr:title text="Summary of Work and Projects">Summary of Work and Projects</fr:title>
@@ -56,7 +56,7 @@
     In my day-to-day, I still do a lot of work in the design, construction, and formal verification of smart contracts.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>312</fr:anchor>
+                <fr:anchor>336</fr:anchor>
                 <fr:addr type="user">dhsorens-0019</fr:addr>
                 <fr:route>dhsorens-0019.xml</fr:route>
                 <fr:title text="Pre-PhD (2017-2019)">Pre-PhD (2017-2019)</fr:title>
@@ -84,7 +84,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>314</fr:anchor>
+                <fr:anchor>338</fr:anchor>
                 <fr:addr type="user">dhsorens-001A</fr:addr>
                 <fr:route>dhsorens-001A.xml</fr:route>
                 <fr:title text="During the PhD (2019-2023)">During the PhD (2019-2023)</fr:title>
@@ -109,7 +109,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>316</fr:anchor>
+                <fr:anchor>340</fr:anchor>
                 <fr:addr type="user">dhsorens-001B</fr:addr>
                 <fr:route>dhsorens-001B.xml</fr:route>
                 <fr:title text="Post PhD (2024 - 2025)">Post PhD (2024 - 2025)</fr:title>
@@ -134,7 +134,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>318</fr:anchor>
+                <fr:anchor>342</fr:anchor>
                 <fr:addr type="user">dhsorens-001E</fr:addr>
                 <fr:route>dhsorens-001E.xml</fr:route>
                 <fr:title text="Ethereum Foundation (2025 - Present)">Ethereum Foundation (2025 - Present)</fr:title>
@@ -168,7 +168,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>320</fr:anchor>
+            <fr:anchor>344</fr:anchor>
             <fr:addr type="user">dhsorens-0020</fr:addr>
             <fr:route>dhsorens-0020.xml</fr:route>
             <fr:title text="Protocol Snarkification">Protocol Snarkification</fr:title>
@@ -192,7 +192,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>322</fr:anchor>
+            <fr:anchor>346</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
