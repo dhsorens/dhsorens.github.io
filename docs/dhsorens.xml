@@ -895,7 +895,9 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <fr:p><fr:em>Abstract:</fr:em> The efficacy of formal verification depends on high quality specifications which are both correct and complete. This talk will ask: What is an ideal specification? How do we evaluate and improve our specifications? And how can Lean help us achieve the highest-assurance software possible?</fr:p>
-            <fr:link type="external" href="https://beneficial-ai-foundation.github.io/SVIL2026/">Link to the event.</fr:link>
+            <fr:p>Links:</fr:p>
+            <fr:ul><fr:li><fr:link type="external" href="https://beneficial-ai-foundation.github.io/SVIL2026/">the event</fr:link></fr:li>
+    <fr:li><fr:link type="external" href="slides/svil-26.pdf">my slides</fr:link></fr:li></fr:ul>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>
