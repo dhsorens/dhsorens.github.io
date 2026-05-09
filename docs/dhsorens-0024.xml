@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>1033</fr:anchor>
+    <fr:anchor>1037</fr:anchor>
     <fr:addr type="user">dhsorens-0024</fr:addr>
     <fr:route>dhsorens-0024.xml</fr:route>
     <fr:title text="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications</fr:title>
@@ -31,7 +31,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>1035</fr:anchor>
+            <fr:anchor>1039</fr:anchor>
             <fr:addr type="user">dhsorens-talks</fr:addr>
             <fr:route>dhsorens-talks.xml</fr:route>
             <fr:title text="Talks">Talks</fr:title>
@@ -45,7 +45,8 @@
           <fr:mainmatter>
             <fr:p>Some selected talks:
     
-    <fr:ul><fr:li><fr:link type="local" href="dhsorens-0023.xml" addr="dhsorens-0023" title="Correct and Computable Specifications in Lean">Correct and Computable Specifications in Lean</fr:link>. <fr:link type="external" href="https://beneficial-ai-foundation.github.io/SVIL2026/">SViL26</fr:link>, April 2026, Paris, France.</fr:li>
+    <fr:ul><fr:li><fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">CompPoly</fr:link>. <fr:link type="external" href="https://zkproof.org/events/zkproof-8-rome/">ZKProofs 8</fr:link>, May 2026, Rome, Italy.</fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0023.xml" addr="dhsorens-0023" title="Correct and Computable Specifications in Lean">Correct and Computable Specifications in Lean</fr:link>. <fr:link type="external" href="https://beneficial-ai-foundation.github.io/SVIL2026/">SViL26</fr:link>, April 2026, Paris, France.</fr:li>
         <fr:li><fr:link type="local" href="dhsorens-0022.xml" addr="dhsorens-0022" title="Safely Snarkifying the Ethereum Protocol">Safely Snarkifying the Ethereum Protocol</fr:link>. <fr:link type="external" href="https://ethcc.io">EthCC[9]</fr:link>, March 2026, Cannes, France.</fr:li>
         <fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. <fr:link type="external" href="https://fmbc.gitlab.io/2025">FMBC 2025</fr:link>, May 2025, Hamilton, Canada.</fr:li>
         <fr:li><fr:link type="local" href="dhsorens-0024.xml" addr="dhsorens-0024" title="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:link></fr:li>
