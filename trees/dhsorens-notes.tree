@@ -8,8 +8,8 @@
 }
 
 \p{
-    Historically this has manifested as written work focused on the problem of (correctly) specifying and formally verifying [financial smart contracts](dhsorens-000A).
-    But I continue to be interested in [software verification more broadly](dhsorens-0015), the ongoing work to [formalize mathematics](dhsorens-000Z), and other developments in using [proof assistants](dhsorens-000B).
+    During my PhD this manifested as written work focused on the problem of (correctly) specifying and formally verifying [financial smart contracts](dhsorens-000A).
+    But I continue to be interested in [software verification more broadly](dhsorens-0015), the ongoing work to [formalize mathematics](dhsorens-000Z), and other developments in using [proof assistants](dhsorens-000B) in production.
 }
 
 \p{
