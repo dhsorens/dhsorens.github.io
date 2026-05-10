@@ -16,3 +16,7 @@
 \p{
     As of November 2025 I joined the Ethereum Foundation, working on [Protocol Snarkification](dhsorens-0020). This mostly consists of formally specifying and verifying ZK primitives in [Lean](dhsorens-lean).
 }
+
+\p{
+    \em{Last updated January 2026}. For more updates, see [my logs](dhsorens-logs).
+}

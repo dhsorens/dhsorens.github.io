@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>394</fr:anchor>
+    <fr:anchor>396</fr:anchor>
     <fr:addr type="user">dhsorens-001V</fr:addr>
     <fr:route>dhsorens-001V.xml</fr:route>
     <fr:title text="Mango Markets (2022)">Mango Markets (2022)</fr:title>
@@ -36,7 +36,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>396</fr:anchor>
+            <fr:anchor>398</fr:anchor>
             <fr:addr type="user">dhsorens-001P</fr:addr>
             <fr:route>dhsorens-001P.xml</fr:route>
             <fr:title text="Smart Contract Vulnerabilities Due to Poor Specification">Smart Contract Vulnerabilities Due to Poor Specification</fr:title>
