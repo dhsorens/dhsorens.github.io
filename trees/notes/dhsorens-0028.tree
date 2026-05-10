@@ -1,0 +1,12 @@
+\title{Safely Snarkifying the Ethereum Protocol}
+\author{dhsorens}
+\taxon{Talk}
+\date{2026-04-02}
+
+\p{
+    links:
+    \ul{
+        \li{[slides](slides/verso/zkproofs8)}
+        \li{[event](https://zkproof.org/events/zkproof-8-rome/)}
+    }
+}

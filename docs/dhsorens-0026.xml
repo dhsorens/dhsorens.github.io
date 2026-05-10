@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>247</fr:anchor>
+    <fr:anchor>253</fr:anchor>
     <fr:addr type="user">dhsorens-0026</fr:addr>
     <fr:route>dhsorens-0026.xml</fr:route>
     <fr:title text="Q1 2025">Q1 2025</fr:title>
@@ -39,7 +39,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>248</fr:anchor>
+            <fr:anchor>254</fr:anchor>
             <fr:addr type="user">dhsorens-logs</fr:addr>
             <fr:route>dhsorens-logs.xml</fr:route>
             <fr:title text="Logs">Logs</fr:title>
@@ -53,7 +53,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>250</fr:anchor>
+                <fr:anchor>256</fr:anchor>
                 <fr:addr type="user">dhsorens-0026</fr:addr>
                 <fr:route>dhsorens-0026.xml</fr:route>
                 <fr:title text="Q1 2025">Q1 2025</fr:title>
@@ -85,7 +85,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>251</fr:anchor>
+                <fr:anchor>257</fr:anchor>
                 <fr:addr type="user">dhsorens-0021</fr:addr>
                 <fr:route>dhsorens-0021.xml</fr:route>
                 <fr:title text="November/December 2025">November/December 2025</fr:title>
@@ -103,6 +103,45 @@
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Backlinks">Backlinks</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>258</fr:anchor>
+            <fr:addr type="user">dhsorens-0025</fr:addr>
+            <fr:route>dhsorens-0025.xml</fr:route>
+            <fr:title text="CompPoly and Computable Specifications">CompPoly and Computable Specifications</fr:title>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>3</fr:month>
+              <fr:day>11</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>During <fr:link type="local" href="dhsorens-0026.xml" addr="dhsorens-0026" title="Q1 2025">Q1 of 2026</fr:link> we worked building out <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">CompPoly</fr:link>, a formally verified
+    model of computable polynomials in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.
+    The purpose of CompPoly is to provide a computable base for the specs in <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
+            <fr:p>My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications <fr:link type="local" href="dhsorens-001J.xml" addr="dhsorens-001J" title="Smart Contract Specification">in the case of smart contracts</fr:link>. zkVMs and SNARKS also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib/">Arklib</fr:link> for a taste of that.</fr:p>
+            <fr:p>So, we can write complex mathematical specifications in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> - great, what does computability add to this, or any specification? For one, it lets you run tests. Having tests lets you test the integrity of your spec and test it in sort of a meta- way. It helps build confidence that the spec was built out correctly, something that is difficult (impossible?) to really know.</fr:p>
+            <fr:p>I have written before about <fr:link type="local" href="dhsorens-000L.xml" addr="dhsorens-000L" title="(In)Correct Smart Contract Specifications"><fr:em>metaspecifications</fr:em></fr:link>, or formal specifications of specifications, in the context of smart contracts. I really believe that metaspecifications can add a lot to the security of smart contracts, but a lot of theory has to be built up (even just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy for contracts in the wild.</fr:p>
+            <fr:p>However, metaspecifications already show up in cryptography! An implementation has a specification, the design of the cryptographic system or protocol (e.g. FRI). The system or protocol is defined in mathematical terms, with assumptions, and with associated proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol fails, then some assumption of the system was violated. This is a metaspecification!</fr:p>
+            <fr:p>But, as with all specifications, it is very hard to be sure that your specification is correct. This is where computability comes in. Having an executable/computable specification means that you can run tests on it, further extending your specification in an informal way. It makes your spec act more like software, and in some sense makes it stronger as a specification because as a program that runs it is closer to the thing that you're verifying.</fr:p>
+            <fr:p><fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> is of course a great place for this. It is easy to go between computable and non-computable terms, spec and implementation, and more and more of the infrastructure of verification is becoming available in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
           </fr:mainmatter>
           <fr:backmatter />
         </fr:tree>

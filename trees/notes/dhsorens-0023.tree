@@ -5,4 +5,10 @@
 
 \p{\em{Abstract:} The efficacy of formal verification depends on high quality specifications which are both correct and complete. This talk will ask: What is an ideal specification? How do we evaluate and improve our specifications? And how can Lean help us achieve the highest-assurance software possible?}
 
-[Link to the event.](https://beneficial-ai-foundation.github.io/SVIL2026/)
+\p{Links:}
+\ul{
+    \li{[the event](https://beneficial-ai-foundation.github.io/SVIL2026/)}
+    \li{[my slides](slides/svil-26.pdf)}
+}
+ 
+
