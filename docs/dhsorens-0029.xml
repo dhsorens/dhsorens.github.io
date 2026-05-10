@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>247</fr:anchor>
+    <fr:anchor>255</fr:anchor>
     <fr:addr type="user">dhsorens-0029</fr:addr>
     <fr:route>dhsorens-0029.xml</fr:route>
     <fr:title text="The ISA-level details of LC3-Lean">The ISA-level details of LC3-Lean</fr:title>
@@ -55,7 +55,7 @@ Each handlerâ€™s memory accesses and register updates are localized in <fr:code>
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>249</fr:anchor>
+            <fr:anchor>257</fr:anchor>
             <fr:addr type="user">dhsorens-002A</fr:addr>
             <fr:route>dhsorens-002A.xml</fr:route>
             <fr:title text="Details on the Proofs of Correctness for LC3-Lean">Details on the Proofs of Correctness for LC3-Lean</fr:title>
@@ -93,7 +93,7 @@ Those lemmas formalize the mundane â€œarray model actually behaves like memoryâ€
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>251</fr:anchor>
+            <fr:anchor>259</fr:anchor>
             <fr:addr type="user">dhsorens-0027</fr:addr>
             <fr:route>dhsorens-0027.xml</fr:route>
             <fr:title text="LC3 in Lean">LC3 in Lean</fr:title>
@@ -134,7 +134,7 @@ Those lemmas formalize the mundane â€œarray model actually behaves like memoryâ€
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>253</fr:anchor>
+            <fr:anchor>261</fr:anchor>
             <fr:addr type="user">dhsorens-0027</fr:addr>
             <fr:route>dhsorens-0027.xml</fr:route>
             <fr:title text="LC3 in Lean">LC3 in Lean</fr:title>

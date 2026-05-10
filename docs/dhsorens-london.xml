@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>995</fr:anchor>
+    <fr:anchor>1001</fr:anchor>
     <fr:addr type="user">dhsorens-london</fr:addr>
     <fr:route>dhsorens-london.xml</fr:route>
     <fr:title text="London">London</fr:title>
@@ -17,7 +17,7 @@
   <fr:mainmatter>
     <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
       <fr:frontmatter>
-        <fr:anchor>996</fr:anchor>
+        <fr:anchor>1002</fr:anchor>
         <fr:addr type="user">dhsorens-0004</fr:addr>
         <fr:route>dhsorens-0004.xml</fr:route>
         <fr:title text="The Barbican">The Barbican</fr:title>
