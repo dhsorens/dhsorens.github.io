@@ -1,0 +1,79 @@
+\title{The ISA-level details of LC3-Lean}
+\author{dhsorens}
+\taxon{Blog}
+\date{2026-05-10}
+
+\p{
+This note expands the ISA-level sketch on [LC3 in Lean](dhsorens-0027) into something you can line up with the [LC3-Lean](https://github.com/dhsorens/LC3-Lean) sources: registers and memory in \code{LC3Lean/Registers.lean} and \code{LC3Lean/Memory.lean}, decoding in \code{LC3Lean/Instructions.lean}, pure instruction semantics in \code{LC3Lean/Execution.lean}, trap helpers in \code{LC3Lean/Trap.lean}, and the runnable harness (binary loader, MMIO, trap dispatch) in \code{Main.lean}. The comments in \code{Execution.lean} point to the LC-3 ISA summary used as a specification reference: [lc3-isa.pdf](https://www.jmeiners.com/lc3-vm/supplies/lc3-isa.pdf).
+}
+
+\em{Memory and words}
+
+\p{
+The machine is a #{16}-bit word architecture with #{2^{16}} addresses. In Lean, memory is a fixed-length array of \code{UInt16} values indexed by addresses of the same width (\code{LC3Lean/Memory.lean}: \code{MEMORY_MAX}, \code{read}, \code{write}). There is no paging or protection: every address names a word of RAM, including the regions where trap vectors and memory-mapped devices live in ordinary LC-3 systems.
+}
+
+\p{
+Programs are loaded from \code{.obj} files in \code{Main.lean}: the first big-endian #{16}-bit word is the load origin; subsequent byte pairs become successive words starting at that address. After loading, execution begins with the initial register state from \code{Registers.init}—notably the program counter starts at \code{0x3000}, leaving lower addresses for trap-vector tables and OS conventions as in typical LC-3 coursework.
+}
+
+\em{Architectural state}
+
+\p{
+General-purpose registers \code{R0}–\code{R7} are stored as an eight-element array. The program counter and condition code live beside them in \code{Registers.Register}: \code{pc} is a \code{UInt16}, and \code{cond} is exactly one of \code{N}, \code{Z}, or \code{P}. Helper \code{set_condition_codes} (\code{Execution.lean}) follows the usual LC-3 rule: after an instruction writes a value into a destination register, the flags reflect whether that value is negative (high bit set), zero, or strictly positive. \code{LEA} updates flags from the computed address; pure stores leave registers (and thus flags) unchanged.
+}
+
+\p{
+\code{Registers.read} and \code{Registers.write} mediate access by register index; indices outside the LC-3 register file yield \code{none}, which propagates as failed execution steps—so the executable semantics are partial in exactly the places bad encodings would be nonsensical.
+}
+
+\em{Instruction encoding and decoding}
+
+\p{
+Each executed word is treated as an unsigned #{16}-bit instruction. The top four bits select the major opcode; \code{instr_to_op} in \code{Instructions.lean} maps that nybble to an \code{Opcodes} variant. Fields such as destination register \code{DR}, source registers \code{SR1}/\code{SR2}, base registers, and immediate bits are extracted with shifts and masks inside the per-opcode functions in \code{Execution.lean}, matching the bit layouts in the ISA sheet linked above.
+}
+
+\p{
+Signed immediates use \code{sign_extend} with the appropriate width (\code{imm5}, \code{imm6}, \code{PCoffset9}, \code{PCoffset11}, etc.). Arithmetic is #{16}-bit modular arithmetic on \code{UInt16} as in the reference VM narrative.
+}
+
+\em{The fourteen implemented opcodes}
+
+\p{
+Sixteen opcode slots appear in the decoder, but two are deliberately non-executing in this codebase: \code{OP_RTI} and \code{OP_RES} map to \code{op_rti} and \code{op_res}, which return \code{none} (\code{Execution.lean}), so no architectural transition is defined for them here. The remaining \strong{fourteen} correspond to the usual LC-3 instruction families:
+\ul{
+\li{\strong{Data movement and addressing:} \code{LD}, \code{LDI}, \code{LDR}, \code{LEA} load a register from PC-relative, indirect, base-plus-offset, or “effective address” forms; \code{ST}, \code{STI}, \code{STR} store a register through the analogous addressing modes.}
+\li{\strong{Arithmetic / logical:} \code{ADD} and \code{AND} each choose either a second register or a sign-extended five-bit immediate; \code{NOT} bitwise complements a source into a destination.}
+\li{\strong{Control flow:} \code{BR} tests the \code{nzp} mask against the current condition code and optionally adds a PC-relative offset; \code{JMP} loads the PC from a base register (so \code{RET} is \code{JMP R7} when conventions demand); \code{JSR}/\code{JSRR} save the linking address in \code{R7} and jump either PC-relative or through a base register.}
+\li{\strong{Traps:} \code{TRAP} saves the link address in \code{R7}, loads the PC from the word at the trap vector address given by the low byte of the instruction, and falls through to whatever code lives there—in the pure executor this is exactly the ISA table lookup (\code{op_trap}); the interactive runner additionally recognizes the standard supervisor vectors and implements them natively (below).}
+}
+Each handler’s memory accesses and register updates are localized in \code{op_*}; comparing a handler to the ISA PDF row-by-row is the fastest way to see the precise semantics.
+}
+
+\em{Fetch–decode–execute}
+
+\p{
+\code{execute_step} (\code{Execution.lean}) is the cycle spelled out in comments: read \code{mem[pc]}; advance \code{pc} by one; decode the opcode; run the selected \code{op_*}; return the updated register file and memory. Branches and jumps overwrite \code{pc} after that increment, which is the standard “PC points at next instruction unless the opcode replaces it” pattern. Trap setup writes \code{R7} using the post-increment PC so the link register points after the \code{TRAP} word.
+}
+
+\em{Trap routines and I/O}
+
+\p{
+The LC-3 defines fixed eight-bit trap vectors (for example \code{GETC = x20}, \code{OUT = x21}, \code{PUTS = x22}, \code{IN = x23}, \code{PUTSP = x24}, \code{HALT = x25}). \code{Execution.op_trap} performs the generic ISA step: link in \code{R7}, \code{pc ← mem[vector]}. In the full interactive VM (\code{Main.lean}), once the opcode is recognized as \code{TRAP}, those six vectors are intercepted: after emulating the link behavior, control passes to \code{Trap.op_trap_io}, which implements \code{PUTS}, \code{GETC}, \code{OUT}, \code{IN}, \code{PUTSP}, and \code{HALT} using Lean \code{IO} and the terminal helpers—printing NUL-terminated word strings, packed byte strings, character I/O, and halting the loop—rather than executing whatever might reside in low memory for those vectors on bare metal.
+}
+
+\p{
+That split matters for reading the repo: \strong{pure} instruction semantics and proofs (\code{LC3Correct}) center on \code{Execution.lean}; \strong{observable} terminal behavior additionally depends on \code{Main.lean}, \code{Trap.lean}, and the small POSIX terminal layer (\code{c/terminal.c}) used for raw mode and non-blocking keyboard checks.
+}
+
+\em{Memory-mapped keyboard}
+
+\p{
+Keyboard status and data follow the usual LC-3 addresses \code{KBSR = xFE00} and \code{KBDR = xFE02} (\code{Main.lean}). Loads that resolve to those addresses go through \code{mem_read_io}: a pending-key reference buffers one character so repeated status reads stay coherent, \code{KBSR} exposes the ready bit when input exists, and reading \code{KBDR} consumes the pending key. Only load paths are specialized in \code{execute_step_io}; other instructions reuse the pure functions from \code{Execution.lean}.
+}
+
+\em{Where proofs attach}
+
+\p{
+This page stays on the operational ISA story; the corresponding proof artifacts live under \code{LC3Correct/}, especially \code{ExecutionCorrect.lean}, with register and memory lemmas factoring out the boring consistency checks. If a statement here matches how you read the ISA PDF, the Lean theorems are the machine-checked version of that reading; if something diverges, trust the definitions you find in \code{LC3Lean} and the theorem statements they imply.
+}

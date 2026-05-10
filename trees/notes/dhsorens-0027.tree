@@ -1,4 +1,39 @@
-\title{Computable Specifications}
+\title{LC3 in Lean}
 \author{dhsorens}
+\taxon{Blog}
 \date{2026-03-27}
 
+
+\p{
+ I recently implemented a [formally verified virtual machine in Lean](https://github.com/dhsorens/LC3-Lean) on which you can run 2048 in terminal!
+}
+
+\em{ISA-level model}
+
+\p{
+The LC-3 is a small 16-bit instructional architecture: eight general-purpose registers, a program counter, condition flags, and a #{2^{16}}-word address space. At each step the machine fetches a word from memory at the PC, decodes it as one of \strong{fourteen} opcodes (from arithmetic and bitwise operations to loads, stores, branches, jumps, and subroutine calls), then updates registers, memory, and control flow accordingly. Beyond those opcodes, LC-3 programs rely on \em{trap} routines for console I/O and on \em{memory-mapped I/O} for the keyboard—so a faithful simulator must implement both the core instructions and this I/O story.
+}
+
+\p{
+In [LC3-Lean](https://github.com/dhsorens/LC3-Lean), that story is spelled out directly in the Lean code: register and flag state lives in \code{LC3Lean/Registers.lean}, the flat memory model in \code{LC3Lean/Memory.lean}, opcode decoding in \code{LC3Lean/Instructions.lean}, the fetch–decode–execute step and per-opcode semantics in \code{LC3Lean/Execution.lean}, and trap handling in \code{LC3Lean/Trap.lean}. The runnable binary wires together loading of \code{.obj} files, the execution loop, and MMIO in \code{Main.lean}. If you open those modules, every informal claim in this paragraph—word size, register count, opcode coverage, traps, MMIO—is meant to be visible as definitions and executable code rather than hand-waving.
+}
+
+\p{
+    For full details, [see this page](dhsorens-0029).
+}
+
+\em{Formal proofs}
+
+\p{
+``Formally verified'' here does \strong{not} mean ``tested a lot'': it means that Lean checks mathematical theorems relating the implementation above to an explicit ISA-level specification of how each instruction may read and write registers and memory. Those theorems are stated and proved in the \code{LC3Correct} package—especially \code{LC3Correct/ExecutionCorrect.lean}, with supporting lemmas about registers and memory in \code{LC3Correct/RegisterLemmas.lean} and \code{LC3Correct/MemoryLemmas.lean}. Together they aim to capture, opcode by opcode, that the Lean executor’s effect on machine state matches the spec encoded alongside it; the repository is written without admitted proof gaps (\code{sorry}), so what Lean accepts is the whole proof script, not a sketch.
+}
+
+\em{Trust Base and Verification Boundary}
+
+\p{
+The boundary worth keeping in mind is the thin C shim (\code{c/terminal.c}) used for POSIX terminal raw mode and polling: it affects how characters reach your screen and keyboard, but the LC-3 machine semantics and the correctness proofs live on the Lean side. Readers who want the precise logical statement for a single opcode should start from \code{LC3Correct/ExecutionCorrect.lean} and follow the definitions it references—the prose here is only a map to those lemmas.
+}
+
+\p{
+    For full details, [see this page](dhsorens-002A).
+}
