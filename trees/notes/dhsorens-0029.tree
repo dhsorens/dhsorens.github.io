@@ -4,7 +4,7 @@
 \date{2026-05-10}
 
 \p{
-This note expands the ISA-level sketch on [LC3 in Lean](dhsorens-0027) into something you can line up with the [LC3-Lean](https://github.com/dhsorens/LC3-Lean) sources: registers and memory in \code{LC3Lean/Registers.lean} and \code{LC3Lean/Memory.lean}, decoding in \code{LC3Lean/Instructions.lean}, pure instruction semantics in \code{LC3Lean/Execution.lean}, trap helpers in \code{LC3Lean/Trap.lean}, and the runnable harness (binary loader, MMIO, trap dispatch) in \code{Main.lean}. The comments in \code{Execution.lean} point to the LC-3 ISA summary used as a specification reference: [lc3-isa.pdf](https://www.jmeiners.com/lc3-vm/supplies/lc3-isa.pdf).
+This note expands the ISA-level sketch on [LC3 in Lean](dhsorens-0027)
 }
 
 \em{Memory and words}
