@@ -24,7 +24,7 @@
         \li{\em{Multilinear} (\code{CMlPolynomial} / \code{CMlPolynomialEval}): coefficient and Boolean-hypercube evaluation forms.}
         \li{\em{Bivariate} (\code{CBivariate}): nested univariate polynomials with dedicated operations, used heavily in the coding-theory stack.}
         \li{\em{Fields}: concrete finite-field instances (BabyBear, KoalaBear, Goldilocks, and others), Montgomery arithmetic, computable field extensions, and binary-field / additive-NTT infrastructure.}
-        \li{\em{Coding theory}: Reed--Solomon encoding, Gao unique decoding, and Guruswami--Sudan list decoding, with proved correctness.}
+        \li{\em{Coding theory}: Reed-Solomon encoding, Gao unique decoding, and Guruswami-Sudan list decoding, with proved correctness.}
     }
 }
 
@@ -36,7 +36,7 @@
 
 \p{
     My own role has shifted over [Q1 2026](dhsorens-0026) from doing a large share of the Phase 1 formalization toward coordinating a much larger contributor base for Phase 2—style, CI, contribution standards, and making sure the pieces fit together.
-    I also gave a talk on CompPoly at [ZKProofs 8](dhsorens-0028).
+    I also gave a [talk on CompPoly](dhsorens-0028) at ZKProofs 8.
 }
 
 \p{

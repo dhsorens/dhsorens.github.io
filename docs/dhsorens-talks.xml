@@ -347,12 +347,12 @@
         <fr:li><fr:em>Multilinear</fr:em> (<fr:code>CMlPolynomial</fr:code> / <fr:code>CMlPolynomialEval</fr:code>): coefficient and Boolean-hypercube evaluation forms.</fr:li>
         <fr:li><fr:em>Bivariate</fr:em> (<fr:code>CBivariate</fr:code>): nested univariate polynomials with dedicated operations, used heavily in the coding-theory stack.</fr:li>
         <fr:li><fr:em>Fields</fr:em>: concrete finite-field instances (BabyBear, KoalaBear, Goldilocks, and others), Montgomery arithmetic, computable field extensions, and binary-field / additive-NTT infrastructure.</fr:li>
-        <fr:li><fr:em>Coding theory</fr:em>: Reed--Solomon encoding, Gao unique decoding, and Guruswami--Sudan list decoding, with proved correctness.</fr:li></fr:ul></fr:p>
+        <fr:li><fr:em>Coding theory</fr:em>: Reed-Solomon encoding, Gao unique decoding, and Guruswami-Sudan list decoding, with proved correctness.</fr:li></fr:ul></fr:p>
             <fr:p>Phase 1 of the roadmap—the theoretical foundation—is essentially complete: core algebraic structure, API coverage, and Mathlib bridges are in place.
     The current focus is Phase 2, performance and efficiency: faster field arithmetic, FFT/NTT-based multiplication, and better evaluation/interpolation pathways, without giving up proof-first correctness.
     See the <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md">roadmap</fr:link> for the live status.</fr:p>
             <fr:p>My own role has shifted over <fr:link type="local" href="dhsorens-0026.xml" addr="dhsorens-0026" title="Q1 2025">Q1 2026</fr:link> from doing a large share of the Phase 1 formalization toward coordinating a much larger contributor base for Phase 2—style, CI, contribution standards, and making sure the pieces fit together.
-    I also gave a talk on CompPoly at <fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">ZKProofs 8</fr:link>.</fr:p>
+    I also gave a <fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">talk on CompPoly</fr:link> at ZKProofs 8.</fr:p>
             <fr:p>Links:
     <fr:ul><fr:li><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">GitHub repository</fr:link></fr:li>
         <fr:li><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md">Roadmap</fr:link></fr:li>
