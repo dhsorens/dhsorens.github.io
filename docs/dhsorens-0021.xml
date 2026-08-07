@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>311</fr:anchor>
+    <fr:anchor>389</fr:anchor>
     <fr:addr type="user">dhsorens-0021</fr:addr>
     <fr:route>dhsorens-0021.xml</fr:route>
     <fr:title text="November/December 2025">November/December 2025</fr:title>
@@ -27,7 +27,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>312</fr:anchor>
+            <fr:anchor>390</fr:anchor>
             <fr:addr type="user">dhsorens-logs</fr:addr>
             <fr:route>dhsorens-logs.xml</fr:route>
             <fr:title text="Logs">Logs</fr:title>
@@ -41,7 +41,7 @@
           <fr:mainmatter>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>256</fr:anchor>
+                <fr:anchor>336</fr:anchor>
                 <fr:addr type="user">dhsorens-0026</fr:addr>
                 <fr:route>dhsorens-0026.xml</fr:route>
                 <fr:title text="Q1 2025">Q1 2025</fr:title>
@@ -73,7 +73,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>257</fr:anchor>
+                <fr:anchor>337</fr:anchor>
                 <fr:addr type="user">dhsorens-0021</fr:addr>
                 <fr:route>dhsorens-0021.xml</fr:route>
                 <fr:title text="November/December 2025">November/December 2025</fr:title>
@@ -105,7 +105,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>314</fr:anchor>
+            <fr:anchor>392</fr:anchor>
             <fr:addr type="user">dhsorens-ef</fr:addr>
             <fr:route>dhsorens-ef.xml</fr:route>
             <fr:title text="Ethereum Foundation">Ethereum Foundation</fr:title>

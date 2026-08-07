@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="default.xsl"?>
 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
   <fr:frontmatter>
-    <fr:anchor>316</fr:anchor>
+    <fr:anchor>394</fr:anchor>
     <fr:addr type="user">dhsorens-0020</fr:addr>
     <fr:route>dhsorens-0020.xml</fr:route>
     <fr:title text="Protocol Snarkification">Protocol Snarkification</fr:title>
@@ -19,7 +19,7 @@
     <fr:meta name="toc">true</fr:meta>
   </fr:frontmatter>
   <fr:mainmatter>
-    <fr:p>There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>. My main focus is currently on <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">CompPoly</fr:link> and <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
+    <fr:p>There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>. My main focus is currently on <fr:link type="local" href="dhsorens-comppoly.xml" addr="dhsorens-comppoly" title="CompPoly">CompPoly</fr:link> and <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
     <fr:p>See <fr:link type="external" href="http://verified-zkevm.org">our website</fr:link> for more information.</fr:p>
   </fr:mainmatter>
   <fr:backmatter>
@@ -31,7 +31,7 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>318</fr:anchor>
+            <fr:anchor>396</fr:anchor>
             <fr:addr type="user">dhsorens-notes</fr:addr>
             <fr:route>dhsorens-notes.xml</fr:route>
             <fr:title text="Notes">Notes</fr:title>
@@ -50,7 +50,7 @@
             <fr:p>I recently started work on formally verifying <fr:link type="local" href="dhsorens-0020.xml" addr="dhsorens-0020" title="Protocol Snarkification">all things zero-knowledge</fr:link> on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>264</fr:anchor>
+                <fr:anchor>346</fr:anchor>
                 <fr:addr type="user">dhsorens-0025</fr:addr>
                 <fr:route>dhsorens-0025.xml</fr:route>
                 <fr:title text="CompPoly and Computable Specifications">CompPoly and Computable Specifications</fr:title>
@@ -66,7 +66,7 @@
                 </fr:authors>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p>During <fr:link type="local" href="dhsorens-0026.xml" addr="dhsorens-0026" title="Q1 2025">Q1 of 2026</fr:link> we worked building out <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">CompPoly</fr:link>, a formally verified
+                <fr:p>During <fr:link type="local" href="dhsorens-0026.xml" addr="dhsorens-0026" title="Q1 2025">Q1 of 2026</fr:link> we worked building out <fr:link type="local" href="dhsorens-comppoly.xml" addr="dhsorens-comppoly" title="CompPoly">CompPoly</fr:link>, a formally verified
     model of computable polynomials in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.
     The purpose of CompPoly is to provide a computable base for the specs in <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
                 <fr:p>My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications <fr:link type="local" href="dhsorens-001J.xml" addr="dhsorens-001J" title="Smart Contract Specification">in the case of smart contracts</fr:link>. zkVMs and SNARKS also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib/">Arklib</fr:link> for a taste of that.</fr:p>
@@ -80,7 +80,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>266</fr:anchor>
+                <fr:anchor>348</fr:anchor>
                 <fr:addr type="user">dhsorens-0020</fr:addr>
                 <fr:route>dhsorens-0020.xml</fr:route>
                 <fr:title text="Protocol Snarkification">Protocol Snarkification</fr:title>
@@ -97,14 +97,14 @@
                 <fr:meta name="toc">true</fr:meta>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p>There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>. My main focus is currently on <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">CompPoly</fr:link> and <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
+                <fr:p>There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>. My main focus is currently on <fr:link type="local" href="dhsorens-comppoly.xml" addr="dhsorens-comppoly" title="CompPoly">CompPoly</fr:link> and <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
                 <fr:p>See <fr:link type="external" href="http://verified-zkevm.org">our website</fr:link> for more information.</fr:p>
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>268</fr:anchor>
+                <fr:anchor>350</fr:anchor>
                 <fr:addr type="user">dhsorens-000U</fr:addr>
                 <fr:route>dhsorens-000U.xml</fr:route>
                 <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -126,7 +126,7 @@
     During my <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> and in the years after a lot of time thinking about <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contract</fr:link> design, specification, and verification.</fr:p>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>270</fr:anchor>
+                    <fr:anchor>352</fr:anchor>
                     <fr:addr type="user">dhsorens-000W</fr:addr>
                     <fr:route>dhsorens-000W.xml</fr:route>
                     <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
@@ -152,7 +152,7 @@
                 </fr:tree>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>272</fr:anchor>
+                    <fr:anchor>354</fr:anchor>
                     <fr:addr type="user">dhsorens-0015</fr:addr>
                     <fr:route>dhsorens-0015.xml</fr:route>
                     <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -186,7 +186,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>274</fr:anchor>
+                <fr:anchor>356</fr:anchor>
                 <fr:addr type="user">dhsorens-000V</fr:addr>
                 <fr:route>dhsorens-000V.xml</fr:route>
                 <fr:title text="Type Theory and Formal Proof">Type Theory and Formal Proof</fr:title>
@@ -221,7 +221,55 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>320</fr:anchor>
+            <fr:anchor>398</fr:anchor>
+            <fr:addr type="user">dhsorens-comppoly</fr:addr>
+            <fr:route>dhsorens-comppoly.xml</fr:route>
+            <fr:title text="CompPoly">CompPoly</fr:title>
+            <fr:taxon>Tool</fr:taxon>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>7</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">CompPoly</fr:link> is a formally verified <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> library for computable polynomial operations over rings and finite fields.
+    I maintain it as part of <fr:link type="local" href="dhsorens-0020.xml" addr="dhsorens-0020" title="Protocol Snarkification">Protocol Snarkification</fr:link> at the <fr:link type="local" href="dhsorens-ef.xml" addr="dhsorens-ef" title="Ethereum Foundation">Ethereum Foundation</fr:link>, where it is meant to serve as the computable core underneath <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">ArkLib</fr:link>.</fr:p>
+            <fr:p>The point of CompPoly is not just to have polynomials in Lean, but to have representations that you can actually <fr:em>run</fr:em>.
+    Mathlib's polynomial types are excellent for abstract algebra, but they are not designed as an executable engine for zero-knowledge verification work.
+    CompPoly provides computable univariate, multivariate, multilinear, and bivariate polynomials, with proved equivalences back to the Mathlib counterparts where that bridge matters.
+    I have written more about why <fr:link type="local" href="dhsorens-0025.xml" addr="dhsorens-0025" title="CompPoly and Computable Specifications">computable specifications</fr:link> matter in this setting.</fr:p>
+            <fr:p>In broad strokes, the library covers:
+    <fr:ul><fr:li><fr:em>Univariate</fr:em> (<fr:code>CPolynomial</fr:code>): coefficient-sequence polynomials with evaluation, interpolation (including Lagrange), and a ring equivalence to Mathlib <fr:code>Polynomial</fr:code>.</fr:li>
+        <fr:li><fr:em>Multivariate</fr:em> (<fr:code>CMvPolynomial</fr:code>): sparse monomial maps with a full core API and equivalence to Mathlib <fr:code>MvPolynomial</fr:code>.</fr:li>
+        <fr:li><fr:em>Multilinear</fr:em> (<fr:code>CMlPolynomial</fr:code> / <fr:code>CMlPolynomialEval</fr:code>): coefficient and Boolean-hypercube evaluation forms.</fr:li>
+        <fr:li><fr:em>Bivariate</fr:em> (<fr:code>CBivariate</fr:code>): nested univariate polynomials with dedicated operations, used heavily in the coding-theory stack.</fr:li>
+        <fr:li><fr:em>Fields</fr:em>: concrete finite-field instances (BabyBear, KoalaBear, Goldilocks, and others), Montgomery arithmetic, computable field extensions, and binary-field / additive-NTT infrastructure.</fr:li>
+        <fr:li><fr:em>Coding theory</fr:em>: Reed--Solomon encoding, Gao unique decoding, and Guruswami--Sudan list decoding, with proved correctness.</fr:li></fr:ul></fr:p>
+            <fr:p>Phase 1 of the roadmap—the theoretical foundation—is essentially complete: core algebraic structure, API coverage, and Mathlib bridges are in place.
+    The current focus is Phase 2, performance and efficiency: faster field arithmetic, FFT/NTT-based multiplication, and better evaluation/interpolation pathways, without giving up proof-first correctness.
+    See the <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md">roadmap</fr:link> for the live status.</fr:p>
+            <fr:p>My own role has shifted over <fr:link type="local" href="dhsorens-0026.xml" addr="dhsorens-0026" title="Q1 2025">Q1 2026</fr:link> from doing a large share of the Phase 1 formalization toward coordinating a much larger contributor base for Phase 2—style, CI, contribution standards, and making sure the pieces fit together.
+    I also gave a talk on CompPoly at <fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">ZKProofs 8</fr:link>.</fr:p>
+            <fr:p>Links:
+    <fr:ul><fr:li><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">GitHub repository</fr:link></fr:li>
+        <fr:li><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md">Roadmap</fr:link></fr:li>
+        <fr:li><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/blob/main/CONTRIBUTING.md">Contributing guide</fr:link></fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0025.xml" addr="dhsorens-0025" title="CompPoly and Computable Specifications">Computable specifications note</fr:link></fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0020.xml" addr="dhsorens-0020" title="Protocol Snarkification">Protocol Snarkification</fr:link></fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">ZKProofs 8 talk</fr:link></fr:li></fr:ul></fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>400</fr:anchor>
             <fr:addr type="user">dhsorens-001E</fr:addr>
             <fr:route>dhsorens-001E.xml</fr:route>
             <fr:title text="Ethereum Foundation (2025 - Present)">Ethereum Foundation (2025 - Present)</fr:title>
@@ -243,7 +291,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>322</fr:anchor>
+            <fr:anchor>402</fr:anchor>
             <fr:addr type="user">index</fr:addr>
             <fr:route>index.xml</fr:route>
             <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
@@ -255,12 +303,12 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <fr:p>I am a mathematician and computer scientist.
-  I work on <fr:link type="local" href="dhsorens-0020.xml" addr="dhsorens-0020" title="Protocol Snarkification">Protocol Snarkification</fr:link> at the <fr:link type="local" href="dhsorens-ef.xml" addr="dhsorens-ef" title="Ethereum Foundation">Ethereum Foundation</fr:link>, and these days I am mostly interested in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.</fr:p>
+  I work on <fr:link type="local" href="dhsorens-0020.xml" addr="dhsorens-0020" title="Protocol Snarkification">Protocol Snarkification</fr:link> at the <fr:link type="local" href="dhsorens-ef.xml" addr="dhsorens-ef" title="Ethereum Foundation">Ethereum Foundation</fr:link>, and these days I am mostly interested in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>—especially <fr:link type="local" href="dhsorens-comppoly.xml" addr="dhsorens-comppoly" title="CompPoly">CompPoly</fr:link>.</fr:p>
             <fr:p>Here you can see my <fr:link type="local" href="dhsorens-rsrch.xml" addr="dhsorens-rsrch" title="Research">research</fr:link>, <fr:link type="local" href="dhsorens-notes.xml" addr="dhsorens-notes" title="Notes">notes</fr:link>, <fr:link type="local" href="dhsorens-logs.xml" addr="dhsorens-logs" title="Logs">logs</fr:link>, <fr:link type="local" href="dhsorens-001C.xml" addr="dhsorens-001C" title="Work Bio">work history</fr:link>, and <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">bio</fr:link>.</fr:p>
             <fr:p><fr:link type="external" href="https://github.com/dhsorens">GitHub</fr:link> | <fr:link type="external" href="https://orcid.org/0000-0003-4937-6984">ORCID</fr:link> | <fr:link type="external" href="https://www.linkedin.com/in/dhsorens/">LinkedIn</fr:link></fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>301</fr:anchor>
+                <fr:anchor>294</fr:anchor>
                 <fr:addr type="user">dhsorens-001S</fr:addr>
                 <fr:route>dhsorens-001S.xml</fr:route>
                 <fr:title text="Featured Article">Featured Article</fr:title>
@@ -283,7 +331,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>303</fr:anchor>
+                <fr:anchor>296</fr:anchor>
                 <fr:addr type="user">dhsorens-000D</fr:addr>
                 <fr:route>dhsorens-000D.xml</fr:route>
                 <fr:title text="Education">Education</fr:title>
@@ -306,7 +354,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>305</fr:anchor>
+                <fr:anchor>298</fr:anchor>
                 <fr:addr type="user">dhsorens-pubs</fr:addr>
                 <fr:route>dhsorens-pubs.xml</fr:route>
                 <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
@@ -349,7 +397,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>307</fr:anchor>
+                <fr:anchor>300</fr:anchor>
                 <fr:addr type="user">dhsorens-talks</fr:addr>
                 <fr:route>dhsorens-talks.xml</fr:route>
                 <fr:title text="Talks">Talks</fr:title>
@@ -363,7 +411,7 @@
               <fr:mainmatter>
                 <fr:p>Some selected talks:
     
-    <fr:ul><fr:li><fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">CompPoly</fr:link>. <fr:link type="external" href="https://zkproof.org/events/zkproof-8-rome/">ZKProofs 8</fr:link>, May 2026, Rome, Italy.</fr:li>
+    <fr:ul><fr:li><fr:link type="local" href="dhsorens-comppoly.xml" addr="dhsorens-comppoly" title="CompPoly">CompPoly</fr:link> (<fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">talk</fr:link>). <fr:link type="external" href="https://zkproof.org/events/zkproof-8-rome/">ZKProofs 8</fr:link>, May 2026, Rome, Italy.</fr:li>
         <fr:li><fr:link type="local" href="dhsorens-0023.xml" addr="dhsorens-0023" title="Correct and Computable Specifications in Lean">Correct and Computable Specifications in Lean</fr:link>. <fr:link type="external" href="https://beneficial-ai-foundation.github.io/SVIL2026/">SViL26</fr:link>, April 2026, Paris, France.</fr:li>
         <fr:li><fr:link type="local" href="dhsorens-0022.xml" addr="dhsorens-0022" title="Safely Snarkifying the Ethereum Protocol">Safely Snarkifying the Ethereum Protocol</fr:link>. <fr:link type="external" href="https://ethcc.io">EthCC[9]</fr:link>, March 2026, Cannes, France.</fr:li>
         <fr:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. <fr:link type="external" href="https://fmbc.gitlab.io/2025">FMBC 2025</fr:link>, May 2025, Hamilton, Canada.</fr:li>
@@ -379,7 +427,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>309</fr:anchor>
+                <fr:anchor>302</fr:anchor>
                 <fr:addr type="user">dhsorens-000E</fr:addr>
                 <fr:route>dhsorens-000E.xml</fr:route>
                 <fr:title text="Work History">Work History</fr:title>
@@ -405,7 +453,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>324</fr:anchor>
+            <fr:anchor>404</fr:anchor>
             <fr:addr type="user">dhsorens-notes</fr:addr>
             <fr:route>dhsorens-notes.xml</fr:route>
             <fr:title text="Notes">Notes</fr:title>
@@ -424,7 +472,7 @@
             <fr:p>I recently started work on formally verifying <fr:link type="local" href="dhsorens-0020.xml" addr="dhsorens-0020" title="Protocol Snarkification">all things zero-knowledge</fr:link> on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.</fr:p>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>264</fr:anchor>
+                <fr:anchor>346</fr:anchor>
                 <fr:addr type="user">dhsorens-0025</fr:addr>
                 <fr:route>dhsorens-0025.xml</fr:route>
                 <fr:title text="CompPoly and Computable Specifications">CompPoly and Computable Specifications</fr:title>
@@ -440,7 +488,7 @@
                 </fr:authors>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p>During <fr:link type="local" href="dhsorens-0026.xml" addr="dhsorens-0026" title="Q1 2025">Q1 of 2026</fr:link> we worked building out <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">CompPoly</fr:link>, a formally verified
+                <fr:p>During <fr:link type="local" href="dhsorens-0026.xml" addr="dhsorens-0026" title="Q1 2025">Q1 of 2026</fr:link> we worked building out <fr:link type="local" href="dhsorens-comppoly.xml" addr="dhsorens-comppoly" title="CompPoly">CompPoly</fr:link>, a formally verified
     model of computable polynomials in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>.
     The purpose of CompPoly is to provide a computable base for the specs in <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
                 <fr:p>My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications <fr:link type="local" href="dhsorens-001J.xml" addr="dhsorens-001J" title="Smart Contract Specification">in the case of smart contracts</fr:link>. zkVMs and SNARKS also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib/">Arklib</fr:link> for a taste of that.</fr:p>
@@ -454,7 +502,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>266</fr:anchor>
+                <fr:anchor>348</fr:anchor>
                 <fr:addr type="user">dhsorens-0020</fr:addr>
                 <fr:route>dhsorens-0020.xml</fr:route>
                 <fr:title text="Protocol Snarkification">Protocol Snarkification</fr:title>
@@ -471,14 +519,14 @@
                 <fr:meta name="toc">true</fr:meta>
               </fr:frontmatter>
               <fr:mainmatter>
-                <fr:p>There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>. My main focus is currently on <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">CompPoly</fr:link> and <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
+                <fr:p>There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link type="local" href="dhsorens-001L.xml" addr="dhsorens-001L" title="Zero Knowledge Proofs">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link type="local" href="dhsorens-000X.xml" addr="dhsorens-000X" title="Formal Specification and Verification">formal verification</fr:link> in <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link>. My main focus is currently on <fr:link type="local" href="dhsorens-comppoly.xml" addr="dhsorens-comppoly" title="CompPoly">CompPoly</fr:link> and <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">Arklib</fr:link>.</fr:p>
                 <fr:p>See <fr:link type="external" href="http://verified-zkevm.org">our website</fr:link> for more information.</fr:p>
               </fr:mainmatter>
               <fr:backmatter />
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>268</fr:anchor>
+                <fr:anchor>350</fr:anchor>
                 <fr:addr type="user">dhsorens-000U</fr:addr>
                 <fr:route>dhsorens-000U.xml</fr:route>
                 <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -500,7 +548,7 @@
     During my <fr:link type="local" href="dhsorens-phd.xml" addr="dhsorens-phd" title="PhD in Formal Methods">PhD</fr:link> and in the years after a lot of time thinking about <fr:link type="local" href="dhsorens-000Y.xml" addr="dhsorens-000Y" title="Smart Contracts">smart contract</fr:link> design, specification, and verification.</fr:p>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>270</fr:anchor>
+                    <fr:anchor>352</fr:anchor>
                     <fr:addr type="user">dhsorens-000W</fr:addr>
                     <fr:route>dhsorens-000W.xml</fr:route>
                     <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
@@ -526,7 +574,7 @@
                 </fr:tree>
                 <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
                   <fr:frontmatter>
-                    <fr:anchor>272</fr:anchor>
+                    <fr:anchor>354</fr:anchor>
                     <fr:addr type="user">dhsorens-0015</fr:addr>
                     <fr:route>dhsorens-0015.xml</fr:route>
                     <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
@@ -560,7 +608,7 @@
             </fr:tree>
             <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
               <fr:frontmatter>
-                <fr:anchor>274</fr:anchor>
+                <fr:anchor>356</fr:anchor>
                 <fr:addr type="user">dhsorens-000V</fr:addr>
                 <fr:route>dhsorens-000V.xml</fr:route>
                 <fr:title text="Type Theory and Formal Proof">Type Theory and Formal Proof</fr:title>
@@ -595,7 +643,55 @@
       <fr:mainmatter>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>326</fr:anchor>
+            <fr:anchor>406</fr:anchor>
+            <fr:addr type="user">dhsorens-comppoly</fr:addr>
+            <fr:route>dhsorens-comppoly.xml</fr:route>
+            <fr:title text="CompPoly">CompPoly</fr:title>
+            <fr:taxon>Tool</fr:taxon>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>7</fr:day>
+            </fr:date>
+            <fr:authors>
+              <fr:author>
+                <fr:link type="local" href="dhsorens.xml" addr="dhsorens" title="Derek Sorensen">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">CompPoly</fr:link> is a formally verified <fr:link type="local" href="dhsorens-lean.xml" addr="dhsorens-lean" title="The Lean Theorem Prover">Lean</fr:link> library for computable polynomial operations over rings and finite fields.
+    I maintain it as part of <fr:link type="local" href="dhsorens-0020.xml" addr="dhsorens-0020" title="Protocol Snarkification">Protocol Snarkification</fr:link> at the <fr:link type="local" href="dhsorens-ef.xml" addr="dhsorens-ef" title="Ethereum Foundation">Ethereum Foundation</fr:link>, where it is meant to serve as the computable core underneath <fr:link type="external" href="https://github.com/Verified-zkEVM/ArkLib">ArkLib</fr:link>.</fr:p>
+            <fr:p>The point of CompPoly is not just to have polynomials in Lean, but to have representations that you can actually <fr:em>run</fr:em>.
+    Mathlib's polynomial types are excellent for abstract algebra, but they are not designed as an executable engine for zero-knowledge verification work.
+    CompPoly provides computable univariate, multivariate, multilinear, and bivariate polynomials, with proved equivalences back to the Mathlib counterparts where that bridge matters.
+    I have written more about why <fr:link type="local" href="dhsorens-0025.xml" addr="dhsorens-0025" title="CompPoly and Computable Specifications">computable specifications</fr:link> matter in this setting.</fr:p>
+            <fr:p>In broad strokes, the library covers:
+    <fr:ul><fr:li><fr:em>Univariate</fr:em> (<fr:code>CPolynomial</fr:code>): coefficient-sequence polynomials with evaluation, interpolation (including Lagrange), and a ring equivalence to Mathlib <fr:code>Polynomial</fr:code>.</fr:li>
+        <fr:li><fr:em>Multivariate</fr:em> (<fr:code>CMvPolynomial</fr:code>): sparse monomial maps with a full core API and equivalence to Mathlib <fr:code>MvPolynomial</fr:code>.</fr:li>
+        <fr:li><fr:em>Multilinear</fr:em> (<fr:code>CMlPolynomial</fr:code> / <fr:code>CMlPolynomialEval</fr:code>): coefficient and Boolean-hypercube evaluation forms.</fr:li>
+        <fr:li><fr:em>Bivariate</fr:em> (<fr:code>CBivariate</fr:code>): nested univariate polynomials with dedicated operations, used heavily in the coding-theory stack.</fr:li>
+        <fr:li><fr:em>Fields</fr:em>: concrete finite-field instances (BabyBear, KoalaBear, Goldilocks, and others), Montgomery arithmetic, computable field extensions, and binary-field / additive-NTT infrastructure.</fr:li>
+        <fr:li><fr:em>Coding theory</fr:em>: Reed--Solomon encoding, Gao unique decoding, and Guruswami--Sudan list decoding, with proved correctness.</fr:li></fr:ul></fr:p>
+            <fr:p>Phase 1 of the roadmap—the theoretical foundation—is essentially complete: core algebraic structure, API coverage, and Mathlib bridges are in place.
+    The current focus is Phase 2, performance and efficiency: faster field arithmetic, FFT/NTT-based multiplication, and better evaluation/interpolation pathways, without giving up proof-first correctness.
+    See the <fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md">roadmap</fr:link> for the live status.</fr:p>
+            <fr:p>My own role has shifted over <fr:link type="local" href="dhsorens-0026.xml" addr="dhsorens-0026" title="Q1 2025">Q1 2026</fr:link> from doing a large share of the Phase 1 formalization toward coordinating a much larger contributor base for Phase 2—style, CI, contribution standards, and making sure the pieces fit together.
+    I also gave a talk on CompPoly at <fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">ZKProofs 8</fr:link>.</fr:p>
+            <fr:p>Links:
+    <fr:ul><fr:li><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly">GitHub repository</fr:link></fr:li>
+        <fr:li><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md">Roadmap</fr:link></fr:li>
+        <fr:li><fr:link type="external" href="https://github.com/Verified-zkEVM/CompPoly/blob/main/CONTRIBUTING.md">Contributing guide</fr:link></fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0025.xml" addr="dhsorens-0025" title="CompPoly and Computable Specifications">Computable specifications note</fr:link></fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0020.xml" addr="dhsorens-0020" title="Protocol Snarkification">Protocol Snarkification</fr:link></fr:li>
+        <fr:li><fr:link type="local" href="dhsorens-0028.xml" addr="dhsorens-0028" title="Safely Snarkifying the Ethereum Protocol">ZKProofs 8 talk</fr:link></fr:li></fr:ul></fr:p>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>408</fr:anchor>
             <fr:addr type="user">dhsorens-001L</fr:addr>
             <fr:route>dhsorens-001L.xml</fr:route>
             <fr:title text="Zero Knowledge Proofs">Zero Knowledge Proofs</fr:title>
@@ -617,7 +713,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>328</fr:anchor>
+            <fr:anchor>410</fr:anchor>
             <fr:addr type="user">dhsorens-000X</fr:addr>
             <fr:route>dhsorens-000X.xml</fr:route>
             <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
@@ -641,7 +737,7 @@
         </fr:tree>
         <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
           <fr:frontmatter>
-            <fr:anchor>330</fr:anchor>
+            <fr:anchor>412</fr:anchor>
             <fr:addr type="user">dhsorens-lean</fr:addr>
             <fr:route>dhsorens-lean.xml</fr:route>
             <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>

@@ -3,7 +3,7 @@
 \date{2026-03-11}
 
 \p{
-    During [Q1 of 2026](dhsorens-0026) we worked building out [CompPoly](https://github.com/Verified-zkEVM/CompPoly), a formally verified
+    During [Q1 of 2026](dhsorens-0026) we worked building out [CompPoly](dhsorens-comppoly), a formally verified
     model of computable polynomials in [Lean](dhsorens-lean).
     The purpose of CompPoly is to provide a computable base for the specs in [Arklib](https://github.com/Verified-zkEVM/ArkLib).
 }
