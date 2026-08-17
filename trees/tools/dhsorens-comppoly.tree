@@ -1,0 +1,56 @@
+\title{CompPoly}
+\taxon{Tool}
+\author{dhsorens}
+\meta{toc}{true}
+\date{2026-08-17}
+
+\p{
+    [CompPoly](https://github.com/Verified-zkEVM/CompPoly) is a formally verified [Lean](dhsorens-lean) library for computable polynomial operations over rings and finite fields.
+    I maintain it as part of [Protocol Snarkification](dhsorens-0020) at the [Ethereum Foundation](dhsorens-ef), where it is meant to serve as the computable core underneath [ArkLib](https://github.com/Verified-zkEVM/ArkLib).
+}
+
+\p{
+    The point of CompPoly is not just to have polynomials in Lean, but to have representations that you can actually \em{run}.
+    Mathlib's polynomial types are excellent for abstract algebra, but they are not designed as an executable engine for zero-knowledge verification work.
+    CompPoly provides computable univariate, multivariate, multilinear, and bivariate polynomials, with proved equivalences back to the Mathlib counterparts where that bridge matters.
+    I have written more about why [computable specifications](dhsorens-0025) matter in this setting.
+}
+
+\p{
+    In broad strokes, the library covers:
+    \ul{
+        \li{\em{Univariate} (\code{CPolynomial}): coefficient-sequence polynomials with evaluation, interpolation (including Lagrange), and a ring equivalence to Mathlib \code{Polynomial}.}
+        \li{\em{Multivariate} (\code{CMvPolynomial}): sparse monomial maps with a full core API and equivalence to Mathlib \code{MvPolynomial}.}
+        \li{\em{Multilinear} (\code{CMlPolynomial} / \code{CMlPolynomialEval}): coefficient and Boolean-hypercube evaluation forms.}
+        \li{\em{Bivariate} (\code{CBivariate}): nested univariate polynomials with dedicated operations, used heavily in the coding-theory stack.}
+        \li{\em{Fields}: concrete finite-field instances (BabyBear, KoalaBear, Goldilocks, and others), Montgomery arithmetic, computable field extensions, and binary-field / additive-NTT infrastructure.}
+        \li{\em{Coding theory}: Reed-Solomon encoding, Gao unique decoding, and Guruswami-Sudan list decoding, with proved correctness.}
+    }
+}
+
+\p{
+    Roadmap status as of 17 August 2026 (the [live document](https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md) is the source of truth):
+    \ul{
+        \li{\em{Phase 1} (theoretical foundation): done. Ring structures, the core API, Mathlib bridges, and the extra types (finite fields, extensions, bivariate polynomials).}
+        \li{\em{Phase 2} (performance): nearly done. Montgomery field arithmetic, NTT multiplication, batch evaluation, Kronecker bivariate multiply, and the Reed-Solomon / Gao / Guruswami-Sudan stack. A few items remain, including a 64-bit Montgomery carrier.}
+        \li{\em{Phase 3} (interop): next, and already started in places. Serialization, proof ergonomics, and bridging to ArkLib, LLZK, and extracted Rust.}
+        \li{\em{Phase 4} (polish): documentation and developer experience.}
+    }
+}
+
+\p{
+    My own role has shifted over [Q1 2026](dhsorens-0026) from doing a large share of the Phase 1 formalization toward coordinating a much larger contributor base for Phase 2—style, CI, contribution standards, and making sure the pieces fit together.
+    I also gave a [talk on CompPoly](dhsorens-0028) at ZKProofs 8 and continue to maintain the library.
+}
+
+\p{
+    Links:
+    \ul{
+        \li{[GitHub repository](https://github.com/Verified-zkEVM/CompPoly)}
+        \li{[Roadmap](https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md)}
+        \li{[Contributing guide](https://github.com/Verified-zkEVM/CompPoly/blob/main/CONTRIBUTING.md)}
+        \li{[Computable specifications note](dhsorens-0025)}
+        \li{[Protocol Snarkification](dhsorens-0020)}
+        \li{[ZKProofs 8 talk](dhsorens-0028)}
+    }
+}

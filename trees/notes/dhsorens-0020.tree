@@ -4,7 +4,7 @@
 \date{2025-12-18}
 
 \p{
-    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate [zero knowledge proofs](dhsorens-001L) into every layer of the Ethereum protocol. I contribute to this via [formal verification](dhsorens-000X) in [Lean](dhsorens-lean). My main focus is currently on [CompPoly](https://github.com/Verified-zkEVM/CompPoly) and [Arklib](https://github.com/Verified-zkEVM/ArkLib).
+    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate [zero knowledge proofs](dhsorens-001L) into every layer of the Ethereum protocol. I contribute to this via [formal verification](dhsorens-000X) in [Lean](dhsorens-lean). My main focus is currently on [CompPoly](dhsorens-comppoly) and [Arklib](https://github.com/Verified-zkEVM/ArkLib).
 }
 
 \p{
