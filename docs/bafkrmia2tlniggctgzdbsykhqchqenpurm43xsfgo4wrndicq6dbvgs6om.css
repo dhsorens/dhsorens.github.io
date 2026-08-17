@@ -1,0 +1,49 @@
+/*
+  Opt-in per slide: after `# Title`, add Verso metadata:
+
+  %%%
+  state := some "slide-title-topleft"
+  %%%
+
+  Uses flexbox only (no absolute positioning): slide content aligns from the
+  top; the slide title is smaller (~80% of theme h2) and left-aligned.
+*/
+
+.reveal .slides > section[data-state="slide-title-topleft"],
+.reveal .slides > section > section[data-state="slide-title-topleft"] {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  padding: 0.35rem 0.65rem 0 0.35rem;
+  box-sizing: border-box;
+}
+
+.reveal .slides > section[data-state="slide-title-topleft"] > h2,
+.reveal .slides > section > section[data-state="slide-title-topleft"] > h2 {
+  margin: 0 0 0.55rem 0;
+  padding: 0;
+  width: 100%;
+  text-align: left !important;
+  text-transform: none;
+  align-self: flex-start;
+  font-size: calc(var(--r-heading2-size, 1.6em) * 0.8) !important;
+  line-height: 1.15;
+}
+
+.reveal .slides > section[data-state="slide-title-topleft"] ul,
+.reveal .slides > section[data-state="slide-title-topleft"] ol,
+.reveal .slides > section > section[data-state="slide-title-topleft"] ul,
+.reveal .slides > section > section[data-state="slide-title-topleft"] ol {
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+
+.reveal .slides > section[data-state="slide-title-topleft"] ul ul,
+.reveal .slides > section[data-state="slide-title-topleft"] ol ol,
+.reveal .slides > section > section[data-state="slide-title-topleft"] ul ul,
+.reveal .slides > section > section[data-state="slide-title-topleft"] ol ol {
+  width: auto;
+}

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>5</fr:month>
+      <fr:day>10</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-0029/</fr:uri>
+    <fr:display-uri>dhsorens-0029</fr:display-uri>
+    <fr:route>/dhsorens-0029/</fr:route>
+    <fr:title text="The ISA-level details of LC3-Lean">The ISA-level details of LC3-Lean</fr:title>
+    <fr:taxon>Blog</fr:taxon>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+This note expands the ISA-level sketch on <fr:link href="/dhsorens-0027/" title="LC3 in Lean" uri="https://derekhsorensen.com/dhsorens-0027/" display-uri="dhsorens-0027" type="local">LC3 in Lean</fr:link></html:p>
+    <html:em>Memory and words</html:em>
+    <html:p>
+The machine is a <fr:tex display="inline"><![CDATA[16]]></fr:tex>-bit word architecture with <fr:tex display="inline"><![CDATA[2^{16}]]></fr:tex> addresses. In Lean, memory is a fixed-length array of <html:code>UInt16</html:code> values indexed by addresses of the same width (<html:code>LC3Lean/Memory.lean</html:code>: <html:code>MEMORY_MAX</html:code>, <html:code>read</html:code>, <html:code>write</html:code>). There is no paging or protection: every address names a word of RAM, including the regions where trap vectors and memory-mapped devices live in ordinary LC-3 systems.
+</html:p>
+    <html:p>
+Programs are loaded from <html:code>.obj</html:code> files in <html:code>Main.lean</html:code>: the first big-endian <fr:tex display="inline"><![CDATA[16]]></fr:tex>-bit word is the load origin; subsequent byte pairs become successive words starting at that address. After loading, execution begins with the initial register state from <html:code>Registers.init</html:code>—notably the program counter starts at <html:code>0x3000</html:code>, leaving lower addresses for trap-vector tables and OS conventions as in typical LC-3 coursework.
+</html:p>
+    <html:em>Architectural state</html:em>
+    <html:p>
+General-purpose registers <html:code>R0</html:code>–<html:code>R7</html:code> are stored as an eight-element array. The program counter and condition code live beside them in <html:code>Registers.Register</html:code>: <html:code>pc</html:code> is a <html:code>UInt16</html:code>, and <html:code>cond</html:code> is exactly one of <html:code>N</html:code>, <html:code>Z</html:code>, or <html:code>P</html:code>. Helper <html:code>set_condition_codes</html:code> (<html:code>Execution.lean</html:code>) follows the usual LC-3 rule: after an instruction writes a value into a destination register, the flags reflect whether that value is negative (high bit set), zero, or strictly positive. <html:code>LEA</html:code> updates flags from the computed address; pure stores leave registers (and thus flags) unchanged.
+</html:p>
+    <html:p><html:code>Registers.read</html:code> and <html:code>Registers.write</html:code> mediate access by register index; indices outside the LC-3 register file yield <html:code>none</html:code>, which propagates as failed execution steps—so the executable semantics are partial in exactly the places bad encodings would be nonsensical.
+</html:p>
+    <html:em>Instruction encoding and decoding</html:em>
+    <html:p>
+Each executed word is treated as an unsigned <fr:tex display="inline"><![CDATA[16]]></fr:tex>-bit instruction. The top four bits select the major opcode; <html:code>instr_to_op</html:code> in <html:code>Instructions.lean</html:code> maps that nybble to an <html:code>Opcodes</html:code> variant. Fields such as destination register <html:code>DR</html:code>, source registers <html:code>SR1</html:code>/<html:code>SR2</html:code>, base registers, and immediate bits are extracted with shifts and masks inside the per-opcode functions in <html:code>Execution.lean</html:code>, matching the bit layouts in the ISA sheet linked above.
+</html:p>
+    <html:p>
+Signed immediates use <html:code>sign_extend</html:code> with the appropriate width (<html:code>imm5</html:code>, <html:code>imm6</html:code>, <html:code>PCoffset9</html:code>, <html:code>PCoffset11</html:code>, etc.). Arithmetic is <fr:tex display="inline"><![CDATA[16]]></fr:tex>-bit modular arithmetic on <html:code>UInt16</html:code> as in the reference VM narrative.
+</html:p>
+    <html:em>The fourteen implemented opcodes</html:em>
+    <html:p>
+Sixteen opcode slots appear in the decoder, but two are deliberately non-executing in this codebase: <html:code>OP_RTI</html:code> and <html:code>OP_RES</html:code> map to <html:code>op_rti</html:code> and <html:code>op_res</html:code>, which return <html:code>none</html:code> (<html:code>Execution.lean</html:code>), so no architectural transition is defined for them here. The remaining <html:strong>fourteen</html:strong> correspond to the usual LC-3 instruction families:
+<html:ul><html:li><html:strong>Data movement and addressing:</html:strong> <html:code>LD</html:code>, <html:code>LDI</html:code>, <html:code>LDR</html:code>, <html:code>LEA</html:code> load a register from PC-relative, indirect, base-plus-offset, or “effective address” forms; <html:code>ST</html:code>, <html:code>STI</html:code>, <html:code>STR</html:code> store a register through the analogous addressing modes.</html:li>
+<html:li><html:strong>Arithmetic / logical:</html:strong> <html:code>ADD</html:code> and <html:code>AND</html:code> each choose either a second register or a sign-extended five-bit immediate; <html:code>NOT</html:code> bitwise complements a source into a destination.</html:li>
+<html:li><html:strong>Control flow:</html:strong> <html:code>BR</html:code> tests the <html:code>nzp</html:code> mask against the current condition code and optionally adds a PC-relative offset; <html:code>JMP</html:code> loads the PC from a base register (so <html:code>RET</html:code> is <html:code>JMP R7</html:code> when conventions demand); <html:code>JSR</html:code>/<html:code>JSRR</html:code> save the linking address in <html:code>R7</html:code> and jump either PC-relative or through a base register.</html:li>
+<html:li><html:strong>Traps:</html:strong> <html:code>TRAP</html:code> saves the link address in <html:code>R7</html:code>, loads the PC from the word at the trap vector address given by the low byte of the instruction, and falls through to whatever code lives there—in the pure executor this is exactly the ISA table lookup (<html:code>op_trap</html:code>); the interactive runner additionally recognizes the standard supervisor vectors and implements them natively (below).</html:li></html:ul>
+Each handler’s memory accesses and register updates are localized in <html:code>op_*</html:code>; comparing a handler to the ISA PDF row-by-row is the fastest way to see the precise semantics.
+</html:p>
+    <html:em>Fetch–decode–execute</html:em>
+    <html:p><html:code>execute_step</html:code> (<html:code>Execution.lean</html:code>) is the cycle spelled out in comments: read <html:code>mem[pc]</html:code>; advance <html:code>pc</html:code> by one; decode the opcode; run the selected <html:code>op_*</html:code>; return the updated register file and memory. Branches and jumps overwrite <html:code>pc</html:code> after that increment, which is the standard “PC points at next instruction unless the opcode replaces it” pattern. Trap setup writes <html:code>R7</html:code> using the post-increment PC so the link register points after the <html:code>TRAP</html:code> word.
+</html:p>
+    <html:em>Trap routines and I/O</html:em>
+    <html:p>
+The LC-3 defines fixed eight-bit trap vectors (for example <html:code>GETC = x20</html:code>, <html:code>OUT = x21</html:code>, <html:code>PUTS = x22</html:code>, <html:code>IN = x23</html:code>, <html:code>PUTSP = x24</html:code>, <html:code>HALT = x25</html:code>). <html:code>Execution.op_trap</html:code> performs the generic ISA step: link in <html:code>R7</html:code>, <html:code>pc ← mem[vector]</html:code>. In the full interactive VM (<html:code>Main.lean</html:code>), once the opcode is recognized as <html:code>TRAP</html:code>, those six vectors are intercepted: after emulating the link behavior, control passes to <html:code>Trap.op_trap_io</html:code>, which implements <html:code>PUTS</html:code>, <html:code>GETC</html:code>, <html:code>OUT</html:code>, <html:code>IN</html:code>, <html:code>PUTSP</html:code>, and <html:code>HALT</html:code> using Lean <html:code>IO</html:code> and the terminal helpers—printing NUL-terminated word strings, packed byte strings, character I/O, and halting the loop—rather than executing whatever might reside in low memory for those vectors on bare metal.
+</html:p>
+    <html:p>
+That split matters for reading the repo: <html:strong>pure</html:strong> instruction semantics and proofs (<html:code>LC3Correct</html:code>) center on <html:code>Execution.lean</html:code>; <html:strong>observable</html:strong> terminal behavior additionally depends on <html:code>Main.lean</html:code>, <html:code>Trap.lean</html:code>, and the small POSIX terminal layer (<html:code>c/terminal.c</html:code>) used for raw mode and non-blocking keyboard checks.
+</html:p>
+    <html:em>Memory-mapped keyboard</html:em>
+    <html:p>
+Keyboard status and data follow the usual LC-3 addresses <html:code>KBSR = xFE00</html:code> and <html:code>KBDR = xFE02</html:code> (<html:code>Main.lean</html:code>). Loads that resolve to those addresses go through <html:code>mem_read_io</html:code>: a pending-key reference buffers one character so repeated status reads stay coherent, <html:code>KBSR</html:code> exposes the ready bit when input exists, and reading <html:code>KBDR</html:code> consumes the pending key. Only load paths are specialized in <html:code>execute_step_io</html:code>; other instructions reuse the pure functions from <html:code>Execution.lean</html:code>.
+</html:p>
+    <html:em>Where proofs attach</html:em>
+    <html:p>
+This page stays on the operational ISA story; the corresponding proof artifacts live under <html:code>LC3Correct/</html:code>, especially <html:code>ExecutionCorrect.lean</html:code>, with register and memory lemmas factoring out the boring consistency checks. If a statement here matches how you read the ISA PDF, the Lean theorems are the machine-checked version of that reading; if something diverges, trust the definitions you find in <html:code>LC3Lean</html:code> and the theorem statements they imply.
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>5</fr:month>
+              <fr:day>10</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002A/</fr:uri>
+            <fr:display-uri>dhsorens-002A</fr:display-uri>
+            <fr:route>/dhsorens-002A/</fr:route>
+            <fr:title text="Details on the Proofs of Correctness for LC3-Lean">Details on the Proofs of Correctness for LC3-Lean</fr:title>
+            <fr:taxon>Blog</fr:taxon>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+This note expands the proof sketch on <fr:link href="/dhsorens-0027/" title="LC3 in Lean" uri="https://derekhsorensen.com/dhsorens-0027/" display-uri="dhsorens-0027" type="local">LC3 in Lean</fr:link> into a reader’s guide to the <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">LC3-Lean</fr:link> verification layer. The operational behavior of the machine—and how it maps to source files—is spelled out on <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">the ISA-level companion page</fr:link>; here the focus is what Lean actually proves, how those statements are shaped, and what sits outside the proof footprint.
+</html:p>
+            <html:em>What “correctness” means in this project</html:em>
+            <html:p>
+The proofs do not assert that “the VM feels like LC-3” in an informal sense. They assert precise implications about the pure Lean functions in <html:code>LC3Lean/Execution.lean</html:code>. For each implemented opcode handler <html:code>op_*</html:code>, there is a matching theorem <html:code>op_*_spec</html:code> in <html:code>LC3Correct/ExecutionCorrect.lean</html:code>. Each theorem has the same skeleton: case-split on the result of <html:code>op_* instr reg mem</html:code>. If the handler returns <html:code>none</html:code>, the conclusion is trivially <html:code>true</html:code>—no claim is made about stuck or malformed situations. If it returns <html:code>some (reg', mem')</html:code>, the conclusion spells out register and memory updates in terms of the instruction bits (<html:code>DR</html:code>, <html:code>SR1</html:code>, immediates, PC-relative offsets, and so on), <html:code>Memory.read</html:code> and <html:code>Memory.write</html:code>, <html:code>Registers.read</html:code> and <html:code>Registers.write</html:code>, and <html:code>set_condition_codes</html:code>.
+</html:p>
+            <html:p>
+Read that way, the specification <html:strong>is</html:strong> the structured postcondition inside each <html:code>op_*_spec</html:code> theorem: it is not a separate Coq-style module pretending to be “the ISA,” but a declarative description of what <html:code>op_*</html:code> does whenever it succeeds—written tightly enough that you can compare it line-by-line with the LC-3 instruction descriptions (for example in <fr:link href="https://www.jmeiners.com/lc3-vm/supplies/lc3-isa.pdf" type="external">lc3-isa.pdf</fr:link>) and with the executable code.
+</html:p>
+            <html:em>Opcode coverage</html:em>
+            <html:p><html:code>ExecutionCorrect.lean</html:code> contains one specification section per implemented handler. Together they cover the fourteen executing opcodes discussed on the ISA page: <html:code>ADD</html:code>, <html:code>AND</html:code>, <html:code>BR</html:code>, <html:code>JMP</html:code>, <html:code>JSR</html:code>, <html:code>LD</html:code>, <html:code>LDI</html:code>, <html:code>LDR</html:code>, <html:code>LEA</html:code>, <html:code>NOT</html:code>, <html:code>ST</html:code>, <html:code>STI</html:code>, <html:code>STR</html:code>, and <html:code>TRAP</html:code>. The decoder slots <html:code>OP_RTI</html:code> and <html:code>OP_RES</html:code> are handled in code by <html:code>op_rti</html:code>/<html:code>op_res</html:code>, which always return <html:code>none</html:code>; there are no corresponding <html:code>op_*_spec</html:code> theorems, because there is no successful transition to characterize.
+</html:p>
+            <html:p>
+Illustrative patterns (open <html:code>ExecutionCorrect.lean</html:code> for the full formulas): arithmetic and bitwise instructions relate the written value to register operands or sign-extended immediates and require <html:code>reg'</html:code> to come from <html:code>set_condition_codes</html:code> after the write. Loads and <html:code>LEA</html:code> tie the loaded or computed word to the addressing mode (<html:code>PC + offset</html:code>, <html:code>mem[PC + offset]</html:code>, base-plus-offset, etc.) and again fix the flags from that result. Stores constrain <html:code>mem'</html:code> to a single <html:code>Memory.write</html:code> at the resolved address while leaving <html:code>reg</html:code> unchanged. <html:code>BR</html:code> distinguishes taken versus fall-through updates to <html:code>pc</html:code>; <html:code>JMP</html:code> and <html:code>JSR</html:code> relate <html:code>pc</html:code> (and <html:code>R7</html:code> for linkage) to base registers or offsets decoded from the word. <html:code>TRAP</html:code> states that memory is unchanged, that <html:code>R7</html:code> receives the current <html:code>pc</html:code> from the <html:em>handler’s</html:em> input state (which, in the full cycle, is already the post-fetch PC—see <html:code>execute_step</html:code>), and that the new <html:code>pc</html:code> is <html:code>Memory.read mem trap_vector</html:code> for the eight-bit trap vector field.
+</html:p>
+            <html:em>Supporting lemmas</html:em>
+            <html:p>
+Two small libraries isolate facts the opcode proofs rely on without cluttering every tactic block:
+<html:ul><html:li><html:code>LC3Correct/RegisterLemmas.lean</html:code> proves that reads and writes on general-purpose indices <html:code>0</html:code>–<html:code>7</html:code> always succeed for well-formed register files, and that reading after writing the same index yields the value just written.</html:li>
+<html:li><html:code>LC3Correct/MemoryLemmas.lean</html:code> proves that every <html:code>UInt16</html:code> address is within the array bounds implied by <html:code>Memory.data_size</html:code>, and standard single-address read/write consistency (<html:code>read</html:code> after <html:code>write</html:code> at the same address; stability at other addresses).</html:li></html:ul>
+Those lemmas formalize the mundane “array model actually behaves like memory” obligations so <html:code>ExecutionCorrect</html:code> can focus on instruction semantics.
+</html:p>
+            <html:em>Trust base and what is not covered</html:em>
+            <html:p>
+Lean itself is the proof checker: if <html:code>lake build LC3Correct</html:code> succeeds with no <html:code>sorry</html:code>, every theorem in that package is accepted by the kernel from the given definitions. The mathematical meaning is only as good as those definitions—which are intentionally shared with the simulator (<html:code>LC3Lean</html:code> imports).
+</html:p>
+            <html:p>
+What this stack does <html:strong>not</html:strong> currently bundle into a single end-to-end theorem: a wholesale specification of <html:code>execute_step</html:code> or of the <html:code>Main</html:code> loop including <html:code>execute_step_io</html:code>, trap interception, <html:code>.obj</html:code> loading, or the POSIX terminal FFI (<html:code>c/terminal.c</html:code>). The verified slice is the pure per-opcode semantics in <html:code>Execution.lean</html:code> (plus the register/memory infrastructure lemmas). Readers who want to extend assurance—for example a theorem threading <html:code>fetch</html:code>/<html:code>decode</html:code> around <html:code>op_*_spec</html:code>—would build on the same files but that composition is not what the existing lemmas headline.
+</html:p>
+            <html:p>
+For instruction-by-instruction intuition tied to addresses and traps, keep <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">the ISA companion</fr:link> open beside <html:code>ExecutionCorrect.lean</html:code>; the former explains where <html:code>Main</html:code> diverges for real I/O, while the latter states exactly what Lean has checked about the pure core.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>3</fr:month>
+              <fr:day>27</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0027/</fr:uri>
+            <fr:display-uri>dhsorens-0027</fr:display-uri>
+            <fr:route>/dhsorens-0027/</fr:route>
+            <fr:title text="LC3 in Lean">LC3 in Lean</fr:title>
+            <fr:taxon>Blog</fr:taxon>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+ I recently implemented a <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">formally verified virtual machine in Lean</fr:link> on which you can run 2048 in terminal! Try it out!
+</html:p>
+            <html:em>ISA-level model</html:em>
+            <html:p>
+The LC-3 is a small 16-bit instructional architecture: eight general-purpose registers, a program counter, condition flags, and a <fr:tex display="inline"><![CDATA[2^{16}]]></fr:tex>-word address space.
+At each step the machine fetches a word from memory at the PC, decodes it as one of <html:strong>fourteen</html:strong> opcodes (from arithmetic and bitwise operations to loads, stores, branches, jumps, and subroutine calls), then updates registers, memory, and control flow accordingly.
+Beyond those opcodes, LC-3 programs rely on <html:em>trap</html:em> routines for console I/O and on <html:em>memory-mapped I/O</html:em> for the keyboard—so a faithful simulator must implement both the core instructions and this I/O story. For more on the architecture, <fr:link href="https://www.jmeiners.com/lc3-vm/" type="external">see here</fr:link>.
+</html:p>
+            <html:p>
+The code in <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">LC3-Lean</fr:link> is laid out as follows:
+<html:ol><html:li>register and flag state lives in <html:code>LC3Lean/Registers.lean</html:code>,</html:li>
+    <html:li>the flat memory model in <html:code>LC3Lean/Memory.lean</html:code>,</html:li>
+    <html:li>opcode decoding in <html:code>LC3Lean/Instructions.lean</html:code>,</html:li>
+    <html:li>the fetch–decode–execute step and per-opcode semantics in <html:code>LC3Lean/Execution.lean</html:code>,</html:li>
+    <html:li>
+    The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>. If you open those modules, every informal claim in this paragraph—word size, register count, opcode coverage, traps, MMIO—is meant to be visible as definitions and executable code rather than hand-waving.
+    </html:li></html:ol>
+   The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>.
+</html:p>
+            <html:p>
+    For full details, <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">see this page</fr:link>.
+</html:p>
+            <html:em>Formal proofs</html:em>
+            <html:p>
+"Formally verified" here means that Lean checks mathematical theorems relating the implementation above to an explicit ISA-level specification of how each instruction may read and write registers and memory.
+Those theorems are stated and proved in the <html:code>LC3Correct</html:code> package—especially <html:code>LC3Correct/ExecutionCorrect.lean</html:code>, with supporting lemmas about registers and memory in <html:code>LC3Correct/RegisterLemmas.lean</html:code> and <html:code>LC3Correct/MemoryLemmas.lean</html:code>. Together they aim to capture, opcode by opcode, that the Lean executor’s effect on machine state matches the spec encoded alongside it. All proofs pass without <html:code>sorry</html:code>!
+</html:p>
+            <html:em>Trust Base and Verification Boundary</html:em>
+            <html:p>
+The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</html:code>) used for POSIX terminal raw mode and polling: it affects how characters reach your screen and keyboard, but the LC-3 machine semantics and the correctness proofs live on the Lean side. Readers who want the precise logical statement for a single opcode should start from <html:code>LC3Correct/ExecutionCorrect.lean</html:code> and follow the definitions it references—the prose here is only a map to those lemmas.
+</html:p>
+            <html:p>
+    For full details, <fr:link href="/dhsorens-002A/" title="Details on the Proofs of Correctness for LC3-Lean" uri="https://derekhsorensen.com/dhsorens-002A/" display-uri="dhsorens-002A" type="local">see this page</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>3</fr:month>
+              <fr:day>27</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0027/</fr:uri>
+            <fr:display-uri>dhsorens-0027</fr:display-uri>
+            <fr:route>/dhsorens-0027/</fr:route>
+            <fr:title text="LC3 in Lean">LC3 in Lean</fr:title>
+            <fr:taxon>Blog</fr:taxon>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+ I recently implemented a <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">formally verified virtual machine in Lean</fr:link> on which you can run 2048 in terminal! Try it out!
+</html:p>
+            <html:em>ISA-level model</html:em>
+            <html:p>
+The LC-3 is a small 16-bit instructional architecture: eight general-purpose registers, a program counter, condition flags, and a <fr:tex display="inline"><![CDATA[2^{16}]]></fr:tex>-word address space.
+At each step the machine fetches a word from memory at the PC, decodes it as one of <html:strong>fourteen</html:strong> opcodes (from arithmetic and bitwise operations to loads, stores, branches, jumps, and subroutine calls), then updates registers, memory, and control flow accordingly.
+Beyond those opcodes, LC-3 programs rely on <html:em>trap</html:em> routines for console I/O and on <html:em>memory-mapped I/O</html:em> for the keyboard—so a faithful simulator must implement both the core instructions and this I/O story. For more on the architecture, <fr:link href="https://www.jmeiners.com/lc3-vm/" type="external">see here</fr:link>.
+</html:p>
+            <html:p>
+The code in <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">LC3-Lean</fr:link> is laid out as follows:
+<html:ol><html:li>register and flag state lives in <html:code>LC3Lean/Registers.lean</html:code>,</html:li>
+    <html:li>the flat memory model in <html:code>LC3Lean/Memory.lean</html:code>,</html:li>
+    <html:li>opcode decoding in <html:code>LC3Lean/Instructions.lean</html:code>,</html:li>
+    <html:li>the fetch–decode–execute step and per-opcode semantics in <html:code>LC3Lean/Execution.lean</html:code>,</html:li>
+    <html:li>
+    The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>. If you open those modules, every informal claim in this paragraph—word size, register count, opcode coverage, traps, MMIO—is meant to be visible as definitions and executable code rather than hand-waving.
+    </html:li></html:ol>
+   The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>.
+</html:p>
+            <html:p>
+    For full details, <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">see this page</fr:link>.
+</html:p>
+            <html:em>Formal proofs</html:em>
+            <html:p>
+"Formally verified" here means that Lean checks mathematical theorems relating the implementation above to an explicit ISA-level specification of how each instruction may read and write registers and memory.
+Those theorems are stated and proved in the <html:code>LC3Correct</html:code> package—especially <html:code>LC3Correct/ExecutionCorrect.lean</html:code>, with supporting lemmas about registers and memory in <html:code>LC3Correct/RegisterLemmas.lean</html:code> and <html:code>LC3Correct/MemoryLemmas.lean</html:code>. Together they aim to capture, opcode by opcode, that the Lean executor’s effect on machine state matches the spec encoded alongside it. All proofs pass without <html:code>sorry</html:code>!
+</html:p>
+            <html:em>Trust Base and Verification Boundary</html:em>
+            <html:p>
+The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</html:code>) used for POSIX terminal raw mode and polling: it affects how characters reach your screen and keyboard, but the LC-3 machine semantics and the correctness proofs live on the Lean side. Readers who want the precise logical statement for a single opcode should start from <html:code>LC3Correct/ExecutionCorrect.lean</html:code> and follow the definitions it references—the prose here is only a map to those lemmas.
+</html:p>
+            <html:p>
+    For full details, <fr:link href="/dhsorens-002A/" title="Details on the Proofs of Correctness for LC3-Lean" uri="https://derekhsorensen.com/dhsorens-002A/" display-uri="dhsorens-002A" type="local">see this page</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

@@ -1,0 +1,1571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>9</fr:month>
+      <fr:day>5</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-001H/</fr:uri>
+    <fr:display-uri>dhsorens-001H</fr:display-uri>
+    <fr:route>/dhsorens-001H/</fr:route>
+    <fr:title text="The Computer Scientist's Approach to Proposition and Proof (About Software)">The Computer Scientist's Approach to Proposition and Proof (About Software)</fr:title>
+    <fr:meta name="toc">true</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
+    For example, chip design or software implementing <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    In these cases, the <html:em>specification</html:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
+</html:p>
+    <html:p>
+    However, software does much more than mathematical computation.
+    As it gets higher in abstraction, software can become a social and financial intermediary between people or even an agent of its own.
+    Software runs human-computer interfaces,  the flow of a sales team's CRM, and the media by which news gets reported and propagated.
+    Software makes music, tells stories, implements art and design.
+    It manages money and communication between people.
+    In these cases, the intended behavior of software doesn't always have a clear and definable formal specification couched in mathematical terms.
+    Instead, at these higher layers of abstraction, software can become difficult to specify—or describe in a formal language—<html:em>correctly</html:em>.
+    </html:p>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>9</fr:month>
+          <fr:day>5</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-001M/</fr:uri>
+        <fr:display-uri>dhsorens-001M</fr:display-uri>
+        <fr:route>/dhsorens-001M/</fr:route>
+        <fr:title text="How to Specify a Large Language Model?">How to Specify a Large Language Model?</fr:title>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    Consider the (perhaps extreme) problem of specifying the "correct" behavior of a large language model like Chat GPT.
+    The technologists who have built these LLMs are probably more aware than anyone—no one <html:em>really</html:em> knows what the correct behavior of an artificial intelligence is or should be.
+    We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would rather it not produce even though it could do so in principle within the bounds of being helpful, knowledgeable, and honest.
+    These things include somewhat-universally-agreed-upon things like child porn and slanderous and libelous deep fakes.
+    In more of a grey area, they can also include politically inconvenient facts or references to certain events in history about which we remain sensitive.
+</html:p>
+        <html:p>
+    In other words, we want the LLM to be kind, or to have a value system of some kind.
+    An LLM should not encourage someone to kill themselves.
+    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).
+    The problem with asking an LLM to behave ethically is <html:em>who</html:em> is to say what is right, and good, and true? <html:em>What</html:em> value system should dominate?
+    People will have different philosophies on what they think the behavior of an LLM should be, but we are far from any point of consensus on what that should be.
+    Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align itself with that.
+    (Think of the film <html:em>I, Robot</html:em> as a meditation on the unintended—and disasterous, tyranical—consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)
+</html:p>
+        <html:p>
+    I would argue that the problem of correctly specifying an LLM is the problem that religion tends to address—one of value, meaning, and knowing goodness.
+    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form, much less in prose, and even less a <html:em>formal</html:em> specification.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+    <html:p>
+    The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contracts</fr:link>.
+    What we will find is that smart contracts lie at a rich intersection between low-level, technical properties and high-level, more "human" properties.
+    Can we reasonably <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">specify smart contracts</fr:link> in a rigorous and correct way?
+    How can we strengthen their specifications to be more clear, accurate, and useful? 
+</html:p>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>9</fr:month>
+          <fr:day>5</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-001J/</fr:uri>
+        <fr:display-uri>dhsorens-001J</fr:display-uri>
+        <fr:route>/dhsorens-001J/</fr:route>
+        <fr:title text="Smart Contract Specification">Smart Contract Specification</fr:title>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p><fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">Smart contracts</fr:link> can have <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">deceptively difficult specifications</fr:link>.
+</html:p>
+        <fr:tree show-metadata="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>5</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-001N/</fr:uri>
+            <fr:display-uri>dhsorens-001N</fr:display-uri>
+            <fr:route>/dhsorens-001N/</fr:route>
+            <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Dexter2 is an AMM on the Tezos blockchain that has been formally verified by <fr:link href="/dhsorens-0010/" title="Formalization of Mathematics in Lean" uri="https://derekhsorensen.com/dhsorens-0010/" display-uri="dhsorens-0010" type="local">at least three different groups using three different formal verification tools</fr:link>.
+    Each was based on the <fr:link href="/dhsorens-0010/" title="Formalization of Mathematics in Lean" uri="https://derekhsorensen.com/dhsorens-0010/" display-uri="dhsorens-0010" type="local">same informal specification</fr:link>. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.
+</html:p>
+            <html:p>
+    However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:
+</html:p>
+            <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
+            <html:p>
+    where <fr:tex display="inline"><![CDATA[x]]></fr:tex> represents the quantity held by the contract of the token being traded in, <fr:tex display="inline"><![CDATA[y]]></fr:tex> represents the quantity held by the contract of the token being traded out, and <fr:tex display="inline"><![CDATA[k]]></fr:tex> is a constant. The tokens held by the contract come from liquidity providers, which are investors who deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees. That <fr:tex display="inline"><![CDATA[k]]></fr:tex> is constant means that a trade of <fr:tex display="inline"><![CDATA[\Delta  x]]></fr:tex> of one token yields <fr:tex display="inline"><![CDATA[\Delta  y]]></fr:tex> of another such that the product from above stays constant at <fr:tex display="inline"><![CDATA[k]]></fr:tex>:
+</html:p>
+            <fr:tex display="block"><![CDATA[(x+ \Delta  x)(y− \Delta  y) = k.]]></fr:tex>
+            <html:p>
+    Buterin argued that an AMM that trades along this indifference curve features efficient price discovery. He also argued that it can properly incentivize liquidity providers by charging a <fr:tex display="inline"><![CDATA[0.3]]></fr:tex>% fee on each trade to give to them.
+</html:p>
+            <html:p>
+    We can probably convince ourselves that the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">informal specification</fr:link> of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">informal specification or its formal counterparts</fr:link> actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve <fr:tex display="inline"><![CDATA[xy= k]]></fr:tex>.
+    It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.
+</html:p>
+            <html:p>
+    There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">three formalizations of Dexter2’s informal specification</fr:link> reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.
+</html:p>
+            <html:p>   
+    Furthermore, were we to try to formally specify some of the aforementioned high-level economic and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go about doing so. Most specification languages and models of computation are too low-level to easily admit clear specifications of such properties. What model or framework would we use, for example, to specify that Dexter2 facilitate an efficient market?
+</html:p>
+            <html:p>
+    As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2 routinely manage billions of USD worth of funds, much is also at risk in case of a bug. Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of the economic properties that we have just mentioned, directly or indirectly. It is, however, not obvious that these properties hold by reading any of the aforementioned specifications.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <html:p>
+    The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
+    </html:p>
+        <fr:tree show-metadata="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>6</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-001P/</fr:uri>
+            <fr:display-uri>dhsorens-001P</fr:display-uri>
+            <fr:route>/dhsorens-001P/</fr:route>
+            <fr:title text="Smart Contract Vulnerabilities Due to Poor Specification">Smart Contract Vulnerabilities Due to Poor Specification</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Smart contracts are vulnerable due to incorrect code, but equally due to incorrect specification (or design).
+    There are more examples of this that can possibly be included here, but I have written up a few examples.
+    We would recognize each of these exploits as attacks, despite the fact that the contracts were functioning
+    as specified, which tells us that the specifications were erroneous as they did not accurately capture the
+    intended economic behaviors. To the contrary, they permitted unintended and pathological behavior.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>10</fr:month>
+                  <fr:day>9</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001T/</fr:uri>
+                <fr:display-uri>dhsorens-001T</fr:display-uri>
+                <fr:route>/dhsorens-001T/</fr:route>
+                <fr:title text="Beanstalk Hack (2022)">Beanstalk Hack (2022)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Beanstalk is (was) an Ethereum-based stablecoin protocol which uses a decentralized governance protocol.
+    This governance protocol features an emergency commit function, which gives a supermajority of governance votes power to quickly respond to an emergency by approving and executing a proposal in one single vote. The goal of said
+    emergency commit function is to allow governance to respond quickly to an emergency, providing added
+    security in the face of unforeseen vulnerabilities.
+</html:p>
+                <html:p>
+    In a turn of grim irony, this very emergency response mechanism turned out to be the source of a
+    catastrophic exploit. On April 17, 2022, an attacker used a flash loan to temporarily buy a supermajority
+    of governance tokens and execute a proposal, draining the contract of <fr:link href="https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7" type="external">approximately 77 million USD in
+    lost contract assets</fr:link>
+     A flash loan is a loan mediated by a smart contract and issued for the duration
+    of a single, atomic transaction. Due to its atomicity, a flash loan removes the creditor’s risk of debt
+    default, and thus enables enormous, uncollateralized loans. For example, the Aave flash loan pool has had
+    in excess of 1 billion USD which can be loaned out.
+    Flash loans can introduce unintuitive contract behavior, deviating from that of traditional markets. Importantly, the Beanstalk attack leveraged the unexpected behavior due to the availability of flash loans, exploiting the faulty design of the governance mechanism rather than incorrect code.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>10</fr:month>
+                  <fr:day>9</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001U/</fr:uri>
+                <fr:display-uri>dhsorens-001U</fr:display-uri>
+                <fr:route>/dhsorens-001U/</fr:route>
+                <fr:title text="Spartan Protocol and Pancake Bunny Hack (2021)">Spartan Protocol and Pancake Bunny Hack (2021)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    More examples of successful flash loan attacks include
+    attacks on the Spartan Protocol and Pancake Bunny, two DeFi contracts on the Binance Smart Chain
+    (BSC). Attackers used flash loans to make huge trades and temporarily manipulate market prices of
+    certain assets. Both of these contracts used these market prices in the contract logic, and in both cases
+    this lead to pathological—though, again, correct according to the flawed specification—contract behavior.
+    In May 2021, an attacker <fr:link href="https://bscscan.com/tx/0xb64ae25b0d836c25d115a9368319902c972a0215bd108ae17b1b9617dfb93af8" type="external">drained</fr:link> the Spartan Protocol contract for a profit of roughly the <fr:link href="https://peckshield-94632.medium.com/the-spartan-incident-root-cause-analysis-b14135d3415f" type="external">equivalent of 30 million USD</fr:link>. Another <fr:link href="https://bscscan.com/address/0x158c244b62058330f2c328c720b072d8db2c612f" type="external">attacker</fr:link> <fr:link href="https://x.com/PancakeBunnyFin/status/1395173389208334342" type="external">drained</fr:link> Pancake Bunny of 114k WBNB and 697k BUNNY tokens, amounting to about <fr:link href="https://cointelegraph.com/news/pancakebunny-tanks-96-following-200m-flash-loan-exploit" type="external">45 million USD at the time in lost funds</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>10</fr:month>
+                  <fr:day>9</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001V/</fr:uri>
+                <fr:display-uri>dhsorens-001V</fr:display-uri>
+                <fr:route>/dhsorens-001V/</fr:route>
+                <fr:title text="Mango Markets (2022)">Mango Markets (2022)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Finally, Mango Markets, a Solana-based DEX, was attacked in October 2022 for approximately 116
+    million USD in contract assets. The attack consisted of a complicated and subtle trading strategy
+    which only a sophisticated trader would be able to see and exploit. <fr:link href="https://www.coindesk.com/markets/2022/10/12/how-market-manipulation-led-to-a-100m-exploit-on-solana-defi-exchange-mango" type="external">CoinDesk reported</fr:link> that the
+    attacker did everything within the parameters of the platform’s design. Avraham Eisenberg, <fr:link href="https://solscan.io/account/CQvKSNnYtPTZfQRQ5jkHq8q2swJyRsdQLcFcj3EmKFfX" type="external">the
+    attacker</fr:link>, <fr:link href="https://x.com/avi_eisen/status/1581326199682265088" type="external">wrote</fr:link>:
+</html:p>
+                <html:p><html:em>
+        "I believe all of our actions were legal open market actions, using the protocol as designed, even
+        if the development team did not fully anticipate all the consequences of setting parameters the
+        way they are."
+    </html:em> <fr:link href="https://x.com/avi_eisen/status/1581326199682265088" type="external">(link)</fr:link></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>10</fr:month>
+                  <fr:day>9</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001W/</fr:uri>
+                <fr:display-uri>dhsorens-001W</fr:display-uri>
+                <fr:route>/dhsorens-001W/</fr:route>
+                <fr:title text="Nomad (2022)">Nomad (2022)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Nomad is (was) a cross-chain bridge protocol. In August 2022, <fr:link href="https://x.com/samczsun/status/1554252024723546112" type="external">more than 500 hacker addresses exploited a bug</fr:link> introduced by a faulty upgrade to one of the Nomad smart contracts. The upgrade incorrectly added the null address (<html:code>0x000...000</html:code>) as a trusted root, which turned off
+    a key safety check, allowing anyone to withdraw arbitrary amounts of funds from the Nomad contract to
+    their wallet by calling the contract with a particular payload. The <fr:link href="https://etherscan.io/tx/0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460" type="external">attack</fr:link> resulted in 190 million USD
+    in lost funds.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>10</fr:month>
+                  <fr:day>9</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001X/</fr:uri>
+                <fr:display-uri>dhsorens-001X</fr:display-uri>
+                <fr:route>/dhsorens-001X/</fr:route>
+                <fr:title text="Uranium (2021) and NowSwap (2021)">Uranium (2021) and NowSwap (2021)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Similarly, Uranium Finance, an AMM, suffered a costly exploit after a faulty
+    contract upgrade. The original contract contained a constant, <html:code>k</html:code>, equal to <html:code>1_000</html:code> in three different places,
+    which was used to price trades. The update changed this value to <html:code>10_000</html:code> in two places but not the
+    third, presumably to calculate trades with higher precision. The result of this was that the attacker could
+    swap virtually nothing in for 98% of the total balance of any output token, which <fr:link href="https://web.archive.org/web/20230201114526/https://uraniumfinance.medium.com/exploit-d3a88921531c" type="external">resulted in a loss of 50
+    million USD of contract funds</fr:link>. NowSwap, a nearly identical application, upgraded <fr:link href="https://www.halborn.com/blog/post/explained-the-nowswap-protocol-hack-september-2021" type="external">with the same
+    error</fr:link> and incurred a loss of 1 million USD.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>9</fr:month>
+          <fr:day>6</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-001Q/</fr:uri>
+        <fr:display-uri>dhsorens-001Q</fr:display-uri>
+        <fr:route>/dhsorens-001Q/</fr:route>
+        <fr:title text="Incorrect Specifications">Incorrect Specifications</fr:title>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    Incorrect software specifications are a problem because
+    they can invalidate the security guarantees offered by <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link>, 
+    offer a false sense of security,
+    misguide developers,
+    and most importantly open code up to vulnerabilities.
+    Indeed, for <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contracts</fr:link>, poor specifications are a <fr:link href="/dhsorens-001P/" title="Smart Contract Vulnerabilities Due to Poor Specification" uri="https://derekhsorensen.com/dhsorens-001P/" display-uri="dhsorens-001P" type="local">common source of catastrophic vulnerabilities and losses of funds</fr:link>.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+    <html:p>
+    Considering this, what is the role of formal proposition and proof (formal verification), especially in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>, applied to software vulnerabilities?
+    How do we address the issue of incorrect specification?
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>5</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-001F/</fr:uri>
+            <fr:display-uri>dhsorens-001F</fr:display-uri>
+            <fr:route>/dhsorens-001F/</fr:route>
+            <fr:title text="Proposition and Proof in Mathematics and Computer Science">Proposition and Proof in Mathematics and Computer Science</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">Proof assistants</fr:link> are one link by which the notions of proposition and proof are relevant to computer scientists and mathematicians alike. Computer scientists use proof assistants, such as <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link> or <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, to formally verify code whose security is paramount by stating and proving theorems. Mathematicians increasingly use proof assistants in a project to <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize both classical and modern mathematics</fr:link>.
+</html:p>
+            <html:p>
+    However, proposition and proof for mathematicians and computer scientists often do not much resemble each other, both in how proofs are engineered as well as in the kinds of propositions formalized.
+    Unless software specifications are explicitly mathematical, for example like in the case of <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
+    These sorts of propositions comprising the specification are informed by experience and best practices, but <fr:link href="/dhsorens-001H/" title="The Computer Scientist's Approach to Proposition and Proof (About Software)" uri="https://derekhsorensen.com/dhsorens-001H/" display-uri="dhsorens-001H" type="local">frequently not any formal, underlying theory</fr:link>. In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.
+    These differences are, in my mind, well worth meditating on.
+    My <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> was in some ways an attempt to reconcile the mathematical approach to stating and proving theorems for <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">some specific software applications</fr:link>; the jury is still out for me as to whether that is actually useful.
+</html:p>
+            <html:p>
+    We'll start this discussion is with proposition and proof in a purely mathematical context;
+    from there, we can see the nuances of specification as we move into software at higher and higher levels of abstraction and involvement in daily, human life.
+    My goal here is to explore the process of forming software specifications, arguing that rigorous software specification gets harder as the purpose of the software moves from mathematical computation to playing social, political, and economic roles in the world.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001G/</fr:uri>
+                <fr:display-uri>dhsorens-001G</fr:display-uri>
+                <fr:route>/dhsorens-001G/</fr:route>
+                <fr:title text="The Mathematician's Approach to Proposition and Proof">The Mathematician's Approach to Proposition and Proof</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Professional mathematicians spend their time proving theorems.
+    Many people imagine professional mathematicians as doing enormous calculations, using esoteric symbols, on a chalkboard to derive equations.
+    However, the reality for many (if not most) professional mathematicians is that day to day work consists of proving theorems.
+    A proof of a theorem, fundamentally, is an <html:em>argument</html:em>, written in prose, that justifies the truth or falsehood of a proposition by logical means.
+    </html:p>
+                <html:p>
+    A lot of work, skill, and creativity goes into finding a proof for a theorem.
+    Conjectures can go unsolved for hundreds of years, requiring huge feats of intelligence to solve.
+    However, this is not the full story.
+    Most people overlook, and are surprised by, the fact that articulating the <html:em>correct</html:em> theorem statement, or conjecture, that one sets as a goal to prove is just as difficult, if not more, than finding a proof of that theorem.
+    In my (limited) experience, it is much harder.
+</html:p>
+                <html:p>
+    A mathematician will start with an intuitive idea, for which there may not yet be appropriate or adequate technical language or symbols to describe it.
+    He will go through a cycle of experimenting with a definition, or a conjecture, that attempts to capture the idea he's after.
+    He will then test out the <html:em>consequences</html:em> of this definition or conjecture by either proving theorems with it, trying to prove the theorem itself, or looking at its consequences in the mathematical theory more broadly.
+</html:p>
+                <html:p>
+    This will kick off a process which is broadly intuitive, informed by feedback with the relevant mathematical theory, of aiming at a definition or conjecture, testing its fit, and adjusting it.
+    It can take the mathematical community as a whole several iterations to actually get the process right.
+    As a particularly interesting example, consider the history of the definition of <fr:link href="/dhsorens-001I/" title="Compactness: Definition and Theory" uri="https://derekhsorensen.com/dhsorens-001I/" display-uri="dhsorens-001I" type="local"><html:em>compactness</html:em></fr:link> in mathematics.
+</html:p>
+                <html:p>
+    Most fundamentally, a mathematician's job is to bring in novel and useful abstract concepts, capture them in their appropriate definitions or conjectures, and place them appropriately in the corpus of mathematical theory.
+    Philosophers do this, often by inventing new technical terminology;
+    scientists do this by defining new methods and measurements;
+    artists do this but instead of technical terms and symbols, they use an artistic medium.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <html:p>
+    Crafting new definitions in mathematics is a strictly abstract and technical endeavor. The great advantage of doing work in mathematics is that the "world" in which one operates is extremely clearly defined and has virtually no ambiguities.
+</html:p>
+            <html:p>
+    When one goes to state and prove things about software, one finds one's self in a world that can be a lot less abstract, pure, and well-defined than the world of mathematics.
+    This is precisely where the difficulty of proposition and proof relating to software comes into play.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001H/</fr:uri>
+                <fr:display-uri>dhsorens-001H</fr:display-uri>
+                <fr:route>/dhsorens-001H/</fr:route>
+                <fr:title text="The Computer Scientist's Approach to Proposition and Proof (About Software)">The Computer Scientist's Approach to Proposition and Proof (About Software)</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
+    For example, chip design or software implementing <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    In these cases, the <html:em>specification</html:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
+</html:p>
+                <html:p>
+    However, software does much more than mathematical computation.
+    As it gets higher in abstraction, software can become a social and financial intermediary between people or even an agent of its own.
+    Software runs human-computer interfaces,  the flow of a sales team's CRM, and the media by which news gets reported and propagated.
+    Software makes music, tells stories, implements art and design.
+    It manages money and communication between people.
+    In these cases, the intended behavior of software doesn't always have a clear and definable formal specification couched in mathematical terms.
+    Instead, at these higher layers of abstraction, software can become difficult to specify—or describe in a formal language—<html:em>correctly</html:em>.
+    </html:p>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>5</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-001M/</fr:uri>
+                    <fr:display-uri>dhsorens-001M</fr:display-uri>
+                    <fr:route>/dhsorens-001M/</fr:route>
+                    <fr:title text="How to Specify a Large Language Model?">How to Specify a Large Language Model?</fr:title>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p>
+    Consider the (perhaps extreme) problem of specifying the "correct" behavior of a large language model like Chat GPT.
+    The technologists who have built these LLMs are probably more aware than anyone—no one <html:em>really</html:em> knows what the correct behavior of an artificial intelligence is or should be.
+    We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would rather it not produce even though it could do so in principle within the bounds of being helpful, knowledgeable, and honest.
+    These things include somewhat-universally-agreed-upon things like child porn and slanderous and libelous deep fakes.
+    In more of a grey area, they can also include politically inconvenient facts or references to certain events in history about which we remain sensitive.
+</html:p>
+                    <html:p>
+    In other words, we want the LLM to be kind, or to have a value system of some kind.
+    An LLM should not encourage someone to kill themselves.
+    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).
+    The problem with asking an LLM to behave ethically is <html:em>who</html:em> is to say what is right, and good, and true? <html:em>What</html:em> value system should dominate?
+    People will have different philosophies on what they think the behavior of an LLM should be, but we are far from any point of consensus on what that should be.
+    Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align itself with that.
+    (Think of the film <html:em>I, Robot</html:em> as a meditation on the unintended—and disasterous, tyranical—consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)
+</html:p>
+                    <html:p>
+    I would argue that the problem of correctly specifying an LLM is the problem that religion tends to address—one of value, meaning, and knowing goodness.
+    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form, much less in prose, and even less a <html:em>formal</html:em> specification.
+</html:p>
+                  </fr:mainmatter>
+                </fr:tree>
+                <html:p>
+    The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contracts</fr:link>.
+    What we will find is that smart contracts lie at a rich intersection between low-level, technical properties and high-level, more "human" properties.
+    Can we reasonably <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">specify smart contracts</fr:link> in a rigorous and correct way?
+    How can we strengthen their specifications to be more clear, accurate, and useful? 
+</html:p>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>5</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-001J/</fr:uri>
+                    <fr:display-uri>dhsorens-001J</fr:display-uri>
+                    <fr:route>/dhsorens-001J/</fr:route>
+                    <fr:title text="Smart Contract Specification">Smart Contract Specification</fr:title>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p><fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">Smart contracts</fr:link> can have <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">deceptively difficult specifications</fr:link>.
+</html:p>
+                    <fr:tree show-metadata="false">
+                      <fr:frontmatter>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>9</fr:month>
+                          <fr:day>5</fr:day>
+                        </fr:date>
+                        <fr:uri>https://derekhsorensen.com/dhsorens-001N/</fr:uri>
+                        <fr:display-uri>dhsorens-001N</fr:display-uri>
+                        <fr:route>/dhsorens-001N/</fr:route>
+                        <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <html:p>
+    Dexter2 is an AMM on the Tezos blockchain that has been formally verified by <fr:link href="/dhsorens-0010/" title="Formalization of Mathematics in Lean" uri="https://derekhsorensen.com/dhsorens-0010/" display-uri="dhsorens-0010" type="local">at least three different groups using three different formal verification tools</fr:link>.
+    Each was based on the <fr:link href="/dhsorens-0010/" title="Formalization of Mathematics in Lean" uri="https://derekhsorensen.com/dhsorens-0010/" display-uri="dhsorens-0010" type="local">same informal specification</fr:link>. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.
+</html:p>
+                        <html:p>
+    However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:
+</html:p>
+                        <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
+                        <html:p>
+    where <fr:tex display="inline"><![CDATA[x]]></fr:tex> represents the quantity held by the contract of the token being traded in, <fr:tex display="inline"><![CDATA[y]]></fr:tex> represents the quantity held by the contract of the token being traded out, and <fr:tex display="inline"><![CDATA[k]]></fr:tex> is a constant. The tokens held by the contract come from liquidity providers, which are investors who deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees. That <fr:tex display="inline"><![CDATA[k]]></fr:tex> is constant means that a trade of <fr:tex display="inline"><![CDATA[\Delta  x]]></fr:tex> of one token yields <fr:tex display="inline"><![CDATA[\Delta  y]]></fr:tex> of another such that the product from above stays constant at <fr:tex display="inline"><![CDATA[k]]></fr:tex>:
+</html:p>
+                        <fr:tex display="block"><![CDATA[(x+ \Delta  x)(y− \Delta  y) = k.]]></fr:tex>
+                        <html:p>
+    Buterin argued that an AMM that trades along this indifference curve features efficient price discovery. He also argued that it can properly incentivize liquidity providers by charging a <fr:tex display="inline"><![CDATA[0.3]]></fr:tex>% fee on each trade to give to them.
+</html:p>
+                        <html:p>
+    We can probably convince ourselves that the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">informal specification</fr:link> of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">informal specification or its formal counterparts</fr:link> actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve <fr:tex display="inline"><![CDATA[xy= k]]></fr:tex>.
+    It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.
+</html:p>
+                        <html:p>
+    There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">three formalizations of Dexter2’s informal specification</fr:link> reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.
+</html:p>
+                        <html:p>   
+    Furthermore, were we to try to formally specify some of the aforementioned high-level economic and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go about doing so. Most specification languages and models of computation are too low-level to easily admit clear specifications of such properties. What model or framework would we use, for example, to specify that Dexter2 facilitate an efficient market?
+</html:p>
+                        <html:p>
+    As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2 routinely manage billions of USD worth of funds, much is also at risk in case of a bug. Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of the economic properties that we have just mentioned, directly or indirectly. It is, however, not obvious that these properties hold by reading any of the aforementioned specifications.
+</html:p>
+                      </fr:mainmatter>
+                    </fr:tree>
+                    <html:p>
+    The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
+    </html:p>
+                    <fr:tree show-metadata="false">
+                      <fr:frontmatter>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>9</fr:month>
+                          <fr:day>6</fr:day>
+                        </fr:date>
+                        <fr:uri>https://derekhsorensen.com/dhsorens-001P/</fr:uri>
+                        <fr:display-uri>dhsorens-001P</fr:display-uri>
+                        <fr:route>/dhsorens-001P/</fr:route>
+                        <fr:title text="Smart Contract Vulnerabilities Due to Poor Specification">Smart Contract Vulnerabilities Due to Poor Specification</fr:title>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <html:p>
+    Smart contracts are vulnerable due to incorrect code, but equally due to incorrect specification (or design).
+    There are more examples of this that can possibly be included here, but I have written up a few examples.
+    We would recognize each of these exploits as attacks, despite the fact that the contracts were functioning
+    as specified, which tells us that the specifications were erroneous as they did not accurately capture the
+    intended economic behaviors. To the contrary, they permitted unintended and pathological behavior.
+</html:p>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001T/</fr:uri>
+                            <fr:display-uri>dhsorens-001T</fr:display-uri>
+                            <fr:route>/dhsorens-001T/</fr:route>
+                            <fr:title text="Beanstalk Hack (2022)">Beanstalk Hack (2022)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    Beanstalk is (was) an Ethereum-based stablecoin protocol which uses a decentralized governance protocol.
+    This governance protocol features an emergency commit function, which gives a supermajority of governance votes power to quickly respond to an emergency by approving and executing a proposal in one single vote. The goal of said
+    emergency commit function is to allow governance to respond quickly to an emergency, providing added
+    security in the face of unforeseen vulnerabilities.
+</html:p>
+                            <html:p>
+    In a turn of grim irony, this very emergency response mechanism turned out to be the source of a
+    catastrophic exploit. On April 17, 2022, an attacker used a flash loan to temporarily buy a supermajority
+    of governance tokens and execute a proposal, draining the contract of <fr:link href="https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7" type="external">approximately 77 million USD in
+    lost contract assets</fr:link>
+     A flash loan is a loan mediated by a smart contract and issued for the duration
+    of a single, atomic transaction. Due to its atomicity, a flash loan removes the creditor’s risk of debt
+    default, and thus enables enormous, uncollateralized loans. For example, the Aave flash loan pool has had
+    in excess of 1 billion USD which can be loaned out.
+    Flash loans can introduce unintuitive contract behavior, deviating from that of traditional markets. Importantly, the Beanstalk attack leveraged the unexpected behavior due to the availability of flash loans, exploiting the faulty design of the governance mechanism rather than incorrect code.
+</html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001U/</fr:uri>
+                            <fr:display-uri>dhsorens-001U</fr:display-uri>
+                            <fr:route>/dhsorens-001U/</fr:route>
+                            <fr:title text="Spartan Protocol and Pancake Bunny Hack (2021)">Spartan Protocol and Pancake Bunny Hack (2021)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    More examples of successful flash loan attacks include
+    attacks on the Spartan Protocol and Pancake Bunny, two DeFi contracts on the Binance Smart Chain
+    (BSC). Attackers used flash loans to make huge trades and temporarily manipulate market prices of
+    certain assets. Both of these contracts used these market prices in the contract logic, and in both cases
+    this lead to pathological—though, again, correct according to the flawed specification—contract behavior.
+    In May 2021, an attacker <fr:link href="https://bscscan.com/tx/0xb64ae25b0d836c25d115a9368319902c972a0215bd108ae17b1b9617dfb93af8" type="external">drained</fr:link> the Spartan Protocol contract for a profit of roughly the <fr:link href="https://peckshield-94632.medium.com/the-spartan-incident-root-cause-analysis-b14135d3415f" type="external">equivalent of 30 million USD</fr:link>. Another <fr:link href="https://bscscan.com/address/0x158c244b62058330f2c328c720b072d8db2c612f" type="external">attacker</fr:link> <fr:link href="https://x.com/PancakeBunnyFin/status/1395173389208334342" type="external">drained</fr:link> Pancake Bunny of 114k WBNB and 697k BUNNY tokens, amounting to about <fr:link href="https://cointelegraph.com/news/pancakebunny-tanks-96-following-200m-flash-loan-exploit" type="external">45 million USD at the time in lost funds</fr:link>.
+</html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001V/</fr:uri>
+                            <fr:display-uri>dhsorens-001V</fr:display-uri>
+                            <fr:route>/dhsorens-001V/</fr:route>
+                            <fr:title text="Mango Markets (2022)">Mango Markets (2022)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    Finally, Mango Markets, a Solana-based DEX, was attacked in October 2022 for approximately 116
+    million USD in contract assets. The attack consisted of a complicated and subtle trading strategy
+    which only a sophisticated trader would be able to see and exploit. <fr:link href="https://www.coindesk.com/markets/2022/10/12/how-market-manipulation-led-to-a-100m-exploit-on-solana-defi-exchange-mango" type="external">CoinDesk reported</fr:link> that the
+    attacker did everything within the parameters of the platform’s design. Avraham Eisenberg, <fr:link href="https://solscan.io/account/CQvKSNnYtPTZfQRQ5jkHq8q2swJyRsdQLcFcj3EmKFfX" type="external">the
+    attacker</fr:link>, <fr:link href="https://x.com/avi_eisen/status/1581326199682265088" type="external">wrote</fr:link>:
+</html:p>
+                            <html:p><html:em>
+        "I believe all of our actions were legal open market actions, using the protocol as designed, even
+        if the development team did not fully anticipate all the consequences of setting parameters the
+        way they are."
+    </html:em> <fr:link href="https://x.com/avi_eisen/status/1581326199682265088" type="external">(link)</fr:link></html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001W/</fr:uri>
+                            <fr:display-uri>dhsorens-001W</fr:display-uri>
+                            <fr:route>/dhsorens-001W/</fr:route>
+                            <fr:title text="Nomad (2022)">Nomad (2022)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    Nomad is (was) a cross-chain bridge protocol. In August 2022, <fr:link href="https://x.com/samczsun/status/1554252024723546112" type="external">more than 500 hacker addresses exploited a bug</fr:link> introduced by a faulty upgrade to one of the Nomad smart contracts. The upgrade incorrectly added the null address (<html:code>0x000...000</html:code>) as a trusted root, which turned off
+    a key safety check, allowing anyone to withdraw arbitrary amounts of funds from the Nomad contract to
+    their wallet by calling the contract with a particular payload. The <fr:link href="https://etherscan.io/tx/0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460" type="external">attack</fr:link> resulted in 190 million USD
+    in lost funds.
+</html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001X/</fr:uri>
+                            <fr:display-uri>dhsorens-001X</fr:display-uri>
+                            <fr:route>/dhsorens-001X/</fr:route>
+                            <fr:title text="Uranium (2021) and NowSwap (2021)">Uranium (2021) and NowSwap (2021)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    Similarly, Uranium Finance, an AMM, suffered a costly exploit after a faulty
+    contract upgrade. The original contract contained a constant, <html:code>k</html:code>, equal to <html:code>1_000</html:code> in three different places,
+    which was used to price trades. The update changed this value to <html:code>10_000</html:code> in two places but not the
+    third, presumably to calculate trades with higher precision. The result of this was that the attacker could
+    swap virtually nothing in for 98% of the total balance of any output token, which <fr:link href="https://web.archive.org/web/20230201114526/https://uraniumfinance.medium.com/exploit-d3a88921531c" type="external">resulted in a loss of 50
+    million USD of contract funds</fr:link>. NowSwap, a nearly identical application, upgraded <fr:link href="https://www.halborn.com/blog/post/explained-the-nowswap-protocol-hack-september-2021" type="external">with the same
+    error</fr:link> and incurred a loss of 1 million USD.
+</html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                      </fr:mainmatter>
+                    </fr:tree>
+                  </fr:mainmatter>
+                </fr:tree>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>6</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-001Q/</fr:uri>
+                    <fr:display-uri>dhsorens-001Q</fr:display-uri>
+                    <fr:route>/dhsorens-001Q/</fr:route>
+                    <fr:title text="Incorrect Specifications">Incorrect Specifications</fr:title>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p>
+    Incorrect software specifications are a problem because
+    they can invalidate the security guarantees offered by <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link>, 
+    offer a false sense of security,
+    misguide developers,
+    and most importantly open code up to vulnerabilities.
+    Indeed, for <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contracts</fr:link>, poor specifications are a <fr:link href="/dhsorens-001P/" title="Smart Contract Vulnerabilities Due to Poor Specification" uri="https://derekhsorensen.com/dhsorens-001P/" display-uri="dhsorens-001P" type="local">common source of catastrophic vulnerabilities and losses of funds</fr:link>.
+</html:p>
+                  </fr:mainmatter>
+                </fr:tree>
+                <html:p>
+    Considering this, what is the role of formal proposition and proof (formal verification), especially in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>, applied to software vulnerabilities?
+    How do we address the issue of incorrect specification?
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001K/</fr:uri>
+                <fr:display-uri>dhsorens-001K</fr:display-uri>
+                <fr:route>/dhsorens-001K/</fr:route>
+                <fr:title text="Proof Assistants and the Issue of Incorrect Specification">Proof Assistants and the Issue of Incorrect Specification</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">Proof assistants</fr:link> give us a formal and robustly mathematical environment in which to prove mathematical theorems and arbitrary properties of programs.
+    Virtually anything that can be stated; true propositions can all in principle be proved.
+    You would think that this would make proof assistants the silver bullet to software security:
+    Since you could truly state and prove any desirable security or performance property, if the tools are good enough you might think that they are precisely what's needed to make high-assurance software absolutely bullet-proof.
+    The reality is, however, it is difficult to write a complete specification; desirable properties of some software can be extremely difficult to articulate.
+    </html:p>
+                <html:p>
+    Some software will need a great deal of formal infrastructure built up to write provably correct specifications.
+    For others, it's not even obvious that formal statements are the right tool to use for them.
+    Computer science has a long history of using diagrams, pictures, and other tools of abstraction to specify computation.
+    Maybe a proof assistant is powerful enough to formalize any abstract framework? Maybe it's powerful enough to do this?
+    If it is, how do we proceed? How do we coax that power out so that all desirable properties of software can be clearly articulated, specified and ultimately formally proved?
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>5</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-001F/</fr:uri>
+            <fr:display-uri>dhsorens-001F</fr:display-uri>
+            <fr:route>/dhsorens-001F/</fr:route>
+            <fr:title text="Proposition and Proof in Mathematics and Computer Science">Proposition and Proof in Mathematics and Computer Science</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">Proof assistants</fr:link> are one link by which the notions of proposition and proof are relevant to computer scientists and mathematicians alike. Computer scientists use proof assistants, such as <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link> or <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, to formally verify code whose security is paramount by stating and proving theorems. Mathematicians increasingly use proof assistants in a project to <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize both classical and modern mathematics</fr:link>.
+</html:p>
+            <html:p>
+    However, proposition and proof for mathematicians and computer scientists often do not much resemble each other, both in how proofs are engineered as well as in the kinds of propositions formalized.
+    Unless software specifications are explicitly mathematical, for example like in the case of <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
+    These sorts of propositions comprising the specification are informed by experience and best practices, but <fr:link href="/dhsorens-001H/" title="The Computer Scientist's Approach to Proposition and Proof (About Software)" uri="https://derekhsorensen.com/dhsorens-001H/" display-uri="dhsorens-001H" type="local">frequently not any formal, underlying theory</fr:link>. In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.
+    These differences are, in my mind, well worth meditating on.
+    My <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> was in some ways an attempt to reconcile the mathematical approach to stating and proving theorems for <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">some specific software applications</fr:link>; the jury is still out for me as to whether that is actually useful.
+</html:p>
+            <html:p>
+    We'll start this discussion is with proposition and proof in a purely mathematical context;
+    from there, we can see the nuances of specification as we move into software at higher and higher levels of abstraction and involvement in daily, human life.
+    My goal here is to explore the process of forming software specifications, arguing that rigorous software specification gets harder as the purpose of the software moves from mathematical computation to playing social, political, and economic roles in the world.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001G/</fr:uri>
+                <fr:display-uri>dhsorens-001G</fr:display-uri>
+                <fr:route>/dhsorens-001G/</fr:route>
+                <fr:title text="The Mathematician's Approach to Proposition and Proof">The Mathematician's Approach to Proposition and Proof</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Professional mathematicians spend their time proving theorems.
+    Many people imagine professional mathematicians as doing enormous calculations, using esoteric symbols, on a chalkboard to derive equations.
+    However, the reality for many (if not most) professional mathematicians is that day to day work consists of proving theorems.
+    A proof of a theorem, fundamentally, is an <html:em>argument</html:em>, written in prose, that justifies the truth or falsehood of a proposition by logical means.
+    </html:p>
+                <html:p>
+    A lot of work, skill, and creativity goes into finding a proof for a theorem.
+    Conjectures can go unsolved for hundreds of years, requiring huge feats of intelligence to solve.
+    However, this is not the full story.
+    Most people overlook, and are surprised by, the fact that articulating the <html:em>correct</html:em> theorem statement, or conjecture, that one sets as a goal to prove is just as difficult, if not more, than finding a proof of that theorem.
+    In my (limited) experience, it is much harder.
+</html:p>
+                <html:p>
+    A mathematician will start with an intuitive idea, for which there may not yet be appropriate or adequate technical language or symbols to describe it.
+    He will go through a cycle of experimenting with a definition, or a conjecture, that attempts to capture the idea he's after.
+    He will then test out the <html:em>consequences</html:em> of this definition or conjecture by either proving theorems with it, trying to prove the theorem itself, or looking at its consequences in the mathematical theory more broadly.
+</html:p>
+                <html:p>
+    This will kick off a process which is broadly intuitive, informed by feedback with the relevant mathematical theory, of aiming at a definition or conjecture, testing its fit, and adjusting it.
+    It can take the mathematical community as a whole several iterations to actually get the process right.
+    As a particularly interesting example, consider the history of the definition of <fr:link href="/dhsorens-001I/" title="Compactness: Definition and Theory" uri="https://derekhsorensen.com/dhsorens-001I/" display-uri="dhsorens-001I" type="local"><html:em>compactness</html:em></fr:link> in mathematics.
+</html:p>
+                <html:p>
+    Most fundamentally, a mathematician's job is to bring in novel and useful abstract concepts, capture them in their appropriate definitions or conjectures, and place them appropriately in the corpus of mathematical theory.
+    Philosophers do this, often by inventing new technical terminology;
+    scientists do this by defining new methods and measurements;
+    artists do this but instead of technical terms and symbols, they use an artistic medium.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <html:p>
+    Crafting new definitions in mathematics is a strictly abstract and technical endeavor. The great advantage of doing work in mathematics is that the "world" in which one operates is extremely clearly defined and has virtually no ambiguities.
+</html:p>
+            <html:p>
+    When one goes to state and prove things about software, one finds one's self in a world that can be a lot less abstract, pure, and well-defined than the world of mathematics.
+    This is precisely where the difficulty of proposition and proof relating to software comes into play.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001H/</fr:uri>
+                <fr:display-uri>dhsorens-001H</fr:display-uri>
+                <fr:route>/dhsorens-001H/</fr:route>
+                <fr:title text="The Computer Scientist's Approach to Proposition and Proof (About Software)">The Computer Scientist's Approach to Proposition and Proof (About Software)</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
+    For example, chip design or software implementing <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    In these cases, the <html:em>specification</html:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
+</html:p>
+                <html:p>
+    However, software does much more than mathematical computation.
+    As it gets higher in abstraction, software can become a social and financial intermediary between people or even an agent of its own.
+    Software runs human-computer interfaces,  the flow of a sales team's CRM, and the media by which news gets reported and propagated.
+    Software makes music, tells stories, implements art and design.
+    It manages money and communication between people.
+    In these cases, the intended behavior of software doesn't always have a clear and definable formal specification couched in mathematical terms.
+    Instead, at these higher layers of abstraction, software can become difficult to specify—or describe in a formal language—<html:em>correctly</html:em>.
+    </html:p>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>5</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-001M/</fr:uri>
+                    <fr:display-uri>dhsorens-001M</fr:display-uri>
+                    <fr:route>/dhsorens-001M/</fr:route>
+                    <fr:title text="How to Specify a Large Language Model?">How to Specify a Large Language Model?</fr:title>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p>
+    Consider the (perhaps extreme) problem of specifying the "correct" behavior of a large language model like Chat GPT.
+    The technologists who have built these LLMs are probably more aware than anyone—no one <html:em>really</html:em> knows what the correct behavior of an artificial intelligence is or should be.
+    We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would rather it not produce even though it could do so in principle within the bounds of being helpful, knowledgeable, and honest.
+    These things include somewhat-universally-agreed-upon things like child porn and slanderous and libelous deep fakes.
+    In more of a grey area, they can also include politically inconvenient facts or references to certain events in history about which we remain sensitive.
+</html:p>
+                    <html:p>
+    In other words, we want the LLM to be kind, or to have a value system of some kind.
+    An LLM should not encourage someone to kill themselves.
+    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).
+    The problem with asking an LLM to behave ethically is <html:em>who</html:em> is to say what is right, and good, and true? <html:em>What</html:em> value system should dominate?
+    People will have different philosophies on what they think the behavior of an LLM should be, but we are far from any point of consensus on what that should be.
+    Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align itself with that.
+    (Think of the film <html:em>I, Robot</html:em> as a meditation on the unintended—and disasterous, tyranical—consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)
+</html:p>
+                    <html:p>
+    I would argue that the problem of correctly specifying an LLM is the problem that religion tends to address—one of value, meaning, and knowing goodness.
+    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form, much less in prose, and even less a <html:em>formal</html:em> specification.
+</html:p>
+                  </fr:mainmatter>
+                </fr:tree>
+                <html:p>
+    The specification of LLMs may be intractable, but I think we can make progress in something less, say, human: <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contracts</fr:link>.
+    What we will find is that smart contracts lie at a rich intersection between low-level, technical properties and high-level, more "human" properties.
+    Can we reasonably <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">specify smart contracts</fr:link> in a rigorous and correct way?
+    How can we strengthen their specifications to be more clear, accurate, and useful? 
+</html:p>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>5</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-001J/</fr:uri>
+                    <fr:display-uri>dhsorens-001J</fr:display-uri>
+                    <fr:route>/dhsorens-001J/</fr:route>
+                    <fr:title text="Smart Contract Specification">Smart Contract Specification</fr:title>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p><fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">Smart contracts</fr:link> can have <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">deceptively difficult specifications</fr:link>.
+</html:p>
+                    <fr:tree show-metadata="false">
+                      <fr:frontmatter>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>9</fr:month>
+                          <fr:day>5</fr:day>
+                        </fr:date>
+                        <fr:uri>https://derekhsorensen.com/dhsorens-001N/</fr:uri>
+                        <fr:display-uri>dhsorens-001N</fr:display-uri>
+                        <fr:route>/dhsorens-001N/</fr:route>
+                        <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <html:p>
+    Dexter2 is an AMM on the Tezos blockchain that has been formally verified by <fr:link href="/dhsorens-0010/" title="Formalization of Mathematics in Lean" uri="https://derekhsorensen.com/dhsorens-0010/" display-uri="dhsorens-0010" type="local">at least three different groups using three different formal verification tools</fr:link>.
+    Each was based on the <fr:link href="/dhsorens-0010/" title="Formalization of Mathematics in Lean" uri="https://derekhsorensen.com/dhsorens-0010/" display-uri="dhsorens-0010" type="local">same informal specification</fr:link>. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.
+</html:p>
+                        <html:p>
+    However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:
+</html:p>
+                        <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
+                        <html:p>
+    where <fr:tex display="inline"><![CDATA[x]]></fr:tex> represents the quantity held by the contract of the token being traded in, <fr:tex display="inline"><![CDATA[y]]></fr:tex> represents the quantity held by the contract of the token being traded out, and <fr:tex display="inline"><![CDATA[k]]></fr:tex> is a constant. The tokens held by the contract come from liquidity providers, which are investors who deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees. That <fr:tex display="inline"><![CDATA[k]]></fr:tex> is constant means that a trade of <fr:tex display="inline"><![CDATA[\Delta  x]]></fr:tex> of one token yields <fr:tex display="inline"><![CDATA[\Delta  y]]></fr:tex> of another such that the product from above stays constant at <fr:tex display="inline"><![CDATA[k]]></fr:tex>:
+</html:p>
+                        <fr:tex display="block"><![CDATA[(x+ \Delta  x)(y− \Delta  y) = k.]]></fr:tex>
+                        <html:p>
+    Buterin argued that an AMM that trades along this indifference curve features efficient price discovery. He also argued that it can properly incentivize liquidity providers by charging a <fr:tex display="inline"><![CDATA[0.3]]></fr:tex>% fee on each trade to give to them.
+</html:p>
+                        <html:p>
+    We can probably convince ourselves that the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">informal specification</fr:link> of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">informal specification or its formal counterparts</fr:link> actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve <fr:tex display="inline"><![CDATA[xy= k]]></fr:tex>.
+    It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.
+</html:p>
+                        <html:p>
+    There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">three formalizations of Dexter2’s informal specification</fr:link> reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.
+</html:p>
+                        <html:p>   
+    Furthermore, were we to try to formally specify some of the aforementioned high-level economic and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go about doing so. Most specification languages and models of computation are too low-level to easily admit clear specifications of such properties. What model or framework would we use, for example, to specify that Dexter2 facilitate an efficient market?
+</html:p>
+                        <html:p>
+    As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2 routinely manage billions of USD worth of funds, much is also at risk in case of a bug. Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of the economic properties that we have just mentioned, directly or indirectly. It is, however, not obvious that these properties hold by reading any of the aforementioned specifications.
+</html:p>
+                      </fr:mainmatter>
+                    </fr:tree>
+                    <html:p>
+    The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
+    </html:p>
+                    <fr:tree show-metadata="false">
+                      <fr:frontmatter>
+                        <fr:authors>
+                          <fr:author>
+                            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                          </fr:author>
+                        </fr:authors>
+                        <fr:date>
+                          <fr:year>2025</fr:year>
+                          <fr:month>9</fr:month>
+                          <fr:day>6</fr:day>
+                        </fr:date>
+                        <fr:uri>https://derekhsorensen.com/dhsorens-001P/</fr:uri>
+                        <fr:display-uri>dhsorens-001P</fr:display-uri>
+                        <fr:route>/dhsorens-001P/</fr:route>
+                        <fr:title text="Smart Contract Vulnerabilities Due to Poor Specification">Smart Contract Vulnerabilities Due to Poor Specification</fr:title>
+                        <fr:meta name="toc">true</fr:meta>
+                      </fr:frontmatter>
+                      <fr:mainmatter>
+                        <html:p>
+    Smart contracts are vulnerable due to incorrect code, but equally due to incorrect specification (or design).
+    There are more examples of this that can possibly be included here, but I have written up a few examples.
+    We would recognize each of these exploits as attacks, despite the fact that the contracts were functioning
+    as specified, which tells us that the specifications were erroneous as they did not accurately capture the
+    intended economic behaviors. To the contrary, they permitted unintended and pathological behavior.
+</html:p>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001T/</fr:uri>
+                            <fr:display-uri>dhsorens-001T</fr:display-uri>
+                            <fr:route>/dhsorens-001T/</fr:route>
+                            <fr:title text="Beanstalk Hack (2022)">Beanstalk Hack (2022)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    Beanstalk is (was) an Ethereum-based stablecoin protocol which uses a decentralized governance protocol.
+    This governance protocol features an emergency commit function, which gives a supermajority of governance votes power to quickly respond to an emergency by approving and executing a proposal in one single vote. The goal of said
+    emergency commit function is to allow governance to respond quickly to an emergency, providing added
+    security in the face of unforeseen vulnerabilities.
+</html:p>
+                            <html:p>
+    In a turn of grim irony, this very emergency response mechanism turned out to be the source of a
+    catastrophic exploit. On April 17, 2022, an attacker used a flash loan to temporarily buy a supermajority
+    of governance tokens and execute a proposal, draining the contract of <fr:link href="https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7" type="external">approximately 77 million USD in
+    lost contract assets</fr:link>
+     A flash loan is a loan mediated by a smart contract and issued for the duration
+    of a single, atomic transaction. Due to its atomicity, a flash loan removes the creditor’s risk of debt
+    default, and thus enables enormous, uncollateralized loans. For example, the Aave flash loan pool has had
+    in excess of 1 billion USD which can be loaned out.
+    Flash loans can introduce unintuitive contract behavior, deviating from that of traditional markets. Importantly, the Beanstalk attack leveraged the unexpected behavior due to the availability of flash loans, exploiting the faulty design of the governance mechanism rather than incorrect code.
+</html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001U/</fr:uri>
+                            <fr:display-uri>dhsorens-001U</fr:display-uri>
+                            <fr:route>/dhsorens-001U/</fr:route>
+                            <fr:title text="Spartan Protocol and Pancake Bunny Hack (2021)">Spartan Protocol and Pancake Bunny Hack (2021)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    More examples of successful flash loan attacks include
+    attacks on the Spartan Protocol and Pancake Bunny, two DeFi contracts on the Binance Smart Chain
+    (BSC). Attackers used flash loans to make huge trades and temporarily manipulate market prices of
+    certain assets. Both of these contracts used these market prices in the contract logic, and in both cases
+    this lead to pathological—though, again, correct according to the flawed specification—contract behavior.
+    In May 2021, an attacker <fr:link href="https://bscscan.com/tx/0xb64ae25b0d836c25d115a9368319902c972a0215bd108ae17b1b9617dfb93af8" type="external">drained</fr:link> the Spartan Protocol contract for a profit of roughly the <fr:link href="https://peckshield-94632.medium.com/the-spartan-incident-root-cause-analysis-b14135d3415f" type="external">equivalent of 30 million USD</fr:link>. Another <fr:link href="https://bscscan.com/address/0x158c244b62058330f2c328c720b072d8db2c612f" type="external">attacker</fr:link> <fr:link href="https://x.com/PancakeBunnyFin/status/1395173389208334342" type="external">drained</fr:link> Pancake Bunny of 114k WBNB and 697k BUNNY tokens, amounting to about <fr:link href="https://cointelegraph.com/news/pancakebunny-tanks-96-following-200m-flash-loan-exploit" type="external">45 million USD at the time in lost funds</fr:link>.
+</html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001V/</fr:uri>
+                            <fr:display-uri>dhsorens-001V</fr:display-uri>
+                            <fr:route>/dhsorens-001V/</fr:route>
+                            <fr:title text="Mango Markets (2022)">Mango Markets (2022)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    Finally, Mango Markets, a Solana-based DEX, was attacked in October 2022 for approximately 116
+    million USD in contract assets. The attack consisted of a complicated and subtle trading strategy
+    which only a sophisticated trader would be able to see and exploit. <fr:link href="https://www.coindesk.com/markets/2022/10/12/how-market-manipulation-led-to-a-100m-exploit-on-solana-defi-exchange-mango" type="external">CoinDesk reported</fr:link> that the
+    attacker did everything within the parameters of the platform’s design. Avraham Eisenberg, <fr:link href="https://solscan.io/account/CQvKSNnYtPTZfQRQ5jkHq8q2swJyRsdQLcFcj3EmKFfX" type="external">the
+    attacker</fr:link>, <fr:link href="https://x.com/avi_eisen/status/1581326199682265088" type="external">wrote</fr:link>:
+</html:p>
+                            <html:p><html:em>
+        "I believe all of our actions were legal open market actions, using the protocol as designed, even
+        if the development team did not fully anticipate all the consequences of setting parameters the
+        way they are."
+    </html:em> <fr:link href="https://x.com/avi_eisen/status/1581326199682265088" type="external">(link)</fr:link></html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001W/</fr:uri>
+                            <fr:display-uri>dhsorens-001W</fr:display-uri>
+                            <fr:route>/dhsorens-001W/</fr:route>
+                            <fr:title text="Nomad (2022)">Nomad (2022)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    Nomad is (was) a cross-chain bridge protocol. In August 2022, <fr:link href="https://x.com/samczsun/status/1554252024723546112" type="external">more than 500 hacker addresses exploited a bug</fr:link> introduced by a faulty upgrade to one of the Nomad smart contracts. The upgrade incorrectly added the null address (<html:code>0x000...000</html:code>) as a trusted root, which turned off
+    a key safety check, allowing anyone to withdraw arbitrary amounts of funds from the Nomad contract to
+    their wallet by calling the contract with a particular payload. The <fr:link href="https://etherscan.io/tx/0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460" type="external">attack</fr:link> resulted in 190 million USD
+    in lost funds.
+</html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                        <fr:tree show-metadata="false">
+                          <fr:frontmatter>
+                            <fr:authors>
+                              <fr:author>
+                                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                              </fr:author>
+                            </fr:authors>
+                            <fr:date>
+                              <fr:year>2025</fr:year>
+                              <fr:month>10</fr:month>
+                              <fr:day>9</fr:day>
+                            </fr:date>
+                            <fr:uri>https://derekhsorensen.com/dhsorens-001X/</fr:uri>
+                            <fr:display-uri>dhsorens-001X</fr:display-uri>
+                            <fr:route>/dhsorens-001X/</fr:route>
+                            <fr:title text="Uranium (2021) and NowSwap (2021)">Uranium (2021) and NowSwap (2021)</fr:title>
+                          </fr:frontmatter>
+                          <fr:mainmatter>
+                            <html:p>
+    Similarly, Uranium Finance, an AMM, suffered a costly exploit after a faulty
+    contract upgrade. The original contract contained a constant, <html:code>k</html:code>, equal to <html:code>1_000</html:code> in three different places,
+    which was used to price trades. The update changed this value to <html:code>10_000</html:code> in two places but not the
+    third, presumably to calculate trades with higher precision. The result of this was that the attacker could
+    swap virtually nothing in for 98% of the total balance of any output token, which <fr:link href="https://web.archive.org/web/20230201114526/https://uraniumfinance.medium.com/exploit-d3a88921531c" type="external">resulted in a loss of 50
+    million USD of contract funds</fr:link>. NowSwap, a nearly identical application, upgraded <fr:link href="https://www.halborn.com/blog/post/explained-the-nowswap-protocol-hack-september-2021" type="external">with the same
+    error</fr:link> and incurred a loss of 1 million USD.
+</html:p>
+                          </fr:mainmatter>
+                        </fr:tree>
+                      </fr:mainmatter>
+                    </fr:tree>
+                  </fr:mainmatter>
+                </fr:tree>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>6</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-001Q/</fr:uri>
+                    <fr:display-uri>dhsorens-001Q</fr:display-uri>
+                    <fr:route>/dhsorens-001Q/</fr:route>
+                    <fr:title text="Incorrect Specifications">Incorrect Specifications</fr:title>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p>
+    Incorrect software specifications are a problem because
+    they can invalidate the security guarantees offered by <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link>, 
+    offer a false sense of security,
+    misguide developers,
+    and most importantly open code up to vulnerabilities.
+    Indeed, for <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contracts</fr:link>, poor specifications are a <fr:link href="/dhsorens-001P/" title="Smart Contract Vulnerabilities Due to Poor Specification" uri="https://derekhsorensen.com/dhsorens-001P/" display-uri="dhsorens-001P" type="local">common source of catastrophic vulnerabilities and losses of funds</fr:link>.
+</html:p>
+                  </fr:mainmatter>
+                </fr:tree>
+                <html:p>
+    Considering this, what is the role of formal proposition and proof (formal verification), especially in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>, applied to software vulnerabilities?
+    How do we address the issue of incorrect specification?
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>5</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001K/</fr:uri>
+                <fr:display-uri>dhsorens-001K</fr:display-uri>
+                <fr:route>/dhsorens-001K/</fr:route>
+                <fr:title text="Proof Assistants and the Issue of Incorrect Specification">Proof Assistants and the Issue of Incorrect Specification</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">Proof assistants</fr:link> give us a formal and robustly mathematical environment in which to prove mathematical theorems and arbitrary properties of programs.
+    Virtually anything that can be stated; true propositions can all in principle be proved.
+    You would think that this would make proof assistants the silver bullet to software security:
+    Since you could truly state and prove any desirable security or performance property, if the tools are good enough you might think that they are precisely what's needed to make high-assurance software absolutely bullet-proof.
+    The reality is, however, it is difficult to write a complete specification; desirable properties of some software can be extremely difficult to articulate.
+    </html:p>
+                <html:p>
+    Some software will need a great deal of formal infrastructure built up to write provably correct specifications.
+    For others, it's not even obvious that formal statements are the right tool to use for them.
+    Computer science has a long history of using diagrams, pictures, and other tools of abstraction to specify computation.
+    Maybe a proof assistant is powerful enough to formalize any abstract framework? Maybe it's powerful enough to do this?
+    If it is, how do we proceed? How do we coax that power out so that all desirable properties of software can be clearly articulated, specified and ultimately formally proved?
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>5</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-001L/</fr:uri>
+            <fr:display-uri>dhsorens-001L</fr:display-uri>
+            <fr:route>/dhsorens-001L/</fr:route>
+            <fr:title text="Zero Knowledge Proofs">Zero Knowledge Proofs</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p />
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000Y/</fr:uri>
+            <fr:display-uri>dhsorens-000Y</fr:display-uri>
+            <fr:route>/dhsorens-000Y/</fr:route>
+            <fr:title text="Smart Contracts">Smart Contracts</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Smart contracts are programs stored on a blockchain that automatically execute when certain predefined
+    conditions are met. <html:em>Financial smart contracts</html:em> are broadly defined as smart contracts that serve as a digital
+    intermediary between financial parties. These include contracts collectively referred to as decentralized
+    finance (DeFi), and come in many forms, including decentralized exchanges (DEXs), automated market
+    makers (AMMs), crypto lending, synthetics (including stablecoins), yield farming, crypto insurance
+    protocols, and cross-chain bridges.
+</html:p>
+            <html:p />
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>29</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000W/</fr:uri>
+            <fr:display-uri>dhsorens-000W</fr:display-uri>
+            <fr:route>/dhsorens-000W/</fr:route>
+            <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">Smart contracts</fr:link> are interesting from the perspective of formal specification and verification because:
+</html:p>
+            <html:ol><html:li>they are risk- and property-dense,</html:li>
+    <html:li>they are typically small in size, with a deterministic and well-defined execution environment, making them feasible to formally reason about in a short time frame, and</html:li>
+    <html:li>they often manage huge sums of money (so the incentives line up).</html:li></html:ol>
+            <html:p>
+    Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">interesting (and nontrivia) specifications</fr:link>, which warrants a study not only of the science of going from specification to verification (formal proof), but of the <html:em>specifications themselves</html:em> as independent, mathematical objects.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>15</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000B/</fr:uri>
+            <fr:display-uri>dhsorens-000B</fr:display-uri>
+            <fr:route>/dhsorens-000B/</fr:route>
+            <fr:title text="Interactive Theorem Provers">Interactive Theorem Provers</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-lean/</fr:uri>
+                <fr:display-uri>dhsorens-lean</fr:display-uri>
+                <fr:route>/dhsorens-lean/</fr:route>
+                <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
+                <fr:taxon>Tool</fr:taxon>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:link href="http://lean-lang.org/" type="external">http://lean-lang.org</fr:link>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-rocq/</fr:uri>
+                <fr:display-uri>dhsorens-rocq</fr:display-uri>
+                <fr:route>/dhsorens-rocq/</fr:route>
+                <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
+                <fr:taxon>Tool</fr:taxon>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:link href="https://rocq-prover.org/" type="external">https://rocq-prover.org</fr:link>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0006/</fr:uri>
+                <fr:display-uri>dhsorens-0006</fr:display-uri>
+                <fr:route>/dhsorens-0006/</fr:route>
+                <fr:title text="Isabelle/HOL">Isabelle/HOL</fr:title>
+                <fr:taxon>Tool</fr:taxon>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="https://www.isa-afp.org/" type="external">Archive of Formal Proofs</fr:link> and the <fr:link href="https://isabelle.in.tum.de/" type="external">prover</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

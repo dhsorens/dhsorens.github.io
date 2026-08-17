@@ -1,0 +1,91 @@
+/* Palette: swap --deck-bg / --deck-text
+— peach `#f4ebdf`+`#1b4f9c`
+- lavender `#ebe4f8`+`#1b4f9c`
+- cream `#faf1e6`+`#163d7a` */
+:root {
+  /* bg and text presets */
+  --deck-bg: #FDF4EA;
+  --deck-text: #062a60;
+
+  --r-background-color: var(--deck-bg);
+  --r-main-color: var(--deck-text);
+  --r-heading-color: var(--deck-text);
+  /* Links stay in the blue family (slightly brighter than body text) */
+  --r-link-color: #2563c7;
+
+  /* Slide heading sizes: multiply Reveal theme vars (tweak one knob). */
+  --slide-heading-scale: 0.9;
+  --title-slide-heading-scale: 1.2;
+}
+
+/* Slide headings h1–h4 */
+.reveal .slides section h1 {
+  font-size: calc(var(--r-heading1-size) * var(--slide-heading-scale));
+}
+
+.reveal .slides section h2 {
+  font-size: calc(var(--r-heading2-size) * var(--slide-heading-scale));
+}
+
+.reveal .slides section h3 {
+  font-size: calc(var(--r-heading3-size) * var(--slide-heading-scale));
+}
+
+.reveal .slides section h4 {
+  font-size: calc(var(--r-heading4-size) * var(--slide-heading-scale));
+}
+
+/* Title slide headings — uses --title-slide-heading-scale */
+.reveal .slides > section.title-slide h1 {
+  font-size: calc(var(--r-heading1-size) * var(--title-slide-heading-scale));
+}
+
+.reveal .slides > section.title-slide h2 {
+  font-size: calc(var(--r-heading2-size) * var(--title-slide-heading-scale));
+}
+
+.reveal .slides > section.title-slide h3 {
+  font-size: calc(var(--r-heading3-size) * var(--title-slide-heading-scale));
+}
+
+.reveal .slides > section.title-slide h4 {
+  font-size: calc(var(--r-heading4-size) * var(--title-slide-heading-scale));
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides section :is(h1, h2, h3, h4, h5, h6, p, li, blockquote, td, th) {
+  text-align: left;
+}
+
+/* Lean blocks: full-width code; hide panel divider (no drag handle) */
+.reveal .code-with-panel {
+  --code-ratio: 1fr;
+  --panel-ratio: 0fr;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* uncomment for a code divider */
+/* .reveal .code-with-panel > .panel-divider {
+    width: 2px;
+} */
+
+/* uncomment for no code divider */
+.reveal .code-with-panel > .panel-divider {
+  display: none;
+}
+
+.reveal img.slide-img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* First slide — class `title-slide` from title_slide.js */
+.reveal .slides > section.title-slide :is(h1, h2, h3, h4, h5, h6, p, li, pre, ul, ol,
+  blockquote, td, th) {
+  text-align: center;
+}

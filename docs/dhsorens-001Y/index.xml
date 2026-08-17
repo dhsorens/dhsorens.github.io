@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>11</fr:month>
+      <fr:day>11</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-001Y/</fr:uri>
+    <fr:display-uri>dhsorens-001Y</fr:display-uri>
+    <fr:route>/dhsorens-001Y/</fr:route>
+    <fr:title text="Publicity">Publicity</fr:title>
+    <fr:meta name="toc">true</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>Quotes:</html:p>
+    <html:ol><html:li><fr:link href="https://www.forbes.com/sites/cbovaird/2019/05/23/bitcoin-shows-strength-by-bouncing-back-after-breather/6a9cf7ab67b9" type="external">Bitcoin Shows Strength by Bouncing Back After Breather (Forbes)</fr:link></html:li>
+    <html:li><fr:link href="https://www.forbes.com/sites/cbovaird/2019/05/24/litecoin-climbs-16-to-reach-highest-since-mid-may/736019361d1e" type="external">Litecoin Climbs 16% To Reach Highest Since Mid-May (Forbes)</fr:link></html:li></html:ol>
+    <html:p>Interviews/Podcasts:</html:p>
+    <html:ol><html:li><fr:link href="https://www.proactiveinvestors.com/companies/stocktube/13348/pyrofex-corp-mathematician-explains-what-is-driving-the-bitcoin-surge-13348.html" type="external">Proactive Investors Interview</fr:link></html:li>
+    <html:li><fr:link href="https://labradio.libsyn.com/ep-63-a-deeper-look-at-building-blockchains-algorithms-and-proofs" type="external">Lab Radio Interview: A Deeper Look at Building Blockchains, Algorithms, and Proofs.</fr:link></html:li>
+    <html:li><fr:link href="https://www.youtube.com/watch?v=RcwQ25zhw3s" type="external">Newconomy Media Interview</fr:link></html:li>
+    <html:li><fr:link href="https://www.youtube.com/watch?v=EkuPWUrWLOA" type="external">Consensus Collaborative Learning Guest Appearance</fr:link></html:li></html:ol>
+    <html:p>Op-eds:</html:p>
+    <html:ul><html:li><fr:link href="https://dailyhodl.com/2019/04/16/why-consensus-isnt-just-a-blockchain-thing/" type="external">Why Consensus Isn't Just a Blockchain Thing (The Daily Hodl)</fr:link></html:li>
+    <html:li><fr:link href="https://web.archive.org/web/20190624060813/https://www.ccn.com/this-awful-bitcoin-stat-guarantees-its-not-cryptos-future-mathematician/" type="external">This Awful Bitcoin Stat Guarantees It Is Not Crypto's Future (CCN)</fr:link> [web archive]</html:li>
+    <html:li><fr:link href="https://web.archive.org/web/20220707012625/https://cryptonewsreview.com/why-the-world-cant-all-be-on-one-cryptocurrency/" type="external">Why The World Cant All Be On One Cryptocurrency (Crypto News Review)</fr:link> [web archive]</html:li>
+    <html:li><fr:link href="https://web.archive.org/web/20220819225923/https://coincodex.com/article/3553/bitcoins-price-follows-trading-volume-almost-exactly-is-this-a-problem/" type="external">Bitcoins Price Follows Trading Volume Almost Exactly. Is This a Problem? (Coin Codex)</fr:link> [web archive]</html:li>
+    <html:li><fr:link href="https://web.archive.org/web/20210919083358/https://blockblog.fr/le-prix-de-bitcoin-suit-le-volume-des-transactions-presque-exactement-est-ce-un-probleme/" type="external">Le Prix de Bitcoin Suit le Volume des Transactions Presque Exactement. Est-ce Un Problème? (Block Blog)</fr:link> [web archive]</html:li>
+    <html:li><fr:link href="https://irishtechnews.ie/what-should-crypto-do-with-traditional-finance/" type="external">What Should Crypto Do With Traditional Finance? (Irish Tech News)</fr:link></html:li></html:ul>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>
