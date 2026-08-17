@@ -8,6 +8,10 @@ if ! forester --version 2>/dev/null | grep -q '^5\.0'; then
     exit 1
 fi
 
+# forester does not clean output/ between builds, so removed trees would
+# linger (and get published by commit.sh) without this
+rm -rf output
+
 forester build forest.toml
 
 # forester 5.0 only emits content-addressed copies of assets (bafkr....pdf);

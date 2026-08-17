@@ -7,6 +7,8 @@ description: Health-check and update this forester-built website. Checks the ins
 
 This repo is a personal website built with **forester** (Jon Sterling's OCaml forest tool), currently pinned to **5.0**. GitHub Pages serves the committed `docs/` directory; `output/` is the gitignored build directory. The domain `derekhsorensen.com` sits behind Cloudflare.
 
+This skill is for site health and upgrades; for adding notes/logs/talks/papers, use the `/add-content` skill instead.
+
 Run the checks below in order. Fix what's broken or outdated; report anything that needs a human decision (major version migration, breaking upstream changes) with a concrete recommendation instead of silently doing it.
 
 ## 1. Version check

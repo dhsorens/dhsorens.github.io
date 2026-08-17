@@ -11,6 +11,11 @@ NUM_FILES="${2:-1}"
 for ((i=1; i<=NUM_FILES; i++)); do
     NEW_FILE=$(forester new forest.toml --dest="trees/$DEST_DIR/" --prefix=dhsorens)
     if [ -n "$NEW_FILE" ]; then
-        cursor "$NEW_FILE"
+        # open an editor when run interactively; otherwise just print the path
+        if [ -t 1 ] && command -v cursor >/dev/null; then
+            cursor "$NEW_FILE"
+        else
+            echo "$NEW_FILE"
+        fi
     fi
 done
