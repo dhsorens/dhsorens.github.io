@@ -2,7 +2,7 @@
 \taxon{Tool}
 \author{dhsorens}
 \meta{toc}{true}
-\date{2026-08-07}
+\date{2026-08-17}
 
 \p{
     [CompPoly](https://github.com/Verified-zkEVM/CompPoly) is a formally verified [Lean](dhsorens-lean) library for computable polynomial operations over rings and finite fields.
@@ -29,9 +29,13 @@
 }
 
 \p{
-    Phase 1 of the roadmap—the theoretical foundation—is essentially complete: core algebraic structure, API coverage, and Mathlib bridges are in place.
-    The current focus is Phase 2, performance and efficiency: faster field arithmetic, FFT/NTT-based multiplication, and better evaluation/interpolation pathways, without giving up proof-first correctness.
-    See the [roadmap](https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md) for the live status.
+    Roadmap status as of 17 August 2026 (the [live document](https://github.com/Verified-zkEVM/CompPoly/blob/main/ROADMAP.md) is the source of truth):
+    \ul{
+        \li{\em{Phase 1} (theoretical foundation): done. Ring structures, the core API, Mathlib bridges, and the extra types (finite fields, extensions, bivariate polynomials).}
+        \li{\em{Phase 2} (performance): nearly done. Montgomery field arithmetic, NTT multiplication, batch evaluation, Kronecker bivariate multiply, and the Reed-Solomon / Gao / Guruswami-Sudan stack. A few items remain, including a 64-bit Montgomery carrier.}
+        \li{\em{Phase 3} (interop): next, and already started in places. Serialization, proof ergonomics, and bridging to ArkLib, LLZK, and extracted Rust.}
+        \li{\em{Phase 4} (polish): documentation and developer experience.}
+    }
 }
 
 \p{
