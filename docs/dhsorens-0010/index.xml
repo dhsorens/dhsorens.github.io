@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>9</fr:month>
+      <fr:day>2</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-0010/</fr:uri>
+    <fr:display-uri>dhsorens-0010</fr:display-uri>
+    <fr:route>/dhsorens-0010/</fr:route>
+    <fr:title text="Formalization of Mathematics in Lean">Formalization of Mathematics in Lean</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter />
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000Z/</fr:uri>
+            <fr:display-uri>dhsorens-000Z</fr:display-uri>
+            <fr:route>/dhsorens-000Z/</fr:route>
+            <fr:title text="Formalization of Mathematics">Formalization of Mathematics</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    There has been a great deal of community-driven work in the formalization of mathematics in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link>, <fr:link href="/dhsorens-0006/" title="Isabelle/HOL" uri="https://derekhsorensen.com/dhsorens-0006/" display-uri="dhsorens-0006" type="local">Isabelle/HOL</fr:link>, and <fr:link href="/dhsorens-0014/" title="Agda" uri="https://derekhsorensen.com/dhsorens-0014/" display-uri="dhsorens-0014" type="local">Agda</fr:link>.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>2</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0010/</fr:uri>
+                <fr:display-uri>dhsorens-0010</fr:display-uri>
+                <fr:route>/dhsorens-0010/</fr:route>
+                <fr:title text="Formalization of Mathematics in Lean">Formalization of Mathematics in Lean</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter />
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>2</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0011/</fr:uri>
+                <fr:display-uri>dhsorens-0011</fr:display-uri>
+                <fr:route>/dhsorens-0011/</fr:route>
+                <fr:title text="Formalization of Mathematics in Rocq">Formalization of Mathematics in Rocq</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter />
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>2</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0012/</fr:uri>
+                <fr:display-uri>dhsorens-0012</fr:display-uri>
+                <fr:route>/dhsorens-0012/</fr:route>
+                <fr:title text="Formalization of Mathematics in Isabelle/HOL">Formalization of Mathematics in Isabelle/HOL</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter />
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>2</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0013/</fr:uri>
+                <fr:display-uri>dhsorens-0013</fr:display-uri>
+                <fr:route>/dhsorens-0013/</fr:route>
+                <fr:title text="Formalization of Mathematics in Agda">Formalization of Mathematics in Agda</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter />
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>5</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-001N/</fr:uri>
+            <fr:display-uri>dhsorens-001N</fr:display-uri>
+            <fr:route>/dhsorens-001N/</fr:route>
+            <fr:title text="Case Study: Dexter2">Case Study: Dexter2</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Dexter2 is an AMM on the Tezos blockchain that has been formally verified by <fr:link href="/dhsorens-0010/" title="Formalization of Mathematics in Lean" uri="https://derekhsorensen.com/dhsorens-0010/" display-uri="dhsorens-0010" type="local">at least three different groups using three different formal verification tools</fr:link>.
+    Each was based on the <fr:link href="/dhsorens-0010/" title="Formalization of Mathematics in Lean" uri="https://derekhsorensen.com/dhsorens-0010/" display-uri="dhsorens-0010" type="local">same informal specification</fr:link>. The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.
+</html:p>
+            <html:p>
+    However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:
+</html:p>
+            <fr:tex display="block"><![CDATA[x y = k]]></fr:tex>
+            <html:p>
+    where <fr:tex display="inline"><![CDATA[x]]></fr:tex> represents the quantity held by the contract of the token being traded in, <fr:tex display="inline"><![CDATA[y]]></fr:tex> represents the quantity held by the contract of the token being traded out, and <fr:tex display="inline"><![CDATA[k]]></fr:tex> is a constant. The tokens held by the contract come from liquidity providers, which are investors who deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees. That <fr:tex display="inline"><![CDATA[k]]></fr:tex> is constant means that a trade of <fr:tex display="inline"><![CDATA[\Delta  x]]></fr:tex> of one token yields <fr:tex display="inline"><![CDATA[\Delta  y]]></fr:tex> of another such that the product from above stays constant at <fr:tex display="inline"><![CDATA[k]]></fr:tex>:
+</html:p>
+            <fr:tex display="block"><![CDATA[(x+ \Delta  x)(y− \Delta  y) = k.]]></fr:tex>
+            <html:p>
+    Buterin argued that an AMM that trades along this indifference curve features efficient price discovery. He also argued that it can properly incentivize liquidity providers by charging a <fr:tex display="inline"><![CDATA[0.3]]></fr:tex>% fee on each trade to give to them.
+</html:p>
+            <html:p>
+    We can probably convince ourselves that the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">informal specification</fr:link> of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">informal specification or its formal counterparts</fr:link> actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve <fr:tex display="inline"><![CDATA[xy= k]]></fr:tex>.
+    It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.
+</html:p>
+            <html:p>
+    There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the <fr:link href="/dhsorens-001O/" title="Dexter2 Specification and Verification" uri="https://derekhsorensen.com/dhsorens-001O/" display-uri="dhsorens-001O" type="local">three formalizations of Dexter2’s informal specification</fr:link> reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.
+</html:p>
+            <html:p>   
+    Furthermore, were we to try to formally specify some of the aforementioned high-level economic and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go about doing so. Most specification languages and models of computation are too low-level to easily admit clear specifications of such properties. What model or framework would we use, for example, to specify that Dexter2 facilitate an efficient market?
+</html:p>
+            <html:p>
+    As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2 routinely manage billions of USD worth of funds, much is also at risk in case of a bug. Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of the economic properties that we have just mentioned, directly or indirectly. It is, however, not obvious that these properties hold by reading any of the aforementioned specifications.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

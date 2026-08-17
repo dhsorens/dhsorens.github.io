@@ -15,10 +15,7 @@ Below we summarize the concrete syntax of the mainmatter in a Forester tree.
 | `\code{...}` | Typesets the content in monospace |
 | `\tex{preamble}{body}` | Typesets the body externally using KaTeX using `preamble` as preamble code (e.g. to set up tikz packages, etc.). It can be useful to wrap this in your own macro in order to insert your preamble code automatically. |
 
-- [Build and view your forest for the first time](http://www.jonmsterling.com/jms-007D.xml)
-- [Overview of the Forester markup language](http://www.jonmsterling.com/jms-007N.xml)
-- [Creating new trees](http://www.jonmsterling.com/jms-007H.xml)
-- [Creating your personal biographical tree](http://www.jonmsterling.com/jms-007K.xml)
-=======
-| `\tex{preamble}{body}` | Typesets the body externally using KaTeX using `preamble` as preamble code (e.g. to set up tikz packages, etc.). It can be useful to wrap this in your own macro in order to insert your preamble code automatically. |
->>>>>>> 5a04abf9feb338e82122b858a5dbd7513fe488f8
+- [Build and view your forest for the first time](https://www.forester-notes.org/jms-007D/)
+- [Overview of the Forester markup language](https://www.forester-notes.org/jms-007N/)
+- [Creating new trees](https://www.forester-notes.org/jms-007H/)
+- [Creating your personal biographical tree](https://www.forester-notes.org/jms-007K/)

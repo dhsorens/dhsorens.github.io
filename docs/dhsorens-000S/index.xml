@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors />
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>13</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-000S/</fr:uri>
+    <fr:display-uri>dhsorens-000S</fr:display-uri>
+    <fr:route>/dhsorens-000S/</fr:route>
+    <fr:title text="Research Statement">Research Statement</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    Formal proposition and proof, especially in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> and <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link>, catch my attention from various angles. 
+    This is my most recent research statement as a <fr:link href="/docs/sorensen-research-statement.pdf" type="external">PDF</fr:link>.
+    <html:em>(Last updated 09/2025.)</html:em></html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:uri>https://derekhsorensen.com/dhsorens-rsrch/</fr:uri>
+            <fr:display-uri>dhsorens-rsrch</fr:display-uri>
+            <fr:route>/dhsorens-rsrch/</fr:route>
+            <fr:title text="Research">Research</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors />
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>13</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000S/</fr:uri>
+                <fr:display-uri>dhsorens-000S</fr:display-uri>
+                <fr:route>/dhsorens-000S/</fr:route>
+                <fr:title text="Research Statement">Research Statement</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Formal proposition and proof, especially in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> and <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link>, catch my attention from various angles. 
+    This is my most recent research statement as a <fr:link href="/docs/sorensen-research-statement.pdf" type="external">PDF</fr:link>.
+    <html:em>(Last updated 09/2025.)</html:em></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:uri>https://derekhsorensen.com/dhsorens-pubs/</fr:uri>
+                <fr:display-uri>dhsorens-pubs</fr:display-uri>
+                <fr:route>/dhsorens-pubs/</fr:route>
+                <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:ol><html:li>Sorensen, D. <html:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</html:em>. FMBC (ETAPS) (2025). [<fr:link href="/dhsorens-000J/" title="Formally Specifying Contract Optimizations With Bisimulations in Coq" uri="https://derekhsorensen.com/dhsorens-000J/" display-uri="dhsorens-000J" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</html:em>. FMBC (ETAPS) (2024). [<fr:link href="/dhsorens-000K/" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq" uri="https://derekhsorensen.com/dhsorens-000K/" display-uri="dhsorens-000K" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>(In)Correct Smart Contract Specifications</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <html:em>Global, robust and comparable digital carbon assets</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000M/" title="Global, robust and comparable digital carbon assets" uri="https://derekhsorensen.com/dhsorens-000M/" display-uri="dhsorens-000M" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Tokenized Carbon Credits</html:em>. Ledger (2023). [<fr:link href="/dhsorens-000N/" title="Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000N/" display-uri="dhsorens-000N" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Structured Pools for Tokenized Carbon Credits</html:em>. ICBC CryptoEx (2023). [<fr:link href="/dhsorens-000O/" title="Structured Pools for Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000O/" display-uri="dhsorens-000O" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Butt, K., Sorensen, D. <html:em>Streamlining Classical Consensus</html:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link href="/dhsorens-000P/" title="Streamlining Classical Consensus" uri="https://derekhsorensen.com/dhsorens-000P/" display-uri="dhsorens-000P" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Establishing Standards for Consensus on Blockchains</html:em>. ICBC (2019). [<fr:link href="/dhsorens-000Q/" title="Establishing Standards for Consensus on Blockchains" uri="https://derekhsorensen.com/dhsorens-000Q/" display-uri="dhsorens-000Q" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <html:em>Extensions and applications of equitable decompositions for graphs with symmetries</html:em>. Linear Algebra and its Applications 532 (2017). [<fr:link href="/dhsorens-000R/" title="Extensions and applications of equitable decompositions for graphs with symmetries" uri="https://derekhsorensen.com/dhsorens-000R/" display-uri="dhsorens-000R" type="local">link</fr:link>]</html:li></html:ol>
+                <html:p>
+    I also keep some <fr:link href="/dhsorens-preprints/" title="Preprints" uri="https://derekhsorensen.com/dhsorens-preprints/" display-uri="dhsorens-preprints" type="local">preprints</fr:link> on record.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:uri>https://derekhsorensen.com/dhsorens-talks/</fr:uri>
+                <fr:display-uri>dhsorens-talks</fr:display-uri>
+                <fr:route>/dhsorens-talks/</fr:route>
+                <fr:title text="Talks">Talks</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>Some selected talks:
+    
+    <html:ul><html:li><fr:link href="/dhsorens-0028/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0028/" display-uri="dhsorens-0028" type="local">CompPoly: Computable Polynomials in Lean</fr:link>. <fr:link href="https://zkproof.org/events/zkproof-8-rome/" type="external">ZKProofs 8</fr:link>, May 2026, Rome, Italy.</html:li>
+        <html:li><fr:link href="/dhsorens-0023/" title="Correct and Computable Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-0023/" display-uri="dhsorens-0023" type="local">Correct and Computable Specifications in Lean</fr:link>. <fr:link href="https://beneficial-ai-foundation.github.io/SVIL2026/" type="external">SViL26</fr:link>, April 2026, Paris, France.</html:li>
+        <html:li><fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link>. <fr:link href="https://ethcc.io/" type="external">EthCC[9]</fr:link>, March 2026, Cannes, France.</html:li>
+        <html:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. <fr:link href="https://fmbc.gitlab.io/2025" type="external">FMBC 2025</fr:link>, May 2025, Hamilton, Canada.</html:li>
+        <html:li><fr:link href="/dhsorens-0024/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-0024/" display-uri="dhsorens-0024" type="local">(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:link></html:li>
+        <html:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. <fr:link href="https://fmbc.gitlab.io/2024" type="external">FMBC 2024</fr:link>, April 2024, Luxembourg.</html:li>
+        <html:li><fr:link href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/" type="external">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></html:li>
+        <html:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</html:li>
+        <html:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</html:li>
+        <html:li><fr:link href="https://www.youtube.com/watch?v=NZ2ETPurRFU" type="external">K framework and type theory. RCon, May 2019, Berlin.</fr:link></html:li></html:ul></html:p>
+                <html:p>
+    I also keep some of <fr:link href="/dhsorens-slides/" title="Slides" uri="https://derekhsorensen.com/dhsorens-slides/" display-uri="dhsorens-slides" type="local">my slides here</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0015/</fr:uri>
+            <fr:display-uri>dhsorens-0015</fr:display-uri>
+            <fr:route>/dhsorens-0015/</fr:route>
+            <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Speaking more broadly, <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> is interesting because in the robustly mathematical setting provided by proof assistants, one can state and prove arbitrary properties.
+
+    This may be a blessing and a curse.
+    Much like with programming languages, being able to state and do arbitrary things is not always an advantage.
+    
+    Due to the extreme flexibility, formal counterparts of informal specifications can vary widely without an obvious way to compare them or evaluate them for correctness or practical utility (for more on this see the introduction to my <fr:link href="/dhsorens-000C/" title="Links and Referencing my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000C/" display-uri="dhsorens-000C" type="local">PhD thesis</fr:link>).
+
+</html:p>
+            <html:p>
+    In my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> and my subsequent writing (e.g. <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">this paper</fr:link> or my <fr:link href="/dhsorens-000S/" title="Research Statement" uri="https://derekhsorensen.com/dhsorens-000S/" display-uri="dhsorens-000S" type="local">research statement</fr:link>), I have argued that the robustly mathematical setting of proof assistants offers us an opportunity for unmatched rigor, but we must draw on mathematical practice and tradition and use them in a more sophisticated way than we are using them now.
+    There is much to be learned from the ongoing work in the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> and <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal specification and verification in proof assistants</fr:link> more broadly,
+    from theoretical and practical perspectives.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>15</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-lean/</fr:uri>
+            <fr:display-uri>dhsorens-lean</fr:display-uri>
+            <fr:route>/dhsorens-lean/</fr:route>
+            <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
+            <fr:taxon>Tool</fr:taxon>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:link href="http://lean-lang.org/" type="external">http://lean-lang.org</fr:link>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>15</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-rocq/</fr:uri>
+            <fr:display-uri>dhsorens-rocq</fr:display-uri>
+            <fr:route>/dhsorens-rocq/</fr:route>
+            <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
+            <fr:taxon>Tool</fr:taxon>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:link href="https://rocq-prover.org/" type="external">https://rocq-prover.org</fr:link>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

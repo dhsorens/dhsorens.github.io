@@ -1,8 +1,8 @@
-\title{Featured Article}
+\title{Latest Deep-Dive}
 \author{dhsorens}
 \date{2025-10-09}
 \meta{toc}{true}
 
 \p{
-    See my latest on [How the Formalization of Mathematics Relates to My Work](dhsorens-0017) and the nuances of [Smart Contract Specification](dhsorens-001J).
+    See my latest on [building a formally verified LC3 virtual machine in Lean](dhsorens-0027).
 }

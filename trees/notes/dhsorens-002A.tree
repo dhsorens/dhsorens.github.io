@@ -1,0 +1,53 @@
+\title{Details on the Proofs of Correctness for LC3-Lean}
+\author{dhsorens}
+\taxon{Blog}
+\date{2026-05-10}
+
+\p{
+This note expands the proof sketch on [LC3 in Lean](dhsorens-0027) into a reader’s guide to the [LC3-Lean](https://github.com/dhsorens/LC3-Lean) verification layer. The operational behavior of the machine—and how it maps to source files—is spelled out on [the ISA-level companion page](dhsorens-0029); here the focus is what Lean actually proves, how those statements are shaped, and what sits outside the proof footprint.
+}
+
+\em{What “correctness” means in this project}
+
+\p{
+The proofs do not assert that “the VM feels like LC-3” in an informal sense. They assert precise implications about the pure Lean functions in \code{LC3Lean/Execution.lean}. For each implemented opcode handler \code{op_*}, there is a matching theorem \code{op_*_spec} in \code{LC3Correct/ExecutionCorrect.lean}. Each theorem has the same skeleton: case-split on the result of \code{op_* instr reg mem}. If the handler returns \code{none}, the conclusion is trivially \code{true}—no claim is made about stuck or malformed situations. If it returns \code{some (reg', mem')}, the conclusion spells out register and memory updates in terms of the instruction bits (\code{DR}, \code{SR1}, immediates, PC-relative offsets, and so on), \code{Memory.read} and \code{Memory.write}, \code{Registers.read} and \code{Registers.write}, and \code{set_condition_codes}.
+}
+
+\p{
+Read that way, the specification \strong{is} the structured postcondition inside each \code{op_*_spec} theorem: it is not a separate Coq-style module pretending to be “the ISA,” but a declarative description of what \code{op_*} does whenever it succeeds—written tightly enough that you can compare it line-by-line with the LC-3 instruction descriptions (for example in [lc3-isa.pdf](https://www.jmeiners.com/lc3-vm/supplies/lc3-isa.pdf)) and with the executable code.
+}
+
+\em{Opcode coverage}
+
+\p{
+\code{ExecutionCorrect.lean} contains one specification section per implemented handler. Together they cover the fourteen executing opcodes discussed on the ISA page: \code{ADD}, \code{AND}, \code{BR}, \code{JMP}, \code{JSR}, \code{LD}, \code{LDI}, \code{LDR}, \code{LEA}, \code{NOT}, \code{ST}, \code{STI}, \code{STR}, and \code{TRAP}. The decoder slots \code{OP_RTI} and \code{OP_RES} are handled in code by \code{op_rti}/\code{op_res}, which always return \code{none}; there are no corresponding \code{op_*_spec} theorems, because there is no successful transition to characterize.
+}
+
+\p{
+Illustrative patterns (open \code{ExecutionCorrect.lean} for the full formulas): arithmetic and bitwise instructions relate the written value to register operands or sign-extended immediates and require \code{reg'} to come from \code{set_condition_codes} after the write. Loads and \code{LEA} tie the loaded or computed word to the addressing mode (\code{PC + offset}, \code{mem[PC + offset]}, base-plus-offset, etc.) and again fix the flags from that result. Stores constrain \code{mem'} to a single \code{Memory.write} at the resolved address while leaving \code{reg} unchanged. \code{BR} distinguishes taken versus fall-through updates to \code{pc}; \code{JMP} and \code{JSR} relate \code{pc} (and \code{R7} for linkage) to base registers or offsets decoded from the word. \code{TRAP} states that memory is unchanged, that \code{R7} receives the current \code{pc} from the \em{handler’s} input state (which, in the full cycle, is already the post-fetch PC—see \code{execute_step}), and that the new \code{pc} is \code{Memory.read mem trap_vector} for the eight-bit trap vector field.
+}
+
+\em{Supporting lemmas}
+
+\p{
+Two small libraries isolate facts the opcode proofs rely on without cluttering every tactic block:
+\ul{
+\li{\code{LC3Correct/RegisterLemmas.lean} proves that reads and writes on general-purpose indices \code{0}–\code{7} always succeed for well-formed register files, and that reading after writing the same index yields the value just written.}
+\li{\code{LC3Correct/MemoryLemmas.lean} proves that every \code{UInt16} address is within the array bounds implied by \code{Memory.data_size}, and standard single-address read/write consistency (\code{read} after \code{write} at the same address; stability at other addresses).}
+}
+Those lemmas formalize the mundane “array model actually behaves like memory” obligations so \code{ExecutionCorrect} can focus on instruction semantics.
+}
+
+\em{Trust base and what is not covered}
+
+\p{
+Lean itself is the proof checker: if \code{lake build LC3Correct} succeeds with no \code{sorry}, every theorem in that package is accepted by the kernel from the given definitions. The mathematical meaning is only as good as those definitions—which are intentionally shared with the simulator (\code{LC3Lean} imports).
+}
+
+\p{
+What this stack does \strong{not} currently bundle into a single end-to-end theorem: a wholesale specification of \code{execute_step} or of the \code{Main} loop including \code{execute_step_io}, trap interception, \code{.obj} loading, or the POSIX terminal FFI (\code{c/terminal.c}). The verified slice is the pure per-opcode semantics in \code{Execution.lean} (plus the register/memory infrastructure lemmas). Readers who want to extend assurance—for example a theorem threading \code{fetch}/\code{decode} around \code{op_*_spec}—would build on the same files but that composition is not what the existing lemmas headline.
+}
+
+\p{
+For instruction-by-instruction intuition tied to addresses and traps, keep [the ISA companion](dhsorens-0029) open beside \code{ExecutionCorrect.lean}; the former explains where \code{Main} diverges for real I/O, while the latter states exactly what Lean has checked about the pure core.
+}

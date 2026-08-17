@@ -5,7 +5,6 @@
   I am a mathematician and computer scientist.
   % My [PhD](dhsorens-phd) was in formal specification of smart contracts in [Rocq](dhsorens-rocq), focusing on the problem of ensuring that specifications actually reflect the high-level intentions of their designers. Formal proposition and proof catch my attention in computer science, from various angles.
   I work on [Protocol Snarkification](dhsorens-0020) at the [Ethereum Foundation](dhsorens-ef), and these days I am mostly interested in [Lean](dhsorens-lean)—especially [CompPoly](dhsorens-comppoly).  
-
 }
 
 \p{
@@ -14,7 +13,7 @@
 \p{[GitHub](https://github.com/dhsorens) | [ORCID](https://orcid.org/0000-0003-4937-6984) | [LinkedIn](https://www.linkedin.com/in/dhsorens/)}
 
 
-\transclude{dhsorens-001S} % featured article
+\transclude{dhsorens-001S} % latest deep-dive
 \transclude{dhsorens-000D} % education
 \transclude{dhsorens-pubs} % publications
 \transclude{dhsorens-talks} % talks

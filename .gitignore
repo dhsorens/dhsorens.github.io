@@ -1,3 +1,9 @@
+# forester build output (published to docs/ by CI, or commit.sh locally)
+output/
+
+# local opam switch (created by CI's setup-ocaml, occasionally locally)
+_opam/
+
 # macOS system files
 .DS_Store
 .DS_Store?
@@ -6,7 +12,3 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Local opam switch (forester toolchain)
-_opam/
-_opam/
