@@ -1,5 +1,11 @@
 # Website (Forester)
 
+This site is built with [forester](https://sr.ht/~jonsterling/forester/) **5.0**. To install it (requires OCaml ≥ 5.3.0 and opam):
+
+```bash
+    opam install forester.5.0
+```
+
 To compile and view (locally)
 
 ```bash
@@ -16,9 +22,11 @@ To commit a change, run:
 ```bash
     ./commit.sh "my message here"
 ```
-This is here because forester outputs things into an `output/` directory, but we want to run it from the `docs/` directory (bc github).
-To build and contribute to this site from the repo, first clone and then change the `docs/` directory to `output/`.
+This is here because forester outputs things into an `output/` directory, but we want to serve it from the `docs/` directory (bc github). The build itself lives in `./build.sh`, which also:
+- copies `assets/` into the output under their original paths (forester 5.0 only emits content-addressed copies), so link assets with absolute paths like `/docs/paper.pdf`;
+- copies the root `CNAME` into the output;
+- writes a redirect at each old `/<addr>.xml` URL, since forester 5.0 moved each tree to `/<addr>/`.
 
-Some commands [are here](cmds.md). 
+Some commands [are here](cmds.md).
 
-Also the [10 min introduction on forester](https://www.forester-notes.org/0052/index.xml) and [some 2023 release notes](https://www.forester-notes.org/005P/index.xml).
+Also the [forester documentation](https://www.forester-notes.org/index/).

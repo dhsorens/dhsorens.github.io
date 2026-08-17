@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! forester --version 2>/dev/null | grep -q '^5\.0'; then
+    echo "error: forester 5.0 is required (install with: opam install forester.5.0)" >&2
+    exit 1
+fi
+
 DEST_DIR="${1:-logs}"
 NUM_FILES="${2:-1}"
 

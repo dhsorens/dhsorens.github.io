@@ -7,9 +7,9 @@
 
 \p{links:
     \ul{
-        \li{[speaker image](media/derek-sorensen-ethcc[9].png)}
+        \li{[speaker image](/media/derek-sorensen-ethcc[9].png)}
         \li{[link to speaker profile on the event](https://ethcc.io/speakers/derek-sorensen)}
         \li{[event link](https://ethcc.io)}
-        \li{[slides](slides/safely-snarkifying-slides-03-2026.pdf)}
+        \li{[slides](/slides/safely-snarkifying-slides-03-2026.pdf)}
     }
 }

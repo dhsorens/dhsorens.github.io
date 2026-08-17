@@ -1,3 +1,6 @@
+# forester build output (published via docs/ by commit.sh)
+output/
+
 # macOS system files
 .DS_Store
 .DS_Store?
