@@ -19,7 +19,7 @@ Run the checks below in order. Fix what's broken or outdated; report anything th
   git ls-remote --tags https://git.sr.ht/~jonsterling/ocaml-forester | awk -F/ '{print $NF}' | sort -V | tail -3
   ```
   Cross-check https://ocaml.org/p/forester/latest/versions for what's actually on opam (tags can precede opam release).
-- **If a 5.x point release exists**: upgrade the opam package, bump the version-guard greps in `build.sh`/`new.sh`/`log.sh` and the version in `README.md`, refresh the theme (section 4), rebuild, verify (section 5), publish.
+- **If a 5.x point release exists**: upgrade the opam package, bump the version-guard greps in `build.sh`/`new.sh`/`log.sh`, the `FORESTER_VERSION` pins in `.github/workflows/build-check.yml` and `publish.yml`, and the version in `README.md`; refresh the theme (section 4), rebuild, verify (section 5), publish.
 - **If 6.0 (or later) is released**: do not auto-migrate — this is a breaking architectural change. See "Forester 6.0 migration" below, present a plan, and get confirmation.
 
 ## 2. XSLT-removal deadline (the "XML doomsday")
@@ -44,7 +44,7 @@ Run `./build.sh` and confirm it exits 0 with "Success!" and no diagnostics. The 
 
 Also verify: `CNAME` exists at repo root (build copies it into output; `docs/` is regenerated wholesale on publish, so it must not be the only copy), `output/` is gitignored, and `theme/` customizations are limited to the six favicon files (see section 4).
 
-Publishing = `./commit.sh "message"` (builds, replaces `docs/` wholesale, commits). Deploy is just merging to `main` — GitHub Pages serves `docs/`.
+Publishing: CI is the single writer to `docs/` — `publish.yml` rebuilds and commits it on every push to `main`, and `build-check.yml` builds/render-checks/lints every PR. Both pin the forester version (must match `build.sh`'s guard) and both run `./build.sh`, so keep that script the single source of truth for build steps. Check that the latest `publish.yml` run on `main` is green (`gh run list --workflow=publish.yml -L 3`). `./commit.sh` (build + commit `docs/` locally) is the manual fallback if CI is broken.
 
 ## 4. Theme freshness
 

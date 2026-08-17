@@ -1,5 +1,8 @@
-# forester build output (published via docs/ by commit.sh)
+# forester build output (published to docs/ by CI, or commit.sh locally)
 output/
+
+# local opam switch (created by CI's setup-ocaml, occasionally locally)
+_opam/
 
 # macOS system files
 .DS_Store

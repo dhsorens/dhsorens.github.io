@@ -1,0 +1,88 @@
+name: Build and publish
+
+# Rebuilds the site on every push to main and commits the fresh output into
+# docs/, which is what GitHub Pages serves. Merging a content PR is therefore
+# what publishes it. CI is the single writer to docs/ — local sessions commit
+# sources only (see CLAUDE.md).
+#
+# The build itself is ./build.sh — the same script used locally.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'docs/**'        # loop guard: this job's own commit never re-triggers it
+  workflow_dispatch:
+
+concurrency:
+  group: publish-main
+  cancel-in-progress: false   # never cancel a publish mid-flight
+
+permissions:
+  contents: write
+
+env:
+  # Must match the version guard in build.sh. Bump both together.
+  FORESTER_VERSION: "5.0"
+  OCAML_VERSION: "5.3"
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0    # lets us rebase if main moved during the build
+
+      - uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: ${{ env.OCAML_VERSION }}
+
+      - name: Cache the forester switch
+        uses: actions/cache@v4
+        with:
+          path: _opam
+          key: opam-${{ runner.os }}-ocaml${{ env.OCAML_VERSION }}-forester${{ env.FORESTER_VERSION }}-v1
+
+      - name: Install forester
+        run: opam install --yes forester.${{ env.FORESTER_VERSION }}
+
+      - name: Build the forest
+        run: opam exec -- ./build.sh
+
+      # Guard rail: never let a degenerate build wipe the published site.
+      - name: Sanity-check the output
+        run: |
+          test -f output/index.html
+          test -f output/index/index.xml
+          test -f output/default.xsl
+          test -f output/CNAME
+          test -f output/.nojekyll
+          test -d output/docs
+          grep -q refresh output/dhsorens-0025.xml
+          n=$(find output -mindepth 2 -maxdepth 2 -name index.xml | wc -l)
+          echo "built $n trees"
+          [ "$n" -ge 50 ] || { echo "::error::only $n trees built, refusing to publish"; exit 1; }
+
+      - name: Replace docs/ with the fresh output
+        run: |
+          # NOT `mv output docs` on its own -- with docs/ present that nests it
+          # as docs/output/. The rm is also what makes deletions propagate.
+          rm -rf docs
+          mv output docs
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Scope the add: `git add .` would stage the whole _opam switch.
+          git add -A docs
+          if git diff --cached --quiet; then
+            echo "site unchanged; nothing to publish"
+            exit 0
+          fi
+          git commit -m "site: rebuild from ${GITHUB_SHA::7} [skip ci]"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
