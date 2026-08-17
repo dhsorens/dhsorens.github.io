@@ -1057,7 +1057,7 @@
                 <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
                 <fr:display-uri>dhsorens-001S</fr:display-uri>
                 <fr:route>/dhsorens-001S/</fr:route>
-                <fr:title text="Featured Article">Featured Article</fr:title>
+                <fr:title text="Latest Deep-Dive">Latest Deep-Dive</fr:title>
                 <fr:meta name="toc">true</fr:meta>
               </fr:frontmatter>
               <fr:mainmatter>
