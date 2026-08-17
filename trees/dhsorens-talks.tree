@@ -5,7 +5,7 @@
 \p{Some selected talks:
     
     \ul{
-        \li{[CompPoly](dhsorens-0028). [ZKProofs 8](https://zkproof.org/events/zkproof-8-rome/), May 2026, Rome, Italy.}
+        \li{[CompPoly: Computable Polynomials in Lean](dhsorens-0028). [ZKProofs 8](https://zkproof.org/events/zkproof-8-rome/), May 2026, Rome, Italy.}
         \li{[Correct and Computable Specifications in Lean](dhsorens-0023). [SViL26](https://beneficial-ai-foundation.github.io/SVIL2026/), April 2026, Paris, France.}
         \li{[Safely Snarkifying the Ethereum Protocol](dhsorens-0022). [EthCC[9]](https://ethcc.io), March 2026, Cannes, France.}
         \li{Formally Specifying Contract Optimizations With Bisimulations in Coq. [FMBC 2025](https://fmbc.gitlab.io/2025), May 2025, Hamilton, Canada.}
