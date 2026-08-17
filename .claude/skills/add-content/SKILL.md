@@ -35,7 +35,7 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
    ```
    Offer `./view.sh` if the user wants to eyeball it at `localhost:1313`.
 
-7. **Publish.** `./commit.sh "message"` on the branch (builds and regenerates `docs/` wholesale), push, `gh pr create` targeting `main`. Deploy happens when the PR merges; after merging, the live site can serve stale files for ~10 minutes (Cloudflare cache) — don't diagnose "breakage" inside that window (see `/maintain`).
+7. **Publish.** Commit **sources only** (`git add trees/ assets/` etc. — not `docs/`), push, `gh pr create` targeting `main`. CI verifies the build on the PR (`build-check.yml`) and rebuilds + commits `docs/` when the PR merges (`publish.yml`) — merging is what deploys. After merging, the live site can serve stale files for ~10 minutes (Cloudflare cache) — don't diagnose "breakage" inside that window (see `/maintain`). Only run `./commit.sh` (which commits locally-built `docs/`) if CI publishing is broken.
 
 ## Per-type wiring
 

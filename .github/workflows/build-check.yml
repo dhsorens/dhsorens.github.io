@@ -1,0 +1,85 @@
+name: Build check
+
+# Builds the forest on every PR and fails if forester can't parse it.
+# Commits nothing, so PR diffs stay source-only and reviewable.
+# The build itself is ./build.sh — the same script used locally — so CI and
+# local builds cannot drift.
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-check-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  # Must match the version guard in build.sh. Bump both together (the
+  # /maintain skill covers vetting an upgrade).
+  FORESTER_VERSION: "5.0"
+  OCAML_VERSION: "5.3"   # forester 5.0 requires OCaml >= 5.3
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: ${{ env.OCAML_VERSION }}
+
+      - name: Cache the forester switch
+        uses: actions/cache@v4
+        with:
+          path: _opam
+          key: opam-${{ runner.os }}-ocaml${{ env.OCAML_VERSION }}-forester${{ env.FORESTER_VERSION }}-v1
+
+      - name: Install forester
+        run: opam install --yes forester.${{ env.FORESTER_VERSION }}
+
+      - name: Record forester version
+        run: opam exec -- forester --version | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Build the forest
+        run: opam exec -- ./build.sh
+
+      - name: Sanity-check the output
+        run: |
+          echo "Top level of output/:"
+          ls -A output | head -40
+          echo
+          # forester 5.0 layout: directory routes + root redirect + theme at root
+          test -f output/index.html
+          test -f output/index/index.xml
+          test -f output/default.xsl
+          test -f output/forest.json
+          test -f output/CNAME
+          test -f output/.nojekyll
+          # build.sh extras: verbatim assets and a redirect stub for old URLs
+          test -d output/docs
+          grep -q refresh output/dhsorens-0025.xml
+          n=$(find output -mindepth 2 -maxdepth 2 -name index.xml | wc -l)
+          echo "built $n trees" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "$n" -ge 50 ] || { echo "::error::only $n trees built; the forest looks degenerate"; exit 1; }
+
+      - name: Render-check a few pages with xsltproc
+        run: |
+          sudo apt-get install -y --no-install-recommends xsltproc >/dev/null
+          cd output
+          for page in index dhsorens-notes dhsorens-logs; do
+            xsltproc default.xsl "$page/index.xml" > /dev/null || { echo "::error::$page fails to render"; exit 1; }
+          done
+          echo "render check passed" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Lint tree sources
+        run: |
+          # Asset links must be absolute — pages live at /<addr>/, so relative
+          # links break (see CLAUDE.md).
+          if grep -rnE '\]\((docs|img|media|slides)/' trees --include="*.tree"; then
+            echo "::error::relative asset link(s) found in trees/ — use /docs/..., /slides/..., etc."
+            exit 1
+          fi

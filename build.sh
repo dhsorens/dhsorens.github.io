@@ -19,8 +19,9 @@ forester build forest.toml
 # stable, human-readable URLs
 cp -R assets/. output/
 
-# custom domain for GitHub Pages
+# custom domain for GitHub Pages; .nojekyll skips the pointless Jekyll pass
 cp CNAME output/
+touch output/.nojekyll
 
 # forester 5.0 moved each tree from /<addr>.xml to /<addr>/; write an XHTML
 # redirect at each old .xml path so existing links keep working
