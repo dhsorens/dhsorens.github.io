@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2024</fr:year>
+      <fr:month>5</fr:month>
+      <fr:day>30</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-0024/</fr:uri>
+    <fr:display-uri>dhsorens-0024</fr:display-uri>
+    <fr:route>/dhsorens-0024/</fr:route>
+    <fr:title text="(In)Correct Smart Contract Specifications">(In)Correct Smart Contract Specifications</fr:title>
+    <fr:taxon>Talk</fr:taxon>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:link href="/media/derek-icbc-incorrect-1.jpg" type="external">image 1</fr:link>
+    <fr:link href="/media/derek-icbc-incorrect-2.jpg" type="external">image 2</fr:link>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:uri>https://derekhsorensen.com/dhsorens-talks/</fr:uri>
+            <fr:display-uri>dhsorens-talks</fr:display-uri>
+            <fr:route>/dhsorens-talks/</fr:route>
+            <fr:title text="Talks">Talks</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>Some selected talks:
+    
+    <html:ul><html:li><fr:link href="/dhsorens-0028/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0028/" display-uri="dhsorens-0028" type="local">CompPoly: Computable Polynomials in Lean</fr:link>. <fr:link href="https://zkproof.org/events/zkproof-8-rome/" type="external">ZKProofs 8</fr:link>, May 2026, Rome, Italy.</html:li>
+        <html:li><fr:link href="/dhsorens-0023/" title="Correct and Computable Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-0023/" display-uri="dhsorens-0023" type="local">Correct and Computable Specifications in Lean</fr:link>. <fr:link href="https://beneficial-ai-foundation.github.io/SVIL2026/" type="external">SViL26</fr:link>, April 2026, Paris, France.</html:li>
+        <html:li><fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link>. <fr:link href="https://ethcc.io/" type="external">EthCC[9]</fr:link>, March 2026, Cannes, France.</html:li>
+        <html:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. <fr:link href="https://fmbc.gitlab.io/2025" type="external">FMBC 2025</fr:link>, May 2025, Hamilton, Canada.</html:li>
+        <html:li><fr:link href="/dhsorens-0024/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-0024/" display-uri="dhsorens-0024" type="local">(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:link></html:li>
+        <html:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. <fr:link href="https://fmbc.gitlab.io/2024" type="external">FMBC 2024</fr:link>, April 2024, Luxembourg.</html:li>
+        <html:li><fr:link href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/" type="external">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></html:li>
+        <html:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</html:li>
+        <html:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</html:li>
+        <html:li><fr:link href="https://www.youtube.com/watch?v=NZ2ETPurRFU" type="external">K framework and type theory. RCon, May 2019, Berlin.</fr:link></html:li></html:ul></html:p>
+            <html:p>
+    I also keep some of <fr:link href="/dhsorens-slides/" title="Slides" uri="https://derekhsorensen.com/dhsorens-slides/" display-uri="dhsorens-slides" type="local">my slides here</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

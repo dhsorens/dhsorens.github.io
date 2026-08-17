@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>9</fr:month>
+      <fr:day>5</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-001I/</fr:uri>
+    <fr:display-uri>dhsorens-001I</fr:display-uri>
+    <fr:route>/dhsorens-001I/</fr:route>
+    <fr:title text="Compactness: Definition and Theory">Compactness: Definition and Theory</fr:title>
+    <fr:meta name="toc">true</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    The history of compactness as a definition is extremely interesting. See for example the <fr:link href="https://arxiv.org/pdf/1006.4131" type="external">following paper</fr:link>.
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>5</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-001G/</fr:uri>
+            <fr:display-uri>dhsorens-001G</fr:display-uri>
+            <fr:route>/dhsorens-001G/</fr:route>
+            <fr:title text="The Mathematician's Approach to Proposition and Proof">The Mathematician's Approach to Proposition and Proof</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Professional mathematicians spend their time proving theorems.
+    Many people imagine professional mathematicians as doing enormous calculations, using esoteric symbols, on a chalkboard to derive equations.
+    However, the reality for many (if not most) professional mathematicians is that day to day work consists of proving theorems.
+    A proof of a theorem, fundamentally, is an <html:em>argument</html:em>, written in prose, that justifies the truth or falsehood of a proposition by logical means.
+    </html:p>
+            <html:p>
+    A lot of work, skill, and creativity goes into finding a proof for a theorem.
+    Conjectures can go unsolved for hundreds of years, requiring huge feats of intelligence to solve.
+    However, this is not the full story.
+    Most people overlook, and are surprised by, the fact that articulating the <html:em>correct</html:em> theorem statement, or conjecture, that one sets as a goal to prove is just as difficult, if not more, than finding a proof of that theorem.
+    In my (limited) experience, it is much harder.
+</html:p>
+            <html:p>
+    A mathematician will start with an intuitive idea, for which there may not yet be appropriate or adequate technical language or symbols to describe it.
+    He will go through a cycle of experimenting with a definition, or a conjecture, that attempts to capture the idea he's after.
+    He will then test out the <html:em>consequences</html:em> of this definition or conjecture by either proving theorems with it, trying to prove the theorem itself, or looking at its consequences in the mathematical theory more broadly.
+</html:p>
+            <html:p>
+    This will kick off a process which is broadly intuitive, informed by feedback with the relevant mathematical theory, of aiming at a definition or conjecture, testing its fit, and adjusting it.
+    It can take the mathematical community as a whole several iterations to actually get the process right.
+    As a particularly interesting example, consider the history of the definition of <fr:link href="/dhsorens-001I/" title="Compactness: Definition and Theory" uri="https://derekhsorensen.com/dhsorens-001I/" display-uri="dhsorens-001I" type="local"><html:em>compactness</html:em></fr:link> in mathematics.
+</html:p>
+            <html:p>
+    Most fundamentally, a mathematician's job is to bring in novel and useful abstract concepts, capture them in their appropriate definitions or conjectures, and place them appropriately in the corpus of mathematical theory.
+    Philosophers do this, often by inventing new technical terminology;
+    scientists do this by defining new methods and measurements;
+    artists do this but instead of technical terms and symbols, they use an artistic medium.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

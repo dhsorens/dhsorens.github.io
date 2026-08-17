@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:uri>https://derekhsorensen.com/dhsorens-logs/</fr:uri>
+    <fr:display-uri>dhsorens-logs</fr:display-uri>
+    <fr:route>/dhsorens-logs/</fr:route>
+    <fr:title text="Logs">Logs</fr:title>
+    <fr:meta name="toc">true</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2026</fr:year>
+          <fr:month>5</fr:month>
+          <fr:day>10</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-002B/</fr:uri>
+        <fr:display-uri>dhsorens-002B</fr:display-uri>
+        <fr:route>/dhsorens-002B/</fr:route>
+        <fr:title text="Q2 2026">Q2 2026</fr:title>
+        <fr:taxon>Log</fr:taxon>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    We have spent the last few months travelling. I'm writing this in May 2026 from Rome.
+    The most recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract Plonky3 from Rust into Lean and formally prove things!
+</html:p>
+        <html:p>
+    In my talk today at zkproofs8, I showed a minimal example of formally verifying Koalabear in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib, and now with the tooling where it's at it looks like it's time to start to marry them and actually formally verifying real code in Lean!
+</html:p>
+        <html:p>
+    Once I'm back from Rome, I will basically be full-time on this problem. This is good for me because I have so far avoided learning <html:em>too much</html:em> about cryptography, and now that I'll be staring at the implementations in Rust as well as the formal specs, it will be hard to avoid actually understanding things. I'm hoping that this process will stimulate Arklib into grater maturity, starting with CompPoly;
+    I'm also hoping that the tooling will get a lot better (with my help) through this project. This will be the main thing this summer, hoping that by the end of the summer we have serious formal proofs of Plonky3!
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:date>
+          <fr:year>2026</fr:year>
+          <fr:month>3</fr:month>
+          <fr:day>24</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-0026/</fr:uri>
+        <fr:display-uri>dhsorens-0026</fr:display-uri>
+        <fr:route>/dhsorens-0026/</fr:route>
+        <fr:title text="Q1 2026">Q1 2026</fr:title>
+        <fr:taxon>Log</fr:taxon>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    This has been a productive quarter. In early January we gave grants to Runtime Verification to test Hax for extracting code into Lean. They were successful in improving the tool, landing pull requests, and developing some good examples of (toy versions of) Rust programs of interest. Collaborating with them on this helped us see shortcomings in the Arklib specs and get a more realistic idea of what Rust verification could look like for us. Happily, our CompPoly specs did come in useful and they were able to verify some small Rust snippets against them.
+</html:p>
+        <html:p>
+    We settled on a roadmap for CompPoly in January, and while I and collaborators took CompPoly Phase 1 to the finish line, we put out a call for grants for Phase 2 of CompPoly. We got a lot of grant applications, and have just sent emails awarding grants for *all* of Phase 2. That should be done by the summer.
+</html:p>
+        <html:p>
+    We attended HACS and RWC26 in Taipei in early March, which was extremely productive. I learned a lot about Hax and Aeneas, verified compilers, and cryptography in general. Got strong insights for the upcoming work, and had a chance to evangelize our work on CompPoly. Bolton Bailey and I had a great conversation about the (many many) applications of computable polynomials in Lean. I hope that we can upstream CompPoly to CSLib and have many people using and maintaining it.
+</html:p>
+        <html:p>
+    Accomplishments:
+    <html:ul><html:li>CompPoly roadmap established and merged <fr:link href="https://github.com/Verified-zkEVM/CompPoly/pull/16" type="external">in this pull request</fr:link></html:li>
+        <html:li>Contributed a lot to CompPoly, established style guides and standards for contribution, integrated into CI, and built out a lot more theory with the help of collaborators, old and new.</html:li>
+        <html:li>CompPoly Phase 1 of the Roadmap completed - see the <fr:link href="https://leanprover.zulipchat.com/narrow/channel/523410-ArkLib/topic/CompPoly.20Phase.201.20Status/with/578352136" type="external">Zulip announcement</fr:link></html:li>
+        <html:li>We have some basic examples of extraction from Rust to Lean (thank you RV) that we can hopefully build on.</html:li></html:ul>
+
+    Events:
+    <html:ul><html:li>Giving two talks at EthCC[9], one (maybe two?) with Alex Hicks and one on my own.</html:li>
+        <html:li>Invited to give a talk at SViL26 with Leo de Moura, Son Ho, and Karthikeyan Bhargavan in April.</html:li></html:ul>
+
+    Next: I am responsible to see CompPoly make it through Phase 2 by the summer, though I will likely not be doing as much coding on it. Instead, I'll take a coordinating role and make sure the codebase fits together well and that the incoming code is high quality. We will likely have 8-10 contributors for Phase 2, which is exciting! This will be serious progress. We continue to integrate AI into our pipelines, successfully. I am currently looking for another chunk of technical work to do while I manage the CompPoly stuff, possibly contributing to <fr:link href="https://github.com/zksecurity/evm-asm" type="external">evm-asm</fr:link>.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>12</fr:month>
+          <fr:day>18</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-0021/</fr:uri>
+        <fr:display-uri>dhsorens-0021</fr:display-uri>
+        <fr:route>/dhsorens-0021/</fr:route>
+        <fr:title text="November/December 2025">November/December 2025</fr:title>
+        <fr:taxon>Log</fr:taxon>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    I joined the <fr:link href="/dhsorens-ef/" title="Ethereum Foundation" uri="https://derekhsorensen.com/dhsorens-ef/" display-uri="dhsorens-ef" type="local">EF</fr:link> in November 2025 with a week at Devconnect.
+    My first projects will focus on stress-testing formal verification tools, including <fr:link href="http://hax.cryspen.com/" type="external">Hax</fr:link> and <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> to start.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>11</fr:month>
+              <fr:day>22</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-001E/</fr:uri>
+            <fr:display-uri>dhsorens-001E</fr:display-uri>
+            <fr:route>/dhsorens-001E/</fr:route>
+            <fr:title text="Ethereum Foundation (2025 - Present)">Ethereum Foundation (2025 - Present)</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    As of November 2025 I joined the Ethereum Foundation, working on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link>. This mostly consists of formally specifying and verifying ZK primitives in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+            <html:p><html:em>Last updated January 2026</html:em>. For more updates, see <fr:link href="/dhsorens-logs/" title="Logs" uri="https://derekhsorensen.com/dhsorens-logs/" display-uri="dhsorens-logs" type="local">my logs</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:uri>https://derekhsorensen.com/index/</fr:uri>
+            <fr:display-uri>index</fr:display-uri>
+            <fr:route>/index/</fr:route>
+            <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+  I am a mathematician and computer scientist.
+  I work on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link> at the <fr:link href="/dhsorens-ef/" title="Ethereum Foundation" uri="https://derekhsorensen.com/dhsorens-ef/" display-uri="dhsorens-ef" type="local">Ethereum Foundation</fr:link>, and these days I am mostly interested in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.  
+</html:p>
+            <html:p>
+  Here you can see my <fr:link href="/dhsorens-rsrch/" title="Research" uri="https://derekhsorensen.com/dhsorens-rsrch/" display-uri="dhsorens-rsrch" type="local">research</fr:link>, <fr:link href="/dhsorens-notes/" title="Notes" uri="https://derekhsorensen.com/dhsorens-notes/" display-uri="dhsorens-notes" type="local">notes</fr:link>, <fr:link href="/dhsorens-logs/" title="Logs" uri="https://derekhsorensen.com/dhsorens-logs/" display-uri="dhsorens-logs" type="local">logs</fr:link>, <fr:link href="/dhsorens-001C/" title="Work Bio" uri="https://derekhsorensen.com/dhsorens-001C/" display-uri="dhsorens-001C" type="local">work history</fr:link>, and <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">bio</fr:link>.</html:p>
+            <html:p><fr:link href="https://github.com/dhsorens" type="external">GitHub</fr:link> | <fr:link href="https://orcid.org/0000-0003-4937-6984" type="external">ORCID</fr:link> | <fr:link href="https://www.linkedin.com/in/dhsorens/" type="external">LinkedIn</fr:link></html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>10</fr:month>
+                  <fr:day>9</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
+                <fr:display-uri>dhsorens-001S</fr:display-uri>
+                <fr:route>/dhsorens-001S/</fr:route>
+                <fr:title text="Featured Article">Featured Article</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    See my latest on <fr:link href="/dhsorens-0027/" title="LC3 in Lean" uri="https://derekhsorensen.com/dhsorens-0027/" display-uri="dhsorens-0027" type="local">building a formally verified LC3 virtual machine in Lean</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000D/</fr:uri>
+                <fr:display-uri>dhsorens-000D</fr:display-uri>
+                <fr:route>/dhsorens-000D/</fr:route>
+                <fr:title text="Education">Education</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-msc/" title="MSc in Algebraic Topology" uri="https://derekhsorensen.com/dhsorens-msc/" display-uri="dhsorens-msc" type="local">MSc</fr:link> in Mathematics and Foundations of Computer Science (MFoCS) at the <fr:link href="/dhsorens-oxf/" title="University of Oxford" uri="https://derekhsorensen.com/dhsorens-oxf/" display-uri="dhsorens-oxf" type="local">University of Oxford</fr:link>. <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> in formal methods at the <fr:link href="/dhsorens-cam/" title="University of Cambridge" uri="https://derekhsorensen.com/dhsorens-cam/" display-uri="dhsorens-cam" type="local">University of Cambridge</fr:link> under <fr:link href="/avsm/" title="Anil Madhavapeddy" uri="https://derekhsorensen.com/avsm/" display-uri="avsm" type="local">Anil Madhavapeddy</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:uri>https://derekhsorensen.com/dhsorens-pubs/</fr:uri>
+                <fr:display-uri>dhsorens-pubs</fr:display-uri>
+                <fr:route>/dhsorens-pubs/</fr:route>
+                <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:ol><html:li>Sorensen, D. <html:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</html:em>. FMBC (ETAPS) (2025). [<fr:link href="/dhsorens-000J/" title="Formally Specifying Contract Optimizations With Bisimulations in Coq" uri="https://derekhsorensen.com/dhsorens-000J/" display-uri="dhsorens-000J" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</html:em>. FMBC (ETAPS) (2024). [<fr:link href="/dhsorens-000K/" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq" uri="https://derekhsorensen.com/dhsorens-000K/" display-uri="dhsorens-000K" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>(In)Correct Smart Contract Specifications</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <html:em>Global, robust and comparable digital carbon assets</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000M/" title="Global, robust and comparable digital carbon assets" uri="https://derekhsorensen.com/dhsorens-000M/" display-uri="dhsorens-000M" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Tokenized Carbon Credits</html:em>. Ledger (2023). [<fr:link href="/dhsorens-000N/" title="Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000N/" display-uri="dhsorens-000N" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Structured Pools for Tokenized Carbon Credits</html:em>. ICBC CryptoEx (2023). [<fr:link href="/dhsorens-000O/" title="Structured Pools for Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000O/" display-uri="dhsorens-000O" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Butt, K., Sorensen, D. <html:em>Streamlining Classical Consensus</html:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link href="/dhsorens-000P/" title="Streamlining Classical Consensus" uri="https://derekhsorensen.com/dhsorens-000P/" display-uri="dhsorens-000P" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Establishing Standards for Consensus on Blockchains</html:em>. ICBC (2019). [<fr:link href="/dhsorens-000Q/" title="Establishing Standards for Consensus on Blockchains" uri="https://derekhsorensen.com/dhsorens-000Q/" display-uri="dhsorens-000Q" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <html:em>Extensions and applications of equitable decompositions for graphs with symmetries</html:em>. Linear Algebra and its Applications 532 (2017). [<fr:link href="/dhsorens-000R/" title="Extensions and applications of equitable decompositions for graphs with symmetries" uri="https://derekhsorensen.com/dhsorens-000R/" display-uri="dhsorens-000R" type="local">link</fr:link>]</html:li></html:ol>
+                <html:p>
+    I also keep some <fr:link href="/dhsorens-preprints/" title="Preprints" uri="https://derekhsorensen.com/dhsorens-preprints/" display-uri="dhsorens-preprints" type="local">preprints</fr:link> on record.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:uri>https://derekhsorensen.com/dhsorens-talks/</fr:uri>
+                <fr:display-uri>dhsorens-talks</fr:display-uri>
+                <fr:route>/dhsorens-talks/</fr:route>
+                <fr:title text="Talks">Talks</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>Some selected talks:
+    
+    <html:ul><html:li><fr:link href="/dhsorens-0028/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0028/" display-uri="dhsorens-0028" type="local">CompPoly: Computable Polynomials in Lean</fr:link>. <fr:link href="https://zkproof.org/events/zkproof-8-rome/" type="external">ZKProofs 8</fr:link>, May 2026, Rome, Italy.</html:li>
+        <html:li><fr:link href="/dhsorens-0023/" title="Correct and Computable Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-0023/" display-uri="dhsorens-0023" type="local">Correct and Computable Specifications in Lean</fr:link>. <fr:link href="https://beneficial-ai-foundation.github.io/SVIL2026/" type="external">SViL26</fr:link>, April 2026, Paris, France.</html:li>
+        <html:li><fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link>. <fr:link href="https://ethcc.io/" type="external">EthCC[9]</fr:link>, March 2026, Cannes, France.</html:li>
+        <html:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. <fr:link href="https://fmbc.gitlab.io/2025" type="external">FMBC 2025</fr:link>, May 2025, Hamilton, Canada.</html:li>
+        <html:li><fr:link href="/dhsorens-0024/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-0024/" display-uri="dhsorens-0024" type="local">(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:link></html:li>
+        <html:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. <fr:link href="https://fmbc.gitlab.io/2024" type="external">FMBC 2024</fr:link>, April 2024, Luxembourg.</html:li>
+        <html:li><fr:link href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/" type="external">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></html:li>
+        <html:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</html:li>
+        <html:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</html:li>
+        <html:li><fr:link href="https://www.youtube.com/watch?v=NZ2ETPurRFU" type="external">K framework and type theory. RCon, May 2019, Berlin.</fr:link></html:li></html:ul></html:p>
+                <html:p>
+    I also keep some of <fr:link href="/dhsorens-slides/" title="Slides" uri="https://derekhsorensen.com/dhsorens-slides/" display-uri="dhsorens-slides" type="local">my slides here</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000E/</fr:uri>
+                <fr:display-uri>dhsorens-000E</fr:display-uri>
+                <fr:route>/dhsorens-000E/</fr:route>
+                <fr:title text="Work History">Work History</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    See my <fr:link href="/docs/sorensen-cv.pdf" type="external">CV</fr:link> or a <fr:link href="/dhsorens-001C/" title="Work Bio" uri="https://derekhsorensen.com/dhsorens-001C/" display-uri="dhsorens-001C" type="local">work bio</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

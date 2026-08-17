@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>9</fr:month>
+      <fr:day>3</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-001A/</fr:uri>
+    <fr:display-uri>dhsorens-001A</fr:display-uri>
+    <fr:route>/dhsorens-001A/</fr:route>
+    <fr:title text="During the PhD (2019-2023)">During the PhD (2019-2023)</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    During my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link>, I took several part-time jobs with various crypto startups.
+    My work ranged from research and formal verification, to DeFi protocol modeling and design, to zero-knowledge proofs, to business development.
+    Each of my jobs during the PhD informed my research and helped to broaden and sharpen my thinking.
+    I took the last year of my PhD to focus fully on writing up and submitting.
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>3</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0018/</fr:uri>
+            <fr:display-uri>dhsorens-0018</fr:display-uri>
+            <fr:route>/dhsorens-0018/</fr:route>
+            <fr:title text="Summary of Work and Projects">Summary of Work and Projects</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Since early 2018 I have held various roles in crypto, working mostly in research and <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link>.
+    My original interests in crypto were in consensus algorithms and formal verification frameworks for verifying smart contracts. When I started, those frameworks and tools were in their infancy, <fr:link href="/dhsorens-001D/" title="The K Framework" uri="https://derekhsorensen.com/dhsorens-001D/" display-uri="dhsorens-001D" type="local">K Framework</fr:link> being the only tool at the time to my knowledge that was production-ready for actual smart contracts.
+
+    Over time, I became interested in the financial applications of <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contracts</fr:link> and I did my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> in verification strategies for financial <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">smart contracts</fr:link>.
+
+    Along the way, I became deeply interested in type theory and <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>, and these days am interested broadly in theorem-proving, <fr:link href="/dhsorens-notes/" title="Notes" uri="https://derekhsorensen.com/dhsorens-notes/" display-uri="dhsorens-notes" type="local">whether applied to software or formalized maths</fr:link>.
+
+    In my day-to-day, I still do a lot of work in the design, construction, and formal verification of smart contracts.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>3</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0019/</fr:uri>
+                <fr:display-uri>dhsorens-0019</fr:display-uri>
+                <fr:route>/dhsorens-0019/</fr:route>
+                <fr:title text="Pre-PhD (2017-2019)">Pre-PhD (2017-2019)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    I started working in crypto during the two years between my <fr:link href="/dhsorens-msc/" title="MSc in Algebraic Topology" uri="https://derekhsorensen.com/dhsorens-msc/" display-uri="dhsorens-msc" type="local">MSc</fr:link> and my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link>.
+    My first job was at a small, Utah-based crypto startup called Pyrofex, which was mostly providing consulting services to the <fr:link href="https://github.com/dhsorens/rchain" type="external">RChain co-op</fr:link> at the time.
+    I was tasked with <fr:link href="https://github.com/dhsorens/rholang" type="external">building the formal semantics for rholang</fr:link>, the smart contracting language on RChain, in <fr:link href="/dhsorens-001D/" title="The K Framework" uri="https://derekhsorensen.com/dhsorens-001D/" display-uri="dhsorens-001D" type="local">K Framework</fr:link> in order to formally verify rholang contracts down the line.
+</html:p>
+                <html:p>
+    RChain, famously, encountered sudden and urgent financial problems because of a questionable set of decisions from the co-op's president, Greg Meredith, which necessitated a split between RChain and Pyrofex.
+    We then pivoted to consensus-level research, designed our own layer-one blockchain and <fr:link href="/docs/Casanova.pdf" type="external">consensus protocol</fr:link>.
+</html:p>
+                <html:p>
+    Sadly, we ran out of money, and I had to look for a new job for the few months before my PhD started.
+    I took a short internship with Digital Asset, working in Zurich and New York, and <fr:link href="/docs/cantoncoin.pdf" type="external">implementing an experimental currency</fr:link> on their blockchain-esque project Canton.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>3</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001A/</fr:uri>
+                <fr:display-uri>dhsorens-001A</fr:display-uri>
+                <fr:route>/dhsorens-001A/</fr:route>
+                <fr:title text="During the PhD (2019-2023)">During the PhD (2019-2023)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    During my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link>, I took several part-time jobs with various crypto startups.
+    My work ranged from research and formal verification, to DeFi protocol modeling and design, to zero-knowledge proofs, to business development.
+    Each of my jobs during the PhD informed my research and helped to broaden and sharpen my thinking.
+    I took the last year of my PhD to focus fully on writing up and submitting.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>3</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001B/</fr:uri>
+                <fr:display-uri>dhsorens-001B</fr:display-uri>
+                <fr:route>/dhsorens-001B/</fr:route>
+                <fr:title text="Post PhD (2024 - 2025)">Post PhD (2024 - 2025)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Since my PhD has ended, I went through a process of unifying my various interests in people, proofs, smart contracts, digital money, and zero-knowledge proofs.
+    I took a job with <fr:link href="/dhsorens-001Z/" title="Certora" uri="https://derekhsorensen.com/dhsorens-001Z/" display-uri="dhsorens-001Z" type="local">Certora</fr:link> straight out of my PhD, doing a mix of formally verifying smart contracts and project managmenet/business development/product development/client support.
+    Ultimately, it became clear that <fr:link href="/dhsorens-001Z/" title="Certora" uri="https://derekhsorensen.com/dhsorens-001Z/" display-uri="dhsorens-001Z" type="local">Certora</fr:link> was not the place that I was going to do my best work, so early 2025 we parted ways.
+</html:p>
+                <html:p>
+    I then took some temporary contract work over the summer of 2025 building, designing, and verifying DeFi protocols (my specific area of expertise) while I looked for something that I can truly sink my teeth into and that would define the next period of my career.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>11</fr:month>
+                  <fr:day>22</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001E/</fr:uri>
+                <fr:display-uri>dhsorens-001E</fr:display-uri>
+                <fr:route>/dhsorens-001E/</fr:route>
+                <fr:title text="Ethereum Foundation (2025 - Present)">Ethereum Foundation (2025 - Present)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    As of November 2025 I joined the Ethereum Foundation, working on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link>. This mostly consists of formally specifying and verifying ZK primitives in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+                <html:p><html:em>Last updated January 2026</html:em>. For more updates, see <fr:link href="/dhsorens-logs/" title="Logs" uri="https://derekhsorensen.com/dhsorens-logs/" display-uri="dhsorens-logs" type="local">my logs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>13</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-phd/</fr:uri>
+            <fr:display-uri>dhsorens-phd</fr:display-uri>
+            <fr:route>/dhsorens-phd/</fr:route>
+            <fr:title text="PhD in Formal Methods">PhD in Formal Methods</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000C/</fr:uri>
+                <fr:display-uri>dhsorens-000C</fr:display-uri>
+                <fr:route>/dhsorens-000C/</fr:route>
+                <fr:title text="Links and Referencing my PhD Thesis">Links and Referencing my PhD Thesis</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Here is my <fr:link href="/docs/sorensen-phd-thesis.pdf" type="external">PhD thesis</fr:link> and the associated <fr:link href="https://github.com/dhsorens/FinCert" type="external">GitHub repo</fr:link>. More information (including citation instructions) can be found using its DOI: <fr:link href="https://doi.org/10.17863/cam.118487" type="external">10.17863/CAM.118487</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0009/</fr:uri>
+                <fr:display-uri>dhsorens-0009</fr:display-uri>
+                <fr:route>/dhsorens-0009/</fr:route>
+                <fr:title text="The Background to my PhD Thesis">The Background to my PhD Thesis</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    From October 2019 until December 2023, I was a PhD student at the <fr:link href="/dhsorens-cam/" title="University of Cambridge" uri="https://derekhsorensen.com/dhsorens-cam/" display-uri="dhsorens-cam" type="local">University of Cambridge</fr:link>. I started my PhD trying to look at the Adam's Spectral Sequence in <fr:link href="/dhsorens-hott/" title="Homotopy Type Theory (HoTT)" uri="https://derekhsorensen.com/dhsorens-hott/" display-uri="dhsorens-hott" type="local">HoTT</fr:link> (ambitious, by what I'm given to understand), but life and covid lockdowns happened. I ended up pivoting into interactive theorem proving, thinking about financial smart contracts and their specifications.
+</html:p>
+                <html:p>
+    The main question that haunted me during my PhD was this: We can prove software correct with regards to a specification, but how does one know that a <html:em>specification</html:em> is correct? What could a notion of "correctness" even look like for software specifications?
+</html:p>
+                <html:p>
+    What followed was a prolonged meditation on the nature of the process of going from ideas and intuition into concrete implementation. My research was mostly an exploration on the formal tools used to write formal specifications. I was particularly fascinated by the use of interactive theorem provers (ITPs)—<fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link>, <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, <fr:link href="/dhsorens-0006/" title="Isabelle/HOL" uri="https://derekhsorensen.com/dhsorens-0006/" display-uri="dhsorens-0006" type="local">Isabelle/HOL</fr:link> and the like—to specify smart contracts because of their extreme flexibility and versatility. You can state and prove <html:em>anything</html:em> in these, which can be thrilling but also provides a huge amount of flexibility.
+</html:p>
+                <html:p>
+    At the same time, the formalization of mathematics (in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>) was <fr:link href="/dhsorens-0017/" title="How the Formalization of Mathematics Relates to My Work" uri="https://derekhsorensen.com/dhsorens-0017/" display-uri="dhsorens-0017" type="local">beginning to catch my attention</fr:link>. The computer lab at the time had a weekly seminar on the formalization of mathematics, which I could attend when it didn't conflict with my commitments with <fr:link href="/dhsorens-cccc/" title="Choir of Clare College" uri="https://derekhsorensen.com/dhsorens-cccc/" display-uri="dhsorens-cccc" type="local">Clare choir</fr:link>. While I knew I was not interested in actually doing the formalization myself, I was unquestionably drawn into the research of those that were—in particular, the observations they made about the intricacies of going from pen-and-paper proofs to formal proofs.
+</html:p>
+                <html:p>
+    Mathematicians were finding small, nuanced, and implicit assumptions made and expressed intuitively through notation and definitions that all mathematicians seemed to understand and get, but that had to be both discovered and made explicit during the process of formalization. I really started to learn the role of intuition that a mathematician undergoes when they codify a new mathematical concept into a formal definition—both in the realm of pen-and-paper mathematics as well as in the realm of formal proof.
+</html:p>
+                <html:p>
+    It was during this time that I started to experiment with formal definitions and structures that are common to mathematics, and highly useful for mathematical definitions, for the specification and verification of smart contracts. The structures and definitions I chose, mostly from very basic <fr:link href="/dhsorens-0007/" title="Category Theory" uri="https://derekhsorensen.com/dhsorens-0007/" display-uri="dhsorens-0007" type="local">category theory</fr:link>, play a heavy role in modern theories of computation and programming languages but do not feature in specifications themselves (<html:em>e.g.</html:em> from a behavioral perspective).
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000A/</fr:uri>
+                <fr:display-uri>dhsorens-000A</fr:display-uri>
+                <fr:route>/dhsorens-000A/</fr:route>
+                <fr:title text="The Main Contributions of my PhD Thesis">The Main Contributions of my PhD Thesis</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    My <fr:link href="/docs/sorensen-phd-thesis.pdf" type="external">PhD thesis</fr:link> proposes two different ways of handling the problem of a specification's <html:em>correctness</html:em>.
+    Both draw heavily on the theoretically robust nature of <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>.
+</html:p>
+                <html:p>
+    The first is through what I would informally call the "meta work," where the specification itself is treated like a mathematical object to study and prove correctness, like the software we're trying to prove correct. This uses prose and specification to articulate desired behaviors of a smart contract that are already easy to define, <html:em>e.g.</html:em> desirable economic or game-theoretic properties.
+</html:p>
+                <html:p>
+    The second is through the use of abstract tools that approximate the desired behavior.
+    My first motivating example is that of a smart contract upgrade.
+    When upgrading any software, intuitively we understand an updated version as incrementally different from a previous version—we're adding feature X, Y, and Z, fixing bugs, removing outdated functionality. 
+    All of this frames conversation and understanding of the new software in terms of the old.
+    Why not then apply that to the formal specification?
+</html:p>
+                <html:p>
+    I introduced the notion of a <html:em>contract morphism</html:em>, or a formal structural relationship between two contracts that could be used in specification. The term "morphism" is <fr:link href="/dhsorens-0007/" title="Category Theory" uri="https://derekhsorensen.com/dhsorens-0007/" display-uri="dhsorens-0007" type="local">category-theoretic</fr:link>, and is a general mathematical way of establishing a relationship between two objects.
+    Once this formal relationship is established, proofs of one contract can be transported over that relationship to another contract.
+    If the morphism is <html:em>invertible</html:em>, then the formal relationship establishes an equivalence of contracts, which could be useful <html:em>e.g.</html:em> for proving optimized code correct with regards to a reference implementation.
+    The morphism allows one to use a <html:em>contract</html:em> as a specification, something which can be far more intuitive than using prose.
+</html:p>
+                <html:p>
+    All of this is encapsulated fairly well in <fr:link href="/slides/spec-correct.pdf" type="external">the slides of this talk</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0008/</fr:uri>
+                <fr:display-uri>dhsorens-0008</fr:display-uri>
+                <fr:route>/dhsorens-0008/</fr:route>
+                <fr:title text="The Papers of My PhD Thesis">The Papers of My PhD Thesis</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+                  <html:ul><html:li>Sorensen, D. <html:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</html:em>. FMBC (ETAPS) (2025). [<fr:link href="/dhsorens-000J/" title="Formally Specifying Contract Optimizations With Bisimulations in Coq" uri="https://derekhsorensen.com/dhsorens-000J/" display-uri="dhsorens-000J" type="local">link</fr:link>]</html:li>
+
+        
+    <html:li>Sorensen, D. <html:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</html:em>. FMBC (ETAPS) (2024). [<fr:link href="/dhsorens-000K/" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq" uri="https://derekhsorensen.com/dhsorens-000K/" display-uri="dhsorens-000K" type="local">link</fr:link>]</html:li>
+
+        
+    <html:li>Sorensen, D. <html:em>(In)Correct Smart Contract Specifications</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">link</fr:link>]</html:li>
+
+        
+    <html:li>Sorensen, D. <html:em>Tokenized Carbon Credits</html:em>. Ledger (2023). [<fr:link href="/dhsorens-000N/" title="Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000N/" display-uri="dhsorens-000N" type="local">link</fr:link>]</html:li>
+
+        
+    <html:li>Sorensen, D. <html:em>Structured Pools for Tokenized Carbon Credits</html:em>. ICBC CryptoEx (2023). [<fr:link href="/dhsorens-000O/" title="Structured Pools for Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000O/" display-uri="dhsorens-000O" type="local">link</fr:link>]</html:li></html:ul>
+                </html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

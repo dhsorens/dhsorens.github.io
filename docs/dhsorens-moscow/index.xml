@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:contributor>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:contributor>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2025</fr:year>
+      <fr:month>6</fr:month>
+      <fr:day>14</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-moscow/</fr:uri>
+    <fr:display-uri>dhsorens-moscow</fr:display-uri>
+    <fr:route>/dhsorens-moscow/</fr:route>
+    <fr:title text="Moscow">Moscow</fr:title>
+    <fr:taxon>Place</fr:taxon>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>6</fr:month>
+          <fr:day>14</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-000F/</fr:uri>
+        <fr:display-uri>dhsorens-000F</fr:display-uri>
+        <fr:route>/dhsorens-000F/</fr:route>
+        <fr:title text="Independent University of Moscow">Independent University of Moscow</fr:title>
+        <fr:taxon>Institution</fr:taxon>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>6</fr:month>
+          <fr:day>14</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-000G/</fr:uri>
+        <fr:display-uri>dhsorens-000G</fr:display-uri>
+        <fr:route>/dhsorens-000G/</fr:route>
+        <fr:title text="Higher School of Economics">Higher School of Economics</fr:title>
+        <fr:taxon>Institution</fr:taxon>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>15</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000I/</fr:uri>
+            <fr:display-uri>dhsorens-000I</fr:display-uri>
+            <fr:route>/dhsorens-000I/</fr:route>
+            <fr:title text="Year in Moscow">Year in Moscow</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    I spent my final year as an undergraduate in <fr:link href="/dhsorens-moscow/" title="Moscow" uri="https://derekhsorensen.com/dhsorens-moscow/" display-uri="dhsorens-moscow" type="local">Moscow</fr:link>, studying mathematics at the <fr:link href="/dhsorens-000F/" title="Independent University of Moscow" uri="https://derekhsorensen.com/dhsorens-000F/" display-uri="dhsorens-000F" type="local">Independent University of Moscow</fr:link> and the <fr:link href="/dhsorens-000G/" title="Higher School of Economics" uri="https://derekhsorensen.com/dhsorens-000G/" display-uri="dhsorens-000G" type="local">Higher School of Economics</fr:link> as part of the Math in Moscow program.
+    During that time, I learned Russian by teaching kids at church, taking courses, and spending time with as many Russians as I could.
+</html:p>
+            <html:p>
+    The Russians are very intense mathematically. The courses met once a week for three hours each, with a five minute tea break in the middle. They called it the "Russian brainstorm." While my undergraduate education was of very high quality (no complaints really), this was at another level and I was forced to be much more independent mathematically.
+</html:p>
+            <html:p>
+    I had one professor in particular, Alexei Gorinov, who was educated in the French tradition and taught topology exceptionally well. He built off the interest in topology cultivated during my undergraduate. His problem sets in particular were exceptional, and I still keep the links for his <fr:link href="https://topology1hsemim201516.wordpress.com/" type="external">Toplogy I</fr:link> and <fr:link href="https://topology2hsemim201516.wordpress.com/" type="external">Topology II</fr:link> courses on hand. Gorinov's courses have left a lasting impact on me. If I were to become a professor at any point, I would endeavor to teach courses like he did.
+</html:p>
+            <html:p>
+    During this time, I also got into <fr:link href="/dhsorens-0007/" title="Category Theory" uri="https://derekhsorensen.com/dhsorens-0007/" display-uri="dhsorens-0007" type="local">category theory</fr:link> by reading Awodey's <fr:link href="https://github.com/geelon/type-theory/blob/master/awodey-category-theory.pdf" type="external">Category Theory</fr:link> on my own. The courses, and my independent study, prepared me for my <fr:link href="/dhsorens-msc/" title="MSc in Algebraic Topology" uri="https://derekhsorensen.com/dhsorens-msc/" display-uri="dhsorens-msc" type="local">masters degree</fr:link> the following year, in which I continued to pursue algebraic topology.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

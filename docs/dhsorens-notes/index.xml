@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:uri>https://derekhsorensen.com/dhsorens-notes/</fr:uri>
+    <fr:display-uri>dhsorens-notes</fr:display-uri>
+    <fr:route>/dhsorens-notes/</fr:route>
+    <fr:title text="Notes">Notes</fr:title>
+    <fr:meta name="toc">true</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    I am interested, broadly speaking, in formal proposition and proof.
+    From a high level, what tends to catch my attention is the nuance of going from an intuitive, abstract idea into something formal—whether it's a formal specification of a program, a formalized theorem statement, or even something simply written out as a program.
+</html:p>
+    <html:p>
+    During my PhD this manifested as written work focused on the problem of (correctly) specifying and formally verifying <fr:link href="/dhsorens-000A/" title="The Main Contributions of my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000A/" display-uri="dhsorens-000A" type="local">financial smart contracts</fr:link>.
+    But I continue to be interested in <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">software verification more broadly</fr:link>, the ongoing work to <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize mathematics</fr:link>, and other developments in using <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> in production.
+</html:p>
+    <html:p>
+    I recently started work on formally verifying <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">all things zero-knowledge</fr:link> on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
+</html:p>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2026</fr:year>
+          <fr:month>3</fr:month>
+          <fr:day>27</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-0027/</fr:uri>
+        <fr:display-uri>dhsorens-0027</fr:display-uri>
+        <fr:route>/dhsorens-0027/</fr:route>
+        <fr:title text="LC3 in Lean">LC3 in Lean</fr:title>
+        <fr:taxon>Blog</fr:taxon>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+ I recently implemented a <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">formally verified virtual machine in Lean</fr:link> on which you can run 2048 in terminal! Try it out!
+</html:p>
+        <html:em>ISA-level model</html:em>
+        <html:p>
+The LC-3 is a small 16-bit instructional architecture: eight general-purpose registers, a program counter, condition flags, and a <fr:tex display="inline"><![CDATA[2^{16}]]></fr:tex>-word address space.
+At each step the machine fetches a word from memory at the PC, decodes it as one of <html:strong>fourteen</html:strong> opcodes (from arithmetic and bitwise operations to loads, stores, branches, jumps, and subroutine calls), then updates registers, memory, and control flow accordingly.
+Beyond those opcodes, LC-3 programs rely on <html:em>trap</html:em> routines for console I/O and on <html:em>memory-mapped I/O</html:em> for the keyboard—so a faithful simulator must implement both the core instructions and this I/O story. For more on the architecture, <fr:link href="https://www.jmeiners.com/lc3-vm/" type="external">see here</fr:link>.
+</html:p>
+        <html:p>
+The code in <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">LC3-Lean</fr:link> is laid out as follows:
+<html:ol><html:li>register and flag state lives in <html:code>LC3Lean/Registers.lean</html:code>,</html:li>
+    <html:li>the flat memory model in <html:code>LC3Lean/Memory.lean</html:code>,</html:li>
+    <html:li>opcode decoding in <html:code>LC3Lean/Instructions.lean</html:code>,</html:li>
+    <html:li>the fetch–decode–execute step and per-opcode semantics in <html:code>LC3Lean/Execution.lean</html:code>,</html:li>
+    <html:li>
+    The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>. If you open those modules, every informal claim in this paragraph—word size, register count, opcode coverage, traps, MMIO—is meant to be visible as definitions and executable code rather than hand-waving.
+    </html:li></html:ol>
+   The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>.
+</html:p>
+        <html:p>
+    For full details, <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">see this page</fr:link>.
+</html:p>
+        <html:em>Formal proofs</html:em>
+        <html:p>
+"Formally verified" here means that Lean checks mathematical theorems relating the implementation above to an explicit ISA-level specification of how each instruction may read and write registers and memory.
+Those theorems are stated and proved in the <html:code>LC3Correct</html:code> package—especially <html:code>LC3Correct/ExecutionCorrect.lean</html:code>, with supporting lemmas about registers and memory in <html:code>LC3Correct/RegisterLemmas.lean</html:code> and <html:code>LC3Correct/MemoryLemmas.lean</html:code>. Together they aim to capture, opcode by opcode, that the Lean executor’s effect on machine state matches the spec encoded alongside it. All proofs pass without <html:code>sorry</html:code>!
+</html:p>
+        <html:em>Trust Base and Verification Boundary</html:em>
+        <html:p>
+The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</html:code>) used for POSIX terminal raw mode and polling: it affects how characters reach your screen and keyboard, but the LC-3 machine semantics and the correctness proofs live on the Lean side. Readers who want the precise logical statement for a single opcode should start from <html:code>LC3Correct/ExecutionCorrect.lean</html:code> and follow the definitions it references—the prose here is only a map to those lemmas.
+</html:p>
+        <html:p>
+    For full details, <fr:link href="/dhsorens-002A/" title="Details on the Proofs of Correctness for LC3-Lean" uri="https://derekhsorensen.com/dhsorens-002A/" display-uri="dhsorens-002A" type="local">see this page</fr:link>.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2026</fr:year>
+          <fr:month>3</fr:month>
+          <fr:day>11</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-0025/</fr:uri>
+        <fr:display-uri>dhsorens-0025</fr:display-uri>
+        <fr:route>/dhsorens-0025/</fr:route>
+        <fr:title text="CompPoly and Computable Specifications">CompPoly and Computable Specifications</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified
+    model of computable polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+    The purpose of CompPoly is to provide a computable base for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+</html:p>
+        <html:p>
+    My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. zkVMs and SNARKS also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
+</html:p>
+        <html:p>
+    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does computability add to this, or any specification? For one, it lets you run tests. Having tests lets you test the integrity of your spec and test it in sort of a meta- way. It helps build confidence that the spec was built out correctly, something that is difficult (impossible?) to really know.
+</html:p>
+        <html:p>
+    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications of specifications, in the context of smart contracts. I really believe that metaspecifications can add a lot to the security of smart contracts, but a lot of theory has to be built up (even just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy for contracts in the wild.
+</html:p>
+        <html:p>
+    However, metaspecifications already show up in cryptography! An implementation has a specification, the design of the cryptographic system or protocol (e.g. FRI). The system or protocol is defined in mathematical terms, with assumptions, and with associated proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol fails, then some assumption of the system was violated. This is a metaspecification!
+</html:p>
+        <html:p>
+    But, as with all specifications, it is very hard to be sure that your specification is correct. This is where computability comes in. Having an executable/computable specification means that you can run tests on it, further extending your specification in an informal way. It makes your spec act more like software, and in some sense makes it stronger as a specification because as a program that runs it is closer to the thing that you're verifying.
+</html:p>
+        <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable and non-computable terms, spec and implementation, and more and more of the infrastructure of verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>12</fr:month>
+          <fr:day>18</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-0020/</fr:uri>
+        <fr:display-uri>dhsorens-0020</fr:display-uri>
+        <fr:route>/dhsorens-0020/</fr:route>
+        <fr:title text="Protocol Snarkification">Protocol Snarkification</fr:title>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. My main focus is currently on <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link> and <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+</html:p>
+        <html:p>
+    See <fr:link href="http://verified-zkevm.org/" type="external">our website</fr:link> for more information.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>8</fr:month>
+          <fr:day>29</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-000U/</fr:uri>
+        <fr:display-uri>dhsorens-000U</fr:display-uri>
+        <fr:route>/dhsorens-000U/</fr:route>
+        <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    Most of my formal research work is in <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal specification and verification</fr:link>, especially in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> like <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link>, and the like.
+
+    During my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> and in the years after a lot of time thinking about <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contract</fr:link> design, specification, and verification.
+    
+    </html:p>
+        <fr:tree show-metadata="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>29</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000W/</fr:uri>
+            <fr:display-uri>dhsorens-000W</fr:display-uri>
+            <fr:route>/dhsorens-000W/</fr:route>
+            <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">Smart contracts</fr:link> are interesting from the perspective of formal specification and verification because:
+</html:p>
+            <html:ol><html:li>they are risk- and property-dense,</html:li>
+    <html:li>they are typically small in size, with a deterministic and well-defined execution environment, making them feasible to formally reason about in a short time frame, and</html:li>
+    <html:li>they often manage huge sums of money (so the incentives line up).</html:li></html:ol>
+            <html:p>
+    Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">interesting (and nontrivia) specifications</fr:link>, which warrants a study not only of the science of going from specification to verification (formal proof), but of the <html:em>specifications themselves</html:em> as independent, mathematical objects.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0015/</fr:uri>
+            <fr:display-uri>dhsorens-0015</fr:display-uri>
+            <fr:route>/dhsorens-0015/</fr:route>
+            <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Speaking more broadly, <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> is interesting because in the robustly mathematical setting provided by proof assistants, one can state and prove arbitrary properties.
+
+    This may be a blessing and a curse.
+    Much like with programming languages, being able to state and do arbitrary things is not always an advantage.
+    
+    Due to the extreme flexibility, formal counterparts of informal specifications can vary widely without an obvious way to compare them or evaluate them for correctness or practical utility (for more on this see the introduction to my <fr:link href="/dhsorens-000C/" title="Links and Referencing my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000C/" display-uri="dhsorens-000C" type="local">PhD thesis</fr:link>).
+
+</html:p>
+            <html:p>
+    In my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> and my subsequent writing (e.g. <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">this paper</fr:link> or my <fr:link href="/dhsorens-000S/" title="Research Statement" uri="https://derekhsorensen.com/dhsorens-000S/" display-uri="dhsorens-000S" type="local">research statement</fr:link>), I have argued that the robustly mathematical setting of proof assistants offers us an opportunity for unmatched rigor, but we must draw on mathematical practice and tradition and use them in a more sophisticated way than we are using them now.
+    There is much to be learned from the ongoing work in the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> and <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal specification and verification in proof assistants</fr:link> more broadly,
+    from theoretical and practical perspectives.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2025</fr:year>
+          <fr:month>8</fr:month>
+          <fr:day>29</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-000V/</fr:uri>
+        <fr:display-uri>dhsorens-000V</fr:display-uri>
+        <fr:route>/dhsorens-000V/</fr:route>
+        <fr:title text="Type Theory and Formal Proof">Type Theory and Formal Proof</fr:title>
+        <fr:meta name="toc">true</fr:meta>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p>
+    I am also interested more broadly in type theory and formal proof, especially as they relate to <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>. This has included some <fr:link href="/dhsorens-0009/" title="The Background to my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-0009/" display-uri="dhsorens-0009" type="local">preliminary work</fr:link> in <fr:link href="/dhsorens-hott/" title="Homotopy Type Theory (HoTT)" uri="https://derekhsorensen.com/dhsorens-hott/" display-uri="dhsorens-hott" type="local">HoTT</fr:link> on the formal side, but ongoing work in the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is deeply interesting to me as a <fr:link href="/dhsorens-0017/" title="How the Formalization of Mathematics Relates to My Work" uri="https://derekhsorensen.com/dhsorens-0017/" display-uri="dhsorens-0017" type="local">peripheral development to my work</fr:link>.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>3</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0018/</fr:uri>
+            <fr:display-uri>dhsorens-0018</fr:display-uri>
+            <fr:route>/dhsorens-0018/</fr:route>
+            <fr:title text="Summary of Work and Projects">Summary of Work and Projects</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Since early 2018 I have held various roles in crypto, working mostly in research and <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link>.
+    My original interests in crypto were in consensus algorithms and formal verification frameworks for verifying smart contracts. When I started, those frameworks and tools were in their infancy, <fr:link href="/dhsorens-001D/" title="The K Framework" uri="https://derekhsorensen.com/dhsorens-001D/" display-uri="dhsorens-001D" type="local">K Framework</fr:link> being the only tool at the time to my knowledge that was production-ready for actual smart contracts.
+
+    Over time, I became interested in the financial applications of <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contracts</fr:link> and I did my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> in verification strategies for financial <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">smart contracts</fr:link>.
+
+    Along the way, I became deeply interested in type theory and <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>, and these days am interested broadly in theorem-proving, <fr:link href="/dhsorens-notes/" title="Notes" uri="https://derekhsorensen.com/dhsorens-notes/" display-uri="dhsorens-notes" type="local">whether applied to software or formalized maths</fr:link>.
+
+    In my day-to-day, I still do a lot of work in the design, construction, and formal verification of smart contracts.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>3</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0019/</fr:uri>
+                <fr:display-uri>dhsorens-0019</fr:display-uri>
+                <fr:route>/dhsorens-0019/</fr:route>
+                <fr:title text="Pre-PhD (2017-2019)">Pre-PhD (2017-2019)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    I started working in crypto during the two years between my <fr:link href="/dhsorens-msc/" title="MSc in Algebraic Topology" uri="https://derekhsorensen.com/dhsorens-msc/" display-uri="dhsorens-msc" type="local">MSc</fr:link> and my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link>.
+    My first job was at a small, Utah-based crypto startup called Pyrofex, which was mostly providing consulting services to the <fr:link href="https://github.com/dhsorens/rchain" type="external">RChain co-op</fr:link> at the time.
+    I was tasked with <fr:link href="https://github.com/dhsorens/rholang" type="external">building the formal semantics for rholang</fr:link>, the smart contracting language on RChain, in <fr:link href="/dhsorens-001D/" title="The K Framework" uri="https://derekhsorensen.com/dhsorens-001D/" display-uri="dhsorens-001D" type="local">K Framework</fr:link> in order to formally verify rholang contracts down the line.
+</html:p>
+                <html:p>
+    RChain, famously, encountered sudden and urgent financial problems because of a questionable set of decisions from the co-op's president, Greg Meredith, which necessitated a split between RChain and Pyrofex.
+    We then pivoted to consensus-level research, designed our own layer-one blockchain and <fr:link href="/docs/Casanova.pdf" type="external">consensus protocol</fr:link>.
+</html:p>
+                <html:p>
+    Sadly, we ran out of money, and I had to look for a new job for the few months before my PhD started.
+    I took a short internship with Digital Asset, working in Zurich and New York, and <fr:link href="/docs/cantoncoin.pdf" type="external">implementing an experimental currency</fr:link> on their blockchain-esque project Canton.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>3</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001A/</fr:uri>
+                <fr:display-uri>dhsorens-001A</fr:display-uri>
+                <fr:route>/dhsorens-001A/</fr:route>
+                <fr:title text="During the PhD (2019-2023)">During the PhD (2019-2023)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    During my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link>, I took several part-time jobs with various crypto startups.
+    My work ranged from research and formal verification, to DeFi protocol modeling and design, to zero-knowledge proofs, to business development.
+    Each of my jobs during the PhD informed my research and helped to broaden and sharpen my thinking.
+    I took the last year of my PhD to focus fully on writing up and submitting.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>3</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001B/</fr:uri>
+                <fr:display-uri>dhsorens-001B</fr:display-uri>
+                <fr:route>/dhsorens-001B/</fr:route>
+                <fr:title text="Post PhD (2024 - 2025)">Post PhD (2024 - 2025)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Since my PhD has ended, I went through a process of unifying my various interests in people, proofs, smart contracts, digital money, and zero-knowledge proofs.
+    I took a job with <fr:link href="/dhsorens-001Z/" title="Certora" uri="https://derekhsorensen.com/dhsorens-001Z/" display-uri="dhsorens-001Z" type="local">Certora</fr:link> straight out of my PhD, doing a mix of formally verifying smart contracts and project managmenet/business development/product development/client support.
+    Ultimately, it became clear that <fr:link href="/dhsorens-001Z/" title="Certora" uri="https://derekhsorensen.com/dhsorens-001Z/" display-uri="dhsorens-001Z" type="local">Certora</fr:link> was not the place that I was going to do my best work, so early 2025 we parted ways.
+</html:p>
+                <html:p>
+    I then took some temporary contract work over the summer of 2025 building, designing, and verifying DeFi protocols (my specific area of expertise) while I looked for something that I can truly sink my teeth into and that would define the next period of my career.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>11</fr:month>
+                  <fr:day>22</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001E/</fr:uri>
+                <fr:display-uri>dhsorens-001E</fr:display-uri>
+                <fr:route>/dhsorens-001E/</fr:route>
+                <fr:title text="Ethereum Foundation (2025 - Present)">Ethereum Foundation (2025 - Present)</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    As of November 2025 I joined the Ethereum Foundation, working on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link>. This mostly consists of formally specifying and verifying ZK primitives in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+                <html:p><html:em>Last updated January 2026</html:em>. For more updates, see <fr:link href="/dhsorens-logs/" title="Logs" uri="https://derekhsorensen.com/dhsorens-logs/" display-uri="dhsorens-logs" type="local">my logs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:uri>https://derekhsorensen.com/index/</fr:uri>
+            <fr:display-uri>index</fr:display-uri>
+            <fr:route>/index/</fr:route>
+            <fr:title text="Dr. Derek Sorensen">Dr. Derek Sorensen</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+  I am a mathematician and computer scientist.
+  I work on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link> at the <fr:link href="/dhsorens-ef/" title="Ethereum Foundation" uri="https://derekhsorensen.com/dhsorens-ef/" display-uri="dhsorens-ef" type="local">Ethereum Foundation</fr:link>, and these days I am mostly interested in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.  
+</html:p>
+            <html:p>
+  Here you can see my <fr:link href="/dhsorens-rsrch/" title="Research" uri="https://derekhsorensen.com/dhsorens-rsrch/" display-uri="dhsorens-rsrch" type="local">research</fr:link>, <fr:link href="/dhsorens-notes/" title="Notes" uri="https://derekhsorensen.com/dhsorens-notes/" display-uri="dhsorens-notes" type="local">notes</fr:link>, <fr:link href="/dhsorens-logs/" title="Logs" uri="https://derekhsorensen.com/dhsorens-logs/" display-uri="dhsorens-logs" type="local">logs</fr:link>, <fr:link href="/dhsorens-001C/" title="Work Bio" uri="https://derekhsorensen.com/dhsorens-001C/" display-uri="dhsorens-001C" type="local">work history</fr:link>, and <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">bio</fr:link>.</html:p>
+            <html:p><fr:link href="https://github.com/dhsorens" type="external">GitHub</fr:link> | <fr:link href="https://orcid.org/0000-0003-4937-6984" type="external">ORCID</fr:link> | <fr:link href="https://www.linkedin.com/in/dhsorens/" type="external">LinkedIn</fr:link></html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>10</fr:month>
+                  <fr:day>9</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
+                <fr:display-uri>dhsorens-001S</fr:display-uri>
+                <fr:route>/dhsorens-001S/</fr:route>
+                <fr:title text="Featured Article">Featured Article</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    See my latest on <fr:link href="/dhsorens-0027/" title="LC3 in Lean" uri="https://derekhsorensen.com/dhsorens-0027/" display-uri="dhsorens-0027" type="local">building a formally verified LC3 virtual machine in Lean</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000D/</fr:uri>
+                <fr:display-uri>dhsorens-000D</fr:display-uri>
+                <fr:route>/dhsorens-000D/</fr:route>
+                <fr:title text="Education">Education</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-msc/" title="MSc in Algebraic Topology" uri="https://derekhsorensen.com/dhsorens-msc/" display-uri="dhsorens-msc" type="local">MSc</fr:link> in Mathematics and Foundations of Computer Science (MFoCS) at the <fr:link href="/dhsorens-oxf/" title="University of Oxford" uri="https://derekhsorensen.com/dhsorens-oxf/" display-uri="dhsorens-oxf" type="local">University of Oxford</fr:link>. <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> in formal methods at the <fr:link href="/dhsorens-cam/" title="University of Cambridge" uri="https://derekhsorensen.com/dhsorens-cam/" display-uri="dhsorens-cam" type="local">University of Cambridge</fr:link> under <fr:link href="/avsm/" title="Anil Madhavapeddy" uri="https://derekhsorensen.com/avsm/" display-uri="avsm" type="local">Anil Madhavapeddy</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:uri>https://derekhsorensen.com/dhsorens-pubs/</fr:uri>
+                <fr:display-uri>dhsorens-pubs</fr:display-uri>
+                <fr:route>/dhsorens-pubs/</fr:route>
+                <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:ol><html:li>Sorensen, D. <html:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</html:em>. FMBC (ETAPS) (2025). [<fr:link href="/dhsorens-000J/" title="Formally Specifying Contract Optimizations With Bisimulations in Coq" uri="https://derekhsorensen.com/dhsorens-000J/" display-uri="dhsorens-000J" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</html:em>. FMBC (ETAPS) (2024). [<fr:link href="/dhsorens-000K/" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq" uri="https://derekhsorensen.com/dhsorens-000K/" display-uri="dhsorens-000K" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>(In)Correct Smart Contract Specifications</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <html:em>Global, robust and comparable digital carbon assets</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000M/" title="Global, robust and comparable digital carbon assets" uri="https://derekhsorensen.com/dhsorens-000M/" display-uri="dhsorens-000M" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Tokenized Carbon Credits</html:em>. Ledger (2023). [<fr:link href="/dhsorens-000N/" title="Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000N/" display-uri="dhsorens-000N" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Structured Pools for Tokenized Carbon Credits</html:em>. ICBC CryptoEx (2023). [<fr:link href="/dhsorens-000O/" title="Structured Pools for Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000O/" display-uri="dhsorens-000O" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Butt, K., Sorensen, D. <html:em>Streamlining Classical Consensus</html:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link href="/dhsorens-000P/" title="Streamlining Classical Consensus" uri="https://derekhsorensen.com/dhsorens-000P/" display-uri="dhsorens-000P" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Establishing Standards for Consensus on Blockchains</html:em>. ICBC (2019). [<fr:link href="/dhsorens-000Q/" title="Establishing Standards for Consensus on Blockchains" uri="https://derekhsorensen.com/dhsorens-000Q/" display-uri="dhsorens-000Q" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <html:em>Extensions and applications of equitable decompositions for graphs with symmetries</html:em>. Linear Algebra and its Applications 532 (2017). [<fr:link href="/dhsorens-000R/" title="Extensions and applications of equitable decompositions for graphs with symmetries" uri="https://derekhsorensen.com/dhsorens-000R/" display-uri="dhsorens-000R" type="local">link</fr:link>]</html:li></html:ol>
+                <html:p>
+    I also keep some <fr:link href="/dhsorens-preprints/" title="Preprints" uri="https://derekhsorensen.com/dhsorens-preprints/" display-uri="dhsorens-preprints" type="local">preprints</fr:link> on record.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:uri>https://derekhsorensen.com/dhsorens-talks/</fr:uri>
+                <fr:display-uri>dhsorens-talks</fr:display-uri>
+                <fr:route>/dhsorens-talks/</fr:route>
+                <fr:title text="Talks">Talks</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>Some selected talks:
+    
+    <html:ul><html:li><fr:link href="/dhsorens-0028/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0028/" display-uri="dhsorens-0028" type="local">CompPoly: Computable Polynomials in Lean</fr:link>. <fr:link href="https://zkproof.org/events/zkproof-8-rome/" type="external">ZKProofs 8</fr:link>, May 2026, Rome, Italy.</html:li>
+        <html:li><fr:link href="/dhsorens-0023/" title="Correct and Computable Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-0023/" display-uri="dhsorens-0023" type="local">Correct and Computable Specifications in Lean</fr:link>. <fr:link href="https://beneficial-ai-foundation.github.io/SVIL2026/" type="external">SViL26</fr:link>, April 2026, Paris, France.</html:li>
+        <html:li><fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link>. <fr:link href="https://ethcc.io/" type="external">EthCC[9]</fr:link>, March 2026, Cannes, France.</html:li>
+        <html:li>Formally Specifying Contract Optimizations With Bisimulations in Coq. <fr:link href="https://fmbc.gitlab.io/2025" type="external">FMBC 2025</fr:link>, May 2025, Hamilton, Canada.</html:li>
+        <html:li><fr:link href="/dhsorens-0024/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-0024/" display-uri="dhsorens-0024" type="local">(In)Correct Smart Contract Specifications. ICBC, May 2024, Dublin.</fr:link></html:li>
+        <html:li>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq. <fr:link href="https://fmbc.gitlab.io/2024" type="external">FMBC 2024</fr:link>, April 2024, Luxembourg.</html:li>
+        <html:li><fr:link href="https://mediaserver.univ-nantes.fr/videos/abstraction-specification-and-proof/" type="external">Abstraction, Specification, and Proof. Undone Science, February 2024, Nantes, FR.</fr:link></html:li>
+        <html:li>Structured Pools for Tokenized Carbon Credits. ICBC 2024, Dubai.</html:li>
+        <html:li>Establishing Standards for Consensus on Blockchains. ICBC 2019, San Diego.</html:li>
+        <html:li><fr:link href="https://www.youtube.com/watch?v=NZ2ETPurRFU" type="external">K framework and type theory. RCon, May 2019, Berlin.</fr:link></html:li></html:ul></html:p>
+                <html:p>
+    I also keep some of <fr:link href="/dhsorens-slides/" title="Slides" uri="https://derekhsorensen.com/dhsorens-slides/" display-uri="dhsorens-slides" type="local">my slides here</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000E/</fr:uri>
+                <fr:display-uri>dhsorens-000E</fr:display-uri>
+                <fr:route>/dhsorens-000E/</fr:route>
+                <fr:title text="Work History">Work History</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    See my <fr:link href="/docs/sorensen-cv.pdf" type="external">CV</fr:link> or a <fr:link href="/dhsorens-001C/" title="Work Bio" uri="https://derekhsorensen.com/dhsorens-001C/" display-uri="dhsorens-001C" type="local">work bio</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>12</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0020/</fr:uri>
+            <fr:display-uri>dhsorens-0020</fr:display-uri>
+            <fr:route>/dhsorens-0020/</fr:route>
+            <fr:title text="Protocol Snarkification">Protocol Snarkification</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. My main focus is currently on <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link> and <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+</html:p>
+            <html:p>
+    See <fr:link href="http://verified-zkevm.org/" type="external">our website</fr:link> for more information.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0015/</fr:uri>
+            <fr:display-uri>dhsorens-0015</fr:display-uri>
+            <fr:route>/dhsorens-0015/</fr:route>
+            <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Speaking more broadly, <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> is interesting because in the robustly mathematical setting provided by proof assistants, one can state and prove arbitrary properties.
+
+    This may be a blessing and a curse.
+    Much like with programming languages, being able to state and do arbitrary things is not always an advantage.
+    
+    Due to the extreme flexibility, formal counterparts of informal specifications can vary widely without an obvious way to compare them or evaluate them for correctness or practical utility (for more on this see the introduction to my <fr:link href="/dhsorens-000C/" title="Links and Referencing my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000C/" display-uri="dhsorens-000C" type="local">PhD thesis</fr:link>).
+
+</html:p>
+            <html:p>
+    In my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> and my subsequent writing (e.g. <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">this paper</fr:link> or my <fr:link href="/dhsorens-000S/" title="Research Statement" uri="https://derekhsorensen.com/dhsorens-000S/" display-uri="dhsorens-000S" type="local">research statement</fr:link>), I have argued that the robustly mathematical setting of proof assistants offers us an opportunity for unmatched rigor, but we must draw on mathematical practice and tradition and use them in a more sophisticated way than we are using them now.
+    There is much to be learned from the ongoing work in the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> and <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal specification and verification in proof assistants</fr:link> more broadly,
+    from theoretical and practical perspectives.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>9</fr:month>
+              <fr:day>2</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000Z/</fr:uri>
+            <fr:display-uri>dhsorens-000Z</fr:display-uri>
+            <fr:route>/dhsorens-000Z/</fr:route>
+            <fr:title text="Formalization of Mathematics">Formalization of Mathematics</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    There has been a great deal of community-driven work in the formalization of mathematics in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link>, <fr:link href="/dhsorens-0006/" title="Isabelle/HOL" uri="https://derekhsorensen.com/dhsorens-0006/" display-uri="dhsorens-0006" type="local">Isabelle/HOL</fr:link>, and <fr:link href="/dhsorens-0014/" title="Agda" uri="https://derekhsorensen.com/dhsorens-0014/" display-uri="dhsorens-0014" type="local">Agda</fr:link>.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>2</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0010/</fr:uri>
+                <fr:display-uri>dhsorens-0010</fr:display-uri>
+                <fr:route>/dhsorens-0010/</fr:route>
+                <fr:title text="Formalization of Mathematics in Lean">Formalization of Mathematics in Lean</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter />
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>2</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0011/</fr:uri>
+                <fr:display-uri>dhsorens-0011</fr:display-uri>
+                <fr:route>/dhsorens-0011/</fr:route>
+                <fr:title text="Formalization of Mathematics in Rocq">Formalization of Mathematics in Rocq</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter />
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>2</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0012/</fr:uri>
+                <fr:display-uri>dhsorens-0012</fr:display-uri>
+                <fr:route>/dhsorens-0012/</fr:route>
+                <fr:title text="Formalization of Mathematics in Isabelle/HOL">Formalization of Mathematics in Isabelle/HOL</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter />
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>9</fr:month>
+                  <fr:day>2</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0013/</fr:uri>
+                <fr:display-uri>dhsorens-0013</fr:display-uri>
+                <fr:route>/dhsorens-0013/</fr:route>
+                <fr:title text="Formalization of Mathematics in Agda">Formalization of Mathematics in Agda</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter />
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>15</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000B/</fr:uri>
+            <fr:display-uri>dhsorens-000B</fr:display-uri>
+            <fr:route>/dhsorens-000B/</fr:route>
+            <fr:title text="Interactive Theorem Provers">Interactive Theorem Provers</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-lean/</fr:uri>
+                <fr:display-uri>dhsorens-lean</fr:display-uri>
+                <fr:route>/dhsorens-lean/</fr:route>
+                <fr:title text="The Lean Theorem Prover">The Lean Theorem Prover</fr:title>
+                <fr:taxon>Tool</fr:taxon>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:link href="http://lean-lang.org/" type="external">http://lean-lang.org</fr:link>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-rocq/</fr:uri>
+                <fr:display-uri>dhsorens-rocq</fr:display-uri>
+                <fr:route>/dhsorens-rocq/</fr:route>
+                <fr:title text="The Rocq Theorem Prover">The Rocq Theorem Prover</fr:title>
+                <fr:taxon>Tool</fr:taxon>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:link href="https://rocq-prover.org/" type="external">https://rocq-prover.org</fr:link>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>6</fr:month>
+                  <fr:day>15</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0006/</fr:uri>
+                <fr:display-uri>dhsorens-0006</fr:display-uri>
+                <fr:route>/dhsorens-0006/</fr:route>
+                <fr:title text="Isabelle/HOL">Isabelle/HOL</fr:title>
+                <fr:taxon>Tool</fr:taxon>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="https://www.isa-afp.org/" type="external">Archive of Formal Proofs</fr:link> and the <fr:link href="https://isabelle.in.tum.de/" type="external">prover</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2025</fr:year>
+              <fr:month>6</fr:month>
+              <fr:day>15</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-000A/</fr:uri>
+            <fr:display-uri>dhsorens-000A</fr:display-uri>
+            <fr:route>/dhsorens-000A/</fr:route>
+            <fr:title text="The Main Contributions of my PhD Thesis">The Main Contributions of my PhD Thesis</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    My <fr:link href="/docs/sorensen-phd-thesis.pdf" type="external">PhD thesis</fr:link> proposes two different ways of handling the problem of a specification's <html:em>correctness</html:em>.
+    Both draw heavily on the theoretically robust nature of <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>.
+</html:p>
+            <html:p>
+    The first is through what I would informally call the "meta work," where the specification itself is treated like a mathematical object to study and prove correctness, like the software we're trying to prove correct. This uses prose and specification to articulate desired behaviors of a smart contract that are already easy to define, <html:em>e.g.</html:em> desirable economic or game-theoretic properties.
+</html:p>
+            <html:p>
+    The second is through the use of abstract tools that approximate the desired behavior.
+    My first motivating example is that of a smart contract upgrade.
+    When upgrading any software, intuitively we understand an updated version as incrementally different from a previous version—we're adding feature X, Y, and Z, fixing bugs, removing outdated functionality. 
+    All of this frames conversation and understanding of the new software in terms of the old.
+    Why not then apply that to the formal specification?
+</html:p>
+            <html:p>
+    I introduced the notion of a <html:em>contract morphism</html:em>, or a formal structural relationship between two contracts that could be used in specification. The term "morphism" is <fr:link href="/dhsorens-0007/" title="Category Theory" uri="https://derekhsorensen.com/dhsorens-0007/" display-uri="dhsorens-0007" type="local">category-theoretic</fr:link>, and is a general mathematical way of establishing a relationship between two objects.
+    Once this formal relationship is established, proofs of one contract can be transported over that relationship to another contract.
+    If the morphism is <html:em>invertible</html:em>, then the formal relationship establishes an equivalence of contracts, which could be useful <html:em>e.g.</html:em> for proving optimized code correct with regards to a reference implementation.
+    The morphism allows one to use a <html:em>contract</html:em> as a specification, something which can be far more intuitive than using prose.
+</html:p>
+            <html:p>
+    All of this is encapsulated fairly well in <fr:link href="/slides/spec-correct.pdf" type="external">the slides of this talk</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors />
+    <fr:uri>https://derekhsorensen.com/dhsorens-000P/</fr:uri>
+    <fr:display-uri>dhsorens-000P</fr:display-uri>
+    <fr:route>/dhsorens-000P/</fr:route>
+    <fr:title text="Streamlining Classical Consensus">Streamlining Classical Consensus</fr:title>
+    <fr:taxon>Publication</fr:taxon>
+    <fr:meta name="external">https://www.inderscienceonline.com/doi/abs/10.1504/IJBC.2020.112508</fr:meta>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p><html:em>Paper Abstract:</html:em> Classical consensus protocols, generally based on rounds of voting, tend to be unscalable because of sheer message volume. Blockchain-style consensus has emerged to solve this problem, but there is still a gaping need for faster, more scalable, and reliably safe consensus protocols. We show that many classical consensus protocols give rise naturally to a directed acyclic graph (DAG), which we call the message DAG. We restructure two classical consensus protocols via the message DAG, consolidating message rounds with new messages, to achieve manifestly improved scalability. The second protocol lends itself to a scalable blockchain consensus protocol with strong safety and liveness guarantees. We also present a technique to generalise other message-based, classical consensus protocols.
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:uri>https://derekhsorensen.com/dhsorens-pubs/</fr:uri>
+            <fr:display-uri>dhsorens-pubs</fr:display-uri>
+            <fr:route>/dhsorens-pubs/</fr:route>
+            <fr:title text="Peer-Reviewed Publications">Peer-Reviewed Publications</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:ol><html:li>Sorensen, D. <html:em>Formally Specifying Contract Optimizations With Bisimulations in Coq</html:em>. FMBC (ETAPS) (2025). [<fr:link href="/dhsorens-000J/" title="Formally Specifying Contract Optimizations With Bisimulations in Coq" uri="https://derekhsorensen.com/dhsorens-000J/" display-uri="dhsorens-000J" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq</html:em>. FMBC (ETAPS) (2024). [<fr:link href="/dhsorens-000K/" title="Towards Formally Specifying and Verifying Smart Contract Upgrades in Coq" uri="https://derekhsorensen.com/dhsorens-000K/" display-uri="dhsorens-000K" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>(In)Correct Smart Contract Specifications</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Jaffer, S., Dales, M., Ferris, P., Sorensen, D., Swinfield, T., Message, R., Keshav, S., and Madhavapeddy, A. <html:em>Global, robust and comparable digital carbon assets</html:em>. ICBC (2024). [<fr:link href="/dhsorens-000M/" title="Global, robust and comparable digital carbon assets" uri="https://derekhsorensen.com/dhsorens-000M/" display-uri="dhsorens-000M" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Tokenized Carbon Credits</html:em>. Ledger (2023). [<fr:link href="/dhsorens-000N/" title="Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000N/" display-uri="dhsorens-000N" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Structured Pools for Tokenized Carbon Credits</html:em>. ICBC CryptoEx (2023). [<fr:link href="/dhsorens-000O/" title="Structured Pools for Tokenized Carbon Credits" uri="https://derekhsorensen.com/dhsorens-000O/" display-uri="dhsorens-000O" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Butt, K., Sorensen, D. <html:em>Streamlining Classical Consensus</html:em>. International Journal of Blockchains and Cryptocurrencies, Vol. 1, No. 4 (2019). [<fr:link href="/dhsorens-000P/" title="Streamlining Classical Consensus" uri="https://derekhsorensen.com/dhsorens-000P/" display-uri="dhsorens-000P" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>Sorensen, D. <html:em>Establishing Standards for Consensus on Blockchains</html:em>. ICBC (2019). [<fr:link href="/dhsorens-000Q/" title="Establishing Standards for Consensus on Blockchains" uri="https://derekhsorensen.com/dhsorens-000Q/" display-uri="dhsorens-000Q" type="local">link</fr:link>]</html:li>
+
+    
+    <html:li>A. Francis, D. Smith, D. Sorensen and B. Webb. <html:em>Extensions and applications of equitable decompositions for graphs with symmetries</html:em>. Linear Algebra and its Applications 532 (2017). [<fr:link href="/dhsorens-000R/" title="Extensions and applications of equitable decompositions for graphs with symmetries" uri="https://derekhsorensen.com/dhsorens-000R/" display-uri="dhsorens-000R" type="local">link</fr:link>]</html:li></html:ol>
+            <html:p>
+    I also keep some <fr:link href="/dhsorens-preprints/" title="Preprints" uri="https://derekhsorensen.com/dhsorens-preprints/" display-uri="dhsorens-preprints" type="local">preprints</fr:link> on record.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>
