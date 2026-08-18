@@ -1,0 +1,19 @@
+\title{Benchmarks, and How to Read Them}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Almost every number in this note came from a party with an interest in it. That does not make them wrong, but it does mean the comparison you want — equal security parameters, equal hardware, a workload resembling yours — is rarely the comparison you are given.
+}
+
+\p{
+    The specific things that make published figures incomparable: security parameters chosen differently, so one prover is doing less work for a weaker claim; precompiles, which move a workload's cost out of the measured instruction count entirely; GPU against CPU, which the [Binius64](dhsorens-004M) figures deliberately contrast; cycle counts against wall-clock, when padding conventions differ by system; and proof size quoted before or after a wrapping step. [Performance and benchmarking](dhsorens-003X) in the corpus is where the cost model belongs.
+}
+
+\p{
+    EthProofs is the most useful source because it measures real Ethereum blocks rather than a synthetic program, and currently tracks six active implementations: SP1 Turbo, [Zisk](dhsorens-004P), R0VM, Ziren, Pico, and SP1 Hypercube. Independent standardised runs have covered eight systems across prover time, proof size, and peak RAM.
+}
+
+\p{
+    References: [zkvm-benchmarks](https://github.com/a16z/zkvm-benchmarks) (a16z, so read it as such) and [babybear-labs/benchmark](https://github.com/babybear-labs/benchmark) for reproducible harnesses; Logos's [zkVM testing report](https://research.logos.co/rlog/zkVM-testing/) and Fenbushi's [Benchmarking zkVMs](https://fenbushicapital.medium.com/benchmarking-zkvms-current-state-and-prospects-ba859b44f560) for methodology critiques.
+}

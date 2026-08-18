@@ -1,0 +1,15 @@
+\title{Zisk}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Zisk is Polygon Hermez's open-source zkVM: RISC-V, Rust programs, aimed at low-latency proof generation, and explicitly built on what the Polygon zkEVM and Plonky3 teams did before it. It is one of the implementations EthProofs tracks as actively proving Ethereum blocks, which makes it more interesting than its relatively low profile suggests.
+}
+
+\p{
+    The lineage is the thing to read it for. Polygon's earlier zkEVM was a bespoke machine with its own language; Zisk is the same team arriving at the general-purpose RISC-V position that SP1 and RISC Zero reached from the other direction. That convergence is a data point about how much the ISA choice actually buys, which is the argument [leanVM](dhsorens-004L) reopens from the opposite end.
+}
+
+\p{
+    References: [zisk](https://github.com/0xPolygonHermez/zisk); the [documentation](https://0xpolygonhermez.github.io/zisk/), which links the whitepaper covering design, architecture, and cryptographic foundations; [zisk.technology](https://zisk.technology/) for the overview.
+}

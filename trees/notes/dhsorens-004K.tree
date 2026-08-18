@@ -1,0 +1,30 @@
+\title{zkVMs and Their Proving Backends}
+\author{dhsorens}
+\taxon{Blog}
+\date{2026-08-18}
+\meta{toc}{true}
+
+\p{
+    \em{AI-drafted 2026-08-18; not yet reviewed.}
+}
+
+\p{
+    A zkVM is two decisions stacked: which machine you prove, and which argument you prove it with. The field is usually discussed as a single ranking, which obscures that some of the interesting recent work is a machine — [leanVM](dhsorens-004L) with its four opcodes, [OpenVM](dhsorens-004O) with no CPU at all — and some of it is a backend that any machine can adopt, like [Binius64](dhsorens-004M) or [Flock](dhsorens-004N). The two layers move independently, which is exactly how [conventional hashes became cheap to prove](dhsorens-004D) without any hash changing.
+}
+
+\p{
+    The pages below are one system each, with references at the bottom of every one: the paper or whitepaper where there is one, the repository, and the expository writing worth reading first. Where a performance claim appears it is attributed to whoever measured it, because in this field almost every number comes from a party with an interest in it.
+}
+
+\transclude{dhsorens-004L} % leanVM
+\transclude{dhsorens-004M} % Binius64
+\transclude{dhsorens-004N} % Flock
+\transclude{dhsorens-004O} % OpenVM
+\transclude{dhsorens-004P} % Zisk
+\transclude{dhsorens-004Q} % the RISC-V field
+\transclude{dhsorens-004R} % beyond RISC-V
+\transclude{dhsorens-004S} % benchmarks
+
+\p{
+    Two things stand out across the set. Formal verification has started to arrive in the artefacts rather than only in the papers: OpenVM's RV32IM extension has been verified in [Lean](dhsorens-lean), and leanVM's instruction set was deliberately kept small so that verifying it stays feasible. And the sumcheck line has quietly won the backend argument for general-purpose machines — [Jolt](dhsorens-004Q), Binius64, and Flock are all sumcheck-based, over fields as small as the work allows. The [corpus on zkVMs](dhsorens-003Q) has the systematic version of both stories.
+}
