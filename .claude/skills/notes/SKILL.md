@@ -121,22 +121,25 @@ Writing standards:
 
 ## 5. Index it in Notes
 
-`trees/dhsorens-notes.tree` is an **index, not a container**. Add a one-line entry to
-the list at the bottom, newest first. Do **not** transclude the note:
+Prepend a transclude line to the block at the bottom of `trees/dhsorens-notes.tree`,
+newest first:
 
 ```
-\li{[<Title>](dhsorens-<parent>). <One sentence on what it argues, linking any
-    substantial children.> <Month Year>.}
+\transclude{dhsorens-<parent>} % <Title>
 ```
 
-That entry is the note's only appearance on the page; the note itself is read at its
-own address. This is what keeps Notes a feed rather than every note concatenated — a
-deep-dive runs to a few thousand words, and transcluding one buries everything else on
-the page. `trees/dhsorens-talks.tree` has always worked this way; match its style, and
-the style of the entries already in the list.
+Notes are **transcluded, not listed**. Each one renders in place with its own title and
+date, in the standard forester page format, and that is the look of the page — not a
+bulleted list of links. Read the existing order before inserting; thematic notes are
+sometimes grouped with their topic rather than placed strictly by date.
 
-The same rule applies to a note with children: the entry links the parent, the parent
-transcludes its own sections. Depth belongs inside the note, not on the index.
+**The one exception is a corpus.** If what you are wiring in is large enough to swamp
+the page — the [zk corpus](dhsorens-002C) is 72 trees and roughly 8,600 words — do not
+transclude it. Write a short blurb tree instead, in the ordinary note format: a
+paragraph on what it is and a list of links into its sections, a page's worth at most.
+Transclude the blurb; link the corpus. `trees/notes/dhsorens-004C.tree` is the working
+example. The judgement is about size, not about kind: an ordinary multi-section note is
+transcluded whole, children and all, exactly as `dhsorens-000U` is.
 
 ## 6. Update the Latest Deep-Dive
 
