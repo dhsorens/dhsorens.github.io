@@ -1,0 +1,18 @@
+\title{ZK-Friendly Primitives}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The hash function is usually the prover's largest single cost, so primitive choice is a proof-system decision rather than an implementation detail.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{Arithmetisation-friendly hashes (Poseidon2 and relatives) against standard ones (Keccak, SHA-256, Blake3), counted in constraints.}
+        \li{The security tradeoff: young algebraic designs against well-analysed bit-oriented ones.}
+        \li{Where Ethereum has no choice — Keccak in the state trie, ECDSA in transactions — and what those cost.}
+        \li{Hash rate as a headline benchmark, and what it does and does not predict.}
+        \li{Which hash a [Merkle commitment](dhsorens-0031) should use at each layer of a recursion.}
+    }
+}

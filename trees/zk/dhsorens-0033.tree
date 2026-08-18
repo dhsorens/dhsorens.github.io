@@ -1,0 +1,17 @@
+\title{Inner-Product Arguments}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The Bulletproofs-style recursive halving argument and its transcript.}
+        \li{Proof size against verifier time: the linear verifier is the catch.}
+        \li{Accumulation and the Halo line, as the precursor to modern [folding](dhsorens-003M).}
+        \li{Discrete-log security, and the post-quantum consequence.}
+    }
+}

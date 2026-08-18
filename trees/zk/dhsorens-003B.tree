@@ -1,0 +1,22 @@
+\title{STIR}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Shift To Improve Rate. FRI keeps the rate fixed across rounds and pays for it in queries; STIR improves the rate each round instead.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The rate-shifting step, and why it reduces query complexity rather than prover time.}
+        \li{The query complexity comparison with FRI, stated with the constants.}
+        \li{What it costs: verifier work, argument size, and round count.}
+        \li{The soundness analysis and which [regime](dhsorens-0038) it lands in.}
+        \li{ArkLib's \code{ProofSystem/Stir}: the formal statement and its current status.}
+    }
+}
+
+\p{
+    Sources: Arnon, Chiesa, Fenzi, and Yogev, \em{STIR}; [ArkLib](https://github.com/Verified-zkEVM/ArkLib).
+}

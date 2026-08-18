@@ -14,8 +14,10 @@
 
 \p{
     I recently started work on formally verifying [all things zero-knowledge](dhsorens-0020) on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
+    That work has its own growing corpus here: [studying zkVMs and SNARKs](dhsorens-002C), which I am building out topic by topic.
 }
 
+\transclude{dhsorens-002C} % studying zkVMs and SNARKs
 \transclude{dhsorens-0027} % LC3 in Lean
 \transclude{dhsorens-0025} % Computable Specifications
 \transclude{dhsorens-0020} % Protocol Snarkification

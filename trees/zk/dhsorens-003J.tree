@@ -1,0 +1,22 @@
+\title{Binius}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    A proof system built from the ground up on [binary tower fields](dhsorens-002L), with [ring switching](dhsorens-0035) as the mechanism that keeps small values cheap. The most complete demonstration of the small-field argument taken to its limit.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.}
+        \li{How a bit-level computation avoids paying for embedding into a large field.}
+        \li{Where the extension field is still required, and what fraction of the work it accounts for.}
+        \li{The measured comparison against 31-bit prime systems, and on which workloads it holds.}
+        \li{ArkLib's \code{ProofSystem/Binius} and \code{RingSwitching}: what is stated and what is proved.}
+    }
+}
+
+\p{
+    Sources: [Binary tower fields](https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing), [SNARKs on binary fields](https://blog.lambdaclass.com/snarks-on-binary-fields-binius/), [ArkLib](https://github.com/Verified-zkEVM/ArkLib).
+}

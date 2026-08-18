@@ -1,0 +1,18 @@
+\title{KZG and the Pairing-Based Line}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Constant-size proofs and a constant-time verifier, at the price of a trusted setup and a pairing-friendly curve. Still the endpoint of most [wrapping](dhsorens-003P) pipelines because the on-chain verifier is cheap.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The scheme and its security assumption; what the structured reference string contains.}
+        \li{The pairing check, and why the verifier is constant-time regardless of degree.}
+        \li{Batching and multi-point openings.}
+        \li{Trusted setup in practice: ceremonies, updatability, and what a compromised setup permits.}
+        \li{Why it does not scale to zkVM-sized traces, and where it survives anyway.}
+    }
+}

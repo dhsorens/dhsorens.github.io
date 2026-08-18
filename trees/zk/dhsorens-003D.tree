@@ -1,0 +1,15 @@
+\title{Proof Systems in the Wild}
+\author{dhsorens}
+\date{2026-08-18}
+\meta{toc}{true}
+
+\p{
+    Named systems, each a particular choice of [arithmetisation](dhsorens-002R), [commitment](dhsorens-002Z), and field. Once the layers below are understood these should be readable as combinations rather than as separate inventions — and where a system is not just a combination, that is the interesting part.
+}
+
+\transclude{dhsorens-003E} % Groth16 and pairings
+\transclude{dhsorens-003F} % Plonk and Halo2
+\transclude{dhsorens-003G} % Spartan
+\transclude{dhsorens-003H} % HyperPlonk
+\transclude{dhsorens-003I} % STARKs, Plonky3, Stwo
+\transclude{dhsorens-003J} % Binius

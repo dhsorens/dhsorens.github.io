@@ -1,0 +1,18 @@
+\title{AIR}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The arithmetisation the STARK toolkits consume, and the one my Lean work touches first: [Plonky3](dhsorens-003I) and Stwo both take an AIR as input, and [Clean](dhsorens-002Y) targets it.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{Execution trace, transition constraints, boundary constraints; the uniformity assumption that makes the format succinct.}
+        \li{Constraint degree, and how it propagates into the quotient polynomial and the [rate](dhsorens-002O).}
+        \li{Preprocessed columns and randomised AIR with preprocessing (RAP) — what the extra randomness is for.}
+        \li{Multiple tables and cross-table constraints; how a [zkVM's chips](dhsorens-003T) are expressed.}
+        \li{Padding, and the soundness bugs that live in the boundary between padded and real rows.}
+    }
+}

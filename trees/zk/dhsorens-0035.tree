@@ -1,0 +1,22 @@
+\title{Small-Field Commitments and Ring Switching}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Committing to values that live in a tiny field without paying extension-field prices for every one of them. The problem [Binius](dhsorens-003J) exists to solve, and the reason ArkLib has a \code{RingSwitching} directory.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{Why a naive commitment to #{\mathbb{F}_2} values wastes almost all of its capacity, and what packing recovers.}
+        \li{The ring-switching reduction: a claim over the extension becomes a claim over the base, or the reverse.}
+        \li{Where soundness needs the large field regardless, and how much of the argument can stay small.}
+        \li{The interaction with [binary towers](dhsorens-002L) specifically, versus 31-bit primes.}
+        \li{What ArkLib formalises here and what remains open.}
+    }
+}
+
+\p{
+    Sources: [ArkLib](https://github.com/Verified-zkEVM/ArkLib), [The Small-Field Turn](https://eprint.iacr.org/2026/1371).
+}

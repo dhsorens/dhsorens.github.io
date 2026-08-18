@@ -1,0 +1,23 @@
+\title{ArkLib}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    A modular library of formally verified arguments of knowledge in [Lean](dhsorens-lean), organised around [interactive oracle reductions](dhsorens-002I) rather than around individual protocols.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The directory structure as a design argument: \code{OracleReduction}, \code{Commitments}, \code{ProofSystem}, \code{AGM}, and the \code{To*} compatibility layers.}
+        \li{What is formalised and to what depth — [sumcheck](dhsorens-002Q), [Spartan](dhsorens-003G), [FRI](dhsorens-0037), [STIR](dhsorens-003B), [WHIR](dhsorens-003C), [Binius](dhsorens-003J), Merkle trees, coding theory.}
+        \li{\code{ProofSystem/ConstraintSystem}: R1CS, Plonk, lookup, and memory checking in one place.}
+        \li{The security definitions in \code{OracleReduction/Security}, which are the real contribution.}
+        \li{What is a statement with no proof yet, and what the roadmap prioritises.}
+        \li{Where I should be contributing, and what is blocked on [CompPoly](dhsorens-0041).}
+    }
+}
+
+\p{
+    Sources: [ArkLib](https://github.com/Verified-zkEVM/ArkLib), [ArkLib on lean-lang.org](https://lean-lang.org/use-cases/arklib/).
+}

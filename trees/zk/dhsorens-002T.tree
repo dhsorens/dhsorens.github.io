@@ -1,0 +1,18 @@
+\title{Plonkish Arithmetisation}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Gate constraints plus a wiring argument, with lookups bolted on. "Plonkish" is used loosely across implementations and I want a precise statement of what the term covers.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{Gate constraints and selectors; custom gates and what raising the degree costs.}
+        \li{Copy constraints via a [permutation argument](dhsorens-002X) — the mechanism that distinguishes Plonkish from AIR.}
+        \li{Lookup tables in the halo2 sense: regions, fixed columns, and the developer-facing cost model.}
+        \li{Preprocessing: what is fixed at setup and what varies per instance.}
+        \li{Where Plonkish and [AIR](dhsorens-002U) genuinely differ, once cross-table lookups are available to both.}
+    }
+}

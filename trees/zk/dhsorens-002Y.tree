@@ -1,0 +1,23 @@
+\title{Clean: Circuits and Their Specifications in Lean}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    An embedded [Lean](dhsorens-lean) DSL for writing zk circuits against [AIR](dhsorens-002U), Plonkish, and [R1CS](dhsorens-002S), built by zkSecurity under a verified-zkEVM grant. Circuit, specification, and proof live in the same file, which is the arrangement I have wanted for [smart contracts](dhsorens-001J) and never had.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".}
+        \li{Completeness as a separate obligation, and whether it is discharged or assumed.}
+        \li{Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.}
+        \li{Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.}
+        \li{Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.}
+        \li{How Clean's circuit specs should meet [ArkLib](dhsorens-0040)'s protocol specs. This is the seam I care about most.}
+    }
+}
+
+\p{
+    Sources: [clean](https://github.com/Verified-zkEVM/clean/), [Introducing clean](https://blog.zksecurity.xyz/posts/clean/).
+}

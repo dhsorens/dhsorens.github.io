@@ -1,0 +1,17 @@
+\title{Groth16 and the Pairing Lineage}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Three group elements, a circuit-specific trusted setup, and a verifier cheap enough for the EVM. Obsolete as a zkVM backend and unavoidable as a [wrapper](dhsorens-003P).
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{QAPs: from [R1CS](dhsorens-002S) to a divisibility claim.}
+        \li{The proof and the verification equation; why it is exactly three elements.}
+        \li{The security argument in the algebraic group model, and what AGM assumes about the adversary. ArkLib has an \code{AGM} directory for this.}
+        \li{Circuit-specific setup as the practical objection, and what universal setup changed.}
+    }
+}

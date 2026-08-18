@@ -1,0 +1,18 @@
+\title{Real-Time Proving and the zkEVM Target}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    What the protocol actually asks of a prover, stated as numbers, and which part of the [stack](dhsorens-003R) each number constrains.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The current latency, cost, hardware, and proof-size targets, with a source for each.}
+        \li{Proving an L1 block: what dominates — [hashing](dhsorens-0048), signature verification, state access.}
+        \li{Verification on the consumer side: what a home verifier must be able to check, and in what time.}
+        \li{Multi-prover and diversity arguments, and what they assume about implementation independence.}
+        \li{Which targets are met today and which are not.}
+    }
+}

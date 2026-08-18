@@ -1,0 +1,22 @@
+\title{Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The folding design space after Nova: which constraint systems can be folded, how many instances at once, and what the recursive circuit costs.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{HyperNova: folding [CCS](dhsorens-002V), with per-step cost dominated by one MSM.}
+        \li{ProtoStar: folding arbitrary low-degree polynomial maps, and what that generality buys.}
+        \li{ProtoGalaxy and multi-instance folding; KiloNova and non-uniform PCD.}
+        \li{The axes to compare on: constraint system, instances per fold, recursive circuit size, assumptions.}
+        \li{Which of these is the right target for a formalisation, given that the definitions are still moving.}
+    }
+}
+
+\p{
+    Sources: [HyperNova](https://eprint.iacr.org/2023/573), [multi-instance folding techniques](https://hackmd.io/@fluentlabs/multi-instance-folding-techniques), [awesome-folding](https://github.com/lurk-lab/awesome-folding).
+}

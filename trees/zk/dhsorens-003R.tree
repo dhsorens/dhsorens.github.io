@@ -1,0 +1,21 @@
+\title{The zkVM Stack}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    A map of the layers, so that a claim about one system can be compared with a claim about another. Worth writing before the pages below it.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The three layers — ISA, VM architecture, proving layer — and the interface between each pair.}
+        \li{What "proving a program" means formally: the relation being proved, and where the program commitment enters.}
+        \li{Which layer a given optimisation belongs to, and which choices are genuinely independent.}
+        \li{The end-to-end statement a zkVM claims, written out in full.}
+    }
+}
+
+\p{
+    Sources: [SoK: Understanding zkVM](https://eprint.iacr.org/2026/525), [Projects that shaped modern zkVMs](https://blog.zksecurity.xyz/posts/zkvm-projects-1/).
+}

@@ -1,0 +1,22 @@
+\title{The BCS Transform}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    How an IOP plus a commitment scheme becomes a non-interactive argument. The transform that every hash-based system in deployment is an instance of.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The construction: commit to each oracle, answer queries with openings, then [Fiat–Shamir](dhsorens-002G).}
+        \li{What the commitment must provide — position binding is not obviously enough; where extractability is needed.}
+        \li{How the IOP's query complexity turns into proof size, concretely.}
+        \li{The security loss in the reduction, and whether it is tight.}
+        \li{ArkLib's \code{OracleReduction/BCS}: what is formalised and what the statement looks like.}
+    }
+}
+
+\p{
+    Sources: Ben-Sasson, Chiesa, and Spooner, \em{Interactive Oracle Proofs}; [ArkLib](https://github.com/Verified-zkEVM/ArkLib).
+}

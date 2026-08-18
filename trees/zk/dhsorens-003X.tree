@@ -1,0 +1,22 @@
+\title{Performance and Benchmarking}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    What actually costs time, and how to read a published comparison. I want a mental cost model good enough to predict the direction of a change before measuring it.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The cost breakdown: witness generation, hashing, FFTs, MSMs, extension-field arithmetic.}
+        \li{Cycles per second as a metric, and what it hides — precompiles, [shard](dhsorens-003O) size, security parameters.}
+        \li{Proof size and verifier time across systems, and the recursion that produces the final numbers.}
+        \li{How the [field choice](dhsorens-002K) shows up in measurements, and why hash rate is often the real headline.}
+        \li{Comparing at equal security: the benchmark question that is usually skipped.}
+    }
+}
+
+\p{
+    Sources: [zkvm-benchmarks](https://github.com/a16z/zkvm-benchmarks).
+}

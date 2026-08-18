@@ -1,0 +1,22 @@
+\title{Soundness Notions}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Which soundness a theorem is about determines whether it survives the [Fiat–Shamir transform](dhsorens-002G). This page should end with a table I trust.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{Soundness, knowledge soundness, special soundness — and the implications between them.}
+        \li{Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.}
+        \li{Soundness error versus security level in bits; how error accumulates across rounds, queries, and repetitions.}
+        \li{Provable versus conjectured soundness, and which deployed parameters rest on which. See [proximity gaps](dhsorens-002P).}
+        \li{What "128-bit security" means for a hash-based system once [grinding](dhsorens-003A) is counted.}
+    }
+}
+
+\p{
+    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118) for why the distinctions are not academic.
+}

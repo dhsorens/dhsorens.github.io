@@ -1,0 +1,18 @@
+\title{Continuations and Sharding}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Splitting a long execution into segments that can be proved independently and in parallel. The mechanism that makes zkVM proving a distributed job rather than a single machine's problem.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{Segmenting a trace: what state must be carried across a boundary, and how it is committed.}
+        \li{The consistency argument between shards, especially for [memory](dhsorens-003U).}
+        \li{Aggregating shard proofs into one, and the recursion tree's shape.}
+        \li{How SP1 and RISC Zero each do it, and what their differences imply.}
+        \li{The soundness surface this adds — a shard boundary is a place to forget a constraint.}
+    }
+}

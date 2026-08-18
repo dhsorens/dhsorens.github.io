@@ -1,0 +1,23 @@
+\title{FRI}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Fast Reed–Solomon Interactive Oracle Proof of Proximity. The protocol most of the deployed proving stack rests on, and the one I should be able to write down from memory.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{The folding map: halving the degree by splitting into even and odd parts and taking a random combination. Why the folded word is a codeword when the original is.}
+        \li{Commit phase and query phase; the round-consistency check the verifier performs.}
+        \li{Parameters and their interaction: rate, folding factor, number of rounds, number of query repetitions.}
+        \li{Prover cost — encoding, Merkle hashing, and where the time actually goes.}
+        \li{The soundness statement, with the [regime](dhsorens-0038) named explicitly.}
+        \li{What ArkLib's \code{ProofSystem/Fri} states, and how far the proof gets.}
+    }
+}
+
+\p{
+    Reading: Ben-Sasson, Bentov, Horesh, and Riabzev, \em{Fast Reed–Solomon Interactive Oracle Proofs of Proximity} (ICALP 2018); [the SoK](https://eprint.iacr.org/2026/1367) for the corrected attributions.
+}

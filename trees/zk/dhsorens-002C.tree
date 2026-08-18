@@ -1,0 +1,32 @@
+\title{Studying zkVMs and SNARKs}
+\author{dhsorens}
+\date{2026-08-18}
+\meta{toc}{true}
+
+\p{
+    \em{This is scaffolding, drafted 2026-08-18. Almost every page below is deliberately empty: it names a topic, says what belongs on it, and lists the questions I want answered. I am filling them in as I work through the material.}
+}
+
+\p{
+    I work on [formally verifying](dhsorens-000X) the cryptography underneath zkVMs — [ArkLib](https://github.com/Verified-zkEVM/ArkLib), [CompPoly](https://github.com/Verified-zkEVM/CompPoly), and now Rust provers extracted into [Lean](dhsorens-lean). Verification demands a precise kind of understanding, but it also rewards local knowledge: you can prove a folding lemma without holding the whole argument in your head. This corpus is where I build the whole argument.
+}
+
+\p{
+    The spine is the pipeline every modern proof system follows. A computation becomes a constraint system; the constraint system becomes an interactive oracle proof; the oracles are realised by commitments; the interaction is removed by Fiat–Shamir; the result is made recursive and wrapped around a virtual machine. Each section below is one stage of that pipeline, which is also roughly how ArkLib is organised — so a page here usually has a Lean file behind it.
+}
+
+\p{
+    Every leaf has the same shape: what the page is for, the questions to work through, and where to read. A page is finished when I could reconstruct its subject without the sources — for a protocol, that means stating the theorem with its assumptions and saying what breaks when an assumption is dropped.
+}
+
+\transclude{dhsorens-002D} % the shape of a proof system
+\transclude{dhsorens-002J} % algebraic and coding-theoretic toolkit
+\transclude{dhsorens-002R} % arithmetisation
+\transclude{dhsorens-002Z} % polynomial commitment schemes
+\transclude{dhsorens-0036} % low-degree testing, FRI to WHIR
+\transclude{dhsorens-003D} % proof systems in the wild
+\transclude{dhsorens-003K} % folding, recursion, aggregation
+\transclude{dhsorens-003Q} % zkVMs
+\transclude{dhsorens-003Z} % formalising the stack
+\transclude{dhsorens-0046} % the Ethereum setting
+\transclude{dhsorens-004B} % a reading path

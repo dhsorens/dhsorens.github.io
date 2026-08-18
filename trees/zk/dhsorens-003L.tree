@@ -1,0 +1,17 @@
+\title{IVC and Proof-Carrying Data}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The definitions that folding and recursion are trying to achieve, and the overhead problem that shapes every construction: the verifier has to be expressible as a circuit in the system it verifies.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{Incrementally verifiable computation and proof-carrying data: the statements, and the knowledge soundness they require.}
+        \li{Recursion overhead: what a verifier-in-circuit costs, and which components dominate (hashing, MSM, field arithmetic).}
+        \li{Cycles of curves, and why hash-based systems avoid the problem differently.}
+        \li{How the security loss compounds over recursion depth.}
+    }
+}

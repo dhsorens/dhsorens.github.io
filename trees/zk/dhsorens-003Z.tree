@@ -1,0 +1,19 @@
+\title{Formalising the Stack}
+\author{dhsorens}
+\date{2026-08-18}
+\meta{toc}{true}
+
+\p{
+    My own work, and the reason for the rest of this corpus. The [verified zkEVM](https://verified-zkevm.org) effort runs three tracks — the zkVM constraints, the EVM semantics, and the cryptography — and I sit in the cryptography track, on [ArkLib](dhsorens-0040) and [CompPoly](dhsorens-0041).
+}
+
+\p{
+    These pages should stay closer to the code than the rest of the corpus, and they are the ones most likely to go stale. Related: [protocol snarkification](dhsorens-0020), [computable specifications](dhsorens-0025), [formal verification in proof assistants](dhsorens-0015).
+}
+
+\transclude{dhsorens-0040} % ArkLib
+\transclude{dhsorens-0041} % CompPoly
+\transclude{dhsorens-0042} % VCV-io
+\transclude{dhsorens-0043} % Rust to Lean
+\transclude{dhsorens-0044} % specifying the machine
+\transclude{dhsorens-0045} % what a verified zkVM would mean

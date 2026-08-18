@@ -1,0 +1,21 @@
+\title{Nova and Folding Schemes}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Folding two [R1CS](dhsorens-002S) instances into one without proving either, deferring all the SNARK work to the end. Also a case study in why this material needs formalising: a soundness bug was found in the published scheme.
+}
+
+\p{
+    To work through:
+    \ul{
+        \li{Relaxed R1CS and committed relaxed R1CS: why the relaxation is needed to make folding close.}
+        \li{The folding step and its knowledge-soundness argument.}
+        \li{Why the recursive circuit is small — the folding verifier, not a SNARK verifier.}
+        \li{The bug: what the flaw was, what it permitted, and which part of the argument would have caught it under [machine-checked](dhsorens-003Z) scrutiny.}
+    }
+}
+
+\p{
+    Sources: [how Nova got broken](https://blog.zksecurity.xyz/posts/nova-attack/), [awesome-folding](https://github.com/lurk-lab/awesome-folding).
+}
