@@ -16,9 +16,10 @@
     I recently started work on formally verifying [all things zero-knowledge](dhsorens-0020) on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
 }
 
-\transclude{dhsorens-004D} % hash functions in Bitcoin and Ethereum
-% A corpus is represented here by a short blurb tree, not by transcluding
-% the corpus itself — dhsorens-002C is 72 trees and would swamp this page.
+% Anything with sections goes in through a blurb tree rather than by transcluding
+% the thing itself, which would pull in everything beneath it: dhsorens-004D has
+% four sections, dhsorens-002C is 72 trees. A short standalone note goes in whole.
+\transclude{dhsorens-004I} % a note on hash functions in Bitcoin and Ethereum
 \transclude{dhsorens-004C} % a corpus on zkVMs and SNARKs
 \transclude{dhsorens-0027} % LC3 in Lean
 \transclude{dhsorens-0025} % Computable Specifications
