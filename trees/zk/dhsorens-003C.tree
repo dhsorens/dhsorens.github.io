@@ -1,0 +1,22 @@
+\title{WHIR}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The current endpoint of the lineage: a multilinear commitment with a very fast verifier, unifying the Reed–Solomon proximity line with the tensor-commitment line that Basefold began.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The construction, and where [sumcheck](dhsorens-002Q) enters the low-degree test.}
+        \li{How a multilinear claim is served by a univariate proximity test — the translation, and its cost.}
+        \li{The verifier-time claim, and what it is measured against.}
+        \li{Which of [STIR](dhsorens-003B)'s ideas it keeps and which it discards.}
+        \li{ArkLib's WHIR formalisation: what is proved, and what the remaining obligations are.}
+    }
+}
+
+\p{
+    Sources: Arnon, Chiesa, Fenzi, and Yogev, \em{WHIR}; [SoK: Hash-Based Polynomial Commitments](https://eprint.iacr.org/2026/1367); [ArkLib](https://github.com/Verified-zkEVM/ArkLib).
+}

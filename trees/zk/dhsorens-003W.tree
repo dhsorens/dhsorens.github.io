@@ -1,0 +1,24 @@
+\title{The zkVMs in the Field}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    One entry per system: backend, arithmetisation, field, memory model, and the choice that distinguishes it. The point is a comparison table, not a survey.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{SP1 — RISC-V on Plonky3, precompile-heavy.}
+        \li{Jolt — [Lasso](dhsorens-002W)-based, lookups for instruction semantics, notably small proofs.}
+        \li{RISC Zero — RISC-V, read-write and paged Merkle memory.}
+        \li{OpenVM — modular and extensible by construction; what its extension interface requires.}
+        \li{Stwo and Cairo — circle STARKs over Mersenne31, with a purpose-built ISA.}
+        \li{Miden and Valida — stack machine and provability-first ISA respectively.}
+        \li{For each: what its soundness rests on that the others' does not.}
+    }
+}
+
+\p{
+    Sources: [SoK: Understanding zkVM](https://eprint.iacr.org/2026/525), [sp1](https://github.com/succinctlabs/sp1), [jolt](https://github.com/a16z/jolt), [risc0](https://github.com/risc0/risc0), [openvm](https://github.com/openvm-org/openvm), [awesome-zkvm](https://github.com/rkdud007/awesome-zkvm).
+}

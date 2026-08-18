@@ -1,0 +1,14 @@
+\title{Folding, Recursion, and Aggregation}
+\author{dhsorens}
+\date{2026-08-18}
+\meta{toc}{true}
+
+\p{
+    How a proof about a long computation is assembled from proofs about short ones. Every zkVM that proves a real workload is doing this, and it is where the soundness argument becomes hardest to keep track of — the [Nova bug](dhsorens-003M) is the standing example.
+}
+
+\transclude{dhsorens-003L} % IVC and PCD
+\transclude{dhsorens-003M} % Nova and folding
+\transclude{dhsorens-003N} % beyond Nova
+\transclude{dhsorens-003O} % continuations and sharding
+\transclude{dhsorens-003P} % wrapping and on-chain verification

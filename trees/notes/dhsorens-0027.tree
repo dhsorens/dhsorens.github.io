@@ -38,7 +38,7 @@ The code in [LC3-Lean](https://github.com/dhsorens/LC3-Lean) is laid out as foll
 \em{Formal proofs}
 
 \p{
-"Formally verified" here means that Lean checks mathematical theorems relating the implementation above to an explicit ISA-level specification of how each instruction may read and write registers and memory.
+"Formally verified" here means that Lean checks mathematical theorems relating the implementation above to [an explicit ISA-level specification](dhsorens-0044) of how each instruction may read and write registers and memory.
 Those theorems are stated and proved in the \code{LC3Correct} package—especially \code{LC3Correct/ExecutionCorrect.lean}, with supporting lemmas about registers and memory in \code{LC3Correct/RegisterLemmas.lean} and \code{LC3Correct/MemoryLemmas.lean}. Together they aim to capture, opcode by opcode, that the Lean executor’s effect on machine state matches the spec encoded alongside it. All proofs pass without \code{sorry}!
 }
 

@@ -16,9 +16,18 @@
     I recently started work on formally verifying [all things zero-knowledge](dhsorens-0020) on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
 }
 
-\transclude{dhsorens-0027} % LC3 in Lean
-\transclude{dhsorens-0025} % Computable Specifications
-\transclude{dhsorens-0020} % Protocol Snarkification
-% \transclude{dhsorens-0017} % Specification and Verification
-\transclude{dhsorens-000U} % formal verification
-\transclude{dhsorens-000V} % type theory and formal proof, more broadly
+% This page is an index, not a container: entries link out rather than
+% transclude, so it stays a readable feed however large the forest gets.
+% Newest first. Comment an entry out to unlist it.
+\p{Newest first:
+
+    \ul{
+        \li{[zkVMs and SNARKs](dhsorens-002C). A systematic study of the cryptography and machine architecture these systems are built from, topic by topic: [arithmetisation](dhsorens-002R), [commitment schemes](dhsorens-002Z), [low-degree testing](dhsorens-0036) from FRI to WHIR, [zkVMs](dhsorens-003Q) themselves, and [formalising the stack](dhsorens-003Z) in Lean. August 2026.}
+        \li{[LC3 in Lean](dhsorens-0027). A small virtual machine and its semantics in Lean, with the [ISA-level details](dhsorens-0029) and the [proofs of correctness](dhsorens-002A) written up separately. March 2026.}
+        \li{[CompPoly and Computable Specifications](dhsorens-0025). Why an executable specification is a stronger specification, and how that connects to [metaspecifications](dhsorens-000L) in cryptography. March 2026.}
+        \li{[Protocol Snarkification](dhsorens-0020). Ongoing work to integrate zero knowledge proofs into every layer of the Ethereum protocol. December 2025.}
+        \li{[Formal Specification and Verification](dhsorens-000U). [Smart contract specification and verification](dhsorens-000W), and [formal verification in proof assistants](dhsorens-0015) more broadly. August 2025.}
+        \li{[Type Theory and Formal Proof](dhsorens-000V). [Proof assistants](dhsorens-000B), some preliminary work in [HoTT](dhsorens-hott), and the [formalization of mathematics](dhsorens-000Z) in [Lean](dhsorens-lean). August 2025.}
+        % \li{[How the Formalization of Mathematics Relates to My Work](dhsorens-0017). September 2025.}
+    }
+}

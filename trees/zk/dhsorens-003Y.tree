@@ -1,0 +1,23 @@
+\title{How zkVMs Break}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    A catalogue of real failure modes, kept concrete. This page is the evidence for the [formalisation work](dhsorens-003Z), so it should stay evidence rather than argument. [Smart contract vulnerabilities due to poor specification](dhsorens-001P) is the same catalogue one domain over, and the failure modes rhyme: code that did what it was specified to do, and a specification that permitted what nobody intended.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{Under-constrained circuits: the general shape, and the canonical examples.}
+        \li{Missing range checks, and why a forgotten monotonicity constraint on [memory](dhsorens-003U) timestamps is fatal.}
+        \li{[Fiat–Shamir](dhsorens-002G) misuse: transcripts missing a value, weak domain separation, insufficient challenge space.}
+        \li{Soundness bugs in published schemes rather than implementations — [Nova](dhsorens-003M) is the example to write up.}
+        \li{Parameter errors: a security level computed in the wrong [regime](dhsorens-0038).}
+        \li{Which of these a type system, a linter, an audit, or a proof would each have caught.}
+    }
+}
+
+\p{
+    Sources: [how Nova got broken](https://blog.zksecurity.xyz/posts/nova-attack/), [How to Prove False Statements](https://eprint.iacr.org/2025/118).
+}

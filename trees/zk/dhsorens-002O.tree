@@ -1,0 +1,22 @@
+\title{Reed–Solomon and Linear Codes}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Proof systems in this family work because a low-degree polynomial is a codeword and a cheating prover is not. The coding theory is therefore not background — it is where soundness comes from.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{Reed–Solomon codes: rate, distance, the Singleton bound.}
+        \li{Rate as the central dial — proof size against prover time — and where deployed systems set it.}
+        \li{General linear codes and tensor codes; the Ligero and Brakedown line as an alternative to RS.}
+        \li{Interleaved codes, and what proximity to a code means for a matrix of columns rather than a single word.}
+        \li{Foldable and linear-time-encodable codes, and which protocols need which property.}
+    }
+}
+
+\p{
+    Sources: [SoK: Hash-Based Polynomial Commitments and Low-Degree Tests](https://eprint.iacr.org/2026/1367).
+}

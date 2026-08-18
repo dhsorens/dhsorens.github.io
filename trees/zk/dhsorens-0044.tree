@@ -1,0 +1,22 @@
+\title{Specifying the Machine: Sail, LLZK, zkLean}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The other half of a verified zkVM: a trustworthy specification of the machine being proved, and a way to reason about circuits written in the many DSLs that exist. [LC3 in Lean](dhsorens-0027) is the same problem at a scale small enough to see all of it.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The Sail Lean backend: extracting the RISC-V specification into Lean, and what fidelity that gives.}
+        \li{LLZK as an MLIR dialect unifying circuits from different DSLs — what it can and cannot express.}
+        \li{zkLean for [R1CS](dhsorens-002S), alongside [Clean](dhsorens-002Y) for [AIR](dhsorens-002U).}
+        \li{The gap between an ISA specification and the constraint system claiming to implement it.}
+        \li{Whether the EVM track's route (revm against KEVM, KEVM against a Lean model) is the right shape for the zkVM track too.}
+    }
+}
+
+\p{
+    Sources: [Verified-zkEVM overview](https://github.com/Verified-zkEVM/Overview).
+}

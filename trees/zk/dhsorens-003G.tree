@@ -1,0 +1,17 @@
+\title{Spartan and Sumcheck-Based SNARKs}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    [R1CS](dhsorens-002S) proved with [sumcheck](dhsorens-002Q) instead of quotients, which removes the FFT and moves the cost into a sparse polynomial commitment. It is also one of the systems [ArkLib](dhsorens-0040) has formalised, so it is a good place to read a full argument in Lean.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The reduction from R1CS satisfiability to a sumcheck claim.}
+        \li{Sparse polynomial commitment (Spark) and why the matrices' sparsity is what makes this cheap.}
+        \li{Prover cost profile against a Plonkish system on the same circuit.}
+        \li{The line from here to [HyperNova](dhsorens-003N), which folds the same shape of claim.}
+    }
+}

@@ -90,8 +90,8 @@ Link text may span several source lines.
 House style is a trailing `%` comment naming what is being pulled in:
 
 ```
-\transclude{dhsorens-0025} % Computable Specifications
-\transclude{dhsorens-0020} % Protocol Snarkification
+\transclude{dhsorens-002R} % arithmetisation
+\transclude{dhsorens-002Z} % polynomial commitment schemes
 % \transclude{dhsorens-0017} % temporarily unlisted
 ```
 
@@ -100,6 +100,12 @@ document order, so you can write a paragraph, transclude a child, then write mor
 
 Commenting out a transclude is the idiom for unlisting a child without deleting it.
 A tree may be transcluded from more than one place.
+
+Transclusion is recursive and renders the whole subtree inline, so it composes a
+document — it is not a way to list things. The section indexes (`dhsorens-notes`,
+`dhsorens-talks`, `dhsorens-slides`) therefore use `\li{}` entries that link out;
+transclusion is for building a page out of its own sections, as `dhsorens-002C` and
+`dhsorens-000U` do.
 
 ## Directives that do NOT work here
 

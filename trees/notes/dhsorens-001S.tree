@@ -1,8 +1,8 @@
 \title{Latest Deep-Dive}
 \author{dhsorens}
-\date{2025-10-09}
+\date{2026-08-18}
 \meta{toc}{true}
 
 \p{
-    See my latest on [building a formally verified LC3 virtual machine in Lean](dhsorens-0027).
+    See my latest on [the cryptography behind zkVMs and SNARKs](dhsorens-002C) — a systematic study of proof systems, [arithmetisation](dhsorens-002R), [low-degree testing](dhsorens-0036), and [formalising the whole stack](dhsorens-003Z) in Lean, one topic per page.
 }

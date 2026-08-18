@@ -1,0 +1,22 @@
+\title{Interactive Proofs, Arguments, and IOPs}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The chain of definitions that everything else is stated in terms of, ending at the interactive oracle reduction that [ArkLib](dhsorens-0040) takes as primitive. \em{Proof} does different work here than it does in [proposition and proof](dhsorens-001F): a SNARK convinces a verifier with high probability under stated assumptions, and is not a derivation.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{Interactive proof, argument (prover computationally bounded), PCP, IOP, oracle reduction — what each relaxation buys.}
+        \li{Where \em{succinct} and \em{of knowledge} enter, and what each costs the construction.}
+        \li{Public-coin versus private-coin, and why every deployed system is public-coin.}
+        \li{The knowledge extractor: what it is handed, what it must produce, and why rewinding is a problem in the non-interactive setting.}
+        \li{Zero-knowledge — honest-verifier versus malicious, and how much of it a zkVM actually needs. Mostly these systems are bought for succinctness.}
+    }
+}
+
+\p{
+    Reading: \code{ArkLib/OracleReduction/Basic.lean} as the definitional reference; Thaler, \em{Proofs, Arguments, and Zero-Knowledge}, for the textbook chain.
+}

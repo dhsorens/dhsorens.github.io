@@ -1,0 +1,22 @@
+\title{What a Verified zkVM Would Mean}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The statement at the top of the whole effort, written out honestly: which theorems compose, and which links in the chain are assumptions rather than proofs. It is the claim the whole effort will be judged on, and its general form is [the issue of incorrect specification](dhsorens-001K): a machine-checked proof is only ever as good as the statement it proves.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The chain: ISA specification, constraint system, arithmetisation soundness, IOP soundness, commitment security, [Fiat–Shamir](dhsorens-002G), recursion, extracted implementation.}
+        \li{Which links are proved today, which are stated, and which are not formalised at all.}
+        \li{The irreducible assumptions: hash security, [conjectured proximity bounds](dhsorens-0038), the compiler, the hardware.}
+        \li{Whether "verified" should mean the composed end-to-end theorem, or a set of component theorems with audited seams.}
+        \li{The 2027 target the project set, and what would have to be true for it to be met.}
+    }
+}
+
+\p{
+    Sources: [verified-zkevm.org](https://verified-zkevm.org), [Verified-zkEVM overview](https://github.com/Verified-zkEVM/Overview).
+}

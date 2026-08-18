@@ -1,0 +1,22 @@
+\title{List Decoding and Proximity Gaps}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The technical core of every soundness proof in the [FRI](dhsorens-0037) family, and the place where deployed parameters stop being provably sound and start being conjecturally sound. It is the most load-bearing page in the section.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The three regimes — unique decoding, the Johnson bound, capacity — and what parameters each licenses.}
+        \li{What a proximity gap statement says, and why a low-degree test cannot be analysed without one.}
+        \li{Correlated agreement and mutual correlated agreement; which protocols need the stronger form.}
+        \li{The conjectures: which are theorems, which are conjectures, and which deployed systems assume which. The SoK argues these regimes are routinely conflated in the primary sources.}
+        \li{Machine-checked threshold constants, and whether the formalisation can be reused in [ArkLib](dhsorens-0040).}
+    }
+}
+
+\p{
+    Sources: [On Reed–Solomon Proximity Gaps Conjectures](https://eprint.iacr.org/2025/2046), [FRI Soundness Above the Johnson Bound via Threshold Halving](https://eprint.iacr.org/2026/858), [Pinning #{\delta^*}](https://deltastar.computer/), [notes on the proximity-gap conjectures](https://hackmd.io/@zkpunk/CS25).
+}

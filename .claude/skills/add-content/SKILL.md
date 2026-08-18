@@ -41,7 +41,15 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
 
 ### Note / blog post
 - File: `trees/notes/dhsorens-XXXX.tree`, `\taxon{Blog}` (or omit taxon for plain notes).
-- Wire: add `\transclude{dhsorens-XXXX} % short label` to `trees/dhsorens-notes.tree`. Newest content goes near the top of the transclude list; thematic/evergreen notes are grouped with their topic block instead — read the existing order first.
+- Wire: add a one-line entry to the list in `trees/dhsorens-notes.tree`, newest first:
+  `\li{[Title](dhsorens-XXXX). <one sentence, linking substantial children>. <Month Year>.}`
+- **That page is an index, not a container.** Entries link; they never transclude. A note's own page is where it is read, so the feed stays legible however long the note is, and however many sections it has. `trees/dhsorens-talks.tree` is the model. Comment an entry out with `%` to unlist it.
+
+### Page in an existing corpus
+Some subjects have grown their own multi-page corpus — `trees/zk/` (the zkVMs and SNARKs corpus, rooted at `dhsorens-002C`) is the current one.
+- File: alongside its siblings in the corpus directory, not in `trees/notes/`.
+- Wire: `\transclude{dhsorens-XXXX} % label` in the appropriate **hub** inside the corpus, in reading order (not chronological).
+- Do **not** touch `trees/dhsorens-notes.tree`: the corpus already has one index entry, and a page added inside it is not a new item on the feed. Update the corpus's index entry only if the addition changes what the corpus covers.
 
 ### Log entry
 - File: `trees/logs/dhsorens-XXXX.tree`, `\taxon{Log}`, `\date` required, usually short (one or two `\p`), often no `\author`.
@@ -60,6 +68,7 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
 
 ### Homepage feature
 - `trees/index.tree` transcludes the homepage sections (featured article, education, publications, talks, work history). To feature something, add/move a `\transclude{…} % label` there; to retire one, comment it out with `%` (the existing style) rather than deleting.
+- **`trees/notes/dhsorens-001S.tree` is the "Latest Deep-Dive" blurb**, the first thing under the intro on the homepage. Whenever you add something substantial — a deep-dive, a new corpus, a piece of writing worth the front page — rewrite its body to point at the new thing and bump its `\date` to today. Keep the address: `index.tree` transcludes it and the page is already published at `/dhsorens-001S/`. Match the house idiom, currently `See my latest on [<description>](<addr>) — <clause>.` It goes stale silently, so treat it as part of publishing rather than an afterthought. (`/notes` and `/deep-research` already do this as a numbered step.)
 
 ### New section or entity page (institution, person, tool, …)
 - Named tree in the matching subdir (`trees/institutions/dhsorens-<name>.tree`, `trees/people/<name>.tree`, …), then link to it from wherever it's mentioned. People trees are referenced by `\author{<addr>}`.

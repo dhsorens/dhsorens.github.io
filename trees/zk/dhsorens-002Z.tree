@@ -1,0 +1,19 @@
+\title{Polynomial Commitment Schemes}
+\author{dhsorens}
+\date{2026-08-18}
+\meta{toc}{true}
+
+\p{
+    The component that turns an oracle in an [IOP](dhsorens-002E) into something a real verifier can query. Swapping the commitment scheme changes a system's proof size, its trust assumptions, and its post-quantum status while leaving the [arithmetisation](dhsorens-002R) untouched — which is why this is the layer where systems are usually differentiated.
+}
+
+\p{
+    [ArkLib](dhsorens-0040) splits these into ordinary and functional commitments; understanding why that split is the right one is part of the point of these pages.
+}
+
+\transclude{dhsorens-0030} % the commitment interface
+\transclude{dhsorens-0031} % Merkle trees and vector commitments
+\transclude{dhsorens-0032} % KZG and pairings
+\transclude{dhsorens-0033} % inner-product arguments
+\transclude{dhsorens-0034} % code-based commitments
+\transclude{dhsorens-0035} % small-field commitments and ring switching

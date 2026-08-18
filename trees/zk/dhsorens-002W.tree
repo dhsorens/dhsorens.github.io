@@ -1,0 +1,23 @@
+\title{Lookup Arguments}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Modern zkVMs are mostly lookups: instruction semantics, range checks, bitwise operations, and memory consistency all become table queries. This is where the prover's time goes, so it is where the interesting engineering is.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The logarithmic-derivative identity (logUp) and why it replaced grand-product multiset checks.}
+        \li{logUp-GKR: applying [sumcheck](dhsorens-002Q) to the fraction identity to avoid committing to #{O(m)} field elements.}
+        \li{Lasso: the lookup relation as #{a = M \cdot T} with #{M} sparse, and decomposability for tables of size #{2^{64}} and beyond.}
+        \li{logup* and the small-table indexed case.}
+        \li{The "lookup singularity" claim from 2023 — how much of it held, measured in real zkVM benchmarks.}
+        \li{What a lookup argument's soundness proof actually requires, and what the [Jolt semantics verification](https://eprint.iacr.org/2024/1841) found.}
+    }
+}
+
+\p{
+    Sources: [The logUp-GKR protocol](https://www.zkm.io/blog/the-logup-gkr-protocol), [Introducing Lasso and Jolt](https://a16zcrypto.com/posts/article/introducing-lasso-and-jolt/), [logup*](https://eprint.iacr.org/2025/946), [Verifying Jolt zkVM Lookup Semantics](https://eprint.iacr.org/2024/1841).
+}

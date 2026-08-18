@@ -9,7 +9,7 @@
     Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
     % Some software or computer logic is both highly technical and explicitly mathematical.
     % Depending on the level of computation, the goal of a bit of code—maybe something backing a
-    For example, chip design or software implementing [zero-knowledge proofs](dhsorens-001L) will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    For example, chip design or software implementing [zero-knowledge proofs](dhsorens-002C) will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
     In these cases, the \em{specification} tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
 }
 

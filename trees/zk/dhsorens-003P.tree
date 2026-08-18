@@ -1,0 +1,18 @@
+\title{Wrapping and On-Chain Verification}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The last step of a deployed pipeline: convert a large STARK proof into something an on-chain verifier can check cheaply, usually by proving the STARK verifier inside a [pairing-based](dhsorens-0032) system.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The wrapping chain in a real system, layer by layer, with proof sizes at each step.}
+        \li{Arithmetising a hash-based verifier: which parts are expensive and why.}
+        \li{Gas cost of the final verifier, and what it constrains upstream.}
+        \li{The trust and assumption stack the wrap introduces — a trusted setup at the end of a transparent pipeline.}
+        \li{Whether the composed security is stated anywhere precisely enough to formalise.}
+    }
+}

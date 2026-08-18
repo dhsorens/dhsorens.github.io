@@ -1,0 +1,22 @@
+\title{Evaluation Domains, FFTs, and Circle Groups}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Where the polynomials get evaluated, which decides both the prover's asymptotics and which fields are usable at all.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{Smooth multiplicative subgroups and two-adicity; why Goldilocks and BabyBear were chosen for it.}
+        \li{Cosets and coset shifts, and why [FRI](dhsorens-0037) folds along them.}
+        \li{Mersenne31 has no large smooth subgroup — hence the circle group, and what circle STARKs change about folding and constraint degrees.}
+        \li{NTT cost in practice: when the prover is FFT-bound versus hash-bound versus witness-generation-bound.}
+        \li{Multilinear systems that avoid FFTs entirely, and what they pay instead.}
+    }
+}
+
+\p{
+    Sources: Buterin, [Exploring circle STARKs](https://vitalik.eth.limo/general/2024/07/23/circlestarks.html); [An introduction to circle STARKs](https://blog.lambdaclass.com/an-introduction-to-circle-starks/).
+}

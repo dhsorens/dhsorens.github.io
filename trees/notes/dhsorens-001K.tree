@@ -13,7 +13,7 @@
 }
 
 \p{
-    Some software will need a great deal of formal infrastructure built up to write provably correct specifications.
+    Some software will need [a great deal of formal infrastructure](dhsorens-003Z) built up to write provably correct specifications.
     For others, it's not even obvious that formal statements are the right tool to use for them.
     Computer science has a long history of using diagrams, pictures, and other tools of abstraction to specify computation.
     Maybe a proof assistant is powerful enough to formalize any abstract framework? Maybe it's powerful enough to do this?

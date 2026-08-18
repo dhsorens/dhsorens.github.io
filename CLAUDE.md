@@ -10,7 +10,7 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 
 | Path | What it is |
 | --- | --- |
-| `trees/` | Content source (`.tree` files). Subdirs: `notes/`, `logs/`, `research/`, `institutions/`, `tools/`, `places/`, `people/`, `orgs/`. Top-level trees are section indexes (`index.tree` = homepage, `dhsorens-notes.tree`, `dhsorens-logs.tree`, `dhsorens-talks.tree`, …). |
+| `trees/` | Content source (`.tree` files). Subdirs: `notes/`, `logs/`, `zk/`, `research/`, `institutions/`, `tools/`, `places/`, `people/`, `orgs/`. Top-level trees are section indexes (`index.tree` = homepage, `dhsorens-notes.tree`, `dhsorens-logs.tree`, `dhsorens-talks.tree`, …). `zk/` is a multi-page corpus rather than a pile of notes — see below. |
 | `assets/` | Static files: `docs/` (paper/CV PDFs), `slides/`, `media/` (images), `img/`. Published at those same absolute paths. |
 | `theme/` | Vendored upstream forester theme. **Do not edit** XSL/CSS/JS — only the six favicon files (`favicon*`, `apple-touch-icon.png`, `android-chrome-*`) are local and must survive theme updates. |
 | `docs/` | **Generated** build output, committed for GitHub Pages. Never hand-edit; `commit.sh` regenerates it wholesale. |
@@ -39,6 +39,8 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 - Every paragraph needs `\p{…}`; see `cmds.md` for the markup reference.
 - Publishing flow: work on a branch, commit **sources only** (`./commit-trees.sh` or plain git), push, PR to `main`. CI publishes on merge; allow ~10 minutes for the Cloudflare cache after merging.
 - `trees/notes/dhsorens-001S.tree` is the **Latest Deep-Dive** blurb transcluded at the top of the front page. Its address is load-bearing — rewrite its body, never its address.
+- `trees/dhsorens-notes.tree` is an **index, not a container**: one `\li{}` entry per item, newest first, linking out. Never transclude a note into it — a note is read on its own page, and the index has to stay legible as the forest grows. `dhsorens-talks.tree` and `dhsorens-slides.tree` follow the same pattern.
+- A **corpus** (currently `trees/zk/`, rooted at `dhsorens-002C`) is one item on that index however many trees it contains. Its internal structure is transclusion — root transcludes hubs, hubs transclude leaves — so the whole thing reads as one page at its own address. Adding a page inside a corpus does not touch the Notes index.
 
 ## Workflows
 

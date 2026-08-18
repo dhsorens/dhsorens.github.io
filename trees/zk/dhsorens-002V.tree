@@ -1,0 +1,17 @@
+\title{CCS and the Unified View}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Customisable constraint systems, proposed as the generalisation that has R1CS, Plonkish, and AIR as instances. Worth understanding both as a claim about expressiveness and as the format HyperNova folds.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The definition, and the explicit embeddings of the three formats into it.}
+        \li{What the unification buys: one folding scheme, one commitment interface, one soundness proof.}
+        \li{What it costs — where a CCS encoding is asymptotically or concretely worse than the native format.}
+        \li{Whether the same unification is the right structuring principle for a formal library, or whether [ArkLib](dhsorens-0040)'s per-system files are better.}
+    }
+}

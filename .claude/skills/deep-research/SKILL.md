@@ -137,8 +137,10 @@ Standards for the prose:
 
 Same as `/notes`:
 
-1. Prepend `\transclude{dhsorens-<parent>} % <Title>` to the block at the bottom of
-   `trees/dhsorens-notes.tree`.
+1. Add a one-line `\li{}` entry to the list at the bottom of
+   `trees/dhsorens-notes.tree`, newest first — an index entry that links the parent,
+   never a transclude. See `/notes` step 5; a deep-dive is exactly the size of note
+   that would swamp that page.
 2. Rewrite the blurb in `trees/notes/dhsorens-001S.tree` and bump its `\date`. Keep
    the address — the front page transcludes it.
 3. Branch, commit, push, open a PR:

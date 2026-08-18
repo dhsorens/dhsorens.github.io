@@ -1,0 +1,22 @@
+\title{Finite Fields and the Small-Field Turn}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Transparent provers migrated from 256-bit scalar fields down to 31-bit primes and then to #{\mathbb{F}_2}. The migration is the single largest source of speedup in the last five years, and it constrains everything above it.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{Prime fields, extension fields, and why the prover wants a small base field while soundness wants a large challenge space.}
+        \li{The specific fields and what makes each fast: Mersenne31 (#{2^{31}-1}), BabyBear, KoalaBear, Goldilocks.}
+        \li{Where extension-field arithmetic is unavoidable — challenges, DEEP queries, batching — and how much of the trace can stay in the base field.}
+        \li{Packing and vectorisation: how field choice interacts with the machine.}
+        \li{What is lost: two-adicity, FFT-friendliness, and the [circle](dhsorens-002N) workaround.}
+    }
+}
+
+\p{
+    Sources: [The Small-Field Turn in Succinct Proofs](https://eprint.iacr.org/2026/1371).
+}
