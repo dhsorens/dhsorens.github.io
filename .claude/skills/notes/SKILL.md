@@ -52,9 +52,9 @@ Ground rules for the writing that follows:
 ./.claude/scripts/next-tree-id.sh <N>
 ```
 
-where `N` is 1 (parent) + one per section. The script prints addresses like
-`dhsorens-0029`. Use them in the order printed: first for the parent, rest for
-children. Never invent an address by hand, and never reuse one.
+where `N` is 1 (blurb, see step 5) + 1 (parent) + one per section. The script prints
+addresses like `dhsorens-0029`. Use them in the order printed: first for the blurb, next
+for the parent, rest for children. Never invent an address by hand, and never reuse one.
 
 ## 4. Write the trees
 
@@ -128,18 +128,38 @@ newest first:
 \transclude{dhsorens-<parent>} % <Title>
 ```
 
-Notes are **transcluded, not listed**. Each one renders in place with its own title and
-date, in the standard forester page format, and that is the look of the page — not a
-bulleted list of links. Read the existing order before inserting; thematic notes are
-sometimes grouped with their topic rather than placed strictly by date.
+Notes are **transcluded, not listed**. Each entry renders in place with its own title and
+date, in the standard forester page format — not as a bulleted list of links. Read the
+existing order before inserting; thematic notes are sometimes grouped with their topic
+rather than placed strictly by date.
 
-**The one exception is a corpus.** If what you are wiring in is large enough to swamp
-the page — the [zk corpus](dhsorens-002C) is 72 trees and roughly 8,600 words — do not
-transclude it. Write a short blurb tree instead, in the ordinary note format: a
-paragraph on what it is and a list of links into its sections, a page's worth at most.
-Transclude the blurb; link the corpus. `trees/notes/dhsorens-004C.tree` is the working
-example. The judgement is about size, not about kind: an ordinary multi-section note is
-transcluded whole, children and all, exactly as `dhsorens-000U` is.
+**What you transclude is a blurb, not the note.** Anything this workflow produces is a
+parent plus several sections; transcluding it whole would put a few thousand words on the
+page and bury every other entry. So write one more tree, in ordinary note format:
+
+```
+\title{A Note on <Topic>}
+\author{dhsorens}
+\date{<today>}
+
+\p{
+    <One paragraph: what [<Title>](dhsorens-<parent>) covers, and what it concludes.>
+}
+
+\p{
+    The sections:
+    \ul{
+        \li{[<Section title>](dhsorens-<childN>) — <half a line on what is in it>.}
+    }
+}
+```
+
+The blurb is the feed item; the note is read at its own address. Working examples:
+`dhsorens-004C` (for the zk corpus) and `dhsorens-004I` (for the hash-functions note).
+
+Only a short standalone note with no sections goes in directly, as the older entries on
+that page do. If in doubt, write the blurb — it is one small tree and it keeps the page
+readable as the forest grows.
 
 ## 6. Update the Latest Deep-Dive
 
