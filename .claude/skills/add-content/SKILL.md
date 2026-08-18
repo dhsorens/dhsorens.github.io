@@ -68,6 +68,7 @@ Some subjects have grown their own multi-page corpus — `trees/zk/` (the zkVMs 
 
 ### Homepage feature
 - `trees/index.tree` transcludes the homepage sections (featured article, education, publications, talks, work history). To feature something, add/move a `\transclude{…} % label` there; to retire one, comment it out with `%` (the existing style) rather than deleting.
+- **`trees/notes/dhsorens-001S.tree` is the "Latest Deep-Dive" blurb**, the first thing under the intro on the homepage. Whenever you add something substantial — a deep-dive, a new corpus, a piece of writing worth the front page — rewrite its body to point at the new thing and bump its `\date` to today. Keep the address: `index.tree` transcludes it and the page is already published at `/dhsorens-001S/`. Match the house idiom, currently `See my latest on [<description>](<addr>) — <clause>.` It goes stale silently, so treat it as part of publishing rather than an afterthought. (`/notes` and `/deep-research` already do this as a numbered step.)
 
 ### New section or entity page (institution, person, tool, …)
 - Named tree in the matching subdir (`trees/institutions/dhsorens-<name>.tree`, `trees/people/<name>.tree`, …), then link to it from wherever it's mentioned. People trees are referenced by `\author{<addr>}`.
