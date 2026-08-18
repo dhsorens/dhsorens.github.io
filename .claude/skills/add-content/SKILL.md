@@ -42,14 +42,15 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
 ### Note / blog post
 - File: `trees/notes/dhsorens-XXXX.tree`, `\taxon{Blog}` (or omit taxon for plain notes).
 - Wire: add `\transclude{dhsorens-XXXX} % short label` to `trees/dhsorens-notes.tree`. Newest content goes near the top of the transclude list; thematic/evergreen notes are grouped with their topic block instead — read the existing order first.
-- **Notes are transcluded, not listed.** Each renders in place with its own title and date, in the standard forester page format. Comment a transclude out with `%` to unlist it rather than deleting it. The exception is a corpus: see below.
+- **Notes are transcluded, not listed.** Each renders in place with its own title and date, in the standard forester page format. Comment a transclude out with `%` to unlist it rather than deleting it.
+- **Anything with sections goes in through a blurb.** If the note is a parent with children, or runs beyond a page, do not transclude it — write one more tree in ordinary note format (title `A Note on <Topic>`, a paragraph on what the note covers, then a `\ul{}` of links to its sections) and transclude that. `trees/notes/dhsorens-004C.tree` and `dhsorens-004I` are the working examples. A short standalone note is transcluded directly, as the older entries are.
 
 ### Page in an existing corpus
 Some subjects have grown their own multi-page corpus — `trees/zk/` (the zkVMs and SNARKs corpus, rooted at `dhsorens-002C`) is the current one.
 - File: alongside its siblings in the corpus directory, not in `trees/notes/`.
 - Wire: `\transclude{dhsorens-XXXX} % label` in the appropriate **hub** inside the corpus, in reading order (not chronological).
 - Do **not** touch `trees/dhsorens-notes.tree`: a page added inside a corpus is not a new item on the Notes page. Update the corpus's blurb tree only if the addition changes what the corpus covers.
-- A corpus is **too large to transclude into Notes** — `dhsorens-002C` alone is ~8,600 words. It appears there through a short blurb tree in the ordinary note format (`trees/notes/dhsorens-004C.tree`): a paragraph saying what it is, and a list of links into its sections. That blurb is what gets transcluded; the corpus is linked.
+- A corpus is **far too large to transclude into Notes** — `dhsorens-002C` alone is ~8,600 words. Like any sectioned item it appears there through a blurb tree (`trees/notes/dhsorens-004C.tree`): a paragraph saying what it is, and a list of links into its sections. The blurb is transcluded; the corpus is linked.
 
 ### Log entry
 - File: `trees/logs/dhsorens-XXXX.tree`, `\taxon{Log}`, `\date` required, usually short (one or two `\p`), often no `\author`.

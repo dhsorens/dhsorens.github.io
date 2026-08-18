@@ -107,10 +107,12 @@ this way, which is why a note appears there in full, with its own title and date
 than as a line in a list. (`dhsorens-talks` and `dhsorens-slides` are different — they
 are lists of `\li{}` links, because a talk has no tree to render.)
 
-The consequence to watch is size. A structure of many trees — `dhsorens-002C` and its
-71 descendants — cannot be transcluded into a section index without becoming the whole
-page. Such a corpus is represented by a short blurb tree that is transcluded, and links
-into the corpus from there; `dhsorens-004C` is that blurb.
+The consequence to watch is size. Transcluding a parent into `dhsorens-notes` pulls in
+everything beneath it, so anything with sections — a corpus like `dhsorens-002C` and its
+71 descendants, or a note like `dhsorens-004D` and its four — is represented there by a
+short **blurb** tree instead: an ordinary note that says what the thing is and links into
+its pages. `dhsorens-004C` and `dhsorens-004I` are the two blurbs in the forest. Only a
+self-contained single tree is transcluded into that page directly.
 
 ## Directives that do NOT work here
 
