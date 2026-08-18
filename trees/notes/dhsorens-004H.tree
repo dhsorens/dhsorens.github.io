@@ -11,7 +11,7 @@
 }
 
 \p{
-    It was paused on 1 August 2026, and on 13 August Justin Drake announced that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+    It was paused on 1 August 2026, and on 13 August Justin Drake [announced](https://x.com/drakefjustin/status/2087905684180418733) that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
 }
 
 \p{

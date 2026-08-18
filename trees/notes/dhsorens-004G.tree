@@ -1,19 +1,36 @@
-\title{BLAKE2 and BLAKE3}
+\title{The BLAKE Family: 2s, 2b, and 3}
 \author{dhsorens}
 \date{2026-08-18}
 
 \p{
-    BLAKE was a SHA-3 finalist that lost to Keccak and then outlived the defeat. BLAKE2 (2013) trimmed rounds and simplified the design for speed; BLAKE3 (2020) cut the compression function to seven rounds and replaced the serial mode with a binary tree over 1 KiB chunks, which makes it parallel over any number of cores, incremental, and usable as an extendable-output function from one algorithm.
+    BLAKE was a SHA-3 finalist that lost to Keccak and then outlived the defeat. BLAKE2 (2013) cut the round count — 12 rounds where BLAKE had 16, or 10 where it had 14 — and dropped the HAIFA counter and constant additions for speed. BLAKE3 (2020) went further, to seven rounds, and replaced the serial mode with a tree.
 }
 
 \p{
-    Ethereum's only exposure to the family is BLAKE2b's compression function as the \code{0x09} precompile, added by EIP-152 for Zcash interoperability rather than for Ethereum's own use. That makes the current interest in BLAKE3 a genuine change of direction rather than an extension of something already in the protocol.
+    The 2s and 2b split is a word-size split, and it is the detail that matters for the current Ethereum discussion.
+    \ul{
+        \li{\strong{BLAKE2b} — 64-bit words, 1024-bit state, 128-byte blocks, 12 rounds, digests of any length from 1 to 64 bytes. Tuned for 64-bit CPUs.}
+        \li{\strong{BLAKE2s} — 32-bit words, 512-bit state, 64-byte blocks, 10 rounds, digests of 1 to 32 bytes. Intended for 8- to 32-bit platforms, so it is the variant that suits constrained environments.}
+    }
+    Collision resistance follows the digest: up to 256 bits for 2b, up to 128 for 2s.
 }
 
 \p{
-    Two properties explain the interest. Natively it is fast, and the tree mode parallelises without a protocol change. In a circuit it is the cheapest of the conventional candidates: [Flock](dhsorens-004H) proves 82k BLAKE3 compressions per second on a single core, against 42k for SHA-256.
+    Both carry machinery that SHA-2 lacks. Keying is built into the compression function, so BLAKE2 is a MAC without needing HMAC around it, and the parameter block also takes a salt and a personalisation string, which gives domain separation for free rather than by convention. The family also includes parallel variants (BLAKE2sp, BLAKE2bp) and an extendable-output construction, BLAKE2X. In deployment, WireGuard uses BLAKE2s — 32-byte digests for hashing, keyed with 16-byte output as a MAC — and Zcash uses BLAKE2b for Equihash and for key derivation.
 }
 
 \p{
-    The obvious objection is age. BLAKE3 dates from 2020 and has had a fraction of the cryptanalytic attention SHA-2 has, which is the same conservatism argument that ended [Poseidon](dhsorens-004H), applied one level in. That the Foundation's announcement said "SHA or BLAKE" rather than naming one suggests the trade is not settled.
+    BLAKE3 keeps BLAKE2s's 32-bit words and 64-byte block and cuts to seven rounds, then splits the input into 1 KiB chunks arranged in a binary tree. That is what makes it parallel over any number of cores, incremental, and usable as an extendable-output function from a single algorithm rather than a family of them. The seven-round decision is the contested one: the designers argue the cryptanalysis supports it, and it is also the reason BLAKE3 has the least margin of anything in this note.
+}
+
+\p{
+    Which BLAKE Ethereum is actually considering is not yet public. Drake's announcement says "SHA or BLAKE"; some coverage reports the candidates as SHA-2 or BLAKE2s, other coverage says BLAKE3, and published benchmark comparisons put SHA-256, Keccak, BLAKE3 and leanXMSS side by side. The one thing that is clear is that the variant already in the EVM is not the one in question: EIP-152 exposes BLAKE2b's compression function at \code{0x09}, added for Zcash interoperability, and BLAKE2b is the 64-bit variant that neither candidate set names.
+}
+
+\p{
+    My guess at the reasoning, which is inference and not something I have seen argued: for [hash-based signatures](dhsorens-0049) the inputs are short and fixed-size, a 32-byte block at a time, so BLAKE3's chunking and tree mode buy nothing and only add constraints, while BLAKE2s gives the same 32-bit word size with three more rounds of margin and a decade of analysis. If the deciding workload is signature verification rather than hashing long messages, the tree is dead weight.
+}
+
+\p{
+    Sources: [BLAKE2](https://www.blake2.net/), the [BLAKE3 specification draft](https://www.ietf.org/archive/id/draft-aumasson-blake3-00.html), [EIP-152](https://eips.ethereum.org/EIPS/eip-152).
 }
