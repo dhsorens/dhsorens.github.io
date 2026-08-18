@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.}
         \li{Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism.}

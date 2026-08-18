@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The wrapping chain in a real system, layer by layer, with proof sizes at each step.}
         \li{Arithmetising a hash-based verifier: which parts are expensive and why.}

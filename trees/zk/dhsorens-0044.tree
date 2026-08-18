@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    The other half of a verified zkVM: a trustworthy specification of the machine being proved, and a way to reason about circuits written in the many DSLs that exist. I built [LC3 in Lean](dhsorens-0027) partly to have felt this problem at small scale.
+    The other half of a verified zkVM: a trustworthy specification of the machine being proved, and a way to reason about circuits written in the many DSLs that exist. [LC3 in Lean](dhsorens-0027) is the same problem at a scale small enough to see all of it.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The Sail Lean backend: extracting the RISC-V specification into Lean, and what fidelity that gives.}
         \li{LLZK as an MLIR dialect unifying circuits from different DSLs — what it can and cannot express.}

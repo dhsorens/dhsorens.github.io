@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The construction, and where [sumcheck](dhsorens-002Q) enters the low-degree test.}
         \li{How a multilinear claim is served by a univariate proximity test — the translation, and its cost.}

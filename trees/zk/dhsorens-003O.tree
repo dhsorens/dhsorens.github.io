@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Segmenting a trace: what state must be carried across a boundary, and how it is committed.}
         \li{The consistency argument between shards, especially for [memory](dhsorens-003U).}

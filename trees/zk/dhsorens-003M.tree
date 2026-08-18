@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Relaxed R1CS and committed relaxed R1CS: why the relaxation is needed to make folding close.}
         \li{The folding step and its knowledge-soundness argument.}

@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The logarithmic-derivative identity (logUp) and why it replaced grand-product multiset checks.}
         \li{logUp-GKR: applying [sumcheck](dhsorens-002Q) to the fraction identity to avoid committing to #{O(m)} field elements.}

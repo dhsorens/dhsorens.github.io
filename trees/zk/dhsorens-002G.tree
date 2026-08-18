@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The transform, and exactly what it assumes about the hash function.}
         \li{Why [round-by-round soundness](dhsorens-002F) is the right hypothesis for a many-round protocol.}

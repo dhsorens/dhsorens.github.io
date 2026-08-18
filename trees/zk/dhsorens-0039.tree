@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    Sampling outside the evaluation domain, which appears in deployed provers for reasons that are not the reason usually given. The SoK's claim that the deployed trick and the low-degree-test modification are routinely conflated is exactly the kind of thing I want nailed down here.
+    Sampling outside the evaluation domain, which appears in deployed provers for reasons that are not the reason usually given. The SoK's claim that the deployed trick and the low-degree-test modification are routinely conflated needs to be nailed down here.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{DEEP quotienting: what the quotient is, and what an out-of-domain evaluation buys the analysis.}
         \li{The conjecture on classical list-decodability that DEEP-FRI introduced.}

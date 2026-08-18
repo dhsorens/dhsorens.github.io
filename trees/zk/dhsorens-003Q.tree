@@ -8,7 +8,7 @@
 }
 
 \p{
-    This is the object the [verified zkEVM effort](dhsorens-0045) is ultimately aimed at, and the reason [LC3 in Lean](dhsorens-0027) was a useful exercise: a machine semantics in Lean is the first half of the statement one wants to prove about a zkVM.
+    This is the object the [verified zkEVM effort](dhsorens-0045) is ultimately aimed at. A machine semantics in Lean is the first half of the statement one wants to prove about a zkVM; [LC3 in Lean](dhsorens-0027) is that half at small scale.
 }
 
 \transclude{dhsorens-003R} % the zkVM stack

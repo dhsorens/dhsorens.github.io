@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The mechanism: how a precompile attaches to the trace and how its inputs and outputs are tied to VM state.}
         \li{The speedups claimed, and on which workloads they decide the benchmark.}

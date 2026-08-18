@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    Gate constraints plus a wiring argument, with lookups bolted on. "Plonkish" is used loosely across implementations and I want a precise statement of what the term covers.
+    Gate constraints plus a wiring argument, with lookups bolted on. "Plonkish" is used loosely across implementations, so the term needs a precise statement of what it covers.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Gate constraints and selectors; custom gates and what raising the degree costs.}
         \li{Copy constraints via a [permutation argument](dhsorens-002X) — the mechanism that distinguishes Plonkish from AIR.}

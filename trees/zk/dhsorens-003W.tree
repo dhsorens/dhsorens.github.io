@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    One entry per system: backend, arithmetisation, field, memory model, and the choice that distinguishes it. The point is a table I can compare against, not a survey.
+    One entry per system: backend, arithmetisation, field, memory model, and the choice that distinguishes it. The point is a comparison table, not a survey.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{SP1 — RISC-V on Plonky3, precompile-heavy.}
         \li{Jolt — [Lasso](dhsorens-002W)-based, lookups for instruction semantics, notably small proofs.}

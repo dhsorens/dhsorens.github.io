@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The tensor structure and the proximity test; why the verifier's work is #{O(\sqrt{n})} in the plain construction.}
         \li{Brakedown's linear-time encodable codes, and the tradeoff against proof size.}

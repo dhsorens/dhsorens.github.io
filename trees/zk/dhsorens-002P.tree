@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    The technical core of every soundness proof in the [FRI](dhsorens-0037) family, and the place where deployed parameters stop being provably sound and start being conjecturally sound. If I understand one thing on this page properly it should be this one.
+    The technical core of every soundness proof in the [FRI](dhsorens-0037) family, and the place where deployed parameters stop being provably sound and start being conjecturally sound. It is the most load-bearing page in the section.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The three regimes — unique decoding, the Johnson bound, capacity — and what parameters each licenses.}
         \li{What a proximity gap statement says, and why a low-degree test cannot be analysed without one.}

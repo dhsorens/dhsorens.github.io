@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    The statement at the top of the whole effort, written out honestly: which theorems compose, and which links in the chain are assumptions rather than proofs. This page is the one I most want to be able to defend in a talk.
+    The statement at the top of the whole effort, written out honestly: which theorems compose, and which links in the chain are assumptions rather than proofs. It is the claim the whole effort will be judged on.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The chain: ISA specification, constraint system, arithmetisation soundness, IOP soundness, commitment security, [Fiat–Shamir](dhsorens-002G), recursion, extracted implementation.}
         \li{Which links are proved today, which are stated, and which are not formalised at all.}

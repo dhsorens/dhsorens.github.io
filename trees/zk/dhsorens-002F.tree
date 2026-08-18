@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    Which soundness a theorem is about determines whether it survives the [Fiat–Shamir transform](dhsorens-002G). This page should end with a table I trust.
+    Which soundness a theorem is about determines whether it survives the [Fiat–Shamir transform](dhsorens-002G). A table of the notions, the implications between them, and which compilation step preserves each belongs on this page.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Soundness, knowledge soundness, special soundness — and the implications between them.}
         \li{Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.}

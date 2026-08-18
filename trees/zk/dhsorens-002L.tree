@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The tower construction, and why every subfield embedding is free.}
         \li{Why binary: no modular reduction, characteristic 2 arithmetic maps onto bit operations, and small values cost small fields.}

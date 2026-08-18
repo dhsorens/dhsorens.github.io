@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Why a naive commitment to #{\mathbb{F}_2} values wastes almost all of its capacity, and what packing recovers.}
         \li{The ring-switching reduction: a claim over the extension becomes a claim over the base, or the reverse.}

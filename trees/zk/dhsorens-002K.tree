@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Prime fields, extension fields, and why the prover wants a small base field while soundness wants a large challenge space.}
         \li{The specific fields and what makes each fast: Mersenne31 (#{2^{31}-1}), BabyBear, KoalaBear, Goldilocks.}

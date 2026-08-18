@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    Computable polynomials and finite fields in Lean: an executable mirror of the Mathlib definitions, with transfer theorems so proofs can be done on the noncomputable side. I have written about why [computability matters for a specification](dhsorens-0025); this page is about the artefact.
+    Computable polynomials and finite fields in Lean: an executable mirror of the Mathlib definitions, with transfer theorems so proofs can be done on the noncomputable side. The case for [computable specifications](dhsorens-0025) is made elsewhere; this page is about the artefact.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The representations chosen, and which operations each makes cheap. See [univariate and multilinear polynomials](dhsorens-002M).}
         \li{The transfer pattern: computable definition, Mathlib definition, proven equivalence, and how proofs move across it.}

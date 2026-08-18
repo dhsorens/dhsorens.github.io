@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Oracle computations and \code{simulateQ}: implementing a random oracle, logging queries, performing reductions.}
         \li{The program logic — relational (pRHL-style) and unary modes — and what a game hop looks like as a tactic step.}

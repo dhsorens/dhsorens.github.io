@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{RISC-V (RV32I and extensions) as a target: what makes each instruction class expensive to constrain.}
         \li{Register machines versus stack machines (Miden, zkWasm), and what the memory argument looks like in each.}

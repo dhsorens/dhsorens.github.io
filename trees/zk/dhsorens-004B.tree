@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    An order to attack this in, so that filling pages in does not turn into breadth-first browsing. Systematisations first, because they fix the vocabulary and the attributions; then the primary sources; then the code.
+    An order to read in, so that filling the corpus out does not turn into breadth-first browsing. Systematisations first, because they fix the vocabulary and the attributions; then the primary sources; then the code.
 }
 
 \p{
-    To work through, roughly in order:
+    In order:
     \ul{
         \li{Thaler, \em{Proofs, Arguments, and Zero-Knowledge} — the definitional chain and [sumcheck](dhsorens-002Q).}
         \li{[SoK: Hash-Based Polynomial Commitments and Low-Degree Tests](https://eprint.iacr.org/2026/1367) — the whole [FRI-to-WHIR](dhsorens-0036) lineage in one place, with the soundness regimes kept straight.}
@@ -21,5 +21,5 @@
 }
 
 \p{
-    A page in this corpus is done when I can state its main theorem with its assumptions and say what breaks when one is dropped. Everything else is note-taking.
+    A page in this corpus is done when its main theorem can be stated with its assumptions, and what breaks when one of them is dropped. Everything else is note-taking.
 }

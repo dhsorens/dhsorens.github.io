@@ -1,14 +1,14 @@
-\title{Studying zkVMs and SNARKs}
+\title{zkVMs and SNARKs}
 \author{dhsorens}
 \date{2026-08-18}
 \meta{toc}{true}
 
 \p{
-    \em{This is scaffolding, drafted 2026-08-18. Almost every page below is deliberately empty: it names a topic, says what belongs on it, and lists the questions I want answered. I am filling them in as I work through the material.}
+    \em{Scaffolding, AI-drafted 2026-08-18. Almost every page below is deliberately an outline rather than a finished note: it names a topic, says what belongs on it, and lists the questions it should answer.}
 }
 
 \p{
-    I work on [formally verifying](dhsorens-000X) the cryptography underneath zkVMs — [ArkLib](https://github.com/Verified-zkEVM/ArkLib), [CompPoly](https://github.com/Verified-zkEVM/CompPoly), and now Rust provers extracted into [Lean](dhsorens-lean). Verification demands a precise kind of understanding, but it also rewards local knowledge: you can prove a folding lemma without holding the whole argument in your head. This corpus is where I build the whole argument.
+    A systematic study of the cryptography and machine architecture that zkVMs and SNARKs are built from, topic by topic. It is the theory behind the [snarkification work](dhsorens-0020): [ArkLib](dhsorens-0040), [CompPoly](dhsorens-0041), and [Clean](dhsorens-002Y) formalise these protocols in [Lean](dhsorens-lean), and [formalisation](dhsorens-000X) rewards local knowledge — a folding lemma can be proved without holding the whole argument in view. The purpose of a corpus like this one is to hold the whole argument.
 }
 
 \p{
@@ -16,7 +16,7 @@
 }
 
 \p{
-    Every leaf has the same shape: what the page is for, the questions to work through, and where to read. A page is finished when I could reconstruct its subject without the sources — for a protocol, that means stating the theorem with its assumptions and saying what breaks when an assumption is dropped.
+    Every leaf has the same shape: what the page covers, the questions it should answer, and where to read. A page is complete when its subject can be reconstructed from it without the sources — for a protocol, that means the theorem stated with its assumptions, and what breaks when one of them is dropped.
 }
 
 \transclude{dhsorens-002D} % the shape of a proof system

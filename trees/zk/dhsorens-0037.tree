@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    Fast Reed–Solomon Interactive Oracle Proof of Proximity. The protocol most of the deployed proving stack rests on, and the one I should be able to write down from memory.
+    Fast Reed–Solomon Interactive Oracle Proof of Proximity. The protocol most of the deployed proving stack rests on, and the one every construction later in this section is a response to.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The folding map: halving the degree by splitting into even and odd parts and taking a random combination. Why the folded word is a codeword when the original is.}
         \li{Commit phase and query phase; the round-consistency check the verifier performs.}

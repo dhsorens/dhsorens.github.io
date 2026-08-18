@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Permutation and multiset-equality arguments; the grand product and its logUp replacement.}
         \li{Offline memory checking: reads and writes as multisets of #{(address, value, timestamp)} tuples, and the conditions that make it sound.}

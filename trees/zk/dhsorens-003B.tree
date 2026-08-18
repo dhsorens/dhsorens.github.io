@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The rate-shifting step, and why it reduces query complexity rather than prover time.}
         \li{The query complexity comparison with FRI, stated with the constants.}

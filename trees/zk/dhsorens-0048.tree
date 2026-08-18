@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Arithmetisation-friendly hashes (Poseidon2 and relatives) against standard ones (Keccak, SHA-256, Blake3), counted in constraints.}
         \li{The security tradeoff: young algebraic designs against well-analysed bit-oriented ones.}

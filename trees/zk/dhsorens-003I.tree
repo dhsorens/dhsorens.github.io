@@ -3,11 +3,11 @@
 \date{2026-08-18}
 
 \p{
-    [AIR](dhsorens-002U) plus [FRI](dhsorens-0037), over a small field, as a reusable toolkit rather than a single protocol. This is the layer my Lean work is aimed at: extracting Plonky3 and proving things about what it computes.
+    [AIR](dhsorens-002U) plus [FRI](dhsorens-0037), over a small field, as a reusable toolkit rather than a single protocol. This is the layer the [Rust-to-Lean extraction work](dhsorens-0043) targets: Plonky3 in Lean, with proofs about what it computes.
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The STARK protocol end to end: trace, constraints, quotient, commitment, low-degree test.}
         \li{Plonky3 as a toolkit — what is configurable (field, hash, PCS, folding factor) and what is fixed.}

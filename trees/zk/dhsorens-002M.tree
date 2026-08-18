@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The multilinear extension of a function on the Boolean hypercube; uniqueness; the equality polynomial and its role.}
         \li{Degree versus number of variables as the size parameter, and what each buys.}

@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{The construction: commit to each oracle, answer queries with openings, then [Fiat–Shamir](dhsorens-002G).}
         \li{What the commitment must provide — position binding is not obviously enough; where extractability is needed.}

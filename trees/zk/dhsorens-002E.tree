@@ -7,7 +7,7 @@
 }
 
 \p{
-    To work through:
+    Questions this page should answer:
     \ul{
         \li{Interactive proof, argument (prover computationally bounded), PCP, IOP, oracle reduction — what each relaxation buys.}
         \li{Where \em{succinct} and \em{of knowledge} enter, and what each costs the construction.}
