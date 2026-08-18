@@ -41,7 +41,15 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
 
 ### Note / blog post
 - File: `trees/notes/dhsorens-XXXX.tree`, `\taxon{Blog}` (or omit taxon for plain notes).
-- Wire: add `\transclude{dhsorens-XXXX} % short label` to `trees/dhsorens-notes.tree`. Newest content goes near the top of the transclude list; thematic/evergreen notes are grouped with their topic block instead — read the existing order first.
+- Wire: add a one-line entry to the list in `trees/dhsorens-notes.tree`, newest first:
+  `\li{[Title](dhsorens-XXXX). <one sentence, linking substantial children>. <Month Year>.}`
+- **That page is an index, not a container.** Entries link; they never transclude. A note's own page is where it is read, so the feed stays legible however long the note is, and however many sections it has. `trees/dhsorens-talks.tree` is the model. Comment an entry out with `%` to unlist it.
+
+### Page in an existing corpus
+Some subjects have grown their own multi-page corpus — `trees/zk/` (the zkVMs and SNARKs corpus, rooted at `dhsorens-002C`) is the current one.
+- File: alongside its siblings in the corpus directory, not in `trees/notes/`.
+- Wire: `\transclude{dhsorens-XXXX} % label` in the appropriate **hub** inside the corpus, in reading order (not chronological).
+- Do **not** touch `trees/dhsorens-notes.tree`: the corpus already has one index entry, and a page added inside it is not a new item on the feed. Update the corpus's index entry only if the addition changes what the corpus covers.
 
 ### Log entry
 - File: `trees/logs/dhsorens-XXXX.tree`, `\taxon{Log}`, `\date` required, usually short (one or two `\p`), often no `\author`.

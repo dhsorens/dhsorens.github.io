@@ -121,15 +121,22 @@ Writing standards:
 
 ## 5. Index it in Notes
 
-Prepend a transclude line to the block at the bottom of `trees/dhsorens-notes.tree`,
-newest first:
+`trees/dhsorens-notes.tree` is an **index, not a container**. Add a one-line entry to
+the list at the bottom, newest first. Do **not** transclude the note:
 
 ```
-\transclude{dhsorens-<parent>} % <Title>
+\li{[<Title>](dhsorens-<parent>). <One sentence on what it argues, linking any
+    substantial children.> <Month Year>.}
 ```
 
-Every deep-dive goes here. The Notes page is meant to grow without bound into the
-whole corpus — that is the design, not an oversight.
+That entry is the note's only appearance on the page; the note itself is read at its
+own address. This is what keeps Notes a feed rather than every note concatenated — a
+deep-dive runs to a few thousand words, and transcluding one buries everything else on
+the page. `trees/dhsorens-talks.tree` has always worked this way; match its style, and
+the style of the entries already in the list.
+
+The same rule applies to a note with children: the entry links the parent, the parent
+transcludes its own sections. Depth belongs inside the note, not on the index.
 
 ## 6. Update the Latest Deep-Dive
 
