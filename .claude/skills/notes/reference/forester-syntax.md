@@ -101,11 +101,16 @@ document order, so you can write a paragraph, transclude a child, then write mor
 Commenting out a transclude is the idiom for unlisting a child without deleting it.
 A tree may be transcluded from more than one place.
 
-Transclusion is recursive and renders the whole subtree inline, so it composes a
-document — it is not a way to list things. The section indexes (`dhsorens-notes`,
-`dhsorens-talks`, `dhsorens-slides`) therefore use `\li{}` entries that link out;
-transclusion is for building a page out of its own sections, as `dhsorens-002C` and
-`dhsorens-000U` do.
+Transclusion is recursive: it renders the whole subtree inline, so transcluding a
+parent pulls in its children and their children. `dhsorens-notes` transcludes each note
+this way, which is why a note appears there in full, with its own title and date, rather
+than as a line in a list. (`dhsorens-talks` and `dhsorens-slides` are different — they
+are lists of `\li{}` links, because a talk has no tree to render.)
+
+The consequence to watch is size. A structure of many trees — `dhsorens-002C` and its
+71 descendants — cannot be transcluded into a section index without becoming the whole
+page. Such a corpus is represented by a short blurb tree that is transcluded, and links
+into the corpus from there; `dhsorens-004C` is that blurb.
 
 ## Directives that do NOT work here
 
