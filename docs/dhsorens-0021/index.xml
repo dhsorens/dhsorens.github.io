@@ -69,10 +69,10 @@
               <fr:mainmatter>
                 <html:p>
     We have spent the last few months travelling. I'm writing this in May 2026 from Rome.
-    The most recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract Plonky3 from Rust into Lean and formally prove things!
+    The most recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract <fr:link href="/dhsorens-003I/" title="STARKs: Plonky3, Stwo, and Circle STARKs" uri="https://derekhsorensen.com/dhsorens-003I/" display-uri="dhsorens-003I" type="local">Plonky3</fr:link> from Rust into Lean and formally prove things!
 </html:p>
                 <html:p>
-    In my talk today at zkproofs8, I showed a minimal example of formally verifying Koalabear in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib, and now with the tooling where it's at it looks like it's time to start to marry them and actually formally verifying real code in Lean!
+    In my talk today at zkproofs8, I showed a minimal example of formally verifying <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">Koalabear</fr:link> in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib, and now with the tooling where it's at it looks like it's time to start to marry them and actually formally verifying real code in Lean!
 </html:p>
                 <html:p>
     Once I'm back from Rome, I will basically be full-time on this problem. This is good for me because I have so far avoided learning <html:em>too much</html:em> about cryptography, and now that I'll be staring at the implementations in Rust as well as the formal specs, it will be hard to avoid actually understanding things. I'm hoping that this process will stimulate Arklib into grater maturity, starting with CompPoly;

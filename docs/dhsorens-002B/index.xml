@@ -21,10 +21,10 @@
   <fr:mainmatter>
     <html:p>
     We have spent the last few months travelling. I'm writing this in May 2026 from Rome.
-    The most recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract Plonky3 from Rust into Lean and formally prove things!
+    The most recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract <fr:link href="/dhsorens-003I/" title="STARKs: Plonky3, Stwo, and Circle STARKs" uri="https://derekhsorensen.com/dhsorens-003I/" display-uri="dhsorens-003I" type="local">Plonky3</fr:link> from Rust into Lean and formally prove things!
 </html:p>
     <html:p>
-    In my talk today at zkproofs8, I showed a minimal example of formally verifying Koalabear in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib, and now with the tooling where it's at it looks like it's time to start to marry them and actually formally verifying real code in Lean!
+    In my talk today at zkproofs8, I showed a minimal example of formally verifying <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">Koalabear</fr:link> in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib, and now with the tooling where it's at it looks like it's time to start to marry them and actually formally verifying real code in Lean!
 </html:p>
     <html:p>
     Once I'm back from Rome, I will basically be full-time on this problem. This is good for me because I have so far avoided learning <html:em>too much</html:em> about cryptography, and now that I'll be staring at the implementations in Rust as well as the formal specs, it will be hard to avoid actually understanding things. I'm hoping that this process will stimulate Arklib into grater maturity, starting with CompPoly;
@@ -80,10 +80,10 @@
               <fr:mainmatter>
                 <html:p>
     We have spent the last few months travelling. I'm writing this in May 2026 from Rome.
-    The most recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract Plonky3 from Rust into Lean and formally prove things!
+    The most recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract <fr:link href="/dhsorens-003I/" title="STARKs: Plonky3, Stwo, and Circle STARKs" uri="https://derekhsorensen.com/dhsorens-003I/" display-uri="dhsorens-003I" type="local">Plonky3</fr:link> from Rust into Lean and formally prove things!
 </html:p>
                 <html:p>
-    In my talk today at zkproofs8, I showed a minimal example of formally verifying Koalabear in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib, and now with the tooling where it's at it looks like it's time to start to marry them and actually formally verifying real code in Lean!
+    In my talk today at zkproofs8, I showed a minimal example of formally verifying <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">Koalabear</fr:link> in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib, and now with the tooling where it's at it looks like it's time to start to marry them and actually formally verifying real code in Lean!
 </html:p>
                 <html:p>
     Once I'm back from Rome, I will basically be full-time on this problem. This is good for me because I have so far avoided learning <html:em>too much</html:em> about cryptography, and now that I'll be staring at the implementations in Rust as well as the formal specs, it will be hard to avoid actually understanding things. I'm hoping that this process will stimulate Arklib into grater maturity, starting with CompPoly;
@@ -167,7 +167,73 @@
         <fr:authors />
         <fr:title text="Related">Related</fr:title>
       </fr:frontmatter>
-      <fr:mainmatter />
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002K/</fr:uri>
+            <fr:display-uri>dhsorens-002K</fr:display-uri>
+            <fr:route>/dhsorens-002K/</fr:route>
+            <fr:title text="Finite Fields and the Small-Field Turn">Finite Fields and the Small-Field Turn</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Transparent provers migrated from 256-bit scalar fields down to 31-bit primes and then to <fr:tex display="inline"><![CDATA[\mathbb {F}_2]]></fr:tex>. The migration is the single largest source of speedup in the last five years, and it constrains everything above it.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Prime fields, extension fields, and why the prover wants a small base field while soundness wants a large challenge space.</html:li>
+        <html:li>The specific fields and what makes each fast: Mersenne31 (<fr:tex display="inline"><![CDATA[2^{31}-1]]></fr:tex>), BabyBear, KoalaBear, Goldilocks.</html:li>
+        <html:li>Where extension-field arithmetic is unavoidable — challenges, DEEP queries, batching — and how much of the trace can stay in the base field.</html:li>
+        <html:li>Packing and vectorisation: how field choice interacts with the machine.</html:li>
+        <html:li>What is lost: two-adicity, FFT-friendliness, and the <fr:link href="/dhsorens-002N/" title="Evaluation Domains, FFTs, and Circle Groups" uri="https://derekhsorensen.com/dhsorens-002N/" display-uri="dhsorens-002N" type="local">circle</fr:link> workaround.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn in Succinct Proofs</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003I/</fr:uri>
+            <fr:display-uri>dhsorens-003I</fr:display-uri>
+            <fr:route>/dhsorens-003I/</fr:route>
+            <fr:title text="STARKs: Plonky3, Stwo, and Circle STARKs">STARKs: Plonky3, Stwo, and Circle STARKs</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> plus <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, over a small field, as a reusable toolkit rather than a single protocol. This is the layer the <fr:link href="/dhsorens-0043/" title="From Rust to Lean" uri="https://derekhsorensen.com/dhsorens-0043/" display-uri="dhsorens-0043" type="local">Rust-to-Lean extraction work</fr:link> targets: Plonky3 in Lean, with proofs about what it computes.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The STARK protocol end to end: trace, constraints, quotient, commitment, low-degree test.</html:li>
+        <html:li>Plonky3 as a toolkit — what is configurable (field, hash, PCS, folding factor) and what is fixed.</html:li>
+        <html:li>Stwo and the circle domain: Mersenne31 has no large smooth subgroup, so what replaces it and what changes in the constraint system.</html:li>
+        <html:li>Circle STARKs' vanishing polynomials and the extra care their boundary constraints need.</html:li>
+        <html:li>Where the two toolkits agree, since both consume an AIR — and what that means for <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> targeting both.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://github.com/Plonky3/Plonky3" type="external">Plonky3</fr:link>, <fr:link href="https://github.com/starkware-libs/stwo" type="external">stwo</fr:link>, Buterin, <fr:link href="https://vitalik.eth.limo/general/2024/07/23/circlestarks.html" type="external">Exploring circle STARKs</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
     </fr:tree>
     <fr:tree show-metadata="false" hidden-when-empty="true">
       <fr:frontmatter>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-0033/</fr:uri>
+    <fr:display-uri>dhsorens-0033</fr:display-uri>
+    <fr:route>/dhsorens-0033/</fr:route>
+    <fr:title text="Inner-Product Arguments">Inner-Product Arguments</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
+</html:p>
+    <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The Bulletproofs-style recursive halving argument and its transcript.</html:li>
+        <html:li>Proof size against verifier time: the linear verifier is the catch.</html:li>
+        <html:li>Accumulation and the Halo line, as the precursor to modern <fr:link href="/dhsorens-003M/" title="Nova and Folding Schemes" uri="https://derekhsorensen.com/dhsorens-003M/" display-uri="dhsorens-003M" type="local">folding</fr:link>.</html:li>
+        <html:li>Discrete-log security, and the post-quantum consequence.</html:li></html:ul></html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002Z/</fr:uri>
+            <fr:display-uri>dhsorens-002Z</fr:display-uri>
+            <fr:route>/dhsorens-002Z/</fr:route>
+            <fr:title text="Polynomial Commitment Schemes">Polynomial Commitment Schemes</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The component that turns an oracle in an <fr:link href="/dhsorens-002E/" title="Interactive Proofs, Arguments, and IOPs" uri="https://derekhsorensen.com/dhsorens-002E/" display-uri="dhsorens-002E" type="local">IOP</fr:link> into something a real verifier can query. Swapping the commitment scheme changes a system's proof size, its trust assumptions, and its post-quantum status while leaving the <fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">arithmetisation</fr:link> untouched — which is why this is the layer where systems are usually differentiated.
+</html:p>
+            <html:p><fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> splits these into ordinary and functional commitments; understanding why that split is the right one is part of the point of these pages.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0030/</fr:uri>
+                <fr:display-uri>dhsorens-0030</fr:display-uri>
+                <fr:route>/dhsorens-0030/</fr:route>
+                <fr:title text="The Commitment Interface">The Commitment Interface</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    What a polynomial commitment scheme has to provide, stated precisely enough that a protocol can be proved secure against the interface rather than against a particular scheme.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Syntax: setup, commit, open, verify — and which parameters are public.</html:li>
+        <html:li>Binding, evaluation binding, and extractability; which one a <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS-style</fr:link> compilation actually needs.</html:li>
+        <html:li>Batch openings and homomorphism, and how much of a protocol's efficiency depends on them.</html:li>
+        <html:li>Functional commitments as the generalisation, and why ArkLib separates <html:code>Commitments/Functional</html:code> from <html:code>Commitments/Ordinary</html:code>.</html:li>
+        <html:li>Multilinear versus univariate interfaces, and the adapters between them.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0031/</fr:uri>
+                <fr:display-uri>dhsorens-0031</fr:display-uri>
+                <fr:route>/dhsorens-0031/</fr:route>
+                <fr:title text="Merkle Trees and Vector Commitments">Merkle Trees and Vector Commitments</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The commitment underneath every hash-based system. Simple enough that it is easy to skip and consequential enough that the <fr:link href="/dhsorens-0048/" title="ZK-Friendly Primitives" uri="https://derekhsorensen.com/dhsorens-0048/" display-uri="dhsorens-0048" type="local">hash choice</fr:link> dominates prover time.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Position binding, and what a Merkle commitment does not give you.</html:li>
+        <html:li>Batched openings and path deduplication; where proof size actually goes.</html:li>
+        <html:li>Salting and its role in <fr:link href="/dhsorens-002E/" title="Interactive Proofs, Arguments, and IOPs" uri="https://derekhsorensen.com/dhsorens-002E/" display-uri="dhsorens-002E" type="local">zero knowledge</fr:link> — and in ArkLib's <html:code>Salt.lean</html:code>.</html:li>
+        <html:li>Hash cost as the prover's real bottleneck; arity and tree shape tradeoffs.</html:li>
+        <html:li>The formalisation: what ArkLib's Merkle tree development proves, and what it assumes about the hash.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0032/</fr:uri>
+                <fr:display-uri>dhsorens-0032</fr:display-uri>
+                <fr:route>/dhsorens-0032/</fr:route>
+                <fr:title text="KZG and the Pairing-Based Line">KZG and the Pairing-Based Line</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Constant-size proofs and a constant-time verifier, at the price of a trusted setup and a pairing-friendly curve. Still the endpoint of most <fr:link href="/dhsorens-003P/" title="Wrapping and On-Chain Verification" uri="https://derekhsorensen.com/dhsorens-003P/" display-uri="dhsorens-003P" type="local">wrapping</fr:link> pipelines because the on-chain verifier is cheap.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The scheme and its security assumption; what the structured reference string contains.</html:li>
+        <html:li>The pairing check, and why the verifier is constant-time regardless of degree.</html:li>
+        <html:li>Batching and multi-point openings.</html:li>
+        <html:li>Trusted setup in practice: ceremonies, updatability, and what a compromised setup permits.</html:li>
+        <html:li>Why it does not scale to zkVM-sized traces, and where it survives anyway.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0033/</fr:uri>
+                <fr:display-uri>dhsorens-0033</fr:display-uri>
+                <fr:route>/dhsorens-0033/</fr:route>
+                <fr:title text="Inner-Product Arguments">Inner-Product Arguments</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The Bulletproofs-style recursive halving argument and its transcript.</html:li>
+        <html:li>Proof size against verifier time: the linear verifier is the catch.</html:li>
+        <html:li>Accumulation and the Halo line, as the precursor to modern <fr:link href="/dhsorens-003M/" title="Nova and Folding Schemes" uri="https://derekhsorensen.com/dhsorens-003M/" display-uri="dhsorens-003M" type="local">folding</fr:link>.</html:li>
+        <html:li>Discrete-log security, and the post-quantum consequence.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0034/</fr:uri>
+                <fr:display-uri>dhsorens-0034</fr:display-uri>
+                <fr:route>/dhsorens-0034/</fr:route>
+                <fr:title text="Code-Based Commitments: Ligero, Brakedown, Basefold">Code-Based Commitments: Ligero, Brakedown, Basefold</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The tensor-commitment lineage: commit to a matrix whose rows are codewords, and test proximity by sampling columns. Basefold is where this line and the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> line merge.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The tensor structure and the proximity test; why the verifier's work is <fr:tex display="inline"><![CDATA[O(\sqrt {n})]]></fr:tex> in the plain construction.</html:li>
+        <html:li>Brakedown's linear-time encodable codes, and the tradeoff against proof size.</html:li>
+        <html:li>Basefold: foldable codes plus <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>, giving a multilinear commitment from a code that need not be Reed–Solomon.</html:li>
+        <html:li>Which codes are admissible, and what the soundness proof needs from them.</html:li>
+        <html:li>How this family compares with <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> on verifier cost and on argument size.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments and Low-Degree Tests</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0035/</fr:uri>
+                <fr:display-uri>dhsorens-0035</fr:display-uri>
+                <fr:route>/dhsorens-0035/</fr:route>
+                <fr:title text="Small-Field Commitments and Ring Switching">Small-Field Commitments and Ring Switching</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Committing to values that live in a tiny field without paying extension-field prices for every one of them. The problem <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> exists to solve, and the reason ArkLib has a <html:code>RingSwitching</html:code> directory.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Why a naive commitment to <fr:tex display="inline"><![CDATA[\mathbb {F}_2]]></fr:tex> values wastes almost all of its capacity, and what packing recovers.</html:li>
+        <html:li>The ring-switching reduction: a claim over the extension becomes a claim over the base, or the reverse.</html:li>
+        <html:li>Where soundness needs the large field regardless, and how much of the argument can stay small.</html:li>
+        <html:li>The interaction with <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary towers</fr:link> specifically, versus 31-bit primes.</html:li>
+        <html:li>What ArkLib formalises here and what remains open.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003M/</fr:uri>
+            <fr:display-uri>dhsorens-003M</fr:display-uri>
+            <fr:route>/dhsorens-003M/</fr:route>
+            <fr:title text="Nova and Folding Schemes">Nova and Folding Schemes</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Folding two <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> instances into one without proving either, deferring all the SNARK work to the end. Also a case study in why this material needs formalising: a soundness bug was found in the published scheme.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Relaxed R1CS and committed relaxed R1CS: why the relaxation is needed to make folding close.</html:li>
+        <html:li>The folding step and its knowledge-soundness argument.</html:li>
+        <html:li>Why the recursive circuit is small — the folding verifier, not a SNARK verifier.</html:li>
+        <html:li>The bug: what the flaw was, what it permitted, and which part of the argument would have caught it under <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">machine-checked</fr:link> scrutiny.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://blog.zksecurity.xyz/posts/nova-attack/" type="external">how Nova got broken</fr:link>, <fr:link href="https://github.com/lurk-lab/awesome-folding" type="external">awesome-folding</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

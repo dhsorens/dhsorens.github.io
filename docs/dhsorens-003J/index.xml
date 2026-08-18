@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-003J/</fr:uri>
+    <fr:display-uri>dhsorens-003J</fr:display-uri>
+    <fr:route>/dhsorens-003J/</fr:route>
+    <fr:title text="Binius">Binius</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    A proof system built from the ground up on <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary tower fields</fr:link>, with <fr:link href="/dhsorens-0035/" title="Small-Field Commitments and Ring Switching" uri="https://derekhsorensen.com/dhsorens-0035/" display-uri="dhsorens-0035" type="local">ring switching</fr:link> as the mechanism that keeps small values cheap. The most complete demonstration of the small-field argument taken to its limit.
+</html:p>
+    <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
+        <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
+        <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
+        <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>
+    <html:p>
+    Sources: <fr:link href="https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing" type="external">Binary tower fields</fr:link>, <fr:link href="https://blog.lambdaclass.com/snarks-on-binary-fields-binius/" type="external">SNARKs on binary fields</fr:link>, <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>.
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003D/</fr:uri>
+            <fr:display-uri>dhsorens-003D</fr:display-uri>
+            <fr:route>/dhsorens-003D/</fr:route>
+            <fr:title text="Proof Systems in the Wild">Proof Systems in the Wild</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Named systems, each a particular choice of <fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">arithmetisation</fr:link>, <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment</fr:link>, and field. Once the layers below are understood these should be readable as combinations rather than as separate inventions — and where a system is not just a combination, that is the interesting part.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003E/</fr:uri>
+                <fr:display-uri>dhsorens-003E</fr:display-uri>
+                <fr:route>/dhsorens-003E/</fr:route>
+                <fr:title text="Groth16 and the Pairing Lineage">Groth16 and the Pairing Lineage</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Three group elements, a circuit-specific trusted setup, and a verifier cheap enough for the EVM. Obsolete as a zkVM backend and unavoidable as a <fr:link href="/dhsorens-003P/" title="Wrapping and On-Chain Verification" uri="https://derekhsorensen.com/dhsorens-003P/" display-uri="dhsorens-003P" type="local">wrapper</fr:link>.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>QAPs: from <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> to a divisibility claim.</html:li>
+        <html:li>The proof and the verification equation; why it is exactly three elements.</html:li>
+        <html:li>The security argument in the algebraic group model, and what AGM assumes about the adversary. ArkLib has an <html:code>AGM</html:code> directory for this.</html:li>
+        <html:li>Circuit-specific setup as the practical objection, and what universal setup changed.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003F/</fr:uri>
+                <fr:display-uri>dhsorens-003F</fr:display-uri>
+                <fr:route>/dhsorens-003F/</fr:route>
+                <fr:title text="Plonk and Halo2">Plonk and Halo2</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The system that made <fr:link href="/dhsorens-002T/" title="Plonkish Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002T/" display-uri="dhsorens-002T" type="local">Plonkish</fr:link> a category, and the implementation that most auditors' intuitions were formed on.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The protocol: gate identity, permutation argument, quotient, and opening.</html:li>
+        <html:li>Universal and updatable setup, and what it removed as an operational problem.</html:li>
+        <html:li>Halo2's departures: the table and region model, and the commitment swap from KZG to IPA in some deployments.</html:li>
+        <html:li>Where the lookup argument entered, and how it changed circuit design practice.</html:li>
+        <html:li>ArkLib's <html:code>ProofSystem/Plonk</html:code> and <html:code>ConstraintSystem/Plonk.lean</html:code>: which layer each covers.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003G/</fr:uri>
+                <fr:display-uri>dhsorens-003G</fr:display-uri>
+                <fr:route>/dhsorens-003G/</fr:route>
+                <fr:title text="Spartan and Sumcheck-Based SNARKs">Spartan and Sumcheck-Based SNARKs</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> proved with <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> instead of quotients, which removes the FFT and moves the cost into a sparse polynomial commitment. It is also one of the systems <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> has formalised, so it is a good place to read a full argument in Lean.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The reduction from R1CS satisfiability to a sumcheck claim.</html:li>
+        <html:li>Sparse polynomial commitment (Spark) and why the matrices' sparsity is what makes this cheap.</html:li>
+        <html:li>Prover cost profile against a Plonkish system on the same circuit.</html:li>
+        <html:li>The line from here to <fr:link href="/dhsorens-003N/" title="Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy" uri="https://derekhsorensen.com/dhsorens-003N/" display-uri="dhsorens-003N" type="local">HyperNova</fr:link>, which folds the same shape of claim.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003H/</fr:uri>
+                <fr:display-uri>dhsorens-003H</fr:display-uri>
+                <fr:route>/dhsorens-003H/</fr:route>
+                <fr:title text="HyperPlonk and the Multilinear Turn">HyperPlonk and the Multilinear Turn</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Plonkish constraints over the Boolean hypercube rather than a multiplicative subgroup, so the prover never runs an FFT. The clearest statement of what moving to <fr:link href="/dhsorens-002M/" title="Univariate and Multilinear Polynomials" uri="https://derekhsorensen.com/dhsorens-002M/" display-uri="dhsorens-002M" type="local">multilinear</fr:link> representations does and does not buy.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The translation of gate and wiring constraints into sumcheck claims.</html:li>
+        <html:li>What replaces the quotient polynomial and the low-degree test.</html:li>
+        <html:li>Cost profile: no FFT, more commitment work, different memory behaviour.</html:li>
+        <html:li>High-degree custom gates, which this handles better than univariate Plonk.</html:li>
+        <html:li>Why the field choice matters less here than in the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> world — or whether it does.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003I/</fr:uri>
+                <fr:display-uri>dhsorens-003I</fr:display-uri>
+                <fr:route>/dhsorens-003I/</fr:route>
+                <fr:title text="STARKs: Plonky3, Stwo, and Circle STARKs">STARKs: Plonky3, Stwo, and Circle STARKs</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> plus <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, over a small field, as a reusable toolkit rather than a single protocol. This is the layer the <fr:link href="/dhsorens-0043/" title="From Rust to Lean" uri="https://derekhsorensen.com/dhsorens-0043/" display-uri="dhsorens-0043" type="local">Rust-to-Lean extraction work</fr:link> targets: Plonky3 in Lean, with proofs about what it computes.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The STARK protocol end to end: trace, constraints, quotient, commitment, low-degree test.</html:li>
+        <html:li>Plonky3 as a toolkit — what is configurable (field, hash, PCS, folding factor) and what is fixed.</html:li>
+        <html:li>Stwo and the circle domain: Mersenne31 has no large smooth subgroup, so what replaces it and what changes in the constraint system.</html:li>
+        <html:li>Circle STARKs' vanishing polynomials and the extra care their boundary constraints need.</html:li>
+        <html:li>Where the two toolkits agree, since both consume an AIR — and what that means for <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> targeting both.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://github.com/Plonky3/Plonky3" type="external">Plonky3</fr:link>, <fr:link href="https://github.com/starkware-libs/stwo" type="external">stwo</fr:link>, Buterin, <fr:link href="https://vitalik.eth.limo/general/2024/07/23/circlestarks.html" type="external">Exploring circle STARKs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003J/</fr:uri>
+                <fr:display-uri>dhsorens-003J</fr:display-uri>
+                <fr:route>/dhsorens-003J/</fr:route>
+                <fr:title text="Binius">Binius</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    A proof system built from the ground up on <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary tower fields</fr:link>, with <fr:link href="/dhsorens-0035/" title="Small-Field Commitments and Ring Switching" uri="https://derekhsorensen.com/dhsorens-0035/" display-uri="dhsorens-0035" type="local">ring switching</fr:link> as the mechanism that keeps small values cheap. The most complete demonstration of the small-field argument taken to its limit.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
+        <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
+        <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
+        <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing" type="external">Binary tower fields</fr:link>, <fr:link href="https://blog.lambdaclass.com/snarks-on-binary-fields-binius/" type="external">SNARKs on binary fields</fr:link>, <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0040/</fr:uri>
+            <fr:display-uri>dhsorens-0040</fr:display-uri>
+            <fr:route>/dhsorens-0040/</fr:route>
+            <fr:title text="ArkLib">ArkLib</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    A modular library of formally verified arguments of knowledge in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, organised around <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">interactive oracle reductions</fr:link> rather than around individual protocols.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The directory structure as a design argument: <html:code>OracleReduction</html:code>, <html:code>Commitments</html:code>, <html:code>ProofSystem</html:code>, <html:code>AGM</html:code>, and the <html:code>To*</html:code> compatibility layers.</html:li>
+        <html:li>What is formalised and to what depth — <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>, <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link>, <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, <fr:link href="/dhsorens-003B/" title="STIR" uri="https://derekhsorensen.com/dhsorens-003B/" display-uri="dhsorens-003B" type="local">STIR</fr:link>, <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link>, <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link>, Merkle trees, coding theory.</html:li>
+        <html:li><html:code>ProofSystem/ConstraintSystem</html:code>: R1CS, Plonk, lookup, and memory checking in one place.</html:li>
+        <html:li>The security definitions in <html:code>OracleReduction/Security</html:code>, which are the real contribution.</html:li>
+        <html:li>What is a statement with no proof yet, and what the roadmap prioritises.</html:li>
+        <html:li>Which developments are blocked on <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, <fr:link href="https://lean-lang.org/use-cases/arklib/" type="external">ArkLib on lean-lang.org</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002L/</fr:uri>
+            <fr:display-uri>dhsorens-002L</fr:display-uri>
+            <fr:route>/dhsorens-002L/</fr:route>
+            <fr:title text="Binary Tower Fields">Binary Tower Fields</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The tower <fr:tex display="inline"><![CDATA[\mathbb {F}_2 \subset  \mathbb {F}_{2^2} \subset  \mathbb {F}_{2^4} \subset  \cdots  \subset  \mathbb {F}_{2^{128}}]]></fr:tex>, built by iterated quadratic extension, and the arithmetic that makes it attractive. This is the ground <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> stands on.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The tower construction, and why every subfield embedding is free.</html:li>
+        <html:li>Why binary: no modular reduction, characteristic 2 arithmetic maps onto bit operations, and small values cost small fields.</html:li>
+        <html:li>The claimed cost comparison against Mersenne31, and under what measure it holds.</html:li>
+        <html:li>Multilinear polynomials over a tower, and why the multilinear setting rather than the univariate one.</html:li>
+        <html:li><fr:link href="/dhsorens-0035/" title="Small-Field Commitments and Ring Switching" uri="https://derekhsorensen.com/dhsorens-0035/" display-uri="dhsorens-0035" type="local">Ring switching</fr:link>: moving between tower levels inside a single argument.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing" type="external">Binary tower fields</fr:link> (Irreducible), <fr:link href="https://blog.lambdaclass.com/snarks-on-binary-fields-binius/" type="external">SNARKs on binary fields</fr:link> (LambdaClass), <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0035/</fr:uri>
+            <fr:display-uri>dhsorens-0035</fr:display-uri>
+            <fr:route>/dhsorens-0035/</fr:route>
+            <fr:title text="Small-Field Commitments and Ring Switching">Small-Field Commitments and Ring Switching</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Committing to values that live in a tiny field without paying extension-field prices for every one of them. The problem <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> exists to solve, and the reason ArkLib has a <html:code>RingSwitching</html:code> directory.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Why a naive commitment to <fr:tex display="inline"><![CDATA[\mathbb {F}_2]]></fr:tex> values wastes almost all of its capacity, and what packing recovers.</html:li>
+        <html:li>The ring-switching reduction: a claim over the extension becomes a claim over the base, or the reverse.</html:li>
+        <html:li>Where soundness needs the large field regardless, and how much of the argument can stay small.</html:li>
+        <html:li>The interaction with <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary towers</fr:link> specifically, versus 31-bit primes.</html:li>
+        <html:li>What ArkLib formalises here and what remains open.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002L/</fr:uri>
+            <fr:display-uri>dhsorens-002L</fr:display-uri>
+            <fr:route>/dhsorens-002L/</fr:route>
+            <fr:title text="Binary Tower Fields">Binary Tower Fields</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The tower <fr:tex display="inline"><![CDATA[\mathbb {F}_2 \subset  \mathbb {F}_{2^2} \subset  \mathbb {F}_{2^4} \subset  \cdots  \subset  \mathbb {F}_{2^{128}}]]></fr:tex>, built by iterated quadratic extension, and the arithmetic that makes it attractive. This is the ground <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> stands on.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The tower construction, and why every subfield embedding is free.</html:li>
+        <html:li>Why binary: no modular reduction, characteristic 2 arithmetic maps onto bit operations, and small values cost small fields.</html:li>
+        <html:li>The claimed cost comparison against Mersenne31, and under what measure it holds.</html:li>
+        <html:li>Multilinear polynomials over a tower, and why the multilinear setting rather than the univariate one.</html:li>
+        <html:li><fr:link href="/dhsorens-0035/" title="Small-Field Commitments and Ring Switching" uri="https://derekhsorensen.com/dhsorens-0035/" display-uri="dhsorens-0035" type="local">Ring switching</fr:link>: moving between tower levels inside a single argument.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing" type="external">Binary tower fields</fr:link> (Irreducible), <fr:link href="https://blog.lambdaclass.com/snarks-on-binary-fields-binius/" type="external">SNARKs on binary fields</fr:link> (LambdaClass), <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0035/</fr:uri>
+            <fr:display-uri>dhsorens-0035</fr:display-uri>
+            <fr:route>/dhsorens-0035/</fr:route>
+            <fr:title text="Small-Field Commitments and Ring Switching">Small-Field Commitments and Ring Switching</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Committing to values that live in a tiny field without paying extension-field prices for every one of them. The problem <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> exists to solve, and the reason ArkLib has a <html:code>RingSwitching</html:code> directory.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Why a naive commitment to <fr:tex display="inline"><![CDATA[\mathbb {F}_2]]></fr:tex> values wastes almost all of its capacity, and what packing recovers.</html:li>
+        <html:li>The ring-switching reduction: a claim over the extension becomes a claim over the base, or the reverse.</html:li>
+        <html:li>Where soundness needs the large field regardless, and how much of the argument can stay small.</html:li>
+        <html:li>The interaction with <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary towers</fr:link> specifically, versus 31-bit primes.</html:li>
+        <html:li>What ArkLib formalises here and what remains open.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

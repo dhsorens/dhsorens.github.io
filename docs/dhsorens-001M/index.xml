@@ -75,7 +75,7 @@
           <fr:mainmatter>
             <html:p>
     Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
-    For example, chip design or software implementing <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    For example, chip design or software implementing <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
     In these cases, the <html:em>specification</html:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
 </html:p>
             <html:p>

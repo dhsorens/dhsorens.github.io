@@ -162,7 +162,7 @@
 </html:p>
             <html:p>
     However, proposition and proof for mathematicians and computer scientists often do not much resemble each other, both in how proofs are engineered as well as in the kinds of propositions formalized.
-    Unless software specifications are explicitly mathematical, for example like in the case of <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
+    Unless software specifications are explicitly mathematical, for example like in the case of <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
     These sorts of propositions comprising the specification are informed by experience and best practices, but <fr:link href="/dhsorens-001H/" title="The Computer Scientist's Approach to Proposition and Proof (About Software)" uri="https://derekhsorensen.com/dhsorens-001H/" display-uri="dhsorens-001H" type="local">frequently not any formal, underlying theory</fr:link>. In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.
     These differences are, in my mind, well worth meditating on.
     My <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> was in some ways an attempt to reconcile the mathematical approach to stating and proving theorems for <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">some specific software applications</fr:link>; the jury is still out for me as to whether that is actually useful.
@@ -250,7 +250,7 @@
               <fr:mainmatter>
                 <html:p>
     Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
-    For example, chip design or software implementing <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    For example, chip design or software implementing <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
     In these cases, the <html:em>specification</html:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
 </html:p>
                 <html:p>
@@ -624,7 +624,7 @@
     The reality is, however, it is difficult to write a complete specification; desirable properties of some software can be extremely difficult to articulate.
     </html:p>
                 <html:p>
-    Some software will need a great deal of formal infrastructure built up to write provably correct specifications.
+    Some software will need <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">a great deal of formal infrastructure</fr:link> built up to write provably correct specifications.
     For others, it's not even obvious that formal statements are the right tool to use for them.
     Computer science has a long history of using diagrams, pictures, and other tools of abstraction to specify computation.
     Maybe a proof assistant is powerful enough to formalize any abstract framework? Maybe it's powerful enough to do this?
@@ -655,7 +655,7 @@
           <fr:mainmatter>
             <html:p>
     Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
-    For example, chip design or software implementing <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    For example, chip design or software implementing <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
     In these cases, the <html:em>specification</html:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
 </html:p>
             <html:p>
@@ -1138,7 +1138,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    As of November 2025 I joined the Ethereum Foundation, working on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link>. This mostly consists of formally specifying and verifying ZK primitives in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+    As of November 2025 I joined the Ethereum Foundation, working on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link>. This mostly consists of formally specifying and verifying <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">ZK primitives</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
 </html:p>
                 <html:p><html:em>Last updated January 2026</html:em>. For more updates, see <fr:link href="/dhsorens-logs/" title="Logs" uri="https://derekhsorensen.com/dhsorens-logs/" display-uri="dhsorens-logs" type="local">my logs</fr:link>.
 </html:p>
@@ -1194,7 +1194,7 @@ This has prompted some thinking on the subject.
 </html:p>
                 <html:p>
     However, proposition and proof for mathematicians and computer scientists often do not much resemble each other, both in how proofs are engineered as well as in the kinds of propositions formalized.
-    Unless software specifications are explicitly mathematical, for example like in the case of <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
+    Unless software specifications are explicitly mathematical, for example like in the case of <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero-knowledge proofs</fr:link>, computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
     These sorts of propositions comprising the specification are informed by experience and best practices, but <fr:link href="/dhsorens-001H/" title="The Computer Scientist's Approach to Proposition and Proof (About Software)" uri="https://derekhsorensen.com/dhsorens-001H/" display-uri="dhsorens-001H" type="local">frequently not any formal, underlying theory</fr:link>. In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.
     These differences are, in my mind, well worth meditating on.
     My <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> was in some ways an attempt to reconcile the mathematical approach to stating and proving theorems for <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">some specific software applications</fr:link>; the jury is still out for me as to whether that is actually useful.
@@ -1282,7 +1282,7 @@ This has prompted some thinking on the subject.
                   <fr:mainmatter>
                     <html:p>
     Some software is straightforward to specify because it strongly resembles the rigorous and well-defined world of mathematics.
-    For example, chip design or software implementing <fr:link href="/dhsorens-001L/" title="Zero Knowledge Proofs" uri="https://derekhsorensen.com/dhsorens-001L/" display-uri="dhsorens-001L" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
+    For example, chip design or software implementing <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero-knowledge proofs</fr:link> will be relatively straightforward to specify correctly because the purpose of the software is expressly mathematical, or clearly derived from within a formal system.
     In these cases, the <html:em>specification</html:em> tends to be abundantly clear because the work of settling on the correct definition and desired behavior of things was solved mathematically before it was translated into software.
 </html:p>
                     <html:p>
@@ -1656,7 +1656,7 @@ This has prompted some thinking on the subject.
     The reality is, however, it is difficult to write a complete specification; desirable properties of some software can be extremely difficult to articulate.
     </html:p>
                     <html:p>
-    Some software will need a great deal of formal infrastructure built up to write provably correct specifications.
+    Some software will need <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">a great deal of formal infrastructure</fr:link> built up to write provably correct specifications.
     For others, it's not even obvious that formal statements are the right tool to use for them.
     Computer science has a long history of using diagrams, pictures, and other tools of abstraction to specify computation.
     Maybe a proof assistant is powerful enough to formalize any abstract framework? Maybe it's powerful enough to do this?
@@ -1666,6 +1666,41 @@ This has prompted some thinking on the subject.
                 </fr:tree>
               </fr:mainmatter>
             </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:uri>https://derekhsorensen.com/dhsorens-notes/</fr:uri>
+            <fr:display-uri>dhsorens-notes</fr:display-uri>
+            <fr:route>/dhsorens-notes/</fr:route>
+            <fr:title text="Notes">Notes</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    I am interested, broadly speaking, in formal proposition and proof.
+    From a high level, what tends to catch my attention is the nuance of going from an intuitive, abstract idea into something formal—whether it's a formal specification of a program, a formalized theorem statement, or even something simply written out as a program.
+</html:p>
+            <html:p>
+    During my PhD this manifested as written work focused on the problem of (correctly) specifying and formally verifying <fr:link href="/dhsorens-000A/" title="The Main Contributions of my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000A/" display-uri="dhsorens-000A" type="local">financial smart contracts</fr:link>.
+    But I continue to be interested in <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">software verification more broadly</fr:link>, the ongoing work to <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize mathematics</fr:link>, and other developments in using <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> in production.
+</html:p>
+            <html:p>
+    I recently started work on formally verifying <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">all things zero-knowledge</fr:link> on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
+</html:p>
+            <html:p>Newest first:
+
+    <html:ul><html:li><fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>. A systematic study of the cryptography and machine architecture these systems are built from, topic by topic: <fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">arithmetisation</fr:link>, <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment schemes</fr:link>, <fr:link href="/dhsorens-0036/" title="Low-Degree Testing, from FRI to WHIR" uri="https://derekhsorensen.com/dhsorens-0036/" display-uri="dhsorens-0036" type="local">low-degree testing</fr:link> from FRI to WHIR, <fr:link href="/dhsorens-003Q/" title="zkVMs" uri="https://derekhsorensen.com/dhsorens-003Q/" display-uri="dhsorens-003Q" type="local">zkVMs</fr:link> themselves, and <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">formalising the stack</fr:link> in Lean. August 2026.</html:li>
+        <html:li><fr:link href="/dhsorens-0027/" title="LC3 in Lean" uri="https://derekhsorensen.com/dhsorens-0027/" display-uri="dhsorens-0027" type="local">LC3 in Lean</fr:link>. A small virtual machine and its semantics in Lean, with the <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">ISA-level details</fr:link> and the <fr:link href="/dhsorens-002A/" title="Details on the Proofs of Correctness for LC3-Lean" uri="https://derekhsorensen.com/dhsorens-002A/" display-uri="dhsorens-002A" type="local">proofs of correctness</fr:link> written up separately. March 2026.</html:li>
+        <html:li><fr:link href="/dhsorens-0025/" title="CompPoly and Computable Specifications" uri="https://derekhsorensen.com/dhsorens-0025/" display-uri="dhsorens-0025" type="local">CompPoly and Computable Specifications</fr:link>. Why an executable specification is a stronger specification, and how that connects to <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">metaspecifications</fr:link> in cryptography. March 2026.</html:li>
+        <html:li><fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link>. Ongoing work to integrate zero knowledge proofs into every layer of the Ethereum protocol. December 2025.</html:li>
+        <html:li><fr:link href="/dhsorens-000U/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000U/" display-uri="dhsorens-000U" type="local">Formal Specification and Verification</fr:link>. <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">Smart contract specification and verification</fr:link>, and <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">formal verification in proof assistants</fr:link> more broadly. August 2025.</html:li>
+        <html:li><fr:link href="/dhsorens-000V/" title="Type Theory and Formal Proof" uri="https://derekhsorensen.com/dhsorens-000V/" display-uri="dhsorens-000V" type="local">Type Theory and Formal Proof</fr:link>. <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">Proof assistants</fr:link>, some preliminary work in <fr:link href="/dhsorens-hott/" title="Homotopy Type Theory (HoTT)" uri="https://derekhsorensen.com/dhsorens-hott/" display-uri="dhsorens-hott" type="local">HoTT</fr:link>, and the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. August 2025.</html:li></html:ul></html:p>
           </fr:mainmatter>
         </fr:tree>
       </fr:mainmatter>

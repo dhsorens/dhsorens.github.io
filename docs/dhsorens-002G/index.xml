@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-002G/</fr:uri>
+    <fr:display-uri>dhsorens-002G</fr:display-uri>
+    <fr:route>/dhsorens-002G/</fr:route>
+    <fr:title text="Fiat–Shamir and the Random Oracle Model">Fiat–Shamir and the Random Oracle Model</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    The step that makes a proof system deployable, and the step where the security argument is thinnest.
+</html:p>
+    <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The transform, and exactly what it assumes about the hash function.</html:li>
+        <html:li>Why <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round soundness</fr:link> is the right hypothesis for a many-round protocol.</html:li>
+        <html:li>Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.</html:li>
+        <html:li>Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's <html:code>Salt.lean</html:code> is for.</html:li>
+        <html:li>Whether the ROM is the right idealisation, and what the alternatives cost.</html:li></html:ul></html:p>
+    <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link>, <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>OracleReduction/FiatShamir</html:code>).
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002D/</fr:uri>
+            <fr:display-uri>dhsorens-002D</fr:display-uri>
+            <fr:route>/dhsorens-002D/</fr:route>
+            <fr:title text="The Shape of a Proof System">The Shape of a Proof System</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The vocabulary layer. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link>, and <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> are instances of the same handful of definitions, and much of what is confusing in a paper is a confusion about which definition is in play: which soundness notion, in which oracle model, against which adversary.
+</html:p>
+            <html:p>
+    Two questions this section exists to answer. What does a security proof for a SNARK actually establish? And at which step of the compilation from interactive protocol to deployed system does the security get lost?
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002E/</fr:uri>
+                <fr:display-uri>dhsorens-002E</fr:display-uri>
+                <fr:route>/dhsorens-002E/</fr:route>
+                <fr:title text="Interactive Proofs, Arguments, and IOPs">Interactive Proofs, Arguments, and IOPs</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The chain of definitions that everything else is stated in terms of, ending at the interactive oracle reduction that <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> takes as primitive. <html:em>Proof</html:em> does different work here than it does in <fr:link href="/dhsorens-001F/" title="Proposition and Proof in Mathematics and Computer Science" uri="https://derekhsorensen.com/dhsorens-001F/" display-uri="dhsorens-001F" type="local">proposition and proof</fr:link>: a SNARK convinces a verifier with high probability under stated assumptions, and is not a derivation.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Interactive proof, argument (prover computationally bounded), PCP, IOP, oracle reduction — what each relaxation buys.</html:li>
+        <html:li>Where <html:em>succinct</html:em> and <html:em>of knowledge</html:em> enter, and what each costs the construction.</html:li>
+        <html:li>Public-coin versus private-coin, and why every deployed system is public-coin.</html:li>
+        <html:li>The knowledge extractor: what it is handed, what it must produce, and why rewinding is a problem in the non-interactive setting.</html:li>
+        <html:li>Zero-knowledge — honest-verifier versus malicious, and how much of it a zkVM actually needs. Mostly these systems are bought for succinctness.</html:li></html:ul></html:p>
+                <html:p>
+    Reading: <html:code>ArkLib/OracleReduction/Basic.lean</html:code> as the definitional reference; Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em>, for the textbook chain.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002F/</fr:uri>
+                <fr:display-uri>dhsorens-002F</fr:display-uri>
+                <fr:route>/dhsorens-002F/</fr:route>
+                <fr:title text="Soundness Notions">Soundness Notions</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Which soundness a theorem is about determines whether it survives the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link>. A table of the notions, the implications between them, and which compilation step preserves each belongs on this page.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Soundness, knowledge soundness, special soundness — and the implications between them.</html:li>
+        <html:li>Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.</html:li>
+        <html:li>Soundness error versus security level in bits; how error accumulates across rounds, queries, and repetitions.</html:li>
+        <html:li>Provable versus conjectured soundness, and which deployed parameters rest on which. See <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>.</html:li>
+        <html:li>What "128-bit security" means for a hash-based system once <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> is counted.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002G/</fr:uri>
+                <fr:display-uri>dhsorens-002G</fr:display-uri>
+                <fr:route>/dhsorens-002G/</fr:route>
+                <fr:title text="Fiat–Shamir and the Random Oracle Model">Fiat–Shamir and the Random Oracle Model</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The step that makes a proof system deployable, and the step where the security argument is thinnest.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The transform, and exactly what it assumes about the hash function.</html:li>
+        <html:li>Why <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round soundness</fr:link> is the right hypothesis for a many-round protocol.</html:li>
+        <html:li>Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.</html:li>
+        <html:li>Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's <html:code>Salt.lean</html:code> is for.</html:li>
+        <html:li>Whether the ROM is the right idealisation, and what the alternatives cost.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link>, <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>OracleReduction/FiatShamir</html:code>).
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002H/</fr:uri>
+                <fr:display-uri>dhsorens-002H</fr:display-uri>
+                <fr:route>/dhsorens-002H/</fr:route>
+                <fr:title text="The BCS Transform">The BCS Transform</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    How an IOP plus a commitment scheme becomes a non-interactive argument. The transform that every hash-based system in deployment is an instance of.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The construction: commit to each oracle, answer queries with openings, then <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>.</html:li>
+        <html:li>What the commitment must provide — position binding is not obviously enough; where extractability is needed.</html:li>
+        <html:li>How the IOP's query complexity turns into proof size, concretely.</html:li>
+        <html:li>The security loss in the reduction, and whether it is tight.</html:li>
+        <html:li>ArkLib's <html:code>OracleReduction/BCS</html:code>: what is formalised and what the statement looks like.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: Ben-Sasson, Chiesa, and Spooner, <html:em>Interactive Oracle Proofs</html:em>; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002I/</fr:uri>
+                <fr:display-uri>dhsorens-002I</fr:display-uri>
+                <fr:route>/dhsorens-002I/</fr:route>
+                <fr:title text="Oracle Reductions and Composition">Oracle Reductions and Composition</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>'s organising abstraction, and the reason it can hope to cover many protocols rather than one. A reduction maps one relation to another; a protocol is a composition of reductions; completeness and soundness are proved once per component.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The definition: relations with oracle statements, and what a reduction between them is.</html:li>
+        <html:li>Sequential composition, and how the soundness error accounts.</html:li>
+        <html:li>Lifting and virtual oracle reductions (<html:code>LiftContext</html:code>) — why real protocols need a component to run in a larger context than it was stated in.</html:li>
+        <html:li>Decomposing a full system this way. <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> or <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link> is the test case.</html:li>
+        <html:li>What is lost: which protocols resist a clean decomposition, and why.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, <fr:link href="https://lean-lang.org/use-cases/arklib/" type="external">ArkLib on lean-lang.org</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003Y/</fr:uri>
+            <fr:display-uri>dhsorens-003Y</fr:display-uri>
+            <fr:route>/dhsorens-003Y/</fr:route>
+            <fr:title text="How zkVMs Break">How zkVMs Break</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    A catalogue of real failure modes, kept concrete. This page is the evidence for the <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">formalisation work</fr:link>, so it should stay evidence rather than argument. <fr:link href="/dhsorens-001P/" title="Smart Contract Vulnerabilities Due to Poor Specification" uri="https://derekhsorensen.com/dhsorens-001P/" display-uri="dhsorens-001P" type="local">Smart contract vulnerabilities due to poor specification</fr:link> is the same catalogue one domain over, and the failure modes rhyme: code that did what it was specified to do, and a specification that permitted what nobody intended.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Under-constrained circuits: the general shape, and the canonical examples.</html:li>
+        <html:li>Missing range checks, and why a forgotten monotonicity constraint on <fr:link href="/dhsorens-003U/" title="Memory Checking in zkVMs" uri="https://derekhsorensen.com/dhsorens-003U/" display-uri="dhsorens-003U" type="local">memory</fr:link> timestamps is fatal.</html:li>
+        <html:li><fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> misuse: transcripts missing a value, weak domain separation, insufficient challenge space.</html:li>
+        <html:li>Soundness bugs in published schemes rather than implementations — <fr:link href="/dhsorens-003M/" title="Nova and Folding Schemes" uri="https://derekhsorensen.com/dhsorens-003M/" display-uri="dhsorens-003M" type="local">Nova</fr:link> is the example to write up.</html:li>
+        <html:li>Parameter errors: a security level computed in the wrong <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link>.</html:li>
+        <html:li>Which of these a type system, a linter, an audit, or a proof would each have caught.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://blog.zksecurity.xyz/posts/nova-attack/" type="external">how Nova got broken</fr:link>, <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002F/</fr:uri>
+            <fr:display-uri>dhsorens-002F</fr:display-uri>
+            <fr:route>/dhsorens-002F/</fr:route>
+            <fr:title text="Soundness Notions">Soundness Notions</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Which soundness a theorem is about determines whether it survives the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link>. A table of the notions, the implications between them, and which compilation step preserves each belongs on this page.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Soundness, knowledge soundness, special soundness — and the implications between them.</html:li>
+        <html:li>Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.</html:li>
+        <html:li>Soundness error versus security level in bits; how error accumulates across rounds, queries, and repetitions.</html:li>
+        <html:li>Provable versus conjectured soundness, and which deployed parameters rest on which. See <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>.</html:li>
+        <html:li>What "128-bit security" means for a hash-based system once <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> is counted.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002H/</fr:uri>
+            <fr:display-uri>dhsorens-002H</fr:display-uri>
+            <fr:route>/dhsorens-002H/</fr:route>
+            <fr:title text="The BCS Transform">The BCS Transform</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    How an IOP plus a commitment scheme becomes a non-interactive argument. The transform that every hash-based system in deployment is an instance of.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The construction: commit to each oracle, answer queries with openings, then <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>.</html:li>
+        <html:li>What the commitment must provide — position binding is not obviously enough; where extractability is needed.</html:li>
+        <html:li>How the IOP's query complexity turns into proof size, concretely.</html:li>
+        <html:li>The security loss in the reduction, and whether it is tight.</html:li>
+        <html:li>ArkLib's <html:code>OracleReduction/BCS</html:code>: what is formalised and what the statement looks like.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: Ben-Sasson, Chiesa, and Spooner, <html:em>Interactive Oracle Proofs</html:em>; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002Q/</fr:uri>
+            <fr:display-uri>dhsorens-002Q</fr:display-uri>
+            <fr:route>/dhsorens-002Q/</fr:route>
+            <fr:title text="The Sumcheck Protocol">The Sumcheck Protocol</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    One protocol, used everywhere: GKR, <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link>, <fr:link href="/dhsorens-003H/" title="HyperPlonk and the Multilinear Turn" uri="https://derekhsorensen.com/dhsorens-003H/" display-uri="dhsorens-003H" type="local">HyperPlonk</fr:link>, Basefold, logUp-GKR, <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link>. It is the first thing <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> formalised, and probably the right place to start reading Lean.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The protocol and its soundness error, stated with the degree and variable count explicit.</html:li>
+        <html:li>Prover cost: the linear-time algorithm, and what changes when the base field is small.</html:li>
+        <html:li>Batching several sumchecks; zero-knowledge variants.</html:li>
+        <html:li>Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck meets a <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment scheme</fr:link>.</html:li>
+        <html:li>Why the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir attack</fr:link> landed on GKR, a sumcheck-based protocol, and what that implies about parameterisation.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>ProofSystem/Sumcheck</html:code>).
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0042/</fr:uri>
+            <fr:display-uri>dhsorens-0042</fr:display-uri>
+            <fr:route>/dhsorens-0042/</fr:route>
+            <fr:title text="VCV-io and Game-Based Cryptography in Lean">VCV-io and Game-Based Cryptography in Lean</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The oracle framework <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> is built on: computations with oracle effects, handlers that implement them, and a program logic for the game-hopping arguments that security proofs are written as.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Oracle computations and <html:code>simulateQ</html:code>: implementing a random oracle, logging queries, performing reductions.</html:li>
+        <html:li>The program logic — relational (pRHL-style) and unary modes — and what a game hop looks like as a tactic step.</html:li>
+        <html:li>Primitives already covered: encryption, signatures, sigma protocols, and the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> and Fischlin transforms.</html:li>
+        <html:li>How ArkLib's adversary model sits on top of this.</html:li>
+        <html:li>What a machine-checked reduction proof costs in effort, compared with the paper proof.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://github.com/dtumad/VCV-io" type="external">VCV-io</fr:link>, <fr:link href="https://eprint.iacr.org/2026/899" type="external">VCVio: Verified Cryptography in Lean via Oracle Effects and Handlers</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0045/</fr:uri>
+            <fr:display-uri>dhsorens-0045</fr:display-uri>
+            <fr:route>/dhsorens-0045/</fr:route>
+            <fr:title text="What a Verified zkVM Would Mean">What a Verified zkVM Would Mean</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The statement at the top of the whole effort, written out honestly: which theorems compose, and which links in the chain are assumptions rather than proofs. It is the claim the whole effort will be judged on, and its general form is <fr:link href="/dhsorens-001K/" title="Proof Assistants and the Issue of Incorrect Specification" uri="https://derekhsorensen.com/dhsorens-001K/" display-uri="dhsorens-001K" type="local">the issue of incorrect specification</fr:link>: a machine-checked proof is only ever as good as the statement it proves.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The chain: ISA specification, constraint system, arithmetisation soundness, IOP soundness, commitment security, <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>, recursion, extracted implementation.</html:li>
+        <html:li>Which links are proved today, which are stated, and which are not formalised at all.</html:li>
+        <html:li>The irreducible assumptions: hash security, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
+        <html:li>Whether "verified" should mean the composed end-to-end theorem, or a set of component theorems with audited seams.</html:li>
+        <html:li>The 2027 target the project set, and what would have to be true for it to be met.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://verified-zkevm.org/" type="external">verified-zkevm.org</fr:link>, <fr:link href="https://github.com/Verified-zkEVM/Overview" type="external">Verified-zkEVM overview</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002F/</fr:uri>
+            <fr:display-uri>dhsorens-002F</fr:display-uri>
+            <fr:route>/dhsorens-002F/</fr:route>
+            <fr:title text="Soundness Notions">Soundness Notions</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Which soundness a theorem is about determines whether it survives the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link>. A table of the notions, the implications between them, and which compilation step preserves each belongs on this page.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Soundness, knowledge soundness, special soundness — and the implications between them.</html:li>
+        <html:li>Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.</html:li>
+        <html:li>Soundness error versus security level in bits; how error accumulates across rounds, queries, and repetitions.</html:li>
+        <html:li>Provable versus conjectured soundness, and which deployed parameters rest on which. See <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>.</html:li>
+        <html:li>What "128-bit security" means for a hash-based system once <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> is counted.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

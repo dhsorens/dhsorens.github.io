@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-004A/</fr:uri>
+    <fr:display-uri>dhsorens-004A</fr:display-uri>
+    <fr:route>/dhsorens-004A/</fr:route>
+    <fr:title text="Security Levels in Production">Security Levels in Production</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    What bit-security a deployed system actually claims, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
+</html:p>
+    <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The parameters real provers ship: rate, repetitions, <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> bits, field size — and the claimed level they add up to.</html:li>
+        <html:li>Which claims depend on a <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">conjecture</fr:link>, and whether that is documented in the system's own materials.</html:li>
+        <html:li>The accounting across <fr:link href="/dhsorens-003L/" title="IVC and Proof-Carrying Data" uri="https://derekhsorensen.com/dhsorens-003L/" display-uri="dhsorens-003L" type="local">recursion</fr:link> layers, where errors compose.</html:li>
+        <html:li>Who is responsible for the number: protocol designers, implementers, or auditors.</html:li>
+        <html:li>What a machine-checked parameter calculation would look like, and whether it is a reasonable thing to build.</html:li></html:ul></html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0046/</fr:uri>
+            <fr:display-uri>dhsorens-0046</fr:display-uri>
+            <fr:route>/dhsorens-0046/</fr:route>
+            <fr:title text="The Ethereum Setting">The Ethereum Setting</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The constraints that come from the deployment target rather than the mathematics. Ethereum wants blocks proved in seconds, on modest hardware, at a security level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link> for the broader effort, and <fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link> for the talk.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0047/</fr:uri>
+                <fr:display-uri>dhsorens-0047</fr:display-uri>
+                <fr:route>/dhsorens-0047/</fr:route>
+                <fr:title text="Real-Time Proving and the zkEVM Target">Real-Time Proving and the zkEVM Target</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    What the protocol actually asks of a prover, stated as numbers, and which part of the <fr:link href="/dhsorens-003R/" title="The zkVM Stack" uri="https://derekhsorensen.com/dhsorens-003R/" display-uri="dhsorens-003R" type="local">stack</fr:link> each number constrains.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The current latency, cost, hardware, and proof-size targets, with a source for each.</html:li>
+        <html:li>Proving an L1 block: what dominates — <fr:link href="/dhsorens-0048/" title="ZK-Friendly Primitives" uri="https://derekhsorensen.com/dhsorens-0048/" display-uri="dhsorens-0048" type="local">hashing</fr:link>, signature verification, state access.</html:li>
+        <html:li>Verification on the consumer side: what a home verifier must be able to check, and in what time.</html:li>
+        <html:li>Multi-prover and diversity arguments, and what they assume about implementation independence.</html:li>
+        <html:li>Which targets are met today and which are not.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0048/</fr:uri>
+                <fr:display-uri>dhsorens-0048</fr:display-uri>
+                <fr:route>/dhsorens-0048/</fr:route>
+                <fr:title text="ZK-Friendly Primitives">ZK-Friendly Primitives</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The hash function is usually the prover's largest single cost, so primitive choice is a proof-system decision rather than an implementation detail.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Arithmetisation-friendly hashes (Poseidon2 and relatives) against standard ones (Keccak, SHA-256, Blake3), counted in constraints.</html:li>
+        <html:li>The security tradeoff: young algebraic designs against well-analysed bit-oriented ones.</html:li>
+        <html:li>Where Ethereum has no choice — Keccak in the state trie, ECDSA in transactions — and what those cost.</html:li>
+        <html:li>Hash rate as a headline benchmark, and what it does and does not predict.</html:li>
+        <html:li>Which hash a <fr:link href="/dhsorens-0031/" title="Merkle Trees and Vector Commitments" uri="https://derekhsorensen.com/dhsorens-0031/" display-uri="dhsorens-0031" type="local">Merkle commitment</fr:link> should use at each layer of a recursion.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0049/</fr:uri>
+                <fr:display-uri>dhsorens-0049</fr:display-uri>
+                <fr:route>/dhsorens-0049/</fr:route>
+                <fr:title text="Post-Quantum Pressure">Post-Quantum Pressure</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Hash-based proof systems are plausibly post-quantum and <fr:link href="/dhsorens-0032/" title="KZG and the Pairing-Based Line" uri="https://derekhsorensen.com/dhsorens-0032/" display-uri="dhsorens-0032" type="local">pairing-based</fr:link> ones are not, which turns a cryptographic deadline into an architectural constraint on <fr:link href="/dhsorens-003P/" title="Wrapping and On-Chain Verification" uri="https://derekhsorensen.com/dhsorens-003P/" display-uri="dhsorens-003P" type="local">wrapping</fr:link>.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.</html:li>
+        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism.</html:li>
+        <html:li>Lattice-based commitments as an alternative, and their cost profile.</html:li>
+        <html:li>The consequence for the last step of a pipeline that currently ends in Groth16.</html:li>
+        <html:li>What VCV-io's lattice work already covers.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004A/</fr:uri>
+                <fr:display-uri>dhsorens-004A</fr:display-uri>
+                <fr:route>/dhsorens-004A/</fr:route>
+                <fr:title text="Security Levels in Production">Security Levels in Production</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    What bit-security a deployed system actually claims, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The parameters real provers ship: rate, repetitions, <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> bits, field size — and the claimed level they add up to.</html:li>
+        <html:li>Which claims depend on a <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">conjecture</fr:link>, and whether that is documented in the system's own materials.</html:li>
+        <html:li>The accounting across <fr:link href="/dhsorens-003L/" title="IVC and Proof-Carrying Data" uri="https://derekhsorensen.com/dhsorens-003L/" display-uri="dhsorens-003L" type="local">recursion</fr:link> layers, where errors compose.</html:li>
+        <html:li>Who is responsible for the number: protocol designers, implementers, or auditors.</html:li>
+        <html:li>What a machine-checked parameter calculation would look like, and whether it is a reasonable thing to build.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003A/</fr:uri>
+            <fr:display-uri>dhsorens-003A</fr:display-uri>
+            <fr:route>/dhsorens-003A/</fr:route>
+            <fr:title text="Batching and Grinding">Batching and Grinding</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Two engineering devices that materially change the security accounting, and are therefore easy to get wrong.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
+        <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
+        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
+        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003L/</fr:uri>
+            <fr:display-uri>dhsorens-003L</fr:display-uri>
+            <fr:route>/dhsorens-003L/</fr:route>
+            <fr:title text="IVC and Proof-Carrying Data">IVC and Proof-Carrying Data</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The definitions that folding and recursion are trying to achieve, and the overhead problem that shapes every construction: the verifier has to be expressible as a circuit in the system it verifies.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Incrementally verifiable computation and proof-carrying data: the statements, and the knowledge soundness they require.</html:li>
+        <html:li>Recursion overhead: what a verifier-in-circuit costs, and which components dominate (hashing, MSM, field arithmetic).</html:li>
+        <html:li>Cycles of curves, and why hash-based systems avoid the problem differently.</html:li>
+        <html:li>How the security loss compounds over recursion depth.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002P/</fr:uri>
+            <fr:display-uri>dhsorens-002P</fr:display-uri>
+            <fr:route>/dhsorens-002P/</fr:route>
+            <fr:title text="List Decoding and Proximity Gaps">List Decoding and Proximity Gaps</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The technical core of every soundness proof in the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family, and the place where deployed parameters stop being provably sound and start being conjecturally sound. It is the most load-bearing page in the section.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The three regimes — unique decoding, the Johnson bound, capacity — and what parameters each licenses.</html:li>
+        <html:li>What a proximity gap statement says, and why a low-degree test cannot be analysed without one.</html:li>
+        <html:li>Correlated agreement and mutual correlated agreement; which protocols need the stronger form.</html:li>
+        <html:li>The conjectures: which are theorems, which are conjectures, and which deployed systems assume which. The SoK argues these regimes are routinely conflated in the primary sources.</html:li>
+        <html:li>Machine-checked threshold constants, and whether the formalisation can be reused in <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound via Threshold Halving</fr:link>, <fr:link href="https://deltastar.computer/" type="external">Pinning <fr:tex display="inline"><![CDATA[\delta ^*]]></fr:tex></fr:link>, <fr:link href="https://hackmd.io/@zkpunk/CS25" type="external">notes on the proximity-gap conjectures</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0038/</fr:uri>
+            <fr:display-uri>dhsorens-0038</fr:display-uri>
+            <fr:route>/dhsorens-0038/</fr:route>
+            <fr:title text="Soundness Regimes and the Proximity-Gap Conjectures">Soundness Regimes and the Proximity-Gap Conjectures</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The same protocol has different soundness depending on how far from the code you are willing to reason, and the parameters used in production sit in the regime where the analysis is conjectural. This page is the reason <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">list decoding</fr:link> is in this corpus at all.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the parameters each licenses.</html:li>
+        <html:li>What must be conjectured to reach capacity, and the precise statement of each conjecture.</html:li>
+        <html:li>Threshold halving, and what it establishes above the Johnson bound.</html:li>
+        <html:li>The accounting from soundness error to bits of security, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
+        <html:li>Which deployed systems set parameters in which regime — and whether the choice is documented anywhere citable.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>, <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

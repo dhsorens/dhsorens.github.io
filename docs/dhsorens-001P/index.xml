@@ -463,6 +463,40 @@
               </fr:author>
             </fr:authors>
             <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003Y/</fr:uri>
+            <fr:display-uri>dhsorens-003Y</fr:display-uri>
+            <fr:route>/dhsorens-003Y/</fr:route>
+            <fr:title text="How zkVMs Break">How zkVMs Break</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    A catalogue of real failure modes, kept concrete. This page is the evidence for the <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">formalisation work</fr:link>, so it should stay evidence rather than argument. <fr:link href="/dhsorens-001P/" title="Smart Contract Vulnerabilities Due to Poor Specification" uri="https://derekhsorensen.com/dhsorens-001P/" display-uri="dhsorens-001P" type="local">Smart contract vulnerabilities due to poor specification</fr:link> is the same catalogue one domain over, and the failure modes rhyme: code that did what it was specified to do, and a specification that permitted what nobody intended.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Under-constrained circuits: the general shape, and the canonical examples.</html:li>
+        <html:li>Missing range checks, and why a forgotten monotonicity constraint on <fr:link href="/dhsorens-003U/" title="Memory Checking in zkVMs" uri="https://derekhsorensen.com/dhsorens-003U/" display-uri="dhsorens-003U" type="local">memory</fr:link> timestamps is fatal.</html:li>
+        <html:li><fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> misuse: transcripts missing a value, weak domain separation, insufficient challenge space.</html:li>
+        <html:li>Soundness bugs in published schemes rather than implementations — <fr:link href="/dhsorens-003M/" title="Nova and Folding Schemes" uri="https://derekhsorensen.com/dhsorens-003M/" display-uri="dhsorens-003M" type="local">Nova</fr:link> is the example to write up.</html:li>
+        <html:li>Parameter errors: a security level computed in the wrong <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link>.</html:li>
+        <html:li>Which of these a type system, a linter, an audit, or a proof would each have caught.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://blog.zksecurity.xyz/posts/nova-attack/" type="external">how Nova got broken</fr:link>, <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
               <fr:year>2025</fr:year>
               <fr:month>9</fr:month>
               <fr:day>6</fr:day>

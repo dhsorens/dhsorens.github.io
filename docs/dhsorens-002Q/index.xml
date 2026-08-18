@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-002Q/</fr:uri>
+    <fr:display-uri>dhsorens-002Q</fr:display-uri>
+    <fr:route>/dhsorens-002Q/</fr:route>
+    <fr:title text="The Sumcheck Protocol">The Sumcheck Protocol</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    One protocol, used everywhere: GKR, <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link>, <fr:link href="/dhsorens-003H/" title="HyperPlonk and the Multilinear Turn" uri="https://derekhsorensen.com/dhsorens-003H/" display-uri="dhsorens-003H" type="local">HyperPlonk</fr:link>, Basefold, logUp-GKR, <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link>. It is the first thing <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> formalised, and probably the right place to start reading Lean.
+</html:p>
+    <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The protocol and its soundness error, stated with the degree and variable count explicit.</html:li>
+        <html:li>Prover cost: the linear-time algorithm, and what changes when the base field is small.</html:li>
+        <html:li>Batching several sumchecks; zero-knowledge variants.</html:li>
+        <html:li>Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck meets a <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment scheme</fr:link>.</html:li>
+        <html:li>Why the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir attack</fr:link> landed on GKR, a sumcheck-based protocol, and what that implies about parameterisation.</html:li></html:ul></html:p>
+    <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>ProofSystem/Sumcheck</html:code>).
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002J/</fr:uri>
+            <fr:display-uri>dhsorens-002J</fr:display-uri>
+            <fr:route>/dhsorens-002J/</fr:route>
+            <fr:title text="The Algebraic and Coding-Theoretic Toolkit">The Algebraic and Coding-Theoretic Toolkit</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The mathematics the protocols are built out of. Most of the recent performance work lives here rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude faster because the field changed, not because the argument did.
+</html:p>
+            <html:p>
+    This is also the part of the stack <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> is about — fields, polynomials, and their computable representations — so these pages should stay close to what is actually definable in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002K/</fr:uri>
+                <fr:display-uri>dhsorens-002K</fr:display-uri>
+                <fr:route>/dhsorens-002K/</fr:route>
+                <fr:title text="Finite Fields and the Small-Field Turn">Finite Fields and the Small-Field Turn</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Transparent provers migrated from 256-bit scalar fields down to 31-bit primes and then to <fr:tex display="inline"><![CDATA[\mathbb {F}_2]]></fr:tex>. The migration is the single largest source of speedup in the last five years, and it constrains everything above it.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Prime fields, extension fields, and why the prover wants a small base field while soundness wants a large challenge space.</html:li>
+        <html:li>The specific fields and what makes each fast: Mersenne31 (<fr:tex display="inline"><![CDATA[2^{31}-1]]></fr:tex>), BabyBear, KoalaBear, Goldilocks.</html:li>
+        <html:li>Where extension-field arithmetic is unavoidable — challenges, DEEP queries, batching — and how much of the trace can stay in the base field.</html:li>
+        <html:li>Packing and vectorisation: how field choice interacts with the machine.</html:li>
+        <html:li>What is lost: two-adicity, FFT-friendliness, and the <fr:link href="/dhsorens-002N/" title="Evaluation Domains, FFTs, and Circle Groups" uri="https://derekhsorensen.com/dhsorens-002N/" display-uri="dhsorens-002N" type="local">circle</fr:link> workaround.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn in Succinct Proofs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002L/</fr:uri>
+                <fr:display-uri>dhsorens-002L</fr:display-uri>
+                <fr:route>/dhsorens-002L/</fr:route>
+                <fr:title text="Binary Tower Fields">Binary Tower Fields</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The tower <fr:tex display="inline"><![CDATA[\mathbb {F}_2 \subset  \mathbb {F}_{2^2} \subset  \mathbb {F}_{2^4} \subset  \cdots  \subset  \mathbb {F}_{2^{128}}]]></fr:tex>, built by iterated quadratic extension, and the arithmetic that makes it attractive. This is the ground <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> stands on.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The tower construction, and why every subfield embedding is free.</html:li>
+        <html:li>Why binary: no modular reduction, characteristic 2 arithmetic maps onto bit operations, and small values cost small fields.</html:li>
+        <html:li>The claimed cost comparison against Mersenne31, and under what measure it holds.</html:li>
+        <html:li>Multilinear polynomials over a tower, and why the multilinear setting rather than the univariate one.</html:li>
+        <html:li><fr:link href="/dhsorens-0035/" title="Small-Field Commitments and Ring Switching" uri="https://derekhsorensen.com/dhsorens-0035/" display-uri="dhsorens-0035" type="local">Ring switching</fr:link>: moving between tower levels inside a single argument.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing" type="external">Binary tower fields</fr:link> (Irreducible), <fr:link href="https://blog.lambdaclass.com/snarks-on-binary-fields-binius/" type="external">SNARKs on binary fields</fr:link> (LambdaClass), <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002M/</fr:uri>
+                <fr:display-uri>dhsorens-002M</fr:display-uri>
+                <fr:route>/dhsorens-002M/</fr:route>
+                <fr:title text="Univariate and Multilinear Polynomials">Univariate and Multilinear Polynomials</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Two representations of the same data, supporting different arguments. The univariate world pairs with low-degree testing; the multilinear world pairs with <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>. Knowing which one a protocol lives in explains most of its shape.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The multilinear extension of a function on the Boolean hypercube; uniqueness; the equality polynomial and its role.</html:li>
+        <html:li>Degree versus number of variables as the size parameter, and what each buys.</html:li>
+        <html:li>Why FRI wants univariate and Basefold, HyperPlonk, and Binius want multilinear.</html:li>
+        <html:li>How <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> unifies the two, and what the translation costs.</html:li>
+        <html:li>Computable representations — dense, sparse, coefficient, evaluation form — and which operations each makes cheap. This is <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>'s design problem.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002N/</fr:uri>
+                <fr:display-uri>dhsorens-002N</fr:display-uri>
+                <fr:route>/dhsorens-002N/</fr:route>
+                <fr:title text="Evaluation Domains, FFTs, and Circle Groups">Evaluation Domains, FFTs, and Circle Groups</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Where the polynomials get evaluated, which decides both the prover's asymptotics and which fields are usable at all.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Smooth multiplicative subgroups and two-adicity; why Goldilocks and BabyBear were chosen for it.</html:li>
+        <html:li>Cosets and coset shifts, and why <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> folds along them.</html:li>
+        <html:li>Mersenne31 has no large smooth subgroup — hence the circle group, and what circle STARKs change about folding and constraint degrees.</html:li>
+        <html:li>NTT cost in practice: when the prover is FFT-bound versus hash-bound versus witness-generation-bound.</html:li>
+        <html:li>Multilinear systems that avoid FFTs entirely, and what they pay instead.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: Buterin, <fr:link href="https://vitalik.eth.limo/general/2024/07/23/circlestarks.html" type="external">Exploring circle STARKs</fr:link>; <fr:link href="https://blog.lambdaclass.com/an-introduction-to-circle-starks/" type="external">An introduction to circle STARKs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002O/</fr:uri>
+                <fr:display-uri>dhsorens-002O</fr:display-uri>
+                <fr:route>/dhsorens-002O/</fr:route>
+                <fr:title text="Reed–Solomon and Linear Codes">Reed–Solomon and Linear Codes</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Proof systems in this family work because a low-degree polynomial is a codeword and a cheating prover is not. The coding theory is therefore not background — it is where soundness comes from.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Reed–Solomon codes: rate, distance, the Singleton bound.</html:li>
+        <html:li>Rate as the central dial — proof size against prover time — and where deployed systems set it.</html:li>
+        <html:li>General linear codes and tensor codes; the Ligero and Brakedown line as an alternative to RS.</html:li>
+        <html:li>Interleaved codes, and what proximity to a code means for a matrix of columns rather than a single word.</html:li>
+        <html:li>Foldable and linear-time-encodable codes, and which protocols need which property.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments and Low-Degree Tests</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002P/</fr:uri>
+                <fr:display-uri>dhsorens-002P</fr:display-uri>
+                <fr:route>/dhsorens-002P/</fr:route>
+                <fr:title text="List Decoding and Proximity Gaps">List Decoding and Proximity Gaps</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The technical core of every soundness proof in the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family, and the place where deployed parameters stop being provably sound and start being conjecturally sound. It is the most load-bearing page in the section.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The three regimes — unique decoding, the Johnson bound, capacity — and what parameters each licenses.</html:li>
+        <html:li>What a proximity gap statement says, and why a low-degree test cannot be analysed without one.</html:li>
+        <html:li>Correlated agreement and mutual correlated agreement; which protocols need the stronger form.</html:li>
+        <html:li>The conjectures: which are theorems, which are conjectures, and which deployed systems assume which. The SoK argues these regimes are routinely conflated in the primary sources.</html:li>
+        <html:li>Machine-checked threshold constants, and whether the formalisation can be reused in <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound via Threshold Halving</fr:link>, <fr:link href="https://deltastar.computer/" type="external">Pinning <fr:tex display="inline"><![CDATA[\delta ^*]]></fr:tex></fr:link>, <fr:link href="https://hackmd.io/@zkpunk/CS25" type="external">notes on the proximity-gap conjectures</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002Q/</fr:uri>
+                <fr:display-uri>dhsorens-002Q</fr:display-uri>
+                <fr:route>/dhsorens-002Q/</fr:route>
+                <fr:title text="The Sumcheck Protocol">The Sumcheck Protocol</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    One protocol, used everywhere: GKR, <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link>, <fr:link href="/dhsorens-003H/" title="HyperPlonk and the Multilinear Turn" uri="https://derekhsorensen.com/dhsorens-003H/" display-uri="dhsorens-003H" type="local">HyperPlonk</fr:link>, Basefold, logUp-GKR, <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link>. It is the first thing <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> formalised, and probably the right place to start reading Lean.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The protocol and its soundness error, stated with the degree and variable count explicit.</html:li>
+        <html:li>Prover cost: the linear-time algorithm, and what changes when the base field is small.</html:li>
+        <html:li>Batching several sumchecks; zero-knowledge variants.</html:li>
+        <html:li>Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck meets a <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment scheme</fr:link>.</html:li>
+        <html:li>Why the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir attack</fr:link> landed on GKR, a sumcheck-based protocol, and what that implies about parameterisation.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>ProofSystem/Sumcheck</html:code>).
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004B/</fr:uri>
+            <fr:display-uri>dhsorens-004B</fr:display-uri>
+            <fr:route>/dhsorens-004B/</fr:route>
+            <fr:title text="A Reading Path">A Reading Path</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    An order to read in, so that filling the corpus out does not turn into breadth-first browsing. Systematisations first, because they fix the vocabulary and the attributions; then the primary sources; then the code.
+</html:p>
+            <html:p>
+    In order:
+    <html:ul><html:li>Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em> — the definitional chain and <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>.</html:li>
+        <html:li><fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments and Low-Degree Tests</fr:link> — the whole <fr:link href="/dhsorens-0036/" title="Low-Degree Testing, from FRI to WHIR" uri="https://derekhsorensen.com/dhsorens-0036/" display-uri="dhsorens-0036" type="local">FRI-to-WHIR</fr:link> lineage in one place, with the soundness regimes kept straight.</html:li>
+        <html:li><fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn in Succinct Proofs</fr:link> — <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">field choice</fr:link> as the organising story of recent performance work.</html:li>
+        <html:li><fr:link href="https://eprint.iacr.org/2026/525" type="external">SoK: Understanding zkVM</fr:link> — the <fr:link href="/dhsorens-003R/" title="The zkVM Stack" uri="https://derekhsorensen.com/dhsorens-003R/" display-uri="dhsorens-003R" type="local">layer decomposition</fr:link> and a comparison across real systems.</html:li>
+        <html:li>Primary sources, in lineage order: FRI, DEEP-FRI, STIR, WHIR; then Basefold and Binius.</html:li>
+        <html:li><fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> — read after the soundness notions, not before.</html:li>
+        <html:li><fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, starting from <html:code>OracleReduction/Basic.lean</html:code> and the sumcheck development.</html:li>
+        <html:li><fr:link href="https://github.com/Verified-zkEVM/clean/" type="external">clean</fr:link> and a Plonky3 AIR side by side — the same circuit in both.</html:li></html:ul></html:p>
+            <html:p>
+    A page in this corpus is done when its main theorem can be stated with its assumptions, and what breaks when one of them is dropped. Everything else is note-taking.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0040/</fr:uri>
+            <fr:display-uri>dhsorens-0040</fr:display-uri>
+            <fr:route>/dhsorens-0040/</fr:route>
+            <fr:title text="ArkLib">ArkLib</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    A modular library of formally verified arguments of knowledge in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, organised around <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">interactive oracle reductions</fr:link> rather than around individual protocols.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The directory structure as a design argument: <html:code>OracleReduction</html:code>, <html:code>Commitments</html:code>, <html:code>ProofSystem</html:code>, <html:code>AGM</html:code>, and the <html:code>To*</html:code> compatibility layers.</html:li>
+        <html:li>What is formalised and to what depth — <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>, <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link>, <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, <fr:link href="/dhsorens-003B/" title="STIR" uri="https://derekhsorensen.com/dhsorens-003B/" display-uri="dhsorens-003B" type="local">STIR</fr:link>, <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link>, <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link>, Merkle trees, coding theory.</html:li>
+        <html:li><html:code>ProofSystem/ConstraintSystem</html:code>: R1CS, Plonk, lookup, and memory checking in one place.</html:li>
+        <html:li>The security definitions in <html:code>OracleReduction/Security</html:code>, which are the real contribution.</html:li>
+        <html:li>What is a statement with no proof yet, and what the roadmap prioritises.</html:li>
+        <html:li>Which developments are blocked on <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, <fr:link href="https://lean-lang.org/use-cases/arklib/" type="external">ArkLib on lean-lang.org</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0034/</fr:uri>
+            <fr:display-uri>dhsorens-0034</fr:display-uri>
+            <fr:route>/dhsorens-0034/</fr:route>
+            <fr:title text="Code-Based Commitments: Ligero, Brakedown, Basefold">Code-Based Commitments: Ligero, Brakedown, Basefold</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The tensor-commitment lineage: commit to a matrix whose rows are codewords, and test proximity by sampling columns. Basefold is where this line and the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> line merge.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The tensor structure and the proximity test; why the verifier's work is <fr:tex display="inline"><![CDATA[O(\sqrt {n})]]></fr:tex> in the plain construction.</html:li>
+        <html:li>Brakedown's linear-time encodable codes, and the tradeoff against proof size.</html:li>
+        <html:li>Basefold: foldable codes plus <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>, giving a multilinear commitment from a code that need not be Reed–Solomon.</html:li>
+        <html:li>Which codes are admissible, and what the soundness proof needs from them.</html:li>
+        <html:li>How this family compares with <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> on verifier cost and on argument size.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments and Low-Degree Tests</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002W/</fr:uri>
+            <fr:display-uri>dhsorens-002W</fr:display-uri>
+            <fr:route>/dhsorens-002W/</fr:route>
+            <fr:title text="Lookup Arguments">Lookup Arguments</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Modern zkVMs are mostly lookups: instruction semantics, range checks, bitwise operations, and memory consistency all become table queries. This is where the prover's time goes, so it is where the interesting engineering is.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The logarithmic-derivative identity (logUp) and why it replaced grand-product multiset checks.</html:li>
+        <html:li>logUp-GKR: applying <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> to the fraction identity to avoid committing to <fr:tex display="inline"><![CDATA[O(m)]]></fr:tex> field elements.</html:li>
+        <html:li>Lasso: the lookup relation as <fr:tex display="inline"><![CDATA[a = M \cdot  T]]></fr:tex> with <fr:tex display="inline"><![CDATA[M]]></fr:tex> sparse, and decomposability for tables of size <fr:tex display="inline"><![CDATA[2^{64}]]></fr:tex> and beyond.</html:li>
+        <html:li>logup* and the small-table indexed case.</html:li>
+        <html:li>The "lookup singularity" claim from 2023 — how much of it held, measured in real zkVM benchmarks.</html:li>
+        <html:li>What a lookup argument's soundness proof actually requires, and what the <fr:link href="https://eprint.iacr.org/2024/1841" type="external">Jolt semantics verification</fr:link> found.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://www.zkm.io/blog/the-logup-gkr-protocol" type="external">The logUp-GKR protocol</fr:link>, <fr:link href="https://a16zcrypto.com/posts/article/introducing-lasso-and-jolt/" type="external">Introducing Lasso and Jolt</fr:link>, <fr:link href="https://eprint.iacr.org/2025/946" type="external">logup*</fr:link>, <fr:link href="https://eprint.iacr.org/2024/1841" type="external">Verifying Jolt zkVM Lookup Semantics</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003G/</fr:uri>
+            <fr:display-uri>dhsorens-003G</fr:display-uri>
+            <fr:route>/dhsorens-003G/</fr:route>
+            <fr:title text="Spartan and Sumcheck-Based SNARKs">Spartan and Sumcheck-Based SNARKs</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> proved with <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> instead of quotients, which removes the FFT and moves the cost into a sparse polynomial commitment. It is also one of the systems <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> has formalised, so it is a good place to read a full argument in Lean.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The reduction from R1CS satisfiability to a sumcheck claim.</html:li>
+        <html:li>Sparse polynomial commitment (Spark) and why the matrices' sparsity is what makes this cheap.</html:li>
+        <html:li>Prover cost profile against a Plonkish system on the same circuit.</html:li>
+        <html:li>The line from here to <fr:link href="/dhsorens-003N/" title="Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy" uri="https://derekhsorensen.com/dhsorens-003N/" display-uri="dhsorens-003N" type="local">HyperNova</fr:link>, which folds the same shape of claim.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002M/</fr:uri>
+            <fr:display-uri>dhsorens-002M</fr:display-uri>
+            <fr:route>/dhsorens-002M/</fr:route>
+            <fr:title text="Univariate and Multilinear Polynomials">Univariate and Multilinear Polynomials</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Two representations of the same data, supporting different arguments. The univariate world pairs with low-degree testing; the multilinear world pairs with <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>. Knowing which one a protocol lives in explains most of its shape.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The multilinear extension of a function on the Boolean hypercube; uniqueness; the equality polynomial and its role.</html:li>
+        <html:li>Degree versus number of variables as the size parameter, and what each buys.</html:li>
+        <html:li>Why FRI wants univariate and Basefold, HyperPlonk, and Binius want multilinear.</html:li>
+        <html:li>How <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> unifies the two, and what the translation costs.</html:li>
+        <html:li>Computable representations — dense, sparse, coefficient, evaluation form — and which operations each makes cheap. This is <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>'s design problem.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003C/</fr:uri>
+            <fr:display-uri>dhsorens-003C</fr:display-uri>
+            <fr:route>/dhsorens-003C/</fr:route>
+            <fr:title text="WHIR">WHIR</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The current endpoint of the lineage: a multilinear commitment with a very fast verifier, unifying the Reed–Solomon proximity line with the tensor-commitment line that Basefold began.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The construction, and where <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> enters the low-degree test.</html:li>
+        <html:li>How a multilinear claim is served by a univariate proximity test — the translation, and its cost.</html:li>
+        <html:li>The verifier-time claim, and what it is measured against.</html:li>
+        <html:li>Which of <fr:link href="/dhsorens-003B/" title="STIR" uri="https://derekhsorensen.com/dhsorens-003B/" display-uri="dhsorens-003B" type="local">STIR</fr:link>'s ideas it keeps and which it discards.</html:li>
+        <html:li>ArkLib's WHIR formalisation: what is proved, and what the remaining obligations are.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: Arnon, Chiesa, Fenzi, and Yogev, <html:em>WHIR</html:em>; <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0040/</fr:uri>
+            <fr:display-uri>dhsorens-0040</fr:display-uri>
+            <fr:route>/dhsorens-0040/</fr:route>
+            <fr:title text="ArkLib">ArkLib</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    A modular library of formally verified arguments of knowledge in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, organised around <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">interactive oracle reductions</fr:link> rather than around individual protocols.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The directory structure as a design argument: <html:code>OracleReduction</html:code>, <html:code>Commitments</html:code>, <html:code>ProofSystem</html:code>, <html:code>AGM</html:code>, and the <html:code>To*</html:code> compatibility layers.</html:li>
+        <html:li>What is formalised and to what depth — <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>, <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link>, <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, <fr:link href="/dhsorens-003B/" title="STIR" uri="https://derekhsorensen.com/dhsorens-003B/" display-uri="dhsorens-003B" type="local">STIR</fr:link>, <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link>, <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link>, Merkle trees, coding theory.</html:li>
+        <html:li><html:code>ProofSystem/ConstraintSystem</html:code>: R1CS, Plonk, lookup, and memory checking in one place.</html:li>
+        <html:li>The security definitions in <html:code>OracleReduction/Security</html:code>, which are the real contribution.</html:li>
+        <html:li>What is a statement with no proof yet, and what the roadmap prioritises.</html:li>
+        <html:li>Which developments are blocked on <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, <fr:link href="https://lean-lang.org/use-cases/arklib/" type="external">ArkLib on lean-lang.org</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002G/</fr:uri>
+            <fr:display-uri>dhsorens-002G</fr:display-uri>
+            <fr:route>/dhsorens-002G/</fr:route>
+            <fr:title text="Fiat–Shamir and the Random Oracle Model">Fiat–Shamir and the Random Oracle Model</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The step that makes a proof system deployable, and the step where the security argument is thinnest.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The transform, and exactly what it assumes about the hash function.</html:li>
+        <html:li>Why <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round soundness</fr:link> is the right hypothesis for a many-round protocol.</html:li>
+        <html:li>Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.</html:li>
+        <html:li>Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's <html:code>Salt.lean</html:code> is for.</html:li>
+        <html:li>Whether the ROM is the right idealisation, and what the alternatives cost.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link>, <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>OracleReduction/FiatShamir</html:code>).
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003H/</fr:uri>
+            <fr:display-uri>dhsorens-003H</fr:display-uri>
+            <fr:route>/dhsorens-003H/</fr:route>
+            <fr:title text="HyperPlonk and the Multilinear Turn">HyperPlonk and the Multilinear Turn</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Plonkish constraints over the Boolean hypercube rather than a multiplicative subgroup, so the prover never runs an FFT. The clearest statement of what moving to <fr:link href="/dhsorens-002M/" title="Univariate and Multilinear Polynomials" uri="https://derekhsorensen.com/dhsorens-002M/" display-uri="dhsorens-002M" type="local">multilinear</fr:link> representations does and does not buy.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The translation of gate and wiring constraints into sumcheck claims.</html:li>
+        <html:li>What replaces the quotient polynomial and the low-degree test.</html:li>
+        <html:li>Cost profile: no FFT, more commitment work, different memory behaviour.</html:li>
+        <html:li>High-degree custom gates, which this handles better than univariate Plonk.</html:li>
+        <html:li>Why the field choice matters less here than in the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> world — or whether it does.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002Z/</fr:uri>
+            <fr:display-uri>dhsorens-002Z</fr:display-uri>
+            <fr:route>/dhsorens-002Z/</fr:route>
+            <fr:title text="Polynomial Commitment Schemes">Polynomial Commitment Schemes</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The component that turns an oracle in an <fr:link href="/dhsorens-002E/" title="Interactive Proofs, Arguments, and IOPs" uri="https://derekhsorensen.com/dhsorens-002E/" display-uri="dhsorens-002E" type="local">IOP</fr:link> into something a real verifier can query. Swapping the commitment scheme changes a system's proof size, its trust assumptions, and its post-quantum status while leaving the <fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">arithmetisation</fr:link> untouched — which is why this is the layer where systems are usually differentiated.
+</html:p>
+            <html:p><fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> splits these into ordinary and functional commitments; understanding why that split is the right one is part of the point of these pages.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0030/</fr:uri>
+                <fr:display-uri>dhsorens-0030</fr:display-uri>
+                <fr:route>/dhsorens-0030/</fr:route>
+                <fr:title text="The Commitment Interface">The Commitment Interface</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    What a polynomial commitment scheme has to provide, stated precisely enough that a protocol can be proved secure against the interface rather than against a particular scheme.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Syntax: setup, commit, open, verify — and which parameters are public.</html:li>
+        <html:li>Binding, evaluation binding, and extractability; which one a <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS-style</fr:link> compilation actually needs.</html:li>
+        <html:li>Batch openings and homomorphism, and how much of a protocol's efficiency depends on them.</html:li>
+        <html:li>Functional commitments as the generalisation, and why ArkLib separates <html:code>Commitments/Functional</html:code> from <html:code>Commitments/Ordinary</html:code>.</html:li>
+        <html:li>Multilinear versus univariate interfaces, and the adapters between them.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0031/</fr:uri>
+                <fr:display-uri>dhsorens-0031</fr:display-uri>
+                <fr:route>/dhsorens-0031/</fr:route>
+                <fr:title text="Merkle Trees and Vector Commitments">Merkle Trees and Vector Commitments</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The commitment underneath every hash-based system. Simple enough that it is easy to skip and consequential enough that the <fr:link href="/dhsorens-0048/" title="ZK-Friendly Primitives" uri="https://derekhsorensen.com/dhsorens-0048/" display-uri="dhsorens-0048" type="local">hash choice</fr:link> dominates prover time.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Position binding, and what a Merkle commitment does not give you.</html:li>
+        <html:li>Batched openings and path deduplication; where proof size actually goes.</html:li>
+        <html:li>Salting and its role in <fr:link href="/dhsorens-002E/" title="Interactive Proofs, Arguments, and IOPs" uri="https://derekhsorensen.com/dhsorens-002E/" display-uri="dhsorens-002E" type="local">zero knowledge</fr:link> — and in ArkLib's <html:code>Salt.lean</html:code>.</html:li>
+        <html:li>Hash cost as the prover's real bottleneck; arity and tree shape tradeoffs.</html:li>
+        <html:li>The formalisation: what ArkLib's Merkle tree development proves, and what it assumes about the hash.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0032/</fr:uri>
+                <fr:display-uri>dhsorens-0032</fr:display-uri>
+                <fr:route>/dhsorens-0032/</fr:route>
+                <fr:title text="KZG and the Pairing-Based Line">KZG and the Pairing-Based Line</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Constant-size proofs and a constant-time verifier, at the price of a trusted setup and a pairing-friendly curve. Still the endpoint of most <fr:link href="/dhsorens-003P/" title="Wrapping and On-Chain Verification" uri="https://derekhsorensen.com/dhsorens-003P/" display-uri="dhsorens-003P" type="local">wrapping</fr:link> pipelines because the on-chain verifier is cheap.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The scheme and its security assumption; what the structured reference string contains.</html:li>
+        <html:li>The pairing check, and why the verifier is constant-time regardless of degree.</html:li>
+        <html:li>Batching and multi-point openings.</html:li>
+        <html:li>Trusted setup in practice: ceremonies, updatability, and what a compromised setup permits.</html:li>
+        <html:li>Why it does not scale to zkVM-sized traces, and where it survives anyway.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0033/</fr:uri>
+                <fr:display-uri>dhsorens-0033</fr:display-uri>
+                <fr:route>/dhsorens-0033/</fr:route>
+                <fr:title text="Inner-Product Arguments">Inner-Product Arguments</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The Bulletproofs-style recursive halving argument and its transcript.</html:li>
+        <html:li>Proof size against verifier time: the linear verifier is the catch.</html:li>
+        <html:li>Accumulation and the Halo line, as the precursor to modern <fr:link href="/dhsorens-003M/" title="Nova and Folding Schemes" uri="https://derekhsorensen.com/dhsorens-003M/" display-uri="dhsorens-003M" type="local">folding</fr:link>.</html:li>
+        <html:li>Discrete-log security, and the post-quantum consequence.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0034/</fr:uri>
+                <fr:display-uri>dhsorens-0034</fr:display-uri>
+                <fr:route>/dhsorens-0034/</fr:route>
+                <fr:title text="Code-Based Commitments: Ligero, Brakedown, Basefold">Code-Based Commitments: Ligero, Brakedown, Basefold</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The tensor-commitment lineage: commit to a matrix whose rows are codewords, and test proximity by sampling columns. Basefold is where this line and the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> line merge.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The tensor structure and the proximity test; why the verifier's work is <fr:tex display="inline"><![CDATA[O(\sqrt {n})]]></fr:tex> in the plain construction.</html:li>
+        <html:li>Brakedown's linear-time encodable codes, and the tradeoff against proof size.</html:li>
+        <html:li>Basefold: foldable codes plus <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>, giving a multilinear commitment from a code that need not be Reed–Solomon.</html:li>
+        <html:li>Which codes are admissible, and what the soundness proof needs from them.</html:li>
+        <html:li>How this family compares with <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> on verifier cost and on argument size.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments and Low-Degree Tests</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0035/</fr:uri>
+                <fr:display-uri>dhsorens-0035</fr:display-uri>
+                <fr:route>/dhsorens-0035/</fr:route>
+                <fr:title text="Small-Field Commitments and Ring Switching">Small-Field Commitments and Ring Switching</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Committing to values that live in a tiny field without paying extension-field prices for every one of them. The problem <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> exists to solve, and the reason ArkLib has a <html:code>RingSwitching</html:code> directory.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Why a naive commitment to <fr:tex display="inline"><![CDATA[\mathbb {F}_2]]></fr:tex> values wastes almost all of its capacity, and what packing recovers.</html:li>
+        <html:li>The ring-switching reduction: a claim over the extension becomes a claim over the base, or the reverse.</html:li>
+        <html:li>Where soundness needs the large field regardless, and how much of the argument can stay small.</html:li>
+        <html:li>The interaction with <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary towers</fr:link> specifically, versus 31-bit primes.</html:li>
+        <html:li>What ArkLib formalises here and what remains open.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003G/</fr:uri>
+            <fr:display-uri>dhsorens-003G</fr:display-uri>
+            <fr:route>/dhsorens-003G/</fr:route>
+            <fr:title text="Spartan and Sumcheck-Based SNARKs">Spartan and Sumcheck-Based SNARKs</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> proved with <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> instead of quotients, which removes the FFT and moves the cost into a sparse polynomial commitment. It is also one of the systems <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> has formalised, so it is a good place to read a full argument in Lean.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The reduction from R1CS satisfiability to a sumcheck claim.</html:li>
+        <html:li>Sparse polynomial commitment (Spark) and why the matrices' sparsity is what makes this cheap.</html:li>
+        <html:li>Prover cost profile against a Plonkish system on the same circuit.</html:li>
+        <html:li>The line from here to <fr:link href="/dhsorens-003N/" title="Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy" uri="https://derekhsorensen.com/dhsorens-003N/" display-uri="dhsorens-003N" type="local">HyperNova</fr:link>, which folds the same shape of claim.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003C/</fr:uri>
+            <fr:display-uri>dhsorens-003C</fr:display-uri>
+            <fr:route>/dhsorens-003C/</fr:route>
+            <fr:title text="WHIR">WHIR</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The current endpoint of the lineage: a multilinear commitment with a very fast verifier, unifying the Reed–Solomon proximity line with the tensor-commitment line that Basefold began.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The construction, and where <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> enters the low-degree test.</html:li>
+        <html:li>How a multilinear claim is served by a univariate proximity test — the translation, and its cost.</html:li>
+        <html:li>The verifier-time claim, and what it is measured against.</html:li>
+        <html:li>Which of <fr:link href="/dhsorens-003B/" title="STIR" uri="https://derekhsorensen.com/dhsorens-003B/" display-uri="dhsorens-003B" type="local">STIR</fr:link>'s ideas it keeps and which it discards.</html:li>
+        <html:li>ArkLib's WHIR formalisation: what is proved, and what the remaining obligations are.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: Arnon, Chiesa, Fenzi, and Yogev, <html:em>WHIR</html:em>; <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

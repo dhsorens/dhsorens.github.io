@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-003X/</fr:uri>
+    <fr:display-uri>dhsorens-003X</fr:display-uri>
+    <fr:route>/dhsorens-003X/</fr:route>
+    <fr:title text="Performance and Benchmarking">Performance and Benchmarking</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    What actually costs time, and how to read a published comparison. The target is a cost model good enough to predict the direction of a change before measuring it.
+</html:p>
+    <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The cost breakdown: witness generation, hashing, FFTs, MSMs, extension-field arithmetic.</html:li>
+        <html:li>Cycles per second as a metric, and what it hides — precompiles, <fr:link href="/dhsorens-003O/" title="Continuations and Sharding" uri="https://derekhsorensen.com/dhsorens-003O/" display-uri="dhsorens-003O" type="local">shard</fr:link> size, security parameters.</html:li>
+        <html:li>Proof size and verifier time across systems, and the recursion that produces the final numbers.</html:li>
+        <html:li>How the <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">field choice</fr:link> shows up in measurements, and why hash rate is often the real headline.</html:li>
+        <html:li>Comparing at equal security: the benchmark question that is usually skipped.</html:li></html:ul></html:p>
+    <html:p>
+    Sources: <fr:link href="https://github.com/a16z/zkvm-benchmarks" type="external">zkvm-benchmarks</fr:link>.
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003Q/</fr:uri>
+            <fr:display-uri>dhsorens-003Q</fr:display-uri>
+            <fr:route>/dhsorens-003Q/</fr:route>
+            <fr:title text="zkVMs">zkVMs</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Everything above, wrapped around an instruction set so that a program rather than a circuit is the thing being proved. A zkVM decomposes into three layers — the ISA, the VM architecture, and the proving layer — and most design disagreements are about where to put work between them.
+</html:p>
+            <html:p>
+    This is the object the <fr:link href="/dhsorens-0045/" title="What a Verified zkVM Would Mean" uri="https://derekhsorensen.com/dhsorens-0045/" display-uri="dhsorens-0045" type="local">verified zkEVM effort</fr:link> is ultimately aimed at. A machine semantics in Lean is the first half of the statement one wants to prove about a zkVM; <fr:link href="/dhsorens-0027/" title="LC3 in Lean" uri="https://derekhsorensen.com/dhsorens-0027/" display-uri="dhsorens-0027" type="local">LC3 in Lean</fr:link> is that half at small scale.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003R/</fr:uri>
+                <fr:display-uri>dhsorens-003R</fr:display-uri>
+                <fr:route>/dhsorens-003R/</fr:route>
+                <fr:title text="The zkVM Stack">The zkVM Stack</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    A map of the layers, so that a claim about one system can be compared with a claim about another. Worth writing before the pages below it.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The three layers — ISA, VM architecture, proving layer — and the interface between each pair.</html:li>
+        <html:li>What "proving a program" means formally: the relation being proved, and where the program commitment enters.</html:li>
+        <html:li>Which layer a given optimisation belongs to, and which choices are genuinely independent.</html:li>
+        <html:li>The end-to-end statement a zkVM claims, written out in full.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/525" type="external">SoK: Understanding zkVM</fr:link>, <fr:link href="https://blog.zksecurity.xyz/posts/zkvm-projects-1/" type="external">Projects that shaped modern zkVMs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003S/</fr:uri>
+                <fr:display-uri>dhsorens-003S</fr:display-uri>
+                <fr:route>/dhsorens-003S/</fr:route>
+                <fr:title text="Instruction Sets and VM Architecture">Instruction Sets and VM Architecture</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Whether to prove an existing ISA or design one for provability. RISC-V won the general-purpose end by bringing a compiler toolchain with it; the custom VMs argue the constraint cost is worth the loss.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>RISC-V (RV32I and extensions) as a target: what makes each instruction class expensive to constrain.</html:li>
+        <html:li>Register machines versus stack machines (Miden, zkWasm), and what the memory argument looks like in each.</html:li>
+        <html:li>Purpose-built ISAs — Cairo, Valida — and the specific constraint-cost arguments for them.</html:li>
+        <html:li>Instruction decomposition and the <fr:link href="/dhsorens-002W/" title="Lookup Arguments" uri="https://derekhsorensen.com/dhsorens-002W/" display-uri="dhsorens-002W" type="local">lookup</fr:link>-based approach to semantics that Jolt takes.</html:li>
+        <html:li>The formal ISA specification: what the Sail-to-Lean route gives, and what it does not.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003T/</fr:uri>
+                <fr:display-uri>dhsorens-003T</fr:display-uri>
+                <fr:route>/dhsorens-003T/</fr:route>
+                <fr:title text="Trace Layout, Chips, and Tables">Trace Layout, Chips, and Tables</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    How an execution becomes a set of tables. In practice this is where a zkVM's engineering lives, and the details are what <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> has to be able to express.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Chips as separate <fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIRs</fr:link>, one per operation class, connected by cross-table lookups.</html:li>
+        <html:li>The main trace against auxiliary and preprocessed columns; what each costs to commit.</html:li>
+        <html:li>Padding to a power of two, and the constraints that must hold on padded rows.</html:li>
+        <html:li>Witness generation as a first-class cost, and whether the generator is verified against the constraints.</html:li>
+        <html:li>How a single instruction's semantics is spread across chips, and how the pieces are tied back together.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003U/</fr:uri>
+                <fr:display-uri>dhsorens-003U</fr:display-uri>
+                <fr:route>/dhsorens-003U/</fr:route>
+                <fr:title text="Memory Checking in zkVMs">Memory Checking in zkVMs</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Random-access memory is the hardest part of a zkVM to constrain and the most common source of unsoundness. The general machinery is in <fr:link href="/dhsorens-002X/" title="Permutation, Grand-Product, and Memory Arguments" uri="https://derekhsorensen.com/dhsorens-002X/" display-uri="dhsorens-002X" type="local">permutation and memory arguments</fr:link>; this page is about what the systems actually do.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Read-write RAM by offline memory checking, as in SP1, Jolt, and RISC Zero.</html:li>
+        <html:li>Paged memory with Merkle verification, which RISC Zero also supports, and when that is preferable.</html:li>
+        <html:li>Stack-based models (Miden, zkWasm) and how their consistency arguments differ.</html:li>
+        <html:li>Memory across <fr:link href="/dhsorens-003O/" title="Continuations and Sharding" uri="https://derekhsorensen.com/dhsorens-003O/" display-uri="dhsorens-003O" type="local">shard boundaries</fr:link> — the argument that ties independent segments together.</html:li>
+        <html:li>The concrete cost of a load or store, counted in trace cells and lookups.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/525" type="external">SoK: Understanding zkVM</fr:link>, <fr:link href="https://eprint.iacr.org/2024/1605" type="external">Nebula</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003V/</fr:uri>
+                <fr:display-uri>dhsorens-003V</fr:display-uri>
+                <fr:route>/dhsorens-003V/</fr:route>
+                <fr:title text="Precompiles">Precompiles</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Hand-written circuits for hot operations — hashes, elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The mechanism: how a precompile attaches to the trace and how its inputs and outputs are tied to VM state.</html:li>
+        <html:li>The speedups claimed, and on which workloads they decide the benchmark.</html:li>
+        <html:li>The soundness surface: an under-constrained precompile is a complete break, with no compiler to catch it.</html:li>
+        <html:li>Extensibility as a design goal, and what a user-supplied precompile has to prove.</html:li>
+        <html:li>Why this is the most valuable place in the stack to point <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> at.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003W/</fr:uri>
+                <fr:display-uri>dhsorens-003W</fr:display-uri>
+                <fr:route>/dhsorens-003W/</fr:route>
+                <fr:title text="The zkVMs in the Field">The zkVMs in the Field</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    One entry per system: backend, arithmetisation, field, memory model, and the choice that distinguishes it. The point is a comparison table, not a survey.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>SP1 — RISC-V on Plonky3, precompile-heavy.</html:li>
+        <html:li>Jolt — <fr:link href="/dhsorens-002W/" title="Lookup Arguments" uri="https://derekhsorensen.com/dhsorens-002W/" display-uri="dhsorens-002W" type="local">Lasso</fr:link>-based, lookups for instruction semantics, notably small proofs.</html:li>
+        <html:li>RISC Zero — RISC-V, read-write and paged Merkle memory.</html:li>
+        <html:li>OpenVM — modular and extensible by construction; what its extension interface requires.</html:li>
+        <html:li>Stwo and Cairo — circle STARKs over Mersenne31, with a purpose-built ISA.</html:li>
+        <html:li>Miden and Valida — stack machine and provability-first ISA respectively.</html:li>
+        <html:li>For each: what its soundness rests on that the others' does not.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/525" type="external">SoK: Understanding zkVM</fr:link>, <fr:link href="https://github.com/succinctlabs/sp1" type="external">sp1</fr:link>, <fr:link href="https://github.com/a16z/jolt" type="external">jolt</fr:link>, <fr:link href="https://github.com/risc0/risc0" type="external">risc0</fr:link>, <fr:link href="https://github.com/openvm-org/openvm" type="external">openvm</fr:link>, <fr:link href="https://github.com/rkdud007/awesome-zkvm" type="external">awesome-zkvm</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003X/</fr:uri>
+                <fr:display-uri>dhsorens-003X</fr:display-uri>
+                <fr:route>/dhsorens-003X/</fr:route>
+                <fr:title text="Performance and Benchmarking">Performance and Benchmarking</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    What actually costs time, and how to read a published comparison. The target is a cost model good enough to predict the direction of a change before measuring it.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The cost breakdown: witness generation, hashing, FFTs, MSMs, extension-field arithmetic.</html:li>
+        <html:li>Cycles per second as a metric, and what it hides — precompiles, <fr:link href="/dhsorens-003O/" title="Continuations and Sharding" uri="https://derekhsorensen.com/dhsorens-003O/" display-uri="dhsorens-003O" type="local">shard</fr:link> size, security parameters.</html:li>
+        <html:li>Proof size and verifier time across systems, and the recursion that produces the final numbers.</html:li>
+        <html:li>How the <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">field choice</fr:link> shows up in measurements, and why hash rate is often the real headline.</html:li>
+        <html:li>Comparing at equal security: the benchmark question that is usually skipped.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://github.com/a16z/zkvm-benchmarks" type="external">zkvm-benchmarks</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003Y/</fr:uri>
+                <fr:display-uri>dhsorens-003Y</fr:display-uri>
+                <fr:route>/dhsorens-003Y/</fr:route>
+                <fr:title text="How zkVMs Break">How zkVMs Break</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    A catalogue of real failure modes, kept concrete. This page is the evidence for the <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">formalisation work</fr:link>, so it should stay evidence rather than argument. <fr:link href="/dhsorens-001P/" title="Smart Contract Vulnerabilities Due to Poor Specification" uri="https://derekhsorensen.com/dhsorens-001P/" display-uri="dhsorens-001P" type="local">Smart contract vulnerabilities due to poor specification</fr:link> is the same catalogue one domain over, and the failure modes rhyme: code that did what it was specified to do, and a specification that permitted what nobody intended.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Under-constrained circuits: the general shape, and the canonical examples.</html:li>
+        <html:li>Missing range checks, and why a forgotten monotonicity constraint on <fr:link href="/dhsorens-003U/" title="Memory Checking in zkVMs" uri="https://derekhsorensen.com/dhsorens-003U/" display-uri="dhsorens-003U" type="local">memory</fr:link> timestamps is fatal.</html:li>
+        <html:li><fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> misuse: transcripts missing a value, weak domain separation, insufficient challenge space.</html:li>
+        <html:li>Soundness bugs in published schemes rather than implementations — <fr:link href="/dhsorens-003M/" title="Nova and Folding Schemes" uri="https://derekhsorensen.com/dhsorens-003M/" display-uri="dhsorens-003M" type="local">Nova</fr:link> is the example to write up.</html:li>
+        <html:li>Parameter errors: a security level computed in the wrong <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link>.</html:li>
+        <html:li>Which of these a type system, a linter, an audit, or a proof would each have caught.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://blog.zksecurity.xyz/posts/nova-attack/" type="external">how Nova got broken</fr:link>, <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003O/</fr:uri>
+            <fr:display-uri>dhsorens-003O</fr:display-uri>
+            <fr:route>/dhsorens-003O/</fr:route>
+            <fr:title text="Continuations and Sharding">Continuations and Sharding</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Splitting a long execution into segments that can be proved independently and in parallel. The mechanism that makes zkVM proving a distributed job rather than a single machine's problem.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Segmenting a trace: what state must be carried across a boundary, and how it is committed.</html:li>
+        <html:li>The consistency argument between shards, especially for <fr:link href="/dhsorens-003U/" title="Memory Checking in zkVMs" uri="https://derekhsorensen.com/dhsorens-003U/" display-uri="dhsorens-003U" type="local">memory</fr:link>.</html:li>
+        <html:li>Aggregating shard proofs into one, and the recursion tree's shape.</html:li>
+        <html:li>How SP1 and RISC Zero each do it, and what their differences imply.</html:li>
+        <html:li>The soundness surface this adds — a shard boundary is a place to forget a constraint.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002K/</fr:uri>
+            <fr:display-uri>dhsorens-002K</fr:display-uri>
+            <fr:route>/dhsorens-002K/</fr:route>
+            <fr:title text="Finite Fields and the Small-Field Turn">Finite Fields and the Small-Field Turn</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Transparent provers migrated from 256-bit scalar fields down to 31-bit primes and then to <fr:tex display="inline"><![CDATA[\mathbb {F}_2]]></fr:tex>. The migration is the single largest source of speedup in the last five years, and it constrains everything above it.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Prime fields, extension fields, and why the prover wants a small base field while soundness wants a large challenge space.</html:li>
+        <html:li>The specific fields and what makes each fast: Mersenne31 (<fr:tex display="inline"><![CDATA[2^{31}-1]]></fr:tex>), BabyBear, KoalaBear, Goldilocks.</html:li>
+        <html:li>Where extension-field arithmetic is unavoidable — challenges, DEEP queries, batching — and how much of the trace can stay in the base field.</html:li>
+        <html:li>Packing and vectorisation: how field choice interacts with the machine.</html:li>
+        <html:li>What is lost: two-adicity, FFT-friendliness, and the <fr:link href="/dhsorens-002N/" title="Evaluation Domains, FFTs, and Circle Groups" uri="https://derekhsorensen.com/dhsorens-002N/" display-uri="dhsorens-002N" type="local">circle</fr:link> workaround.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn in Succinct Proofs</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

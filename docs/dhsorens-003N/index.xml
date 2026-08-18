@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-003N/</fr:uri>
+    <fr:display-uri>dhsorens-003N</fr:display-uri>
+    <fr:route>/dhsorens-003N/</fr:route>
+    <fr:title text="Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy">Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    The folding design space after Nova: which constraint systems can be folded, how many instances at once, and what the recursive circuit costs.
+</html:p>
+    <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>HyperNova: folding <fr:link href="/dhsorens-002V/" title="CCS and the Unified View" uri="https://derekhsorensen.com/dhsorens-002V/" display-uri="dhsorens-002V" type="local">CCS</fr:link>, with per-step cost dominated by one MSM.</html:li>
+        <html:li>ProtoStar: folding arbitrary low-degree polynomial maps, and what that generality buys.</html:li>
+        <html:li>ProtoGalaxy and multi-instance folding; KiloNova and non-uniform PCD.</html:li>
+        <html:li>The axes to compare on: constraint system, instances per fold, recursive circuit size, assumptions.</html:li>
+        <html:li>Which of these is the right target for a formalisation, given that the definitions are still moving.</html:li></html:ul></html:p>
+    <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2023/573" type="external">HyperNova</fr:link>, <fr:link href="https://hackmd.io/@fluentlabs/multi-instance-folding-techniques" type="external">multi-instance folding techniques</fr:link>, <fr:link href="https://github.com/lurk-lab/awesome-folding" type="external">awesome-folding</fr:link>.
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003K/</fr:uri>
+            <fr:display-uri>dhsorens-003K</fr:display-uri>
+            <fr:route>/dhsorens-003K/</fr:route>
+            <fr:title text="Folding, Recursion, and Aggregation">Folding, Recursion, and Aggregation</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    How a proof about a long computation is assembled from proofs about short ones. Every zkVM that proves a real workload is doing this, and it is where the soundness argument becomes hardest to keep track of — the <fr:link href="/dhsorens-003M/" title="Nova and Folding Schemes" uri="https://derekhsorensen.com/dhsorens-003M/" display-uri="dhsorens-003M" type="local">Nova bug</fr:link> is the standing example.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003L/</fr:uri>
+                <fr:display-uri>dhsorens-003L</fr:display-uri>
+                <fr:route>/dhsorens-003L/</fr:route>
+                <fr:title text="IVC and Proof-Carrying Data">IVC and Proof-Carrying Data</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The definitions that folding and recursion are trying to achieve, and the overhead problem that shapes every construction: the verifier has to be expressible as a circuit in the system it verifies.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Incrementally verifiable computation and proof-carrying data: the statements, and the knowledge soundness they require.</html:li>
+        <html:li>Recursion overhead: what a verifier-in-circuit costs, and which components dominate (hashing, MSM, field arithmetic).</html:li>
+        <html:li>Cycles of curves, and why hash-based systems avoid the problem differently.</html:li>
+        <html:li>How the security loss compounds over recursion depth.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003M/</fr:uri>
+                <fr:display-uri>dhsorens-003M</fr:display-uri>
+                <fr:route>/dhsorens-003M/</fr:route>
+                <fr:title text="Nova and Folding Schemes">Nova and Folding Schemes</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Folding two <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> instances into one without proving either, deferring all the SNARK work to the end. Also a case study in why this material needs formalising: a soundness bug was found in the published scheme.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Relaxed R1CS and committed relaxed R1CS: why the relaxation is needed to make folding close.</html:li>
+        <html:li>The folding step and its knowledge-soundness argument.</html:li>
+        <html:li>Why the recursive circuit is small — the folding verifier, not a SNARK verifier.</html:li>
+        <html:li>The bug: what the flaw was, what it permitted, and which part of the argument would have caught it under <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">machine-checked</fr:link> scrutiny.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://blog.zksecurity.xyz/posts/nova-attack/" type="external">how Nova got broken</fr:link>, <fr:link href="https://github.com/lurk-lab/awesome-folding" type="external">awesome-folding</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003N/</fr:uri>
+                <fr:display-uri>dhsorens-003N</fr:display-uri>
+                <fr:route>/dhsorens-003N/</fr:route>
+                <fr:title text="Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy">Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The folding design space after Nova: which constraint systems can be folded, how many instances at once, and what the recursive circuit costs.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>HyperNova: folding <fr:link href="/dhsorens-002V/" title="CCS and the Unified View" uri="https://derekhsorensen.com/dhsorens-002V/" display-uri="dhsorens-002V" type="local">CCS</fr:link>, with per-step cost dominated by one MSM.</html:li>
+        <html:li>ProtoStar: folding arbitrary low-degree polynomial maps, and what that generality buys.</html:li>
+        <html:li>ProtoGalaxy and multi-instance folding; KiloNova and non-uniform PCD.</html:li>
+        <html:li>The axes to compare on: constraint system, instances per fold, recursive circuit size, assumptions.</html:li>
+        <html:li>Which of these is the right target for a formalisation, given that the definitions are still moving.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2023/573" type="external">HyperNova</fr:link>, <fr:link href="https://hackmd.io/@fluentlabs/multi-instance-folding-techniques" type="external">multi-instance folding techniques</fr:link>, <fr:link href="https://github.com/lurk-lab/awesome-folding" type="external">awesome-folding</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003O/</fr:uri>
+                <fr:display-uri>dhsorens-003O</fr:display-uri>
+                <fr:route>/dhsorens-003O/</fr:route>
+                <fr:title text="Continuations and Sharding">Continuations and Sharding</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Splitting a long execution into segments that can be proved independently and in parallel. The mechanism that makes zkVM proving a distributed job rather than a single machine's problem.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Segmenting a trace: what state must be carried across a boundary, and how it is committed.</html:li>
+        <html:li>The consistency argument between shards, especially for <fr:link href="/dhsorens-003U/" title="Memory Checking in zkVMs" uri="https://derekhsorensen.com/dhsorens-003U/" display-uri="dhsorens-003U" type="local">memory</fr:link>.</html:li>
+        <html:li>Aggregating shard proofs into one, and the recursion tree's shape.</html:li>
+        <html:li>How SP1 and RISC Zero each do it, and what their differences imply.</html:li>
+        <html:li>The soundness surface this adds — a shard boundary is a place to forget a constraint.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003P/</fr:uri>
+                <fr:display-uri>dhsorens-003P</fr:display-uri>
+                <fr:route>/dhsorens-003P/</fr:route>
+                <fr:title text="Wrapping and On-Chain Verification">Wrapping and On-Chain Verification</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The last step of a deployed pipeline: convert a large STARK proof into something an on-chain verifier can check cheaply, usually by proving the STARK verifier inside a <fr:link href="/dhsorens-0032/" title="KZG and the Pairing-Based Line" uri="https://derekhsorensen.com/dhsorens-0032/" display-uri="dhsorens-0032" type="local">pairing-based</fr:link> system.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The wrapping chain in a real system, layer by layer, with proof sizes at each step.</html:li>
+        <html:li>Arithmetising a hash-based verifier: which parts are expensive and why.</html:li>
+        <html:li>Gas cost of the final verifier, and what it constrains upstream.</html:li>
+        <html:li>The trust and assumption stack the wrap introduces — a trusted setup at the end of a transparent pipeline.</html:li>
+        <html:li>Whether the composed security is stated anywhere precisely enough to formalise.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-003G/</fr:uri>
+            <fr:display-uri>dhsorens-003G</fr:display-uri>
+            <fr:route>/dhsorens-003G/</fr:route>
+            <fr:title text="Spartan and Sumcheck-Based SNARKs">Spartan and Sumcheck-Based SNARKs</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> proved with <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> instead of quotients, which removes the FFT and moves the cost into a sparse polynomial commitment. It is also one of the systems <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> has formalised, so it is a good place to read a full argument in Lean.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The reduction from R1CS satisfiability to a sumcheck claim.</html:li>
+        <html:li>Sparse polynomial commitment (Spark) and why the matrices' sparsity is what makes this cheap.</html:li>
+        <html:li>Prover cost profile against a Plonkish system on the same circuit.</html:li>
+        <html:li>The line from here to <fr:link href="/dhsorens-003N/" title="Beyond Nova: HyperNova, ProtoStar, ProtoGalaxy" uri="https://derekhsorensen.com/dhsorens-003N/" display-uri="dhsorens-003N" type="local">HyperNova</fr:link>, which folds the same shape of claim.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002V/</fr:uri>
+            <fr:display-uri>dhsorens-002V</fr:display-uri>
+            <fr:route>/dhsorens-002V/</fr:route>
+            <fr:title text="CCS and the Unified View">CCS and the Unified View</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Customisable constraint systems, proposed as the generalisation that has R1CS, Plonkish, and AIR as instances. Worth understanding both as a claim about expressiveness and as the format HyperNova folds.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The definition, and the explicit embeddings of the three formats into it.</html:li>
+        <html:li>What the unification buys: one folding scheme, one commitment interface, one soundness proof.</html:li>
+        <html:li>What it costs — where a CCS encoding is asymptotically or concretely worse than the native format.</html:li>
+        <html:li>Whether the same unification is the right structuring principle for a formal library, or whether <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>'s per-system files are better.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

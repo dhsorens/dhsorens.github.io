@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-003A/</fr:uri>
+    <fr:display-uri>dhsorens-003A</fr:display-uri>
+    <fr:route>/dhsorens-003A/</fr:route>
+    <fr:title text="Batching and Grinding">Batching and Grinding</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p>
+    Two engineering devices that materially change the security accounting, and are therefore easy to get wrong.
+</html:p>
+    <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
+        <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
+        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
+        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0036/</fr:uri>
+            <fr:display-uri>dhsorens-0036</fr:display-uri>
+            <fr:route>/dhsorens-0036/</fr:route>
+            <fr:title text="Low-Degree Testing, from FRI to WHIR">Low-Degree Testing, from FRI to WHIR</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The heart of the transparent stack. The lineage is short and each step answers one specific complaint: <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> tests proximity to a Reed–Solomon code by folding, <fr:link href="/dhsorens-003B/" title="STIR" uri="https://derekhsorensen.com/dhsorens-003B/" display-uri="dhsorens-003B" type="local">STIR</fr:link> attacks its query cost at constant rate, and <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> attacks STIR's verification cost while joining the univariate and multilinear worlds.
+</html:p>
+            <html:p>
+    These pages should be the most careful in the corpus. The soundness statements are where the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regimes</fr:link> matter, where the deployed parameters are conjectural, and where <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>'s hardest formalisation work sits.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0037/</fr:uri>
+                <fr:display-uri>dhsorens-0037</fr:display-uri>
+                <fr:route>/dhsorens-0037/</fr:route>
+                <fr:title text="FRI">FRI</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Fast Reed–Solomon Interactive Oracle Proof of Proximity. The protocol most of the deployed proving stack rests on, and the one every construction later in this section is a response to.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The folding map: halving the degree by splitting into even and odd parts and taking a random combination. Why the folded word is a codeword when the original is.</html:li>
+        <html:li>Commit phase and query phase; the round-consistency check the verifier performs.</html:li>
+        <html:li>Parameters and their interaction: rate, folding factor, number of rounds, number of query repetitions.</html:li>
+        <html:li>Prover cost — encoding, Merkle hashing, and where the time actually goes.</html:li>
+        <html:li>The soundness statement, with the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link> named explicitly.</html:li>
+        <html:li>What ArkLib's <html:code>ProofSystem/Fri</html:code> states, and how far the proof gets.</html:li></html:ul></html:p>
+                <html:p>
+    Reading: Ben-Sasson, Bentov, Horesh, and Riabzev, <html:em>Fast Reed–Solomon Interactive Oracle Proofs of Proximity</html:em> (ICALP 2018); <fr:link href="https://eprint.iacr.org/2026/1367" type="external">the SoK</fr:link> for the corrected attributions.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0038/</fr:uri>
+                <fr:display-uri>dhsorens-0038</fr:display-uri>
+                <fr:route>/dhsorens-0038/</fr:route>
+                <fr:title text="Soundness Regimes and the Proximity-Gap Conjectures">Soundness Regimes and the Proximity-Gap Conjectures</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The same protocol has different soundness depending on how far from the code you are willing to reason, and the parameters used in production sit in the regime where the analysis is conjectural. This page is the reason <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">list decoding</fr:link> is in this corpus at all.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the parameters each licenses.</html:li>
+        <html:li>What must be conjectured to reach capacity, and the precise statement of each conjecture.</html:li>
+        <html:li>Threshold halving, and what it establishes above the Johnson bound.</html:li>
+        <html:li>The accounting from soundness error to bits of security, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
+        <html:li>Which deployed systems set parameters in which regime — and whether the choice is documented anywhere citable.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>, <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0039/</fr:uri>
+                <fr:display-uri>dhsorens-0039</fr:display-uri>
+                <fr:route>/dhsorens-0039/</fr:route>
+                <fr:title text="DEEP and the Out-of-Domain Trick">DEEP and the Out-of-Domain Trick</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Sampling outside the evaluation domain, which appears in deployed provers for reasons that are not the reason usually given. The SoK's claim that the deployed trick and the low-degree-test modification are routinely conflated needs to be nailed down here.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>DEEP quotienting: what the quotient is, and what an out-of-domain evaluation buys the analysis.</html:li>
+        <html:li>The conjecture on classical list-decodability that DEEP-FRI introduced.</html:li>
+        <html:li>The two distinct uses — constraint batching in a STARK versus the low-degree test itself — and which one production code implements.</html:li>
+        <html:li>Where the extension field is forced (the out-of-domain point lives there), and the cost.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003A/</fr:uri>
+                <fr:display-uri>dhsorens-003A</fr:display-uri>
+                <fr:route>/dhsorens-003A/</fr:route>
+                <fr:title text="Batching and Grinding">Batching and Grinding</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Two engineering devices that materially change the security accounting, and are therefore easy to get wrong.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
+        <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
+        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
+        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003B/</fr:uri>
+                <fr:display-uri>dhsorens-003B</fr:display-uri>
+                <fr:route>/dhsorens-003B/</fr:route>
+                <fr:title text="STIR">STIR</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Shift To Improve Rate. FRI keeps the rate fixed across rounds and pays for it in queries; STIR improves the rate each round instead.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The rate-shifting step, and why it reduces query complexity rather than prover time.</html:li>
+        <html:li>The query complexity comparison with FRI, stated with the constants.</html:li>
+        <html:li>What it costs: verifier work, argument size, and round count.</html:li>
+        <html:li>The soundness analysis and which <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link> it lands in.</html:li>
+        <html:li>ArkLib's <html:code>ProofSystem/Stir</html:code>: the formal statement and its current status.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: Arnon, Chiesa, Fenzi, and Yogev, <html:em>STIR</html:em>; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-003C/</fr:uri>
+                <fr:display-uri>dhsorens-003C</fr:display-uri>
+                <fr:route>/dhsorens-003C/</fr:route>
+                <fr:title text="WHIR">WHIR</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The current endpoint of the lineage: a multilinear commitment with a very fast verifier, unifying the Reed–Solomon proximity line with the tensor-commitment line that Basefold began.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The construction, and where <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> enters the low-degree test.</html:li>
+        <html:li>How a multilinear claim is served by a univariate proximity test — the translation, and its cost.</html:li>
+        <html:li>The verifier-time claim, and what it is measured against.</html:li>
+        <html:li>Which of <fr:link href="/dhsorens-003B/" title="STIR" uri="https://derekhsorensen.com/dhsorens-003B/" display-uri="dhsorens-003B" type="local">STIR</fr:link>'s ideas it keeps and which it discards.</html:li>
+        <html:li>ArkLib's WHIR formalisation: what is proved, and what the remaining obligations are.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: Arnon, Chiesa, Fenzi, and Yogev, <html:em>WHIR</html:em>; <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004A/</fr:uri>
+            <fr:display-uri>dhsorens-004A</fr:display-uri>
+            <fr:route>/dhsorens-004A/</fr:route>
+            <fr:title text="Security Levels in Production">Security Levels in Production</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    What bit-security a deployed system actually claims, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The parameters real provers ship: rate, repetitions, <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> bits, field size — and the claimed level they add up to.</html:li>
+        <html:li>Which claims depend on a <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">conjecture</fr:link>, and whether that is documented in the system's own materials.</html:li>
+        <html:li>The accounting across <fr:link href="/dhsorens-003L/" title="IVC and Proof-Carrying Data" uri="https://derekhsorensen.com/dhsorens-003L/" display-uri="dhsorens-003L" type="local">recursion</fr:link> layers, where errors compose.</html:li>
+        <html:li>Who is responsible for the number: protocol designers, implementers, or auditors.</html:li>
+        <html:li>What a machine-checked parameter calculation would look like, and whether it is a reasonable thing to build.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002F/</fr:uri>
+            <fr:display-uri>dhsorens-002F</fr:display-uri>
+            <fr:route>/dhsorens-002F/</fr:route>
+            <fr:title text="Soundness Notions">Soundness Notions</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Which soundness a theorem is about determines whether it survives the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link>. A table of the notions, the implications between them, and which compilation step preserves each belongs on this page.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Soundness, knowledge soundness, special soundness — and the implications between them.</html:li>
+        <html:li>Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.</html:li>
+        <html:li>Soundness error versus security level in bits; how error accumulates across rounds, queries, and repetitions.</html:li>
+        <html:li>Provable versus conjectured soundness, and which deployed parameters rest on which. See <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>.</html:li>
+        <html:li>What "128-bit security" means for a hash-based system once <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> is counted.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0038/</fr:uri>
+            <fr:display-uri>dhsorens-0038</fr:display-uri>
+            <fr:route>/dhsorens-0038/</fr:route>
+            <fr:title text="Soundness Regimes and the Proximity-Gap Conjectures">Soundness Regimes and the Proximity-Gap Conjectures</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The same protocol has different soundness depending on how far from the code you are willing to reason, and the parameters used in production sit in the regime where the analysis is conjectural. This page is the reason <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">list decoding</fr:link> is in this corpus at all.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the parameters each licenses.</html:li>
+        <html:li>What must be conjectured to reach capacity, and the precise statement of each conjecture.</html:li>
+        <html:li>Threshold halving, and what it establishes above the Johnson bound.</html:li>
+        <html:li>The accounting from soundness error to bits of security, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
+        <html:li>Which deployed systems set parameters in which regime — and whether the choice is documented anywhere citable.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>, <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-0039/</fr:uri>
+            <fr:display-uri>dhsorens-0039</fr:display-uri>
+            <fr:route>/dhsorens-0039/</fr:route>
+            <fr:title text="DEEP and the Out-of-Domain Trick">DEEP and the Out-of-Domain Trick</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Sampling outside the evaluation domain, which appears in deployed provers for reasons that are not the reason usually given. The SoK's claim that the deployed trick and the low-degree-test modification are routinely conflated needs to be nailed down here.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>DEEP quotienting: what the quotient is, and what an out-of-domain evaluation buys the analysis.</html:li>
+        <html:li>The conjecture on classical list-decodability that DEEP-FRI introduced.</html:li>
+        <html:li>The two distinct uses — constraint batching in a STARK versus the low-degree test itself — and which one production code implements.</html:li>
+        <html:li>Where the extension field is forced (the out-of-domain point lives there), and the cost.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002F/</fr:uri>
+            <fr:display-uri>dhsorens-002F</fr:display-uri>
+            <fr:route>/dhsorens-002F/</fr:route>
+            <fr:title text="Soundness Notions">Soundness Notions</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Which soundness a theorem is about determines whether it survives the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link>. A table of the notions, the implications between them, and which compilation step preserves each belongs on this page.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Soundness, knowledge soundness, special soundness — and the implications between them.</html:li>
+        <html:li>Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.</html:li>
+        <html:li>Soundness error versus security level in bits; how error accumulates across rounds, queries, and repetitions.</html:li>
+        <html:li>Provable versus conjectured soundness, and which deployed parameters rest on which. See <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>.</html:li>
+        <html:li>What "128-bit security" means for a hash-based system once <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> is counted.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>
