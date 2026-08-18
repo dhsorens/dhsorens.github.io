@@ -7,7 +7,7 @@
 }
 
 \p{
-    Bitcoin applies it twice — #{\mathrm{SHA256}(\mathrm{SHA256}(x))}, usually written SHA-256d — for block headers and so for proof of work, for transaction identifiers, and for the Merkle tree committing a block's transactions. The usual rationale for the second application is length extension: a Merkle–Damgård hash leaks enough internal state that an attacker who knows #{H(m)} can compute #{H(m \| p)} for some padding #{p} without knowing #{m}, and hashing the digest again removes the property.
+    Bitcoin applies it twice — #{\mathrm{SHA256}(\mathrm{SHA256}(x))}, usually written SHA-256d — for block headers and so for [proof of work](dhsorens-003A), for transaction identifiers, and for [the Merkle tree committing a block's transactions](dhsorens-0031). The usual rationale for the second application is length extension: a Merkle–Damgård hash leaks enough internal state that an attacker who knows #{H(m)} can compute #{H(m \| p)} for some padding #{p} without knowing #{m}, and hashing the digest again removes the property.
 }
 
 \p{

@@ -11,7 +11,7 @@
 }
 
 \p{
-    The consensus layer chose differently. SSZ's \code{hash_tree_root} is SHA-256, so a full node computes both families — Keccak for execution state and SHA-256 for beacon state. The EVM also exposes SHA-256 and RIPEMD-160 as precompiles at \code{0x02} and \code{0x03}, and BLAKE2b's compression function at \code{0x09} (EIP-152, Istanbul, December 2019, priced at one gas per round).
+    The consensus layer chose differently. SSZ's \code{hash_tree_root} is SHA-256, so a full node computes both families — Keccak for execution state and SHA-256 for beacon state. The EVM also exposes SHA-256 and RIPEMD-160 as [precompiles](dhsorens-003V) at \code{0x02} and \code{0x03}, and BLAKE2b's compression function at \code{0x09} (EIP-152, Istanbul, December 2019, priced at one gas per round).
 }
 
 \p{

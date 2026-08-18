@@ -26,7 +26,7 @@
 \transclude{dhsorens-004H} % Poseidon and the 2026 decision
 
 \p{
-    The part that interests me is the second-order effect on [verification](dhsorens-000X). A conservative hash has a stable specification that many independent implementations already agree on, which matters a great deal if the goal is to verify an implementation rather than only a protocol. A generated parameter set does not offer that, whatever its cryptanalytic standing. The [cost of hashing in a circuit](dhsorens-0048) is now one input to that decision rather than the whole of it.
+    The part that interests me is the second-order effect on [verification](dhsorens-000X). A conservative hash has a stable specification that many independent implementations already agree on, which matters a great deal if the goal is to [verify an implementation rather than only a protocol](dhsorens-0045). A generated parameter set does not offer that, whatever its cryptanalytic standing. The [cost of hashing in a circuit](dhsorens-0048) is now one input to that decision rather than the whole of it.
 }
 
 \p{

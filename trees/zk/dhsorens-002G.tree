@@ -9,7 +9,7 @@
 \p{
     Questions this page should answer:
     \ul{
-        \li{The transform, and exactly what it assumes about the hash function.}
+        \li{The transform, and exactly what it assumes about [the hash function](dhsorens-004D).}
         \li{Why [round-by-round soundness](dhsorens-002F) is the right hypothesis for a many-round protocol.}
         \li{Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.}
         \li{Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's \code{Salt.lean} is for.}
