@@ -4,10 +4,6 @@
 \meta{toc}{true}
 
 \p{
-    \em{Scaffolding, AI-drafted 2026-08-18. Almost every page below is deliberately an outline rather than a finished note: it names a topic, says what belongs on it, and lists the questions it should answer.}
-}
-
-\p{
     A systematic study of the cryptography and machine architecture that zkVMs and SNARKs are built from, topic by topic. It is the theory behind the [snarkification work](dhsorens-0020): [ArkLib](dhsorens-0040), [CompPoly](dhsorens-0041), and [Clean](dhsorens-002Y) formalise these protocols in [Lean](dhsorens-lean), and [formalisation](dhsorens-000X) rewards local knowledge — a folding lemma can be proved without holding the whole argument in view. The purpose of a corpus like this one is to hold the whole argument.
 }
 
