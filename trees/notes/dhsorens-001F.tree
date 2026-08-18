@@ -9,7 +9,7 @@
 
 \p{
     However, proposition and proof for mathematicians and computer scientists often do not much resemble each other, both in how proofs are engineered as well as in the kinds of propositions formalized.
-    Unless software specifications are explicitly mathematical, for example like in the case of [zero-knowledge proofs](dhsorens-001L), computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
+    Unless software specifications are explicitly mathematical, for example like in the case of [zero-knowledge proofs](dhsorens-002C), computer scientists typically formalize properties from a prose specification into a set of propositions and prove code correct with regards to that specification.
     These sorts of propositions comprising the specification are informed by experience and best practices, but [frequently not any formal, underlying theory](dhsorens-001H). In contrast, the propositions posed by mathematicians draw completely on the theory in which new propositions are couched, and the statements of propositions are derived in a methodical and highly rigorous manner.
     % Broadly speaking, I would characterize the mathematical and computer scientific approaches in the following (deeply unrigorously derived) ways.
     These differences are, in my mind, well worth meditating on.

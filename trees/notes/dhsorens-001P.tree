@@ -9,7 +9,6 @@
     We would recognize each of these exploits as attacks, despite the fact that the contracts were functioning
     as specified, which tells us that the specifications were erroneous as they did not accurately capture the
     intended economic behaviors. To the contrary, they permitted unintended and pathological behavior.
-    [The same failure mode appears in zk circuits](dhsorens-003Y), where an under-constrained circuit permits exactly what its specification meant to rule out.
 }
 
 \transclude{dhsorens-001T} % Beanstalk
