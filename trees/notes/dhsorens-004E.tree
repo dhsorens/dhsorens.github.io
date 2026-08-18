@@ -1,0 +1,19 @@
+\title{SHA-2 and the Bitcoin Design}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    SHA-256, published by NIST in 2001, is a Merkle–Damgård construction over a 64-round compression function on 32-bit words, absorbing 64 bytes per call. It is the most analysed hash in deployment, and Bitcoin has used nothing else for its core since 2009.
+}
+
+\p{
+    Bitcoin applies it twice — #{\mathrm{SHA256}(\mathrm{SHA256}(x))}, usually written SHA-256d — for block headers and so for proof of work, for transaction identifiers, and for the Merkle tree committing a block's transactions. The usual rationale for the second application is length extension: a Merkle–Damgård hash leaks enough internal state that an attacker who knows #{H(m)} can compute #{H(m \| p)} for some padding #{p} without knowing #{m}, and hashing the digest again removes the property.
+}
+
+\p{
+    Addresses use a second family as well. The legacy scheme hashes a public key with #{\mathrm{RIPEMD160}(\mathrm{SHA256}(x))}, which shortens the digest to 20 bytes and means a break of either function alone does not immediately yield a preimage. Taproot's tagged hashes (BIP-340) are built from SHA-256 with a domain-separation prefix, so even the newest parts of Bitcoin stay inside the same primitive.
+}
+
+\p{
+    The conservatism is the design. Twenty-five years of public cryptanalysis with no practical attack on the full function is a stronger argument than any efficiency claim, and it is the argument the [2026 Ethereum decision](dhsorens-004H) came back around to.
+}

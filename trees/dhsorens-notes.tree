@@ -16,6 +16,7 @@
     I recently started work on formally verifying [all things zero-knowledge](dhsorens-0020) on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
 }
 
+\transclude{dhsorens-004D} % hash functions in Bitcoin and Ethereum
 % A corpus is represented here by a short blurb tree, not by transcluding
 % the corpus itself — dhsorens-002C is 72 trees and would swamp this page.
 \transclude{dhsorens-004C} % a corpus on zkVMs and SNARKs

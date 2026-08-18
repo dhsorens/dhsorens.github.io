@@ -1,0 +1,19 @@
+\title{BLAKE2 and BLAKE3}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    BLAKE was a SHA-3 finalist that lost to Keccak and then outlived the defeat. BLAKE2 (2013) trimmed rounds and simplified the design for speed; BLAKE3 (2020) cut the compression function to seven rounds and replaced the serial mode with a binary tree over 1 KiB chunks, which makes it parallel over any number of cores, incremental, and usable as an extendable-output function from one algorithm.
+}
+
+\p{
+    Ethereum's only exposure to the family is BLAKE2b's compression function as the \code{0x09} precompile, added by EIP-152 for Zcash interoperability rather than for Ethereum's own use. That makes the current interest in BLAKE3 a genuine change of direction rather than an extension of something already in the protocol.
+}
+
+\p{
+    Two properties explain the interest. Natively it is fast, and the tree mode parallelises without a protocol change. In a circuit it is the cheapest of the conventional candidates: [Flock](dhsorens-004H) proves 82k BLAKE3 compressions per second on a single core, against 42k for SHA-256.
+}
+
+\p{
+    The obvious objection is age. BLAKE3 dates from 2020 and has had a fraction of the cryptanalytic attention SHA-2 has, which is the same conservatism argument that ended [Poseidon](dhsorens-004H), applied one level in. That the Foundation's announcement said "SHA or BLAKE" rather than naming one suggests the trade is not settled.
+}

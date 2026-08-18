@@ -11,6 +11,7 @@
     \ul{
         \li{The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.}
         \li{How a bit-level computation avoids paying for embedding into a large field.}
+        \li{Flock, which specialises the same idea to large batches of one Boolean circuit and is what [made conventional hashes cheap enough to prove](dhsorens-004H) that Ethereum dropped Poseidon.}
         \li{Where the extension field is still required, and what fraction of the work it accounts for.}
         \li{The measured comparison against 31-bit prime systems, and on which workloads it holds.}
         \li{ArkLib's \code{ProofSystem/Binius} and \code{RingSwitching}: what is stated and what is proved.}
