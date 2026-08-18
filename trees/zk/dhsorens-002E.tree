@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    The chain of definitions that everything else is stated in terms of, ending at the interactive oracle reduction that [ArkLib](dhsorens-0040) takes as primitive.
+    The chain of definitions that everything else is stated in terms of, ending at the interactive oracle reduction that [ArkLib](dhsorens-0040) takes as primitive. \em{Proof} does different work here than it does in [proposition and proof](dhsorens-001F): a SNARK convinces a verifier with high probability under stated assumptions, and is not a derivation.
 }
 
 \p{

@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    The statement at the top of the whole effort, written out honestly: which theorems compose, and which links in the chain are assumptions rather than proofs. It is the claim the whole effort will be judged on.
+    The statement at the top of the whole effort, written out honestly: which theorems compose, and which links in the chain are assumptions rather than proofs. It is the claim the whole effort will be judged on, and its general form is [the issue of incorrect specification](dhsorens-001K): a machine-checked proof is only ever as good as the statement it proves.
 }
 
 \p{

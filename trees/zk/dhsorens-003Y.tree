@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    A catalogue of real failure modes, kept concrete. This page is the evidence for the [formalisation work](dhsorens-003Z), so it should stay evidence rather than argument.
+    A catalogue of real failure modes, kept concrete. This page is the evidence for the [formalisation work](dhsorens-003Z), so it should stay evidence rather than argument. [Smart contract vulnerabilities due to poor specification](dhsorens-001P) is the same catalogue one domain over, and the failure modes rhyme: code that did what it was specified to do, and a specification that permitted what nobody intended.
 }
 
 \p{
