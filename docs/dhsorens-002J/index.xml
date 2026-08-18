@@ -2505,7 +2505,40 @@
         <fr:authors />
         <fr:title text="Backlinks">Backlinks</fr:title>
       </fr:frontmatter>
-      <fr:mainmatter />
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004C/</fr:uri>
+            <fr:display-uri>dhsorens-004C</fr:display-uri>
+            <fr:route>/dhsorens-004C/</fr:route>
+            <fr:title text="A Corpus on zkVMs and SNARKs">A Corpus on zkVMs and SNARKs</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p><fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link> is a new corpus on this site: a systematic study of the cryptography and machine architecture these systems are built from, one page per topic. It follows the pipeline every modern proof system follows, from a computation to a deployed proof, and it is the theory behind the <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">snarkification work</fr:link>.
+</html:p>
+            <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-002D/" title="The Shape of a Proof System" uri="https://derekhsorensen.com/dhsorens-002D/" display-uri="dhsorens-002D" type="local">The shape of a proof system</fr:link> — the definitions everything else is stated in, and where security is lost between an interactive protocol and a deployed one.</html:li>
+        <html:li><fr:link href="/dhsorens-002J/" title="The Algebraic and Coding-Theoretic Toolkit" uri="https://derekhsorensen.com/dhsorens-002J/" display-uri="dhsorens-002J" type="local">The algebraic and coding-theoretic toolkit</fr:link> — fields, polynomials, Reed–Solomon codes, proximity gaps, sumcheck.</html:li>
+        <html:li><fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">Arithmetisation</fr:link> — R1CS, Plonkish, AIR, lookups, and <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link>.</html:li>
+        <html:li><fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">Polynomial commitment schemes</fr:link>, and <fr:link href="/dhsorens-0036/" title="Low-Degree Testing, from FRI to WHIR" uri="https://derekhsorensen.com/dhsorens-0036/" display-uri="dhsorens-0036" type="local">low-degree testing</fr:link> from FRI through STIR to WHIR.</html:li>
+        <html:li><fr:link href="/dhsorens-003D/" title="Proof Systems in the Wild" uri="https://derekhsorensen.com/dhsorens-003D/" display-uri="dhsorens-003D" type="local">Proof systems in the wild</fr:link> and <fr:link href="/dhsorens-003K/" title="Folding, Recursion, and Aggregation" uri="https://derekhsorensen.com/dhsorens-003K/" display-uri="dhsorens-003K" type="local">folding, recursion, and aggregation</fr:link>.</html:li>
+        <html:li><fr:link href="/dhsorens-003Q/" title="zkVMs" uri="https://derekhsorensen.com/dhsorens-003Q/" display-uri="dhsorens-003Q" type="local">zkVMs</fr:link> — the stack, the systems in the field, and how they break.</html:li>
+        <html:li><fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">Formalising the stack</fr:link> — <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>, <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>, and the rest of the verified-zkEVM effort.</html:li>
+        <html:li><fr:link href="/dhsorens-0046/" title="The Ethereum Setting" uri="https://derekhsorensen.com/dhsorens-0046/" display-uri="dhsorens-0046" type="local">The Ethereum setting</fr:link>, and <fr:link href="/dhsorens-004B/" title="A Reading Path" uri="https://derekhsorensen.com/dhsorens-004B/" display-uri="dhsorens-004B" type="local">a reading path</fr:link> through all of it.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
     </fr:tree>
     <fr:tree show-metadata="false" hidden-when-empty="true">
       <fr:frontmatter>

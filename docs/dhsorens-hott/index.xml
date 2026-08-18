@@ -107,41 +107,6 @@
 </html:p>
           </fr:mainmatter>
         </fr:tree>
-        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
-          <fr:frontmatter>
-            <fr:authors>
-              <fr:author>
-                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
-              </fr:author>
-            </fr:authors>
-            <fr:uri>https://derekhsorensen.com/dhsorens-notes/</fr:uri>
-            <fr:display-uri>dhsorens-notes</fr:display-uri>
-            <fr:route>/dhsorens-notes/</fr:route>
-            <fr:title text="Notes">Notes</fr:title>
-            <fr:meta name="toc">true</fr:meta>
-          </fr:frontmatter>
-          <fr:mainmatter>
-            <html:p>
-    I am interested, broadly speaking, in formal proposition and proof.
-    From a high level, what tends to catch my attention is the nuance of going from an intuitive, abstract idea into something formal—whether it's a formal specification of a program, a formalized theorem statement, or even something simply written out as a program.
-</html:p>
-            <html:p>
-    During my PhD this manifested as written work focused on the problem of (correctly) specifying and formally verifying <fr:link href="/dhsorens-000A/" title="The Main Contributions of my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000A/" display-uri="dhsorens-000A" type="local">financial smart contracts</fr:link>.
-    But I continue to be interested in <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">software verification more broadly</fr:link>, the ongoing work to <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize mathematics</fr:link>, and other developments in using <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> in production.
-</html:p>
-            <html:p>
-    I recently started work on formally verifying <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">all things zero-knowledge</fr:link> on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
-</html:p>
-            <html:p>Newest first:
-
-    <html:ul><html:li><fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>. A systematic study of the cryptography and machine architecture these systems are built from, topic by topic: <fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">arithmetisation</fr:link>, <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment schemes</fr:link>, <fr:link href="/dhsorens-0036/" title="Low-Degree Testing, from FRI to WHIR" uri="https://derekhsorensen.com/dhsorens-0036/" display-uri="dhsorens-0036" type="local">low-degree testing</fr:link> from FRI to WHIR, <fr:link href="/dhsorens-003Q/" title="zkVMs" uri="https://derekhsorensen.com/dhsorens-003Q/" display-uri="dhsorens-003Q" type="local">zkVMs</fr:link> themselves, and <fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">formalising the stack</fr:link> in Lean. August 2026.</html:li>
-        <html:li><fr:link href="/dhsorens-0027/" title="LC3 in Lean" uri="https://derekhsorensen.com/dhsorens-0027/" display-uri="dhsorens-0027" type="local">LC3 in Lean</fr:link>. A small virtual machine and its semantics in Lean, with the <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">ISA-level details</fr:link> and the <fr:link href="/dhsorens-002A/" title="Details on the Proofs of Correctness for LC3-Lean" uri="https://derekhsorensen.com/dhsorens-002A/" display-uri="dhsorens-002A" type="local">proofs of correctness</fr:link> written up separately. March 2026.</html:li>
-        <html:li><fr:link href="/dhsorens-0025/" title="CompPoly and Computable Specifications" uri="https://derekhsorensen.com/dhsorens-0025/" display-uri="dhsorens-0025" type="local">CompPoly and Computable Specifications</fr:link>. Why an executable specification is a stronger specification, and how that connects to <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">metaspecifications</fr:link> in cryptography. March 2026.</html:li>
-        <html:li><fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">Protocol Snarkification</fr:link>. Ongoing work to integrate zero knowledge proofs into every layer of the Ethereum protocol. December 2025.</html:li>
-        <html:li><fr:link href="/dhsorens-000U/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000U/" display-uri="dhsorens-000U" type="local">Formal Specification and Verification</fr:link>. <fr:link href="/dhsorens-000W/" title="Smart Contract Design, Specification, and Verification" uri="https://derekhsorensen.com/dhsorens-000W/" display-uri="dhsorens-000W" type="local">Smart contract specification and verification</fr:link>, and <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">formal verification in proof assistants</fr:link> more broadly. August 2025.</html:li>
-        <html:li><fr:link href="/dhsorens-000V/" title="Type Theory and Formal Proof" uri="https://derekhsorensen.com/dhsorens-000V/" display-uri="dhsorens-000V" type="local">Type Theory and Formal Proof</fr:link>. <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">Proof assistants</fr:link>, some preliminary work in <fr:link href="/dhsorens-hott/" title="Homotopy Type Theory (HoTT)" uri="https://derekhsorensen.com/dhsorens-hott/" display-uri="dhsorens-hott" type="local">HoTT</fr:link>, and the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. August 2025.</html:li></html:ul></html:p>
-          </fr:mainmatter>
-        </fr:tree>
       </fr:mainmatter>
     </fr:tree>
     <fr:tree show-metadata="false" hidden-when-empty="true">
