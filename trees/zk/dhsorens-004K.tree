@@ -15,7 +15,11 @@
 }
 
 \p{
-    ArkLib formalises it through transcript trees generic in a \em{shape}. \code{distinctShape k} is the shape with branching arity #{k_i} whose node predicate requires the #{k_i} sibling challenges at each round to be pairwise distinct, and \code{Verifier.specialSound} is the instance of the shape-generic \code{treeSpecialSound} at that shape. The genericity is not gratuitous: \code{CoordinateWiseSpecialSoundness} handles protocols whose challenges are vectors and whose extractor needs distinctness in a coordinate rather than in the whole challenge, and ArkLib proves that plain special soundness is the \code{distinctShape} case of it. Real protocols keep needing branching conditions other than "all siblings differ."
+    The lattice protocols needed the tree reshaped rather than widened. Their challenges are vectors of #{\ell_i} coordinates, and extraction works coordinate by coordinate: two accepting transcripts that differ in one coordinate alone subtract to an equation in the matching block of the witness. Transcripts that differ everywhere subtract to nothing usable. \em{Coordinate-wise special soundness}, introduced by Fenzi, Moghaddas, and Nguyen for their lattice polynomial commitment, makes this the branching condition: each node at round #{i} has #{\ell_i(k_i - 1) + 1} children — a central challenge vector, plus #{k_i - 1} others per coordinate differing from it in that coordinate only. The knowledge error is at most #{\sum_{i=1}^{\mu} \ell_i k_i / N_i^{\ell_i}} for coordinates drawn from sets of size #{N_i}, the tree stays polynomially small, and taking every #{\ell_i = 1} recovers plain special soundness. Their Fiat–Shamir theorem carries over too, so the linear-in-#{Q} accounting above survives the generalisation. Hachi, a lattice multilinear commitment refining Greyhound, states its whole security analysis in this form — down to bundling a pair of sumcheck challenge points into one vector of logarithmically many coordinates, so that a coordinate-wise tree supplies enough distinct roots to force a constraint polynomial to vanish.
+}
+
+\p{
+    ArkLib formalises both through transcript trees generic in a \em{shape}. \code{distinctShape k} is the shape with branching arity #{k_i} whose node predicate requires the #{k_i} sibling challenges at each round to be pairwise distinct, and \code{Verifier.specialSound} is the instance of the shape-generic \code{treeSpecialSound} at that shape; \code{CoordinateWiseSpecialSoundness} is the coordinate-wise condition above, and ArkLib proves that plain special soundness is the \code{distinctShape} case of it. The genericity is not gratuitous: real protocols keep needing branching conditions other than "all siblings differ."
 }
 
 \p{
@@ -23,5 +27,5 @@
 }
 
 \p{
-    Sources: [Fiat–Shamir Transformation of Multi-Round Interactive Proofs](https://eprint.iacr.org/2021/1377) (Attema, Fehr, Klooß) for the #{(Q+1)\kappa} bound, [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256) for the generalised versions and their implications, and \code{ArkLib/OracleReduction/Security/SpecialSoundness.lean}.
+    Sources: [Fiat–Shamir Transformation of Multi-Round Interactive Proofs](https://eprint.iacr.org/2021/1377) (Attema, Fehr, Klooß) for the #{(Q+1)\kappa} bound, [Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency](https://eprint.iacr.org/2023/846) (Fenzi, Moghaddas, Nguyen) for coordinate-wise special soundness and its interactive and Fiat–Shamir knowledge theorems, [Hachi](https://eprint.iacr.org/2026/156) (Nguyen, O'Rourke, Zhang) for the notion in working use, [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256) for the generalised versions and their implications, and \code{ArkLib/OracleReduction/Security/SpecialSoundness.lean}.
 }
