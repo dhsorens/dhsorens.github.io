@@ -18,9 +18,8 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
    \title{...}
    \author{dhsorens}
    \date{YYYY-MM-DD}
-   \taxon{Blog}        % per type, see below
    ```
-   Body rules: every paragraph in `\p{…}`; links are `[text](dhsorens-XXXX)` for trees and `[text](https://…)` for URLs; math `#{…}` inline, `##{…}` display; **asset links must be absolute** (`/docs/…`, `/slides/…`, `/media/…`, `/img/…`). Match the voice and density of neighboring trees — look at 2–3 recent siblings before writing.
+   Add `\taxon{...}` only when the per-type section below requires it. Ordinary notes have **no taxon**. Body rules: every paragraph in `\p{…}`; links are `[text](dhsorens-XXXX)` for trees and `[text](https://…)` for URLs; math `#{…}` inline, `##{…}` display; **asset links must be absolute** (`/docs/…`, `/slides/…`, `/media/…`, `/img/…`). Match the voice and density of neighboring trees — look at 2–3 recent siblings before writing.
 
 4. **Wire it in** (per-type, below). A tree that isn't transcluded or linked from a parent is unreachable — that's a bug unless intentional.
 
@@ -39,8 +38,8 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
 
 ## Per-type wiring
 
-### Note / blog post
-- File: `trees/notes/dhsorens-XXXX.tree`, `\taxon{Blog}` (or omit taxon for plain notes).
+### Note
+- File: `trees/notes/dhsorens-XXXX.tree`. **No taxon** unless the user asks for one (`\taxon{Blog}` for an actual blog post, `\taxon{Deep-Dive}` only via `/notes`).
 - Wire: add `\transclude{dhsorens-XXXX} % short label` to `trees/dhsorens-notes.tree`. Newest content goes near the top of the transclude list; thematic/evergreen notes are grouped with their topic block instead — read the existing order first.
 - **Notes are transcluded, not listed.** Each renders in place with its own title and date, in the standard forester page format. Comment a transclude out with `%` to unlist it rather than deleting it.
 - **Anything with sections goes in through a blurb.** If the note is a parent with children, or runs beyond a page, do not transclude it — write one more tree in ordinary note format (title `A Note on <Topic>`, a paragraph on what the note covers, then a `\ul{}` of links to its sections) and transclude that. `trees/notes/dhsorens-004C.tree` and `dhsorens-004I` are the working examples. A short standalone note is transcluded directly, as the older entries are.
