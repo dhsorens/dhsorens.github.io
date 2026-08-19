@@ -4,5 +4,5 @@
 \meta{toc}{true}
 
 \p{
-    See my latest on [the cryptography behind zkVMs and SNARKs](dhsorens-002C) — a systematic study of proof systems, [arithmetisation](dhsorens-002R), [low-degree testing](dhsorens-0036), and [formalising the whole stack](dhsorens-003Z) in Lean, one topic per page.
+    See my latest on [hash functions in Bitcoin and Ethereum](dhsorens-004D) — what each chain actually hashes with, and why the Ethereum Foundation abandoned [Poseidon](dhsorens-004H) for L1 in August 2026, which was not a break of Poseidon but a change on the proving side. The systematic study behind it is [zkVMs and SNARKs](dhsorens-002C).
 }
