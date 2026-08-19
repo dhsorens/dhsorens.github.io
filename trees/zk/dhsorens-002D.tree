@@ -4,15 +4,17 @@
 \meta{toc}{true}
 
 \p{
-    The vocabulary layer. [FRI](dhsorens-0037), [Spartan](dhsorens-003G), and [WHIR](dhsorens-003C) are instances of the same handful of definitions, and much of what is confusing in a paper is a confusion about which definition is in play: which soundness notion, in which oracle model, against which adversary.
+    The vocabulary layer. [FRI](dhsorens-0037), [Spartan](dhsorens-003G), and [WHIR](dhsorens-003C) are instances of the same handful of definitions, and much of what is confusing in a paper is a confusion about which definition is in play: [which soundness notion](dhsorens-002F), in which oracle model, against which adversary.
 }
 
 \p{
-    Two questions this section exists to answer. What does a security proof for a SNARK actually establish? And at which step of the compilation from interactive protocol to deployed system does the security get lost?
+    Two questions this section exists to answer. What does a security proof for a SNARK actually establish? And at which step of the [compilation](dhsorens-004S) from interactive protocol to deployed system does the security get lost?
 }
 
 \transclude{dhsorens-002E} % IPs, arguments, IOPs
+\transclude{dhsorens-004T} % completeness
 \transclude{dhsorens-002F} % soundness notions
+\transclude{dhsorens-004S} % compilation
 \transclude{dhsorens-002G} % Fiat-Shamir and the ROM
 \transclude{dhsorens-002H} % the BCS transform
 \transclude{dhsorens-002I} % oracle reductions and composition

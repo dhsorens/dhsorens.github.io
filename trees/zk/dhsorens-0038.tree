@@ -12,7 +12,7 @@
         \li{Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the parameters each licenses.}
         \li{What must be conjectured to reach capacity, and the precise statement of each conjecture.}
         \li{Threshold halving, and what it establishes above the Johnson bound.}
-        \li{The accounting from soundness error to bits of security, including [grinding](dhsorens-003A).}
+        \li{The accounting [from soundness error to bits of security](dhsorens-004N), including [grinding](dhsorens-003A).}
         \li{Which deployed systems set parameters in which regime — and whether the choice is documented anywhere citable.}
     }
 }

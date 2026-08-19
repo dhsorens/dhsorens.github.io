@@ -10,7 +10,7 @@
     Questions this page should answer:
     \ul{
         \li{How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".}
-        \li{Completeness as a separate obligation, and whether it is discharged or assumed.}
+        \li{[Completeness](dhsorens-004T) as a separate obligation, and whether it is discharged or assumed.}
         \li{Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.}
         \li{Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.}
         \li{Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.}

@@ -3,14 +3,14 @@
 \date{2026-08-18}
 
 \p{
-    [ArkLib](dhsorens-0040)'s organising abstraction, and the reason it can hope to cover many protocols rather than one. A reduction maps one relation to another; a protocol is a composition of reductions; completeness and soundness are proved once per component.
+    [ArkLib](dhsorens-0040)'s organising abstraction, and the reason it can hope to cover many protocols rather than one. A reduction maps one relation to another; a protocol is a composition of reductions; [completeness](dhsorens-004T) and [soundness](dhsorens-002F) are proved once per component.
 }
 
 \p{
     Questions this page should answer:
     \ul{
         \li{The definition: relations with oracle statements, and what a reduction between them is.}
-        \li{Sequential composition, and how the soundness error accounts.}
+        \li{Sequential composition, and [how the soundness error accounts](dhsorens-004N).}
         \li{Lifting and virtual oracle reductions (\code{LiftContext}) — why real protocols need a component to run in a larger context than it was stated in.}
         \li{Decomposing a full system this way. [WHIR](dhsorens-003C) or [Spartan](dhsorens-003G) is the test case.}
         \li{What is lost: which protocols resist a clean decomposition, and why.}

@@ -66,6 +66,27 @@ Lists may be nested inside a `\p{}`. Markup nests inside link text:
 
 Literal `%` in prose must be escaped as `\%` (see `#{0.3}\%` in `dhsorens-001N.tree`).
 
+**No `[` or `|` inside `#{}` or `##{}`.** Math mode is not opaque to the parser — the
+content is still tokenized as forester markup before it reaches KaTeX — so a character
+with markup meaning opens a construct the following `\command` cannot appear in, and the
+build fails with `syntax error, unexpected "\\"`. Both of these bit this forest:
+
+- `#{\Pr[\text{forge}]}` — the `[` opens link text that never closes with `](…)`.
+  Use parentheses: `\Pr(\text{forge})`.
+- `#{|\mathbb{F}|}` — a raw pipe. `dhsorens-004E` escapes it as `\|` (`#{H(m \| p)}`);
+  naming the quantity instead (`#{q}` for a field size) reads better than either.
+
+Outside math both characters are ordinary text: `trees/index.tree` separates its profile
+links with a bare `|`, and that has always built. It is specifically the math spans that
+need care. Display math goes **between** `\p{}` blocks, not inside one, as in
+`dhsorens-001N.tree`.
+
+When this bites, the build error is wildly misleading: forester reports
+`error[parse_error]` against **line 1 of every tree in the forest**, including files the
+diff never touched. That pattern means one malformed tree, not a broken toolchain — the
+way to localise it is to diff the new files against constructs the forest already uses,
+not to trust the reported locations.
+
 ## Links
 
 Markdown-style `[text](address)` is the *only* link form. There is no `\ref`, no

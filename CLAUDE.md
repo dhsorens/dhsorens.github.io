@@ -40,7 +40,18 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 - Publishing flow: work on a branch, commit **sources only** (`./commit-trees.sh` or plain git), push, PR to `main`. CI publishes on merge; allow ~10 minutes for the Cloudflare cache after merging.
 - `trees/notes/dhsorens-001S.tree` is the **Latest Deep-Dive** blurb transcluded at the top of the front page. Its address is load-bearing — rewrite its body, never its address.
 - `trees/dhsorens-notes.tree` **transcludes** its notes, newest first; each renders in place with its own title and date, in the standard forester page format. It is not a bulleted list of links — `dhsorens-talks.tree` and `dhsorens-slides.tree` are lists because a talk has no tree to render, but a note does.
-- **Anything with sections is transcluded there through a blurb**, never directly: a corpus (`trees/zk/`, rooted at `dhsorens-002C`, 72 trees) or a sectioned note (`dhsorens-004D` and its four children) would otherwise become the whole page. A blurb is an ordinary note tree — `A Note on <Topic>`, one paragraph, then links into the pages; `dhsorens-004C` and `dhsorens-004I` are the two in the forest. Transclude the blurb; link the thing. A short standalone note is transcluded directly. Adding a page inside a corpus does not touch the Notes page.
+- **Anything with sections is transcluded there through a blurb**, never directly: a corpus (`trees/zk/`, rooted at `dhsorens-002C`, 72 trees) or a sectioned note (`dhsorens-004D` and its four children) would otherwise become the whole page. A blurb is an ordinary note tree — `A Note on <Topic>`, one paragraph, then links into the pages; `dhsorens-004C` and `dhsorens-004I` are the two in the forest. Transclude the blurb; link the thing. A short standalone note is transcluded directly. A corpus page is never transcluded there — the blurb is the item on the Notes page.
+
+## Session records
+
+Every session that changes `trees/` records itself in two places. This is part of publishing, not an afterthought: it is how the site stays a running account of what has actually been studied.
+
+1. **A blurb on the Notes page.** Write an ordinary note tree — `A Note on <Topic>`, one paragraph on what the session covered and what it concluded, then a `\ul{}` of links into the pages it touched — and prepend `\transclude{dhsorens-XXXX} % <label>` to the transclude block at the bottom of `trees/dhsorens-notes.tree`. `dhsorens-004R`, `dhsorens-004I`, and `dhsorens-004C` are the working examples.
+2. **The Latest Deep-Dive.** Rewrite the body of `trees/notes/dhsorens-001S.tree` to point at the session's main output, and bump its `\date`.
+
+This holds for a session that only fills in pages inside a corpus, which is the case the rule exists for: the corpus page stays unlisted, and the blurb is the only trail on the Notes page that the work happened. Where a session extends a topic that already has a blurb, judge whether to rewrite that blurb or add a new one — a new section of an existing corpus is usually a new blurb, a correction to one page is usually an edit.
+
+The blurb is a record, not an announcement. Say what was covered and what is still open, in the register of the surrounding notes.
 
 ## Workflows
 
