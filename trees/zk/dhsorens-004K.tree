@@ -1,0 +1,8 @@
+\title{Special Soundness}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    Sources: [Fiat–Shamir Transformation of Multi-Round Interactive Proofs](https://eprint.iacr.org/2021/1377) (Attema, Fehr, Klooß) for the #{(Q+1)\kappa} bound, [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256) for the generalised versions and their implications, and \code{ArkLib/OracleReduction/Security/SpecialSoundness.lean}.
+}
+
