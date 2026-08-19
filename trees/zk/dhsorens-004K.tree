@@ -1,0 +1,7 @@
+\title{Special Soundness}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    ArkLib formalises it through transcript trees generic in a \em{shape}. \code{distinctShape k} is the shape with branching arity #{k_i} whose node predicate requires the #{k_i} sibling challenges at each round to be pairwise distinct, and \code{Verifier.specialSound} is the instance of the shape-generic \code{treeSpecialSound} at that shape. The genericity is not gratuitous: \code{CoordinateWiseSpecialSoundness} handles protocols whose challenges are vectors and whose extractor needs distinctness in a coordinate rather than in the whole challenge, and ArkLib proves that plain special soundness is the \code{distinctShape} case of it. Real protocols keep needing branching conditions other than "all siblings differ."
+}
