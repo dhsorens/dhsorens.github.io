@@ -1,0 +1,7 @@
+\title{Special Soundness}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    Where special soundness stops is the [FRI](dhsorens-0037) family. Extraction there does not go through a transcript tree at all — it goes through [list decoding](dhsorens-002P), recovering a codeword close to the prover's oracles, and the argument's structure is a distance bound rather than a system of equations. That is why the low-degree testing pages are analysed [round-by-round](dhsorens-004L) instead, and why the two techniques appear side by side in the same system: the algebraic components get special soundness, the proximity components get a state function.
+}
