@@ -45,6 +45,31 @@
       <fr:mainmatter>
         <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
           <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-ethereum/</fr:uri>
+            <fr:display-uri>dhsorens-ethereum</fr:display-uri>
+            <fr:route>/dhsorens-ethereum/</fr:route>
+            <fr:title text="Ethereum">Ethereum</fr:title>
+            <fr:taxon>Protocol</fr:taxon>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:link href="https://ethereum.org/" type="external">https://ethereum.org</fr:link>
+            <html:p>
+    The protocol, as distinct from the <fr:link href="/dhsorens-ef/" title="Ethereum Foundation" uri="https://derekhsorensen.com/dhsorens-ef/" display-uri="dhsorens-ef" type="local">Ethereum Foundation</fr:link>, where I work on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">verifying its snarkification</fr:link>. Its choice of hash functions is the subject of <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">a separate note</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
             <fr:authors />
             <fr:date>
               <fr:year>2025</fr:year>

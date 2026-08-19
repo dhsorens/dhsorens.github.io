@@ -2273,7 +2273,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    The constraints that come from the deployment target rather than the mathematics. Ethereum wants blocks proved in seconds, on modest hardware, at a security level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link> for the broader effort, and <fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link> for the talk.
+    The constraints that come from the deployment target rather than the mathematics. <fr:link href="/dhsorens-ethereum/" title="Ethereum" uri="https://derekhsorensen.com/dhsorens-ethereum/" display-uri="dhsorens-ethereum" type="local">Ethereum</fr:link> wants blocks proved in seconds, on modest hardware, at a security level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link> for the broader effort, and <fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link> for the talk.
 </html:p>
                 <fr:tree show-metadata="false">
                   <fr:frontmatter>

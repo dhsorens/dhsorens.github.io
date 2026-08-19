@@ -20,7 +20,7 @@
   </fr:frontmatter>
   <fr:mainmatter>
     <html:p>
-    The constraints that come from the deployment target rather than the mathematics. Ethereum wants blocks proved in seconds, on modest hardware, at a security level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link> for the broader effort, and <fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link> for the talk.
+    The constraints that come from the deployment target rather than the mathematics. <fr:link href="/dhsorens-ethereum/" title="Ethereum" uri="https://derekhsorensen.com/dhsorens-ethereum/" display-uri="dhsorens-ethereum" type="local">Ethereum</fr:link> wants blocks proved in seconds, on modest hardware, at a security level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link> for the broader effort, and <fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link> for the talk.
 </html:p>
     <fr:tree show-metadata="false">
       <fr:frontmatter>
@@ -2229,7 +2229,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    The constraints that come from the deployment target rather than the mathematics. Ethereum wants blocks proved in seconds, on modest hardware, at a security level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link> for the broader effort, and <fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link> for the talk.
+    The constraints that come from the deployment target rather than the mathematics. <fr:link href="/dhsorens-ethereum/" title="Ethereum" uri="https://derekhsorensen.com/dhsorens-ethereum/" display-uri="dhsorens-ethereum" type="local">Ethereum</fr:link> wants blocks proved in seconds, on modest hardware, at a security level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link> for the broader effort, and <fr:link href="/dhsorens-0022/" title="Safely Snarkifying the Ethereum Protocol" uri="https://derekhsorensen.com/dhsorens-0022/" display-uri="dhsorens-0022" type="local">Safely Snarkifying the Ethereum Protocol</fr:link> for the talk.
 </html:p>
                 <fr:tree show-metadata="false">
                   <fr:frontmatter>
@@ -2451,6 +2451,31 @@
             </fr:authors>
             <fr:date>
               <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-ethereum/</fr:uri>
+            <fr:display-uri>dhsorens-ethereum</fr:display-uri>
+            <fr:route>/dhsorens-ethereum/</fr:route>
+            <fr:title text="Ethereum">Ethereum</fr:title>
+            <fr:taxon>Protocol</fr:taxon>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:link href="https://ethereum.org/" type="external">https://ethereum.org</fr:link>
+            <html:p>
+    The protocol, as distinct from the <fr:link href="/dhsorens-ef/" title="Ethereum Foundation" uri="https://derekhsorensen.com/dhsorens-ef/" display-uri="dhsorens-ef" type="local">Ethereum Foundation</fr:link>, where I work on <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">verifying its snarkification</fr:link>. Its choice of hash functions is the subject of <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">a separate note</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
               <fr:month>4</fr:month>
               <fr:day>2</fr:day>
             </fr:date>
@@ -2489,7 +2514,7 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. My main focus is currently on <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link> and <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+    There are ongoing efforts to "snarkify" <fr:link href="/dhsorens-ethereum/" title="Ethereum" uri="https://derekhsorensen.com/dhsorens-ethereum/" display-uri="dhsorens-ethereum" type="local">Ethereum</fr:link>, i.e. to integrate <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. My main focus is currently on <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link> and <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
 </html:p>
             <html:p>
     See <fr:link href="http://verified-zkevm.org/" type="external">our website</fr:link> for more information.

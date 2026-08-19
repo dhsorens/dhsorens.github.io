@@ -354,7 +354,7 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    Ethereum's workhorse is <html:code>keccak256</html:code>, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and Ethereum had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
+    Ethereum's workhorse is <html:code>keccak256</html:code>, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and <fr:link href="/dhsorens-ethereum/" title="Ethereum" uri="https://derekhsorensen.com/dhsorens-ethereum/" display-uri="dhsorens-ethereum" type="local">Ethereum</fr:link> had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
 </html:p>
             <html:p>
     It is used almost everywhere state is named. An address is the last 20 bytes of the Keccak digest of a public key; a mapping's storage slot is the digest of the key concatenated with the slot number; Merkle–Patricia trie nodes are addressed by the digest of their RLP encoding; function selectors and event topics are digest prefixes; and the <html:code>KECCAK256</html:code> opcode exposes it to contracts directly.
@@ -428,7 +428,7 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    Ethereum's workhorse is <html:code>keccak256</html:code>, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and Ethereum had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
+    Ethereum's workhorse is <html:code>keccak256</html:code>, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and <fr:link href="/dhsorens-ethereum/" title="Ethereum" uri="https://derekhsorensen.com/dhsorens-ethereum/" display-uri="dhsorens-ethereum" type="local">Ethereum</fr:link> had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
 </html:p>
             <html:p>
     It is used almost everywhere state is named. An address is the last 20 bytes of the Keccak digest of a public key; a mapping's storage slot is the digest of the key concatenated with the slot number; Merkle–Patricia trie nodes are addressed by the digest of their RLP encoding; function selectors and event topics are digest prefixes; and the <html:code>KECCAK256</html:code> opcode exposes it to contracts directly.
