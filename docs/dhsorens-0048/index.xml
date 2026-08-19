@@ -217,7 +217,6 @@
             <fr:display-uri>dhsorens-004D</fr:display-uri>
             <fr:route>/dhsorens-004D/</fr:route>
             <fr:title text="Hash Functions in Bitcoin and Ethereum">Hash Functions in Bitcoin and Ethereum</fr:title>
-            <fr:taxon>Blog</fr:taxon>
             <fr:meta name="toc">true</fr:meta>
           </fr:frontmatter>
           <fr:mainmatter>
@@ -468,7 +467,6 @@
             <fr:display-uri>dhsorens-004D</fr:display-uri>
             <fr:route>/dhsorens-004D/</fr:route>
             <fr:title text="Hash Functions in Bitcoin and Ethereum">Hash Functions in Bitcoin and Ethereum</fr:title>
-            <fr:taxon>Blog</fr:taxon>
             <fr:meta name="toc">true</fr:meta>
           </fr:frontmatter>
           <fr:mainmatter>
