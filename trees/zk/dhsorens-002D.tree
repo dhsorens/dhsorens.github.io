@@ -12,6 +12,7 @@
 }
 
 \transclude{dhsorens-002E} % IPs, arguments, IOPs
+\transclude{dhsorens-004T} % completeness
 \transclude{dhsorens-002F} % soundness notions
 \transclude{dhsorens-004S} % compilation
 \transclude{dhsorens-002G} % Fiat-Shamir and the ROM

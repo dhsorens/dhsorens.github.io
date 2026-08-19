@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    [ArkLib](dhsorens-0040)'s organising abstraction, and the reason it can hope to cover many protocols rather than one. A reduction maps one relation to another; a protocol is a composition of reductions; completeness and soundness are proved once per component.
+    [ArkLib](dhsorens-0040)'s organising abstraction, and the reason it can hope to cover many protocols rather than one. A reduction maps one relation to another; a protocol is a composition of reductions; [completeness](dhsorens-004T) and [soundness](dhsorens-002F) are proved once per component.
 }
 
 \p{

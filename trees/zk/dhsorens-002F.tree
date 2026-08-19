@@ -4,7 +4,7 @@
 \meta{toc}{true}
 
 \p{
-    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement, except with small probability. Completeness is the matching guarantee for an honest prover with a true statement, and is almost never where a protocol fails. The definition has to name the adversary: which provers, in which game, with which oracles.
+    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement, except with small probability. [Completeness](dhsorens-004T) is the matching guarantee for an honest prover with a true statement, and is almost never where a protocol fails. The definition has to name the adversary: which provers, in which game, with which oracles.
 }
 
 \p{
