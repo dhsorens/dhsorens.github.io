@@ -27,7 +27,7 @@
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
         <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
-        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
+        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> analysis or bolted on afterwards, and how it enters the <fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">state-restoration</fr:link> bound.</html:li></html:ul></html:p>
   </fr:mainmatter>
   <fr:backmatter>
     <fr:tree show-metadata="false" hidden-when-empty="true">
@@ -95,7 +95,7 @@
         <html:li>Commit phase and query phase; the round-consistency check the verifier performs.</html:li>
         <html:li>Parameters and their interaction: rate, folding factor, number of rounds, number of query repetitions.</html:li>
         <html:li>Prover cost — encoding, Merkle hashing, and where the time actually goes.</html:li>
-        <html:li>The soundness statement, with the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link> named explicitly.</html:li>
+        <html:li><fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">The soundness statement</fr:link>, with the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link> named explicitly.</html:li>
         <html:li>What ArkLib's <html:code>ProofSystem/Fri</html:code> states, and how far the proof gets.</html:li></html:ul></html:p>
                 <html:p>
     Reading: Ben-Sasson, Bentov, Horesh, and Riabzev, <html:em>Fast Reed–Solomon Interactive Oracle Proofs of Proximity</html:em> (ICALP 2018); <fr:link href="https://eprint.iacr.org/2026/1367" type="external">the SoK</fr:link> for the corrected attributions.
@@ -128,7 +128,7 @@
     <html:ul><html:li>Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the parameters each licenses.</html:li>
         <html:li>What must be conjectured to reach capacity, and the precise statement of each conjecture.</html:li>
         <html:li>Threshold halving, and what it establishes above the Johnson bound.</html:li>
-        <html:li>The accounting from soundness error to bits of security, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
+        <html:li>The accounting <fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">from soundness error to bits of security</fr:link>, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
         <html:li>Which deployed systems set parameters in which regime — and whether the choice is documented anywhere citable.</html:li></html:ul></html:p>
                 <html:p>
     Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>, <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound</fr:link>.
@@ -194,7 +194,7 @@
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
         <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
-        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
+        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> analysis or bolted on afterwards, and how it enters the <fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">state-restoration</fr:link> bound.</html:li></html:ul></html:p>
               </fr:mainmatter>
             </fr:tree>
             <fr:tree show-metadata="false">
@@ -283,6 +283,199 @@
             <fr:date>
               <fr:year>2026</fr:year>
               <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004P/</fr:uri>
+            <fr:display-uri>dhsorens-004P</fr:display-uri>
+            <fr:route>/dhsorens-004P/</fr:route>
+            <fr:title text="Amplification and Repetition">Amplification and Repetition</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Repetition is how most of a security level is actually bought, and the theorem licensing it is narrower than the practice suggests. The rate at which error decays depends on the round count and on whether the protocol is public-coin, and there are counterexamples where it does not decay at all.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Sequential and parallel repetition, and when <fr:tex display="inline"><![CDATA[r]]></fr:tex> repetitions take a soundness error <fr:tex display="inline"><![CDATA[\epsilon ]]></fr:tex> to <fr:tex display="inline"><![CDATA[\epsilon ^r]]></fr:tex>.</html:li>
+        <html:li>Bellare, Impagliazzo, and Naor's four-message argument whose <fr:tex display="inline"><![CDATA[n]]></fr:tex>-fold parallel repetition keeps error <fr:tex display="inline"><![CDATA[1/2]]></fr:tex>, and Pietrzak and Wikström's eight-message strengthening. Parallel repetition is only unconditionally safe for arguments of at most three rounds.</html:li>
+        <html:li>Håstad, Pass, Wikström, and Pietrzak: parallel repetition does decay exponentially for public-coin arguments, which is the case every deployed system is in. This is one of the concrete reasons <fr:link href="/dhsorens-002E/" title="Interactive Proofs, Arguments, and IOPs" uri="https://derekhsorensen.com/dhsorens-002E/" display-uri="dhsorens-002E" type="local">public-coin matters</fr:link>.</html:li>
+        <html:li>Query repetition in <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> is a different operation from repeating the protocol — same exponent, different object. Which one a parameter table means.</html:li>
+        <html:li>How repetition interacts with the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round error</fr:link>, with <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>, and with proof size; and whether fixed-weight repetition variants change the accounting.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: Bellare, Impagliazzo, and Naor, <html:em>Does Parallel Repetition Lower the Error in Computationally Sound Protocols?</html:em> (FOCS 1997); Pietrzak and Wikström, <html:em>Parallel Repetition of Computationally Sound Protocols Revisited</html:em>; Håstad, Pass, Wikström, and Pietrzak on public-coin arguments.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004S/</fr:uri>
+            <fr:display-uri>dhsorens-004S</fr:display-uri>
+            <fr:route>/dhsorens-004S/</fr:route>
+            <fr:title text="Compilation">Compilation</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The step from an interactive public-coin protocol to a proof that can be sent as a string. When the protocol is an IOP, the <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS transform</fr:link> realises the oracles and <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> removes the interaction; when it is already an IP, Fiat–Shamir is the whole compilation. A <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">soundness</fr:link> theorem about the interactive protocol does not automatically apply to the result.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The pipeline: which steps, in which order, and what each assumes about the protocol.</html:li>
+        <html:li>What the compiled adversary can do that the interactive one cannot — <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>, <fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">restoring prefixes</fr:link> — and which soundness notions constrain it.</html:li>
+        <html:li>When Fiat–Shamir alone is the compilation and when BCS sits in front of it.</html:li>
+        <html:li>The compilation loss: how the interactive error becomes a non-interactive one, and when the bound is vacuous.</html:li>
+        <html:li>Where <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> states the compiled theorems.</html:li></html:ul></html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link>; Ben-Sasson, Chiesa, and Spooner, <html:em>Interactive Oracle Proofs</html:em>; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>OracleReduction/FiatShamir</html:code>, <html:code>OracleReduction/BCS</html:code>).
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004N/</fr:uri>
+            <fr:display-uri>dhsorens-004N</fr:display-uri>
+            <fr:route>/dhsorens-004N/</fr:route>
+            <fr:title text="From Soundness Error to Bits of Security">From Soundness Error to Bits of Security</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    A bit-security figure is a claim about a bound, and two conventions for turning an error into bits are both in circulation. The bound for a hash-based argument has the shape
+</html:p>
+            <fr:tex display="block"><![CDATA[\Pr (\text {forge}) \;\le \; t \cdot  \epsilon _{\mathrm {sr}} \;+\; \text {collision terms},]]></fr:tex>
+            <html:p>
+    with <fr:tex display="inline"><![CDATA[t]]></fr:tex> the adversary's hash evaluations and <fr:tex display="inline"><![CDATA[\epsilon _{\mathrm {sr}}]]></fr:tex> the <fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">state-restoration</fr:link> error of one attempt. One convention reads "<fr:tex display="inline"><![CDATA[\lambda ]]></fr:tex> bits" as <fr:tex display="inline"><![CDATA[\epsilon _{\mathrm {sr}} \le  2^{-\lambda }]]></fr:tex>; the other reads it as the requirement that success probability stay below <fr:tex display="inline"><![CDATA[t/2^{\lambda }]]></fr:tex> for every <fr:tex display="inline"><![CDATA[t]]></fr:tex>, so that <fr:tex display="inline"><![CDATA[2^{\lambda }]]></fr:tex> work is needed for constant success. The two differ by exactly the factor <fr:tex display="inline"><![CDATA[t]]></fr:tex>, and <fr:tex display="inline"><![CDATA[t]]></fr:tex> is not small: at a query budget of <fr:tex display="inline"><![CDATA[2^{60}]]></fr:tex>, a system quoting 100 bits under the first convention offers <fr:tex display="inline"><![CDATA[2^{-40}]]></fr:tex> against that adversary. Neither convention is wrong, and a number quoted without saying which is not yet information.
+</html:p>
+            <html:p>
+    The terms in the bound have different provenances, which is the part worth holding in view when reading a parameter table.
+    <html:ul><html:li>Rounds add: the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> errors sum to <fr:tex display="inline"><![CDATA[\epsilon _{\mathrm {sr}} = \sum _i \epsilon _i]]></fr:tex>, so a protocol with many cheap rounds pays for each of them.</html:li>
+        <html:li><fr:link href="/dhsorens-004P/" title="Amplification and Repetition" uri="https://derekhsorensen.com/dhsorens-004P/" display-uri="dhsorens-004P" type="local">Repetitions</fr:link> multiply: <fr:tex display="inline"><![CDATA[r]]></fr:tex> independent repetitions take an error <fr:tex display="inline"><![CDATA[\epsilon ]]></fr:tex> to <fr:tex display="inline"><![CDATA[\epsilon ^r]]></fr:tex>. For the repeated queries inside a low-rate <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> configuration this is where most of the security level comes from.</html:li>
+        <html:li>Compilation multiplies by the query budget, as above — this is the <fr:tex display="inline"><![CDATA[t]]></fr:tex> that separates the two conventions.</html:li>
+        <html:li><fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">Grinding</fr:link> divides: <fr:tex display="inline"><![CDATA[b]]></fr:tex> bits of proof-of-work reduce an adversary's <fr:tex display="inline"><![CDATA[t]]></fr:tex> hash evaluations to about <fr:tex display="inline"><![CDATA[t/2^{b}]]></fr:tex> state-restoration attempts.</html:li>
+        <html:li>The <fr:link href="/dhsorens-0031/" title="Merkle Trees and Vector Commitments" uri="https://derekhsorensen.com/dhsorens-0031/" display-uri="dhsorens-0031" type="local">commitment</fr:link> contributes its own term, a Merkle collision probability of order <fr:tex display="inline"><![CDATA[t^2/2^{n}]]></fr:tex> for an <fr:tex display="inline"><![CDATA[n]]></fr:tex>-bit digest. This is the reason a 128-bit target is paired with a 256-bit hash rather than a 128-bit one.</html:li></html:ul>
+    The claimed level is set by the largest term, so an analysis that is tight on four of them and loose on the fifth has established only what the loose one gives.
+</html:p>
+            <html:p><fr:link href="/dhsorens-003L/" title="IVC and Proof-Carrying Data" uri="https://derekhsorensen.com/dhsorens-003L/" display-uri="dhsorens-003L" type="local">Recursion</fr:link> is where this becomes hard to audit. Errors add across layers, and the outermost <fr:link href="/dhsorens-003P/" title="Wrapping and On-Chain Verification" uri="https://derekhsorensen.com/dhsorens-003P/" display-uri="dhsorens-003P" type="local">wrapping proof</fr:link> — usually a different proof system over a different field, chosen for on-chain verification cost rather than for its security margin — often contributes the dominant term. A system whose inner argument is analysed to 128 bits and whose wrapper is not analysed at all has an unknown security level, not a 128-bit one.
+</html:p>
+            <html:p>
+    Then there is the question of which <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex> to use, and it does not have a single answer: the same protocol admits different round-by-round errors depending on how far past the unique-decoding radius the analysis is willing to reason, and the parameters shipped in production sit where the argument is conjectural. That is the subject of <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> and <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>, and the practical consequence is that a deployed figure should be quoted twice, provably and conjecturally. The <fr:link href="https://eprint.iacr.org/2021/582" type="external">ethSTARK documentation</fr:link> does this, and is the deployment document I would point to as the model.
+</html:p>
+            <html:p>
+    None of this measures the best known attack. Every number here bounds what a proof can rule out, and the gap between that bound and the cheapest actual forgery is not quantified anywhere in this literature — which is a reasonable position for a security argument to take, and a bad one to forget when comparing a proof system's "128 bits" against a hash function's. What the <fr:link href="/dhsorens-004A/" title="Security Levels in Production" uri="https://derekhsorensen.com/dhsorens-004A/" display-uri="dhsorens-004A" type="local">production parameters</fr:link> actually add up to is a separate page.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004L/</fr:uri>
+            <fr:display-uri>dhsorens-004L</fr:display-uri>
+            <fr:route>/dhsorens-004L/</fr:route>
+            <fr:title text="Round-by-Round Soundness">Round-by-Round Soundness</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Round-by-round soundness replaces one global bound with a bound per round, and that locality is what makes it compile. Canetti, Chen, Holmgren, Lombardi, Rothblum, and Rothblum introduced it to prove Fiat–Shamir secure under an assumption on the hash function rather than by fiat. The definition asks for a <html:em>state function</html:em>: a labelling of each pair (statement, transcript prefix) as doomed or not, satisfying three conditions.
+    <html:ul><html:li>If <fr:tex display="inline"><![CDATA[x \notin  L]]></fr:tex>, the empty transcript is doomed.</html:li>
+        <html:li>If a prefix is doomed, it stays doomed after the prover's next message — unconditionally, for every message — and after the following challenge except with probability at most <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex> over that challenge.</html:li>
+        <html:li>A doomed complete transcript is rejected.</html:li></html:ul>
+    Plain soundness follows with error <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } \epsilon _i]]></fr:tex>: to be accepted from a false statement the transcript must escape doom at some round, and the sum is a union bound over the rounds where that can happen.
+</html:p>
+            <html:p>
+    Splitting the two propagation conditions is the point of the definition. A prover message can never help — only the verifier's randomness can undoom a prefix — so the entire error budget sits on the challenge rounds, one <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex> apiece. An adversary who grinds on a hash is choosing among candidate challenges at some round, and the round-by-round bound says what each attempt is worth. A monolithic soundness bound cannot: it constrains the honest interaction and says nothing about a prover that retries one round.
+</html:p>
+            <html:p>
+    In the standard model the payoff is a theorem. Canetti et al. proved that <fr:tex display="inline"><![CDATA[\mathrm {FS}(\Pi , \mathcal {H})]]></fr:tex> is computationally sound whenever <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> is round-by-round sound and <fr:tex display="inline"><![CDATA[\mathcal {H}]]></fr:tex> is correlation intractable for the relation derived from the state function. In the random oracle model the compilation loss is linear in the adversary's query count. Either way the hypothesis is round-by-round soundness, which is why the notion appears in every modern security proof of a deployed hash-based system and why a paper proving only end-to-end soundness has not yet said anything about its own non-interactive version.
+</html:p>
+            <html:p>
+    Round-by-round <html:em>knowledge</html:em> soundness adds a round-by-round extractor to the state function, so that a doomed prefix witnesses the impossibility of extraction rather than the falsity of a statement. This is the form the practical results take. Block, Garreta, Katz, Thaler, Tiwari, and Zając proved round-by-round soundness and round-by-round knowledge soundness for <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> and <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">batched FRI</fr:link>, and for a class they call <fr:tex display="inline"><![CDATA[\delta ]]></fr:tex>-correlated protocols — which covers Plonky2, Redshift, ethSTARK, and RISC Zero — giving the first formal Fiat–Shamir security proof for FRI. Their reduction is the reusable part: a <fr:tex display="inline"><![CDATA[\delta ]]></fr:tex>-correlated protocol that is round-by-round sound <html:em>under the assumption that adversaries send low-degree polynomials</html:em> is round-by-round sound in general.
+</html:p>
+            <html:p>
+    The cost of the notion is that a proof has to exhibit the state function, and for the interesting protocols that is the whole difficulty. For FRI it is a statement about the distance from the prover's oracle to the Reed–Solomon code, so the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">decoding regime</fr:link> and the <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gap</fr:link> available in that regime appear inside <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex>. This is the seam where a conjecture enters a deployed security claim, and it enters through the round-by-round error rather than anywhere more visible.
+</html:p>
+            <html:p>
+    ArkLib's <html:code>OracleReduction/Security/RoundByRound.lean</html:code> makes the state function a structure — <html:code>toFun</html:code> of type <fr:tex display="inline"><![CDATA[(m : \mathrm {Fin}(n+1)) \to  \mathrm {StmtIn} \to  \mathrm {Transcript}\, m \to  \mathrm {Prop}]]></fr:tex>, with fields <html:code>toFun_empty</html:code>, <html:code>toFun_next</html:code>, and <html:code>toFun_full</html:code> for the three conditions — and defines <html:code>rbrSoundness</html:code> as a bound on the probability of a bad transition at each challenge index. <html:code>rbrKnowledgeSoundness</html:code> additionally carries intermediate witness types, a round-by-round extractor, and a knowledge state function. Because ArkLib works with <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">reductions</fr:link> rather than proofs, both are stated relative to an input and an output language.
+</html:p>
+            <html:p>
+    Sources: Canetti, Chen, Holmgren, Lombardi, Rothblum, and Rothblum, <html:em>Fiat–Shamir: from practice to theory</html:em> (STOC 2019); <fr:link href="https://eprint.iacr.org/2023/1071" type="external">Fiat–Shamir Security of FRI and Related SNARKs</fr:link>; <html:code>ArkLib/OracleReduction/Security/RoundByRound.lean</html:code>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004M/</fr:uri>
+            <fr:display-uri>dhsorens-004M</fr:display-uri>
+            <fr:route>/dhsorens-004M/</fr:route>
+            <fr:title text="State-Restoration Soundness">State-Restoration Soundness</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    State-restoration soundness models the one power Fiat–Shamir hands the prover: the ability to retry. In the state-restoration game the prover builds transcripts against a challenge oracle that, given a statement and any prefix, returns that prefix's challenge; it may return to any prefix it has already constructed, send a different message, and receive the corresponding challenge, as many times as its budget allows. It wins if any completed transcript is accepting for a false statement. Ben-Sasson, Chiesa, and Spooner introduced the notion with the <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS transform</fr:link>, and it is the hypothesis that transform is proved against.
+</html:p>
+            <html:p>
+    The correspondence with the compiled protocol is exact rather than analogical. A non-interactive prover holding the hash computes the challenge for any prefix it likes by querying the oracle, so the ordering of an interactive execution is not enforced — nothing stops it from abandoning a prefix and trying another message at the same point. State-restoration soundness assumes precisely that adversary and no more, which is why the notion is more convenient than plain soundness at the compilation step and less convenient anywhere else.
+</html:p>
+            <html:p>
+    Holmgren proved that round-by-round soundness and soundness against state-restoration attacks are equivalent, up to a polynomial loss in the number of restoration attempts. The two notions are therefore interchangeable as hypotheses, and the choice between them is a choice of proof convenience: <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> is local, so it is what a paper proves; state restoration names the adversary, so it is what a bound on real attack cost is stated against. Knowing they coincide is what licenses moving between the two halves of a security argument.
+</html:p>
+            <html:p>
+    The budget is where engineering enters. The adversary's success probability scales with the number of restoration attempts, so anything that makes an attempt expensive buys bits. <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">Proof-of-work grinding</fr:link> is exactly this: requiring each prover message to be accompanied by a nonce whose hash has <fr:tex display="inline"><![CDATA[b]]></fr:tex> leading zeros means an adversary with <fr:tex display="inline"><![CDATA[t]]></fr:tex> hash evaluations gets about <fr:tex display="inline"><![CDATA[t/2^b]]></fr:tex> attempts rather than <fr:tex display="inline"><![CDATA[t]]></fr:tex>, and the <fr:tex display="inline"><![CDATA[b]]></fr:tex> bits show up in the state-restoration bound and nowhere else in the protocol. It is also why a deployed security level cannot be read off the interactive analysis alone.
+</html:p>
+            <html:p>
+    Salting works in the same accounting. ArkLib's <html:code>Salt.lean</html:code> adds per-message randomness to a protocol, and <html:code>srSoundness_addSalt_implies_srSoundness_original</html:code> runs in the direction that makes salting free to assume: state-restoration soundness of the salted protocol gives it for the original, with the knowledge version proved alongside. Both state-restoration notions then imply their straightline counterparts with the error preserved — <html:code>srSoundness_implies_soundness</html:code> and <html:code>srKnowledgeSoundness_implies_knowledgeSoundness</html:code> — so the state-restoration analysis is the strongest of the hash-based statements and everything else in the chain follows from it.
+</html:p>
+            <html:p>
+    Sources: Ben-Sasson, Chiesa, and Spooner, <html:em>Interactive Oracle Proofs</html:em> (TCC 2016); <fr:link href="https://eprint.iacr.org/2019/1261" type="external">On Round-By-Round Soundness and State Restoration Attacks</fr:link>; <html:code>ArkLib/OracleReduction/Security/StateRestoration.lean</html:code>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
               <fr:day>18</fr:day>
             </fr:date>
             <fr:uri>https://derekhsorensen.com/dhsorens-004E/</fr:uri>
@@ -323,8 +516,7 @@
             <fr:title text="Security Levels in Production">Security Levels in Production</fr:title>
           </fr:frontmatter>
           <fr:mainmatter>
-            <html:p>
-    What bit-security a deployed system actually claims, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
+            <html:p><fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">What bit-security a deployed system actually claims</fr:link>, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
 </html:p>
             <html:p>
     Questions this page should answer:
@@ -333,39 +525,6 @@
         <html:li>The accounting across <fr:link href="/dhsorens-003L/" title="IVC and Proof-Carrying Data" uri="https://derekhsorensen.com/dhsorens-003L/" display-uri="dhsorens-003L" type="local">recursion</fr:link> layers, where errors compose.</html:li>
         <html:li>Who is responsible for the number: protocol designers, implementers, or auditors.</html:li>
         <html:li>What a machine-checked parameter calculation would look like, and whether it is a reasonable thing to build.</html:li></html:ul></html:p>
-          </fr:mainmatter>
-        </fr:tree>
-        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
-          <fr:frontmatter>
-            <fr:authors>
-              <fr:author>
-                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
-              </fr:author>
-            </fr:authors>
-            <fr:date>
-              <fr:year>2026</fr:year>
-              <fr:month>8</fr:month>
-              <fr:day>18</fr:day>
-            </fr:date>
-            <fr:uri>https://derekhsorensen.com/dhsorens-002F/</fr:uri>
-            <fr:display-uri>dhsorens-002F</fr:display-uri>
-            <fr:route>/dhsorens-002F/</fr:route>
-            <fr:title text="Soundness Notions">Soundness Notions</fr:title>
-          </fr:frontmatter>
-          <fr:mainmatter>
-            <html:p>
-    Which soundness a theorem is about determines whether it survives the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link>. A table of the notions, the implications between them, and which compilation step preserves each belongs on this page.
-</html:p>
-            <html:p>
-    Questions this page should answer:
-    <html:ul><html:li>Soundness, knowledge soundness, special soundness — and the implications between them.</html:li>
-        <html:li>Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.</html:li>
-        <html:li>Soundness error versus security level in bits; how error accumulates across rounds, queries, and repetitions.</html:li>
-        <html:li>Provable versus conjectured soundness, and which deployed parameters rest on which. See <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>.</html:li>
-        <html:li>What "128-bit security" means for a hash-based system once <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> is counted.</html:li></html:ul></html:p>
-            <html:p>
-    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic.
-</html:p>
           </fr:mainmatter>
         </fr:tree>
         <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
@@ -394,7 +553,7 @@
     <html:ul><html:li>Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the parameters each licenses.</html:li>
         <html:li>What must be conjectured to reach capacity, and the precise statement of each conjecture.</html:li>
         <html:li>Threshold halving, and what it establishes above the Johnson bound.</html:li>
-        <html:li>The accounting from soundness error to bits of security, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
+        <html:li>The accounting <fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">from soundness error to bits of security</fr:link>, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
         <html:li>Which deployed systems set parameters in which regime — and whether the choice is documented anywhere citable.</html:li></html:ul></html:p>
             <html:p>
     Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>, <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound</fr:link>.
@@ -409,6 +568,89 @@
         <fr:title text="Related">Related</fr:title>
       </fr:frontmatter>
       <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004L/</fr:uri>
+            <fr:display-uri>dhsorens-004L</fr:display-uri>
+            <fr:route>/dhsorens-004L/</fr:route>
+            <fr:title text="Round-by-Round Soundness">Round-by-Round Soundness</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Round-by-round soundness replaces one global bound with a bound per round, and that locality is what makes it compile. Canetti, Chen, Holmgren, Lombardi, Rothblum, and Rothblum introduced it to prove Fiat–Shamir secure under an assumption on the hash function rather than by fiat. The definition asks for a <html:em>state function</html:em>: a labelling of each pair (statement, transcript prefix) as doomed or not, satisfying three conditions.
+    <html:ul><html:li>If <fr:tex display="inline"><![CDATA[x \notin  L]]></fr:tex>, the empty transcript is doomed.</html:li>
+        <html:li>If a prefix is doomed, it stays doomed after the prover's next message — unconditionally, for every message — and after the following challenge except with probability at most <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex> over that challenge.</html:li>
+        <html:li>A doomed complete transcript is rejected.</html:li></html:ul>
+    Plain soundness follows with error <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } \epsilon _i]]></fr:tex>: to be accepted from a false statement the transcript must escape doom at some round, and the sum is a union bound over the rounds where that can happen.
+</html:p>
+            <html:p>
+    Splitting the two propagation conditions is the point of the definition. A prover message can never help — only the verifier's randomness can undoom a prefix — so the entire error budget sits on the challenge rounds, one <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex> apiece. An adversary who grinds on a hash is choosing among candidate challenges at some round, and the round-by-round bound says what each attempt is worth. A monolithic soundness bound cannot: it constrains the honest interaction and says nothing about a prover that retries one round.
+</html:p>
+            <html:p>
+    In the standard model the payoff is a theorem. Canetti et al. proved that <fr:tex display="inline"><![CDATA[\mathrm {FS}(\Pi , \mathcal {H})]]></fr:tex> is computationally sound whenever <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> is round-by-round sound and <fr:tex display="inline"><![CDATA[\mathcal {H}]]></fr:tex> is correlation intractable for the relation derived from the state function. In the random oracle model the compilation loss is linear in the adversary's query count. Either way the hypothesis is round-by-round soundness, which is why the notion appears in every modern security proof of a deployed hash-based system and why a paper proving only end-to-end soundness has not yet said anything about its own non-interactive version.
+</html:p>
+            <html:p>
+    Round-by-round <html:em>knowledge</html:em> soundness adds a round-by-round extractor to the state function, so that a doomed prefix witnesses the impossibility of extraction rather than the falsity of a statement. This is the form the practical results take. Block, Garreta, Katz, Thaler, Tiwari, and Zając proved round-by-round soundness and round-by-round knowledge soundness for <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> and <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">batched FRI</fr:link>, and for a class they call <fr:tex display="inline"><![CDATA[\delta ]]></fr:tex>-correlated protocols — which covers Plonky2, Redshift, ethSTARK, and RISC Zero — giving the first formal Fiat–Shamir security proof for FRI. Their reduction is the reusable part: a <fr:tex display="inline"><![CDATA[\delta ]]></fr:tex>-correlated protocol that is round-by-round sound <html:em>under the assumption that adversaries send low-degree polynomials</html:em> is round-by-round sound in general.
+</html:p>
+            <html:p>
+    The cost of the notion is that a proof has to exhibit the state function, and for the interesting protocols that is the whole difficulty. For FRI it is a statement about the distance from the prover's oracle to the Reed–Solomon code, so the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">decoding regime</fr:link> and the <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gap</fr:link> available in that regime appear inside <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex>. This is the seam where a conjecture enters a deployed security claim, and it enters through the round-by-round error rather than anywhere more visible.
+</html:p>
+            <html:p>
+    ArkLib's <html:code>OracleReduction/Security/RoundByRound.lean</html:code> makes the state function a structure — <html:code>toFun</html:code> of type <fr:tex display="inline"><![CDATA[(m : \mathrm {Fin}(n+1)) \to  \mathrm {StmtIn} \to  \mathrm {Transcript}\, m \to  \mathrm {Prop}]]></fr:tex>, with fields <html:code>toFun_empty</html:code>, <html:code>toFun_next</html:code>, and <html:code>toFun_full</html:code> for the three conditions — and defines <html:code>rbrSoundness</html:code> as a bound on the probability of a bad transition at each challenge index. <html:code>rbrKnowledgeSoundness</html:code> additionally carries intermediate witness types, a round-by-round extractor, and a knowledge state function. Because ArkLib works with <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">reductions</fr:link> rather than proofs, both are stated relative to an input and an output language.
+</html:p>
+            <html:p>
+    Sources: Canetti, Chen, Holmgren, Lombardi, Rothblum, and Rothblum, <html:em>Fiat–Shamir: from practice to theory</html:em> (STOC 2019); <fr:link href="https://eprint.iacr.org/2023/1071" type="external">Fiat–Shamir Security of FRI and Related SNARKs</fr:link>; <html:code>ArkLib/OracleReduction/Security/RoundByRound.lean</html:code>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004M/</fr:uri>
+            <fr:display-uri>dhsorens-004M</fr:display-uri>
+            <fr:route>/dhsorens-004M/</fr:route>
+            <fr:title text="State-Restoration Soundness">State-Restoration Soundness</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    State-restoration soundness models the one power Fiat–Shamir hands the prover: the ability to retry. In the state-restoration game the prover builds transcripts against a challenge oracle that, given a statement and any prefix, returns that prefix's challenge; it may return to any prefix it has already constructed, send a different message, and receive the corresponding challenge, as many times as its budget allows. It wins if any completed transcript is accepting for a false statement. Ben-Sasson, Chiesa, and Spooner introduced the notion with the <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS transform</fr:link>, and it is the hypothesis that transform is proved against.
+</html:p>
+            <html:p>
+    The correspondence with the compiled protocol is exact rather than analogical. A non-interactive prover holding the hash computes the challenge for any prefix it likes by querying the oracle, so the ordering of an interactive execution is not enforced — nothing stops it from abandoning a prefix and trying another message at the same point. State-restoration soundness assumes precisely that adversary and no more, which is why the notion is more convenient than plain soundness at the compilation step and less convenient anywhere else.
+</html:p>
+            <html:p>
+    Holmgren proved that round-by-round soundness and soundness against state-restoration attacks are equivalent, up to a polynomial loss in the number of restoration attempts. The two notions are therefore interchangeable as hypotheses, and the choice between them is a choice of proof convenience: <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> is local, so it is what a paper proves; state restoration names the adversary, so it is what a bound on real attack cost is stated against. Knowing they coincide is what licenses moving between the two halves of a security argument.
+</html:p>
+            <html:p>
+    The budget is where engineering enters. The adversary's success probability scales with the number of restoration attempts, so anything that makes an attempt expensive buys bits. <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">Proof-of-work grinding</fr:link> is exactly this: requiring each prover message to be accompanied by a nonce whose hash has <fr:tex display="inline"><![CDATA[b]]></fr:tex> leading zeros means an adversary with <fr:tex display="inline"><![CDATA[t]]></fr:tex> hash evaluations gets about <fr:tex display="inline"><![CDATA[t/2^b]]></fr:tex> attempts rather than <fr:tex display="inline"><![CDATA[t]]></fr:tex>, and the <fr:tex display="inline"><![CDATA[b]]></fr:tex> bits show up in the state-restoration bound and nowhere else in the protocol. It is also why a deployed security level cannot be read off the interactive analysis alone.
+</html:p>
+            <html:p>
+    Salting works in the same accounting. ArkLib's <html:code>Salt.lean</html:code> adds per-message randomness to a protocol, and <html:code>srSoundness_addSalt_implies_srSoundness_original</html:code> runs in the direction that makes salting free to assume: state-restoration soundness of the salted protocol gives it for the original, with the knowledge version proved alongside. Both state-restoration notions then imply their straightline counterparts with the error preserved — <html:code>srSoundness_implies_soundness</html:code> and <html:code>srKnowledgeSoundness_implies_knowledgeSoundness</html:code> — so the state-restoration analysis is the strongest of the hash-based statements and everything else in the chain follows from it.
+</html:p>
+            <html:p>
+    Sources: Ben-Sasson, Chiesa, and Spooner, <html:em>Interactive Oracle Proofs</html:em> (TCC 2016); <fr:link href="https://eprint.iacr.org/2019/1261" type="external">On Round-By-Round Soundness and State Restoration Attacks</fr:link>; <html:code>ArkLib/OracleReduction/Security/StateRestoration.lean</html:code>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
         <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
           <fr:frontmatter>
             <fr:authors>
@@ -470,39 +712,6 @@
 </html:p>
             <html:p>
     The conservatism is the design. Twenty-five years of public cryptanalysis with no practical attack on the full function is a stronger argument than any efficiency claim, and it is the argument the <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">2026 Ethereum decision</fr:link> came back around to.
-</html:p>
-          </fr:mainmatter>
-        </fr:tree>
-        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
-          <fr:frontmatter>
-            <fr:authors>
-              <fr:author>
-                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
-              </fr:author>
-            </fr:authors>
-            <fr:date>
-              <fr:year>2026</fr:year>
-              <fr:month>8</fr:month>
-              <fr:day>18</fr:day>
-            </fr:date>
-            <fr:uri>https://derekhsorensen.com/dhsorens-002F/</fr:uri>
-            <fr:display-uri>dhsorens-002F</fr:display-uri>
-            <fr:route>/dhsorens-002F/</fr:route>
-            <fr:title text="Soundness Notions">Soundness Notions</fr:title>
-          </fr:frontmatter>
-          <fr:mainmatter>
-            <html:p>
-    Which soundness a theorem is about determines whether it survives the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link>. A table of the notions, the implications between them, and which compilation step preserves each belongs on this page.
-</html:p>
-            <html:p>
-    Questions this page should answer:
-    <html:ul><html:li>Soundness, knowledge soundness, special soundness — and the implications between them.</html:li>
-        <html:li>Round-by-round soundness and state-restoration soundness: what they demand, and why they were invented.</html:li>
-        <html:li>Soundness error versus security level in bits; how error accumulates across rounds, queries, and repetitions.</html:li>
-        <html:li>Provable versus conjectured soundness, and which deployed parameters rest on which. See <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>.</html:li>
-        <html:li>What "128-bit security" means for a hash-based system once <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link> is counted.</html:li></html:ul></html:p>
-            <html:p>
-    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic.
 </html:p>
           </fr:mainmatter>
         </fr:tree>

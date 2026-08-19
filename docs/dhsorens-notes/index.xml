@@ -35,6 +35,37 @@
         <fr:date>
           <fr:year>2026</fr:year>
           <fr:month>8</fr:month>
+          <fr:day>19</fr:day>
+        </fr:date>
+        <fr:uri>https://derekhsorensen.com/dhsorens-004R/</fr:uri>
+        <fr:display-uri>dhsorens-004R</fr:display-uri>
+        <fr:route>/dhsorens-004R/</fr:route>
+        <fr:title text="A Note on Soundness Notions">A Note on Soundness Notions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <html:p><fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">Soundness notions</fr:link> is the first written-out section of the <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link> corpus: the five things <html:em>sound</html:em> can mean in the security theorem for a proof system, and the implications between them. It organises around one claim — compilation chooses a notion rather than inheriting one, so a protocol proved sound end to end has not yet been proved anything about its deployed form. Khovratovich, Rothblum, and Soukhanov proved false statements against a GKR-based argument whose interactive soundness was never in question.
+</html:p>
+        <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">Soundness, knowledge soundness, and extraction</fr:link> — why soundness is vacuous on a trivial language, why <fr:link href="/dhsorens-003L/" title="IVC and Proof-Carrying Data" uri="https://derekhsorensen.com/dhsorens-003L/" display-uri="dhsorens-003L" type="local">recursion</fr:link> needs an extractor, and straightline extraction against rewinding.</html:li>
+        <html:li><fr:link href="/dhsorens-004K/" title="Special Soundness" uri="https://derekhsorensen.com/dhsorens-004K/" display-uri="dhsorens-004K" type="local">Special soundness</fr:link> — transcript trees, the coordinate-wise variant the lattice commitments run on, and the <fr:tex display="inline"><![CDATA[(Q+1)\kappa ]]></fr:tex> Fiat–Shamir bound that makes a many-round protocol analysable at all.</html:li>
+        <html:li><fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">Round-by-round soundness</fr:link> — state functions, doomed prefixes, and why the whole error budget sits on the challenge rounds.</html:li>
+        <html:li><fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">State-restoration soundness</fr:link> — the retry game the transform actually hands the prover, and its equivalence with round-by-round soundness.</html:li>
+        <html:li><fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">From soundness error to bits of security</fr:link> — the five terms in the bound, and the two conventions for quoting a number of bits.</html:li></html:ul>
+    Three more are open as stubs: <fr:link href="/dhsorens-004O/" title="Adaptive Soundness" uri="https://derekhsorensen.com/dhsorens-004O/" display-uri="dhsorens-004O" type="local">adaptive soundness</fr:link>, which is what the Fiat–Shamir attacks actually break; <fr:link href="/dhsorens-004P/" title="Amplification and Repetition" uri="https://derekhsorensen.com/dhsorens-004P/" display-uri="dhsorens-004P" type="local">amplification and repetition</fr:link>; and <fr:link href="/dhsorens-004Q/" title="Simulation Extractability and Malleability" uri="https://derekhsorensen.com/dhsorens-004Q/" display-uri="dhsorens-004Q" type="local">simulation extractability</fr:link>.
+</html:p>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false">
+      <fr:frontmatter>
+        <fr:authors>
+          <fr:author>
+            <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+          </fr:author>
+        </fr:authors>
+        <fr:date>
+          <fr:year>2026</fr:year>
+          <fr:month>8</fr:month>
           <fr:day>18</fr:day>
         </fr:date>
         <fr:uri>https://derekhsorensen.com/dhsorens-004I/</fr:uri>
@@ -522,7 +553,7 @@ The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</
                 <fr:date>
                   <fr:year>2026</fr:year>
                   <fr:month>8</fr:month>
-                  <fr:day>18</fr:day>
+                  <fr:day>19</fr:day>
                 </fr:date>
                 <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
                 <fr:display-uri>dhsorens-001S</fr:display-uri>
@@ -532,7 +563,7 @@ The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    See my latest on <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash functions in Bitcoin and Ethereum</fr:link> — what each chain actually hashes with, and why the Ethereum Foundation abandoned <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Poseidon</fr:link> for L1 in August 2026, which was not a break of Poseidon but a change on the proving side. The systematic study behind it is <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>.
+    See my latest on <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">soundness notions</fr:link> — the five things <html:em>sound</html:em> can mean in the security theorem for a SNARK, the implications between them, and which of them survives <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>. The short version is that compilation chooses a notion rather than inheriting one, which is why a protocol proved sound end-to-end has not yet been proved anything about its deployed form. It is the first written-out section of the <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link> corpus.
 </html:p>
               </fr:mainmatter>
             </fr:tree>

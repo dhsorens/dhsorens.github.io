@@ -249,7 +249,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    The technical core of every soundness proof in the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family, and the place where deployed parameters stop being provably sound and start being conjecturally sound. It is the most load-bearing page in the section.
+    The technical core of every soundness proof in the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family, and the place where deployed parameters stop being provably sound and start being conjecturally sound. It is the most load-bearing page in the section. The regime reaches a deployed security claim through the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round error</fr:link>, which is the only place it is actually assumed.
 </html:p>
                 <html:p>
     Questions this page should answer:
@@ -286,7 +286,7 @@
 </html:p>
                 <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The protocol and its soundness error, stated with the degree and variable count explicit.</html:li>
+    <html:ul><html:li>The protocol and <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">its soundness error</fr:link>, stated with the degree and variable count explicit.</html:li>
         <html:li>Prover cost: the linear-time algorithm, and what changes when the base field is small.</html:li>
         <html:li>Batching several sumchecks; zero-knowledge variants.</html:li>
         <html:li>Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck meets a <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment scheme</fr:link>.</html:li>
@@ -435,7 +435,7 @@
 </html:p>
             <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The protocol and its soundness error, stated with the degree and variable count explicit.</html:li>
+    <html:ul><html:li>The protocol and <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">its soundness error</fr:link>, stated with the degree and variable count explicit.</html:li>
         <html:li>Prover cost: the linear-time algorithm, and what changes when the base field is small.</html:li>
         <html:li>Batching several sumchecks; zero-knowledge variants.</html:li>
         <html:li>Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck meets a <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment scheme</fr:link>.</html:li>

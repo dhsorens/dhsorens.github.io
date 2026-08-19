@@ -119,7 +119,7 @@
                 <fr:date>
                   <fr:year>2026</fr:year>
                   <fr:month>8</fr:month>
-                  <fr:day>18</fr:day>
+                  <fr:day>19</fr:day>
                 </fr:date>
                 <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
                 <fr:display-uri>dhsorens-001S</fr:display-uri>
@@ -129,7 +129,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    See my latest on <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash functions in Bitcoin and Ethereum</fr:link> — what each chain actually hashes with, and why the Ethereum Foundation abandoned <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Poseidon</fr:link> for L1 in August 2026, which was not a break of Poseidon but a change on the proving side. The systematic study behind it is <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>.
+    See my latest on <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">soundness notions</fr:link> — the five things <html:em>sound</html:em> can mean in the security theorem for a SNARK, the implications between them, and which of them survives <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>. The short version is that compilation chooses a notion rather than inheriting one, which is why a protocol proved sound end-to-end has not yet been proved anything about its deployed form. It is the first written-out section of the <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link> corpus.
 </html:p>
               </fr:mainmatter>
             </fr:tree>

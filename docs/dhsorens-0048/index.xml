@@ -179,8 +179,7 @@
                 <fr:title text="Security Levels in Production">Security Levels in Production</fr:title>
               </fr:frontmatter>
               <fr:mainmatter>
-                <html:p>
-    What bit-security a deployed system actually claims, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
+                <html:p><fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">What bit-security a deployed system actually claims</fr:link>, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
 </html:p>
                 <html:p>
     Questions this page should answer:

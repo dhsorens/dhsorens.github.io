@@ -417,7 +417,7 @@
             <html:p>
     Questions this page should answer:
     <html:ul><html:li>How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".</html:li>
-        <html:li>Completeness as a separate obligation, and whether it is discharged or assumed.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> as a separate obligation, and whether it is discharged or assumed.</html:li>
         <html:li>Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.</html:li>
         <html:li>Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.</html:li>
         <html:li>Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.</html:li>
@@ -454,7 +454,7 @@
         <html:li>Commit phase and query phase; the round-consistency check the verifier performs.</html:li>
         <html:li>Parameters and their interaction: rate, folding factor, number of rounds, number of query repetitions.</html:li>
         <html:li>Prover cost — encoding, Merkle hashing, and where the time actually goes.</html:li>
-        <html:li>The soundness statement, with the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link> named explicitly.</html:li>
+        <html:li><fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">The soundness statement</fr:link>, with the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link> named explicitly.</html:li>
         <html:li>What ArkLib's <html:code>ProofSystem/Fri</html:code> states, and how far the proof gets.</html:li></html:ul></html:p>
             <html:p>
     Reading: Ben-Sasson, Bentov, Horesh, and Riabzev, <html:em>Fast Reed–Solomon Interactive Oracle Proofs of Proximity</html:em> (ICALP 2018); <fr:link href="https://eprint.iacr.org/2026/1367" type="external">the SoK</fr:link> for the corrected attributions.

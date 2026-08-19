@@ -288,7 +288,7 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    How an IOP plus a commitment scheme becomes a non-interactive argument. The transform that every hash-based system in deployment is an instance of.
+    How an IOP plus a commitment scheme becomes a non-interactive argument. The transform that every hash-based system in deployment is an instance of. It is proved against <fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">state-restoration soundness</fr:link> rather than against plain soundness.
 </html:p>
             <html:p>
     Questions this page should answer:

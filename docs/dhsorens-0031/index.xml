@@ -272,6 +272,50 @@
             <fr:date>
               <fr:year>2026</fr:year>
               <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004N/</fr:uri>
+            <fr:display-uri>dhsorens-004N</fr:display-uri>
+            <fr:route>/dhsorens-004N/</fr:route>
+            <fr:title text="From Soundness Error to Bits of Security">From Soundness Error to Bits of Security</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    A bit-security figure is a claim about a bound, and two conventions for turning an error into bits are both in circulation. The bound for a hash-based argument has the shape
+</html:p>
+            <fr:tex display="block"><![CDATA[\Pr (\text {forge}) \;\le \; t \cdot  \epsilon _{\mathrm {sr}} \;+\; \text {collision terms},]]></fr:tex>
+            <html:p>
+    with <fr:tex display="inline"><![CDATA[t]]></fr:tex> the adversary's hash evaluations and <fr:tex display="inline"><![CDATA[\epsilon _{\mathrm {sr}}]]></fr:tex> the <fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">state-restoration</fr:link> error of one attempt. One convention reads "<fr:tex display="inline"><![CDATA[\lambda ]]></fr:tex> bits" as <fr:tex display="inline"><![CDATA[\epsilon _{\mathrm {sr}} \le  2^{-\lambda }]]></fr:tex>; the other reads it as the requirement that success probability stay below <fr:tex display="inline"><![CDATA[t/2^{\lambda }]]></fr:tex> for every <fr:tex display="inline"><![CDATA[t]]></fr:tex>, so that <fr:tex display="inline"><![CDATA[2^{\lambda }]]></fr:tex> work is needed for constant success. The two differ by exactly the factor <fr:tex display="inline"><![CDATA[t]]></fr:tex>, and <fr:tex display="inline"><![CDATA[t]]></fr:tex> is not small: at a query budget of <fr:tex display="inline"><![CDATA[2^{60}]]></fr:tex>, a system quoting 100 bits under the first convention offers <fr:tex display="inline"><![CDATA[2^{-40}]]></fr:tex> against that adversary. Neither convention is wrong, and a number quoted without saying which is not yet information.
+</html:p>
+            <html:p>
+    The terms in the bound have different provenances, which is the part worth holding in view when reading a parameter table.
+    <html:ul><html:li>Rounds add: the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> errors sum to <fr:tex display="inline"><![CDATA[\epsilon _{\mathrm {sr}} = \sum _i \epsilon _i]]></fr:tex>, so a protocol with many cheap rounds pays for each of them.</html:li>
+        <html:li><fr:link href="/dhsorens-004P/" title="Amplification and Repetition" uri="https://derekhsorensen.com/dhsorens-004P/" display-uri="dhsorens-004P" type="local">Repetitions</fr:link> multiply: <fr:tex display="inline"><![CDATA[r]]></fr:tex> independent repetitions take an error <fr:tex display="inline"><![CDATA[\epsilon ]]></fr:tex> to <fr:tex display="inline"><![CDATA[\epsilon ^r]]></fr:tex>. For the repeated queries inside a low-rate <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> configuration this is where most of the security level comes from.</html:li>
+        <html:li>Compilation multiplies by the query budget, as above — this is the <fr:tex display="inline"><![CDATA[t]]></fr:tex> that separates the two conventions.</html:li>
+        <html:li><fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">Grinding</fr:link> divides: <fr:tex display="inline"><![CDATA[b]]></fr:tex> bits of proof-of-work reduce an adversary's <fr:tex display="inline"><![CDATA[t]]></fr:tex> hash evaluations to about <fr:tex display="inline"><![CDATA[t/2^{b}]]></fr:tex> state-restoration attempts.</html:li>
+        <html:li>The <fr:link href="/dhsorens-0031/" title="Merkle Trees and Vector Commitments" uri="https://derekhsorensen.com/dhsorens-0031/" display-uri="dhsorens-0031" type="local">commitment</fr:link> contributes its own term, a Merkle collision probability of order <fr:tex display="inline"><![CDATA[t^2/2^{n}]]></fr:tex> for an <fr:tex display="inline"><![CDATA[n]]></fr:tex>-bit digest. This is the reason a 128-bit target is paired with a 256-bit hash rather than a 128-bit one.</html:li></html:ul>
+    The claimed level is set by the largest term, so an analysis that is tight on four of them and loose on the fifth has established only what the loose one gives.
+</html:p>
+            <html:p><fr:link href="/dhsorens-003L/" title="IVC and Proof-Carrying Data" uri="https://derekhsorensen.com/dhsorens-003L/" display-uri="dhsorens-003L" type="local">Recursion</fr:link> is where this becomes hard to audit. Errors add across layers, and the outermost <fr:link href="/dhsorens-003P/" title="Wrapping and On-Chain Verification" uri="https://derekhsorensen.com/dhsorens-003P/" display-uri="dhsorens-003P" type="local">wrapping proof</fr:link> — usually a different proof system over a different field, chosen for on-chain verification cost rather than for its security margin — often contributes the dominant term. A system whose inner argument is analysed to 128 bits and whose wrapper is not analysed at all has an unknown security level, not a 128-bit one.
+</html:p>
+            <html:p>
+    Then there is the question of which <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex> to use, and it does not have a single answer: the same protocol admits different round-by-round errors depending on how far past the unique-decoding radius the analysis is willing to reason, and the parameters shipped in production sit where the argument is conjectural. That is the subject of <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> and <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">proximity gaps</fr:link>, and the practical consequence is that a deployed figure should be quoted twice, provably and conjecturally. The <fr:link href="https://eprint.iacr.org/2021/582" type="external">ethSTARK documentation</fr:link> does this, and is the deployment document I would point to as the model.
+</html:p>
+            <html:p>
+    None of this measures the best known attack. Every number here bounds what a proof can rule out, and the gap between that bound and the cheapest actual forgery is not quantified anywhere in this literature — which is a reasonable position for a security argument to take, and a bad one to forget when comparing a proof system's "128 bits" against a hash function's. What the <fr:link href="/dhsorens-004A/" title="Security Levels in Production" uri="https://derekhsorensen.com/dhsorens-004A/" display-uri="dhsorens-004A" type="local">production parameters</fr:link> actually add up to is a separate page.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
               <fr:day>18</fr:day>
             </fr:date>
             <fr:uri>https://derekhsorensen.com/dhsorens-004E/</fr:uri>
@@ -541,9 +585,10 @@
             <html:p>
     Questions this page should answer:
     <html:ul><html:li>Interactive proof, argument (prover computationally bounded), PCP, IOP, oracle reduction — what each relaxation buys.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link>: honest prover, true statement, accept. Perfect versus statistical, and why it is not the bound that matters.</html:li>
         <html:li>Where <html:em>succinct</html:em> and <html:em>of knowledge</html:em> enter, and what each costs the construction.</html:li>
         <html:li>Public-coin versus private-coin, and why every deployed system is public-coin.</html:li>
-        <html:li>The knowledge extractor: what it is handed, what it must produce, and why rewinding is a problem in the non-interactive setting.</html:li>
+        <html:li><fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">The knowledge extractor</fr:link>: what it is handed, what it must produce, and why rewinding is a problem in the non-interactive setting.</html:li>
         <html:li>Zero-knowledge — honest-verifier versus malicious, and how much of it a zkVM actually needs. Mostly these systems are bought for succinctness.</html:li></html:ul></html:p>
             <html:p>
     Reading: <html:code>ArkLib/OracleReduction/Basic.lean</html:code> as the definitional reference; Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em>, for the textbook chain.

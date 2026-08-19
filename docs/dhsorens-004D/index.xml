@@ -279,36 +279,12 @@
             <html:p>
     Questions this page should answer:
     <html:ul><html:li>The transform, and exactly what it assumes about <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">the hash function</fr:link>.</html:li>
-        <html:li>Why <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round soundness</fr:link> is the right hypothesis for a many-round protocol.</html:li>
+        <html:li>Why <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round soundness</fr:link> is the right hypothesis for a many-round protocol.</html:li>
         <html:li>Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.</html:li>
         <html:li>Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's <html:code>Salt.lean</html:code> is for.</html:li>
         <html:li>Whether the ROM is the right idealisation, and what the alternatives cost.</html:li></html:ul></html:p>
             <html:p>
     Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link>, <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>OracleReduction/FiatShamir</html:code>).
-</html:p>
-          </fr:mainmatter>
-        </fr:tree>
-        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
-          <fr:frontmatter>
-            <fr:authors>
-              <fr:author>
-                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
-              </fr:author>
-            </fr:authors>
-            <fr:date>
-              <fr:year>2026</fr:year>
-              <fr:month>8</fr:month>
-              <fr:day>18</fr:day>
-            </fr:date>
-            <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
-            <fr:display-uri>dhsorens-001S</fr:display-uri>
-            <fr:route>/dhsorens-001S/</fr:route>
-            <fr:title text="Latest Deep-Dive">Latest Deep-Dive</fr:title>
-            <fr:meta name="toc">true</fr:meta>
-          </fr:frontmatter>
-          <fr:mainmatter>
-            <html:p>
-    See my latest on <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash functions in Bitcoin and Ethereum</fr:link> — what each chain actually hashes with, and why the Ethereum Foundation abandoned <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Poseidon</fr:link> for L1 in August 2026, which was not a break of Poseidon but a change on the proving side. The systematic study behind it is <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>.
 </html:p>
           </fr:mainmatter>
         </fr:tree>

@@ -277,7 +277,7 @@
                 <html:p>
     Questions this page should answer:
     <html:ul><html:li>How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".</html:li>
-        <html:li>Completeness as a separate obligation, and whether it is discharged or assumed.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> as a separate obligation, and whether it is discharged or assumed.</html:li>
         <html:li>Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.</html:li>
         <html:li>Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.</html:li>
         <html:li>Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.</html:li>
@@ -531,7 +531,7 @@
                 <html:p>
     Questions this page should answer:
     <html:ul><html:li>How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".</html:li>
-        <html:li>Completeness as a separate obligation, and whether it is discharged or assumed.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> as a separate obligation, and whether it is discharged or assumed.</html:li>
         <html:li>Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.</html:li>
         <html:li>Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.</html:li>
         <html:li>Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.</html:li>
@@ -567,7 +567,7 @@
             <html:p>
     Questions this page should answer:
     <html:ul><html:li>How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".</html:li>
-        <html:li>Completeness as a separate obligation, and whether it is discharged or assumed.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> as a separate obligation, and whether it is discharged or assumed.</html:li>
         <html:li>Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.</html:li>
         <html:li>Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.</html:li>
         <html:li>Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.</html:li>
@@ -734,7 +734,7 @@
             <html:p>
     Questions this page should answer:
     <html:ul><html:li>How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".</html:li>
-        <html:li>Completeness as a separate obligation, and whether it is discharged or assumed.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> as a separate obligation, and whether it is discharged or assumed.</html:li>
         <html:li>Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.</html:li>
         <html:li>Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.</html:li>
         <html:li>Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.</html:li>

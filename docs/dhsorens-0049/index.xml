@@ -176,8 +176,7 @@
                 <fr:title text="Security Levels in Production">Security Levels in Production</fr:title>
               </fr:frontmatter>
               <fr:mainmatter>
-                <html:p>
-    What bit-security a deployed system actually claims, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
+                <html:p><fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">What bit-security a deployed system actually claims</fr:link>, under which assumptions, and who checked. This is where <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">soundness regimes</fr:link> stop being a theoretical distinction.
 </html:p>
                 <html:p>
     Questions this page should answer:
@@ -198,6 +197,47 @@
         <fr:title text="Backlinks">Backlinks</fr:title>
       </fr:frontmatter>
       <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004K/</fr:uri>
+            <fr:display-uri>dhsorens-004K</fr:display-uri>
+            <fr:route>/dhsorens-004K/</fr:route>
+            <fr:title text="Special Soundness">Special Soundness</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Special soundness is a property of the verifier's acceptance predicate, not a probability bound, which is why it is the workhorse. For a three-move sigma protocol it says: from two accepting transcripts <fr:tex display="inline"><![CDATA[(a, c, z)]]></fr:tex> and <fr:tex display="inline"><![CDATA[(a, c', z')]]></fr:tex> sharing the first message with <fr:tex display="inline"><![CDATA[c \neq  c']]></fr:tex>, a witness can be computed in polynomial time. Checking it means exhibiting that computation — for Schnorr, subtracting two linear equations — so it is verifiable by inspecting the algebra rather than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding extractor that collects the transcripts it needs.
+</html:p>
+            <html:p>
+    The multi-round generalisation is <fr:tex display="inline"><![CDATA[(k_1, \dots , k_\mu )]]></fr:tex>-special soundness. Instead of a pair of transcripts the extractor is given a tree: at the <fr:tex display="inline"><![CDATA[i]]></fr:tex>-th challenge round each node branches <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> ways with pairwise distinct challenges, and the tree of accepting leaves yields a witness. Attema and Fehr computed the resulting knowledge error exactly for challenge sets of sizes <fr:tex display="inline"><![CDATA[N_1, \dots , N_\mu ]]></fr:tex>; it is at most <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } (k_i - 1)/N_i]]></fr:tex>, which is the bound worth remembering. Two special soundness at each of <fr:tex display="inline"><![CDATA[\mu ]]></fr:tex> rounds over a field of size <fr:tex display="inline"><![CDATA[q]]></fr:tex> costs <fr:tex display="inline"><![CDATA[\mu  / q]]></fr:tex>, and the tree has <fr:tex display="inline"><![CDATA[\prod _i k_i]]></fr:tex> leaves, so the extractor's cost is what limits how large the <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> can be.
+</html:p>
+            <html:p>
+    The reason to care is the Fiat–Shamir accounting. Attema, Fehr, and Klooß showed that the Fiat–Shamir transform of a <fr:tex display="inline"><![CDATA[(k_1, \dots , k_\mu )]]></fr:tex>-special-sound protocol has knowledge error <fr:tex display="inline"><![CDATA[(Q+1)\kappa ]]></fr:tex> against an adversary making <fr:tex display="inline"><![CDATA[Q]]></fr:tex> random-oracle queries, where <fr:tex display="inline"><![CDATA[\kappa ]]></fr:tex> is the interactive knowledge error — linear in <fr:tex display="inline"><![CDATA[Q]]></fr:tex> and <html:em>independent of the number of rounds</html:em>. The general bound for a <fr:tex display="inline"><![CDATA[(2\mu +1)]]></fr:tex>-move protocol is <fr:tex display="inline"><![CDATA[Q^\mu ]]></fr:tex>. For any protocol with more than a handful of rounds that is the difference between a security claim and none, and it is bought entirely by strengthening the hypothesis from soundness to special soundness.
+</html:p>
+            <html:p>
+    The <fr:link href="/dhsorens-0049/" title="Post-Quantum Pressure" uri="https://derekhsorensen.com/dhsorens-0049/" display-uri="dhsorens-0049" type="local">lattice protocols</fr:link> needed the tree reshaped rather than widened. Their challenges are vectors of <fr:tex display="inline"><![CDATA[\ell _i]]></fr:tex> coordinates, and extraction works coordinate by coordinate: two accepting transcripts that differ in one coordinate alone subtract to an equation in the matching block of the witness. Transcripts that differ everywhere subtract to nothing usable. <html:em>Coordinate-wise special soundness</html:em>, introduced by Fenzi, Moghaddas, and Nguyen for their lattice <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">polynomial commitment</fr:link>, makes this the branching condition: each node at round <fr:tex display="inline"><![CDATA[i]]></fr:tex> has <fr:tex display="inline"><![CDATA[\ell _i(k_i - 1) + 1]]></fr:tex> children — a central challenge vector, plus <fr:tex display="inline"><![CDATA[k_i - 1]]></fr:tex> others per coordinate differing from it in that coordinate only. The knowledge error is at most <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } \ell _i k_i / N_i^{\ell _i}]]></fr:tex> for coordinates drawn from sets of size <fr:tex display="inline"><![CDATA[N_i]]></fr:tex>, the tree stays polynomially small, and taking every <fr:tex display="inline"><![CDATA[\ell _i = 1]]></fr:tex> recovers plain special soundness. Their Fiat–Shamir theorem carries over too, so the linear-in-<fr:tex display="inline"><![CDATA[Q]]></fr:tex> accounting above survives the generalisation. Hachi, a lattice multilinear commitment refining Greyhound, states its whole security analysis in this form — down to bundling a pair of <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> challenge points into one vector of logarithmically many coordinates, so that a coordinate-wise tree supplies enough distinct roots to force a constraint polynomial to vanish.
+</html:p>
+            <html:p>
+    ArkLib formalises both through transcript trees generic in a <html:em>shape</html:em>. <html:code>distinctShape k</html:code> is the shape with branching arity <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> whose node predicate requires the <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> sibling challenges at each round to be pairwise distinct, and <html:code>Verifier.specialSound</html:code> is the instance of the shape-generic <html:code>treeSpecialSound</html:code> at that shape; <html:code>CoordinateWiseSpecialSoundness</html:code> is the coordinate-wise condition above, and ArkLib proves that plain special soundness is the <html:code>distinctShape</html:code> case of it. The genericity is not gratuitous: real protocols keep needing branching conditions other than "all siblings differ."
+</html:p>
+            <html:p>
+    Where special soundness stops is the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family. Extraction there does not go through a transcript tree at all — it goes through <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">list decoding</fr:link>, recovering a codeword close to the prover's oracles, and the argument's structure is a distance bound rather than a system of equations. That is why the low-degree testing pages are analysed <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> instead, and why the two techniques appear side by side in the same system: the algebraic components get special soundness, the proximity components get a state function.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2021/1377" type="external">Fiat–Shamir Transformation of Multi-Round Interactive Proofs</fr:link> (Attema, Fehr, Klooß) for the <fr:tex display="inline"><![CDATA[(Q+1)\kappa ]]></fr:tex> bound, <fr:link href="https://eprint.iacr.org/2023/846" type="external">Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency</fr:link> (Fenzi, Moghaddas, Nguyen) for coordinate-wise special soundness and its interactive and Fiat–Shamir knowledge theorems, <fr:link href="https://eprint.iacr.org/2026/156" type="external">Hachi</fr:link> (Nguyen, O'Rourke, Zhang) for the notion in working use, <fr:link href="https://eprint.iacr.org/2023/1256" type="external">On Soundness Notions for Interactive Oracle Proofs</fr:link> for the generalised versions and their implications, and <html:code>ArkLib/OracleReduction/Security/SpecialSoundness.lean</html:code>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
         <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
           <fr:frontmatter>
             <fr:authors>

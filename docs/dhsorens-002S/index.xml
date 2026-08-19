@@ -277,7 +277,7 @@
                 <html:p>
     Questions this page should answer:
     <html:ul><html:li>How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".</html:li>
-        <html:li>Completeness as a separate obligation, and whether it is discharged or assumed.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> as a separate obligation, and whether it is discharged or assumed.</html:li>
         <html:li>Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.</html:li>
         <html:li>Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.</html:li>
         <html:li>Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.</html:li>
@@ -531,7 +531,7 @@
                 <html:p>
     Questions this page should answer:
     <html:ul><html:li>How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".</html:li>
-        <html:li>Completeness as a separate obligation, and whether it is discharged or assumed.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> as a separate obligation, and whether it is discharged or assumed.</html:li>
         <html:li>Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.</html:li>
         <html:li>Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.</html:li>
         <html:li>Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.</html:li>
@@ -567,7 +567,7 @@
             <html:p>
     Questions this page should answer:
     <html:ul><html:li>How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".</html:li>
-        <html:li>Completeness as a separate obligation, and whether it is discharged or assumed.</html:li>
+        <html:li><fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> as a separate obligation, and whether it is discharged or assumed.</html:li>
         <html:li>Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.</html:li>
         <html:li>Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.</html:li>
         <html:li>Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.</html:li>
@@ -752,10 +752,10 @@
 </html:p>
                 <html:p>
     Questions this page should answer:
-    <html:ul><html:li>Incrementally verifiable computation and proof-carrying data: the statements, and the knowledge soundness they require.</html:li>
+    <html:ul><html:li>Incrementally verifiable computation and proof-carrying data: the statements, and <fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">the knowledge soundness they require</fr:link>.</html:li>
         <html:li>Recursion overhead: what a verifier-in-circuit costs, and which components dominate (hashing, MSM, field arithmetic).</html:li>
         <html:li>Cycles of curves, and why hash-based systems avoid the problem differently.</html:li>
-        <html:li>How the security loss compounds over recursion depth.</html:li></html:ul></html:p>
+        <html:li><fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">How the security loss compounds over recursion depth</fr:link>.</html:li></html:ul></html:p>
               </fr:mainmatter>
             </fr:tree>
             <fr:tree show-metadata="false">

@@ -97,7 +97,7 @@
         <html:li>Commit phase and query phase; the round-consistency check the verifier performs.</html:li>
         <html:li>Parameters and their interaction: rate, folding factor, number of rounds, number of query repetitions.</html:li>
         <html:li>Prover cost — encoding, Merkle hashing, and where the time actually goes.</html:li>
-        <html:li>The soundness statement, with the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link> named explicitly.</html:li>
+        <html:li><fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">The soundness statement</fr:link>, with the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">regime</fr:link> named explicitly.</html:li>
         <html:li>What ArkLib's <html:code>ProofSystem/Fri</html:code> states, and how far the proof gets.</html:li></html:ul></html:p>
                 <html:p>
     Reading: Ben-Sasson, Bentov, Horesh, and Riabzev, <html:em>Fast Reed–Solomon Interactive Oracle Proofs of Proximity</html:em> (ICALP 2018); <fr:link href="https://eprint.iacr.org/2026/1367" type="external">the SoK</fr:link> for the corrected attributions.
@@ -130,7 +130,7 @@
     <html:ul><html:li>Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the parameters each licenses.</html:li>
         <html:li>What must be conjectured to reach capacity, and the precise statement of each conjecture.</html:li>
         <html:li>Threshold halving, and what it establishes above the Johnson bound.</html:li>
-        <html:li>The accounting from soundness error to bits of security, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
+        <html:li>The accounting <fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">from soundness error to bits of security</fr:link>, including <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">grinding</fr:link>.</html:li>
         <html:li>Which deployed systems set parameters in which regime — and whether the choice is documented anywhere citable.</html:li></html:ul></html:p>
                 <html:p>
     Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>, <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound</fr:link>.
@@ -196,7 +196,7 @@
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
         <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
-        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
+        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> analysis or bolted on afterwards, and how it enters the <fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">state-restoration</fr:link> bound.</html:li></html:ul></html:p>
               </fr:mainmatter>
             </fr:tree>
             <fr:tree show-metadata="false">
@@ -302,7 +302,7 @@
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
         <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
-        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
+        <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> analysis or bolted on afterwards, and how it enters the <fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">state-restoration</fr:link> bound.</html:li></html:ul></html:p>
           </fr:mainmatter>
         </fr:tree>
       </fr:mainmatter>
