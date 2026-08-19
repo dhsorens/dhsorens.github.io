@@ -5,11 +5,7 @@
 \meta{toc}{true}
 
 \p{
-    \em{AI-drafted 2026-08-18; not yet reviewed.}
-}
-
-\p{
-    Both major chains rest on a handful of hash functions, and which one is never only a cryptographic question. Bitcoin runs [SHA-256](dhsorens-004E) for proof of work, transaction identifiers, and its Merkle trees, with RIPEMD-160 alongside it for addresses. Ethereum runs [Keccak](dhsorens-004F) for addresses, storage slots, and the state trie, and SHA-256 on the consensus layer — two families inside one protocol.
+    Both [Bitcoin](dhsorens-bitcoin) and [Ethereum](dhsorens-ethereum) rest on a handful of hash functions, and which one is never only a cryptographic question. Bitcoin runs [SHA-256](dhsorens-004E) for proof of work, transaction identifiers, and its Merkle trees, with RIPEMD-160 alongside it for addresses. Ethereum runs [Keccak](dhsorens-004F) for addresses, storage slots, and the state trie, and SHA-256 on the consensus layer — two families inside one protocol.
 }
 
 \p{

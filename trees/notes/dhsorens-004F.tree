@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    Ethereum's workhorse is \code{keccak256}, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and Ethereum had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
+    Ethereum's workhorse is \code{keccak256}, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and [Ethereum](dhsorens-ethereum) had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
 }
 
 \p{
