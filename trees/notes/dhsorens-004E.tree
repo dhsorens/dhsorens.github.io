@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    SHA-256, published by NIST in 2001, is a Merkle–Damgård construction over a 64-round compression function on 32-bit words, absorbing 64 bytes per call. It is the most analysed hash in deployment, and Bitcoin has used nothing else for its core since 2009.
+    SHA-256, published by NIST in 2001, is a Merkle–Damgård construction over a 64-round compression function on 32-bit words, absorbing 64 bytes per call. It is the most analysed hash in deployment, and [Bitcoin](dhsorens-bitcoin) has used nothing else for its core since 2009.
 }
 
 \p{

@@ -14,6 +14,9 @@ mentions are live links to the other notes where those concepts were thought abo
 
 **Read `../notes/reference/forester-syntax.md` before editing any `.tree` file.**
 
+If the target still has `[…](TODO)` stubs, run `/link` on it first — those are
+unresolved entity links, and relating around them just cements the holes.
+
 ## 1. Read the target
 
 `/relate dhsorens-0029` refers to a tree address. Find the file — the address is the

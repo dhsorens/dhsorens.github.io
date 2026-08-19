@@ -10,7 +10,7 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 
 | Path | What it is |
 | --- | --- |
-| `trees/` | Content source (`.tree` files). Subdirs: `notes/`, `logs/`, `zk/`, `research/`, `institutions/`, `tools/`, `places/`, `people/`, `orgs/`. Top-level trees are section indexes (`index.tree` = homepage, `dhsorens-notes.tree`, `dhsorens-logs.tree`, `dhsorens-talks.tree`, …). `zk/` is a multi-page corpus rather than a pile of notes — see below. |
+| `trees/` | Content source (`.tree` files). Subdirs: `notes/`, `logs/`, `zk/`, `research/`, `institutions/`, `tools/`, `places/`, `people/`, `orgs/`, `protocols/`. Top-level trees are section indexes (`index.tree` = homepage, `dhsorens-notes.tree`, `dhsorens-logs.tree`, `dhsorens-talks.tree`, …). `zk/` is a multi-page corpus rather than a pile of notes — see below. |
 | `assets/` | Static files: `docs/` (paper/CV PDFs), `slides/`, `media/` (images), `img/`. Published at those same absolute paths. |
 | `theme/` | Vendored upstream forester theme. **Do not edit** XSL/CSS/JS — only the six favicon files (`favicon*`, `apple-touch-icon.png`, `android-chrome-*`) are local and must survive theme updates. |
 | `docs/` | **Generated** build output, committed for GitHub Pages. Never hand-edit; `commit.sh` regenerates it wholesale. |
@@ -46,6 +46,7 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 
 - **Add notes/logs/talks/papers/slides by hand**: use the `/add-content` skill.
 - **Research a topic into the forest**: `/notes <topic> with resources A, B. Focus on …` — researches, writes a parent tree + child sections under `trees/notes/`, indexes it, updates the Latest Deep-Dive, opens a PR. `/deep-research <topic>` (or `/notes --deep`) is the heavy multi-agent version with adversarial verification.
+- **Fill `[text](TODO)` stubs**: `/link 004D` (or bare `/link`) resolves unresolved entity links — reuse an existing tree, or mint a thin named page (protocol, person, institution, tool, …) and `/relate` it.
 - **Weave a note into the corpus**: `/relate <address>` adds interconnecting links in both directions.
 - **Prose quality**: `/writing` is the prose standard; the research skills load it before drafting and run its revision pass before committing.
 - **Health check / forester upgrades / broken-site diagnosis**: use the `/maintain` skill.
