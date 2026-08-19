@@ -3,7 +3,7 @@
 \date{2026-08-19}
 
 \p{
-    Soundness quantifies over a class of provers, and the choice of class is the whole content of the definition. A verifier #{V} for a language #{L} is sound with error #{\epsilon} if for every #{x \notin L} and every admitted prover strategy #{P^*}, #{\Pr[\langle P^*, V\rangle(x) = 1] \le \epsilon}. Admitting all strategies gives an [interactive proof](dhsorens-002E); admitting only polynomial-time ones gives an argument. Every deployed system is an argument, because statistical soundness with communication shorter than the witness would carry complexity-theoretic consequences nobody expects, and succinctness is the property these systems are bought for.
+    Soundness quantifies over a class of provers, and the choice of class is the whole content of the definition. A verifier #{V} for a language #{L} is sound with error #{\epsilon} if for every #{x \notin L} and every admitted prover strategy #{P^*}, #{\Pr(\langle P^*, V\rangle(x) = 1) \le \epsilon}. Admitting all strategies gives an [interactive proof](dhsorens-002E); admitting only polynomial-time ones gives an argument. Every deployed system is an argument, because statistical soundness with communication shorter than the witness would carry complexity-theoretic consequences nobody expects, and succinctness is the property these systems are bought for.
 }
 
 \p{

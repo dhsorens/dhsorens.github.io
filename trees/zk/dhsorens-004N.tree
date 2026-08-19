@@ -6,7 +6,7 @@
     A bit-security figure is a claim about a bound, and two conventions for turning an error into bits are both in circulation. The bound for a hash-based argument has the shape
 }
 
-##{\Pr[\text{forge}] \;\le\; t \cdot \epsilon_{\mathrm{sr}} \;+\; \text{(collision terms)},}
+##{\Pr(\text{forge}) \;\le\; t \cdot \epsilon_{\mathrm{sr}} \;+\; \text{collision terms},}
 
 \p{
     with #{t} the adversary's hash evaluations and #{\epsilon_{\mathrm{sr}}} the [state-restoration](dhsorens-004M) error of one attempt. One convention reads "#{\lambda} bits" as #{\epsilon_{\mathrm{sr}} \le 2^{-\lambda}}; the other reads it as the requirement that success probability stay below #{t/2^{\lambda}} for every #{t}, so that #{2^{\lambda}} work is needed for constant success. The two differ by exactly the factor #{t}, and #{t} is not small: at a query budget of #{2^{60}}, a system quoting 100 bits under the first convention offers #{2^{-40}} against that adversary. Neither convention is wrong, and a number quoted without saying which is not yet information.
