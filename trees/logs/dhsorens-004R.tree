@@ -1,0 +1,16 @@
+\title{19 August 2026}
+\author{dhsorens}
+\taxon{Log}
+\date{2026-08-19}
+
+\p{
+    A study session on [soundness notions](dhsorens-002F), which was a stub in the [zkVMs and SNARKs](dhsorens-002C) corpus and is now written out: the five things \em{sound} can mean, the implications between them, and which one each compilation step preserves. Five leaves under it — plain and knowledge soundness with the two extraction disciplines, special soundness, round-by-round, state restoration, and the accounting from an error to a number of bits — plus three stubs for adaptive soundness, repetition, and simulation extractability.
+}
+
+\p{
+    The thing I did not expect: ArkLib's \code{OracleReduction/Security} directory has one file per notion and an \code{Implications.lean} with one theorem per arrow between them, so the decomposition I wanted for the page was already sitting in the Lean. It also settled a question I had been vague about — ArkLib's knowledge soundness takes a \em{straightline} extractor, and the rewinding one is still unfinished because the extractor has to maintain the prover's state across its queries. That the harder definition is the one that resisted formalisation is not a coincidence.
+}
+
+\p{
+    Still open, and the reason for the three stubs: whether deployed systems' Fiat–Shamir claims are adaptive in the choice of statement, which is what the Khovratovich–Rothblum–Soukhanov attack actually breaks; and what the [production parameters](dhsorens-004A) add up to once [grinding](dhsorens-003A) and the [decoding regime](dhsorens-0038) are both counted. Next in this corpus is probably Fiat–Shamir itself, since three of the new pages end by pointing at it.
+}

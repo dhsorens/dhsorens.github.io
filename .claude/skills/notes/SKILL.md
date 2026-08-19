@@ -52,9 +52,9 @@ Ground rules for the writing that follows:
 ./.claude/scripts/next-tree-id.sh <N>
 ```
 
-where `N` is 1 (blurb, see step 5) + 1 (parent) + one per section. The script prints
-addresses like `dhsorens-0029`. Use them in the order printed: first for the blurb, next
-for the parent, rest for children. Never invent an address by hand, and never reuse one.
+where `N` is 1 (blurb, see step 5) + 1 (parent) + one per section + 1 (session log, see
+step 7). The script prints addresses like `dhsorens-0029`. Use them in the order printed:
+first for the blurb, next for the parent, then the children, and the last for the log. Never invent an address by hand, and never reuse one.
 
 ## 4. Write the trees
 
@@ -183,7 +183,17 @@ page is already published at `/dhsorens-001S/`; changing it would break the fron
 Write the blurb for Derek first — its main job is to remind him what the most recent
 thing was — but keep it readable to a stranger landing on the front page.
 
-## 7. Ship it
+## 7. Log the session
+
+Mint one more tree — a short `\taxon{Log}` entry in `trees/logs/` recording that this
+note was written, what it covers, and what it left open — and prepend
+`\transclude{dhsorens-XXXX} % <date label>` to `trees/dhsorens-logs.tree`. Allocate its
+address alongside the others in step 2. This is a hard rule for every session that
+touches `trees/`; see **Session records** in `CLAUDE.md`. Keep it to a paragraph or two,
+in the register of the existing entries — it is a record of the work, not a second
+abstract of the note.
+
+## 8. Ship it
 
 ```bash
 git checkout -b claude/note-<short-slug>
