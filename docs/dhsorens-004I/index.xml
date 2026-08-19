@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>18</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-004I/</fr:uri>
+    <fr:display-uri>dhsorens-004I</fr:display-uri>
+    <fr:route>/dhsorens-004I/</fr:route>
+    <fr:title text="A Note on Hash Functions in Bitcoin and Ethereum">A Note on Hash Functions in Bitcoin and Ethereum</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p><fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">Hash Functions in Bitcoin and Ethereum</fr:link> is about what each chain actually hashes with, and about the Ethereum Foundation abandoning Poseidon for L1 on 13 August 2026. The reason is the interesting part: Poseidon did not break. Proof systems over binary fields made conventional hashes cheap enough to prove that decades of public cryptanalysis became the deciding factor instead.
+</html:p>
+    <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">SHA-2 and the Bitcoin design</fr:link> — double SHA-256 for proof of work and transaction identifiers, RIPEMD-160 for legacy addresses, tagged hashes for Taproot.</html:li>
+        <html:li><fr:link href="/dhsorens-004F/" title="Keccak and Ethereum" uri="https://derekhsorensen.com/dhsorens-004F/" display-uri="dhsorens-004F" type="local">Keccak and Ethereum</fr:link> — why <html:code>keccak256</html:code> is not SHA-3, everywhere it names state, and the SHA-256 half of the protocol on the consensus layer.</html:li>
+        <html:li><fr:link href="/dhsorens-004G/" title="The BLAKE Family: 2s, 2b, and 3" uri="https://derekhsorensen.com/dhsorens-004G/" display-uri="dhsorens-004G" type="local">The BLAKE family</fr:link> — 2s against 2b, what BLAKE3's tree mode buys, and which variant is actually a candidate.</html:li>
+        <html:li><fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Poseidon, and why Ethereum walked away</fr:link> — the HADES construction, the cryptanalysis initiative, and the Binius and Flock results that reversed the decision.</html:li></html:ul></html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:uri>https://derekhsorensen.com/dhsorens-notes/</fr:uri>
+            <fr:display-uri>dhsorens-notes</fr:display-uri>
+            <fr:route>/dhsorens-notes/</fr:route>
+            <fr:title text="Notes">Notes</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    I am interested, broadly speaking, in formal proposition and proof.
+    From a high level, what tends to catch my attention is the nuance of going from an intuitive, abstract idea into something formal—whether it's a formal specification of a program, a formalized theorem statement, or even something simply written out as a program.
+</html:p>
+            <html:p>
+    During my PhD this manifested as written work focused on the problem of (correctly) specifying and formally verifying <fr:link href="/dhsorens-000A/" title="The Main Contributions of my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000A/" display-uri="dhsorens-000A" type="local">financial smart contracts</fr:link>.
+    But I continue to be interested in <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">software verification more broadly</fr:link>, the ongoing work to <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize mathematics</fr:link>, and other developments in using <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> in production.
+</html:p>
+            <html:p>
+    I recently started work on formally verifying <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">all things zero-knowledge</fr:link> on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004I/</fr:uri>
+                <fr:display-uri>dhsorens-004I</fr:display-uri>
+                <fr:route>/dhsorens-004I/</fr:route>
+                <fr:title text="A Note on Hash Functions in Bitcoin and Ethereum">A Note on Hash Functions in Bitcoin and Ethereum</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">Hash Functions in Bitcoin and Ethereum</fr:link> is about what each chain actually hashes with, and about the Ethereum Foundation abandoning Poseidon for L1 on 13 August 2026. The reason is the interesting part: Poseidon did not break. Proof systems over binary fields made conventional hashes cheap enough to prove that decades of public cryptanalysis became the deciding factor instead.
+</html:p>
+                <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">SHA-2 and the Bitcoin design</fr:link> — double SHA-256 for proof of work and transaction identifiers, RIPEMD-160 for legacy addresses, tagged hashes for Taproot.</html:li>
+        <html:li><fr:link href="/dhsorens-004F/" title="Keccak and Ethereum" uri="https://derekhsorensen.com/dhsorens-004F/" display-uri="dhsorens-004F" type="local">Keccak and Ethereum</fr:link> — why <html:code>keccak256</html:code> is not SHA-3, everywhere it names state, and the SHA-256 half of the protocol on the consensus layer.</html:li>
+        <html:li><fr:link href="/dhsorens-004G/" title="The BLAKE Family: 2s, 2b, and 3" uri="https://derekhsorensen.com/dhsorens-004G/" display-uri="dhsorens-004G" type="local">The BLAKE family</fr:link> — 2s against 2b, what BLAKE3's tree mode buys, and which variant is actually a candidate.</html:li>
+        <html:li><fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Poseidon, and why Ethereum walked away</fr:link> — the HADES construction, the cryptanalysis initiative, and the Binius and Flock results that reversed the decision.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004C/</fr:uri>
+                <fr:display-uri>dhsorens-004C</fr:display-uri>
+                <fr:route>/dhsorens-004C/</fr:route>
+                <fr:title text="A Corpus on zkVMs and SNARKs">A Corpus on zkVMs and SNARKs</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link> is a new corpus on this site: a systematic study of the cryptography and machine architecture these systems are built from, one page per topic. It follows the pipeline every modern proof system follows, from a computation to a deployed proof, and it is the theory behind the <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">snarkification work</fr:link>.
+</html:p>
+                <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-002D/" title="The Shape of a Proof System" uri="https://derekhsorensen.com/dhsorens-002D/" display-uri="dhsorens-002D" type="local">The shape of a proof system</fr:link> — the definitions everything else is stated in, and where security is lost between an interactive protocol and a deployed one.</html:li>
+        <html:li><fr:link href="/dhsorens-002J/" title="The Algebraic and Coding-Theoretic Toolkit" uri="https://derekhsorensen.com/dhsorens-002J/" display-uri="dhsorens-002J" type="local">The algebraic and coding-theoretic toolkit</fr:link> — fields, polynomials, Reed–Solomon codes, proximity gaps, sumcheck.</html:li>
+        <html:li><fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">Arithmetisation</fr:link> — R1CS, Plonkish, AIR, lookups, and <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link>.</html:li>
+        <html:li><fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">Polynomial commitment schemes</fr:link>, and <fr:link href="/dhsorens-0036/" title="Low-Degree Testing, from FRI to WHIR" uri="https://derekhsorensen.com/dhsorens-0036/" display-uri="dhsorens-0036" type="local">low-degree testing</fr:link> from FRI through STIR to WHIR.</html:li>
+        <html:li><fr:link href="/dhsorens-003D/" title="Proof Systems in the Wild" uri="https://derekhsorensen.com/dhsorens-003D/" display-uri="dhsorens-003D" type="local">Proof systems in the wild</fr:link> and <fr:link href="/dhsorens-003K/" title="Folding, Recursion, and Aggregation" uri="https://derekhsorensen.com/dhsorens-003K/" display-uri="dhsorens-003K" type="local">folding, recursion, and aggregation</fr:link>.</html:li>
+        <html:li><fr:link href="/dhsorens-003Q/" title="zkVMs" uri="https://derekhsorensen.com/dhsorens-003Q/" display-uri="dhsorens-003Q" type="local">zkVMs</fr:link> — the stack, the systems in the field, and how they break.</html:li>
+        <html:li><fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">Formalising the stack</fr:link> — <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>, <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>, and the rest of the verified-zkEVM effort.</html:li>
+        <html:li><fr:link href="/dhsorens-0046/" title="The Ethereum Setting" uri="https://derekhsorensen.com/dhsorens-0046/" display-uri="dhsorens-0046" type="local">The Ethereum setting</fr:link>, and <fr:link href="/dhsorens-004B/" title="A Reading Path" uri="https://derekhsorensen.com/dhsorens-004B/" display-uri="dhsorens-004B" type="local">a reading path</fr:link> through all of it.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>3</fr:month>
+                  <fr:day>27</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0027/</fr:uri>
+                <fr:display-uri>dhsorens-0027</fr:display-uri>
+                <fr:route>/dhsorens-0027/</fr:route>
+                <fr:title text="LC3 in Lean">LC3 in Lean</fr:title>
+                <fr:taxon>Blog</fr:taxon>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+ I recently implemented a <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">formally verified virtual machine in Lean</fr:link> on which you can run 2048 in terminal! Try it out!
+</html:p>
+                <html:em>ISA-level model</html:em>
+                <html:p>
+The LC-3 is a small 16-bit instructional architecture: eight general-purpose registers, a program counter, condition flags, and a <fr:tex display="inline"><![CDATA[2^{16}]]></fr:tex>-word address space.
+At each step the machine fetches a word from memory at the PC, decodes it as one of <html:strong>fourteen</html:strong> opcodes (from arithmetic and bitwise operations to loads, stores, branches, jumps, and subroutine calls), then updates registers, memory, and control flow accordingly.
+Beyond those opcodes, LC-3 programs rely on <html:em>trap</html:em> routines for console I/O and on <html:em>memory-mapped I/O</html:em> for the keyboard—so a faithful simulator must implement both the core instructions and this I/O story. For more on the architecture, <fr:link href="https://www.jmeiners.com/lc3-vm/" type="external">see here</fr:link>.
+</html:p>
+                <html:p>
+The code in <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">LC3-Lean</fr:link> is laid out as follows:
+<html:ol><html:li>register and flag state lives in <html:code>LC3Lean/Registers.lean</html:code>,</html:li>
+    <html:li>the flat memory model in <html:code>LC3Lean/Memory.lean</html:code>,</html:li>
+    <html:li>opcode decoding in <html:code>LC3Lean/Instructions.lean</html:code>,</html:li>
+    <html:li>the fetch–decode–execute step and per-opcode semantics in <html:code>LC3Lean/Execution.lean</html:code>,</html:li>
+    <html:li>
+    The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>. If you open those modules, every informal claim in this paragraph—word size, register count, opcode coverage, traps, MMIO—is meant to be visible as definitions and executable code rather than hand-waving.
+    </html:li></html:ol>
+   The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>.
+</html:p>
+                <html:p>
+    For full details, <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">see this page</fr:link>.
+</html:p>
+                <html:em>Formal proofs</html:em>
+                <html:p>
+"Formally verified" here means that Lean checks mathematical theorems relating the implementation above to <fr:link href="/dhsorens-0044/" title="Specifying the Machine: Sail, LLZK, zkLean" uri="https://derekhsorensen.com/dhsorens-0044/" display-uri="dhsorens-0044" type="local">an explicit ISA-level specification</fr:link> of how each instruction may read and write registers and memory.
+Those theorems are stated and proved in the <html:code>LC3Correct</html:code> package—especially <html:code>LC3Correct/ExecutionCorrect.lean</html:code>, with supporting lemmas about registers and memory in <html:code>LC3Correct/RegisterLemmas.lean</html:code> and <html:code>LC3Correct/MemoryLemmas.lean</html:code>. Together they aim to capture, opcode by opcode, that the Lean executor’s effect on machine state matches the spec encoded alongside it. All proofs pass without <html:code>sorry</html:code>!
+</html:p>
+                <html:em>Trust Base and Verification Boundary</html:em>
+                <html:p>
+The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</html:code>) used for POSIX terminal raw mode and polling: it affects how characters reach your screen and keyboard, but the LC-3 machine semantics and the correctness proofs live on the Lean side. Readers who want the precise logical statement for a single opcode should start from <html:code>LC3Correct/ExecutionCorrect.lean</html:code> and follow the definitions it references—the prose here is only a map to those lemmas.
+</html:p>
+                <html:p>
+    For full details, <fr:link href="/dhsorens-002A/" title="Details on the Proofs of Correctness for LC3-Lean" uri="https://derekhsorensen.com/dhsorens-002A/" display-uri="dhsorens-002A" type="local">see this page</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>3</fr:month>
+                  <fr:day>11</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0025/</fr:uri>
+                <fr:display-uri>dhsorens-0025</fr:display-uri>
+                <fr:route>/dhsorens-0025/</fr:route>
+                <fr:title text="CompPoly and Computable Specifications">CompPoly and Computable Specifications</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified
+    model of computable polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+    The purpose of CompPoly is to provide a computable base for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+</html:p>
+                <html:p>
+    My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKS</fr:link> also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
+</html:p>
+                <html:p>
+    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does computability add to this, or any specification? For one, it lets you run tests. Having tests lets you test the integrity of your spec and test it in sort of a meta- way. It helps build confidence that the spec was built out correctly, something that is difficult (impossible?) to really know.
+</html:p>
+                <html:p>
+    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications of specifications, in the context of smart contracts. I really believe that metaspecifications can add a lot to the security of smart contracts, but a lot of theory has to be built up (even just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy for contracts in the wild.
+</html:p>
+                <html:p>
+    However, metaspecifications already show up in cryptography! An implementation has a specification, the design of the cryptographic system or protocol (e.g. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>). The system or protocol is defined in mathematical terms, with assumptions, and with associated proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol fails, then some assumption of the system was violated. This is a metaspecification!
+</html:p>
+                <html:p>
+    But, as with all specifications, it is very hard to be sure that your specification is correct. This is where computability comes in. Having an executable/computable specification means that you can run tests on it, further extending your specification in an informal way. It makes your spec act more like software, and in some sense makes it stronger as a specification because as a program that runs it is closer to the thing that you're verifying.
+</html:p>
+                <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable and non-computable terms, spec and implementation, and more and more of the infrastructure of verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>12</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0020/</fr:uri>
+                <fr:display-uri>dhsorens-0020</fr:display-uri>
+                <fr:route>/dhsorens-0020/</fr:route>
+                <fr:title text="Protocol Snarkification">Protocol Snarkification</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    There are ongoing efforts to "snarkify" Ethereum, i.e. to integrate <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. My main focus is currently on <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link> and <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+</html:p>
+                <html:p>
+    See <fr:link href="http://verified-zkevm.org/" type="external">our website</fr:link> for more information.
+</html:p>
+                <html:p>
+    A systematic study of the underlying cryptography, topic by topic, is collected in <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>29</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000U/</fr:uri>
+                <fr:display-uri>dhsorens-000U</fr:display-uri>
+                <fr:route>/dhsorens-000U/</fr:route>
+                <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Most of my formal research work is in <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal specification and verification</fr:link>, especially in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> like <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link>, and the like.
+
+    During my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> and in the years after a lot of time thinking about <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contract</fr:link> design, specification, and verification.
+    
+    </html:p>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>8</fr:month>
+                      <fr:day>29</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-000W/</fr:uri>
+                    <fr:display-uri>dhsorens-000W</fr:display-uri>
+                    <fr:route>/dhsorens-000W/</fr:route>
+                    <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p><fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">Smart contracts</fr:link> are interesting from the perspective of formal specification and verification because:
+</html:p>
+                    <html:ol><html:li>they are risk- and property-dense,</html:li>
+    <html:li>they are typically small in size, with a deterministic and well-defined execution environment, making them feasible to formally reason about in a short time frame, and</html:li>
+    <html:li>they often manage huge sums of money (so the incentives line up).</html:li></html:ol>
+                    <html:p>
+    Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">interesting (and nontrivia) specifications</fr:link>, which warrants a study not only of the science of going from specification to verification (formal proof), but of the <html:em>specifications themselves</html:em> as independent, mathematical objects.
+</html:p>
+                  </fr:mainmatter>
+                </fr:tree>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>2</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-0015/</fr:uri>
+                    <fr:display-uri>dhsorens-0015</fr:display-uri>
+                    <fr:route>/dhsorens-0015/</fr:route>
+                    <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p>
+    Speaking more broadly, <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> is interesting because in the robustly mathematical setting provided by proof assistants, one can state and prove arbitrary properties.
+
+    This may be a blessing and a curse.
+    Much like with programming languages, being able to state and do arbitrary things is not always an advantage.
+    
+    Due to the extreme flexibility, formal counterparts of informal specifications can vary widely without an obvious way to compare them or evaluate them for correctness or practical utility (for more on this see the introduction to my <fr:link href="/dhsorens-000C/" title="Links and Referencing my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000C/" display-uri="dhsorens-000C" type="local">PhD thesis</fr:link>).
+
+</html:p>
+                    <html:p>
+    In my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> and my subsequent writing (e.g. <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">this paper</fr:link> or my <fr:link href="/dhsorens-000S/" title="Research Statement" uri="https://derekhsorensen.com/dhsorens-000S/" display-uri="dhsorens-000S" type="local">research statement</fr:link>), I have argued that the robustly mathematical setting of proof assistants offers us an opportunity for unmatched rigor, but we must draw on mathematical practice and tradition and use them in a more sophisticated way than we are using them now.
+    There is much to be learned from the ongoing work in the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> and <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal specification and verification in proof assistants</fr:link> more broadly,
+    from theoretical and practical perspectives.
+</html:p>
+                  </fr:mainmatter>
+                </fr:tree>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>29</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000V/</fr:uri>
+                <fr:display-uri>dhsorens-000V</fr:display-uri>
+                <fr:route>/dhsorens-000V/</fr:route>
+                <fr:title text="Type Theory and Formal Proof">Type Theory and Formal Proof</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    I am also interested more broadly in type theory and formal proof, especially as they relate to <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>. This has included some <fr:link href="/dhsorens-0009/" title="The Background to my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-0009/" display-uri="dhsorens-0009" type="local">preliminary work</fr:link> in <fr:link href="/dhsorens-hott/" title="Homotopy Type Theory (HoTT)" uri="https://derekhsorensen.com/dhsorens-hott/" display-uri="dhsorens-hott" type="local">HoTT</fr:link> on the formal side, but ongoing work in the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is deeply interesting to me as a <fr:link href="/dhsorens-0017/" title="How the Formalization of Mathematics Relates to My Work" uri="https://derekhsorensen.com/dhsorens-0017/" display-uri="dhsorens-0017" type="local">peripheral development to my work</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004D/</fr:uri>
+            <fr:display-uri>dhsorens-004D</fr:display-uri>
+            <fr:route>/dhsorens-004D/</fr:route>
+            <fr:title text="Hash Functions in Bitcoin and Ethereum">Hash Functions in Bitcoin and Ethereum</fr:title>
+            <fr:taxon>Blog</fr:taxon>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+              <html:em>AI-drafted 2026-08-18; not yet reviewed.</html:em>
+            </html:p>
+            <html:p>
+    Both major chains rest on a handful of hash functions, and which one is never only a cryptographic question. Bitcoin runs <fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">SHA-256</fr:link> for proof of work, transaction identifiers, and its Merkle trees, with RIPEMD-160 alongside it for addresses. Ethereum runs <fr:link href="/dhsorens-004F/" title="Keccak and Ethereum" uri="https://derekhsorensen.com/dhsorens-004F/" display-uri="dhsorens-004F" type="local">Keccak</fr:link> for addresses, storage slots, and the state trie, and SHA-256 on the consensus layer — two families inside one protocol.
+</html:p>
+            <html:p>
+    What has been in flux is a third kind of hash. For most of a decade the argument was that a proof system wants a function designed for it: an arithmetisation-friendly hash like <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Poseidon</fr:link>, whose round function is cheap counted in field multiplications rather than bit operations. On 13 August 2026 the Ethereum Foundation abandoned that direction for L1. Justin Drake's <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">announcement</fr:link> is the primary source for all of this, and his one-line summary is the clearest statement of the reversal — "the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+</html:p>
+            <html:p>
+    The reason is not that Poseidon broke. Proof systems over <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary fields</fr:link> closed the gap from the other side, so a conventional hash is now cheap enough to prove that its decades of public cryptanalysis are the deciding factor. SHA-2 and <fr:link href="/dhsorens-004G/" title="The BLAKE Family: 2s, 2b, and 3" uri="https://derekhsorensen.com/dhsorens-004G/" display-uri="dhsorens-004G" type="local">the BLAKE family</fr:link> are the candidates, and which BLAKE — 2s or 3 — is not settled in anything published so far.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004E/</fr:uri>
+                <fr:display-uri>dhsorens-004E</fr:display-uri>
+                <fr:route>/dhsorens-004E/</fr:route>
+                <fr:title text="SHA-2 and the Bitcoin Design">SHA-2 and the Bitcoin Design</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    SHA-256, published by NIST in 2001, is a Merkle–Damgård construction over a 64-round compression function on 32-bit words, absorbing 64 bytes per call. It is the most analysed hash in deployment, and Bitcoin has used nothing else for its core since 2009.
+</html:p>
+                <html:p>
+    Bitcoin applies it twice — <fr:tex display="inline"><![CDATA[\mathrm {SHA256}(\mathrm {SHA256}(x))]]></fr:tex>, usually written SHA-256d — for block headers and so for <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">proof of work</fr:link>, for transaction identifiers, and for <fr:link href="/dhsorens-0031/" title="Merkle Trees and Vector Commitments" uri="https://derekhsorensen.com/dhsorens-0031/" display-uri="dhsorens-0031" type="local">the Merkle tree committing a block's transactions</fr:link>. The usual rationale for the second application is length extension: a Merkle–Damgård hash leaks enough internal state that an attacker who knows <fr:tex display="inline"><![CDATA[H(m)]]></fr:tex> can compute <fr:tex display="inline"><![CDATA[H(m \| p)]]></fr:tex> for some padding <fr:tex display="inline"><![CDATA[p]]></fr:tex> without knowing <fr:tex display="inline"><![CDATA[m]]></fr:tex>, and hashing the digest again removes the property.
+</html:p>
+                <html:p>
+    Addresses use a second family as well. The legacy scheme hashes a public key with <fr:tex display="inline"><![CDATA[\mathrm {RIPEMD160}(\mathrm {SHA256}(x))]]></fr:tex>, which shortens the digest to 20 bytes and means a break of either function alone does not immediately yield a preimage. Taproot's tagged hashes (BIP-340) are built from SHA-256 with a domain-separation prefix, so even the newest parts of Bitcoin stay inside the same primitive.
+</html:p>
+                <html:p>
+    The conservatism is the design. Twenty-five years of public cryptanalysis with no practical attack on the full function is a stronger argument than any efficiency claim, and it is the argument the <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">2026 Ethereum decision</fr:link> came back around to.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004F/</fr:uri>
+                <fr:display-uri>dhsorens-004F</fr:display-uri>
+                <fr:route>/dhsorens-004F/</fr:route>
+                <fr:title text="Keccak and Ethereum">Keccak and Ethereum</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Ethereum's workhorse is <html:code>keccak256</html:code>, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and Ethereum had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
+</html:p>
+                <html:p>
+    It is used almost everywhere state is named. An address is the last 20 bytes of the Keccak digest of a public key; a mapping's storage slot is the digest of the key concatenated with the slot number; Merkle–Patricia trie nodes are addressed by the digest of their RLP encoding; function selectors and event topics are digest prefixes; and the <html:code>KECCAK256</html:code> opcode exposes it to contracts directly.
+</html:p>
+                <html:p>
+    The consensus layer chose differently. SSZ's <html:code>hash_tree_root</html:code> is SHA-256, so a full node computes both families — Keccak for execution state and SHA-256 for beacon state. The EVM also exposes SHA-256 and RIPEMD-160 as <fr:link href="/dhsorens-003V/" title="Precompiles" uri="https://derekhsorensen.com/dhsorens-003V/" display-uri="dhsorens-003V" type="local">precompiles</fr:link> at <html:code>0x02</html:code> and <html:code>0x03</html:code>, and BLAKE2b's compression function at <html:code>0x09</html:code> (EIP-152, Istanbul, December 2019, priced at one gas per round).
+</html:p>
+                <html:p>
+    For a prover this split matters, because the <fr:link href="/dhsorens-0047/" title="Real-Time Proving and the zkEVM Target" uri="https://derekhsorensen.com/dhsorens-0047/" display-uri="dhsorens-0047" type="local">execution state</fr:link> is the Keccak half. Keccak is the most expensive of the three to prove — <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Flock</fr:link> reports 30k Keccak permutations per second per core against 42k SHA-256 compressions — though the gap per byte is narrower than the raw rates suggest, since one Keccak-256 permutation absorbs 136 bytes where a SHA-256 compression takes 64.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004G/</fr:uri>
+                <fr:display-uri>dhsorens-004G</fr:display-uri>
+                <fr:route>/dhsorens-004G/</fr:route>
+                <fr:title text="The BLAKE Family: 2s, 2b, and 3">The BLAKE Family: 2s, 2b, and 3</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    BLAKE was a SHA-3 finalist that lost to Keccak and then outlived the defeat. BLAKE2 (2013) cut the round count — 12 rounds where BLAKE had 16, or 10 where it had 14 — and dropped the HAIFA counter and constant additions for speed. BLAKE3 (2020) went further, to seven rounds, and replaced the serial mode with a tree.
+</html:p>
+                <html:p>
+    The 2s and 2b split is a word-size split, and it is the detail that matters for the current Ethereum discussion.
+    <html:ul><html:li><html:strong>BLAKE2b</html:strong> — 64-bit words, 1024-bit state, 128-byte blocks, 12 rounds, digests of any length from 1 to 64 bytes. Tuned for 64-bit CPUs.</html:li>
+        <html:li><html:strong>BLAKE2s</html:strong> — 32-bit words, 512-bit state, 64-byte blocks, 10 rounds, digests of 1 to 32 bytes. Intended for 8- to 32-bit platforms, so it is the variant that suits constrained environments.</html:li></html:ul>
+    Collision resistance follows the digest: up to 256 bits for 2b, up to 128 for 2s.
+</html:p>
+                <html:p>
+    Both carry machinery that SHA-2 lacks. Keying is built into the compression function, so BLAKE2 is a MAC without needing HMAC around it, and the parameter block also takes a salt and a personalisation string, which gives <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">domain separation</fr:link> for free rather than by convention. The family also includes parallel variants (BLAKE2sp, BLAKE2bp) and an extendable-output construction, BLAKE2X. In deployment, WireGuard uses BLAKE2s — 32-byte digests for hashing, keyed with 16-byte output as a MAC — and Zcash uses BLAKE2b for Equihash and for key derivation.
+</html:p>
+                <html:p>
+    BLAKE3 keeps BLAKE2s's 32-bit words and 64-byte block and cuts to seven rounds, then splits the input into 1 KiB chunks arranged in a binary tree. That is what makes it parallel over any number of cores, incremental, and usable as an extendable-output function from a single algorithm rather than a family of them. The seven-round decision is the contested one: the designers argue the cryptanalysis supports it, and it is also the reason BLAKE3 has the least margin of anything in this note.
+</html:p>
+                <html:p>
+    Which BLAKE Ethereum is actually considering is not yet public. Drake's announcement says "SHA or BLAKE"; some coverage reports the candidates as SHA-2 or BLAKE2s, other coverage says BLAKE3, and published benchmark comparisons put SHA-256, Keccak, BLAKE3 and leanXMSS side by side. The one thing that is clear is that the variant already in the EVM is not the one in question: EIP-152 exposes BLAKE2b's compression function at <html:code>0x09</html:code>, added for Zcash interoperability, and BLAKE2b is the 64-bit variant that neither candidate set names.
+</html:p>
+                <html:p>
+    My guess at the reasoning, which is inference and not something I have seen argued: for <fr:link href="/dhsorens-0049/" title="Post-Quantum Pressure" uri="https://derekhsorensen.com/dhsorens-0049/" display-uri="dhsorens-0049" type="local">hash-based signatures</fr:link> the inputs are short and fixed-size, a 32-byte block at a time, so BLAKE3's chunking and tree mode buy nothing and only add constraints, while BLAKE2s gives the same 32-bit word size with three more rounds of margin and a decade of analysis. If the deciding workload is signature verification rather than hashing long messages, the tree is dead weight.
+</html:p>
+                <html:p>
+    Sources: <fr:link href="https://www.blake2.net/" type="external">BLAKE2</fr:link>, the <fr:link href="https://www.ietf.org/archive/id/draft-aumasson-blake3-00.html" type="external">BLAKE3 specification draft</fr:link>, <fr:link href="https://eips.ethereum.org/EIPS/eip-152" type="external">EIP-152</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004H/</fr:uri>
+                <fr:display-uri>dhsorens-004H</fr:display-uri>
+                <fr:route>/dhsorens-004H/</fr:route>
+                <fr:title text="Poseidon, and Why Ethereum Walked Away">Poseidon, and Why Ethereum Walked Away</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Poseidon (Grassi, Khovratovich, Rechberger, Roy, and Schofnegger, 2019) is a sponge over a prime field rather than over bits. Its permutation follows the HADES strategy: a few full rounds, where an S-box — typically <fr:tex display="inline"><![CDATA[x \mapsto  x^5]]></fr:tex> — is applied to every element, and many partial rounds applying it to one, with an MDS matrix mixing the state between them. Poseidon2 later reworked the linear layer for speed. Because the whole function is field arithmetic, its cost inside a <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">prime-field circuit</fr:link> is counted in multiplications, and it beat SHA-256 there by orders of magnitude.
+</html:p>
+                <html:p>
+    The objection was always that the same algebraic structure that makes it cheap to arithmetise is what algebraic cryptanalysis attacks, and that parameters are generated per field and per state width rather than fixed once and studied for decades. The Ethereum Foundation took this seriously enough to fund the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>, with bounties up to $1 million scheduled to run through December 2026.
+</html:p>
+                <html:p>
+    It was paused on 1 August 2026, and on 13 August Justin Drake <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">announced</fr:link> that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+</html:p>
+                <html:p>
+    What changed is the proving side. <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> moved the arithmetic into towers of <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary fields</fr:link>, where a Boolean computation costs what it should instead of paying to embed single bits into a large prime field. Flock (eprint 2026/1329) took that further for the specific shape of the problem — large batches of the same Boolean circuit — and reports 82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second on one core of an M4 Max, more than 660k BLAKE3 compressions per second on ten, over 9 times faster than Binius64 on SHA-256 and more than 500 times faster than the fastest elliptic-curve SNARK it measured against. Drake's figure for the resulting designs is roughly one million conventional hash calls per second on a laptop, at about 100 times the cost of native execution.
+</html:p>
+                <html:p>
+    Poseidon was not broken, and nothing here says it will be. An engineering decision was reversed because a different part of the stack improved, which is worth separating clearly from a cryptanalytic result — the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">security argument</fr:link> never changed, only what it had to buy. The stated roadmap puts a production-grade leanVM in 2027 and consensus, data, and execution layer deployment in 2028.
+</html:p>
+                <html:p>
+    Sources: <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">Drake's announcement</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1329" type="external">Flock</fr:link> and its <fr:link href="https://github.com/succinctlabs/flock" type="external">implementation</fr:link>, the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <html:p>
+    The part that interests me is the second-order effect on <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">verification</fr:link>. A conservative hash has a stable specification that many independent implementations already agree on, which matters a great deal if the goal is to <fr:link href="/dhsorens-0045/" title="What a Verified zkVM Would Mean" uri="https://derekhsorensen.com/dhsorens-0045/" display-uri="dhsorens-0045" type="local">verify an implementation rather than only a protocol</fr:link>. A generated parameter set does not offer that, whatever its cryptanalytic standing. The <fr:link href="/dhsorens-0048/" title="ZK-Friendly Primitives" uri="https://derekhsorensen.com/dhsorens-0048/" display-uri="dhsorens-0048" type="local">cost of hashing in a circuit</fr:link> is now one input to that decision rather than the whole of it.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">Drake's announcement</fr:link>, the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1329" type="external">Flock</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004F/</fr:uri>
+            <fr:display-uri>dhsorens-004F</fr:display-uri>
+            <fr:route>/dhsorens-004F/</fr:route>
+            <fr:title text="Keccak and Ethereum">Keccak and Ethereum</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Ethereum's workhorse is <html:code>keccak256</html:code>, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and Ethereum had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
+</html:p>
+            <html:p>
+    It is used almost everywhere state is named. An address is the last 20 bytes of the Keccak digest of a public key; a mapping's storage slot is the digest of the key concatenated with the slot number; Merkle–Patricia trie nodes are addressed by the digest of their RLP encoding; function selectors and event topics are digest prefixes; and the <html:code>KECCAK256</html:code> opcode exposes it to contracts directly.
+</html:p>
+            <html:p>
+    The consensus layer chose differently. SSZ's <html:code>hash_tree_root</html:code> is SHA-256, so a full node computes both families — Keccak for execution state and SHA-256 for beacon state. The EVM also exposes SHA-256 and RIPEMD-160 as <fr:link href="/dhsorens-003V/" title="Precompiles" uri="https://derekhsorensen.com/dhsorens-003V/" display-uri="dhsorens-003V" type="local">precompiles</fr:link> at <html:code>0x02</html:code> and <html:code>0x03</html:code>, and BLAKE2b's compression function at <html:code>0x09</html:code> (EIP-152, Istanbul, December 2019, priced at one gas per round).
+</html:p>
+            <html:p>
+    For a prover this split matters, because the <fr:link href="/dhsorens-0047/" title="Real-Time Proving and the zkEVM Target" uri="https://derekhsorensen.com/dhsorens-0047/" display-uri="dhsorens-0047" type="local">execution state</fr:link> is the Keccak half. Keccak is the most expensive of the three to prove — <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Flock</fr:link> reports 30k Keccak permutations per second per core against 42k SHA-256 compressions — though the gap per byte is narrower than the raw rates suggest, since one Keccak-256 permutation absorbs 136 bytes where a SHA-256 compression takes 64.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004H/</fr:uri>
+            <fr:display-uri>dhsorens-004H</fr:display-uri>
+            <fr:route>/dhsorens-004H/</fr:route>
+            <fr:title text="Poseidon, and Why Ethereum Walked Away">Poseidon, and Why Ethereum Walked Away</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Poseidon (Grassi, Khovratovich, Rechberger, Roy, and Schofnegger, 2019) is a sponge over a prime field rather than over bits. Its permutation follows the HADES strategy: a few full rounds, where an S-box — typically <fr:tex display="inline"><![CDATA[x \mapsto  x^5]]></fr:tex> — is applied to every element, and many partial rounds applying it to one, with an MDS matrix mixing the state between them. Poseidon2 later reworked the linear layer for speed. Because the whole function is field arithmetic, its cost inside a <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">prime-field circuit</fr:link> is counted in multiplications, and it beat SHA-256 there by orders of magnitude.
+</html:p>
+            <html:p>
+    The objection was always that the same algebraic structure that makes it cheap to arithmetise is what algebraic cryptanalysis attacks, and that parameters are generated per field and per state width rather than fixed once and studied for decades. The Ethereum Foundation took this seriously enough to fund the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>, with bounties up to $1 million scheduled to run through December 2026.
+</html:p>
+            <html:p>
+    It was paused on 1 August 2026, and on 13 August Justin Drake <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">announced</fr:link> that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+</html:p>
+            <html:p>
+    What changed is the proving side. <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> moved the arithmetic into towers of <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary fields</fr:link>, where a Boolean computation costs what it should instead of paying to embed single bits into a large prime field. Flock (eprint 2026/1329) took that further for the specific shape of the problem — large batches of the same Boolean circuit — and reports 82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second on one core of an M4 Max, more than 660k BLAKE3 compressions per second on ten, over 9 times faster than Binius64 on SHA-256 and more than 500 times faster than the fastest elliptic-curve SNARK it measured against. Drake's figure for the resulting designs is roughly one million conventional hash calls per second on a laptop, at about 100 times the cost of native execution.
+</html:p>
+            <html:p>
+    Poseidon was not broken, and nothing here says it will be. An engineering decision was reversed because a different part of the stack improved, which is worth separating clearly from a cryptanalytic result — the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">security argument</fr:link> never changed, only what it had to buy. The stated roadmap puts a production-grade leanVM in 2027 and consensus, data, and execution layer deployment in 2028.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">Drake's announcement</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1329" type="external">Flock</fr:link> and its <fr:link href="https://github.com/succinctlabs/flock" type="external">implementation</fr:link>, the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004E/</fr:uri>
+            <fr:display-uri>dhsorens-004E</fr:display-uri>
+            <fr:route>/dhsorens-004E/</fr:route>
+            <fr:title text="SHA-2 and the Bitcoin Design">SHA-2 and the Bitcoin Design</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    SHA-256, published by NIST in 2001, is a Merkle–Damgård construction over a 64-round compression function on 32-bit words, absorbing 64 bytes per call. It is the most analysed hash in deployment, and Bitcoin has used nothing else for its core since 2009.
+</html:p>
+            <html:p>
+    Bitcoin applies it twice — <fr:tex display="inline"><![CDATA[\mathrm {SHA256}(\mathrm {SHA256}(x))]]></fr:tex>, usually written SHA-256d — for block headers and so for <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">proof of work</fr:link>, for transaction identifiers, and for <fr:link href="/dhsorens-0031/" title="Merkle Trees and Vector Commitments" uri="https://derekhsorensen.com/dhsorens-0031/" display-uri="dhsorens-0031" type="local">the Merkle tree committing a block's transactions</fr:link>. The usual rationale for the second application is length extension: a Merkle–Damgård hash leaks enough internal state that an attacker who knows <fr:tex display="inline"><![CDATA[H(m)]]></fr:tex> can compute <fr:tex display="inline"><![CDATA[H(m \| p)]]></fr:tex> for some padding <fr:tex display="inline"><![CDATA[p]]></fr:tex> without knowing <fr:tex display="inline"><![CDATA[m]]></fr:tex>, and hashing the digest again removes the property.
+</html:p>
+            <html:p>
+    Addresses use a second family as well. The legacy scheme hashes a public key with <fr:tex display="inline"><![CDATA[\mathrm {RIPEMD160}(\mathrm {SHA256}(x))]]></fr:tex>, which shortens the digest to 20 bytes and means a break of either function alone does not immediately yield a preimage. Taproot's tagged hashes (BIP-340) are built from SHA-256 with a domain-separation prefix, so even the newest parts of Bitcoin stay inside the same primitive.
+</html:p>
+            <html:p>
+    The conservatism is the design. Twenty-five years of public cryptanalysis with no practical attack on the full function is a stronger argument than any efficiency claim, and it is the argument the <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">2026 Ethereum decision</fr:link> came back around to.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004G/</fr:uri>
+            <fr:display-uri>dhsorens-004G</fr:display-uri>
+            <fr:route>/dhsorens-004G/</fr:route>
+            <fr:title text="The BLAKE Family: 2s, 2b, and 3">The BLAKE Family: 2s, 2b, and 3</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    BLAKE was a SHA-3 finalist that lost to Keccak and then outlived the defeat. BLAKE2 (2013) cut the round count — 12 rounds where BLAKE had 16, or 10 where it had 14 — and dropped the HAIFA counter and constant additions for speed. BLAKE3 (2020) went further, to seven rounds, and replaced the serial mode with a tree.
+</html:p>
+            <html:p>
+    The 2s and 2b split is a word-size split, and it is the detail that matters for the current Ethereum discussion.
+    <html:ul><html:li><html:strong>BLAKE2b</html:strong> — 64-bit words, 1024-bit state, 128-byte blocks, 12 rounds, digests of any length from 1 to 64 bytes. Tuned for 64-bit CPUs.</html:li>
+        <html:li><html:strong>BLAKE2s</html:strong> — 32-bit words, 512-bit state, 64-byte blocks, 10 rounds, digests of 1 to 32 bytes. Intended for 8- to 32-bit platforms, so it is the variant that suits constrained environments.</html:li></html:ul>
+    Collision resistance follows the digest: up to 256 bits for 2b, up to 128 for 2s.
+</html:p>
+            <html:p>
+    Both carry machinery that SHA-2 lacks. Keying is built into the compression function, so BLAKE2 is a MAC without needing HMAC around it, and the parameter block also takes a salt and a personalisation string, which gives <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">domain separation</fr:link> for free rather than by convention. The family also includes parallel variants (BLAKE2sp, BLAKE2bp) and an extendable-output construction, BLAKE2X. In deployment, WireGuard uses BLAKE2s — 32-byte digests for hashing, keyed with 16-byte output as a MAC — and Zcash uses BLAKE2b for Equihash and for key derivation.
+</html:p>
+            <html:p>
+    BLAKE3 keeps BLAKE2s's 32-bit words and 64-byte block and cuts to seven rounds, then splits the input into 1 KiB chunks arranged in a binary tree. That is what makes it parallel over any number of cores, incremental, and usable as an extendable-output function from a single algorithm rather than a family of them. The seven-round decision is the contested one: the designers argue the cryptanalysis supports it, and it is also the reason BLAKE3 has the least margin of anything in this note.
+</html:p>
+            <html:p>
+    Which BLAKE Ethereum is actually considering is not yet public. Drake's announcement says "SHA or BLAKE"; some coverage reports the candidates as SHA-2 or BLAKE2s, other coverage says BLAKE3, and published benchmark comparisons put SHA-256, Keccak, BLAKE3 and leanXMSS side by side. The one thing that is clear is that the variant already in the EVM is not the one in question: EIP-152 exposes BLAKE2b's compression function at <html:code>0x09</html:code>, added for Zcash interoperability, and BLAKE2b is the 64-bit variant that neither candidate set names.
+</html:p>
+            <html:p>
+    My guess at the reasoning, which is inference and not something I have seen argued: for <fr:link href="/dhsorens-0049/" title="Post-Quantum Pressure" uri="https://derekhsorensen.com/dhsorens-0049/" display-uri="dhsorens-0049" type="local">hash-based signatures</fr:link> the inputs are short and fixed-size, a 32-byte block at a time, so BLAKE3's chunking and tree mode buy nothing and only add constraints, while BLAKE2s gives the same 32-bit word size with three more rounds of margin and a decade of analysis. If the deciding workload is signature verification rather than hashing long messages, the tree is dead weight.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://www.blake2.net/" type="external">BLAKE2</fr:link>, the <fr:link href="https://www.ietf.org/archive/id/draft-aumasson-blake3-00.html" type="external">BLAKE3 specification draft</fr:link>, <fr:link href="https://eips.ethereum.org/EIPS/eip-152" type="external">EIP-152</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

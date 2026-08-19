@@ -241,6 +241,7 @@
     Questions this page should answer:
     <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
         <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Flock, which specialises the same idea to large batches of one Boolean circuit and is what <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">made conventional hashes cheap enough to prove</fr:link> that Ethereum dropped Poseidon.</html:li>
         <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
         <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
         <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>

@@ -195,7 +195,7 @@
     Questions this page should answer:
     <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
-        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
         <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
               </fr:mainmatter>
@@ -493,7 +493,7 @@
     Questions this page should answer:
     <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
-        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
         <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
               </fr:mainmatter>
@@ -564,6 +564,44 @@
 </html:p>
               </fr:mainmatter>
             </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004H/</fr:uri>
+            <fr:display-uri>dhsorens-004H</fr:display-uri>
+            <fr:route>/dhsorens-004H/</fr:route>
+            <fr:title text="Poseidon, and Why Ethereum Walked Away">Poseidon, and Why Ethereum Walked Away</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Poseidon (Grassi, Khovratovich, Rechberger, Roy, and Schofnegger, 2019) is a sponge over a prime field rather than over bits. Its permutation follows the HADES strategy: a few full rounds, where an S-box — typically <fr:tex display="inline"><![CDATA[x \mapsto  x^5]]></fr:tex> — is applied to every element, and many partial rounds applying it to one, with an MDS matrix mixing the state between them. Poseidon2 later reworked the linear layer for speed. Because the whole function is field arithmetic, its cost inside a <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">prime-field circuit</fr:link> is counted in multiplications, and it beat SHA-256 there by orders of magnitude.
+</html:p>
+            <html:p>
+    The objection was always that the same algebraic structure that makes it cheap to arithmetise is what algebraic cryptanalysis attacks, and that parameters are generated per field and per state width rather than fixed once and studied for decades. The Ethereum Foundation took this seriously enough to fund the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>, with bounties up to $1 million scheduled to run through December 2026.
+</html:p>
+            <html:p>
+    It was paused on 1 August 2026, and on 13 August Justin Drake <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">announced</fr:link> that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+</html:p>
+            <html:p>
+    What changed is the proving side. <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> moved the arithmetic into towers of <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary fields</fr:link>, where a Boolean computation costs what it should instead of paying to embed single bits into a large prime field. Flock (eprint 2026/1329) took that further for the specific shape of the problem — large batches of the same Boolean circuit — and reports 82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second on one core of an M4 Max, more than 660k BLAKE3 compressions per second on ten, over 9 times faster than Binius64 on SHA-256 and more than 500 times faster than the fastest elliptic-curve SNARK it measured against. Drake's figure for the resulting designs is roughly one million conventional hash calls per second on a laptop, at about 100 times the cost of native execution.
+</html:p>
+            <html:p>
+    Poseidon was not broken, and nothing here says it will be. An engineering decision was reversed because a different part of the stack improved, which is worth separating clearly from a cryptanalytic result — the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">security argument</fr:link> never changed, only what it had to buy. The stated roadmap puts a production-grade leanVM in 2027 and consensus, data, and execution layer deployment in 2028.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">Drake's announcement</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1329" type="external">Flock</fr:link> and its <fr:link href="https://github.com/succinctlabs/flock" type="external">implementation</fr:link>, the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>.
+</html:p>
           </fr:mainmatter>
         </fr:tree>
         <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
@@ -654,7 +692,7 @@
     Questions this page should answer:
     <html:ul><html:li>The chain: ISA specification, constraint system, arithmetisation soundness, IOP soundness, commitment security, <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>, recursion, extracted implementation.</html:li>
         <html:li>Which links are proved today, which are stated, and which are not formalised at all.</html:li>
-        <html:li>The irreducible assumptions: hash security, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
+        <html:li>The irreducible assumptions: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash security</fr:link>, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
         <html:li>Whether "verified" should mean the composed end-to-end theorem, or a set of component theorems with audited seams.</html:li>
         <html:li>The 2027 target the project set, and what would have to be true for it to be met.</html:li></html:ul></html:p>
             <html:p>
@@ -695,7 +733,7 @@
     Questions this page should answer:
     <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
-        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
         <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
           </fr:mainmatter>

@@ -25,7 +25,7 @@
     Questions this page should answer:
     <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
-        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
         <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
   </fr:mainmatter>
@@ -192,7 +192,7 @@
     Questions this page should answer:
     <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
-        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
         <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
               </fr:mainmatter>
@@ -273,6 +273,38 @@
         <fr:title text="Backlinks">Backlinks</fr:title>
       </fr:frontmatter>
       <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004E/</fr:uri>
+            <fr:display-uri>dhsorens-004E</fr:display-uri>
+            <fr:route>/dhsorens-004E/</fr:route>
+            <fr:title text="SHA-2 and the Bitcoin Design">SHA-2 and the Bitcoin Design</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    SHA-256, published by NIST in 2001, is a Merkle–Damgård construction over a 64-round compression function on 32-bit words, absorbing 64 bytes per call. It is the most analysed hash in deployment, and Bitcoin has used nothing else for its core since 2009.
+</html:p>
+            <html:p>
+    Bitcoin applies it twice — <fr:tex display="inline"><![CDATA[\mathrm {SHA256}(\mathrm {SHA256}(x))]]></fr:tex>, usually written SHA-256d — for block headers and so for <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">proof of work</fr:link>, for transaction identifiers, and for <fr:link href="/dhsorens-0031/" title="Merkle Trees and Vector Commitments" uri="https://derekhsorensen.com/dhsorens-0031/" display-uri="dhsorens-0031" type="local">the Merkle tree committing a block's transactions</fr:link>. The usual rationale for the second application is length extension: a Merkle–Damgård hash leaks enough internal state that an attacker who knows <fr:tex display="inline"><![CDATA[H(m)]]></fr:tex> can compute <fr:tex display="inline"><![CDATA[H(m \| p)]]></fr:tex> for some padding <fr:tex display="inline"><![CDATA[p]]></fr:tex> without knowing <fr:tex display="inline"><![CDATA[m]]></fr:tex>, and hashing the digest again removes the property.
+</html:p>
+            <html:p>
+    Addresses use a second family as well. The legacy scheme hashes a public key with <fr:tex display="inline"><![CDATA[\mathrm {RIPEMD160}(\mathrm {SHA256}(x))]]></fr:tex>, which shortens the digest to 20 bytes and means a break of either function alone does not immediately yield a preimage. Taproot's tagged hashes (BIP-340) are built from SHA-256 with a domain-separation prefix, so even the newest parts of Bitcoin stay inside the same primitive.
+</html:p>
+            <html:p>
+    The conservatism is the design. Twenty-five years of public cryptanalysis with no practical attack on the full function is a stronger argument than any efficiency claim, and it is the argument the <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">2026 Ethereum decision</fr:link> came back around to.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
         <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
           <fr:frontmatter>
             <fr:authors>
@@ -406,6 +438,38 @@
         <html:li>Where the extension field is forced (the out-of-domain point lives there), and the cost.</html:li></html:ul></html:p>
             <html:p>
     Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004E/</fr:uri>
+            <fr:display-uri>dhsorens-004E</fr:display-uri>
+            <fr:route>/dhsorens-004E/</fr:route>
+            <fr:title text="SHA-2 and the Bitcoin Design">SHA-2 and the Bitcoin Design</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    SHA-256, published by NIST in 2001, is a Merkle–Damgård construction over a 64-round compression function on 32-bit words, absorbing 64 bytes per call. It is the most analysed hash in deployment, and Bitcoin has used nothing else for its core since 2009.
+</html:p>
+            <html:p>
+    Bitcoin applies it twice — <fr:tex display="inline"><![CDATA[\mathrm {SHA256}(\mathrm {SHA256}(x))]]></fr:tex>, usually written SHA-256d — for block headers and so for <fr:link href="/dhsorens-003A/" title="Batching and Grinding" uri="https://derekhsorensen.com/dhsorens-003A/" display-uri="dhsorens-003A" type="local">proof of work</fr:link>, for transaction identifiers, and for <fr:link href="/dhsorens-0031/" title="Merkle Trees and Vector Commitments" uri="https://derekhsorensen.com/dhsorens-0031/" display-uri="dhsorens-0031" type="local">the Merkle tree committing a block's transactions</fr:link>. The usual rationale for the second application is length extension: a Merkle–Damgård hash leaks enough internal state that an attacker who knows <fr:tex display="inline"><![CDATA[H(m)]]></fr:tex> can compute <fr:tex display="inline"><![CDATA[H(m \| p)]]></fr:tex> for some padding <fr:tex display="inline"><![CDATA[p]]></fr:tex> without knowing <fr:tex display="inline"><![CDATA[m]]></fr:tex>, and hashing the digest again removes the property.
+</html:p>
+            <html:p>
+    Addresses use a second family as well. The legacy scheme hashes a public key with <fr:tex display="inline"><![CDATA[\mathrm {RIPEMD160}(\mathrm {SHA256}(x))]]></fr:tex>, which shortens the digest to 20 bytes and means a break of either function alone does not immediately yield a preimage. Taproot's tagged hashes (BIP-340) are built from SHA-256 with a domain-separation prefix, so even the newest parts of Bitcoin stay inside the same primitive.
+</html:p>
+            <html:p>
+    The conservatism is the design. Twenty-five years of public cryptanalysis with no practical attack on the full function is a stronger argument than any efficiency claim, and it is the argument the <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">2026 Ethereum decision</fr:link> came back around to.
 </html:p>
           </fr:mainmatter>
         </fr:tree>

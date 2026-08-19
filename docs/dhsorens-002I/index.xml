@@ -159,7 +159,7 @@
 </html:p>
                 <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The transform, and exactly what it assumes about the hash function.</html:li>
+    <html:ul><html:li>The transform, and exactly what it assumes about <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">the hash function</fr:link>.</html:li>
         <html:li>Why <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round soundness</fr:link> is the right hypothesis for a many-round protocol.</html:li>
         <html:li>Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.</html:li>
         <html:li>Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's <html:code>Salt.lean</html:code> is for.</html:li>

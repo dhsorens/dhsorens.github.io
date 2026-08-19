@@ -24,7 +24,7 @@
     <html:p>
     Questions this page should answer:
     <html:ul><html:li>What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.</html:li>
-        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism.</html:li>
+        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism. Which hash they are instantiated with is now <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">SHA-2 or BLAKE rather than Poseidon</fr:link>.</html:li>
         <html:li>Lattice-based commitments as an alternative, and their cost profile.</html:li>
         <html:li>The consequence for the last step of a pipeline that currently ends in Groth16.</html:li>
         <html:li>What VCV-io's lattice work already covers.</html:li></html:ul></html:p>
@@ -117,6 +117,9 @@
     The hash function is usually the prover's largest single cost, so primitive choice is a proof-system decision rather than an implementation detail.
 </html:p>
                 <html:p>
+    That framing is what the August 2026 decision to drop Poseidon for L1 inverts, and this page should be written with the reversal in view: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash-friendly SNARKs rather than SNARK-friendly hashes</fr:link>. The cost question below is still the right question — the answer simply stopped selecting for an exotic primitive.
+</html:p>
+                <html:p>
     Questions this page should answer:
     <html:ul><html:li>Arithmetisation-friendly hashes (Poseidon2 and relatives) against standard ones (Keccak, SHA-256, Blake3), counted in constraints.</html:li>
         <html:li>The security tradeoff: young algebraic designs against well-analysed bit-oriented ones.</html:li>
@@ -149,7 +152,7 @@
                 <html:p>
     Questions this page should answer:
     <html:ul><html:li>What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.</html:li>
-        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism.</html:li>
+        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism. Which hash they are instantiated with is now <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">SHA-2 or BLAKE rather than Poseidon</fr:link>.</html:li>
         <html:li>Lattice-based commitments as an alternative, and their cost profile.</html:li>
         <html:li>The consequence for the last step of a pipeline that currently ends in Groth16.</html:li>
         <html:li>What VCV-io's lattice work already covers.</html:li></html:ul></html:p>
@@ -194,7 +197,52 @@
         <fr:authors />
         <fr:title text="Backlinks">Backlinks</fr:title>
       </fr:frontmatter>
-      <fr:mainmatter />
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004G/</fr:uri>
+            <fr:display-uri>dhsorens-004G</fr:display-uri>
+            <fr:route>/dhsorens-004G/</fr:route>
+            <fr:title text="The BLAKE Family: 2s, 2b, and 3">The BLAKE Family: 2s, 2b, and 3</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    BLAKE was a SHA-3 finalist that lost to Keccak and then outlived the defeat. BLAKE2 (2013) cut the round count — 12 rounds where BLAKE had 16, or 10 where it had 14 — and dropped the HAIFA counter and constant additions for speed. BLAKE3 (2020) went further, to seven rounds, and replaced the serial mode with a tree.
+</html:p>
+            <html:p>
+    The 2s and 2b split is a word-size split, and it is the detail that matters for the current Ethereum discussion.
+    <html:ul><html:li><html:strong>BLAKE2b</html:strong> — 64-bit words, 1024-bit state, 128-byte blocks, 12 rounds, digests of any length from 1 to 64 bytes. Tuned for 64-bit CPUs.</html:li>
+        <html:li><html:strong>BLAKE2s</html:strong> — 32-bit words, 512-bit state, 64-byte blocks, 10 rounds, digests of 1 to 32 bytes. Intended for 8- to 32-bit platforms, so it is the variant that suits constrained environments.</html:li></html:ul>
+    Collision resistance follows the digest: up to 256 bits for 2b, up to 128 for 2s.
+</html:p>
+            <html:p>
+    Both carry machinery that SHA-2 lacks. Keying is built into the compression function, so BLAKE2 is a MAC without needing HMAC around it, and the parameter block also takes a salt and a personalisation string, which gives <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">domain separation</fr:link> for free rather than by convention. The family also includes parallel variants (BLAKE2sp, BLAKE2bp) and an extendable-output construction, BLAKE2X. In deployment, WireGuard uses BLAKE2s — 32-byte digests for hashing, keyed with 16-byte output as a MAC — and Zcash uses BLAKE2b for Equihash and for key derivation.
+</html:p>
+            <html:p>
+    BLAKE3 keeps BLAKE2s's 32-bit words and 64-byte block and cuts to seven rounds, then splits the input into 1 KiB chunks arranged in a binary tree. That is what makes it parallel over any number of cores, incremental, and usable as an extendable-output function from a single algorithm rather than a family of them. The seven-round decision is the contested one: the designers argue the cryptanalysis supports it, and it is also the reason BLAKE3 has the least margin of anything in this note.
+</html:p>
+            <html:p>
+    Which BLAKE Ethereum is actually considering is not yet public. Drake's announcement says "SHA or BLAKE"; some coverage reports the candidates as SHA-2 or BLAKE2s, other coverage says BLAKE3, and published benchmark comparisons put SHA-256, Keccak, BLAKE3 and leanXMSS side by side. The one thing that is clear is that the variant already in the EVM is not the one in question: EIP-152 exposes BLAKE2b's compression function at <html:code>0x09</html:code>, added for Zcash interoperability, and BLAKE2b is the 64-bit variant that neither candidate set names.
+</html:p>
+            <html:p>
+    My guess at the reasoning, which is inference and not something I have seen argued: for <fr:link href="/dhsorens-0049/" title="Post-Quantum Pressure" uri="https://derekhsorensen.com/dhsorens-0049/" display-uri="dhsorens-0049" type="local">hash-based signatures</fr:link> the inputs are short and fixed-size, a 32-byte block at a time, so BLAKE3's chunking and tree mode buy nothing and only add constraints, while BLAKE2s gives the same 32-bit word size with three more rounds of margin and a decade of analysis. If the deciding workload is signature verification rather than hashing long messages, the tree is dead weight.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://www.blake2.net/" type="external">BLAKE2</fr:link>, the <fr:link href="https://www.ietf.org/archive/id/draft-aumasson-blake3-00.html" type="external">BLAKE3 specification draft</fr:link>, <fr:link href="https://eips.ethereum.org/EIPS/eip-152" type="external">EIP-152</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
     </fr:tree>
     <fr:tree show-metadata="false" hidden-when-empty="true">
       <fr:frontmatter>
@@ -230,6 +278,44 @@
         <html:li>Batching and multi-point openings.</html:li>
         <html:li>Trusted setup in practice: ceremonies, updatability, and what a compromised setup permits.</html:li>
         <html:li>Why it does not scale to zkVM-sized traces, and where it survives anyway.</html:li></html:ul></html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004H/</fr:uri>
+            <fr:display-uri>dhsorens-004H</fr:display-uri>
+            <fr:route>/dhsorens-004H/</fr:route>
+            <fr:title text="Poseidon, and Why Ethereum Walked Away">Poseidon, and Why Ethereum Walked Away</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Poseidon (Grassi, Khovratovich, Rechberger, Roy, and Schofnegger, 2019) is a sponge over a prime field rather than over bits. Its permutation follows the HADES strategy: a few full rounds, where an S-box — typically <fr:tex display="inline"><![CDATA[x \mapsto  x^5]]></fr:tex> — is applied to every element, and many partial rounds applying it to one, with an MDS matrix mixing the state between them. Poseidon2 later reworked the linear layer for speed. Because the whole function is field arithmetic, its cost inside a <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">prime-field circuit</fr:link> is counted in multiplications, and it beat SHA-256 there by orders of magnitude.
+</html:p>
+            <html:p>
+    The objection was always that the same algebraic structure that makes it cheap to arithmetise is what algebraic cryptanalysis attacks, and that parameters are generated per field and per state width rather than fixed once and studied for decades. The Ethereum Foundation took this seriously enough to fund the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>, with bounties up to $1 million scheduled to run through December 2026.
+</html:p>
+            <html:p>
+    It was paused on 1 August 2026, and on 13 August Justin Drake <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">announced</fr:link> that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+</html:p>
+            <html:p>
+    What changed is the proving side. <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> moved the arithmetic into towers of <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary fields</fr:link>, where a Boolean computation costs what it should instead of paying to embed single bits into a large prime field. Flock (eprint 2026/1329) took that further for the specific shape of the problem — large batches of the same Boolean circuit — and reports 82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second on one core of an M4 Max, more than 660k BLAKE3 compressions per second on ten, over 9 times faster than Binius64 on SHA-256 and more than 500 times faster than the fastest elliptic-curve SNARK it measured against. Drake's figure for the resulting designs is roughly one million conventional hash calls per second on a laptop, at about 100 times the cost of native execution.
+</html:p>
+            <html:p>
+    Poseidon was not broken, and nothing here says it will be. An engineering decision was reversed because a different part of the stack improved, which is worth separating clearly from a cryptanalytic result — the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">security argument</fr:link> never changed, only what it had to buy. The stated roadmap puts a production-grade leanVM in 2027 and consensus, data, and execution layer deployment in 2028.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">Drake's announcement</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1329" type="external">Flock</fr:link> and its <fr:link href="https://github.com/succinctlabs/flock" type="external">implementation</fr:link>, the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>.
+</html:p>
           </fr:mainmatter>
         </fr:tree>
         <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">

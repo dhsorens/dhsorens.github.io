@@ -1929,6 +1929,34 @@ This has prompted some thinking on the subject.
                   <fr:month>8</fr:month>
                   <fr:day>18</fr:day>
                 </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004I/</fr:uri>
+                <fr:display-uri>dhsorens-004I</fr:display-uri>
+                <fr:route>/dhsorens-004I/</fr:route>
+                <fr:title text="A Note on Hash Functions in Bitcoin and Ethereum">A Note on Hash Functions in Bitcoin and Ethereum</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">Hash Functions in Bitcoin and Ethereum</fr:link> is about what each chain actually hashes with, and about the Ethereum Foundation abandoning Poseidon for L1 on 13 August 2026. The reason is the interesting part: Poseidon did not break. Proof systems over binary fields made conventional hashes cheap enough to prove that decades of public cryptanalysis became the deciding factor instead.
+</html:p>
+                <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">SHA-2 and the Bitcoin design</fr:link> — double SHA-256 for proof of work and transaction identifiers, RIPEMD-160 for legacy addresses, tagged hashes for Taproot.</html:li>
+        <html:li><fr:link href="/dhsorens-004F/" title="Keccak and Ethereum" uri="https://derekhsorensen.com/dhsorens-004F/" display-uri="dhsorens-004F" type="local">Keccak and Ethereum</fr:link> — why <html:code>keccak256</html:code> is not SHA-3, everywhere it names state, and the SHA-256 half of the protocol on the consensus layer.</html:li>
+        <html:li><fr:link href="/dhsorens-004G/" title="The BLAKE Family: 2s, 2b, and 3" uri="https://derekhsorensen.com/dhsorens-004G/" display-uri="dhsorens-004G" type="local">The BLAKE family</fr:link> — 2s against 2b, what BLAKE3's tree mode buys, and which variant is actually a candidate.</html:li>
+        <html:li><fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Poseidon, and why Ethereum walked away</fr:link> — the HADES construction, the cryptanalysis initiative, and the Binius and Flock results that reversed the decision.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
                 <fr:uri>https://derekhsorensen.com/dhsorens-004C/</fr:uri>
                 <fr:display-uri>dhsorens-004C</fr:display-uri>
                 <fr:route>/dhsorens-004C/</fr:route>

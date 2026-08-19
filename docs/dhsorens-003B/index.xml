@@ -195,7 +195,7 @@
     Questions this page should answer:
     <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
-        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
         <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
               </fr:mainmatter>
@@ -459,7 +459,7 @@
     Questions this page should answer:
     <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
-        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
         <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
               </fr:mainmatter>

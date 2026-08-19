@@ -121,6 +121,9 @@
     The hash function is usually the prover's largest single cost, so primitive choice is a proof-system decision rather than an implementation detail.
 </html:p>
                 <html:p>
+    That framing is what the August 2026 decision to drop Poseidon for L1 inverts, and this page should be written with the reversal in view: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash-friendly SNARKs rather than SNARK-friendly hashes</fr:link>. The cost question below is still the right question — the answer simply stopped selecting for an exotic primitive.
+</html:p>
+                <html:p>
     Questions this page should answer:
     <html:ul><html:li>Arithmetisation-friendly hashes (Poseidon2 and relatives) against standard ones (Keccak, SHA-256, Blake3), counted in constraints.</html:li>
         <html:li>The security tradeoff: young algebraic designs against well-analysed bit-oriented ones.</html:li>
@@ -153,7 +156,7 @@
                 <html:p>
     Questions this page should answer:
     <html:ul><html:li>What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.</html:li>
-        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism.</html:li>
+        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism. Which hash they are instantiated with is now <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">SHA-2 or BLAKE rather than Poseidon</fr:link>.</html:li>
         <html:li>Lattice-based commitments as an alternative, and their cost profile.</html:li>
         <html:li>The consequence for the last step of a pipeline that currently ends in Groth16.</html:li>
         <html:li>What VCV-io's lattice work already covers.</html:li></html:ul></html:p>

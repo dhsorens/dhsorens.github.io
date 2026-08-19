@@ -196,6 +196,7 @@
     Questions this page should answer:
     <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
         <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Flock, which specialises the same idea to large batches of one Boolean circuit and is what <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">made conventional hashes cheap enough to prove</fr:link> that Ethereum dropped Poseidon.</html:li>
         <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
         <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
         <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>
@@ -361,7 +362,7 @@
 </html:p>
                     <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The transform, and exactly what it assumes about the hash function.</html:li>
+    <html:ul><html:li>The transform, and exactly what it assumes about <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">the hash function</fr:link>.</html:li>
         <html:li>Why <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round soundness</fr:link> is the right hypothesis for a many-round protocol.</html:li>
         <html:li>Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.</html:li>
         <html:li>Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's <html:code>Salt.lean</html:code> is for.</html:li>
@@ -1019,7 +1020,7 @@
     <html:ul><html:li>Position binding, and what a Merkle commitment does not give you.</html:li>
         <html:li>Batched openings and path deduplication; where proof size actually goes.</html:li>
         <html:li>Salting and its role in <fr:link href="/dhsorens-002E/" title="Interactive Proofs, Arguments, and IOPs" uri="https://derekhsorensen.com/dhsorens-002E/" display-uri="dhsorens-002E" type="local">zero knowledge</fr:link> — and in ArkLib's <html:code>Salt.lean</html:code>.</html:li>
-        <html:li>Hash cost as the prover's real bottleneck; arity and tree shape tradeoffs.</html:li>
+        <html:li><fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">Hash cost as the prover's real bottleneck</fr:link>; arity and tree shape tradeoffs.</html:li>
         <html:li>The formalisation: what ArkLib's Merkle tree development proves, and what it assumes about the hash.</html:li></html:ul></html:p>
                   </fr:mainmatter>
                 </fr:tree>
@@ -1299,7 +1300,7 @@
     Questions this page should answer:
     <html:ul><html:li>Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's <html:code>BatchedFri</html:code> states.</html:li>
         <html:li>Batching across constraint polynomials in a STARK, and how it interacts with <fr:link href="/dhsorens-0039/" title="DEEP and the Out-of-Domain Trick" uri="https://derekhsorensen.com/dhsorens-0039/" display-uri="dhsorens-0039" type="local">DEEP</fr:link>.</html:li>
-        <html:li>Proof-of-work grinding: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
+        <html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">Proof-of-work grinding</fr:link>: converting prover hash work into verifier confidence, and the exact form of the resulting bound.</html:li>
         <html:li>How many bits of a deployed security level come from grinding rather than from the protocol.</html:li>
         <html:li>Whether grinding is accounted for in the <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round</fr:link> analysis or bolted on afterwards.</html:li></html:ul></html:p>
                   </fr:mainmatter>
@@ -1568,6 +1569,7 @@
     Questions this page should answer:
     <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
         <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Flock, which specialises the same idea to large batches of one Boolean circuit and is what <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">made conventional hashes cheap enough to prove</fr:link> that Ethereum dropped Poseidon.</html:li>
         <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
         <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
         <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>
@@ -1925,7 +1927,7 @@
                   </fr:frontmatter>
                   <fr:mainmatter>
                     <html:p>
-    Hand-written circuits for hot operations — hashes, elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
+    Hand-written circuits for hot operations — <fr:link href="/dhsorens-004F/" title="Keccak and Ethereum" uri="https://derekhsorensen.com/dhsorens-004F/" display-uri="dhsorens-004F" type="local">hashes</fr:link>, elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
 </html:p>
                     <html:p>
     Questions this page should answer:
@@ -2257,7 +2259,7 @@
     Questions this page should answer:
     <html:ul><html:li>The chain: ISA specification, constraint system, arithmetisation soundness, IOP soundness, commitment security, <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>, recursion, extracted implementation.</html:li>
         <html:li>Which links are proved today, which are stated, and which are not formalised at all.</html:li>
-        <html:li>The irreducible assumptions: hash security, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
+        <html:li>The irreducible assumptions: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash security</fr:link>, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
         <html:li>Whether "verified" should mean the composed end-to-end theorem, or a set of component theorems with audited seams.</html:li>
         <html:li>The 2027 target the project set, and what would have to be true for it to be met.</html:li></html:ul></html:p>
                     <html:p>
@@ -2341,6 +2343,9 @@
     The hash function is usually the prover's largest single cost, so primitive choice is a proof-system decision rather than an implementation detail.
 </html:p>
                     <html:p>
+    That framing is what the August 2026 decision to drop Poseidon for L1 inverts, and this page should be written with the reversal in view: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash-friendly SNARKs rather than SNARK-friendly hashes</fr:link>. The cost question below is still the right question — the answer simply stopped selecting for an exotic primitive.
+</html:p>
+                    <html:p>
     Questions this page should answer:
     <html:ul><html:li>Arithmetisation-friendly hashes (Poseidon2 and relatives) against standard ones (Keccak, SHA-256, Blake3), counted in constraints.</html:li>
         <html:li>The security tradeoff: young algebraic designs against well-analysed bit-oriented ones.</html:li>
@@ -2373,7 +2378,7 @@
                     <html:p>
     Questions this page should answer:
     <html:ul><html:li>What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.</html:li>
-        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism.</html:li>
+        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism. Which hash they are instantiated with is now <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">SHA-2 or BLAKE rather than Poseidon</fr:link>.</html:li>
         <html:li>Lattice-based commitments as an alternative, and their cost profile.</html:li>
         <html:li>The consequence for the last step of a pipeline that currently ends in Groth16.</html:li>
         <html:li>What VCV-io's lattice work already covers.</html:li></html:ul></html:p>
@@ -2823,7 +2828,7 @@
     <html:ul><html:li>Position binding, and what a Merkle commitment does not give you.</html:li>
         <html:li>Batched openings and path deduplication; where proof size actually goes.</html:li>
         <html:li>Salting and its role in <fr:link href="/dhsorens-002E/" title="Interactive Proofs, Arguments, and IOPs" uri="https://derekhsorensen.com/dhsorens-002E/" display-uri="dhsorens-002E" type="local">zero knowledge</fr:link> — and in ArkLib's <html:code>Salt.lean</html:code>.</html:li>
-        <html:li>Hash cost as the prover's real bottleneck; arity and tree shape tradeoffs.</html:li>
+        <html:li><fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">Hash cost as the prover's real bottleneck</fr:link>; arity and tree shape tradeoffs.</html:li>
         <html:li>The formalisation: what ArkLib's Merkle tree development proves, and what it assumes about the hash.</html:li></html:ul></html:p>
               </fr:mainmatter>
             </fr:tree>

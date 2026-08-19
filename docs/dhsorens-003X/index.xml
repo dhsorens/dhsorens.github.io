@@ -215,7 +215,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    Hand-written circuits for hot operations — hashes, elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
+    Hand-written circuits for hot operations — <fr:link href="/dhsorens-004F/" title="Keccak and Ethereum" uri="https://derekhsorensen.com/dhsorens-004F/" display-uri="dhsorens-004F" type="local">hashes</fr:link>, elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
 </html:p>
                 <html:p>
     Questions this page should answer:

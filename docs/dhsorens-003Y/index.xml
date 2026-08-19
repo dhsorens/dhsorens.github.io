@@ -216,7 +216,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    Hand-written circuits for hot operations — hashes, elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
+    Hand-written circuits for hot operations — <fr:link href="/dhsorens-004F/" title="Keccak and Ethereum" uri="https://derekhsorensen.com/dhsorens-004F/" display-uri="dhsorens-004F" type="local">hashes</fr:link>, elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
 </html:p>
                 <html:p>
     Questions this page should answer:
@@ -369,7 +369,7 @@
 </html:p>
             <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The transform, and exactly what it assumes about the hash function.</html:li>
+    <html:ul><html:li>The transform, and exactly what it assumes about <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">the hash function</fr:link>.</html:li>
         <html:li>Why <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">round-by-round soundness</fr:link> is the right hypothesis for a many-round protocol.</html:li>
         <html:li>Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.</html:li>
         <html:li>Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's <html:code>Salt.lean</html:code> is for.</html:li>
@@ -596,7 +596,7 @@
     Questions this page should answer:
     <html:ul><html:li>The chain: ISA specification, constraint system, arithmetisation soundness, IOP soundness, commitment security, <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>, recursion, extracted implementation.</html:li>
         <html:li>Which links are proved today, which are stated, and which are not formalised at all.</html:li>
-        <html:li>The irreducible assumptions: hash security, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
+        <html:li>The irreducible assumptions: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash security</fr:link>, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
         <html:li>Whether "verified" should mean the composed end-to-end theorem, or a set of component theorems with audited seams.</html:li>
         <html:li>The 2027 target the project set, and what would have to be true for it to be met.</html:li></html:ul></html:p>
                 <html:p>

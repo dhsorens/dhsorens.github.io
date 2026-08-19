@@ -117,6 +117,9 @@
     The hash function is usually the prover's largest single cost, so primitive choice is a proof-system decision rather than an implementation detail.
 </html:p>
                 <html:p>
+    That framing is what the August 2026 decision to drop Poseidon for L1 inverts, and this page should be written with the reversal in view: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash-friendly SNARKs rather than SNARK-friendly hashes</fr:link>. The cost question below is still the right question — the answer simply stopped selecting for an exotic primitive.
+</html:p>
+                <html:p>
     Questions this page should answer:
     <html:ul><html:li>Arithmetisation-friendly hashes (Poseidon2 and relatives) against standard ones (Keccak, SHA-256, Blake3), counted in constraints.</html:li>
         <html:li>The security tradeoff: young algebraic designs against well-analysed bit-oriented ones.</html:li>
@@ -149,7 +152,7 @@
                 <html:p>
     Questions this page should answer:
     <html:ul><html:li>What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.</html:li>
-        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism.</html:li>
+        <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism. Which hash they are instantiated with is now <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">SHA-2 or BLAKE rather than Poseidon</fr:link>.</html:li>
         <html:li>Lattice-based commitments as an alternative, and their cost profile.</html:li>
         <html:li>The consequence for the last step of a pipeline that currently ends in Groth16.</html:li>
         <html:li>What VCV-io's lattice work already covers.</html:li></html:ul></html:p>
@@ -194,7 +197,40 @@
         <fr:authors />
         <fr:title text="Backlinks">Backlinks</fr:title>
       </fr:frontmatter>
-      <fr:mainmatter />
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004F/</fr:uri>
+            <fr:display-uri>dhsorens-004F</fr:display-uri>
+            <fr:route>/dhsorens-004F/</fr:route>
+            <fr:title text="Keccak and Ethereum">Keccak and Ethereum</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Ethereum's workhorse is <html:code>keccak256</html:code>, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and Ethereum had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
+</html:p>
+            <html:p>
+    It is used almost everywhere state is named. An address is the last 20 bytes of the Keccak digest of a public key; a mapping's storage slot is the digest of the key concatenated with the slot number; Merkle–Patricia trie nodes are addressed by the digest of their RLP encoding; function selectors and event topics are digest prefixes; and the <html:code>KECCAK256</html:code> opcode exposes it to contracts directly.
+</html:p>
+            <html:p>
+    The consensus layer chose differently. SSZ's <html:code>hash_tree_root</html:code> is SHA-256, so a full node computes both families — Keccak for execution state and SHA-256 for beacon state. The EVM also exposes SHA-256 and RIPEMD-160 as <fr:link href="/dhsorens-003V/" title="Precompiles" uri="https://derekhsorensen.com/dhsorens-003V/" display-uri="dhsorens-003V" type="local">precompiles</fr:link> at <html:code>0x02</html:code> and <html:code>0x03</html:code>, and BLAKE2b's compression function at <html:code>0x09</html:code> (EIP-152, Istanbul, December 2019, priced at one gas per round).
+</html:p>
+            <html:p>
+    For a prover this split matters, because the <fr:link href="/dhsorens-0047/" title="Real-Time Proving and the zkEVM Target" uri="https://derekhsorensen.com/dhsorens-0047/" display-uri="dhsorens-0047" type="local">execution state</fr:link> is the Keccak half. Keccak is the most expensive of the three to prove — <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Flock</fr:link> reports 30k Keccak permutations per second per core against 42k SHA-256 compressions — though the gap per byte is narrower than the raw rates suggest, since one Keccak-256 permutation absorbs 136 bytes where a SHA-256 compression takes 64.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
     </fr:tree>
     <fr:tree show-metadata="false" hidden-when-empty="true">
       <fr:frontmatter>
@@ -254,6 +290,9 @@
           <fr:mainmatter>
             <html:p>
     The hash function is usually the prover's largest single cost, so primitive choice is a proof-system decision rather than an implementation detail.
+</html:p>
+            <html:p>
+    That framing is what the August 2026 decision to drop Poseidon for L1 inverts, and this page should be written with the reversal in view: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash-friendly SNARKs rather than SNARK-friendly hashes</fr:link>. The cost question below is still the right question — the answer simply stopped selecting for an exotic primitive.
 </html:p>
             <html:p>
     Questions this page should answer:

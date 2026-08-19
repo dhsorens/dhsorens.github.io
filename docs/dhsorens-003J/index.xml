@@ -25,6 +25,7 @@
     Questions this page should answer:
     <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
         <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Flock, which specialises the same idea to large batches of one Boolean circuit and is what <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">made conventional hashes cheap enough to prove</fr:link> that Ethereum dropped Poseidon.</html:li>
         <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
         <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
         <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>
@@ -242,6 +243,7 @@
     Questions this page should answer:
     <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
         <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Flock, which specialises the same idea to large batches of one Boolean circuit and is what <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">made conventional hashes cheap enough to prove</fr:link> that Ethereum dropped Poseidon.</html:li>
         <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
         <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
         <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>
@@ -339,6 +341,44 @@
               <fr:month>8</fr:month>
               <fr:day>18</fr:day>
             </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004H/</fr:uri>
+            <fr:display-uri>dhsorens-004H</fr:display-uri>
+            <fr:route>/dhsorens-004H/</fr:route>
+            <fr:title text="Poseidon, and Why Ethereum Walked Away">Poseidon, and Why Ethereum Walked Away</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Poseidon (Grassi, Khovratovich, Rechberger, Roy, and Schofnegger, 2019) is a sponge over a prime field rather than over bits. Its permutation follows the HADES strategy: a few full rounds, where an S-box — typically <fr:tex display="inline"><![CDATA[x \mapsto  x^5]]></fr:tex> — is applied to every element, and many partial rounds applying it to one, with an MDS matrix mixing the state between them. Poseidon2 later reworked the linear layer for speed. Because the whole function is field arithmetic, its cost inside a <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">prime-field circuit</fr:link> is counted in multiplications, and it beat SHA-256 there by orders of magnitude.
+</html:p>
+            <html:p>
+    The objection was always that the same algebraic structure that makes it cheap to arithmetise is what algebraic cryptanalysis attacks, and that parameters are generated per field and per state width rather than fixed once and studied for decades. The Ethereum Foundation took this seriously enough to fund the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>, with bounties up to $1 million scheduled to run through December 2026.
+</html:p>
+            <html:p>
+    It was paused on 1 August 2026, and on 13 August Justin Drake <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">announced</fr:link> that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+</html:p>
+            <html:p>
+    What changed is the proving side. <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> moved the arithmetic into towers of <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary fields</fr:link>, where a Boolean computation costs what it should instead of paying to embed single bits into a large prime field. Flock (eprint 2026/1329) took that further for the specific shape of the problem — large batches of the same Boolean circuit — and reports 82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second on one core of an M4 Max, more than 660k BLAKE3 compressions per second on ten, over 9 times faster than Binius64 on SHA-256 and more than 500 times faster than the fastest elliptic-curve SNARK it measured against. Drake's figure for the resulting designs is roughly one million conventional hash calls per second on a laptop, at about 100 times the cost of native execution.
+</html:p>
+            <html:p>
+    Poseidon was not broken, and nothing here says it will be. An engineering decision was reversed because a different part of the stack improved, which is worth separating clearly from a cryptanalytic result — the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">security argument</fr:link> never changed, only what it had to buy. The stated roadmap puts a production-grade leanVM in 2027 and consensus, data, and execution layer deployment in 2028.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">Drake's announcement</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1329" type="external">Flock</fr:link> and its <fr:link href="https://github.com/succinctlabs/flock" type="external">implementation</fr:link>, the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
             <fr:uri>https://derekhsorensen.com/dhsorens-0035/</fr:uri>
             <fr:display-uri>dhsorens-0035</fr:display-uri>
             <fr:route>/dhsorens-0035/</fr:route>
@@ -398,6 +438,44 @@
         <html:li><fr:link href="/dhsorens-0035/" title="Small-Field Commitments and Ring Switching" uri="https://derekhsorensen.com/dhsorens-0035/" display-uri="dhsorens-0035" type="local">Ring switching</fr:link>: moving between tower levels inside a single argument.</html:li></html:ul></html:p>
             <html:p>
     Sources: <fr:link href="https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing" type="external">Binary tower fields</fr:link> (Irreducible), <fr:link href="https://blog.lambdaclass.com/snarks-on-binary-fields-binius/" type="external">SNARKs on binary fields</fr:link> (LambdaClass), <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004H/</fr:uri>
+            <fr:display-uri>dhsorens-004H</fr:display-uri>
+            <fr:route>/dhsorens-004H/</fr:route>
+            <fr:title text="Poseidon, and Why Ethereum Walked Away">Poseidon, and Why Ethereum Walked Away</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Poseidon (Grassi, Khovratovich, Rechberger, Roy, and Schofnegger, 2019) is a sponge over a prime field rather than over bits. Its permutation follows the HADES strategy: a few full rounds, where an S-box — typically <fr:tex display="inline"><![CDATA[x \mapsto  x^5]]></fr:tex> — is applied to every element, and many partial rounds applying it to one, with an MDS matrix mixing the state between them. Poseidon2 later reworked the linear layer for speed. Because the whole function is field arithmetic, its cost inside a <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">prime-field circuit</fr:link> is counted in multiplications, and it beat SHA-256 there by orders of magnitude.
+</html:p>
+            <html:p>
+    The objection was always that the same algebraic structure that makes it cheap to arithmetise is what algebraic cryptanalysis attacks, and that parameters are generated per field and per state width rather than fixed once and studied for decades. The Ethereum Foundation took this seriously enough to fund the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>, with bounties up to $1 million scheduled to run through December 2026.
+</html:p>
+            <html:p>
+    It was paused on 1 August 2026, and on 13 August Justin Drake <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">announced</fr:link> that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+</html:p>
+            <html:p>
+    What changed is the proving side. <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> moved the arithmetic into towers of <fr:link href="/dhsorens-002L/" title="Binary Tower Fields" uri="https://derekhsorensen.com/dhsorens-002L/" display-uri="dhsorens-002L" type="local">binary fields</fr:link>, where a Boolean computation costs what it should instead of paying to embed single bits into a large prime field. Flock (eprint 2026/1329) took that further for the specific shape of the problem — large batches of the same Boolean circuit — and reports 82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second on one core of an M4 Max, more than 660k BLAKE3 compressions per second on ten, over 9 times faster than Binius64 on SHA-256 and more than 500 times faster than the fastest elliptic-curve SNARK it measured against. Drake's figure for the resulting designs is roughly one million conventional hash calls per second on a laptop, at about 100 times the cost of native execution.
+</html:p>
+            <html:p>
+    Poseidon was not broken, and nothing here says it will be. An engineering decision was reversed because a different part of the stack improved, which is worth separating clearly from a cryptanalytic result — the <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">security argument</fr:link> never changed, only what it had to buy. The stated roadmap puts a production-grade leanVM in 2027 and consensus, data, and execution layer deployment in 2028.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://x.com/drakefjustin/status/2087905684180418733" type="external">Drake's announcement</fr:link>, <fr:link href="https://eprint.iacr.org/2026/1329" type="external">Flock</fr:link> and its <fr:link href="https://github.com/succinctlabs/flock" type="external">implementation</fr:link>, the <fr:link href="https://www.poseidon-initiative.info/" type="external">Poseidon Cryptanalysis Initiative</fr:link>.
 </html:p>
           </fr:mainmatter>
         </fr:tree>

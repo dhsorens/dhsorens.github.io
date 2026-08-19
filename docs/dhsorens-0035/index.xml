@@ -126,7 +126,7 @@
     <html:ul><html:li>Position binding, and what a Merkle commitment does not give you.</html:li>
         <html:li>Batched openings and path deduplication; where proof size actually goes.</html:li>
         <html:li>Salting and its role in <fr:link href="/dhsorens-002E/" title="Interactive Proofs, Arguments, and IOPs" uri="https://derekhsorensen.com/dhsorens-002E/" display-uri="dhsorens-002E" type="local">zero knowledge</fr:link> — and in ArkLib's <html:code>Salt.lean</html:code>.</html:li>
-        <html:li>Hash cost as the prover's real bottleneck; arity and tree shape tradeoffs.</html:li>
+        <html:li><fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">Hash cost as the prover's real bottleneck</fr:link>; arity and tree shape tradeoffs.</html:li>
         <html:li>The formalisation: what ArkLib's Merkle tree development proves, and what it assumes about the hash.</html:li></html:ul></html:p>
               </fr:mainmatter>
             </fr:tree>
@@ -323,6 +323,7 @@
     Questions this page should answer:
     <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
         <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Flock, which specialises the same idea to large batches of one Boolean circuit and is what <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">made conventional hashes cheap enough to prove</fr:link> that Ethereum dropped Poseidon.</html:li>
         <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
         <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
         <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>
@@ -397,6 +398,7 @@
     Questions this page should answer:
     <html:ul><html:li>The stack: tower fields, multilinear polynomials, a small-field commitment, and sumcheck-based constraint checking.</html:li>
         <html:li>How a bit-level computation avoids paying for embedding into a large field.</html:li>
+        <html:li>Flock, which specialises the same idea to large batches of one Boolean circuit and is what <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">made conventional hashes cheap enough to prove</fr:link> that Ethereum dropped Poseidon.</html:li>
         <html:li>Where the extension field is still required, and what fraction of the work it accounts for.</html:li>
         <html:li>The measured comparison against 31-bit prime systems, and on which workloads it holds.</html:li>
         <html:li>ArkLib's <html:code>ProofSystem/Binius</html:code> and <html:code>RingSwitching</html:code>: what is stated and what is proved.</html:li></html:ul></html:p>

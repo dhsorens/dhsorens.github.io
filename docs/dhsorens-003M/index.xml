@@ -697,7 +697,7 @@
     Questions this page should answer:
     <html:ul><html:li>The chain: ISA specification, constraint system, arithmetisation soundness, IOP soundness, commitment security, <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>, recursion, extracted implementation.</html:li>
         <html:li>Which links are proved today, which are stated, and which are not formalised at all.</html:li>
-        <html:li>The irreducible assumptions: hash security, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
+        <html:li>The irreducible assumptions: <fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">hash security</fr:link>, <fr:link href="/dhsorens-0038/" title="Soundness Regimes and the Proximity-Gap Conjectures" uri="https://derekhsorensen.com/dhsorens-0038/" display-uri="dhsorens-0038" type="local">conjectured proximity bounds</fr:link>, the compiler, the hardware.</html:li>
         <html:li>Whether "verified" should mean the composed end-to-end theorem, or a set of component theorems with audited seams.</html:li>
         <html:li>The 2027 target the project set, and what would have to be true for it to be met.</html:li></html:ul></html:p>
                 <html:p>
