@@ -1,0 +1,19 @@
+\title{OpenVM}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    OpenVM's distinguishing claim is architectural: there is no central processing unit. Instead of a CPU chip that every instruction routes through, it is a framework of chips into which custom ones can be added, so a new instruction set extension integrates without forking the core. Extensions shipped include RV32IM, Keccak-256, SHA2-256, int256 and modular arithmetic, elliptic-curve operations with multi-scalar multiplication, ECDSA over secp256k1 and secp256r1, and pairings on BN254 and BLS12-381.
+}
+
+\p{
+    It is also the system in this note with the strongest verification and audit story, which is why it is the one I would look at first. \strong{The RV32IM extension has been formally verified in Lean by Nethermind Research}, as of February 2026. Version 2.0.0 completed an external audit by zkSecurity and is the first recommended for production; 1.7.0 had been audited by Cantina with an internal Axiom review.
+}
+
+\p{
+    The verified extension is worth being precise about: verifying RV32IM's constraints in Lean is a statement about that chip, not about the whole VM, the backend, or the [Fiat–Shamir](dhsorens-002G) step. It is exactly the kind of component theorem the [verified zkVM effort](dhsorens-0045) is assembling, and a good case study in what one link of that chain looks like when someone actually finishes it.
+}
+
+\p{
+    References: [openvm](https://github.com/openvm-org/openvm); the [whitepaper](https://openvm.dev/whitepaper.pdf) (dated July 2026); the [book](https://docs.openvm.dev/book/) for the extension model; Axiom's [introduction](https://www.axiom.xyz/blog/openvm) and the [announcement](https://blog.openvm.dev/announce).
+}

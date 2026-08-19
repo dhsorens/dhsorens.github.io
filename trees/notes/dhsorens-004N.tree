@@ -1,0 +1,19 @@
+\title{Flock}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Flock is not a VM. It is a hash-based SNARK for one specific shape of problem — large batches of the same Boolean circuit — and it matters here because that shape is exactly hashing, and because it is the result that [ended Poseidon for Ethereum L1](dhsorens-004H).
+}
+
+\p{
+    It works over #{\mathbb{F}_2} and its extension #{\mathbb{F}_{2^{128}}}, so Boolean logic costs what it should instead of paying to embed single bits into a prime field, and combines new optimisations of the lincheck and zerocheck protocols. The authors note the implementation was co-designed with coding agents, which is itself worth a look.
+}
+
+\p{
+    The numbers, from the paper: on one core of an M4 Max, 82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second; over 660k BLAKE3 compressions per second on ten cores; more than 9 times faster than Binius64 on SHA-256, and more than 500 times faster than the fastest elliptic-curve SNARK measured. It proves hash chains and Merkle path openings, and the authors expect it to extend to full hash-based signature verification — which is the same target [leanVM](dhsorens-004L) is built for by a different route.
+}
+
+\p{
+    References: [Flock: Fast Proving for Batch Boolean Computations](https://eprint.iacr.org/2026/1329) (also on [arXiv](https://arxiv.org/abs/2607.27491)), by Bünz, Rothblum, and co-authors; the [implementation](https://github.com/succinctlabs/flock); Succinct's [introduction](https://blog.succinct.xyz/introducing-flock/); and a [literature review](https://www.themoonlight.io/en/review/flock-fast-proving-for-batch-boolean-computations) if you want the short version first.
+}

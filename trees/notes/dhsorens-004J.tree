@@ -1,0 +1,21 @@
+\title{A Note on zkVMs and Their Proving Backends}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    [zkVMs and Their Proving Backends](dhsorens-004K) takes the current field one system at a time, separating the two decisions that get collapsed into a single ranking: which machine you prove, and which argument you prove it with. Two things stand out — OpenVM's RISC-V extension has actually been formally verified in Lean, and leanVM keeps its instruction set to four opcodes so that verifying it stays feasible.
+}
+
+\p{
+    The systems:
+    \ul{
+        \li{[leanVM and Lean Ethereum](dhsorens-004L) — four opcodes, two precompiles, built to aggregate post-quantum signatures.}
+        \li{[Binius64](dhsorens-004M) — Binius rebuilt around 64-bit words and CPUs rather than binary towers and custom hardware.}
+        \li{[Flock](dhsorens-004N) — not a VM but a batch-Boolean SNARK, and the result that ended Poseidon for Ethereum L1.}
+        \li{[OpenVM](dhsorens-004O) — no central CPU, extensions instead of forks, and an RV32IM chip verified in Lean.}
+        \li{[Zisk](dhsorens-004P) — Polygon Hermez arriving at RISC-V from the bespoke-machine direction.}
+        \li{[The RISC-V field](dhsorens-004Q) — SP1, Jolt, RISC Zero, and what Twist and Shout changes.}
+        \li{[Beyond RISC-V](dhsorens-004R) — Cairo, Miden, Valida, Nexus.}
+        \li{[Benchmarks, and how to read them](dhsorens-004S) — why most published figures are not comparable.}
+    }
+}

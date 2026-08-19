@@ -1,0 +1,19 @@
+\title{Beyond RISC-V: Cairo, Miden, Valida, Nexus}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The machines that did not take the RISC-V default, each for a different reason, and worth knowing because they mark out what the default costs.
+}
+
+\p{
+    \strong{Cairo} is the oldest purpose-built provable ISA in production, now proved by Stwo over [Mersenne31 with circle STARKs](dhsorens-003I). \strong{Miden} is a stack machine rather than a register machine, STARK-based, and prioritises parallelism and throughput; its memory argument therefore looks quite different from the read-write RAM the RISC-V systems use. \strong{Valida} designs the ISA for provability first while keeping a Rust compiler, so it is the cleanest test of how much a provability-shaped instruction set actually wins. \strong{Nexus} is the folding entry: built on [Nova](dhsorens-003M), which gives it nearly fixed overhead per step and an unusual scaling curve — one benchmark report notes its cycle counts barely move as input grows, where SP1 and Ziren scale proportionally and RISC Zero pads to a power of two.
+}
+
+\p{
+    Also in circulation and not covered here: Ceno, Pico, Ziren, ZKM, and Novanet, all of which appear in current benchmark sets.
+}
+
+\p{
+    References: [awesome-zkvm](https://github.com/rkdud007/awesome-zkvm) is the maintained index and the best starting point for any of these. [SoK: Understanding zkVM](https://eprint.iacr.org/2026/525) (AsiaCCS 2026) is the academic survey, with the ISA / VM / proving-layer decomposition. Logos's [zkVM testing report](https://research.logos.co/rlog/zkVM-testing/) is an independent evaluation with an unusual amount of detail on failure modes.
+}

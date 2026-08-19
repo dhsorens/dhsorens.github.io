@@ -1,0 +1,19 @@
+\title{leanVM and Lean Ethereum}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    leanVM is the most interesting design in the set precisely because it refuses to be general. It is a minimal zkVM built for one job — aggregating hash-based signatures and recursively verifying proofs on Ethereum's consensus layer — with \strong{four opcodes and two precompiles}. The lean Ethereum team chose a VM over fixed circuits, then made the instruction set as small as a VM can be, on the stated grounds that a small ISA is easier to formally verify.
+}
+
+\p{
+    That is the argument I care about most here. Everywhere else in this note the ISA is a performance decision; in leanVM it is a verification decision, and the two happen to agree. It also inverts the usual post-quantum framing: hash-based signatures are individually too large for Ethereum's scale, so a zkVM aggregates them, which turns the [post-quantum migration](dhsorens-0049) into a throughput problem rather than a size problem.
+}
+
+\p{
+    Concretely: it proves with Plonky3 and [WHIR](dhsorens-003C), and the 2026 plan targets aggregation of 1,000 XMSS signatures per second and a 2-to-1 recursive aggregation in roughly 200 ms. Those are targets from the roadmap rather than measured results, and worth re-checking against leanBench.
+}
+
+\p{
+    References: [leanVM](https://github.com/leanEthereum/leanVM) and the rest of the [lean Ethereum organisation](https://github.com/leanEthereum) — \code{leanSpec} for the Python protocol specs and test-vector generation, \code{leanSig} for the signature proposal, \code{leanBench} for hardware benchmarks. The [Lean Consensus roadmap](https://leanroadmap.org/) and the [2026 plan](https://hackmd.io/@tcoratger/ryS1ElrWbx) for scope and timelines. The Zero Knowledge podcast ran a series with Justin Drake: [part 1](https://zeroknowledge.fm/podcast/391/) for the overall thesis, [part 4](https://zeroknowledge.fm/podcast/394/) on leanVM specifically, and [part 6](https://zeroknowledge.fm/podcast/396/) with Alex Hicks on formal verification. Ethereum's own [quantum-resistance roadmap page](https://ethereum.org/roadmap/future-proofing/quantum-resistance/) is the non-technical framing.
+}

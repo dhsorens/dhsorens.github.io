@@ -1,0 +1,19 @@
+\title{The RISC-V Field: SP1, Jolt, and RISC Zero}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    The three established general-purpose machines, all proving RISC-V, and the place where the backend arguments get tested at scale.
+}
+
+\p{
+    \strong{SP1} proves on Plonky3 and leans hard on precompiles for hot operations; the versions EthProofs tracks are SP1 Turbo and SP1 Hypercube. \strong{RISC Zero}'s R0VM is the other production incumbent, and the one that supports paged Merkle memory alongside read-write RAM. \strong{Jolt} is the design argument: built entirely on [sumcheck](dhsorens-002Q) and [lookups](dhsorens-002W), with instruction semantics served from tables rather than constrained arithmetically.
+}
+
+\p{
+    Jolt is also where the most consequential recent work landed. Setty and Thaler's Twist and Shout replace its memory-checking arguments, which a16z expects to be worth roughly a 3x end-to-end prover speedup with shorter proofs, on top of a separate 2x from other optimisations. Separately, work on the sumcheck prover itself reports up to 10.9x on Jolt's Spartan outer benchmark and far more at memory-bottleneck scales. Note that a16z's older claim of being 5x faster than RISC Zero and 2x faster than SP1 dates from an early comparison and should not be read as current.
+}
+
+\p{
+    References: [JoltBook](https://jolt.a16zcrypto.com/) and [jolt](https://github.com/a16z/jolt); [Introducing Twist and Shout](https://a16zcrypto.com/posts/article/introducing-twist-and-shout/); [Jolt gets a 6x speedup](https://a16zcrypto.com/posts/article/jolt-6x-speedup/); [Building Jolt](https://a16zcrypto.com/posts/article/building-jolt/). On sumcheck proving cost, [Speeding Up Sum-Check Proving](https://eprint.iacr.org/2026/587) and [Proving CPU Executions in Small Space](https://eprint.iacr.org/2025/611) (Nair, Thaler, Zhu). For the other two: [sp1](https://github.com/succinctlabs/sp1) and [risc0](https://github.com/risc0/risc0).
+}

@@ -1,0 +1,19 @@
+\title{Binius64}
+\author{dhsorens}
+\date{2026-08-18}
+
+\p{
+    Binius64 is a rewrite of [Binius](dhsorens-003J) that gives up the thing Binius was famous for. The original worked over a whole tower of [binary fields](dhsorens-002L) and was optimised for custom hardware; Binius64 computes natively over 64-bit words with constraints built in for bitwise XOR, bitwise AND, and shifts, and is optimised for CPUs. Irreducible's framing of the change is that V0 was a VM framework with limited zero-knowledge and 64 is direct circuits built for it.
+}
+
+\p{
+    The 64-bit word is the whole idea: a bit-level binary-field system pays per bit, and expressing the same computation over machine words is reported as a 64-fold reduction in constraint count while keeping binary-field arithmetic's advantage over embedding bits in a large prime field.
+}
+
+\p{
+    The headline benchmark, which is Irreducible's own, is ECDSA signature aggregation: Binius64 single-core on Intel and Graviton CPUs against SP1 and R0VM on NVIDIA L40S GPUs, roughly five times faster. Announced September 2025, funded by Bain Capital Crypto and Paradigm, and positioned for client-side proving rather than for rollups.
+}
+
+\p{
+    References: [binius64](https://github.com/binius-zk/binius64) and the original [binius](https://github.com/IrreducibleOSS/binius); [Announcing Binius64](https://www.irreducible.com/posts/announcing-binius64); the [binius.xyz blueprint](https://www.binius.xyz/blueprint/overview/) for the construction; [Binius: a hardware-optimized SNARK](https://www.irreducible.com/posts/binius-hardware-optimized-snark) and [Better, faster, smaller Binius](https://www.irreducible.com/posts/better-faster-smaller-binius) for the lineage; LambdaClass's [SNARKs on binary fields](https://blog.lambdaclass.com/snarks-on-binary-fields-binius/) as the clearest outside exposition.
+}
