@@ -34,7 +34,9 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
    ```
    Offer `./view.sh` if the user wants to eyeball it at `localhost:1313`.
 
-7. **Publish.** Commit **sources only** (`git add trees/ assets/` etc. — not `docs/`), push, `gh pr create` targeting `main`. CI verifies the build on the PR (`build-check.yml`) and rebuilds + commits `docs/` when the PR merges (`publish.yml`) — merging is what deploys. After merging, the live site can serve stale files for ~10 minutes (Cloudflare cache) — don't diagnose "breakage" inside that window (see `/maintain`). Only run `./commit.sh` (which commits locally-built `docs/`) if CI publishing is broken.
+7. **Record the session.** Two edits, every time, before publishing — see **Session records** in `CLAUDE.md`. Mint a short `\taxon{Log}` entry with `./log.sh` saying what was studied or written and linking the pages it touched, and prepend its `\transclude` to `trees/dhsorens-logs.tree`. Then rewrite `trees/notes/dhsorens-001S.tree` to point at the session's main output and bump its `\date`. A session that only fills in pages inside a corpus still does both: the Notes page does not change there, so the log is the only trail that the work happened.
+
+8. **Publish.** Commit **sources only** (`git add trees/ assets/` etc. — not `docs/`), push, `gh pr create` targeting `main`. CI verifies the build on the PR (`build-check.yml`) and rebuilds + commits `docs/` when the PR merges (`publish.yml`) — merging is what deploys. After merging, the live site can serve stale files for ~10 minutes (Cloudflare cache) — don't diagnose "breakage" inside that window (see `/maintain`). Only run `./commit.sh` (which commits locally-built `docs/`) if CI publishing is broken.
 
 ## Per-type wiring
 

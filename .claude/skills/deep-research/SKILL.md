@@ -75,7 +75,7 @@ loop-until-dry rather than a fixed count.
 ## 3. Write it up
 
 Allocate addresses — one blurb (for the Notes page, see step 4), one parent, one per
-section, plus any sub-sections:
+section, plus any sub-sections, plus one for the session log:
 
 ```bash
 ./.claude/scripts/next-tree-id.sh <N>
@@ -145,7 +145,11 @@ Same as `/notes`:
    address alongside the others.
 2. Rewrite the blurb in `trees/notes/dhsorens-001S.tree` and bump its `\date`. Keep
    the address — the front page transcludes it.
-3. Branch, commit, push, open a PR:
+3. Mint a short `\taxon{Log}` entry in `trees/logs/` recording the session — what was
+   investigated, what it concluded, what it left open — and prepend its `\transclude`
+   to `trees/dhsorens-logs.tree`. See `/notes` step 7 and **Session records** in
+   `CLAUDE.md`; allocate its address alongside the others.
+4. Branch, commit, push, open a PR:
 
 ```bash
 git checkout -b claude/deep-<short-slug>

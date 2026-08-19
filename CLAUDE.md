@@ -42,6 +42,17 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 - `trees/dhsorens-notes.tree` **transcludes** its notes, newest first; each renders in place with its own title and date, in the standard forester page format. It is not a bulleted list of links — `dhsorens-talks.tree` and `dhsorens-slides.tree` are lists because a talk has no tree to render, but a note does.
 - **Anything with sections is transcluded there through a blurb**, never directly: a corpus (`trees/zk/`, rooted at `dhsorens-002C`, 72 trees) or a sectioned note (`dhsorens-004D` and its four children) would otherwise become the whole page. A blurb is an ordinary note tree — `A Note on <Topic>`, one paragraph, then links into the pages; `dhsorens-004C` and `dhsorens-004I` are the two in the forest. Transclude the blurb; link the thing. A short standalone note is transcluded directly. Adding a page inside a corpus does not touch the Notes page.
 
+## Session records
+
+Every session that changes `trees/` leaves a record of itself, in two places, as part of publishing rather than as an afterthought:
+
+1. **A log entry.** Mint a short `\taxon{Log}` tree with `./log.sh` — a paragraph or two on what was studied or written, linking the pages it touched — and prepend `\transclude{dhsorens-XXXX} % <date label>` to `trees/dhsorens-logs.tree`. This is what makes `dhsorens-logs` a running account of the work rather than a handful of milestones.
+2. **The Latest Deep-Dive.** Rewrite the body of `trees/notes/dhsorens-001S.tree` to point at the session's main output and bump its `\date`.
+
+Both hold for a session that only fills in pages inside an existing corpus. The Notes page does not change there — a page added inside a corpus is not a new item on it — so the log entry is the only trail that the work happened. A session that writes out a whole section of a corpus should also update that corpus's blurb tree (`dhsorens-004C` for `trees/zk/`) so the Notes page names what now exists.
+
+The log entry is a record, not an announcement: say what was covered and what is still open, in the register of `trees/logs/`, and skip the summary of the site's own structure.
+
 ## Workflows
 
 - **Add notes/logs/talks/papers/slides by hand**: use the `/add-content` skill.
