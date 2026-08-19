@@ -1,0 +1,37 @@
+\title{From Soundness Error to Bits of Security}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    A bit-security figure is a claim about a bound, and two conventions for turning an error into bits are both in circulation. The bound for a hash-based argument has the shape
+}
+
+##{\Pr[\text{forge}] \;\le\; t \cdot \epsilon_{\mathrm{sr}} \;+\; \text{(collision terms)},}
+
+\p{
+    with #{t} the adversary's hash evaluations and #{\epsilon_{\mathrm{sr}}} the [state-restoration](dhsorens-004M) error of one attempt. One convention reads "#{\lambda} bits" as #{\epsilon_{\mathrm{sr}} \le 2^{-\lambda}}; the other reads it as the requirement that success probability stay below #{t/2^{\lambda}} for every #{t}, so that #{2^{\lambda}} work is needed for constant success. The two differ by exactly the factor #{t}, and #{t} is not small: at a query budget of #{2^{60}}, a system quoting 100 bits under the first convention offers #{2^{-40}} against that adversary. Neither convention is wrong, and a number quoted without saying which is not yet information.
+}
+
+\p{
+    The terms in the bound have different provenances, which is the part worth holding in view when reading a parameter table.
+    \ul{
+        \li{Rounds add: the [round-by-round](dhsorens-004L) errors sum to #{\epsilon_{\mathrm{sr}} = \sum_i \epsilon_i}, so a protocol with many cheap rounds pays for each of them.}
+        \li{[Repetitions](dhsorens-004P) multiply: #{r} independent repetitions take an error #{\epsilon} to #{\epsilon^r}. For the repeated queries inside a low-rate [FRI](dhsorens-0037) configuration this is where most of the security level comes from.}
+        \li{Compilation multiplies by the query budget, as above — this is the #{t} that separates the two conventions.}
+        \li{[Grinding](dhsorens-003A) divides: #{b} bits of proof-of-work reduce an adversary's #{t} hash evaluations to about #{t/2^{b}} state-restoration attempts.}
+        \li{The [commitment](dhsorens-0031) contributes its own term, a Merkle collision probability of order #{t^2/2^{n}} for an #{n}-bit digest. This is the reason a 128-bit target is paired with a 256-bit hash rather than a 128-bit one.}
+    }
+    The claimed level is set by the largest term, so an analysis that is tight on four of them and loose on the fifth has established only what the loose one gives.
+}
+
+\p{
+    [Recursion](dhsorens-003L) is where this becomes hard to audit. Errors add across layers, and the outermost [wrapping proof](dhsorens-003P) — usually a different proof system over a different field, chosen for on-chain verification cost rather than for its security margin — often contributes the dominant term. A system whose inner argument is analysed to 128 bits and whose wrapper is not analysed at all has an unknown security level, not a 128-bit one.
+}
+
+\p{
+    Then there is the question of which #{\epsilon_i} to use, and it does not have a single answer: the same protocol admits different round-by-round errors depending on how far past the unique-decoding radius the analysis is willing to reason, and the parameters shipped in production sit where the argument is conjectural. That is the subject of [soundness regimes](dhsorens-0038) and [proximity gaps](dhsorens-002P), and the practical consequence is that a deployed figure should be quoted twice, provably and conjecturally. The [ethSTARK documentation](https://eprint.iacr.org/2021/582) does this, and is the deployment document I would point to as the model.
+}
+
+\p{
+    None of this measures the best known attack. Every number here bounds what a proof can rule out, and the gap between that bound and the cheapest actual forgery is not quantified anywhere in this literature — which is a reasonable position for a security argument to take, and a bad one to forget when comparing a proof system's "128 bits" against a hash function's. What the [production parameters](dhsorens-004A) actually add up to is a separate page.
+}
