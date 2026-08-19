@@ -1,0 +1,7 @@
+\title{Special Soundness}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    The reason to care is the Fiat–Shamir accounting. Attema, Fehr, and Klooß showed that the Fiat–Shamir transform of a #{(k_1, \dots, k_\mu)}-special-sound protocol has knowledge error #{(Q+1)\kappa} against an adversary making #{Q} random-oracle queries, where #{\kappa} is the interactive knowledge error — linear in #{Q} and \em{independent of the number of rounds}. The general bound for a #{(2\mu+1)}-move protocol is #{Q^\mu}. For any protocol with more than a handful of rounds that is the difference between a security claim and none, and it is bought entirely by strengthening the hypothesis from soundness to special soundness.
+}
