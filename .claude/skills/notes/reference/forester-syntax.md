@@ -66,6 +66,20 @@ Lists may be nested inside a `\p{}`. Markup nests inside link text:
 
 Literal `%` in prose must be escaped as `\%` (see `#{0.3}\%` in `dhsorens-001N.tree`).
 
+**No square brackets inside `#{}` or `##{}`.** Math mode is not opaque to the parser: a
+`[` starts a link node wherever it appears, so `#{\Pr[\text{forge}]}` fails with
+`syntax error, unexpected "\\"` — the `[` opens link text and the next command is not
+what the grammar expects there. Use parentheses (`\Pr(\text{forge})`). If a bracket is
+genuinely needed, `\lbrack` should work since the parser never sees the character, but
+nothing in the forest exercises it yet. Display math goes **between** `\p{}` blocks, not
+inside one, as in `dhsorens-001N.tree`.
+
+When this bites, the build error is wildly misleading: forester reports
+`error[parse_error]` against **line 1 of every tree in the forest**, including files the
+diff never touched. That pattern means one malformed tree, not a broken toolchain — the
+way to localise it is to diff the new files against constructs the forest already uses,
+not to trust the reported locations.
+
 ## Links
 
 Markdown-style `[text](address)` is the *only* link form. There is no `\ref`, no

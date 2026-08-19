@@ -34,7 +34,9 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
    ```
    Offer `./view.sh` if the user wants to eyeball it at `localhost:1313`.
 
-7. **Publish.** Commit **sources only** (`git add trees/ assets/` etc. — not `docs/`), push, `gh pr create` targeting `main`. CI verifies the build on the PR (`build-check.yml`) and rebuilds + commits `docs/` when the PR merges (`publish.yml`) — merging is what deploys. After merging, the live site can serve stale files for ~10 minutes (Cloudflare cache) — don't diagnose "breakage" inside that window (see `/maintain`). Only run `./commit.sh` (which commits locally-built `docs/`) if CI publishing is broken.
+7. **Record the session.** Two edits, every time, before publishing — see **Session records** in `CLAUDE.md`. Write a blurb tree (`A Note on <Topic>`: one paragraph on what the session covered, then a `\ul{}` of links into the pages) and prepend its `\transclude` to the block at the bottom of `trees/dhsorens-notes.tree`. Then rewrite `trees/notes/dhsorens-001S.tree` to point at the session's main output and bump its `\date`. A session that only fills in pages inside a corpus still does both — the blurb is the only trail on the Notes page that the work happened. `dhsorens-004R` is the working example.
+
+8. **Publish.** Commit **sources only** (`git add trees/ assets/` etc. — not `docs/`), push, `gh pr create` targeting `main`. CI verifies the build on the PR (`build-check.yml`) and rebuilds + commits `docs/` when the PR merges (`publish.yml`) — merging is what deploys. After merging, the live site can serve stale files for ~10 minutes (Cloudflare cache) — don't diagnose "breakage" inside that window (see `/maintain`). Only run `./commit.sh` (which commits locally-built `docs/`) if CI publishing is broken.
 
 ## Per-type wiring
 
@@ -48,7 +50,7 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
 Some subjects have grown their own multi-page corpus — `trees/zk/` (the zkVMs and SNARKs corpus, rooted at `dhsorens-002C`) is the current one.
 - File: alongside its siblings in the corpus directory, not in `trees/notes/`.
 - Wire: `\transclude{dhsorens-XXXX} % label` in the appropriate **hub** inside the corpus, in reading order (not chronological).
-- Do **not** touch `trees/dhsorens-notes.tree`: a page added inside a corpus is not a new item on the Notes page. Update the corpus's blurb tree only if the addition changes what the corpus covers.
+- Never transclude the corpus page itself into `trees/dhsorens-notes.tree`. The session's blurb (step 7) is what appears there — `dhsorens-004R`, for the session that wrote out the soundness notions section, is the pattern for a blurb covering part of a corpus rather than the whole of it.
 - A corpus is **far too large to transclude into Notes** — `dhsorens-002C` alone is ~8,600 words. Like any sectioned item it appears there through a blurb tree (`trees/notes/dhsorens-004C.tree`): a paragraph saying what it is, and a list of links into its sections. The blurb is transcluded; the corpus is linked.
 
 ### Log entry

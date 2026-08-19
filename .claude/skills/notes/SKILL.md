@@ -155,7 +155,12 @@ page and bury every other entry. So write one more tree, in ordinary note format
 ```
 
 The blurb is the feed item; the note is read at its own address. Working examples:
-`dhsorens-004C` (for the zk corpus) and `dhsorens-004I` (for the hash-functions note).
+`dhsorens-004C` (for the zk corpus), `dhsorens-004I` (for the hash-functions note), and
+`dhsorens-004R` (for one written-out section of the zk corpus).
+
+The blurb is also this session's record on the Notes page, which is a hard rule for every
+session that touches `trees/` — see **Session records** in `CLAUDE.md`. This step and
+step 6 are what satisfy it.
 
 Only a short standalone note with no sections goes in directly, as the older entries on
 that page do. If in doubt, write the blurb — it is one small tree and it keeps the page
