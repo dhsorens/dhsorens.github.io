@@ -1,0 +1,27 @@
+\title{Special Soundness}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    Special soundness is a property of the verifier's acceptance predicate, not a probability bound, which is why it is the workhorse. For a three-move sigma protocol it says: from two accepting transcripts #{(a, c, z)} and #{(a, c', z')} sharing the first message with #{c \neq c'}, a witness can be computed in polynomial time. Checking it means exhibiting that computation — for Schnorr, subtracting two linear equations — so it is verifiable by inspecting the algebra rather than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding extractor that collects the transcripts it needs.
+}
+
+\p{
+    The multi-round generalisation is #{(k_1, \dots, k_\mu)}-special soundness. Instead of a pair of transcripts the extractor is given a tree: at the #{i}-th challenge round each node branches #{k_i} ways with pairwise distinct challenges, and the tree of accepting leaves yields a witness. Attema and Fehr computed the resulting knowledge error exactly for challenge sets of sizes #{N_1, \dots, N_\mu}; it is at most #{\sum_{i=1}^{\mu} (k_i - 1)/N_i}, which is the bound worth remembering. Two special soundness at each of #{\mu} rounds over a field of size #{|\mathbb{F}|} costs #{\mu/|\mathbb{F}|}, and the tree has #{\prod_i k_i} leaves, so the extractor's cost is what limits how large the #{k_i} can be.
+}
+
+\p{
+    The reason to care is the Fiat–Shamir accounting. Attema, Fehr, and Klooß showed that the Fiat–Shamir transform of a #{(k_1, \dots, k_\mu)}-special-sound protocol has knowledge error #{(Q+1)\kappa} against an adversary making #{Q} random-oracle queries, where #{\kappa} is the interactive knowledge error — linear in #{Q} and \em{independent of the number of rounds}. The general bound for a #{(2\mu+1)}-move protocol is #{Q^\mu}. For any protocol with more than a handful of rounds that is the difference between a security claim and none, and it is bought entirely by strengthening the hypothesis from soundness to special soundness.
+}
+
+\p{
+    ArkLib formalises it through transcript trees generic in a \em{shape}. \code{distinctShape k} is the shape with branching arity #{k_i} whose node predicate requires the #{k_i} sibling challenges at each round to be pairwise distinct, and \code{Verifier.specialSound} is the instance of the shape-generic \code{treeSpecialSound} at that shape. The genericity is not gratuitous: \code{CoordinateWiseSpecialSoundness} handles protocols whose challenges are vectors and whose extractor needs distinctness in a coordinate rather than in the whole challenge, and ArkLib proves that plain special soundness is the \code{distinctShape} case of it. Real protocols keep needing branching conditions other than "all siblings differ."
+}
+
+\p{
+    Where special soundness stops is the [FRI](dhsorens-0037) family. Extraction there does not go through a transcript tree at all — it goes through [list decoding](dhsorens-002P), recovering a codeword close to the prover's oracles, and the argument's structure is a distance bound rather than a system of equations. That is why the low-degree testing pages are analysed [round-by-round](dhsorens-004L) instead, and why the two techniques appear side by side in the same system: the algebraic components get special soundness, the proximity components get a state function.
+}
+
+\p{
+    Sources: [Fiat–Shamir Transformation of Multi-Round Interactive Proofs](https://eprint.iacr.org/2021/1377) (Attema, Fehr, Klooß) for the #{(Q+1)\kappa} bound, [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256) for the generalised versions and their implications, and \code{ArkLib/OracleReduction/Security/SpecialSoundness.lean}.
+}

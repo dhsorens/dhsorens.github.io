@@ -1,0 +1,27 @@
+\title{State-Restoration Soundness}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    State-restoration soundness models the one power Fiat–Shamir hands the prover: the ability to retry. In the state-restoration game the prover builds transcripts against a challenge oracle that, given a statement and any prefix, returns that prefix's challenge; it may return to any prefix it has already constructed, send a different message, and receive the corresponding challenge, as many times as its budget allows. It wins if any completed transcript is accepting for a false statement. Ben-Sasson, Chiesa, and Spooner introduced the notion with the [BCS transform](dhsorens-002H), and it is the hypothesis that transform is proved against.
+}
+
+\p{
+    The correspondence with the compiled protocol is exact rather than analogical. A non-interactive prover holding the hash computes the challenge for any prefix it likes by querying the oracle, so the ordering of an interactive execution is not enforced — nothing stops it from abandoning a prefix and trying another message at the same point. State-restoration soundness assumes precisely that adversary and no more, which is why the notion is more convenient than plain soundness at the compilation step and less convenient anywhere else.
+}
+
+\p{
+    Holmgren proved that round-by-round soundness and soundness against state-restoration attacks are equivalent, up to a polynomial loss in the number of restoration attempts. The two notions are therefore interchangeable as hypotheses, and the choice between them is a choice of proof convenience: [round-by-round](dhsorens-004L) is local, so it is what a paper proves; state restoration names the adversary, so it is what a bound on real attack cost is stated against. Knowing they coincide is what licenses moving between the two halves of a security argument.
+}
+
+\p{
+    The budget is where engineering enters. The adversary's success probability scales with the number of restoration attempts, so anything that makes an attempt expensive buys bits. [Proof-of-work grinding](dhsorens-003A) is exactly this: requiring each prover message to be accompanied by a nonce whose hash has #{b} leading zeros means an adversary with #{t} hash evaluations gets about #{t/2^b} attempts rather than #{t}, and the #{b} bits show up in the state-restoration bound and nowhere else in the protocol. It is also why a deployed security level cannot be read off the interactive analysis alone.
+}
+
+\p{
+    Salting works in the same accounting. ArkLib's \code{Salt.lean} adds per-message randomness to a protocol, and \code{srSoundness_addSalt_implies_srSoundness_original} runs in the direction that makes salting free to assume: state-restoration soundness of the salted protocol gives it for the original, with the knowledge version proved alongside. Both state-restoration notions then imply their straightline counterparts with the error preserved — \code{srSoundness_implies_soundness} and \code{srKnowledgeSoundness_implies_knowledgeSoundness} — so the state-restoration analysis is the strongest of the hash-based statements and everything else in the chain follows from it.
+}
+
+\p{
+    Sources: Ben-Sasson, Chiesa, and Spooner, \em{Interactive Oracle Proofs} (TCC 2016); [On Round-By-Round Soundness and State Restoration Attacks](https://eprint.iacr.org/2019/1261); \code{ArkLib/OracleReduction/Security/StateRestoration.lean}.
+}

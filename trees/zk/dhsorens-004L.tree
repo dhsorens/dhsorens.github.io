@@ -1,0 +1,37 @@
+\title{Round-by-Round Soundness}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    Round-by-round soundness replaces one global bound with a bound per round, and that locality is what makes it compile. Canetti, Chen, Holmgren, Lombardi, Rothblum, and Rothblum introduced it to prove Fiat–Shamir secure under an assumption on the hash function rather than by fiat. The definition asks for a \em{state function}: a labelling of each pair (statement, transcript prefix) as doomed or not, satisfying three conditions.
+    \ul{
+        \li{If #{x \notin L}, the empty transcript is doomed.}
+        \li{If a prefix is doomed, it stays doomed after the prover's next message — unconditionally, for every message — and after the following challenge except with probability at most #{\epsilon_i} over that challenge.}
+        \li{A doomed complete transcript is rejected.}
+    }
+    Plain soundness follows with error #{\sum_{i=1}^{\mu} \epsilon_i}: to be accepted from a false statement the transcript must escape doom at some round, and the sum is a union bound over the rounds where that can happen.
+}
+
+\p{
+    Splitting the two propagation conditions is the point of the definition. A prover message can never help — only the verifier's randomness can undoom a prefix — so the entire error budget sits on the challenge rounds, one #{\epsilon_i} apiece. An adversary who grinds on a hash is choosing among candidate challenges at some round, and the round-by-round bound says what each attempt is worth. A monolithic soundness bound cannot: it constrains the honest interaction and says nothing about a prover that retries one round.
+}
+
+\p{
+    In the standard model the payoff is a theorem. Canetti et al. proved that #{\mathrm{FS}(\Pi, \mathcal{H})} is computationally sound whenever #{\Pi} is round-by-round sound and #{\mathcal{H}} is correlation intractable for the relation derived from the state function. In the random oracle model the compilation loss is linear in the adversary's query count. Either way the hypothesis is round-by-round soundness, which is why the notion appears in every modern security proof of a deployed hash-based system and why a paper proving only end-to-end soundness has not yet said anything about its own non-interactive version.
+}
+
+\p{
+    Round-by-round \em{knowledge} soundness adds a round-by-round extractor to the state function, so that a doomed prefix witnesses the impossibility of extraction rather than the falsity of a statement. This is the form the practical results take. Block, Garreta, Katz, Thaler, Tiwari, and Zając proved round-by-round soundness and round-by-round knowledge soundness for [FRI](dhsorens-0037) and [batched FRI](dhsorens-003A), and for a class they call #{\delta}-correlated protocols — which covers Plonky2, Redshift, ethSTARK, and RISC Zero — giving the first formal Fiat–Shamir security proof for FRI. Their reduction is the reusable part: a #{\delta}-correlated protocol that is round-by-round sound \em{under the assumption that adversaries send low-degree polynomials} is round-by-round sound in general.
+}
+
+\p{
+    The cost of the notion is that a proof has to exhibit the state function, and for the interesting protocols that is the whole difficulty. For FRI it is a statement about the distance from the prover's oracle to the Reed–Solomon code, so the [decoding regime](dhsorens-0038) and the [proximity gap](dhsorens-002P) available in that regime appear inside #{\epsilon_i}. This is the seam where a conjecture enters a deployed security claim, and it enters through the round-by-round error rather than anywhere more visible.
+}
+
+\p{
+    ArkLib's \code{OracleReduction/Security/RoundByRound.lean} makes the state function a structure — \code{toFun} of type #{(m : \mathrm{Fin}(n+1)) \to \mathrm{StmtIn} \to \mathrm{Transcript}\, m \to \mathrm{Prop}}, with fields \code{toFun_empty}, \code{toFun_next}, and \code{toFun_full} for the three conditions — and defines \code{rbrSoundness} as a bound on the probability of a bad transition at each challenge index. \code{rbrKnowledgeSoundness} additionally carries intermediate witness types, a round-by-round extractor, and a knowledge state function. Because ArkLib works with [reductions](dhsorens-002I) rather than proofs, both are stated relative to an input and an output language.
+}
+
+\p{
+    Sources: Canetti, Chen, Holmgren, Lombardi, Rothblum, and Rothblum, \em{Fiat–Shamir: from practice to theory} (STOC 2019); [Fiat–Shamir Security of FRI and Related SNARKs](https://eprint.iacr.org/2023/1071); \code{ArkLib/OracleReduction/Security/RoundByRound.lean}.
+}
