@@ -4,7 +4,11 @@
 \meta{toc}{true}
 
 \p{
-    Which soundness a theorem is about determines whether it survives the [Fiat–Shamir transform](dhsorens-002G). \em{Sound} names a family of properties rather than one, and the distance between the weakest and the strongest member is the distance between a protocol that is safe to compile and one that is not. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed [GKR-based argument](dhsorens-002Q) whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
+    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement, except with small probability. Completeness is the matching guarantee for an honest prover with a true statement, and is almost never where a protocol fails. The definition has to name the adversary: which provers, in which game, with which oracles.
+}
+
+\p{
+    \em{Sound} names a family of properties. Most papers prove the weakest member; [compilation](dhsorens-004S) (interactive protocol to deployed non-interactive argument) needs a stronger one. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed [GKR-based argument](dhsorens-002Q) whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
 }
 
 \p{
@@ -24,7 +28,7 @@
 }
 
 \p{
-    Compilation is where a notion gets chosen, not merely inherited. [Sequential composition](dhsorens-002I) preserves plain soundness, with the errors accumulating. Fiat–Shamir does not: analysed from plain soundness alone, a #{(2\mu+1)}-move protocol loses a factor #{Q^\mu} in the adversary's random-oracle query count #{Q}, which says nothing at all for the twenty-odd rounds of a folding argument. From special soundness the loss is #{Q+1} regardless of round count; from round-by-round soundness it is likewise linear in #{Q}. The [BCS transform](dhsorens-002H) is analysed against state restoration directly. A many-round protocol therefore has to be analysed round-by-round from the start, because an end-to-end soundness bound cannot be repaired after the fact.
+    [Compilation](dhsorens-004S) is where a notion gets chosen, not merely inherited. [Sequential composition](dhsorens-002I) preserves plain soundness, with the errors accumulating. The [Fiat–Shamir transform](dhsorens-002G) does not: analysed from plain soundness alone, a #{(2\mu+1)}-move protocol loses a factor #{Q^\mu} in the adversary's random-oracle query count #{Q}, which says nothing at all for the twenty-odd rounds of a folding argument. From special soundness the loss is #{Q+1} regardless of round count; from round-by-round soundness it is likewise linear in #{Q}. The [BCS transform](dhsorens-002H) is analysed against state restoration directly. A many-round protocol therefore has to be analysed round-by-round from the start, because an end-to-end soundness bound cannot be repaired after the fact.
 }
 
 \transclude{dhsorens-004J} % soundness, knowledge soundness, extraction
