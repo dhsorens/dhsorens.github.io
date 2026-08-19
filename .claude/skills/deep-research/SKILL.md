@@ -74,7 +74,8 @@ loop-until-dry rather than a fixed count.
 
 ## 3. Write it up
 
-Allocate addresses — one parent, one per section, plus any sub-sections:
+Allocate addresses — one blurb (for the Notes page, see step 4), one parent, one per
+section, plus any sub-sections:
 
 ```bash
 ./.claude/scripts/next-tree-id.sh <N>
@@ -137,10 +138,11 @@ Standards for the prose:
 
 Same as `/notes`:
 
-1. Prepend `\transclude{dhsorens-<parent>} % <Title>` to the block at the bottom of
-   `trees/dhsorens-notes.tree`. A deep-dive is a note and is transcluded like one. If
-   it has grown into a corpus rather than a note — many trees, several levels — write a
-   short blurb tree and transclude that instead; see `/notes` step 5.
+1. Write a blurb tree for the deep-dive and prepend
+   `\transclude{dhsorens-<blurb>} % <label>` to the block at the bottom of
+   `trees/dhsorens-notes.tree`. Never transclude the deep-dive itself — it is far too
+   long for that page. See `/notes` step 5 for the blurb's shape, and allocate its
+   address alongside the others.
 2. Rewrite the blurb in `trees/notes/dhsorens-001S.tree` and bump its `\date`. Keep
    the address — the front page transcludes it.
 3. Branch, commit, push, open a PR:

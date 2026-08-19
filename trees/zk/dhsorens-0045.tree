@@ -11,7 +11,7 @@
     \ul{
         \li{The chain: ISA specification, constraint system, arithmetisation soundness, IOP soundness, commitment security, [Fiat–Shamir](dhsorens-002G), recursion, extracted implementation.}
         \li{Which links are proved today, which are stated, and which are not formalised at all.}
-        \li{The irreducible assumptions: hash security, [conjectured proximity bounds](dhsorens-0038), the compiler, the hardware.}
+        \li{The irreducible assumptions: [hash security](dhsorens-004D), [conjectured proximity bounds](dhsorens-0038), the compiler, the hardware.}
         \li{Whether "verified" should mean the composed end-to-end theorem, or a set of component theorems with audited seams.}
         \li{The 2027 target the project set, and what would have to be true for it to be met.}
     }

@@ -12,7 +12,7 @@
         \li{Position binding, and what a Merkle commitment does not give you.}
         \li{Batched openings and path deduplication; where proof size actually goes.}
         \li{Salting and its role in [zero knowledge](dhsorens-002E) — and in ArkLib's \code{Salt.lean}.}
-        \li{Hash cost as the prover's real bottleneck; arity and tree shape tradeoffs.}
+        \li{[Hash cost as the prover's real bottleneck](dhsorens-004D); arity and tree shape tradeoffs.}
         \li{The formalisation: what ArkLib's Merkle tree development proves, and what it assumes about the hash.}
     }
 }

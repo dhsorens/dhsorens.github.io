@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    Hand-written circuits for hot operations — hashes, elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
+    Hand-written circuits for hot operations — [hashes](dhsorens-004F), elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
 }
 
 \p{

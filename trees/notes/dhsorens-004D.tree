@@ -1,0 +1,34 @@
+\title{Hash Functions in Bitcoin and Ethereum}
+\author{dhsorens}
+\taxon{Blog}
+\date{2026-08-18}
+\meta{toc}{true}
+
+\p{
+    \em{AI-drafted 2026-08-18; not yet reviewed.}
+}
+
+\p{
+    Both major chains rest on a handful of hash functions, and which one is never only a cryptographic question. Bitcoin runs [SHA-256](dhsorens-004E) for proof of work, transaction identifiers, and its Merkle trees, with RIPEMD-160 alongside it for addresses. Ethereum runs [Keccak](dhsorens-004F) for addresses, storage slots, and the state trie, and SHA-256 on the consensus layer — two families inside one protocol.
+}
+
+\p{
+    What has been in flux is a third kind of hash. For most of a decade the argument was that a proof system wants a function designed for it: an arithmetisation-friendly hash like [Poseidon](dhsorens-004H), whose round function is cheap counted in field multiplications rather than bit operations. On 13 August 2026 the Ethereum Foundation abandoned that direction for L1. Justin Drake's [announcement](https://x.com/drakefjustin/status/2087905684180418733) is the primary source for all of this, and his one-line summary is the clearest statement of the reversal — "the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+}
+
+\p{
+    The reason is not that Poseidon broke. Proof systems over [binary fields](dhsorens-002L) closed the gap from the other side, so a conventional hash is now cheap enough to prove that its decades of public cryptanalysis are the deciding factor. SHA-2 and [the BLAKE family](dhsorens-004G) are the candidates, and which BLAKE — 2s or 3 — is not settled in anything published so far.
+}
+
+\transclude{dhsorens-004E} % SHA-2 and Bitcoin
+\transclude{dhsorens-004F} % Keccak and Ethereum
+\transclude{dhsorens-004G} % the BLAKE family: 2s, 2b, 3
+\transclude{dhsorens-004H} % Poseidon and the 2026 decision
+
+\p{
+    The part that interests me is the second-order effect on [verification](dhsorens-000X). A conservative hash has a stable specification that many independent implementations already agree on, which matters a great deal if the goal is to [verify an implementation rather than only a protocol](dhsorens-0045). A generated parameter set does not offer that, whatever its cryptanalytic standing. The [cost of hashing in a circuit](dhsorens-0048) is now one input to that decision rather than the whole of it.
+}
+
+\p{
+    Sources: [Drake's announcement](https://x.com/drakefjustin/status/2087905684180418733), the [Poseidon Cryptanalysis Initiative](https://www.poseidon-initiative.info/), [Flock](https://eprint.iacr.org/2026/1329).
+}

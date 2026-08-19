@@ -40,7 +40,7 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 - Publishing flow: work on a branch, commit **sources only** (`./commit-trees.sh` or plain git), push, PR to `main`. CI publishes on merge; allow ~10 minutes for the Cloudflare cache after merging.
 - `trees/notes/dhsorens-001S.tree` is the **Latest Deep-Dive** blurb transcluded at the top of the front page. Its address is load-bearing — rewrite its body, never its address.
 - `trees/dhsorens-notes.tree` **transcludes** its notes, newest first; each renders in place with its own title and date, in the standard forester page format. It is not a bulleted list of links — `dhsorens-talks.tree` and `dhsorens-slides.tree` are lists because a talk has no tree to render, but a note does.
-- A **corpus** (currently `trees/zk/`, rooted at `dhsorens-002C`, 72 trees) is too large to transclude there. It appears on the Notes page through a short blurb tree in ordinary note format — `trees/notes/dhsorens-004C.tree` — which says what the corpus is and links into its sections. Transclude the blurb; link the corpus. Adding a page inside a corpus does not touch the Notes page.
+- **Anything with sections is transcluded there through a blurb**, never directly: a corpus (`trees/zk/`, rooted at `dhsorens-002C`, 72 trees) or a sectioned note (`dhsorens-004D` and its four children) would otherwise become the whole page. A blurb is an ordinary note tree — `A Note on <Topic>`, one paragraph, then links into the pages; `dhsorens-004C` and `dhsorens-004I` are the two in the forest. Transclude the blurb; link the thing. A short standalone note is transcluded directly. Adding a page inside a corpus does not touch the Notes page.
 
 ## Workflows
 
