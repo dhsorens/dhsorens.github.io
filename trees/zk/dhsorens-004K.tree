@@ -1,0 +1,7 @@
+\title{Special Soundness}
+\author{dhsorens}
+\date{2026-08-19}
+
+\p{
+    The multi-round generalisation is #{(k_1, \dots, k_\mu)}-special soundness. Instead of a pair of transcripts the extractor is given a tree: at the #{i}-th challenge round each node branches #{k_i} ways with pairwise distinct challenges, and the tree of accepting leaves yields a witness. Attema and Fehr computed the resulting knowledge error exactly for challenge sets of sizes #{N_1, \dots, N_\mu}; it is at most #{\sum_{i=1}^{\mu} (k_i - 1)/N_i}, which is the bound worth remembering. Two special soundness at each of #{\mu} rounds over a field of size #{|\mathbb{F}|} costs #{\mu/|\mathbb{F}|}, and the tree has #{\prod_i k_i} leaves, so the extractor's cost is what limits how large the #{k_i} can be.
+}
