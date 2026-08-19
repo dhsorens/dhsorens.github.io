@@ -4,7 +4,7 @@
 \meta{toc}{true}
 
 \p{
-    Which soundness a theorem is about determines whether it survives the [Fiat–Shamir transform](dhsorens-002G). \em{Sound} names a family of properties rather than one, and the distance between the weakest and the strongest member is the distance between a protocol that is safe to compile and one that is not. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed GKR-based argument whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
+    Which soundness a theorem is about determines whether it survives the [Fiat–Shamir transform](dhsorens-002G). \em{Sound} names a family of properties rather than one, and the distance between the weakest and the strongest member is the distance between a protocol that is safe to compile and one that is not. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed [GKR-based argument](dhsorens-002Q) whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
 }
 
 \p{

@@ -10,7 +10,7 @@
     Questions this page should answer:
     \ul{
         \li{The definition: relations with oracle statements, and what a reduction between them is.}
-        \li{Sequential composition, and how the soundness error accounts.}
+        \li{Sequential composition, and [how the soundness error accounts](dhsorens-004N).}
         \li{Lifting and virtual oracle reductions (\code{LiftContext}) — why real protocols need a component to run in a larger context than it was stated in.}
         \li{Decomposing a full system this way. [WHIR](dhsorens-003C) or [Spartan](dhsorens-003G) is the test case.}
         \li{What is lost: which protocols resist a clean decomposition, and why.}

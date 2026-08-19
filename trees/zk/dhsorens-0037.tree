@@ -13,7 +13,7 @@
         \li{Commit phase and query phase; the round-consistency check the verifier performs.}
         \li{Parameters and their interaction: rate, folding factor, number of rounds, number of query repetitions.}
         \li{Prover cost — encoding, Merkle hashing, and where the time actually goes.}
-        \li{The soundness statement, with the [regime](dhsorens-0038) named explicitly.}
+        \li{[The soundness statement](dhsorens-004L), with the [regime](dhsorens-0038) named explicitly.}
         \li{What ArkLib's \code{ProofSystem/Fri} states, and how far the proof gets.}
     }
 }

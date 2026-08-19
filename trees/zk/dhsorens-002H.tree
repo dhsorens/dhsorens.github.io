@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    How an IOP plus a commitment scheme becomes a non-interactive argument. The transform that every hash-based system in deployment is an instance of.
+    How an IOP plus a commitment scheme becomes a non-interactive argument. The transform that every hash-based system in deployment is an instance of. It is proved against [state-restoration soundness](dhsorens-004M) rather than against plain soundness.
 }
 
 \p{

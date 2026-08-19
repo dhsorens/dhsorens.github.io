@@ -3,7 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    What bit-security a deployed system actually claims, under which assumptions, and who checked. This is where [soundness regimes](dhsorens-0038) stop being a theoretical distinction.
+    [What bit-security a deployed system actually claims](dhsorens-004N), under which assumptions, and who checked. This is where [soundness regimes](dhsorens-0038) stop being a theoretical distinction.
 }
 
 \p{

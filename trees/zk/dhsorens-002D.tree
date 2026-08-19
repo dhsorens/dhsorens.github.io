@@ -4,7 +4,7 @@
 \meta{toc}{true}
 
 \p{
-    The vocabulary layer. [FRI](dhsorens-0037), [Spartan](dhsorens-003G), and [WHIR](dhsorens-003C) are instances of the same handful of definitions, and much of what is confusing in a paper is a confusion about which definition is in play: which soundness notion, in which oracle model, against which adversary.
+    The vocabulary layer. [FRI](dhsorens-0037), [Spartan](dhsorens-003G), and [WHIR](dhsorens-003C) are instances of the same handful of definitions, and much of what is confusing in a paper is a confusion about which definition is in play: [which soundness notion](dhsorens-002F), in which oracle model, against which adversary.
 }
 
 \p{
