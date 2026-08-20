@@ -3,29 +3,71 @@
 \date{2026-08-20}
 
 \p{
-    There are two ways to derive the challenges and the deployed systems use the second one. Re-hashing the whole serialised transcript at every round is what the definition says and costs hash work quadratic in the transcript length. A duplex sponge keeps a state, absorbs each prover message into it, and squeezes each challenge out of it, so the work is linear and the state carries the dependence on everything absorbed so far. With [Poseidon](dhsorens-004H) the permutation is the dominant in-circuit cost of verifying a proof inside another proof, so the number of permutation calls is a parameter someone optimises, not a detail.
+    There are two ways to derive the challenges and the deployed systems use the second one.
+    Re-hashing the whole serialised transcript at every round is what the definition says and costs
+    hash work quadratic in the transcript length. A duplex sponge keeps a state, absorbs each prover
+    message into it, and squeezes each challenge out of it, so the work is linear and the state
+    carries the dependence on everything absorbed so far. With [Poseidon](dhsorens-004H) the
+    permutation is the dominant in-circuit cost of verifying a proof inside another proof, so the
+    number of permutation calls is a parameter someone optimises, not a detail.
 }
 
 \p{
-    Chiesa and Orrù analysed that object rather than the definition. Their Fiat–Shamir transformation is built on an ideal permutation, follows the duplex sponge paradigm, minimises permutation calls for given absorb and squeeze requirements, and comes with concrete bounds intended to set security parameters. Having an analysis of the deployed variant matters more than it sounds: the textbook argument is about #{H} applied to a transcript, the shipped code runs a sponge over a permutation, and the two are different constructions on different idealisations.
+    Chiesa and Orrù analysed that object rather than the definition. Their Fiat–Shamir
+    transformation is built on an ideal permutation, follows the duplex sponge paradigm, minimises
+    permutation calls for given absorb and squeeze requirements, and comes with concrete bounds
+    intended to set security parameters. Having an analysis of the deployed variant matters more
+    than it sounds: the textbook argument is about #{H} applied to a transcript, the shipped code
+    runs a sponge over a permutation, and the two are different constructions on different
+    idealisations.
 }
 
 \p{
-    Their negative result is the part I would keep. Indifferentiability is the property that licenses treating a sponge as a random oracle, and it is proved for the duplex construction; Chiesa and Orrù find it ill-suited for establishing the knowledge soundness and the zero knowledge of a non-interactive argument. So the standard bridge from "this mode of operation is sound" to "the compiled argument inherits its security" does not carry the two properties the argument is bought for, and a sponge-based system needs its own analysis rather than a citation to indifferentiability. This is not a break of anything; it is a gap where an implementer would reasonably have assumed there was a theorem.
+    Their negative result is the part I would keep. Indifferentiability is the property that
+    licenses treating a sponge as a random oracle, and it is proved for the duplex construction;
+    Chiesa and Orrù find it ill-suited for establishing the knowledge soundness and the zero
+    knowledge of a non-interactive argument. So the standard bridge from "this mode of operation is
+    sound" to "the compiled argument inherits its security" does not carry the two properties the
+    argument is bought for, and a sponge-based system needs its own analysis rather than a citation
+    to indifferentiability. This is not a break of anything; it is a gap where an implementer would
+    reasonably have assumed there was a theorem.
 }
 
 \p{
-    Their library, spongefish — the successor to nimue, now under arkworks — makes the resulting discipline an API. It is permutation-agnostic, ships Keccak and Poseidon, supports byte challenges with [grinding](dhsorens-003A) integrated into the verifier, and constructs a prover or verifier state only from a \code{DomainSeparator} composed of a protocol identifier, a mandatory session identifier, and the public instance. Requiring the instance to build the state is the structural fix for [weak Fiat–Shamir](dhsorens-0050): the statement is in the hash because the type says so, rather than because the implementer remembered.
+    Their library, spongefish — the successor to nimue, now under arkworks — makes the resulting
+    discipline an API. It is permutation-agnostic, ships Keccak and Poseidon, supports byte
+    challenges with [grinding](dhsorens-003A) integrated into the verifier, and constructs a prover
+    or verifier state only from a \code{DomainSeparator} composed of a protocol identifier, a
+    mandatory session identifier, and the public instance. Requiring the instance to build the state
+    is the structural fix for [weak Fiat–Shamir](dhsorens-0050): the statement is in the hash
+    because the type says so, rather than because the implementer remembered.
 }
 
 \p{
-    Serialisation is inside the security argument, not underneath it. Absorbing a field element means fixing an encoding, and two distinct transcripts that encode to the same byte string are a collision the proof assumed away — so canonical encodings and unambiguous absorb boundaries are soundness obligations. The sponge's own collision term comes from its capacity: a capacity of #{c} bits gives generic security around #{2^{c/2}}, which is why a 128-bit target wants a 256-bit capacity and why the rate-capacity split is a parameter and not a performance knob. That term appears in the [bit-security accounting](dhsorens-004N) alongside the Merkle one.
+    Serialisation is inside the security argument, not underneath it. Absorbing a field element
+    means fixing an encoding, and two distinct transcripts that encode to the same byte string are a
+    collision the proof assumed away — so canonical encodings and unambiguous absorb boundaries are
+    soundness obligations. The sponge's own collision term comes from its capacity: a capacity of
+    #{c} bits gives generic security around #{2^{c/2}}, which is why a 128-bit target wants a
+    256-bit capacity and why the rate-capacity split is a parameter and not a performance knob. That
+    term appears in the [bit-security accounting](dhsorens-004N) alongside the Merkle one.
 }
 
 \p{
-    [ArkLib](dhsorens-0040) formalises the sponge variant separately from the plain one, in \code{OracleReduction/FiatShamir/DuplexSponge}. \code{Defs.lean} defines the multi-round transform over a \code{CanonicalDuplexSponge}, with a challenge oracle combining a random oracle and a permutation oracle, a \code{deriveTranscriptDSFS} that reconstructs the full transcript from the messages by absorbing and squeezing, and \code{duplexSpongeFiatShamir} for provers, verifiers, and reductions. Domain separation is carried in the types: \code{HasMessageSize} and \code{HasChallengeSize} instances fix a size per round, so rounds are distinguishable by construction. Salt is deliberately absent — a salted protocol is obtained by treating the salt as the protocol's first message, which is the same trick [ArkLib's Salt.lean](dhsorens-0050) uses one level up.
+    [ArkLib](dhsorens-0040) formalises the sponge variant separately from the plain one, in
+    \code{OracleReduction/FiatShamir/DuplexSponge}. \code{Defs.lean} defines the multi-round
+    transform over a \code{CanonicalDuplexSponge}, with a challenge oracle combining a random oracle
+    and a permutation oracle, a \code{deriveTranscriptDSFS} that reconstructs the full transcript
+    from the messages by absorbing and squeezing, and \code{duplexSpongeFiatShamir} for provers,
+    verifiers, and reductions. Domain separation is carried in the types: \code{HasMessageSize} and
+    \code{HasChallengeSize} instances fix a size per round, so rounds are distinguishable by
+    construction. Salt is deliberately absent — a salted protocol is obtained by treating the salt
+    as the protocol's first message, which is the same trick [ArkLib's Salt.lean](dhsorens-0050)
+    uses one level up.
 }
 
 \p{
-    Sources: [A Fiat–Shamir Transformation From Duplex Sponges](https://eprint.iacr.org/2025/536) (Chiesa, Orrù, TCC 2025); [spongefish](https://github.com/arkworks-rs/spongefish); \code{ArkLib/OracleReduction/FiatShamir/DuplexSponge}.
+    Sources: [A Fiat–Shamir Transformation From Duplex Sponges](https://eprint.iacr.org/2025/536)
+    (Chiesa, Orrù, TCC 2025); [spongefish](https://github.com/arkworks-rs/spongefish);
+    \code{ArkLib/OracleReduction/FiatShamir/DuplexSponge}.
 }

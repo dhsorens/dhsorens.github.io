@@ -11,7 +11,9 @@
     \ul{
         \li{Batched FRI: many words, one folding argument. What the random combination costs in soundness, and what ArkLib's \code{BatchedFri} states.}
         \li{Batching across constraint polynomials in a STARK, and how it interacts with [DEEP](dhsorens-0039).}
-        \li{[Proof-of-work grinding](dhsorens-004E): converting prover hash work into verifier confidence, and the exact form of the resulting bound. What it prices is the [retry that Fiat–Shamir hands the prover](dhsorens-004U).}
+        \li{[Proof-of-work grinding](dhsorens-004E): converting prover hash work into verifier
+        confidence, and the exact form of the resulting bound. What it prices is the [retry that
+        Fiat–Shamir hands the prover](dhsorens-004U).}
         \li{How many bits of a deployed security level come from grinding rather than from the protocol.}
         \li{Whether grinding is accounted for in the [round-by-round](dhsorens-004L) analysis or bolted on afterwards, and how it enters the [state-restoration](dhsorens-004M) bound.}
     }

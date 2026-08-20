@@ -3,29 +3,73 @@
 \date{2026-08-20}
 
 \p{
-    \strong{Weak} Fiat–Shamir hashes the prover's commitment and not the statement; \strong{strong} Fiat–Shamir hashes both. The weak variant is unsound the moment the prover picks what to prove, because the challenge is then fixed before the statement is, and a prover free to choose the statement afterwards can search for one the transcript it already has will satisfy. This is the [adaptive setting](dhsorens-004O) arriving through an implementation choice rather than through a protocol design, and it is by far the most common real fault in deployed proof systems.
+    \strong{Weak} Fiat–Shamir hashes the prover's commitment and not the statement; \strong{strong}
+    Fiat–Shamir hashes both. The weak variant is unsound the moment the prover picks what to prove,
+    because the challenge is then fixed before the statement is, and a prover free to choose the
+    statement afterwards can search for one the transcript it already has will satisfy. This is the
+    [adaptive setting](dhsorens-004O) arriving through an implementation choice rather than through
+    a protocol design, and it is by far the most common real fault in deployed proof systems.
 }
 
 \p{
-    The catalogue is embarrassing and worth quoting exactly. Trail of Bits disclosed the family in April 2022 under the name Frozen Heart, with instances in Girault's proof of knowledge, Bulletproofs, and PlonK — in the PlonK case the public inputs were absent from the challenge derivation, so a prover could produce an accepting proof for public inputs of its choosing, and the affected code included Dusk's plonk, iden3's snarkjs, and ConsenSys' gnark. Dao, Miller, Wright, and Grubbs then surveyed the open-source ecosystem and found 36 weak Fiat–Shamir implementations across 12 different proof systems. Every one of those systems has a correct paper.
+    The catalogue is embarrassing and worth quoting exactly. Trail of Bits disclosed the family in
+    April 2022 under the name Frozen Heart, with instances in Girault's proof of knowledge,
+    Bulletproofs, and PlonK — in the PlonK case the public inputs were absent from the challenge
+    derivation, so a prover could produce an accepting proof for public inputs of its choosing, and
+    the affected code included Dusk's plonk, iden3's snarkjs, and ConsenSys' gnark. Dao, Miller,
+    Wright, and Grubbs then surveyed the open-source ecosystem and found 36 weak Fiat–Shamir
+    implementations across 12 different proof systems. Every one of those systems has a correct
+    paper.
 }
 
 \p{
-    Domain separation is the same category of fault one level down. A single hash function typically serves several roles in one system — deriving challenges, hashing [Merkle](dhsorens-0031) leaves, hashing internal nodes, committing to values — and each security proof was written assuming its own independent oracle. If a byte string produced in one role can be reinterpreted as one produced in another, the proofs do not compose, and leaf-versus-node confusion in a Merkle tree is the textbook case. The fix is a tag per role, either prefixed by hand or supplied by the primitive: [BLAKE2](dhsorens-004G) has a personalisation parameter and gets it for free, Keccak offers customisation strings through cSHAKE, and Poseidon carries a domain constant in its initial capacity element.
+    Domain separation is the same category of fault one level down. A single hash function typically
+    serves several roles in one system — deriving challenges, hashing [Merkle](dhsorens-0031)
+    leaves, hashing internal nodes, committing to values — and each security proof was written
+    assuming its own independent oracle. If a byte string produced in one role can be reinterpreted
+    as one produced in another, the proofs do not compose, and leaf-versus-node confusion in a
+    Merkle tree is the textbook case. The fix is a tag per role, either prefixed by hand or supplied
+    by the primitive: [BLAKE2](dhsorens-004G) has a personalisation parameter and gets it for free,
+    Keccak offers customisation strings through cSHAKE, and Poseidon carries a domain constant in
+    its initial capacity element.
 }
 
 \p{
-    Beyond roles, the transcript should bind the context: a protocol identifier and version, the verifying key, and whatever names the deployment — a chain identifier, a session. Without it a proof valid against one verifier can be replayed against another that shares a hash function and a circuit, which is not a soundness failure of either but is a failure of the system. [Simulation extractability](dhsorens-004Q) is the cryptographic property that would rule out the general form of this; binding the context is the cheap engineering that covers the cases anyone has actually hit. [spongefish's](dhsorens-004Z) mandatory session identifier is this idea expressed as a type.
+    Beyond roles, the transcript should bind the context: a protocol identifier and version, the
+    verifying key, and whatever names the deployment — a chain identifier, a session. Without it a
+    proof valid against one verifier can be replayed against another that shares a hash function and
+    a circuit, which is not a soundness failure of either but is a failure of the system.
+    [Simulation extractability](dhsorens-004Q) is the cryptographic property that would rule out the
+    general form of this; binding the context is the cheap engineering that covers the cases anyone
+    has actually hit. [spongefish's](dhsorens-004Z) mandatory session identifier is this idea
+    expressed as a type.
 }
 
 \p{
-    Salting is per-message randomness added to the protocol, and it does two unrelated jobs. It supplies hiding — a Merkle opening of a trace column leaks the trace unless the leaves are salted, so this is where zero knowledge in a STARK-like system actually comes from — and it enters the [state-restoration accounting](dhsorens-004M), where [ArkLib's](dhsorens-0040) \code{OracleReduction/Salt.lean} proves \code{srSoundness_addSalt_implies_srSoundness_original}. That direction is the useful one: state-restoration soundness of the salted protocol yields it for the original, so salting can be assumed without re-proving anything, with the knowledge version alongside.
+    Salting is per-message randomness added to the protocol, and it does two unrelated jobs. It
+    supplies hiding — a Merkle opening of a trace column leaks the trace unless the leaves are
+    salted, so this is where zero knowledge in a STARK-like system actually comes from — and it
+    enters the [state-restoration accounting](dhsorens-004M), where [ArkLib's](dhsorens-0040)
+    \code{OracleReduction/Salt.lean} proves \code{srSoundness_addSalt_implies_srSoundness_original}.
+    That direction is the useful one: state-restoration soundness of the salted protocol yields it
+    for the original, so salting can be assumed without re-proving anything, with the knowledge
+    version alongside.
 }
 
 \p{
-    These faults persist because they live in the gap between a protocol and its encoding, and nothing in a paper closes that gap — a theorem about #{\mathrm{FS}(\Pi, H)} does not fix a serialisation, an absorb boundary, or a set of domain tags, so none of it is wrong when the code is. That is a good argument for [formalising the transform](dhsorens-003Z) rather than only the protocol: a Lean definition of Fiat–Shamir cannot avoid naming what is absorbed and in what order, which turns the omission that caused Frozen Heart into a type error. [How zkVMs break](dhsorens-003Y) lists Fiat–Shamir misuse alongside the other implementation-level failure modes, and this is the section behind that line.
+    These faults persist because they live in the gap between a protocol and its encoding, and
+    nothing in a paper closes that gap — a theorem about #{\mathrm{FS}(\Pi, H)} does not fix a
+    serialisation, an absorb boundary, or a set of domain tags, so none of it is wrong when the code
+    is. That is a good argument for [formalising the transform](dhsorens-003Z) rather than only the
+    protocol: a Lean definition of Fiat–Shamir cannot avoid naming what is absorbed and in what
+    order, which turns the omission that caused Frozen Heart into a type error. [How zkVMs
+    break](dhsorens-003Y) lists Fiat–Shamir misuse alongside the other implementation-level failure
+    modes, and this is the section behind that line.
 }
 
 \p{
-    Sources: [Weak Fiat–Shamir Attacks on Modern Proof Systems](https://eprint.iacr.org/2023/691) (Dao, Miller, Wright, Grubbs); [Trail of Bits' Frozen Heart disclosures](https://blog.trailofbits.com/2022/04/13/part-1-coordinated-disclosure-of-vulnerabilities-affecting-girault-bulletproofs-and-plonk/); \code{ArkLib/OracleReduction/Salt.lean}.
+    Sources: [Weak Fiat–Shamir Attacks on Modern Proof Systems](https://eprint.iacr.org/2023/691)
+    (Dao, Miller, Wright, Grubbs); [Trail of Bits' Frozen Heart
+    disclosures](https://blog.trailofbits.com/2022/04/13/part-1-coordinated-disclosure-of-vulnerabilities-affecting-girault-bulletproofs-and-plonk/);
+    \code{ArkLib/OracleReduction/Salt.lean}.
 }

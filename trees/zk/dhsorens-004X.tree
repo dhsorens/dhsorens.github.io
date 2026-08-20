@@ -3,29 +3,71 @@
 \date{2026-08-20}
 
 \p{
-    Khovratovich, Rothblum, and Soukhanov proved the following at CRYPTO 2025. Fix any hash function #{H}. Then there is an instantiation of the standard [GKR](dhsorens-002Q)-based succinct argument for non-deterministic bounded-depth computation whose Fiat–Shamir compilation with #{H} is not adaptively sound, and they exhibit an explicit circuit together with an accepting proof of a false claim about it. The extension is the part that should worry an implementer: given any circuit #{C} and any target output #{y}, they construct a circuit computing the same function as #{C} for which they can produce an accepting proof that it outputs #{y}, true or not. A poisoned circuit is not distinguishable from the honest one by evaluating it.
+    Khovratovich, Rothblum, and Soukhanov proved the following at CRYPTO 2025. Fix any hash function
+    #{H}. Then there is an instantiation of the standard [GKR](dhsorens-002Q)-based succinct
+    argument for non-deterministic bounded-depth computation whose Fiat–Shamir compilation with #{H}
+    is not adaptively sound, and they exhibit an explicit circuit together with an accepting proof
+    of a false claim about it. The extension is the part that should worry an implementer: given any
+    circuit #{C} and any target output #{y}, they construct a circuit computing the same function as
+    #{C} for which they can produce an accepting proof that it outputs #{y}, true or not. A poisoned
+    circuit is not distinguishable from the honest one by evaluating it.
 }
 
 \p{
-    Counterexamples to Fiat–Shamir in the standard model are not new — [Canetti, Goldreich, and Halevi](dhsorens-004V) gave them in 1998 — and the field's answer had always been that they were built to fail. This one is not. GKR is a textbook protocol, its Fiat–Shamir compilation is deployed, and the attack applies to that compilation rather than to a variant contrived for the purpose. Ron Rothblum is an author of both the [theorem that put Fiat–Shamir on standard-model footing](dhsorens-004W) and this result, which is a reasonable indication of how the two fit together rather than a contradiction.
+    Counterexamples to Fiat–Shamir in the standard model are not new — [Canetti, Goldreich, and
+    Halevi](dhsorens-004V) gave them in 1998 — and the field's answer had always been that they were
+    built to fail. This one is not. GKR is a textbook protocol, its Fiat–Shamir compilation is
+    deployed, and the attack applies to that compilation rather than to a variant contrived for the
+    purpose. Ron Rothblum is an author of both the [theorem that put Fiat–Shamir on standard-model
+    footing](dhsorens-004W) and this result, which is a reasonable indication of how the two fit
+    together rather than a contradiction.
 }
 
 \p{
-    GKR is the right target because in a GKR argument the statement \em{is} a circuit. The verifier is handed a description of the computation and a claimed output, and its cost scales with the circuit's depth rather than its size — so an adversary choosing the statement chooses the computation that the challenges will be derived about, and a hash function, being a shallow computation, fits inside the statement's depth budget. That is the combination the [random oracle model](dhsorens-004V) rules out by fiat: in the model, a circuit cannot contain the oracle, and here the circuit contains #{H}.
+    GKR is the right target because in a GKR argument the statement \em{is} a circuit. The verifier
+    is handed a description of the computation and a claimed output, and its cost scales with the
+    circuit's depth rather than its size — so an adversary choosing the statement chooses the
+    computation that the challenges will be derived about, and a hash function, being a shallow
+    computation, fits inside the statement's depth budget. That is the combination the [random
+    oracle model](dhsorens-004V) rules out by fiat: in the model, a circuit cannot contain the
+    oracle, and here the circuit contains #{H}.
 }
 
 \p{
-    The attack is a diagonalisation. The challenge at each round is #{H} applied to the transcript so far; the transcript is made of the prover's claims about the circuit's layers; and the circuit computes #{H}. The prover can therefore build a statement whose own structure predicts the challenges its proof will face, and arrange the layer values so that the [sumcheck](dhsorens-002Q) checks pass on a false output claim. I have not worked through the construction and am recording its shape rather than its details — Arnon and Yogev's abstraction of "diagonalisation attacks" into an [idealised model](dhsorens-004Y) is the cleanest statement I know of what the shape is.
+    The attack is a diagonalisation. The challenge at each round is #{H} applied to the transcript
+    so far; the transcript is made of the prover's claims about the circuit's layers; and the
+    circuit computes #{H}. The prover can therefore build a statement whose own structure predicts
+    the challenges its proof will face, and arrange the layer values so that the
+    [sumcheck](dhsorens-002Q) checks pass on a false output claim. I have not worked through the
+    construction and am recording its shape rather than its details — Arnon and Yogev's abstraction
+    of "diagonalisation attacks" into an [idealised model](dhsorens-004Y) is the cleanest statement
+    I know of what the shape is.
 }
 
 \p{
-    Four things the result does not say, all of which I have seen claimed. It does not refute the random oracle proof, which remains true about random oracles. It does not depend on a weakness in #{H} — it holds for every hash function, so a longer digest or a different permutation buys nothing. It is not a break of any [FRI](dhsorens-0037)- or [Plonk](dhsorens-003F)-based system, whose statements are circuits compiled before a proof is requested. And it is not an attack that runs against a statement fixed in advance: [adaptivity](dhsorens-004O) is a hypothesis of the theorem, not an incidental feature of the construction.
+    Four things the result does not say, all of which I have seen claimed. It does not refute the
+    random oracle proof, which remains true about random oracles. It does not depend on a weakness
+    in #{H} — it holds for every hash function, so a longer digest or a different permutation buys
+    nothing. It is not a break of any [FRI](dhsorens-0037)- or [Plonk](dhsorens-003F)-based system,
+    whose statements are circuits compiled before a proof is requested. And it is not an attack that
+    runs against a statement fixed in advance: [adaptivity](dhsorens-004O) is a hypothesis of the
+    theorem, not an incidental feature of the construction.
 }
 
 \p{
-    What it does say is that the adaptivity qualifier now has to be checked per system, and the check is not always easy. The cases I would want examined are a verifier that accepts a circuit or program supplied by an untrusted party, a [zkVM](dhsorens-003Q) whose program is data rather than structure — the circuit is fixed but the computation proved is the adversary's choice — a [custom precompile](dhsorens-003V) contributed to such a VM, and [recursive verification](dhsorens-003L) where the inner circuit is chosen by the prover. Whether any of these admits a poisoned instance is not answered by the paper; its contribution is that the question is no longer empty. This is also the concrete reason [the soundness notions page](dhsorens-002F) insists on the qualifier: an interactive theorem plus a non-adaptive compilation theorem is not a statement about a system whose statements come from outside.
+    What it does say is that the adaptivity qualifier now has to be checked per system, and the
+    check is not always easy. The cases I would want examined are a verifier that accepts a circuit
+    or program supplied by an untrusted party, a [zkVM](dhsorens-003Q) whose program is data rather
+    than structure — the circuit is fixed but the computation proved is the adversary's choice — a
+    [custom precompile](dhsorens-003V) contributed to such a VM, and [recursive
+    verification](dhsorens-003L) where the inner circuit is chosen by the prover. Whether any of
+    these admits a poisoned instance is not answered by the paper; its contribution is that the
+    question is no longer empty. This is also the concrete reason [the soundness notions
+    page](dhsorens-002F) insists on the qualifier: an interactive theorem plus a non-adaptive
+    compilation theorem is not a statement about a system whose statements come from outside.
 }
 
 \p{
-    Sources: [How to Prove False Statements: Practical Attacks on Fiat–Shamir](https://eprint.iacr.org/2025/118) (Khovratovich, Rothblum, Soukhanov, CRYPTO 2025).
+    Sources: [How to Prove False Statements: Practical Attacks on
+    Fiat–Shamir](https://eprint.iacr.org/2025/118) (Khovratovich, Rothblum, Soukhanov, CRYPTO 2025).
 }

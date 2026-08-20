@@ -9,7 +9,9 @@
 \p{
     Questions this page should answer:
     \ul{
-        \li{The pipeline: which steps, in which order, and what each assumes about the protocol. [The transform itself](dhsorens-004U) is written up; what is missing here is the accounting for the two steps together.}
+        \li{The pipeline: which steps, in which order, and what each assumes about the protocol.
+        [The transform itself](dhsorens-004U) is written up; what is missing here is the accounting
+        for the two steps together.}
         \li{What the compiled adversary can do that the interactive one cannot — [grinding](dhsorens-003A), [restoring prefixes](dhsorens-004M) — and which soundness notions constrain it.}
         \li{When Fiat–Shamir alone is the compilation and when BCS sits in front of it.}
         \li{The compilation loss: how the interactive error becomes a non-interactive one, and when the bound is vacuous.}

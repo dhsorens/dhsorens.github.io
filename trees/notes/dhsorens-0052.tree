@@ -3,20 +3,42 @@
 \date{2026-08-20}
 
 \p{
-    [Fiat–Shamir and the random oracle model](dhsorens-002G) is the second written-out section of the [zkVMs and SNARKs](dhsorens-002C) corpus: the step that turns an interactive protocol into a deployable one, and the step whose security argument sits furthest from the object that ships. Three things fail here and are usually discussed as one — the interactive hypothesis being too weak to compile, the random oracle being the wrong idealisation for a hash function whose code the prover holds, and the transcript being hashed wrong. The first is settled. The second is now attached to a protocol people ship: Khovratovich, Rothblum, and Soukhanov proved false statements against Fiat–Shamir applied to a standard GKR-based argument, for every choice of hash function. The third accounts for every Fiat–Shamir failure that has cost anyone money.
+    [Fiat–Shamir and the random oracle model](dhsorens-002G) is the second written-out section of
+    the [zkVMs and SNARKs](dhsorens-002C) corpus: the step that turns an interactive protocol into a
+    deployable one, and the step whose security argument sits furthest from the object that ships.
+    Three things fail here and are usually discussed as one — the interactive hypothesis being too
+    weak to compile, the random oracle being the wrong idealisation for a hash function whose code
+    the prover holds, and the transcript being hashed wrong. The first is settled. The second is now
+    attached to a protocol people ship: Khovratovich, Rothblum, and Soukhanov proved false
+    statements against Fiat–Shamir applied to a standard GKR-based argument, for every choice of
+    hash function. The third accounts for every Fiat–Shamir failure that has cost anyone money.
 }
 
 \p{
     The sections:
     \ul{
-        \li{[The transform](dhsorens-004U) — the construction, what must be in the hash, the one new power it hands the prover, and why ArkLib's Fiat–Shamir file is definitions with the theorems still open.}
-        \li{[The random oracle model](dhsorens-004V) — observability and programmability, neither of which a deployed hash has, and the variants that trade one idealisation for another.}
-        \li{[Correlation intractability and the standard model](dhsorens-004W) — the assumption that makes Fiat–Shamir a theorem without an oracle, and the two independent reasons it does not reach the protocols in this corpus.}
-        \li{[How to prove false statements](dhsorens-004X) — the GKR attack, what it requires, and the four things it does not say.}
-        \li{[The extended transform](dhsorens-004Y) — Arnon and Yogev's proposed fix, and the counterexample it already has.}
-        \li{[Transcript hashing and duplex sponges](dhsorens-004Z) — what deployed systems actually compute, and the finding that indifferentiability is the wrong bridge to it.}
-        \li{[Domain separation, salting, and weak Fiat–Shamir](dhsorens-0050) — 36 implementations across 12 proof systems, and why these faults live in the gap between a paper and an encoding.}
-        \li{[The quantum random oracle model](dhsorens-0051) — measure-and-reprogram, a provably tight quadratic loss, and the round-count question I have not resolved.}
+        \li{[The transform](dhsorens-004U) — the construction, what must be in the hash, the one new
+        power it hands the prover, and why ArkLib's Fiat–Shamir file is definitions with the
+        theorems still open.}
+        \li{[The random oracle model](dhsorens-004V) — observability and programmability, neither of
+        which a deployed hash has, and the variants that trade one idealisation for another.}
+        \li{[Correlation intractability and the standard model](dhsorens-004W) — the assumption that
+        makes Fiat–Shamir a theorem without an oracle, and the two independent reasons it does not
+        reach the protocols in this corpus.}
+        \li{[How to prove false statements](dhsorens-004X) — the GKR attack, what it requires, and
+        the four things it does not say.}
+        \li{[The extended transform](dhsorens-004Y) — Arnon and Yogev's proposed fix, and the
+        counterexample it already has.}
+        \li{[Transcript hashing and duplex sponges](dhsorens-004Z) — what deployed systems actually
+        compute, and the finding that indifferentiability is the wrong bridge to it.}
+        \li{[Domain separation, salting, and weak Fiat–Shamir](dhsorens-0050) — 36 implementations
+        across 12 proof systems, and why these faults live in the gap between a paper and an
+        encoding.}
+        \li{[The quantum random oracle model](dhsorens-0051) — measure-and-reprogram, a provably
+        tight quadratic loss, and the round-count question I have not resolved.}
     }
-    The conclusion I would carry out of the section is that adaptivity is the qualifier to demand, not the choice of hash function. Every break needs a statement chosen after the hash is fixed, and whether a [zkVM](dhsorens-003Q) proving someone else's program is in that position is a question I have not seen answered.
+    The conclusion I would carry out of the section is that adaptivity is the qualifier to demand,
+    not the choice of hash function. Every break needs a statement chosen after the hash is fixed,
+    and whether a [zkVM](dhsorens-003Q) proving someone else's program is in that position is a
+    question I have not seen answered.
 }

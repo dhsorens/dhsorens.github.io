@@ -3,25 +3,66 @@
 \date{2026-08-20}
 
 \p{
-    In the random oracle model every party — honest prover, verifier, adversary, reduction — gets oracle access to a function #{H} drawn uniformly from all functions of the appropriate type, and can learn its value only by querying it. The model is analysed by lazy sampling: the oracle keeps a table, answers a repeated query consistently, and answers a fresh one with independent uniform randomness. Security statements are then bounds in the number of queries #{Q} rather than in running time, which is why a random oracle proof yields a concrete number and a standard-model reduction usually does not.
+    In the random oracle model every party — honest prover, verifier, adversary, reduction — gets
+    oracle access to a function #{H} drawn uniformly from all functions of the appropriate type, and
+    can learn its value only by querying it. The model is analysed by lazy sampling: the oracle
+    keeps a table, answers a repeated query consistently, and answers a fresh one with independent
+    uniform randomness. Security statements are then bounds in the number of queries #{Q} rather
+    than in running time, which is why a random oracle proof yields a concrete number and a
+    standard-model reduction usually does not.
 }
 
 \p{
-    The reduction gets two powers from the model, and a security proof for Fiat–Shamir uses both. \strong{Observability}: the reduction sees every query the adversary makes, so it can read the prover's intended transcript out of the query log — this is what makes [straightline extraction](dhsorens-004J) possible at all, since the log substitutes for rewinding. \strong{Programmability}: the reduction chooses what the oracle answers, so long as it stays consistent — this is what lets a zero-knowledge simulator fix a challenge first and arrange for #{H} to return it. Neither power exists for a deployed hash. A verifier cannot watch a prover evaluate Keccak, and nobody can reprogram it.
+    The reduction gets two powers from the model, and a security proof for Fiat–Shamir uses both.
+    \strong{Observability}: the reduction sees every query the adversary makes, so it can read the
+    prover's intended transcript out of the query log — this is what makes [straightline
+    extraction](dhsorens-004J) possible at all, since the log substitutes for rewinding.
+    \strong{Programmability}: the reduction chooses what the oracle answers, so long as it stays
+    consistent — this is what lets a zero-knowledge simulator fix a challenge first and arrange for
+    #{H} to return it. Neither power exists for a deployed hash. A verifier cannot watch a prover
+    evaluate Keccak, and nobody can reprogram it.
 }
 
 \p{
-    What the model discards is the code. A random oracle is an object no algorithm can describe more compactly than by its table; [Keccak](dhsorens-004F) is 24 rounds of a permutation, and [Poseidon](dhsorens-004H) is a few dozen arithmetic operations over the same field the protocol runs on. So a real prover can do things the model forbids by construction: evaluate #{H} inside a circuit, make #{H} the subject of the statement it is proving, or search for an input whose digest has a property it wants. The first two are non-black-box uses, and every known break of Fiat–Shamir in the standard model is one of them.
+    What the model discards is the code. A random oracle is an object no algorithm can describe more
+    compactly than by its table; [Keccak](dhsorens-004F) is 24 rounds of a permutation, and
+    [Poseidon](dhsorens-004H) is a few dozen arithmetic operations over the same field the protocol
+    runs on. So a real prover can do things the model forbids by construction: evaluate #{H} inside
+    a circuit, make #{H} the subject of the statement it is proving, or search for an input whose
+    digest has a property it wants. The first two are non-black-box uses, and every known break of
+    Fiat–Shamir in the standard model is one of them.
 }
 
 \p{
-    Canetti, Goldreich, and Halevi showed in 1998 that the gap is real rather than an artefact of proof technique: there are schemes provably secure in the random oracle model and insecure under \em{every} concrete instantiation of the oracle. Their counterexamples were self-referential by design, and the field's working response for twenty-five years was that no protocol anyone would deploy looks like that. [Khovratovich, Rothblum, and Soukhanov](dhsorens-004X) removed that response by exhibiting the same phenomenon for a standard [GKR](dhsorens-002Q)-based argument. The model's failure mode is now attached to a protocol people ship.
+    Canetti, Goldreich, and Halevi showed in 1998 that the gap is real rather than an artefact of
+    proof technique: there are schemes provably secure in the random oracle model and insecure under
+    \em{every} concrete instantiation of the oracle. Their counterexamples were self-referential by
+    design, and the field's working response for twenty-five years was that no protocol anyone would
+    deploy looks like that. [Khovratovich, Rothblum, and Soukhanov](dhsorens-004X) removed that
+    response by exhibiting the same phenomenon for a standard [GKR](dhsorens-002Q)-based argument.
+    The model's failure mode is now attached to a protocol people ship.
 }
 
 \p{
-    None of which makes the model dispensable, because every concrete number in a hash-based system comes out of it. The [Merkle collision term](dhsorens-0031), the [grinding](dhsorens-003A) discount, the query budget #{t} that separates the two conventions for [quoting bits of security](dhsorens-004N) — all are random-oracle quantities, and the alternative is not a better bound but no bound. The [Gentry–Wichs](dhsorens-004W) barrier says something stronger: succinct arguments for #{\mathsf{NP}} cannot be proved sound from falsifiable assumptions by black-box reduction, so a succinct system is going to rest on an idealised oracle or a knowledge assumption, and the choice is which.
+    None of which makes the model dispensable, because every concrete number in a hash-based system
+    comes out of it. The [Merkle collision term](dhsorens-0031), the [grinding](dhsorens-003A)
+    discount, the query budget #{t} that separates the two conventions for [quoting bits of
+    security](dhsorens-004N) — all are random-oracle quantities, and the alternative is not a better
+    bound but no bound. The [Gentry–Wichs](dhsorens-004W) barrier says something stronger: succinct
+    arguments for #{\mathsf{NP}} cannot be proved sound from falsifiable assumptions by black-box
+    reduction, so a succinct system is going to rest on an idealised oracle or a knowledge
+    assumption, and the choice is which.
 }
 
 \p{
-    The variants in use trade one idealisation for another. The ideal permutation model replaces the random function with a random permutation the adversary may query in both directions, which is what a [duplex sponge](dhsorens-004Z) is actually built on, and Chiesa and Orrù analyse Fiat–Shamir there directly — finding, usefully, that indifferentiability from a random oracle is the wrong bridge, since it does not carry the knowledge soundness or zero knowledge the argument needs. The algebraic group model constrains a pairing-based adversary to producing group elements as known linear combinations, which is how [Groth16](dhsorens-003E) and [Plonk](dhsorens-003F) get their proofs. The [quantum](dhsorens-0051) version allows superposition queries. Each is a model, and a claim of the form "secure in the ROM" should be read as naming which one.
+    The variants in use trade one idealisation for another. The ideal permutation model replaces the
+    random function with a random permutation the adversary may query in both directions, which is
+    what a [duplex sponge](dhsorens-004Z) is actually built on, and Chiesa and Orrù analyse
+    Fiat–Shamir there directly — finding, usefully, that indifferentiability from a random oracle is
+    the wrong bridge, since it does not carry the knowledge soundness or zero knowledge the argument
+    needs. The algebraic group model constrains a pairing-based adversary to producing group
+    elements as known linear combinations, which is how [Groth16](dhsorens-003E) and
+    [Plonk](dhsorens-003F) get their proofs. The [quantum](dhsorens-0051) version allows
+    superposition queries. Each is a model, and a claim of the form "secure in the ROM" should be
+    read as naming which one.
 }

@@ -4,5 +4,11 @@
 \meta{toc}{true}
 
 \p{
-    See my latest on [Fiat–Shamir and the random oracle model](dhsorens-002G) — the step that makes a proof system deployable, and the one whose security argument sits furthest from the deployed object. Khovratovich, Rothblum, and Soukhanov proved false statements against Fiat–Shamir applied to a standard GKR-based argument, for every choice of hash function, so the qualifier that saves everything else is [adaptivity](dhsorens-004O), and it has to be checked system by system rather than assumed. It is the second written-out section of the [zkVMs and SNARKs](dhsorens-002C) corpus.
+    See my latest on [Fiat–Shamir and the random oracle model](dhsorens-002G) — the step that makes
+    a proof system deployable, and the one whose security argument sits furthest from the deployed
+    object. Khovratovich, Rothblum, and Soukhanov proved false statements against Fiat–Shamir
+    applied to a standard GKR-based argument, for every choice of hash function, so the qualifier
+    that saves everything else is [adaptivity](dhsorens-004O), and it has to be checked system by
+    system rather than assumed. It is the second written-out section of the [zkVMs and
+    SNARKs](dhsorens-002C) corpus.
 }
