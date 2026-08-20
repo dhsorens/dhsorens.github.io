@@ -1,0 +1,27 @@
+\title{The Extended Fiat–Shamir Transform}
+\author{dhsorens}
+\date{2026-08-20}
+
+\p{
+    Arnon and Yogev proposed a modified transform, XFS, designed so that [the diagonalisation attacks](dhsorens-004X) cannot be mounted against it. The idea attacks the attack's precondition rather than its mechanics. A self-referential statement works by arranging for the circuit and the verifier to query the oracle at the same points; XFS adds a proof of work and a prefix-avoiding padder to the challenge derivation, so that the inputs the verifier queries are provably outside the set a circuit inside the statement can reach. The self-reference is then unavailable, whatever the circuit computes.
+}
+
+\p{
+    Their security claim is a claim about a model. They define an idealised model abstracting what the known attacks have in common — diagonalisation, in the sense that the statement talks about the hash — and prove unconditionally that plain Fiat–Shamir is insecure in it and XFS is secure. That is a stronger form of argument than a reduction to an assumption and a weaker one than a standard-model theorem: it says any successful attack on XFS must use something the model does not capture, and says nothing about what else there might be to use.
+}
+
+\p{
+    Kalsta found something the model does not capture. \em{Simple Attacks Against (Extended) Fiat–Shamir} gives a counterexample to XFS built from a universal argument system in Barak's style, and — this is the part that makes it awkward — the construction is simpler than Barak's and does not need the heavy machinery of the earlier uninstantiability results. So the proposal that was to close the gap has a counterexample within a year, by a route the idealised model did not anticipate.
+}
+
+\p{
+    XFS also costs something in the place a deployment can least afford it. The proof of work sits in the challenge derivation, so the verifier pays it, and the verifier's cost is the entire design constraint for [on-chain verification](dhsorens-003P). As described in Kalsta's account, XFS is defined for particular three-move proof systems over Boolean circuits, which is narrower than the many-round [IOP](dhsorens-002E)-based systems this corpus is about; how it would extend to a twenty-round [folding argument](dhsorens-003K) is not something I can currently say.
+}
+
+\p{
+    Two rounds of proposal and counterexample inside a year is the honest summary of where the standard-model question stands, and I would not hold a deployment decision on it. The transform is not the variable that a system operator controls; the [adaptivity of its statements](dhsorens-004O) is. A system that can establish its statements are fixed before its hash function is chosen does not need XFS, and a system that cannot has a problem no transform currently on offer is proved to solve.
+}
+
+\p{
+    Sources: [Towards a White-Box Secure Fiat–Shamir Transformation](https://eprint.iacr.org/2025/329) (Arnon, Yogev, CRYPTO 2025); Kalsta, \em{Simple Attacks Against (Extended) Fiat–Shamir}.
+}

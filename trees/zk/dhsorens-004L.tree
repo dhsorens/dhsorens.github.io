@@ -17,7 +17,7 @@
 }
 
 \p{
-    In the standard model the payoff is a theorem. Canetti et al. proved that #{\mathrm{FS}(\Pi, \mathcal{H})} is computationally sound whenever #{\Pi} is round-by-round sound and #{\mathcal{H}} is correlation intractable for the relation derived from the state function. In the random oracle model the compilation loss is linear in the adversary's query count. Either way the hypothesis is round-by-round soundness, which is why the notion appears in every modern security proof of a deployed hash-based system and why a paper proving only end-to-end soundness has not yet said anything about its own non-interactive version.
+    In the standard model the payoff is a theorem. Canetti et al. proved that #{\mathrm{FS}(\Pi, \mathcal{H})} is computationally sound whenever #{\Pi} is round-by-round sound and #{\mathcal{H}} is [correlation intractable](dhsorens-004W) for the relation derived from the state function. In the random oracle model the compilation loss is linear in the adversary's query count. Either way the hypothesis is round-by-round soundness, which is why the notion appears in every modern security proof of a deployed hash-based system and why a paper proving only end-to-end soundness has not yet said anything about its own non-interactive version.
 }
 
 \p{

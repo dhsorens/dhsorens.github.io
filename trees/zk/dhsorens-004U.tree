@@ -1,0 +1,31 @@
+\title{The Transform}
+\author{dhsorens}
+\date{2026-08-20}
+
+\p{
+    Take a public-coin protocol in which the prover sends #{a_1}, receives a uniform challenge #{c_1}, sends #{a_2}, and so on through #{\mu} challenge rounds. Fiat–Shamir sets #{c_i = H(x, a_1, \dots, a_i)} for a hash function #{H} and a statement #{x}, and the proof is the string #{\pi = (a_1, \dots, a_{\mu+1})}. The verifier recomputes every #{c_i} from #{\pi} and runs the interactive verifier's decision predicate unchanged. Deployed implementations chain instead of re-hashing — #{c_i = H(c_{i-1}, a_i)}, which is what a [duplex sponge](dhsorens-004Z) computes — and the two agree as long as the chain is injective on transcripts.
+}
+
+\p{
+    Public-coin is not a convenience here, it is the precondition. A private-coin verifier's challenges depend on randomness the prover must not learn, so there is no transcript to hash them out of; this is the first of several reasons [the distinction is load-bearing](dhsorens-002E) rather than presentational. An IOP is not directly compilable either, because its verifier queries oracles the proof string does not contain — the [BCS transform](dhsorens-002H) realises those oracles as commitments first, and Fiat–Shamir is applied to the interactive argument that results. [Compilation](dhsorens-004S) is the two steps together.
+}
+
+\p{
+    What must be in the hash is everything the verifier's decision depends on, and the requirement is easier to state than to satisfy. The statement #{x}, the public parameters, and every prior prover message all belong there; omitting the statement gives the \em{weak} variant, which is unsound whenever the prover chooses what to prove, and which [several dozen implementations shipped](dhsorens-0050). The serialisation matters for the same reason a Merkle tree's encoding does: two distinct transcripts that encode to one byte string are a collision the security proof assumed away.
+}
+
+\p{
+    The transform hands the prover exactly one new power: it can retry. Nothing forces it to accept the first challenge it sees — it computes #{c_i} itself, and if the resulting challenge is unhelpful it changes #{a_i} and computes again. [State-restoration soundness](dhsorens-004M) is the notion that assumes precisely this adversary, and [proof-of-work grinding](dhsorens-003A) is the countermeasure that prices each attempt. The compilation loss is then whatever the interactive hypothesis supports: #{Q^\mu} from plain soundness, #{(Q+1)\kappa} from [special soundness](dhsorens-004K), linear in #{Q} from [round-by-round soundness](dhsorens-004L).
+}
+
+\p{
+    Zero knowledge comes out of the same construction, by a mechanism worth separating from soundness. The simulator does not have a witness; it produces a transcript backwards, choosing the challenge first and \em{programming} the oracle to return it. That is a power the simulator has only because #{H} is idealised — a real hash cannot be reprogrammed — so honest-verifier zero knowledge of the interactive protocol upgrades to zero knowledge of the compiled one in the [random oracle model](dhsorens-004V) and by no argument that survives instantiation.
+}
+
+\p{
+    Two alternatives exist and neither is deployed for succinct arguments. Fischlin's transform makes the prover produce, across many parallel repetitions, transcripts whose hashes have a prescribed number of leading zeros; the work of finding them forces the prover to expose enough distinct challenges per repetition that a straightline extractor can read a witness off the proof, with no rewinding and no #{Q}-dependent loss. It buys that with prover work exponential in the grinding parameter, a larger proof, and hypotheses — small challenge space, unique responses — that no [IOP-based](dhsorens-002E) system satisfies. Unruh's transform plays the same role in the [quantum](dhsorens-0051) setting. Both are formalised as case studies in [VCV-io](dhsorens-0042); neither appears in a zkVM.
+}
+
+\p{
+    In [ArkLib](dhsorens-0040) the transform is defined and largely unproved, which is itself informative. \code{OracleReduction/FiatShamir/Basic.lean} builds \code{Prover.fiatShamir}, \code{Verifier.fiatShamir}, and \code{Reduction.fiatShamir} by replacing each challenge with a query to a Fiat–Shamir oracle over the transcript so far, and states the three properties the transform should preserve: completeness, state-restoration soundness implying soundness, and honest-verifier zero knowledge implying zero knowledge. \code{fiatShamir_completeness} carries a \code{sorry} and the soundness implication is a \code{TODO}. The [soundness notions](dhsorens-002F) themselves are proved and their implications are theorems; the step that connects them to a non-interactive object is the one still open, in Lean as in the literature.
+}

@@ -1,0 +1,31 @@
+\title{Correlation Intractability and the Standard Model}
+\author{dhsorens}
+\date{2026-08-20}
+
+\p{
+    Correlation intractability is the assumption on a hash function that makes Fiat–Shamir a theorem without an oracle. A keyed family #{H_k} is correlation intractable for a relation #{R} if, given a random key, no efficient adversary can find an input #{u} with #{(u, H_k(u)) \in R} except with negligible probability. The relation is where the protocol enters: for a [round-by-round sound](dhsorens-004L) protocol, take #{R} to relate each transcript prefix to the challenges that would lift its doom. A prefix has few such challenges, by definition of the round-by-round error, so #{R} is sparse; finding one is exactly what a Fiat–Shamir attacker must do.
+}
+
+\p{
+    Canetti, Chen, Holmgren, Lombardi, Rothblum, and Rothblum made this the statement of the theorem: #{\mathrm{FS}(\Pi, \mathcal{H})} is sound whenever #{\Pi} is round-by-round sound and #{\mathcal{H}} is correlation intractable for the bad-challenge relation derived from #{\Pi}'s state function. The hypothesis on the hash is now a falsifiable assumption about a concrete family rather than a claim that the family behaves like a random function. That is the whole appeal, and it is why round-by-round soundness was invented — the notion exists because it is the one that makes this reduction go through.
+}
+
+\p{
+    The relation class cannot be arbitrary, and the reason is a one-line diagonalisation: given the key, the relation pairing each #{u} with its own digest #{H_k(u)} is sparse and its witnesses are trivially findable, so no family is correlation intractable for relations allowed to depend on #{k}. The results therefore fix a class in advance and quantify over relations in it. Peikert and Shiehian built a correlation-intractable family for efficiently searchable relations from plain LWE, which combined with the theorem above gives non-interactive zero knowledge for #{\mathsf{NP}} from a standard lattice assumption — the landmark application, and the one usually meant when Fiat–Shamir is said to have been placed on standard-model footing.
+}
+
+\p{
+    None of it reaches the protocols in this corpus, for two independent reasons. The first is the bad-challenge function. The reduction needs #{R} to lie in the class the family handles, which means the set of undooming challenges must be computable from the prefix by a bounded-depth circuit; for a [sigma protocol](dhsorens-004K) it is a linear-algebra computation and for the [FRI](dhsorens-0037) family it is a statement about the distance from the prover's oracle to a Reed–Solomon code over a domain of exponential size. Nobody has a correlation-intractable family for that, and it is not obvious what one would look like. The second is succinctness. Gentry and Wichs showed that succinct arguments for #{\mathsf{NP}} cannot be proved adaptively sound from any falsifiable assumption by black-box reduction — so the standard-model route yields NIZK, whose proofs are longer than the witness, and stops short of the systems bought for their proof size.
+}
+
+\p{
+    The deployed protocols are therefore analysed in the [random oracle model](dhsorens-004V) and there is no known alternative for them. Block, Garreta, Katz, Thaler, Tiwari, and Zając's Fiat–Shamir security proof for FRI is a random-oracle theorem; so is every parameter table in production. The correlation-intractability line is not an approximation to that argument, it is a different argument about different protocols, and citing it as reassurance about a STARK is a category error I have seen made more than once.
+}
+
+\p{
+    What would change the picture is a correlation-intractable family for a relation class containing the proximity-based state functions, or a soundness argument for the deployed transform that quantifies only over statements fixed before the hash — the [adaptivity](dhsorens-004O) question again, approached from the assumption side. The [extended transform](dhsorens-004Y) is the current attempt at the second.
+}
+
+\p{
+    Sources: Canetti, Chen, Holmgren, Lombardi, Rothblum, and Rothblum, \em{Fiat–Shamir: from practice to theory} (STOC 2019); Peikert and Shiehian, \em{Noninteractive Zero Knowledge for NP from (Plain) Learning With Errors} (CRYPTO 2019); Gentry and Wichs, \em{Separating Succinct Non-Interactive Arguments From All Falsifiable Assumptions} (STOC 2011).
+}

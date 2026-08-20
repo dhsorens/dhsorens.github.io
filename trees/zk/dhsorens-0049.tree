@@ -9,7 +9,7 @@
 \p{
     Questions this page should answer:
     \ul{
-        \li{What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.}
+        \li{What is at risk and what is not: discrete-log commitments, hash-based commitments, and — the part usually skipped — [the Fiat–Shamir step in a quantum setting](dhsorens-0051).}
         \li{Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism. Which hash they are instantiated with is now [SHA-2 or BLAKE rather than Poseidon](dhsorens-004H).}
         \li{Lattice-based commitments as an alternative, and their cost profile.}
         \li{The consequence for the last step of a pipeline that currently ends in Groth16.}

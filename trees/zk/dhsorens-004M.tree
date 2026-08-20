@@ -19,7 +19,7 @@
 }
 
 \p{
-    Salting works in the same accounting. ArkLib's \code{Salt.lean} adds per-message randomness to a protocol, and \code{srSoundness_addSalt_implies_srSoundness_original} runs in the direction that makes salting free to assume: state-restoration soundness of the salted protocol gives it for the original, with the knowledge version proved alongside. Both state-restoration notions then imply their straightline counterparts with the error preserved — \code{srSoundness_implies_soundness} and \code{srKnowledgeSoundness_implies_knowledgeSoundness} — so the state-restoration analysis is the strongest of the hash-based statements and everything else in the chain follows from it.
+    Salting works in the same accounting, and [buys hiding on the side](dhsorens-0050). ArkLib's \code{Salt.lean} adds per-message randomness to a protocol, and \code{srSoundness_addSalt_implies_srSoundness_original} runs in the direction that makes salting free to assume: state-restoration soundness of the salted protocol gives it for the original, with the knowledge version proved alongside. Both state-restoration notions then imply their straightline counterparts with the error preserved — \code{srSoundness_implies_soundness} and \code{srKnowledgeSoundness_implies_knowledgeSoundness} — so the state-restoration analysis is the strongest of the hash-based statements and everything else in the chain follows from it.
 }
 
 \p{

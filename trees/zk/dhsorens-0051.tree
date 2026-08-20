@@ -1,0 +1,31 @@
+\title{Fiat–Shamir in the Quantum Random Oracle Model}
+\author{dhsorens}
+\date{2026-08-20}
+
+\p{
+    A quantum adversary holding the code of the hash function can evaluate it on a superposition of inputs, so the [random oracle](dhsorens-004V) has to be modelled as a quantum-accessible oracle, and both powers the classical proof relied on break. Observability goes first: measuring a superposition query disturbs it, so there is no query log to read a transcript out of, and the [straightline extractor](dhsorens-004J) loses its input. Programmability survives but has to be exercised without knowing which query to program. This is a proof problem rather than an attack — nobody has an attack on Fiat–Shamir from superposition queries — and it is the reason a post-quantum claim about a hash-based system is a claim about the QROM rather than about the absence of pairings.
+}
+
+\p{
+    Don, Fehr, Majenz, and Schaffner's measure-and-reprogram technique is the standard resolution. The reduction picks one of the adversary's #{q} queries at random, measures it, and reprograms the oracle's answer from that point on, which recovers a classical-looking transcript at a cost in success probability. For a three-move sigma protocol this gives QROM security for the Fiat–Shamir transform with a loss of #{O(q^2)}. Liu and Zhandry obtained related results by a different route.
+}
+
+\p{
+    The follow-up settles two things worth knowing. Don, Fehr, and Majenz extended the technique to the Fiat–Shamir transform of multi-round interactive proofs, with a cleaner bound and a simpler proof than the original, and they showed by a Grover-search attack that the #{O(q^2)} loss for sigma protocols is optimal up to a small constant. The square is therefore a real feature of the transform in the quantum setting, not slack in the analysis — which is the good case, because a known and provably tight loss is something a [parameter table](dhsorens-004N) can carry.
+}
+
+\p{
+    On the positive side for the systems in this corpus, Block, Garreta, Tiwari, and Zając showed that a special-sound IOP Fiat–Shamir-compiles to an \em{adaptively} sound non-interactive proof in the QROM. That is a stronger conclusion than the classical results reach on the [adaptivity](dhsorens-004O) axis, and it applies to the hypothesis — [special soundness](dhsorens-004K) — that the algebraic components of a modern system are proved to satisfy. It does not extend to the components that are analysed [round-by-round through a distance bound](dhsorens-004L) instead.
+}
+
+\p{
+    Two questions this page should still answer:
+    \ul{
+        \li{How the multi-round QROM loss scales in the round count #{\mu}. If it grows the way the classical plain-soundness bound does, a twenty-round [folding argument](dhsorens-003K) has no usable quantum bound; if it stays linear in #{\mu} the way round-by-round soundness does classically, it does. I have not checked which.}
+        \li{Whether round-by-round soundness has a QROM compilation theorem, and so whether the [FRI](dhsorens-0037) family's Fiat–Shamir security proof — a classical random-oracle theorem — has a quantum counterpart. This is the gap that matters for the [post-quantum](dhsorens-0049) claims made for STARK-based systems.}
+    }
+}
+
+\p{
+    Sources: Don, Fehr, Majenz, and Schaffner, \em{Security of the Fiat–Shamir Transformation in the Quantum Random-Oracle Model} (CRYPTO 2019); [The Measure-and-Reprogram Technique 2.0: Multi-Round Fiat–Shamir and More](https://arxiv.org/abs/2003.05207) (Don, Fehr, Majenz, CRYPTO 2020); [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256).
+}

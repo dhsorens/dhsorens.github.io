@@ -1,22 +1,37 @@
 \title{Fiat–Shamir and the Random Oracle Model}
 \author{dhsorens}
-\date{2026-08-18}
+\date{2026-08-20}
+\meta{toc}{true}
 
 \p{
-    The step that makes a proof system deployable, and the step where the security argument is thinnest.
+    Fiat–Shamir replaces the verifier's random challenges with hashes of the transcript so far. A public-coin interactive protocol becomes a single string; the verifier recomputes the challenges from that string and checks the same predicates it would have checked interactively. Nothing else in the protocol changes, which is why the step is usually applied without comment, and why its security argument is the one furthest from the object that ships.
 }
 
 \p{
-    Questions this page should answer:
-    \ul{
-        \li{The transform, and exactly what it assumes about [the hash function](dhsorens-004D).}
-        \li{Why [round-by-round soundness](dhsorens-004L) is the right hypothesis for a many-round protocol.}
-        \li{Khovratovich, Rothblum, and Soukhanov's attack: GKR made non-interactive proves false statements. What it does and does not say about deployed provers.}
-        \li{Duplex sponges versus hashing a transcript; domain separation and salting, and what ArkLib's \code{Salt.lean} is for.}
-        \li{Whether the ROM is the right idealisation, and what the alternatives cost.}
-    }
+    In the [random oracle model](dhsorens-004V) the transform is a theorem, with a loss determined by which [soundness notion](dhsorens-002F) the interactive protocol was proved to satisfy. In deployment the oracle is [Keccak](dhsorens-004F) or [Poseidon](dhsorens-004H), a function whose code the prover holds. The theorem says nothing about that object, and the gap is not a formality: Khovratovich, Rothblum, and Soukhanov proved false statements against the Fiat–Shamir compilation of a standard [GKR](dhsorens-002Q)-based argument, for every choice of hash function.
 }
 
 \p{
-    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118), [ArkLib](https://github.com/Verified-zkEVM/ArkLib) (\code{OracleReduction/FiatShamir}).
+    Three separate things can fail here, and they are usually discussed as one. The \strong{hypothesis} can be too weak — a plain soundness bound compiles to a bound carrying #{Q^\mu} in the adversary's query count #{Q}, vacuous past a handful of rounds, so a many-round protocol must be [round-by-round sound](dhsorens-004L) from the start. The \strong{idealisation} can be wrong — a concrete hash can be computed inside the statement, which no random oracle can be, and that is the hole the attacks go through. The \strong{implementation} can be wrong — hashing the commitment but not the statement, or reusing a sponge across roles without separating domains, breaks systems whose paper proof is correct.
+}
+
+\p{
+    Of the three, the first is settled and the other two are not. The compilation loss from [special soundness](dhsorens-004K) or round-by-round soundness is known and tight enough to set parameters by. The implementation failures are catalogued — Dao, Miller, Wright, and Grubbs found 36 weak-Fiat–Shamir implementations across 12 proof systems — and still shipped. The idealisation question is the live one: the [standard-model results](dhsorens-004W) narrow it without covering the deployed protocols, the [extended transform](dhsorens-004Y) proposes to close it, and a counterexample to that proposal already exists.
+}
+
+\p{
+    My reading is that the random oracle model is not the problem and adaptivity is. Every break I know of needs a statement chosen after the hash function is fixed, so a system that fixes its circuit and its hash before an adversary sees either is outside the attacks' reach. A [zkVM](dhsorens-003Q) proving the execution of a program it was handed is not obviously in that position, and I have not seen the line drawn. [Whether the statement is fixed in advance](dhsorens-004O) is the qualifier to demand of any Fiat–Shamir security claim.
+}
+
+\transclude{dhsorens-004U} % the transform
+\transclude{dhsorens-004V} % the random oracle model
+\transclude{dhsorens-004W} % correlation intractability and the standard model
+\transclude{dhsorens-004X} % how to prove false statements
+\transclude{dhsorens-004Y} % the extended transform
+\transclude{dhsorens-004Z} % transcript hashing and duplex sponges
+\transclude{dhsorens-0050} % domain separation, salting, weak Fiat-Shamir
+\transclude{dhsorens-0051} % the quantum random oracle model
+
+\p{
+    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118) (Khovratovich, Rothblum, Soukhanov, CRYPTO 2025); [Towards a White-Box Secure Fiat–Shamir Transformation](https://eprint.iacr.org/2025/329) (Arnon, Yogev, CRYPTO 2025); [A Fiat–Shamir Transformation From Duplex Sponges](https://eprint.iacr.org/2025/536) (Chiesa, Orrù, TCC 2025); [Weak Fiat–Shamir Attacks on Modern Proof Systems](https://eprint.iacr.org/2023/691) (Dao, Miller, Wright, Grubbs); [ArkLib](https://github.com/Verified-zkEVM/ArkLib) (\code{OracleReduction/FiatShamir}).
 }
