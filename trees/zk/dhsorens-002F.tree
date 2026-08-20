@@ -12,7 +12,7 @@
 }
 
 \p{
-    The notions, weakest first, for a public-coin protocol #{\Pi} with #{\mu} challenge rounds deciding membership in a language #{L}.
+    The notions, weakest first, for a [public-coin](dhsorens-0053) protocol #{\Pi} with #{\mu} challenge rounds deciding membership in a language #{L}. Each is a different quantification over [transcripts](dhsorens-0054), and each was first written down for the three-move [sigma protocol](dhsorens-0055) before being generalised.
     \ul{
         \li{\strong{Soundness} — no prover convinces the verifier of a false statement except with probability at most #{\epsilon}. Which provers are admitted is the whole content of the definition: unbounded ones make #{\Pi} a proof, computationally bounded ones an argument.}
         \li{\strong{Knowledge soundness} — an efficient extractor recovers a witness from any prover that convinces #{V}. Strictly stronger, and the only one of the two with content when every statement is in the language.}

@@ -38,7 +38,7 @@
     None of it reaches the protocols in this corpus, for two independent reasons. The first is the
     bad-challenge function. The reduction needs #{R} to lie in the class the family handles, which
     means the set of undooming challenges must be computable from the prefix by a bounded-depth
-    circuit; for a [sigma protocol](dhsorens-004K) it is a linear-algebra computation and for the
+    circuit; for a [sigma protocol](dhsorens-0055) it is a linear-algebra computation and for the
     [FRI](dhsorens-0037) family it is a statement about the distance from the prover's oracle to a
     Reed–Solomon code over a domain of exponential size. Nobody has a correlation-intractable family
     for that, and it is not obvious what one would look like. The second is succinctness. Gentry and

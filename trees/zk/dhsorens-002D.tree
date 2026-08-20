@@ -12,6 +12,9 @@
 }
 
 \transclude{dhsorens-002E} % IPs, arguments, IOPs
+\transclude{dhsorens-0053} % public-coin protocols
+\transclude{dhsorens-0054} % transcripts
+\transclude{dhsorens-0055} % sigma protocols
 \transclude{dhsorens-004T} % completeness
 \transclude{dhsorens-002F} % soundness notions
 \transclude{dhsorens-004S} % compilation

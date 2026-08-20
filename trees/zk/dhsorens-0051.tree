@@ -18,9 +18,9 @@
     Don, Fehr, Majenz, and Schaffner's measure-and-reprogram technique is the standard resolution.
     The reduction picks one of the adversary's #{q} queries at random, measures it, and reprograms
     the oracle's answer from that point on, which recovers a classical-looking transcript at a cost
-    in success probability. For a three-move sigma protocol this gives QROM security for the
-    Fiat–Shamir transform with a loss of #{O(q^2)}. Liu and Zhandry obtained related results by a
-    different route.
+    in success probability. For a three-move [sigma protocol](dhsorens-0055) this gives QROM
+    security for the Fiat–Shamir transform with a loss of #{O(q^2)}. Liu and Zhandry obtained
+    related results by a different route.
 }
 
 \p{

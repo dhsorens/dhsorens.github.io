@@ -3,7 +3,7 @@
 \date{2026-08-19}
 
 \p{
-    The step from an interactive public-coin protocol to a proof that can be sent as a string. When the protocol is an IOP, the [BCS transform](dhsorens-002H) realises the oracles and [Fiat–Shamir](dhsorens-002G) removes the interaction; when it is already an IP, Fiat–Shamir is the whole compilation. A [soundness](dhsorens-002F) theorem about the interactive protocol does not automatically apply to the result.
+    The step from an interactive [public-coin](dhsorens-0053) protocol to a proof that can be sent as a string. When the protocol is an IOP, the [BCS transform](dhsorens-002H) realises the oracles and [Fiat–Shamir](dhsorens-002G) removes the interaction; when it is already an IP, Fiat–Shamir is the whole compilation. A [soundness](dhsorens-002F) theorem about the interactive protocol does not automatically apply to the result.
 }
 
 \p{

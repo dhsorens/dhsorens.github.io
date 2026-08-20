@@ -1,0 +1,80 @@
+\title{Transcripts}
+\author{dhsorens}
+\date{2026-08-20}
+
+\p{
+    A \strong{transcript} is the record of one execution of an interactive protocol: the sequence of
+    messages the prover and verifier exchanged, in order. It is an unglamorous object with an
+    outsized role, because every security property of a proof system is a statement about
+    transcripts — soundness bounds the probability that a particular kind of transcript is
+    accepting, zero knowledge asks that a transcript's distribution be reproducible without a
+    witness, and after [Fiat–Shamir](dhsorens-002G) the transcript stops being a record of an
+    interaction and becomes the proof itself.
+}
+
+\p{
+    Fix a #{(2\mu+1)}-move [public-coin](dhsorens-0053) protocol in which the prover sends
+    #{a_1, \dots, a_{\mu+1}} and the verifier sends challenges #{c_1, \dots, c_\mu}.
+}
+
+\p{
+    \strong{Definition.} A \em{full transcript} is the sequence
+}
+
+##{\tau \;=\; (a_1,\, c_1,\, a_2,\, c_2,\, \dots,\, c_\mu,\, a_{\mu+1}).}
+
+\p{
+    For #{0 \le i \le \mu}, the \em{prefix} #{\tau_i} is the initial segment ending in #{c_i}, with
+    #{\tau_0} the empty transcript. A transcript is \em{accepting} for a statement #{x} if the
+    verifier's decision function returns #{1} on #{(x, \tau)}. The \em{transcript distribution} on
+    #{(x,w)} is the distribution of #{\tau} induced by running the honest prover on witness #{w}
+    against the verifier, the randomness being the verifier's challenges and any the prover uses.
+}
+
+\p{
+    Prefixes are the part of the definition that earns its keep. Because the protocol is
+    public-coin, a prefix determines the state of the interaction completely: everything the
+    verifier knows after #{i} rounds is a function of #{x} and #{\tau_i}. That is what allows a
+    security argument to be localised to a round rather than stated once about the whole execution,
+    and localisation is what makes a many-round protocol analysable at all.
+}
+
+\p{
+    Each of the soundness notions is a different quantification over this object. [Special
+    soundness](dhsorens-004K) asks for a function that maps a \em{tree} of accepting transcripts —
+    sharing prefixes, branching at the challenge rounds — to a witness. [Round-by-round
+    soundness](dhsorens-004L) labels each pair #{(x, \tau_i)} doomed or not, and bounds the
+    probability that one challenge moves a prefix out of doom. [State-restoration
+    soundness](dhsorens-004M) hands the adversary the power to return to any prefix it has already
+    built and draw a fresh challenge there. Zero knowledge asks for a simulator whose output is
+    distributed as the transcript distribution. The notions differ in what they let an adversary do
+    to a transcript, and in nothing else.
+}
+
+\p{
+    Under Fiat–Shamir the transcript becomes the deliverable. Each challenge is replaced by a hash
+    of the prefix preceding it, so the challenges are recomputable and need not be transmitted: the
+    proof string is #{(a_1, \dots, a_{\mu+1})}, and the verifier rebuilds the full #{\tau} from it
+    before checking the same decision function as before. [The transform](dhsorens-004U) is exactly
+    this substitution.
+}
+
+\p{
+    Implementations do not hold the transcript as a list. They keep a \strong{stateful} transcript:
+    a running hash state that absorbs each prover message as it is produced and from which each
+    challenge is squeezed, so that the state at any point is a commitment to the prefix. This is
+    what a duplex sponge is for, and it is the form Fiat–Shamir actually takes in deployed systems —
+    the sponge state \em{is} the transcript, in the only sense the security argument requires, since
+    two executions whose states agree agree on everything absorbed up to the collision probability
+    of the construction. [Transcript hashing and duplex sponges](dhsorens-004Z) treats the
+    construction, its analysis, and its cost.
+}
+
+\p{
+    The consequence is that "what is in the transcript" is a security question and not a matter of
+    bookkeeping. A value the verifier's decision depends on which the state never absorbed is a
+    value the prover may change after the challenges are fixed, and that single mistake is the [weak
+    Fiat–Shamir](dhsorens-0050) family of vulnerabilities. Serialisation is part of the same
+    obligation: absorbing a field element means fixing an encoding, and two distinct transcripts
+    that encode to one byte string are a collision the security proof assumed away.
+}
