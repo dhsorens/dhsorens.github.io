@@ -54,7 +54,7 @@
     Fiat–Shamir security proof for FRI is a random-oracle theorem; so is every parameter table in
     production. The correlation-intractability line is not an approximation to that argument, it is
     a different argument about different protocols, and citing it as reassurance about a STARK is a
-    category error I have seen made more than once.
+    category error, and a common one.
 }
 
 \p{

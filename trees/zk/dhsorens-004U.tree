@@ -3,10 +3,10 @@
 \date{2026-08-20}
 
 \p{
-    Take a public-coin protocol in which the prover sends #{a_1}, receives a uniform challenge
-    #{c_1}, sends #{a_2}, and so on through #{\mu} challenge rounds. Fiat–Shamir sets
-    #{c_i = H(x, a_1, \dots, a_i)} for a hash function #{H} and a statement #{x}, and the proof is
-    the string #{\pi = (a_1, \dots, a_{\mu+1})}. The verifier recomputes every #{c_i} from #{\pi}
+    Take a [public-coin](dhsorens-0053) protocol in which the prover sends #{a_1}, receives a
+    uniform challenge #{c_1}, sends #{a_2}, and so on through #{\mu} challenge rounds. Fiat–Shamir
+    sets #{c_i = H(x, a_1, \dots, a_i)} for a hash function #{H} and a statement #{x}, and the proof
+    is the string #{\pi = (a_1, \dots, a_{\mu+1})}. The verifier recomputes every #{c_i} from #{\pi}
     and runs the interactive verifier's decision predicate unchanged. Deployed implementations chain
     instead of re-hashing — #{c_i = H(c_{i-1}, a_i)}, which is what a [duplex sponge](dhsorens-004Z)
     computes — and the two agree as long as the chain is injective on transcripts.
@@ -16,9 +16,9 @@
     Public-coin is not a convenience here, it is the precondition. A private-coin verifier's
     challenges depend on randomness the prover must not learn, so there is no transcript to hash
     them out of; this is the first of several reasons [the distinction is
-    load-bearing](dhsorens-002E) rather than presentational. An IOP is not directly compilable
-    either, because its verifier queries oracles the proof string does not contain — the [BCS
-    transform](dhsorens-002H) realises those oracles as commitments first, and Fiat–Shamir is
+    load-bearing](dhsorens-0053) rather than presentational. An [IOP](dhsorens-0056) is not directly
+    compilable either, because its verifier queries oracles the proof string does not contain — the
+    [BCS transform](dhsorens-002H) realises those oracles as commitments first, and Fiat–Shamir is
     applied to the interactive argument that results. [Compilation](dhsorens-004S) is the two steps
     together.
 }

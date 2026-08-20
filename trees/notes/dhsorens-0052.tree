@@ -9,9 +9,10 @@
     Three things fail here and are usually discussed as one — the interactive hypothesis being too
     weak to compile, the random oracle being the wrong idealisation for a hash function whose code
     the prover holds, and the transcript being hashed wrong. The first is settled. The second is now
-    attached to a protocol people ship: Khovratovich, Rothblum, and Soukhanov proved false
-    statements against Fiat–Shamir applied to a standard GKR-based argument, for every choice of
-    hash function. The third accounts for every Fiat–Shamir failure that has cost anyone money.
+    attached to a protocol people ship: Khovratovich, Rothblum, and Soukhanov [proved
+    false](dhsorens-0057) statements against Fiat–Shamir applied to a standard GKR-based argument,
+    for every choice of hash function. The third accounts for every Fiat–Shamir failure that has
+    cost anyone money.
 }
 
 \p{

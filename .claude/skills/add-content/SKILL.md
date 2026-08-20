@@ -79,7 +79,26 @@ Some subjects have grown their own multi-page corpus — `trees/zk/` (the zkVMs 
 ### Cited paper (`\taxon{Paper}`)
 **Every paper cited anywhere in the forest gets one of these, and every in-text citation links to it.** A trailing `Sources:` paragraph is a supplement to live links, never a substitute for them.
 - File: `trees/papers/dhsorens-XXXX.tree`, `\taxon{Paper}`, no `\author` (the authors are the paper's, and belong in the body). `\meta{external}{<eprint or DOI URL>}` so the title links out to the canonical source.
-- Body: three paragraphs, in this order — **historical context** (what the state of the art was, what problem was open, who had tried what), **contributions** (what the paper actually proves or builds, stated precisely enough to cite from), **impact** (what it changed: what it enabled, what it killed, what now cites it, what it left open).
+- Body: a **fixed three-part format, in this order, with run-in headers** — the standard matters more than the prose here, because these pages are read by lookup rather than end to end.
+  ```
+  \p{
+      \strong{Context.} …historical and technical: what the state of the art was, what
+      problem was open, who had tried what, and the technical setting the result lives in
+      (which model, which class of protocol, which assumption).
+  }
+
+  \p{
+      \strong{Contributions.} …what the paper proves or builds, stated precisely enough to
+      cite from — theorem shapes, bounds, and the hypotheses they need.
+  }
+
+  \p{
+      \strong{Impact.} …what it changed: what it enabled, what it ruled out, what now
+      builds on it, and what it left open.
+  }
+  ```
+  Run-in bold headers rather than true headings, because forester's headings come from nested trees: real sections would mean three extra trees per paper. Forester does have `\subtree[addr]{…}` for inline addressable subtrees, but the repo's `forester-syntax.md` records it as unused here and it would generate ~3 extra trees per paper in `docs/`. Revisit if Derek wants true headings.
+- Where a fact could not be verified — the eprint host is unreachable from cloud sessions — say so in the sentence rather than asserting it. An unverified `Impact` paragraph is worse than a short one.
 - Wire: link it live from every page that cites the work, at the point of the claim — `Khovratovich, Rothblum, and Soukhanov [proved false statements](dhsorens-XXXX) against …`. Do not transclude Paper pages into `dhsorens-notes`; they are reference pages, not notes.
 - Distinguish from `\taxon{Publication}`, which is Derek's *own* output and lives as a `\paper{…}` row in `trees/research/dhsorens-pubs.tree`. `Paper` is for the literature.
 - A Paper page is not a substitute for a concept page. The concept (`the Fiat–Shamir attack`) gets a page explaining the mathematics; the paper gets a page explaining the work's place in the literature. Link them to each other.
@@ -99,5 +118,8 @@ Material of the form "here is how this concept appears in a real codebase" — A
 - Don't use relative asset links, ever.
 - Don't touch `theme/` for content work.
 - Don't merge the PR without the user's go-ahead — merging deploys.
+- **Don't write in the personal register on a page whose purpose is exposition.** A page that sets down what is already established in the literature — the whole `trees/zk/` corpus, and anything produced by `/notes` or `/deep-research` — is textbook voice: no `my reading is`, no `I would keep`, no `I have not checked`. Personal notes with `my read on this` remain correct where the page exists to record Derek's own thinking. Load `/writing` for the split and its `reference/feedback-log.md` for the accumulated corrections.
+- **Don't cite a paper without minting its `\taxon{Paper}` page and linking it live** at the point of the claim.
+- **Ask when an instruction contradicts a recorded convention, an earlier instruction, or itself** — standing instruction from Derek. Raise it before writing rather than silently picking a reading.
 
 For site health checks, forester upgrades, or diagnosing a broken deploy, use the `/maintain` skill instead.

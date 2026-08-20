@@ -10,6 +10,42 @@ failure.
 
 ---
 
+## 2026-08-20 — follow-up on PR #36
+
+### Why this workflow is textbook-voice, and where personal notes still live
+
+> "there will still be personal notes with 'my read on this' in other places, but the purpose
+> of this current workflow is to flesh out what is already known in the wild (mostly for my
+> understanding) and so we should have a textbook quality to them and not personal writing
+> quality"
+
+**Rule.** The distinction is one of *purpose*, not merely of directory. Where a page exists to
+set down what is already established in the literature — which is what the `zk` corpus and
+the research workflows are for — it is exposition and takes the textbook voice. Where a page
+exists to record Derek's own thinking, the personal register is correct and wanted. When
+unsure which a page is, ask what the page is *for*: explaining the known, or working
+something out.
+
+### Ask when an instruction contradicts something else
+
+> "please ask me questions if I ask for something contradictory"
+
+**Rule.** Standing instruction. Where a new request conflicts with a recorded convention, an
+earlier instruction, or itself, raise it before writing rather than picking a reading
+silently. The register question above was exactly this case and asking resolved it in one
+round.
+
+### Paper pages take a fixed format
+
+> "I would like the paper pages to have a standard format, with headers if possible, of
+> context, contributions, and impact ; context should be historical and technical"
+
+**Rule.** Fixed three-part structure, in this order, with run-in headers: **Context** (both
+historical *and* technical — what the state of the art was, what was open, and the technical
+setting the result lives in), **Contributions**, **Impact**. Recorded in `/add-content`.
+
+---
+
 ## 2026-08-20 — review of PR #36 (the Fiat–Shamir section)
 
 Verdict: *"This is a nice start, but your writing really needs to improve. All of the notes

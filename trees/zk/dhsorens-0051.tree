@@ -48,7 +48,7 @@
         \li{How the multi-round QROM loss scales in the round count #{\mu}. If it grows the way the
         classical plain-soundness bound does, a twenty-round [folding argument](dhsorens-003K) has
         no usable quantum bound; if it stays linear in #{\mu} the way round-by-round soundness does
-        classically, it does. I have not checked which.}
+        classically, it does. Which of the two holds is unresolved.}
         \li{Whether round-by-round soundness has a QROM compilation theorem, and so whether the
         [FRI](dhsorens-0037) family's Fiat–Shamir security proof — a classical random-oracle theorem
         — has a quantum counterpart. This is the gap that matters for the

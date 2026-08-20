@@ -1,16 +1,17 @@
-\title{How to Prove False Statements}
+\title{Attacks on Instantiated Fiat–Shamir}
 \author{dhsorens}
 \date{2026-08-20}
 
 \p{
-    Khovratovich, Rothblum, and Soukhanov proved the following at CRYPTO 2025. Fix any hash function
-    #{H}. Then there is an instantiation of the standard [GKR](dhsorens-002Q)-based succinct
-    argument for non-deterministic bounded-depth computation whose Fiat–Shamir compilation with #{H}
-    is not adaptively sound, and they exhibit an explicit circuit together with an accepting proof
-    of a false claim about it. The extension is the part that should worry an implementer: given any
-    circuit #{C} and any target output #{y}, they construct a circuit computing the same function as
-    #{C} for which they can produce an accepting proof that it outputs #{y}, true or not. A poisoned
-    circuit is not distinguishable from the honest one by evaluating it.
+    Khovratovich, Rothblum, and Soukhanov proved the following in [How to Prove False
+    Statements](dhsorens-0057), at CRYPTO 2025. Fix any hash function #{H}. Then there is an
+    instantiation of the standard [GKR](dhsorens-002Q)-based succinct argument for non-deterministic
+    bounded-depth computation whose Fiat–Shamir compilation with #{H} is not adaptively sound, and
+    they exhibit an explicit circuit together with an accepting proof of a false claim about it. The
+    extension is the part that should worry an implementer: given any circuit #{C} and any target
+    output #{y}, they construct a circuit computing the same function as #{C} for which they can
+    produce an accepting proof that it outputs #{y}, true or not. A poisoned circuit is not
+    distinguishable from the honest one by evaluating it.
 }
 
 \p{
@@ -38,14 +39,14 @@
     so far; the transcript is made of the prover's claims about the circuit's layers; and the
     circuit computes #{H}. The prover can therefore build a statement whose own structure predicts
     the challenges its proof will face, and arrange the layer values so that the
-    [sumcheck](dhsorens-002Q) checks pass on a false output claim. I have not worked through the
-    construction and am recording its shape rather than its details — Arnon and Yogev's abstraction
-    of "diagonalisation attacks" into an [idealised model](dhsorens-004Y) is the cleanest statement
-    I know of what the shape is.
+    [sumcheck](dhsorens-002Q) checks pass on a false output claim. The construction's internals are
+    not reproduced here; what precedes is its shape. Arnon and Yogev's abstraction of
+    "diagonalisation attacks" into an [idealised model](dhsorens-004Y) is the sharpest available
+    statement of that shape.
 }
 
 \p{
-    Four things the result does not say, all of which I have seen claimed. It does not refute the
+    Four things the result does not say, each of which is claimed somewhere. It does not refute the
     random oracle proof, which remains true about random oracles. It does not depend on a weakness
     in #{H} — it holds for every hash function, so a longer digest or a different permutation buys
     nothing. It is not a break of any [FRI](dhsorens-0037)- or [Plonk](dhsorens-003F)-based system,
@@ -56,10 +57,10 @@
 
 \p{
     What it does say is that the adaptivity qualifier now has to be checked per system, and the
-    check is not always easy. The cases I would want examined are a verifier that accepts a circuit
-    or program supplied by an untrusted party, a [zkVM](dhsorens-003Q) whose program is data rather
-    than structure — the circuit is fixed but the computation proved is the adversary's choice — a
-    [custom precompile](dhsorens-003V) contributed to such a VM, and [recursive
+    check is not always easy. The cases that warrant examination are a verifier that accepts a
+    circuit or program supplied by an untrusted party, a [zkVM](dhsorens-003Q) whose program is data
+    rather than structure — the circuit is fixed but the computation proved is the adversary's
+    choice — a [custom precompile](dhsorens-003V) contributed to such a VM, and [recursive
     verification](dhsorens-003L) where the inner circuit is chosen by the prover. Whether any of
     these admits a poisoned instance is not answered by the paper; its contribution is that the
     question is no longer empty. This is also the concrete reason [the soundness notions

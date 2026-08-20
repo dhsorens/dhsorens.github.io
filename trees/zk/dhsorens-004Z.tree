@@ -23,13 +23,13 @@
 }
 
 \p{
-    Their negative result is the part I would keep. Indifferentiability is the property that
-    licenses treating a sponge as a random oracle, and it is proved for the duplex construction;
-    Chiesa and Orrù find it ill-suited for establishing the knowledge soundness and the zero
-    knowledge of a non-interactive argument. So the standard bridge from "this mode of operation is
-    sound" to "the compiled argument inherits its security" does not carry the two properties the
-    argument is bought for, and a sponge-based system needs its own analysis rather than a citation
-    to indifferentiability. This is not a break of anything; it is a gap where an implementer would
+    The negative result is the load-bearing one. Indifferentiability is the property that licenses
+    treating a sponge as a random oracle, and it is proved for the duplex construction; Chiesa and
+    Orrù find it ill-suited for establishing the knowledge soundness and the zero knowledge of a
+    non-interactive argument. So the standard bridge from "this mode of operation is sound" to "the
+    compiled argument inherits its security" does not carry the two properties the argument is
+    bought for, and a sponge-based system needs its own analysis rather than a citation to
+    indifferentiability. This is not a break of anything; it is a gap where an implementer would
     reasonably have assumed there was a theorem.
 }
 

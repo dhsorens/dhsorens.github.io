@@ -8,7 +8,7 @@
 }
 
 \p{
-    \em{Sound} names a family of properties. Most papers prove the weakest member; [compilation](dhsorens-004S) (interactive protocol to deployed non-interactive argument) needs a stronger one. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed [GKR-based argument](dhsorens-002Q) whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
+    \em{Sound} names a family of properties. Most papers prove the weakest member; [compilation](dhsorens-004S) (interactive protocol to deployed non-interactive argument) needs a stronger one. Khovratovich, Rothblum, and Soukhanov [proved false statements](dhsorens-0057) against a deployed [GKR-based argument](dhsorens-002Q) whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
 }
 
 \p{

@@ -16,9 +16,9 @@
     by which [soundness notion](dhsorens-002F) the interactive protocol was proved to satisfy. In
     deployment the oracle is [Keccak](dhsorens-004F) or [Poseidon](dhsorens-004H), a function whose
     code the prover holds. The theorem says nothing about that object, and the gap is not a
-    formality: Khovratovich, Rothblum, and Soukhanov proved false statements against the Fiat–Shamir
-    compilation of a standard [GKR](dhsorens-002Q)-based argument, for every choice of hash
-    function.
+    formality: Khovratovich, Rothblum, and Soukhanov [proved false statements](dhsorens-0057)
+    against the Fiat–Shamir compilation of a standard [GKR](dhsorens-002Q)-based argument, for every
+    choice of hash function.
 }
 
 \p{
@@ -43,11 +43,11 @@
 }
 
 \p{
-    My reading is that the random oracle model is not the problem and adaptivity is. Every break I
-    know of needs a statement chosen after the hash function is fixed, so a system that fixes its
-    circuit and its hash before an adversary sees either is outside the attacks' reach. A
-    [zkVM](dhsorens-003Q) proving the execution of a program it was handed is not obviously in that
-    position, and I have not seen the line drawn. [Whether the statement is fixed in
+    The binding constraint is adaptivity rather than the random oracle model. Every published break
+    requires a statement chosen after the hash function is fixed, so a system that fixes both its
+    circuit and its hash before an adversary sees either lies outside the attacks' reach. A
+    [zkVM](dhsorens-003Q) proving the execution of a program it was handed does not obviously lie
+    outside it, and where the line falls is unsettled. [Whether the statement is fixed in
     advance](dhsorens-004O) is the qualifier to demand of any Fiat–Shamir security claim.
 }
 

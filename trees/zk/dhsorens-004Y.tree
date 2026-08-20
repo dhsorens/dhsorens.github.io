@@ -36,13 +36,13 @@
     design constraint for [on-chain verification](dhsorens-003P). As described in Kalsta's account,
     XFS is defined for particular three-move proof systems over Boolean circuits, which is narrower
     than the many-round [IOP](dhsorens-002E)-based systems this corpus is about; how it would extend
-    to a twenty-round [folding argument](dhsorens-003K) is not something I can currently say.
+    to a twenty-round [folding argument](dhsorens-003K) is not established.
 }
 
 \p{
     Two rounds of proposal and counterexample inside a year is the honest summary of where the
-    standard-model question stands, and I would not hold a deployment decision on it. The transform
-    is not the variable that a system operator controls; the [adaptivity of its
+    standard-model question stands, and it is not a question a deployment decision should wait on.
+    The transform is not the variable that a system operator controls; the [adaptivity of its
     statements](dhsorens-004O) is. A system that can establish its statements are fixed before its
     hash function is chosen does not need XFS, and a system that cannot has a problem no transform
     currently on offer is proved to solve.

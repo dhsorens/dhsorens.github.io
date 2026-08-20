@@ -38,9 +38,10 @@
     proof technique: there are schemes provably secure in the random oracle model and insecure under
     \em{every} concrete instantiation of the oracle. Their counterexamples were self-referential by
     design, and the field's working response for twenty-five years was that no protocol anyone would
-    deploy looks like that. [Khovratovich, Rothblum, and Soukhanov](dhsorens-004X) removed that
-    response by exhibiting the same phenomenon for a standard [GKR](dhsorens-002Q)-based argument.
-    The model's failure mode is now attached to a protocol people ship.
+    deploy looks like that. Khovratovich, Rothblum, and Soukhanov [removed that
+    defence](dhsorens-0057) by exhibiting the same phenomenon for a standard
+    [GKR](dhsorens-002Q)-based argument, and [the attacks](dhsorens-004X) are treated in detail
+    separately. The model's failure mode is now attached to a protocol people ship.
 }
 
 \p{
