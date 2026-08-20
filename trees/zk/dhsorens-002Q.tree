@@ -13,7 +13,8 @@
         \li{Prover cost: the linear-time algorithm, and what changes when the base field is small.}
         \li{Batching several sumchecks; zero-knowledge variants.}
         \li{Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck meets a [commitment scheme](dhsorens-002Z).}
-        \li{Why the [Fiat–Shamir attack](dhsorens-002G) landed on GKR, a sumcheck-based protocol, and what that implies about parameterisation.}
+        \li{Why the [Fiat–Shamir attack](dhsorens-004X) landed on GKR, a sumcheck-based protocol,
+        and what that implies about parameterisation.}
     }
 }
 

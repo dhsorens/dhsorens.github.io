@@ -16,7 +16,13 @@
 }
 
 \p{
-    Both carry machinery that SHA-2 lacks. Keying is built into the compression function, so BLAKE2 is a MAC without needing HMAC around it, and the parameter block also takes a salt and a personalisation string, which gives [domain separation](dhsorens-002G) for free rather than by convention. The family also includes parallel variants (BLAKE2sp, BLAKE2bp) and an extendable-output construction, BLAKE2X. In deployment, WireGuard uses BLAKE2s — 32-byte digests for hashing, keyed with 16-byte output as a MAC — and Zcash uses BLAKE2b for Equihash and for key derivation.
+    Both carry machinery that SHA-2 lacks. Keying is built into the compression function, so BLAKE2
+    is a MAC without needing HMAC around it, and the parameter block also takes a salt and a
+    personalisation string, which gives [domain separation](dhsorens-0050) for free rather than by
+    convention. The family also includes parallel variants (BLAKE2sp, BLAKE2bp) and an
+    extendable-output construction, BLAKE2X. In deployment, WireGuard uses BLAKE2s — 32-byte digests
+    for hashing, keyed with 16-byte output as a MAC — and Zcash uses BLAKE2b for Equihash and for
+    key derivation.
 }
 
 \p{

@@ -39,8 +39,10 @@ Canonical order, the form used by most trees:
   transcludes children.
 - `\taxon{...}` is optional and goes right after `\title`. Ordinary notes carry
   **no taxon**. The values in use are `Publication`, `Institution`, `Tool`, `Talk`,
-  `Place`, `Person`, `Log`, `Organization`, `Protocol`, and — introduced by the `/notes`
-  workflow — `Deep-Dive`.
+  `Place`, `Person`, `Log`, `Organization`, `Protocol`, `Paper` (a cited work from the
+  literature — context, contributions, impact; distinct from `Publication`, which is
+  Derek's own output), `In the Wild` (how a concept appears in a real codebase), and —
+  introduced by the `/notes` workflow — `Deep-Dive`.
 - `\meta{external}{URL}` makes the tree's title link out to a canonical source. Used on
   publications and people. It may be repeated.
 

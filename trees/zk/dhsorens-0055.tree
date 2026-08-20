@@ -1,0 +1,88 @@
+\title{Sigma Protocols}
+\author{dhsorens}
+\date{2026-08-20}
+
+\p{
+    A \strong{sigma protocol} is a three-move [public-coin](dhsorens-0053) protocol in which the
+    prover commits, the verifier sends one random challenge, and the prover responds. It is the
+    smallest interesting interactive proof of knowledge, and almost every definition in this corpus
+    was first written down for this case and then generalised. The name is Cramer's, from the shape
+    of the message flow — down, across, down — and the canonical instance is Schnorr's
+    identification protocol.
+}
+
+\p{
+    The class matters for a historical reason as much as a mathematical one: Fiat and Shamir's 1986
+    construction, which turned an interactive identification scheme into a signature by replacing
+    the verifier's challenge with a hash, was defined for exactly these protocols. [The
+    transform](dhsorens-004U) that carries their name has since been applied to protocols with
+    twenty-odd rounds, but its original setting had one, and several of the results that hold
+    comfortably here degrade badly there.
+}
+
+\p{
+    Let #{R} be a binary relation, with #{(x,w) \in R} read as "#{w} is a witness for #{x}", and let
+    #{L} be the set of #{x} admitting a witness.
+}
+
+\p{
+    \strong{Definition.} A \em{sigma protocol} for #{R} consists of a finite challenge set #{C}, two
+    prover algorithms #{P_1, P_2}, and a verifier predicate #{V}, run as follows. The prover draws
+    randomness #{r}, computes the \em{commitment} #{a = P_1(x, w; r)} and sends it; the verifier
+    draws #{c} uniformly from #{C} and sends it; the prover computes the \em{response}
+    #{z = P_2(x, w, r, c)} and sends it; the verifier accepts exactly when #{V(x, a, c, z) = 1}.
+    Three properties are required.
+    \ul{
+        \li{\strong{Completeness.} For every #{(x,w) \in R}, an honest execution accepts with
+        probability #{1}.}
+        \li{\strong{Special soundness.} There is a polynomial-time extractor which, given #{x} and
+        two accepting transcripts #{(a, c, z)} and #{(a, c', z')} that share the commitment and
+        satisfy #{c \neq c'}, outputs a #{w} with #{(x,w) \in R}.}
+        \li{\strong{Special honest-verifier zero knowledge.} There is a polynomial-time simulator
+        which, given #{x \in L} and a challenge #{c \in C}, outputs a pair #{(a,z)} such that
+        #{(a,c,z)} is distributed exactly as an honest [transcript](dhsorens-0054) conditioned on
+        that challenge.}
+    }
+}
+
+\p{
+    Schnorr's protocol is the instance to keep in mind. Work in a cyclic group #{\mathbb{G}} of
+    prime order #{q} with generator #{g}, and let the relation pair a group element #{h} with a #{w}
+    satisfying #{h = g^w}. The prover sends #{a = g^r} for uniform #{r}; the challenge is a uniform
+    #{c \in \mathbb{Z}_q}; the response is #{z = r + cw \bmod q}; the verifier accepts when
+    #{g^z = a h^c}. Each property is a line of algebra. Completeness is substitution. For special
+    soundness, two accepting transcripts on the same #{a} give #{g^{z - z'} = h^{c - c'}}, and since
+    #{c \neq c'} is invertible modulo the prime #{q}, the extractor returns
+    #{w = (z - z')(c - c')^{-1}}. For simulation, given #{c} pick #{z} uniformly and set
+    #{a = g^z h^{-c}}, which satisfies the verification equation by construction and is uniformly
+    distributed exactly as an honest commitment is.
+}
+
+\p{
+    Four features of this definition explain why it became the template. The soundness error is
+    #{1/N}, where #{N} is the size of #{C}: a prover without a witness can commit to a value that
+    works for one guessed challenge and cannot do better, so the challenge set alone sets the
+    security of a single run. Special soundness is a property of the acceptance predicate rather
+    than a probability bound, so it is verified by exhibiting the extraction algebra rather than by
+    a probabilistic argument, which is why it is the workhorse hypothesis — [the general theory of
+    it](dhsorens-004K) starts here. The zero-knowledge condition is stated for a simulator that is
+    \em{given} the challenge, which looks like a technical weakening and is in fact precisely the
+    interface a Fiat–Shamir simulator has in the [random oracle model](dhsorens-004V), where it
+    fixes the challenge first and programs the oracle to return it. And the knowledge extractor
+    works by rewinding: run the prover, save its state after #{a}, then continue it twice on
+    different challenges. Rewinding is unobjectionable while the protocol is interactive, and is
+    exactly what [stops being free](dhsorens-004J) once the prover is a single non-interactive
+    algorithm.
+}
+
+\p{
+    The generalisation to many rounds is #{(k_1, \dots, k_\mu)}-special soundness, where the
+    extractor is handed a tree of accepting transcripts rather than a pair. That generalisation, and
+    the coordinate-wise variant the lattice constructions need, is the subject of [special
+    soundness](dhsorens-004K). The modern proof systems — [FRI](dhsorens-0037),
+    [Spartan](dhsorens-003G), [WHIR](dhsorens-003C) — are not sigma protocols and cannot be analysed
+    as though they were: they have many rounds, and for some of their components extraction does not
+    go through a transcript tree at all but through [list decoding](dhsorens-002P). The reason to
+    start here anyway is that the vocabulary was fixed in this setting, and a definition read in a
+    modern paper is usually a generalisation of one of the three above.
+}

@@ -1,0 +1,65 @@
+\title{Interactive Oracle Proofs}
+\author{dhsorens}
+\date{2026-08-20}
+
+\p{
+    An \strong{interactive oracle proof} is an interactive proof in which the prover's messages are
+    not read but \em{queried}. Each message is a long string the verifier may inspect at a few
+    positions of its choosing, so the verifier's running time can be far smaller than the proof it
+    is checking. This is the model in which every modern hash-based proof system is designed, and
+    the reason a STARK's verifier can check a claim about a computation it could never afford to
+    re-run.
+}
+
+\p{
+    The model was introduced by Ben-Sasson, Chiesa, and Spooner in 2016, and independently in
+    closely related form by Reingold, Rothblum, and Rothblum. It unifies two older ideas that had
+    developed separately. A probabilistically checkable proof is a single long string queried at a
+    few points, with no interaction; an interactive proof is a conversation in which every message
+    is read in full. An IOP is both at once — several rounds of conversation, with each prover
+    message a queryable oracle — and the combination turns out to be strictly more useful than
+    either, giving shorter proofs than PCPs at comparable verifier cost.
+}
+
+\p{
+    \strong{Definition.} A #{k}-round IOP for a relation #{R} is an interactive protocol between a
+    prover and a verifier in which, for #{i = 1, \dots, k}, the prover sends a string #{\pi_i} over
+    some alphabet and the verifier replies with a challenge #{c_i}. The verifier does not receive
+    the #{\pi_i} as messages; it is given oracle access to them, and may read individual symbols by
+    querying positions. After the final round the verifier makes at most #{q} queries in total
+    across #{\pi_1, \dots, \pi_k}, and then accepts or rejects. Completeness and
+    [soundness](dhsorens-002F) are as for an [interactive proof](dhsorens-002E), with the cheating
+    prover free to choose each #{\pi_i} adaptively after seeing #{c_1, \dots, c_{i-1}}. The
+    parameters that matter are the round complexity #{k}, the total proof length, the query
+    complexity #{q}, and the alphabet size.
+}
+
+\p{
+    Two degenerate cases recover the older models, which is the quickest way to see what the
+    definition is doing. Take #{k = 1} with no challenge and the verifier queries one fixed string:
+    a PCP. Let the verifier query every position of every #{\pi_i}: an ordinary interactive proof,
+    since reading an oracle in full is the same as receiving it. Everything interesting lives
+    between these, where the verifier reads a vanishing fraction of a proof it could not afford to
+    download.
+}
+
+\p{
+    An IOP is not something that can be sent over a network, because an oracle is not a message. Two
+    further steps make it deployable, and they are the subject of the pages that follow. The [BCS
+    transform](dhsorens-002H) replaces each oracle by a [Merkle commitment](dhsorens-0031) to the
+    string, answering the verifier's queries with openings, which yields an ordinary interactive
+    argument; [Fiat–Shamir](dhsorens-002G) then removes the interaction. Ben-Sasson, Chiesa, and
+    Spooner introduced the model and this compilation together, which is why the two are usually
+    cited as one result.
+}
+
+\p{
+    The model is where the low-degree testing literature lives — [FRI](dhsorens-0037),
+    [STIR](dhsorens-003B), and [WHIR](dhsorens-003C) are IOPs of proximity, whose oracles are
+    claimed codewords and whose soundness is a statement about [distance](dhsorens-002P) rather than
+    about algebra. It is also the layer at which soundness gets analysed before compilation, so an
+    IOP soundness theorem is what the [compilation](dhsorens-004S) step consumes.
+    [ArkLib](dhsorens-0040) does not take the IOP as primitive but the [interactive oracle
+    reduction](dhsorens-002I), which generalises it: a reduction maps one relation with oracle
+    statements to another, and an IOP is the special case whose output relation is trivial.
+}

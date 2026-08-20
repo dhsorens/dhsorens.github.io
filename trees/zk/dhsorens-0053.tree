@@ -1,0 +1,70 @@
+\title{Public-Coin Protocols}
+\author{dhsorens}
+\date{2026-08-20}
+
+\p{
+    An interactive protocol is \strong{public-coin} when every message the verifier sends is a
+    uniformly random value, drawn independently of everything that came before, and the verifier
+    holds no secrets. The verifier's randomness could be published in advance without harming the
+    protocol. Every proof system in this corpus is public-coin, and the property is a hypothesis of
+    almost everything built on top of them.
+}
+
+\p{
+    The term comes from the Arthur–Merlin games of Babai and of Goldwasser and Sipser in the
+    mid-1980s, where Arthur's moves are coin flips shown to Merlin. The question at the time was
+    whether hiding the verifier's randomness bought any power. It does not: Goldwasser and Sipser
+    proved that any interactive proof can be simulated by a public-coin one at the cost of two
+    additional messages, so the class of provable statements is the same either way. Restricting
+    attention to public-coin protocols is therefore a normalisation rather than a sacrifice, which
+    is why the literature took it as the default and why the compilers built later assume it.
+}
+
+\p{
+    Fix a #{(2\mu+1)}-move protocol between a prover #{P} and a verifier #{V} on common input #{x},
+    in which #{P} sends #{a_1, \dots, a_{\mu+1}} and #{V} sends #{c_1, \dots, c_\mu}, alternating.
+}
+
+\p{
+    \strong{Definition.} The protocol is \em{public-coin} if there are finite non-empty sets
+    #{C_1, \dots, C_\mu} — the \em{challenge sets} — such that
+    \ul{
+        \li{each #{c_i} is distributed uniformly on #{C_i}, independently of #{x} and of the
+        [transcript](dhsorens-0054) #{(a_1, c_1, \dots, a_i)} produced so far, and}
+        \li{#{V}'s accept-or-reject decision is a deterministic function of #{x} and the full
+        transcript.}
+    }
+}
+
+\p{
+    The two clauses do separate work, and both are needed downstream. Independence says a challenge
+    carries no information the prover could not already predict the distribution of; this is what
+    permits replacing #{c_i} with the output of a hash function without changing what the verifier
+    computes, and it is the reason [Fiat–Shamir](dhsorens-002G) applies to these protocols and to no
+    others. Determinism of the decision says the verifier keeps no private state, so acceptance is a
+    function of the proof alone; this is what makes the compiled proof checkable by a third party
+    who watched nothing. Drop the first clause and there is no challenge to derive; drop the second
+    and the verifier's verdict is not recoverable from the transcript.
+}
+
+\p{
+    The contrast is the original interactive proof of Goldwasser, Micali, and Rackoff. In the
+    standard protocol for graph non-isomorphism the verifier picks one of the two input graphs at
+    random, sends a random isomorphic copy of it, and asks the prover which graph it came from.
+    Soundness depends entirely on the prover not knowing which graph was chosen, so the coin cannot
+    be public. Nothing can be hashed here: publishing the challenge's derivation publishes the
+    answer.
+}
+
+\p{
+    Three consequences of being public-coin recur throughout this corpus. Fiat–Shamir and the [BCS
+    transform](dhsorens-002H) both take a public-coin protocol as input, so it is the entry
+    condition for the whole [compilation](dhsorens-004S) pipeline. The soundness notions that
+    compilation needs — [round-by-round](dhsorens-004L) and [state-restoration](dhsorens-004M)
+    soundness — are defined by quantifying over challenge rounds, which presupposes that the
+    challenges are what the definition says they are. And [parallel repetition](dhsorens-004P)
+    reduces soundness error exponentially for public-coin arguments, by a theorem of Håstad, Pass,
+    Wikström, and Pietrzak, while Bellare, Impagliazzo, and Naor exhibited a four-message argument
+    whose error does not decay under repetition at all. The property that fails in their
+    counterexample is exactly this one.
+}

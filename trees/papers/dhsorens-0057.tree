@@ -1,0 +1,64 @@
+\title{How to Prove False Statements: Practical Attacks on Fiat–Shamir}
+\taxon{Paper}
+\date{2025-01-01}
+\meta{external}{https://eprint.iacr.org/2025/118}
+
+\p{
+    Dmitry Khovratovich, Ron Rothblum, and Lev Soukhanov. CRYPTO 2025; [ePrint
+    2025/118](https://eprint.iacr.org/2025/118).
+}
+
+\p{
+    \strong{Context.} Historically, the gap between the [random oracle model](dhsorens-004V) and a
+    deployed hash function had been known since Canetti, Goldreich, and Halevi showed in 1998 that
+    there exist schemes provably secure in the model and insecure under every concrete
+    instantiation. Their separations, and the line of work following them, were built by
+    diagonalisation: the scheme is constructed so that the statement being proved refers to the hash
+    function itself, in the manner of Barak's non-black-box arguments. Because no protocol anyone
+    proposed for use looked like that, the field's working position for twenty-five years was that
+    the separations were a logical curiosity rather than a warning. Technically, the setting here is
+    [Fiat–Shamir](dhsorens-002G) applied to a many-round [public-coin](dhsorens-0053) interactive
+    proof, and the property at issue is \em{adaptive} soundness — soundness against a prover that
+    chooses its statement after the hash function is fixed. The protocol attacked is the succinct
+    argument obtained by applying Fiat–Shamir to the GKR protocol for non-deterministic
+    bounded-depth computation, whose verifier cost scales with a circuit's depth rather than its
+    size. That efficiency profile is what makes GKR attractive in practice and is also what the
+    attack needs: in a GKR argument the statement \em{is} a circuit, so an adaptive prover chooses
+    the computation the challenges will be derived about, and a hash function is shallow enough to
+    fit inside the statement's depth budget.
+}
+
+\p{
+    \strong{Contributions.} The paper proves that for every hash function there is an instantiation
+    of this standard GKR-based argument whose Fiat–Shamir compilation fails to be adaptively sound,
+    and exhibits an explicit circuit together with an accepting proof of a false claim about it. It
+    then strengthens this: given any circuit #{C} and any target output #{y}, the authors construct
+    a circuit computing the same function as #{C} for which an accepting proof of the claim that it
+    outputs #{y} can be produced whether or not that claim is true. The significance of the
+    strengthening is that a poisoned circuit is not detectable by evaluating it. The result holds
+    for \em{every} hash function rather than for a weak one, so no change of primitive or digest
+    length affects it, and it leaves the random oracle proof itself untouched — what it shows is
+    that the proof is not a statement about the deployed object.
+}
+
+\p{
+    \strong{Impact.} The paper ended the position that Fiat–Shamir's standard-model separations were
+    confined to contrived protocols, by attaching the phenomenon to one that is textbook and
+    deployed. Its immediate effect was to make the adaptivity qualifier mandatory in any Fiat–Shamir
+    security claim: a system must now establish whether its statements are fixed before its hash
+    function is chosen, which is a question about deployment rather than about cryptography. It
+    prompted Arnon and Yogev's [extended Fiat–Shamir transform](dhsorens-004Y) at the same
+    conference, designed specifically to block attacks of this shape, which in turn drew a
+    counterexample from Kalsta within the year. What it leaves open is the question a system
+    operator actually has: whether any fielded prover — a [zkVM](dhsorens-003Q) executing a program
+    supplied by an adversary, a verifier accepting a circuit from an untrusted party — admits a
+    poisoned instance. The paper establishes that the question is not empty and does not answer it.
+}
+
+\p{
+    The [technical treatment of the attack](dhsorens-004X) is a separate page; this one covers the
+    work's place in the literature. The eprint host is unreachable from cloud sessions, so the
+    account above is built from the abstract, from secondary coverage, and from the follow-up
+    literature: the theorem statements are reliable, and the construction's internals are described
+    only at the level of their shape.
+}

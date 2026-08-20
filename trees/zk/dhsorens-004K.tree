@@ -3,7 +3,7 @@
 \date{2026-08-19}
 
 \p{
-    Special soundness is a property of the verifier's acceptance predicate, not a probability bound, which is why it is the workhorse. For a three-move sigma protocol it says: from two accepting transcripts #{(a, c, z)} and #{(a, c', z')} sharing the first message with #{c \neq c'}, a witness can be computed in polynomial time. Checking it means exhibiting that computation — for Schnorr, subtracting two linear equations — so it is verifiable by inspecting the algebra rather than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding extractor that collects the transcripts it needs.
+    Special soundness is a property of the verifier's acceptance predicate, not a probability bound, which is why it is the workhorse. For a three-move [sigma protocol](dhsorens-0055) it says: from two accepting [transcripts](dhsorens-0054) #{(a, c, z)} and #{(a, c', z')} sharing the first message with #{c \neq c'}, a witness can be computed in polynomial time. Checking it means exhibiting that computation — for Schnorr, subtracting two linear equations — so it is verifiable by inspecting the algebra rather than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding extractor that collects the transcripts it needs.
 }
 
 \p{
