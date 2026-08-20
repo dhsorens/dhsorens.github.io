@@ -27,6 +27,12 @@ This is here because forester outputs things into an `output/` directory, but we
 - copies the root `CNAME` into the output;
 - writes a redirect at each old `/<addr>.xml` URL, since forester 5.0 moved each tree to `/<addr>/`.
 
+To lint the sources before opening a pull request:
+```bash
+    ./lint.sh
+```
+This checks that asset links are absolute and that no line in `trees/` runs past 100 characters. It needs only `python3`, not forester, and CI runs the same script on every pull request. `./lint-line-length.py --fix` rewraps anything that is too long — a line break is whitespace in forester markup, so the rendered page is unchanged.
+
 Some commands [are here](cmds.md).
 
 Also the [forester documentation](https://www.forester-notes.org/index/).

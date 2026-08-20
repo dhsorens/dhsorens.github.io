@@ -3,20 +3,32 @@
 \date{2025-10-09}
 
 \p{
-    Beanstalk is (was) an Ethereum-based stablecoin protocol which uses a decentralized governance protocol.
-    This governance protocol features an emergency commit function, which gives a supermajority of governance votes power to quickly respond to an emergency by approving and executing a proposal in one single vote. The goal of said
-    emergency commit function is to allow governance to respond quickly to an emergency, providing added
+    Beanstalk is (was) an Ethereum-based stablecoin protocol which uses a decentralized governance
+    protocol.
+    This governance protocol features an emergency commit function, which gives a supermajority of
+    governance votes power to quickly respond to an emergency by approving and executing a proposal
+    in one single vote. The goal of said
+    emergency commit function is to allow governance to respond quickly to an emergency, providing
+    added
     security in the face of unforeseen vulnerabilities.
 }
 
 \p{
     In a turn of grim irony, this very emergency response mechanism turned out to be the source of a
-    catastrophic exploit. On April 17, 2022, an attacker used a flash loan to temporarily buy a supermajority
-    of governance tokens and execute a proposal, draining the contract of [approximately 77 million USD in
-    lost contract assets](https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7)
+    catastrophic exploit. On April 17, 2022, an attacker used a flash loan to temporarily buy a
+    supermajority
+    of governance tokens and execute a proposal, draining the contract of [approximately 77 million
+    USD in
+    lost contract
+    assets](https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7)
      A flash loan is a loan mediated by a smart contract and issued for the duration
-    of a single, atomic transaction. Due to its atomicity, a flash loan removes the creditor’s risk of debt
-    default, and thus enables enormous, uncollateralized loans. For example, the Aave flash loan pool has had
+    of a single, atomic transaction. Due to its atomicity, a flash loan removes the creditor’s risk
+    of debt
+    default, and thus enables enormous, uncollateralized loans. For example, the Aave flash loan
+    pool has had
     in excess of 1 billion USD which can be loaned out.
-    Flash loans can introduce unintuitive contract behavior, deviating from that of traditional markets. Importantly, the Beanstalk attack leveraged the unexpected behavior due to the availability of flash loans, exploiting the faulty design of the governance mechanism rather than incorrect code.
+    Flash loans can introduce unintuitive contract behavior, deviating from that of traditional
+    markets. Importantly, the Beanstalk attack leveraged the unexpected behavior due to the
+    availability of flash loans, exploiting the faulty design of the governance mechanism rather
+    than incorrect code.
 }

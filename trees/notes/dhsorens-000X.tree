@@ -4,8 +4,10 @@
 \meta{toc}{true}
 
 \p{
-    Formal verification is the practice of mathematically proving code to be \em{correct} with regards to a specification (a formal description).
-    This can be done in many ways, most interestingly (in my opinion) within [interactive theorem provers](dhsorens-000B) like [Lean](dhsorens-lean) or [Rocq](dhsorens-rocq).
+    Formal verification is the practice of mathematically proving code to be \em{correct} with
+    regards to a specification (a formal description).
+    This can be done in many ways, most interestingly (in my opinion) within [interactive theorem
+    provers](dhsorens-000B) like [Lean](dhsorens-lean) or [Rocq](dhsorens-rocq).
 }
 
 % maybe:

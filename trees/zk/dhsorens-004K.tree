@@ -3,29 +3,82 @@
 \date{2026-08-19}
 
 \p{
-    Special soundness is a property of the verifier's acceptance predicate, not a probability bound, which is why it is the workhorse. For a three-move sigma protocol it says: from two accepting transcripts #{(a, c, z)} and #{(a, c', z')} sharing the first message with #{c \neq c'}, a witness can be computed in polynomial time. Checking it means exhibiting that computation — for Schnorr, subtracting two linear equations — so it is verifiable by inspecting the algebra rather than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding extractor that collects the transcripts it needs.
+    Special soundness is a property of the verifier's acceptance predicate, not a probability bound,
+    which is why it is the workhorse. For a three-move sigma protocol it says: from two accepting
+    transcripts #{(a, c, z)} and #{(a, c', z')} sharing the first message with #{c \neq c'}, a
+    witness can be computed in polynomial time. Checking it means exhibiting that computation — for
+    Schnorr, subtracting two linear equations — so it is verifiable by inspecting the algebra rather
+    than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding
+    extractor that collects the transcripts it needs.
 }
 
 \p{
-    The multi-round generalisation is #{(k_1, \dots, k_\mu)}-special soundness. Instead of a pair of transcripts the extractor is given a tree: at the #{i}-th challenge round each node branches #{k_i} ways with pairwise distinct challenges, and the tree of accepting leaves yields a witness. Attema and Fehr computed the resulting knowledge error exactly for challenge sets of sizes #{N_1, \dots, N_\mu}; it is at most #{\sum_{i=1}^{\mu} (k_i - 1)/N_i}, which is the bound worth remembering. Two special soundness at each of #{\mu} rounds over a field of size #{q} costs #{\mu / q}, and the tree has #{\prod_i k_i} leaves, so the extractor's cost is what limits how large the #{k_i} can be.
+    The multi-round generalisation is #{(k_1, \dots, k_\mu)}-special soundness. Instead of a pair of
+    transcripts the extractor is given a tree: at the #{i}-th challenge round each node branches
+    #{k_i} ways with pairwise distinct challenges, and the tree of accepting leaves yields a
+    witness. Attema and Fehr computed the resulting knowledge error exactly for challenge sets of
+    sizes #{N_1, \dots, N_\mu}; it is at most #{\sum_{i=1}^{\mu} (k_i - 1)/N_i}, which is the bound
+    worth remembering. Two special soundness at each of #{\mu} rounds over a field of size #{q}
+    costs #{\mu / q}, and the tree has #{\prod_i k_i} leaves, so the extractor's cost is what limits
+    how large the #{k_i} can be.
 }
 
 \p{
-    The reason to care is the Fiat–Shamir accounting. Attema, Fehr, and Klooß showed that the Fiat–Shamir transform of a #{(k_1, \dots, k_\mu)}-special-sound protocol has knowledge error #{(Q+1)\kappa} against an adversary making #{Q} random-oracle queries, where #{\kappa} is the interactive knowledge error — linear in #{Q} and \em{independent of the number of rounds}. The general bound for a #{(2\mu+1)}-move protocol is #{Q^\mu}. For any protocol with more than a handful of rounds that is the difference between a security claim and none, and it is bought entirely by strengthening the hypothesis from soundness to special soundness.
+    The reason to care is the Fiat–Shamir accounting. Attema, Fehr, and Klooß showed that the
+    Fiat–Shamir transform of a #{(k_1, \dots, k_\mu)}-special-sound protocol has knowledge error
+    #{(Q+1)\kappa} against an adversary making #{Q} random-oracle queries, where #{\kappa} is the
+    interactive knowledge error — linear in #{Q} and \em{independent of the number of rounds}. The
+    general bound for a #{(2\mu+1)}-move protocol is #{Q^\mu}. For any protocol with more than a
+    handful of rounds that is the difference between a security claim and none, and it is bought
+    entirely by strengthening the hypothesis from soundness to special soundness.
 }
 
 \p{
-    The [lattice protocols](dhsorens-0049) needed the tree reshaped rather than widened. Their challenges are vectors of #{\ell_i} coordinates, and extraction works coordinate by coordinate: two accepting transcripts that differ in one coordinate alone subtract to an equation in the matching block of the witness. Transcripts that differ everywhere subtract to nothing usable. \em{Coordinate-wise special soundness}, introduced by Fenzi, Moghaddas, and Nguyen for their lattice [polynomial commitment](dhsorens-002Z), makes this the branching condition: each node at round #{i} has #{\ell_i(k_i - 1) + 1} children — a central challenge vector, plus #{k_i - 1} others per coordinate differing from it in that coordinate only. The knowledge error is at most #{\sum_{i=1}^{\mu} \ell_i k_i / N_i^{\ell_i}} for coordinates drawn from sets of size #{N_i}, the tree stays polynomially small, and taking every #{\ell_i = 1} recovers plain special soundness. Their Fiat–Shamir theorem carries over too, so the linear-in-#{Q} accounting above survives the generalisation. Hachi, a lattice multilinear commitment refining Greyhound, states its whole security analysis in this form — down to bundling a pair of [sumcheck](dhsorens-002Q) challenge points into one vector of logarithmically many coordinates, so that a coordinate-wise tree supplies enough distinct roots to force a constraint polynomial to vanish.
+    The [lattice protocols](dhsorens-0049) needed the tree reshaped rather than widened. Their
+    challenges are vectors of #{\ell_i} coordinates, and extraction works coordinate by coordinate:
+    two accepting transcripts that differ in one coordinate alone subtract to an equation in the
+    matching block of the witness. Transcripts that differ everywhere subtract to nothing usable.
+    \em{Coordinate-wise special soundness}, introduced by Fenzi, Moghaddas, and Nguyen for their
+    lattice [polynomial commitment](dhsorens-002Z), makes this the branching condition: each node at
+    round #{i} has #{\ell_i(k_i - 1) + 1} children — a central challenge vector, plus #{k_i - 1}
+    others per coordinate differing from it in that coordinate only. The knowledge error is at most
+    #{\sum_{i=1}^{\mu} \ell_i k_i / N_i^{\ell_i}} for coordinates drawn from sets of size #{N_i},
+    the tree stays polynomially small, and taking every #{\ell_i = 1} recovers plain special
+    soundness. Their Fiat–Shamir theorem carries over too, so the linear-in-#{Q} accounting above
+    survives the generalisation. Hachi, a lattice multilinear commitment refining Greyhound, states
+    its whole security analysis in this form — down to bundling a pair of [sumcheck](dhsorens-002Q)
+    challenge points into one vector of logarithmically many coordinates, so that a coordinate-wise
+    tree supplies enough distinct roots to force a constraint polynomial to vanish.
 }
 
 \p{
-    ArkLib formalises both through transcript trees generic in a \em{shape}. \code{distinctShape k} is the shape with branching arity #{k_i} whose node predicate requires the #{k_i} sibling challenges at each round to be pairwise distinct, and \code{Verifier.specialSound} is the instance of the shape-generic \code{treeSpecialSound} at that shape; \code{CoordinateWiseSpecialSoundness} is the coordinate-wise condition above, and ArkLib proves that plain special soundness is the \code{distinctShape} case of it. The genericity is not gratuitous: real protocols keep needing branching conditions other than "all siblings differ."
+    ArkLib formalises both through transcript trees generic in a \em{shape}. \code{distinctShape k}
+    is the shape with branching arity #{k_i} whose node predicate requires the #{k_i} sibling
+    challenges at each round to be pairwise distinct, and \code{Verifier.specialSound} is the
+    instance of the shape-generic \code{treeSpecialSound} at that shape;
+    \code{CoordinateWiseSpecialSoundness} is the coordinate-wise condition above, and ArkLib proves
+    that plain special soundness is the \code{distinctShape} case of it. The genericity is not
+    gratuitous: real protocols keep needing branching conditions other than "all siblings differ."
 }
 
 \p{
-    Where special soundness stops is the [FRI](dhsorens-0037) family. Extraction there does not go through a transcript tree at all — it goes through [list decoding](dhsorens-002P), recovering a codeword close to the prover's oracles, and the argument's structure is a distance bound rather than a system of equations. That is why the low-degree testing pages are analysed [round-by-round](dhsorens-004L) instead, and why the two techniques appear side by side in the same system: the algebraic components get special soundness, the proximity components get a state function.
+    Where special soundness stops is the [FRI](dhsorens-0037) family. Extraction there does not go
+    through a transcript tree at all — it goes through [list decoding](dhsorens-002P), recovering a
+    codeword close to the prover's oracles, and the argument's structure is a distance bound rather
+    than a system of equations. That is why the low-degree testing pages are analysed
+    [round-by-round](dhsorens-004L) instead, and why the two techniques appear side by side in the
+    same system: the algebraic components get special soundness, the proximity components get a
+    state function.
 }
 
 \p{
-    Sources: [Fiat–Shamir Transformation of Multi-Round Interactive Proofs](https://eprint.iacr.org/2021/1377) (Attema, Fehr, Klooß) for the #{(Q+1)\kappa} bound, [Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency](https://eprint.iacr.org/2023/846) (Fenzi, Moghaddas, Nguyen) for coordinate-wise special soundness and its interactive and Fiat–Shamir knowledge theorems, [Hachi](https://eprint.iacr.org/2026/156) (Nguyen, O'Rourke, Zhang) for the notion in working use, [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256) for the generalised versions and their implications, and \code{ArkLib/OracleReduction/Security/SpecialSoundness.lean}.
+    Sources: [Fiat–Shamir Transformation of Multi-Round Interactive
+    Proofs](https://eprint.iacr.org/2021/1377) (Attema, Fehr, Klooß) for the #{(Q+1)\kappa} bound,
+    [Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete
+    Efficiency](https://eprint.iacr.org/2023/846) (Fenzi, Moghaddas, Nguyen) for coordinate-wise
+    special soundness and its interactive and Fiat–Shamir knowledge theorems,
+    [Hachi](https://eprint.iacr.org/2026/156) (Nguyen, O'Rourke, Zhang) for the notion in working
+    use, [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256) for
+    the generalised versions and their implications, and
+    \code{ArkLib/OracleReduction/Security/SpecialSoundness.lean}.
 }

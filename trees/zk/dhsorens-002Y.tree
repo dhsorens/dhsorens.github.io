@@ -3,21 +3,31 @@
 \date{2026-08-18}
 
 \p{
-    An embedded [Lean](dhsorens-lean) DSL for writing zk circuits against [AIR](dhsorens-002U), Plonkish, and [R1CS](dhsorens-002S), built by zkSecurity under a verified-zkEVM grant. Circuit, specification, and proof live in the same file — an arrangement [smart contract verification](dhsorens-001J) has never had.
+    An embedded [Lean](dhsorens-lean) DSL for writing zk circuits against [AIR](dhsorens-002U),
+    Plonkish, and [R1CS](dhsorens-002S), built by zkSecurity under a verified-zkEVM grant. Circuit,
+    specification, and proof live in the same file — an arrangement [smart contract
+    verification](dhsorens-001J) has never had.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{How a circuit is represented, and what the proof obligation looks like — the precise form of "this circuit is sound with respect to this specification".}
-        \li{[Completeness](dhsorens-004T) as a separate obligation, and whether it is discharged or assumed.}
-        \li{Lookups and VM-like table ensembles: the recent generalisation, and what it makes provable end to end.}
-        \li{Witness generation by compilation to an intermediate representation, and whether the generator is verified against the constraints.}
-        \li{Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to guarantee.}
-        \li{How Clean's circuit specs should meet [ArkLib](dhsorens-0040)'s protocol specs. It is the load-bearing seam between the two libraries.}
+        \li{How a circuit is represented, and what the proof obligation looks like — the precise
+        form of "this circuit is sound with respect to this specification".}
+        \li{[Completeness](dhsorens-004T) as a separate obligation, and whether it is discharged or
+        assumed.}
+        \li{Lookups and VM-like table ensembles: the recent generalisation, and what it makes
+        provable end to end.}
+        \li{Witness generation by compilation to an intermediate representation, and whether the
+        generator is verified against the constraints.}
+        \li{Backends — plonky3 now, stwo and R1CS variants planned — and what a backend has to
+        guarantee.}
+        \li{How Clean's circuit specs should meet [ArkLib](dhsorens-0040)'s protocol specs. It is
+        the load-bearing seam between the two libraries.}
     }
 }
 
 \p{
-    Sources: [clean](https://github.com/Verified-zkEVM/clean/), [Introducing clean](https://blog.zksecurity.xyz/posts/clean/).
+    Sources: [clean](https://github.com/Verified-zkEVM/clean/), [Introducing
+    clean](https://blog.zksecurity.xyz/posts/clean/).
 }

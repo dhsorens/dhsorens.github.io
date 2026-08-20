@@ -3,17 +3,27 @@
 \date{2025-09-03}
 
 \p{
-    I started working in crypto during the two years between my [MSc](dhsorens-msc) and my [PhD](dhsorens-phd).
-    My first job was at a small, Utah-based crypto startup called Pyrofex, which was mostly providing consulting services to the [RChain co-op](https://github.com/dhsorens/rchain) at the time.
-    I was tasked with [building the formal semantics for rholang](https://github.com/dhsorens/rholang), the smart contracting language on RChain, in [K Framework](dhsorens-001D) in order to formally verify rholang contracts down the line.
+    I started working in crypto during the two years between my [MSc](dhsorens-msc) and my
+    [PhD](dhsorens-phd).
+    My first job was at a small, Utah-based crypto startup called Pyrofex, which was mostly
+    providing consulting services to the [RChain co-op](https://github.com/dhsorens/rchain) at the
+    time.
+    I was tasked with [building the formal semantics for
+    rholang](https://github.com/dhsorens/rholang), the smart contracting language on RChain, in [K
+    Framework](dhsorens-001D) in order to formally verify rholang contracts down the line.
 }
 
 \p{
-    RChain, famously, encountered sudden and urgent financial problems because of a questionable set of decisions from the co-op's president, Greg Meredith, which necessitated a split between RChain and Pyrofex.
-    We then pivoted to consensus-level research, designed our own layer-one blockchain and [consensus protocol](/docs/Casanova.pdf).
+    RChain, famously, encountered sudden and urgent financial problems because of a questionable set
+    of decisions from the co-op's president, Greg Meredith, which necessitated a split between
+    RChain and Pyrofex.
+    We then pivoted to consensus-level research, designed our own layer-one blockchain and
+    [consensus protocol](/docs/Casanova.pdf).
 }
 
 \p{
-    Sadly, we ran out of money, and I had to look for a new job for the few months before my PhD started.
-    I took a short internship with Digital Asset, working in Zurich and New York, and [implementing an experimental currency](/docs/cantoncoin.pdf) on their blockchain-esque project Canton.
+    Sadly, we ran out of money, and I had to look for a new job for the few months before my PhD
+    started.
+    I took a short internship with Digital Asset, working in Zurich and New York, and [implementing
+    an experimental currency](/docs/cantoncoin.pdf) on their blockchain-esque project Canton.
 }

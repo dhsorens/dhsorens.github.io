@@ -5,8 +5,18 @@
 \p{
     More examples of successful flash loan attacks include
     attacks on the Spartan Protocol and Pancake Bunny, two DeFi contracts on the Binance Smart Chain
-    (BSC). Attackers used flash loans to make huge trades and temporarily manipulate market prices of
-    certain assets. Both of these contracts used these market prices in the contract logic, and in both cases
-    this lead to pathological—though, again, correct according to the flawed specification—contract behavior.
-    In May 2021, an attacker [drained](https://bscscan.com/tx/0xb64ae25b0d836c25d115a9368319902c972a0215bd108ae17b1b9617dfb93af8) the Spartan Protocol contract for a profit of roughly the [equivalent of 30 million USD](https://peckshield-94632.medium.com/the-spartan-incident-root-cause-analysis-b14135d3415f). Another [attacker](https://bscscan.com/address/0x158c244b62058330f2c328c720b072d8db2c612f) [drained](https://x.com/PancakeBunnyFin/status/1395173389208334342) Pancake Bunny of 114k WBNB and 697k BUNNY tokens, amounting to about [45 million USD at the time in lost funds](https://cointelegraph.com/news/pancakebunny-tanks-96-following-200m-flash-loan-exploit).
+    (BSC). Attackers used flash loans to make huge trades and temporarily manipulate market prices
+    of
+    certain assets. Both of these contracts used these market prices in the contract logic, and in
+    both cases
+    this lead to pathological—though, again, correct according to the flawed specification—contract
+    behavior.
+    In May 2021, an attacker
+    [drained](https://bscscan.com/tx/0xb64ae25b0d836c25d115a9368319902c972a0215bd108ae17b1b9617dfb93af8)
+    the Spartan Protocol contract for a profit of roughly the [equivalent of 30 million
+    USD](https://peckshield-94632.medium.com/the-spartan-incident-root-cause-analysis-b14135d3415f).
+    Another [attacker](https://bscscan.com/address/0x158c244b62058330f2c328c720b072d8db2c612f)
+    [drained](https://x.com/PancakeBunnyFin/status/1395173389208334342) Pancake Bunny of 114k WBNB
+    and 697k BUNNY tokens, amounting to about [45 million USD at the time in lost
+    funds](https://cointelegraph.com/news/pancakebunny-tanks-96-following-200m-flash-loan-exploit).
 }

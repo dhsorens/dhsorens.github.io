@@ -4,27 +4,43 @@
 \meta{toc}{true}
 
 \p{
-    Consider the (perhaps extreme) problem of specifying the "correct" behavior of a large language model like Chat GPT.
-    The technologists who have built these LLMs are probably more aware than anyone—no one \em{really} knows what the correct behavior of an artificial intelligence is or should be.
-    We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would rather it not produce even though it could do so in principle within the bounds of being helpful, knowledgeable, and honest.
-    These things include somewhat-universally-agreed-upon things like child porn and slanderous and libelous deep fakes.
-    In more of a grey area, they can also include politically inconvenient facts or references to certain events in history about which we remain sensitive.
+    Consider the (perhaps extreme) problem of specifying the "correct" behavior of a large language
+    model like Chat GPT.
+    The technologists who have built these LLMs are probably more aware than anyone—no one
+    \em{really} knows what the correct behavior of an artificial intelligence is or should be.
+    We want it to be helpful, knowledgeable, and honest—yes, but there are also some things we would
+    rather it not produce even though it could do so in principle within the bounds of being
+    helpful, knowledgeable, and honest.
+    These things include somewhat-universally-agreed-upon things like child porn and slanderous and
+    libelous deep fakes.
+    In more of a grey area, they can also include politically inconvenient facts or references to
+    certain events in history about which we remain sensitive.
 }
 
 \p{
     In other words, we want the LLM to be kind, or to have a value system of some kind.
     % We want it to use its knowledge and power in ethical ways.
     An LLM should not encourage someone to kill themselves.
-    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime (although .. maybe it should help a revolutionary overthrow a tyrant?).
-    % Instinctively, we want to instill a value system of some kind into something that can behave and act like an intelligent human.
-    The problem with asking an LLM to behave ethically is \em{who} is to say what is right, and good, and true? \em{What} value system should dominate?
-    People will have different philosophies on what they think the behavior of an LLM should be, but we are far from any point of consensus on what that should be.
-    Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align itself with that.
-    (Think of the film \em{I, Robot} as a meditation on the unintended—and disasterous, tyranical—consequences of instilling a seemingly straightforward and simple value system into an intelligent robot.)
+    It shouldn't help someone build a bomb. It shouldn't help someone plan to commit a crime
+    (although .. maybe it should help a revolutionary overthrow a tyrant?).
+    % Instinctively, we want to instill a value system of some kind into something that can behave
+    % and act like an intelligent human.
+    The problem with asking an LLM to behave ethically is \em{who} is to say what is right, and
+    good, and true? \em{What} value system should dominate?
+    People will have different philosophies on what they think the behavior of an LLM should be, but
+    we are far from any point of consensus on what that should be.
+    Yes, most of us want an LLM to align with what is good, virtuous, and true; the problem is that
+    it is hard to know what is good, virtuous, and true, and thus hard to train an AI to align
+    itself with that.
+    (Think of the film \em{I, Robot} as a meditation on the unintended—and disasterous,
+    tyranical—consequences of instilling a seemingly straightforward and simple value system into an
+    intelligent robot.)
 }
 
 \p{
-    I would argue that the problem of correctly specifying an LLM is the problem that religion tends to address—one of value, meaning, and knowing goodness.
-    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely be told in story form, much less in prose, and even less a \em{formal} specification.
+    I would argue that the problem of correctly specifying an LLM is the problem that religion tends
+    to address—one of value, meaning, and knowing goodness.
+    This is an ancient problem, one that I would argue is so nuanced and complex that it can barely
+    be told in story form, much less in prose, and even less a \em{formal} specification.
 }
 

@@ -4,10 +4,17 @@
 
 \p{
     Similarly, Uranium Finance, an AMM, suffered a costly exploit after a faulty
-    contract upgrade. The original contract contained a constant, \code{k}, equal to \code{1_000} in three different places,
-    which was used to price trades. The update changed this value to \code{10_000} in two places but not the
-    third, presumably to calculate trades with higher precision. The result of this was that the attacker could
-    swap virtually nothing in for 98\% of the total balance of any output token, which [resulted in a loss of 50
-    million USD of contract funds](https://web.archive.org/web/20230201114526/https://uraniumfinance.medium.com/exploit-d3a88921531c). NowSwap, a nearly identical application, upgraded [with the same
-    error](https://www.halborn.com/blog/post/explained-the-nowswap-protocol-hack-september-2021) and incurred a loss of 1 million USD.
+    contract upgrade. The original contract contained a constant, \code{k}, equal to \code{1_000} in
+    three different places,
+    which was used to price trades. The update changed this value to \code{10_000} in two places but
+    not the
+    third, presumably to calculate trades with higher precision. The result of this was that the
+    attacker could
+    swap virtually nothing in for 98\% of the total balance of any output token, which [resulted in
+    a loss of 50
+    million USD of contract
+    funds](https://web.archive.org/web/20230201114526/https://uraniumfinance.medium.com/exploit-d3a88921531c).
+    NowSwap, a nearly identical application, upgraded [with the same
+    error](https://www.halborn.com/blog/post/explained-the-nowswap-protocol-hack-september-2021) and
+    incurred a loss of 1 million USD.
 }

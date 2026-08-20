@@ -3,33 +3,60 @@
 \date{2026-03-11}
 
 \p{
-    During [Q1 of 2026](dhsorens-0026) we worked building out [CompPoly](https://github.com/Verified-zkEVM/CompPoly), a formally verified
+    During [Q1 of 2026](dhsorens-0026) we worked building out
+    [CompPoly](https://github.com/Verified-zkEVM/CompPoly), a formally verified
     model of computable polynomials in [Lean](dhsorens-lean).
-    The purpose of CompPoly is to provide a computable base for the specs in [Arklib](https://github.com/Verified-zkEVM/ArkLib).
+    The purpose of CompPoly is to provide a computable base for the specs in
+    [Arklib](https://github.com/Verified-zkEVM/ArkLib).
 }
 
 % \transclude{dhsorens-0027}
 
 \p{
-    My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications [in the case of smart contracts](dhsorens-001J). [zkVMs and SNARKS](dhsorens-002C) also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see [Arklib](https://github.com/Verified-zkEVM/ArkLib/) for a taste of that.
+    My thoughts on computable specifications are still developing. They are growing out of an
+    interest during my PhD in the integrity of formal specifications [in the case of smart
+    contracts](dhsorens-001J). [zkVMs and SNARKS](dhsorens-002C) also have complicated
+    specifications, but for a different reason than smart contracts. Whereas smart contract
+    specifications have difficult-to-define, high-level, socio-economic properties that one must aim
+    at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense
+    mathematics. Just stating the desired properties requires quite a bit of machinery -- see
+    [Arklib](https://github.com/Verified-zkEVM/ArkLib/) for a taste of that.
 }
 
 \p{
-    So, we can write complex mathematical specifications in [Lean](dhsorens-lean) - great, what does computability add to this, or any specification? For one, it lets you run tests. Having tests lets you test the integrity of your spec and test it in sort of a meta- way. It helps build confidence that the spec was built out correctly, something that is difficult (impossible?) to really know.
+    So, we can write complex mathematical specifications in [Lean](dhsorens-lean) - great, what does
+    computability add to this, or any specification? For one, it lets you run tests. Having tests
+    lets you test the integrity of your spec and test it in sort of a meta- way. It helps build
+    confidence that the spec was built out correctly, something that is difficult (impossible?) to
+    really know.
 }
 
 \p{
-    I have written before about [\em{metaspecifications}](dhsorens-000L), or formal specifications of specifications, in the context of smart contracts. I really believe that metaspecifications can add a lot to the security of smart contracts, but a lot of theory has to be built up (even just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy for contracts in the wild.
+    I have written before about [\em{metaspecifications}](dhsorens-000L), or formal specifications
+    of specifications, in the context of smart contracts. I really believe that metaspecifications
+    can add a lot to the security of smart contracts, but a lot of theory has to be built up (even
+    just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy
+    for contracts in the wild.
 }
 
 \p{
-    However, metaspecifications already show up in cryptography! An implementation has a specification, the design of the cryptographic system or protocol (e.g. [FRI](dhsorens-0037)). The system or protocol is defined in mathematical terms, with assumptions, and with associated proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol fails, then some assumption of the system was violated. This is a metaspecification!
+    However, metaspecifications already show up in cryptography! An implementation has a
+    specification, the design of the cryptographic system or protocol (e.g. [FRI](dhsorens-0037)).
+    The system or protocol is defined in mathematical terms, with assumptions, and with associated
+    proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol
+    fails, then some assumption of the system was violated. This is a metaspecification!
 }
 
 \p{
-    But, as with all specifications, it is very hard to be sure that your specification is correct. This is where computability comes in. Having an executable/computable specification means that you can run tests on it, further extending your specification in an informal way. It makes your spec act more like software, and in some sense makes it stronger as a specification because as a program that runs it is closer to the thing that you're verifying.
+    But, as with all specifications, it is very hard to be sure that your specification is correct.
+    This is where computability comes in. Having an executable/computable specification means that
+    you can run tests on it, further extending your specification in an informal way. It makes your
+    spec act more like software, and in some sense makes it stronger as a specification because as a
+    program that runs it is closer to the thing that you're verifying.
 }
 
 \p{
-    [Lean](dhsorens-lean) is of course a great place for this. It is easy to go between computable and non-computable terms, spec and implementation, and more and more of the infrastructure of verification is becoming available in [Lean](dhsorens-lean).
+    [Lean](dhsorens-lean) is of course a great place for this. It is easy to go between computable
+    and non-computable terms, spec and implementation, and more and more of the infrastructure of
+    verification is becoming available in [Lean](dhsorens-lean).
 }

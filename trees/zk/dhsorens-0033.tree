@@ -3,7 +3,9 @@
 \date{2026-08-18}
 
 \p{
-    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
+    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely
+    displaced by hash-based schemes in the zkVM setting, so the useful question is where it still
+    wins.
 }
 
 \p{

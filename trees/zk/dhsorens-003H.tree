@@ -3,7 +3,9 @@
 \date{2026-08-18}
 
 \p{
-    Plonkish constraints over the Boolean hypercube rather than a multiplicative subgroup, so the prover never runs an FFT. The clearest statement of what moving to [multilinear](dhsorens-002M) representations does and does not buy.
+    Plonkish constraints over the Boolean hypercube rather than a multiplicative subgroup, so the
+    prover never runs an FFT. The clearest statement of what moving to [multilinear](dhsorens-002M)
+    representations does and does not buy.
 }
 
 \p{
@@ -13,6 +15,7 @@
         \li{What replaces the quotient polynomial and the low-degree test.}
         \li{Cost profile: no FFT, more commitment work, different memory behaviour.}
         \li{High-degree custom gates, which this handles better than univariate Plonk.}
-        \li{Why the field choice matters less here than in the [FRI](dhsorens-0037) world — or whether it does.}
+        \li{Why the field choice matters less here than in the [FRI](dhsorens-0037) world — or
+        whether it does.}
     }
 }

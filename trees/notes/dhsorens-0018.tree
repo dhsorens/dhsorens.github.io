@@ -4,14 +4,23 @@
 \meta{toc}{true}
 
 \p{
-    Since early 2018 I have held various roles in crypto, working mostly in research and [formal verification](dhsorens-000X).
-    My original interests in crypto were in consensus algorithms and formal verification frameworks for verifying smart contracts. When I started, those frameworks and tools were in their infancy, [K Framework](dhsorens-001D) being the only tool at the time to my knowledge that was production-ready for actual smart contracts.
+    Since early 2018 I have held various roles in crypto, working mostly in research and [formal
+    verification](dhsorens-000X).
+    My original interests in crypto were in consensus algorithms and formal verification frameworks
+    for verifying smart contracts. When I started, those frameworks and tools were in their infancy,
+    [K Framework](dhsorens-001D) being the only tool at the time to my knowledge that was
+    production-ready for actual smart contracts.
 
-    Over time, I became interested in the financial applications of [smart contracts](dhsorens-000Y) and I did my [PhD](dhsorens-phd) in verification strategies for financial [smart contracts](dhsorens-000W).
+    Over time, I became interested in the financial applications of [smart contracts](dhsorens-000Y)
+    and I did my [PhD](dhsorens-phd) in verification strategies for financial [smart
+    contracts](dhsorens-000W).
 
-    Along the way, I became deeply interested in type theory and [proof assistants](dhsorens-000B), and these days am interested broadly in theorem-proving, [whether applied to software or formalized maths](dhsorens-notes).
+    Along the way, I became deeply interested in type theory and [proof assistants](dhsorens-000B),
+    and these days am interested broadly in theorem-proving, [whether applied to software or
+    formalized maths](dhsorens-notes).
 
-    In my day-to-day, I still do a lot of work in the design, construction, and formal verification of smart contracts.
+    In my day-to-day, I still do a lot of work in the design, construction, and formal verification
+    of smart contracts.
 }
 
 \transclude{dhsorens-0019} % pre phd 
