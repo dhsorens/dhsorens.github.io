@@ -40,10 +40,18 @@ Do not use the `Workflow` tool from this skill.
 
 Ground rules for the writing that follows:
 
+- **Load the `/writing` skill and its `reference/feedback-log.md` before drafting.** The
+  standard is textbook quality: formal definitions stated properly with intuition around
+  them, the subject defined before it is critiqued, and an impersonal voice on technical
+  pages. Run its revision pass before committing.
 - Every non-obvious factual claim carries a source link. If you could not verify
   something, say so in the note rather than asserting it.
-- Distinguish what sources establish from what Derek might conclude. This is his
-  notebook — it can speculate, but it must be visible when it is speculating.
+- **Every cited paper gets a `\taxon{Paper}` page** in `trees/papers/` (historical context,
+  contributions, impact), and the in-text citation links to it at the point of the claim.
+  Minting those pages is part of writing the note, not a follow-up — see `/add-content`.
+- Distinguish what sources establish from what follows from them. Where the note is
+  technical, state an open question as a property of the subject rather than as a personal
+  admission.
 - Prefer primary sources. Where a claim is contested, say that it is contested.
 
 ## 3. Allocate addresses

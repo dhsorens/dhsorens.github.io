@@ -126,11 +126,15 @@ Standards for the prose:
   where padding creeps in, so the cut-10% pass matters more here, not less.
 - Every non-obvious claim carries a source link. A claim you could not verify is
   written *as* unverified, in the sentence, not quietly asserted.
+- **Every cited paper gets a `\taxon{Paper}` page** in `trees/papers/` (historical context,
+  contributions, impact), linked from the in-text citation at the point of the claim. A
+  deep-dive reads a lot of literature, so this is the bulk of the wiring — see
+  `/add-content`. A trailing `Sources:` list never substitutes for live links.
 - Distinguish what the sources establish from what follows from them from what Derek
   might conclude. Depth without that distinction is just confident noise.
-- Match the register of the existing notes — first person, discursive, willing to say
-  "my thoughts on this are still developing". `trees/notes/dhsorens-0025.tree` is the
-  model.
+- Match the register the page calls for. A technical page — definitions, theorems, protocol
+  detail — takes the impersonal textbook voice; the first-person notebook register belongs
+  to logs and reflective notes. `/writing` has the split.
 - Length should follow the material. A deep-dive that found three real things says
   three real things; it does not pad to look thorough.
 

@@ -10,7 +10,7 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 
 | Path | What it is |
 | --- | --- |
-| `trees/` | Content source (`.tree` files). Subdirs: `notes/`, `logs/`, `zk/`, `research/`, `institutions/`, `tools/`, `places/`, `people/`, `orgs/`, `protocols/`. Top-level trees are section indexes (`index.tree` = homepage, `dhsorens-notes.tree`, `dhsorens-logs.tree`, `dhsorens-talks.tree`, …). `zk/` is a multi-page corpus rather than a pile of notes — see below. |
+| `trees/` | Content source (`.tree` files). Subdirs: `notes/`, `logs/`, `zk/`, `research/`, `institutions/`, `tools/`, `places/`, `people/`, `orgs/`, `protocols/`, `papers/` (`\taxon{Paper}` — one page per cited work: context, contributions, impact), `wild/` (`\taxon{In the Wild}` — how a concept appears in a real codebase). Top-level trees are section indexes (`index.tree` = homepage, `dhsorens-notes.tree`, `dhsorens-logs.tree`, `dhsorens-talks.tree`, …). `zk/` is a multi-page corpus rather than a pile of notes — see below. |
 | `assets/` | Static files: `docs/` (paper/CV PDFs), `slides/`, `media/` (images), `img/`. Published at those same absolute paths. |
 | `theme/` | Vendored upstream forester theme. **Do not edit** XSL/CSS/JS — only the six favicon files (`favicon*`, `apple-touch-icon.png`, `android-chrome-*`) are local and must survive theme updates. |
 | `docs/` | **Generated** build output, committed for GitHub Pages. Never hand-edit; `commit.sh` regenerates it wholesale. |
@@ -37,6 +37,8 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 - Asset links in trees must be **absolute** (`/docs/…`, `/slides/…`, `/media/…`, `/img/…`) — pages live at `/<addr>/`, so relative links break. CI lints this.
 - Never hand-edit `docs/` or `output/`.
 - Every paragraph needs `\p{…}`; see `cmds.md` for the markup reference.
+- **The prose standard is textbook quality**, and `/writing` is where it is written down — load it before drafting and run its revision pass before committing. Technical pages (`trees/zk/**`, any note with definitions or theorems) take an impersonal textbook voice: no `my reading is`, no authorial opinion, formal definitions stated properly with intuition around them, and the subject defined before it is critiqued. Logs and reflective notes keep the first-person notebook register. `/writing`'s `reference/feedback-log.md` accumulates Derek's writing corrections — read it, and append to it whenever he gives new feedback, unprompted.
+- **Cite live, and give every cited paper a page.** A citation is a link at the point of the claim, pointing at that work's `\taxon{Paper}` page in `trees/papers/` (historical context, contributions, impact). A trailing `Sources:` paragraph supplements live links; it never replaces them.
 - Publishing flow: work on a branch, commit **sources only** (`./commit-trees.sh` or plain git), push, PR to `main`. CI publishes on merge; allow ~10 minutes for the Cloudflare cache after merging.
 - `trees/notes/dhsorens-001S.tree` is the **Latest Deep-Dive** blurb transcluded at the top of the front page. Its address is load-bearing — rewrite its body, never its address.
 - `trees/dhsorens-notes.tree` **transcludes** its notes, newest first; each renders in place with its own title and date, in the standard forester page format. It is not a bulleted list of links — `dhsorens-talks.tree` and `dhsorens-slides.tree` are lists because a talk has no tree to render, but a note does.

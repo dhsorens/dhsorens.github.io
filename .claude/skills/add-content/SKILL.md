@@ -21,6 +21,10 @@ Read `CLAUDE.md` for the repo map and hard rules, and `cmds.md` for the markup c
    ```
    Add `\taxon{...}` only when the per-type section below requires it. Ordinary notes have **no taxon**. Body rules: every paragraph in `\p{…}`; links are `[text](dhsorens-XXXX)` for trees and `[text](https://…)` for URLs; math `#{…}` inline, `##{…}` display; **asset links must be absolute** (`/docs/…`, `/slides/…`, `/media/…`, `/img/…`). Match the voice and density of neighboring trees — look at 2–3 recent siblings before writing.
 
+   **Load the `/writing` skill before drafting and run its revision pass before committing.** It carries the textbook-quality standard, the pattern for introducing a concept and stating a formal definition, and the register split (textbook voice on `trees/zk/**` and technical notes; notebook voice on logs and reflective notes). Its `reference/feedback-log.md` is the accumulated record of Derek's writing corrections — read it, and append to it whenever he gives new feedback.
+
+   **Cite live.** Any paper referenced in the body is linked at the point of the claim, to its `\taxon{Paper}` page (see below). Minting that page is part of writing the citation, not a follow-up.
+
 4. **Wire it in** (per-type, below). A tree that isn't transcluded or linked from a parent is unreachable — that's a bug unless intentional.
 
 5. **Assets.** Drop files into the matching `assets/` subdir (`docs/` for PDFs of papers/CV/thesis, `slides/` for talk decks, `media/` for photos/screenshots, `img/` for site imagery). They publish at the same absolute path (`assets/slides/x.pdf` → `/slides/x.pdf`).
@@ -71,6 +75,20 @@ Some subjects have grown their own multi-page corpus — `trees/zk/` (the zkVMs 
 ### Homepage feature
 - `trees/index.tree` transcludes the homepage sections (featured article, education, publications, talks, work history). To feature something, add/move a `\transclude{…} % label` there; to retire one, comment it out with `%` (the existing style) rather than deleting.
 - **`trees/notes/dhsorens-001S.tree` is the "Latest Deep-Dive" blurb**, the first thing under the intro on the homepage. Whenever you add something substantial — a deep-dive, a new corpus, a piece of writing worth the front page — rewrite its body to point at the new thing and bump its `\date` to today. Keep the address: `index.tree` transcludes it and the page is already published at `/dhsorens-001S/`. Match the house idiom, currently `See my latest on [<description>](<addr>) — <clause>.` It goes stale silently, so treat it as part of publishing rather than an afterthought. (`/notes` and `/deep-research` already do this as a numbered step.)
+
+### Cited paper (`\taxon{Paper}`)
+**Every paper cited anywhere in the forest gets one of these, and every in-text citation links to it.** A trailing `Sources:` paragraph is a supplement to live links, never a substitute for them.
+- File: `trees/papers/dhsorens-XXXX.tree`, `\taxon{Paper}`, no `\author` (the authors are the paper's, and belong in the body). `\meta{external}{<eprint or DOI URL>}` so the title links out to the canonical source.
+- Body: three paragraphs, in this order — **historical context** (what the state of the art was, what problem was open, who had tried what), **contributions** (what the paper actually proves or builds, stated precisely enough to cite from), **impact** (what it changed: what it enabled, what it killed, what now cites it, what it left open).
+- Wire: link it live from every page that cites the work, at the point of the claim — `Khovratovich, Rothblum, and Soukhanov [proved false statements](dhsorens-XXXX) against …`. Do not transclude Paper pages into `dhsorens-notes`; they are reference pages, not notes.
+- Distinguish from `\taxon{Publication}`, which is Derek's *own* output and lives as a `\paper{…}` row in `trees/research/dhsorens-pubs.tree`. `Paper` is for the literature.
+- A Paper page is not a substitute for a concept page. The concept (`the Fiat–Shamir attack`) gets a page explaining the mathematics; the paper gets a page explaining the work's place in the literature. Link them to each other.
+
+### Concept in the wild (`\taxon{In the Wild}`)
+Material of the form "here is how this concept appears in a real codebase" — ArkLib's Lean definitions, a Rust implementation's choices, what a production system actually ships — goes on its own page rather than inline in the concept page, so it can be tracked and updated as the codebase moves.
+- File: `trees/wild/dhsorens-XXXX.tree`, `\taxon{In the Wild}`. Title names both sides: `Fiat–Shamir in ArkLib`, `Duplex Sponges in spongefish`.
+- Body: what the codebase calls the concept, the shape of the definitions, what is proved versus stated versus `sorry`, and where it diverges from the paper treatment. Date it — this content goes stale, and the date is what tells a reader how much to trust it.
+- Wire: `\transclude{dhsorens-XXXX} % <concept> in <codebase>` at the **end** of the concept page, after the exposition and before the sources.
 
 ### New section or entity page (institution, person, tool, protocol, …)
 - Named tree in the matching subdir (`trees/institutions/dhsorens-<name>.tree`, `trees/people/<name>.tree`, `trees/protocols/dhsorens-<name>.tree`, …), then link to it from wherever it's mentioned. People trees are referenced by `\author{<addr>}`. Protocol pages (`\taxon{Protocol}`) are for chains/protocols themselves — Bitcoin, Ethereum — not the institutions around them (`dhsorens-ef` is the Foundation). Do not transclude entity stubs into Notes; `/link` is the workflow that mints them from `[text](TODO)` stubs.
