@@ -1,0 +1,48 @@
+\title{Sigma Protocols}
+\author{dhsorens}
+\date{2026-08-21}
+\meta{toc}{true}
+
+\p{
+    A sigma protocol is a three-move public-coin proof of knowledge. It is the smallest object carrying all three of the properties a security theorem for a proof system has to state, which is why the definitions in this section are easiest to read against one, and why [Schnorr](dhsorens-004V) is worth holding in mind throughout.
+}
+
+\p{
+    \strong{The relation.} Fix a relation #{R \subseteq X \times W}. The public statement is #{x \in X}; the witness is #{w} with #{(x, w) \in R}. The prover holds both, the verifier only #{x}. What is proved is not that #{x} has a witness but that the prover knows one, which is why [knowledge soundness](dhsorens-004J) rather than soundness is the property with content here.
+}
+
+\p{
+    \strong{The three messages.}
+    \ul{
+        \li{The prover sends a commitment #{a}.}
+        \li{The verifier sends a challenge #{e}, drawn uniformly from a challenge set #{E} of size #{N} and independent of #{a}. That independence is what \em{public-coin} means: the verifier's message is its randomness, sent in the clear.}
+        \li{The prover sends a response #{z}.}
+    }
+    The verifier accepts exactly when an acceptance predicate #{V(x, a, e, z)} holds. It keeps no state beyond the transcript, so #{(a, e, z)} is accepting or not on its own terms, independently of how it was produced. That is what makes a transcript simulable, and what makes two of them subtractable.
+}
+
+\p{
+    \strong{Completeness.} An honest prover holding #{w} with #{(x, w) \in R} is accepted. In this family it holds with probability one; [completeness](dhsorens-004T) is where the general definition and its failure modes live.
+}
+
+\p{
+    \strong{Special soundness.} From two accepting transcripts #{(a, e, z)} and #{(a, e', z')} sharing the commitment, with #{e \neq e'}, an efficient algorithm computes a #{w} with #{(x, w) \in R}. This is a condition on the algebra of #{V}, not a probability bound, so checking it means exhibiting the computation rather than arguing about adversaries. Knowledge soundness with error #{1/N} follows generically, by rewinding: run the prover, fork it at the challenge, and collect a second accepting transcript on the same #{a}. [Special soundness](dhsorens-004K) has the multi-round generalisation and what the rewinding costs once the protocol is made non-interactive.
+}
+
+\p{
+    \strong{Special honest-verifier zero knowledge.} An efficient simulator, given #{x} and a challenge #{e} fixed in advance, outputs an accepting transcript #{(a, e, z)} distributed exactly as a real one, with no witness. Both qualifiers do work. \em{Special} means the simulator is handed #{e} rather than choosing it, which is what lets the property survive [Fiat–Shamir](dhsorens-002G). \em{Honest-verifier} means the guarantee covers a verifier that draws #{e} uniformly; a malicious verifier choosing #{e} as a function of #{a} is outside the definition, and closing that gap takes more than the three moves provide.
+}
+
+\p{
+    \strong{The definition.} A three-move public-coin protocol satisfying completeness, special soundness, and special honest-verifier zero knowledge is a \em{sigma protocol} for #{R}.
+}
+
+\p{
+    Three things beyond the definition are worth knowing. Sigma protocols compose: Cramer, Damgård, and Schoenmakers showed that conjunctions and disjunctions of relations have sigma protocols assembled from those for the parts, which is where ring signatures and the older range proofs come from. [Fiat–Shamir](dhsorens-002G) applied to one gives a signature scheme, Schnorr signatures being the transform of the [Schnorr protocol](dhsorens-004V). And the multi-round protocols the rest of this corpus is about are the generalisation — #{(k_1, \dots, k_\mu)}-special soundness replaces the pair of transcripts with a tree, at which point a sigma protocol is the case #{\mu = 1}, #{k_1 = 2}.
+}
+
+\transclude{dhsorens-004V} % the Schnorr protocol
+
+\p{
+    Sources: Damgård, [On Σ-protocols](https://www.cs.au.dk/~ivan/Sigma.pdf), for the definitions in this shape; Cramer, Damgård, and Schoenmakers, \em{Proofs of Partial Knowledge and Simplified Design of Witness Hiding Protocols} (CRYPTO 1994), for the composition; Thaler, \em{Proofs, Arguments, and Zero-Knowledge}.
+}

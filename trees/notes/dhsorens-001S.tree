@@ -1,8 +1,8 @@
 \title{Latest Deep-Dive}
 \author{dhsorens}
-\date{2026-08-19}
+\date{2026-08-21}
 \meta{toc}{true}
 
 \p{
-    See my latest on [soundness notions](dhsorens-002F) — the five things \em{sound} can mean in the security theorem for a SNARK, the implications between them, and which of them survives [Fiat–Shamir](dhsorens-002G). The short version is that compilation chooses a notion rather than inheriting one, which is why a protocol proved sound end-to-end has not yet been proved anything about its deployed form. It is the first written-out section of the [zkVMs and SNARKs](dhsorens-002C) corpus.
+    See my latest on [sigma protocols](dhsorens-004U) and [Schnorr](dhsorens-004V) — the three-move public-coin proof of knowledge, worked through to the one subtraction that extracts a witness and the simulator that is the same equation read backwards. Schnorr is where the [soundness notions](dhsorens-002F) I wrote up earlier were first defined, and writing it out fixes the naming: \em{zero-knowledge proof of knowledge} under-specifies it, since the zero-knowledge is only honest-verifier and \em{of knowledge} is the half carrying the content. Both pages sit in the [zkVMs and SNARKs](dhsorens-002C) corpus.
 }

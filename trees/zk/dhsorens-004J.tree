@@ -7,7 +7,7 @@
 }
 
 \p{
-    Soundness is vacuous whenever the language is trivial. "There is an #{a} with #{g^a = h}" holds for every #{h} in a cyclic group, so a Schnorr proof has no false statements to be sound about, and the property the application wants — that this prover holds #{a} — is not soundness at all. Knowledge soundness is the property with content: there is an efficient extractor #{E} such that any #{P^*} convincing #{V} with probability #{\epsilon^*} yields a witness from #{E} with probability at least #{\epsilon^* - \kappa}, where #{\kappa} is the knowledge error. It implies soundness whenever #{\kappa < 1}, since for #{x \notin L} there is no witness to extract and acceptance is bounded by #{\kappa} — ArkLib's \code{knowledgeSoundness_implies_soundness}.
+    Soundness is vacuous whenever the language is trivial. "There is an #{a} with #{g^a = h}" holds for every #{h} in a [cyclic group](dhsorens-004W), so a [Schnorr](dhsorens-004V) proof has no false statements to be sound about, and the property the application wants — that this prover holds #{a} — is not soundness at all. Knowledge soundness is the property with content: there is an efficient extractor #{E} such that any #{P^*} convincing #{V} with probability #{\epsilon^*} yields a witness from #{E} with probability at least #{\epsilon^* - \kappa}, where #{\kappa} is the knowledge error. It implies soundness whenever #{\kappa < 1}, since for #{x \notin L} there is no witness to extract and acceptance is bounded by #{\kappa} — ArkLib's \code{knowledgeSoundness_implies_soundness}.
 }
 
 \p{

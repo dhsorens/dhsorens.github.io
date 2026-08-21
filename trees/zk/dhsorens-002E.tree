@@ -14,7 +14,7 @@
         \li{Where \em{succinct} and \em{of knowledge} enter, and what each costs the construction.}
         \li{Public-coin versus private-coin, and why every deployed system is public-coin.}
         \li{[The knowledge extractor](dhsorens-004J): what it is handed, what it must produce, and why rewinding is a problem in the non-interactive setting.}
-        \li{Zero-knowledge — honest-verifier versus malicious, and how much of it a zkVM actually needs. Mostly these systems are bought for succinctness.}
+        \li{Zero-knowledge — honest-verifier versus malicious, as the [sigma protocols](dhsorens-004U) exhibit the distinction, and how much of it a zkVM actually needs. Mostly these systems are bought for succinctness.}
     }
 }
 
