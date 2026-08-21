@@ -13,6 +13,7 @@
         \li{Why prime #{q} makes every nonzero exponent difference invertible — the single step [Schnorr](dhsorens-004V) extraction turns on.}
         \li{The discrete logarithm assumption and its relatives, computational and decisional Diffie–Hellman, and which of them a given [sigma protocol](dhsorens-004U) actually needs.}
         \li{What is known about the hardness: generic-group lower bounds, index calculus, and why elliptic curves rather than the multiplicative group of a prime field.}
+        \li{Where the setting reappears later in the corpus: the [inner-product arguments](dhsorens-0033) that scale it to logarithmic proofs, and the [pairing-based line](dhsorens-0032) that asks more of the curve than a group law.}
         \li{Why this setting is absent from the [FRI](dhsorens-0037) family, and what replaces the group structure there — [fields](dhsorens-002K) and [codes](dhsorens-002O).}
         \li{Post-quantum status: Shor breaks all of it, which is the reason the [lattice protocols](dhsorens-0049) exist.}
     }
