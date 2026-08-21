@@ -3,15 +3,13 @@
 \date{2026-08-21}
 
 \p{
-    The [zkVMs and SNARKs](dhsorens-002C) corpus had been defining its properties without ever
-    writing down the object they were first defined for, so I filled that in:
-    [sigma protocols](dhsorens-004U) as the three-move public-coin proof of knowledge, and
-    [Schnorr](dhsorens-004V) worked through in full — the verification equation, the one subtraction
-    that extracts the witness, and the simulator that is the same equation read backwards. Writing
-    it out settled a naming question I had been sloppy about. \em{Zero-knowledge proof of knowledge}
-    under-specifies Schnorr twice: the zero-knowledge is only \em{special honest-verifier}, and
-    \em{of knowledge} is the half doing the work, because every group element has a discrete
-    logarithm and so plain soundness is a claim about nothing.
+    [Sigma protocols](dhsorens-004U) are the three-move public-coin proof of knowledge, and
+    [Schnorr](dhsorens-004V) is that shape worked through in full — the verification equation, the
+    one subtraction that extracts the witness, and the simulator that is the same equation read
+    backwards. Writing it out settled a naming question I had been sloppy about.
+    \em{Zero-knowledge proof of knowledge} under-specifies Schnorr twice: the zero-knowledge is only
+    \em{special honest-verifier}, and \em{of knowledge} is the half doing the work, because every
+    group element has a discrete logarithm and so plain soundness is a claim about nothing.
 }
 
 \p{
