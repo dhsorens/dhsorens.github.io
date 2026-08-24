@@ -4,27 +4,53 @@
 \meta{toc}{true}
 
 \p{
-    An embedded [Lean](dhsorens-lean) DSL for writing zk circuits against [AIR](dhsorens-002U), [Plonkish](dhsorens-002T), and [R1CS](dhsorens-002S), built by zkSecurity under a Verified-zkEVM grant. Circuit, specification, and proof live in the same file — an arrangement [smart contract verification](dhsorens-001J) has never had.
+    An embedded [Lean](dhsorens-lean) DSL for writing zk circuits against [AIR](dhsorens-002U),
+    [Plonkish](dhsorens-002T), and [R1CS](dhsorens-002S), built by zkSecurity under a Verified-zkEVM
+    grant. Circuit, specification, and proof live in the same file — an arrangement
+    [smart contract verification](dhsorens-001J) has never had.
 }
 
 \p{
-    The object that carries the correctness claim is \code{FormalCircuit}, and its content is a contract. A circuit is bundled with an \code{Assumptions} predicate on its inputs, a \code{Spec} relating inputs to outputs, and proofs of two statements: soundness, that the constraints together with the assumptions imply the spec, and completeness, that the assumptions imply the circuit's own witness generators satisfy the constraints. Taken together they say the circuit behaves as a function with \code{Assumptions} as precondition and \code{Spec} as postcondition. Taken separately neither says anything: a circuit whose constraints are unsatisfiable is sound vacuously, and a circuit with no constraints at all is complete.
+    The object that carries the correctness claim is \code{FormalCircuit}, and its content is a
+    contract. A circuit is bundled with an \code{Assumptions} predicate on its inputs, a \code{Spec}
+    relating inputs to outputs, and proofs of two statements: soundness, that the constraints
+    together with the assumptions imply the spec, and completeness, that the assumptions imply the
+    circuit's own witness generators satisfy the constraints. Taken together they say the circuit
+    behaves as a function with \code{Assumptions} as precondition and \code{Spec} as postcondition.
+    Taken separately neither says anything: a circuit whose constraints are unsatisfiable is sound
+    vacuously, and a circuit with no constraints at all is complete.
 }
 
 \p{
-    What makes the arrangement scale is that subcircuits enter proofs through their specs rather than their constraints. \code{ConstraintsHold.Soundness} replaces each subcircuit in the operation list by the implication from its assumptions to its spec, and the completeness counterpart replaces it by its prover-side assumptions — so a gadget is proved once and thereafter used as a black box. The 200,000-constraint SHA-256 circuit in the [zk.golf](dhsorens-004Z) repository is proved this way, as a composition of some twenty gadget circuits each carrying its own soundness and completeness theorem, none of them reproved at the top level.
+    What makes the arrangement scale is that subcircuits enter proofs through their specs rather
+    than their constraints. \code{ConstraintsHold.Soundness} replaces each subcircuit in the
+    operation list by the implication from its assumptions to its spec, and the completeness
+    counterpart replaces it by its prover-side assumptions — so a gadget is proved once and
+    thereafter used as a black box. The 200,000-constraint SHA-256 circuit in the
+    [zk.golf](dhsorens-0053) repository is proved this way, as a composition of some twenty gadget
+    circuits each carrying its own soundness and completeness theorem, none of them reproved at the
+    top level.
 }
 
 \p{
-    Clean and [ArkLib](dhsorens-0040) prove complementary halves of a proof system's correctness and do not currently compose. ArkLib's theorems are about a protocol over a constraint system: given that the system is satisfiable, the argument is knowledge-sound. Clean's theorems are about what satisfiability of that system means for the computation. The protocol theorem assumes the arithmetisation says what it is meant to say, and the circuit theorem is what discharges that assumption — but joining them is an exploratory item on Clean's roadmap, not a result. This is the load-bearing seam between the two libraries, and it is still open.
+    Clean and [ArkLib](dhsorens-0040) prove complementary halves of a proof system's correctness and
+    do not currently compose. ArkLib's theorems are about a protocol over a constraint system: given
+    that the system is satisfiable, the argument is knowledge-sound. Clean's theorems are about what
+    satisfiability of that system means for the computation. The protocol theorem assumes the
+    arithmetisation says what it is meant to say, and the circuit theorem is what discharges that
+    assumption — but joining them is an exploratory item on Clean's roadmap, not a result. This is
+    the load-bearing seam between the two libraries, and it is still open.
 }
 
-\transclude{dhsorens-004U} % circuits, constraints, witness generation
-\transclude{dhsorens-004V} % soundness and completeness of a circuit
-\transclude{dhsorens-004W} % arithmetisations and backends
-\transclude{dhsorens-004X} % circuits in Clean
-\transclude{dhsorens-004Y} % interfaces as specifications
+\transclude{dhsorens-004Y} % circuits, constraints, witness generation
+\transclude{dhsorens-004Z} % soundness and completeness of a circuit
+\transclude{dhsorens-0050} % arithmetisations and backends
+\transclude{dhsorens-0051} % circuits in Clean
+\transclude{dhsorens-0052} % interfaces as specifications
 
 \p{
-    Sources: the [clean](https://github.com/Verified-zkEVM/clean/) repository, read at commit \code{0e53b9f}; [Introducing clean](https://blog.zksecurity.xyz/posts/clean/) for the project's own introduction; the [zk-golf-challenges](https://github.com/zksecurity/zk-golf-challenges) repository for the largest verified circuits written in it so far.
+    Sources: the [clean](https://github.com/Verified-zkEVM/clean/) repository, read at commit
+    \code{0e53b9f}; [Introducing clean](https://blog.zksecurity.xyz/posts/clean/) for the project's
+    own introduction; the [zk-golf-challenges](https://github.com/zksecurity/zk-golf-challenges)
+    repository for the largest verified circuits written in it so far.
 }

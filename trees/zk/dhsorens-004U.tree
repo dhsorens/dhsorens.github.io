@@ -1,27 +1,85 @@
-\title{Circuits, Constraints, and Witness Generation}
+\title{Sigma Protocols}
 \author{dhsorens}
-\date{2026-08-24}
+\date{2026-08-21}
+\meta{toc}{true}
 
 \p{
-    A \code{Circuit F α} in Clean is a function from an offset to a value and a list of operations — \code{ℕ → α × List (Operation F)} — which is a writer monad accumulating operations mixed with a state monad threading the offset. The offset is the index of the next unallocated witness cell, and \code{bind} advances it by the number of cells the preceding operations allocated. That is the whole of the representation, and the \code{do} notation is what makes it readable: a circuit is written as a straight-line program that allocates cells and asserts equations, and the monad turns it into a list.
+    A sigma protocol is a three-move public-coin proof of knowledge. It is the smallest object
+    carrying all three of the properties a security theorem for a proof system has to state, which
+    is why the definitions in this section are easiest to read against one, and why
+    [Schnorr](dhsorens-004V) is worth holding in mind throughout.
 }
 
 \p{
-    There are five operations. \code{witness m ir} allocates #{m} cells and records how to compute them; \code{assert e} requires the expression #{e} to vanish; \code{lookup} requires a row to appear in a table; \code{interact} emits a channel interaction; \code{subcircuit} nests an already-proved circuit. Only three of the five are checked by the verifier. \code{witness} carries no constraint whatsoever — it is instruction to the prover, invisible in the constraint system.
+    \strong{The relation.} Fix a relation #{R \subseteq X \times W}. The public statement is
+    #{x \in X}; the witness is #{w} with #{(x, w) \in R}. The prover holds both, the verifier only
+    #{x}. What is proved is not that #{x} has a witness but that the prover knows one, which is why
+    [knowledge soundness](dhsorens-004J) rather than soundness is the property with content here.
 }
 
 \p{
-    That asymmetry is where circuit bugs live. A circuit is two programs sharing one syntax: the constraint system the verifier checks, and the witness generator the prover runs. An under-constrained circuit is one whose generator computes the right value and whose constraints also permit a wrong one, and no amount of testing finds it, because testing runs the generator. Clean's response is to state soundness over the constraints alone, with the generator appearing only in the completeness statement — so the property that testing cannot reach is the property the soundness proof is about.
+    \strong{The three messages.}
+    \ul{
+        \li{The prover sends a commitment #{a}.}
+        \li{The verifier sends a challenge #{e}, drawn uniformly from a challenge set #{E} of size
+        #{N} and independent of #{a}. That independence is what \em{public-coin} means: the
+        verifier's message is its randomness, sent in the clear.}
+        \li{The prover sends a response #{z}.}
+    }
+    The verifier accepts exactly when an acceptance predicate #{V(x, a, e, z)} holds. It keeps no
+    state beyond the transcript, so #{(a, e, z)} is accepting or not on its own terms, independently
+    of how it was produced. That is what makes a transcript simulable, and what makes two of them
+    subtractable.
 }
 
 \p{
-    Expressions are a small inductive type — variable, constant, addition, multiplication — so an \code{Expression F} is a polynomial in the witness cells, and \code{assertZero} is the only primitive constraint. Two pieces of notation cover most circuit code: \code{x === y} asserts an equality, and \code{let b <== e} allocates a cell and constrains it equal to #{e}, which is the idiom for naming an intermediate value that the verifier can refer to.
+    \strong{Completeness.} An honest prover holding #{w} with #{(x, w) \in R} is accepted. In this
+    family it holds with probability one; [completeness](dhsorens-004T) is where the general
+    definition and its failure modes live.
 }
 
 \p{
-    Witness generation is written in a deep-embedded IR rather than as a Lean closure, and the reason is that the prover does not run in Lean. Because \code{WitgenIR} is data it can be serialised to a proving backend, checked for exportability, and still evaluated inside Lean by a reference interpreter, so one definition serves the proof and the Rust prover both. The authoring surface has two sorts: field-sorted expressions with #{+}, #{\times} and inverse, and a 64-bit integer sort with wrapping arithmetic and bitwise operations, plus conditionals, comparisons, and bit extraction. Gadgets work on bytes and 32-bit limbs, so the wraps are never taken, and the normalisation simproc erases them whenever the gadget's own assumptions bound the operand. Anything genuinely wider than 64 bits has to stay field-sorted.
+    \strong{Special soundness.} From two accepting transcripts #{(a, e, z)} and #{(a, e', z')}
+    sharing the commitment, with #{e \neq e'}, an efficient algorithm computes a #{w} with
+    #{(x, w) \in R}. This is a condition on the algebra of #{V}, not a probability bound, so
+    checking it means exhibiting the computation rather than arguing about adversaries. Knowledge
+    soundness with error #{1/N} follows generically, by rewinding: run the prover, fork it at the
+    challenge, and collect a second accepting transcript on the same #{a}.
+    [Special soundness](dhsorens-004K) has the multi-round generalisation and what the rewinding
+    costs once the protocol is made non-interactive.
 }
 
 \p{
-    Two supporting classes make gadgets composable. \code{ProvableType} equips a type former with a \code{size}, maps to and from a flat vector of that many elements, and round-trip proofs — this is how a structured input becomes a run of witness cells, and record types get it by \code{deriving ProvableStruct}. \code{ElaboratedCircuit} carries the offset-independent facts about a circuit: how many cells it allocates and what it outputs, each with a proof that it agrees with actually running the circuit. Elaboration is what lets a caller use a gadget without unfolding its body, and it is inferred by tactic in the common case.
+    \strong{Special honest-verifier zero knowledge.} An efficient simulator, given #{x} and a
+    challenge #{e} fixed in advance, outputs an accepting transcript #{(a, e, z)} distributed
+    exactly as a real one, with no witness. Both qualifiers do work. \em{Special} means the
+    simulator is handed #{e} rather than choosing it, which is what lets the property survive
+    [Fiat–Shamir](dhsorens-002G). \em{Honest-verifier} means the guarantee covers a verifier that
+    draws #{e} uniformly; a malicious verifier choosing #{e} as a function of #{a} is outside the
+    definition, and closing that gap takes more than the three moves provide.
+}
+
+\p{
+    \strong{The definition.} A three-move public-coin protocol satisfying completeness, special
+    soundness, and special honest-verifier zero knowledge is a \em{sigma protocol} for #{R}.
+}
+
+\p{
+    Three things beyond the definition are worth knowing. Sigma protocols compose: Cramer, Damgård,
+    and Schoenmakers showed that conjunctions and disjunctions of relations have sigma protocols
+    assembled from those for the parts, which is where ring signatures and the older range proofs
+    come from. [Fiat–Shamir](dhsorens-002G) applied to one gives a signature scheme, Schnorr
+    signatures being the transform of the [Schnorr protocol](dhsorens-004V). And the multi-round
+    protocols the rest of this corpus is about are the generalisation —
+    #{(k_1, \dots, k_\mu)}-special soundness replaces the pair of transcripts with a tree, at which
+    point a sigma protocol is the case #{\mu = 1}, #{k_1 = 2}.
+}
+
+\transclude{dhsorens-004V} % the Schnorr protocol
+
+\p{
+    Sources: Damgård, [On Σ-protocols](https://www.cs.au.dk/~ivan/Sigma.pdf), for the definitions in
+    this shape; Cramer, Damgård, and Schoenmakers, \em{Proofs of Partial Knowledge and Simplified
+    Design of Witness Hiding Protocols} (CRYPTO 1994), for the composition; Thaler, \em{Proofs,
+    Arguments, and Zero-Knowledge}.
 }

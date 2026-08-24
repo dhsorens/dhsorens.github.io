@@ -1,35 +1,76 @@
-\title{zk.golf}
+\title{Soundness and Completeness of a Circuit}
 \author{dhsorens}
 \date{2026-08-24}
 
 \p{
-    A competition, run by zkSecurity, to write the cheapest circuit satisfying a fixed formal interface, with correctness proved in Lean using [Clean](dhsorens-002Y). Each challenge is a directory of Lean files rather than a prose problem statement, and the interesting design decision is which files are trusted. The interface file owns the input and output types, the assumptions, and the spec. The challenge file — described in its own header as the trusted boundary — declares the circuit and the theorems with their bodies left as \code{sorry}, so the obligation is exactly to supply terms of those types. A configuration file names the declarations that must be present and the axioms they may depend on. The implementation is unconstrained.
+    Circuit soundness and [protocol soundness](dhsorens-002F) are statements about different
+    objects, and the distinction is worth holding onto because both are called soundness. A protocol
+    theorem says that a prover who convinces the verifier knows a satisfying assignment to some
+    constraint system. A circuit theorem says what a satisfying assignment to \em{that} system
+    implies about the computation the system was supposed to encode. Neither implies the other, and
+    a proof system with both is the only kind whose end-to-end claim mentions the program the user
+    cared about.
 }
 
 \p{
-    The SHA-256 instance makes the interface concrete. Input is a 256-byte buffer encoded one byte per field element, plus a length; output is the digest as eight 32-bit words. The assumptions are that every buffer entry is a byte and that the length is below the buffer size. The spec is an equation: the digest equals SHA-256 of the first #{n} bytes, where SHA-256 is defined in the challenge repository over the naturals, with padding and compression written out. It is stated as a \code{GeneralFormalCircuit} rather than a \code{FormalCircuit}, and the reason is precise — the honest prover is additionally required to zero the buffer beyond the message length, which is an obligation on the prover and not an assumption the verifier may make. Coupling the two statements, as the simpler structure does, would have put a padding condition into the soundness theorem.
+    Soundness in Clean quantifies over arbitrary environments. For every offset, every assignment of
+    field elements to cells — no honesty assumed — and every input, if the assumptions hold on the
+    input and the constraints hold under that assignment, then the spec holds of the input and the
+    circuit's output. Quantifying over all environments is what makes this a statement about a
+    cheating prover: the witness cells are adversarial, and the constraints are the only thing the
+    proof has to work with.
 }
 
 \p{
-    Five theorems are required, and the three beyond soundness and completeness are the ones that make the score mean anything. Cost is a pair — witness allocations and constraint rows — and the requirement is that the circuit's count equals a declared pair for \em{every} input and at every offset, so the number is a property of the circuit rather than the outcome of a benchmark. Because it is a theorem, a submitted score is certified rather than measured.
+    Completeness quantifies over prover environments that
+    \em{use the circuit's own witness generators} — the predicate
+    \code{UsesLocalWitnessesCompleteness} says the environment's cells agree, operation by
+    operation, with what each \code{witness} step computes. Given assumptions, the constraints hold.
+    So completeness is exactly the claim that the generator's output satisfies the constraints on
+    every admissible input, and it is the obligation that fails when a circuit is over-constrained
+    rather than under-constrained. The proof obligation splits differently at subcircuits too:
+    soundness may assume a subcircuit's spec, while completeness must establish its prover-side
+    assumptions.
 }
 
 \p{
-    The second, \code{isR1CS}, fixes the shape of the constraint system. A single row is an asserted expression in which, along the addition spine, every summand is affine and at most one is a product of two affine forms — the shape #{A \cdot B - C}, one rank-one constraint #{\langle A, z \rangle \cdot \langle B, z \rangle = \langle C, z \rangle}. Degree three and above is rejected, and so is a sum of two products, which genuinely needs an auxiliary witness and a second row. The check is documented as a sound over-approximation: it counts products syntactically, so it can over-reject — #{ab + ac} is rank one but counts as two — and never under-counts, which is the direction that matters, because a true multi-row assertion is never certified as one row. Lookups and channel interactions are forbidden outright.
+    Three structures package the pair, and the differences between them are the interesting part of
+    the design. \code{FormalCircuit} is the function-like case: a spec relating input to output, and
+    constraints that are always satisfiable given the assumptions, so the spec is permitted to be
+    strictly weaker than the constraints. \code{FormalAssertion} is the case with no output, where
+    the circuit's purpose is to constrain its input further. Its constraints need not be
+    satisfiable, so completeness is weakened to \em{assumptions and spec imply constraints} — and
+    the consequence is that an assertion's spec must be an equivalent reformulation of its
+    constraints, not a weakening of them.
 }
 
 \p{
-    That prohibition is what shapes every number in the competition. With no lookups, bitwise operations are bit-blasted: in the published SHA-256 solution a 32-bit XOR costs 32 allocations and 32 constraints, a 32-bit addition 33 and 34, and the majority function 64 of each. One round is two #{\Sigma} functions, a choice, a majority, and seven additions — 455 allocations and 462 constraints. Sixty-four rounds, the message schedule, and the feed-forward addition make one block cost 40,280 and 40,880; five blocks with the padding checks and digest selection give the interface total, 204,224 allocations and 209,586 constraints. A single 256-byte SHA-256 therefore scores 413,810, on the convention that the score is the sum of the two — and the same accounting puts a Keccak permutation at 153,600 of each, a 4096-bit RSA-with-SHA-256 signature check at 412,130 and 415,006, and a secp256k1 scalar multiplication above eight million of each.
+    \code{GeneralFormalCircuit} is for circuits that are a mix of the two, and it decouples the
+    statements outright: \code{Assumptions} and \code{Spec} appear only in soundness, and separate
+    \code{ProverAssumptions} and \code{ProverSpec} only in completeness. The library's own
+    motivating example is the bit-decomposition gadget. Decomposing #{x} into #{n} bits constrains
+    #{x} to be #{n}-bit representable as a side effect, so representability is a necessary
+    assumption for completeness and an unnecessary one for soundness. Stating it as a
+    \code{FormalCircuit} would push the assumption into the soundness statement and make the gadget
+    useless as a range check, because it would then require the very property it establishes. A
+    fourth structure, \code{DeterministicFormalCircuit}, adds a uniqueness obligation: the spec
+    determines the output, so the constraints cannot leave it ambiguous.
 }
 
 \p{
-    The third theorem, \code{computableWitness}, requires that every witness generator depend only on the circuit's input and on cells already allocated. This is the obligation that keeps the other four honest. Nothing in soundness or completeness prevents a generator from reading a cell it has not yet assigned, or from being defined by a non-executable choice; a circuit with such a generator can be correct on both counts and still be one no prover can run. Requiring the property as a theorem is how the interface says \em{runnable} without saying anything about the implementation.
+    Soundness carries a second conjunct that is easy to overlook. Alongside the spec, the circuit
+    must discharge the \code{Requirements} of every channel interaction it emits — the obligations a
+    component takes on when it pushes to a channel, as opposed to the guarantees it may assume when
+    it pulls. At the level of a single circuit these are assumed and re-exported; establishing them
+    unconditionally is a property of the whole [ensemble](dhsorens-0050), and it does not follow
+    from the circuit-level proofs.
 }
 
 \p{
-    Validation is then mechanical, and deliberately so. The submission must typecheck against the declared types, and its axiom dependencies must stay inside a whitelist — propositional extensionality, quotient soundness, classical choice, and, per instance, the assertion that the target prime is prime, which is asserted rather than proved because checking it in the kernel is expensive. There is a flag for re-checking with an independent kernel implementation, currently off. Nothing in the pipeline reads the circuit. zkSecurity's own framing of why this matters is that frontier models can now produce deeply optimised circuits with proofs in days; I cannot check that claim from the repository, but it is not the load-bearing one. The structural point is that the interface makes the question of who wrote the circuit irrelevant to whether it can be accepted, and a competition is a clean way to demonstrate it.
-}
-
-\p{
-    Sources: the [zk-golf-challenges](https://github.com/zksecurity/zk-golf-challenges) repository, read at the initial public-challenge commit — \code{Challenge/Instances/SHA256} for the interface and the trusted boundary, \code{Challenge/Utils/CostR1CS.lean} for the cost and rank-one certification, \code{configs/} for the axiom whitelists, and \code{Solution/} for the published reference circuits and their costs; [zk.golf](https://zk.golf/) and [Fearless and Collaborative Optimization of Circuits](https://blog.zksecurity.xyz/posts/zkgolf/) for the competition's own account of scoring, which I have not read directly.
+    What is not yet stated anywhere in this stack is the composite theorem.
+    [Completeness](dhsorens-004T) at the protocol layer is preserved by compilation and is rarely
+    where a system fails; circuit completeness is a different obligation, and the flat AIR ensemble
+    layer marks it as unproved. Until circuit-level and protocol-level statements are joined, a
+    verified circuit and a verified argument are two theorems about the same system with a gap
+    between them, and the gap is exactly the arithmetisation's satisfiability relation.
 }

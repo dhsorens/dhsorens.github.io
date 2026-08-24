@@ -1,22 +1,62 @@
-\title{Interfaces as Specifications}
+\title{Circuits, Constraints, and Witness Generation}
 \author{dhsorens}
 \date{2026-08-24}
-\meta{toc}{true}
 
 \p{
-    Once the contract is written in Lean, it is a complete description of what a circuit must do and says nothing about how. Fix the input and output types, the assumptions, the spec, and the exact statements to be proved, and the circuit itself becomes free — any implementation is acceptable if its exported proofs have the right types. Acceptance is then decided by the kernel rather than by review, and the provenance of the circuit stops mattering.
+    A \code{Circuit F α} in Clean is a function from an offset to a value and a list of operations —
+    \code{ℕ → α × List (Operation F)} — which is a writer monad accumulating operations mixed with a
+    state monad threading the offset. The offset is the index of the next unallocated witness cell,
+    and \code{bind} advances it by the number of cells the preceding operations allocated. That is
+    the whole of the representation, and the \code{do} notation is what makes it readable: a circuit
+    is written as a straight-line program that allocates cells and asserts equations, and the monad
+    turns it into a list.
 }
 
 \p{
-    The consequence is for optimisation, which is otherwise the most dangerous change one can make to a circuit. Optimising a circuit means removing constraints, and the failure mode of removing a constraint is not a wrong answer but a permitted wrong answer — invisible to tests, invisible to the honest prover, and beyond the reach of review at the scale of a hash function with hundreds of thousands of rows. Against a machine-checked interface the calculus inverts: an optimisation that breaks soundness fails to compile, so the class of bug that is hardest to find becomes the class that is hardest to ship.
+    There are five operations. \code{witness m ir} allocates #{m} cells and records how to compute
+    them; \code{assert e} requires the expression #{e} to vanish; \code{lookup} requires a row to
+    appear in a table; \code{interact} emits a channel interaction; \code{subcircuit} nests an
+    already-proved circuit. Only three of the five are checked by the verifier. \code{witness}
+    carries no constraint whatsoever — it is instruction to the prover, invisible in the constraint
+    system.
 }
 
 \p{
-    An interface that fixes only soundness and completeness is not enough for this, and the omissions are instructive. Cost has to be in the interface, or "optimised" is not a measurable claim. The shape of the constraint system has to be fixed too, or the cost number is not comparable between submissions — a submitter who is allowed to write assertions of arbitrary degree can pack several rows into one and report a smaller count. Computability of the witnesses has to be required, or a circuit can satisfy both correctness obligations while no prover can actually run it. And the axioms have to be bounded, since a proof is only as good as what it is allowed to assume. [zk.golf](dhsorens-004Z) pins down all four alongside the spec, and that combination is what makes an arbitrary submission — including a machine-generated one — safe to accept unread.
+    That asymmetry is where circuit bugs live. A circuit is two programs sharing one syntax: the
+    constraint system the verifier checks, and the witness generator the prover runs. An
+    under-constrained circuit is one whose generator computes the right value and whose constraints
+    also permit a wrong one, and no amount of testing finds it, because testing runs the generator.
+    Clean's response is to state soundness over the constraints alone, with the generator appearing
+    only in the completeness statement — so the property that testing cannot reach is the property
+    the soundness proof is about.
 }
 
 \p{
-    Whether this generalises past circuits is a separate question, and my own answer is that it generalises less than it looks. The technique works here because the specifications are easy: SHA-256 is a total function on byte strings and the spec is an equation, so writing the interface is bookkeeping. The [difficulty with smart contract specifications](dhsorens-001J) was never the proof, it was that the properties worth having were socio-economic and resisted statement — and an interface-as-specification discipline would have inherited that difficulty rather than dissolved it. Circuits are the setting where the discipline pays, and the reason is the shape of the specification problem, not the strength of the method.
+    Expressions are a small inductive type — variable, constant, addition, multiplication — so an
+    \code{Expression F} is a polynomial in the witness cells, and \code{assertZero} is the only
+    primitive constraint. Two pieces of notation cover most circuit code: \code{x === y} asserts an
+    equality, and \code{let b <== e} allocates a cell and constrains it equal to #{e}, which is the
+    idiom for naming an intermediate value that the verifier can refer to.
 }
 
-\transclude{dhsorens-004Z} % zk.golf
+\p{
+    Witness generation is written in a deep-embedded IR rather than as a Lean closure, and the
+    reason is that the prover does not run in Lean. Because \code{WitgenIR} is data it can be
+    serialised to a proving backend, checked for exportability, and still evaluated inside Lean by a
+    reference interpreter, so one definition serves the proof and the Rust prover both. The
+    authoring surface has two sorts: field-sorted expressions with #{+}, #{\times} and inverse, and
+    a 64-bit integer sort with wrapping arithmetic and bitwise operations, plus conditionals,
+    comparisons, and bit extraction. Gadgets work on bytes and 32-bit limbs, so the wraps are never
+    taken, and the normalisation simproc erases them whenever the gadget's own assumptions bound the
+    operand. Anything genuinely wider than 64 bits has to stay field-sorted.
+}
+
+\p{
+    Two supporting classes make gadgets composable. \code{ProvableType} equips a type former with a
+    \code{size}, maps to and from a flat vector of that many elements, and round-trip proofs — this
+    is how a structured input becomes a run of witness cells, and record types get it by
+    \code{deriving ProvableStruct}. \code{ElaboratedCircuit} carries the offset-independent facts
+    about a circuit: how many cells it allocates and what it outputs, each with a proof that it
+    agrees with actually running the circuit. Elaboration is what lets a caller use a gadget without
+    unfolding its body, and it is inferred by tactic in the common case.
+}

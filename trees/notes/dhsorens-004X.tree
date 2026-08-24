@@ -1,0 +1,30 @@
+\title{A Note on Sigma Protocols and Schnorr}
+\author{dhsorens}
+\date{2026-08-21}
+
+\p{
+    [Sigma protocols](dhsorens-004U) are the three-move public-coin proof of knowledge, and
+    [Schnorr](dhsorens-004V) is that shape worked through in full — the verification equation, the
+    one subtraction that extracts the witness, and the simulator that is the same equation read
+    backwards. Writing it out settled a naming question I had been sloppy about.
+    \em{Zero-knowledge proof of knowledge} under-specifies Schnorr twice: the zero-knowledge is only
+    \em{special honest-verifier}, and \em{of knowledge} is the half doing the work, because every
+    group element has a discrete logarithm and so plain soundness is a claim about nothing.
+}
+
+\p{
+    The pages:
+    \ul{
+        \li{[Sigma protocols](dhsorens-004U) — the relation, the three messages, and completeness,
+        special soundness, and special honest-verifier zero knowledge as the three defining
+        properties. A sigma protocol is the #{\mu = 1}, #{k_1 = 2} case of the
+        [transcript trees](dhsorens-004K) the rest of the corpus runs on.}
+        \li{[The Schnorr protocol](dhsorens-004V) — the arithmetic, why each of the three properties
+        holds, and why prime order is what makes extraction work.}
+        \li{[Cyclic groups and the discrete logarithm](dhsorens-004W) — a stub, opened first in the
+        [algebraic toolkit](dhsorens-002J), for the group setting these protocols are stated over.}
+    }
+    What is still open is the gap between honest-verifier and malicious-verifier zero knowledge,
+    which the three moves do not close on their own, and which none of these pages does more than
+    name.
+}

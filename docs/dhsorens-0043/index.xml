@@ -164,7 +164,7 @@
     Questions this page should answer:
     <html:ul><html:li>Oracle computations and <html:code>simulateQ</html:code>: implementing a random oracle, logging queries, performing reductions.</html:li>
         <html:li>The program logic — relational (pRHL-style) and unary modes — and what a game hop looks like as a tactic step.</html:li>
-        <html:li>Primitives already covered: encryption, signatures, sigma protocols, and the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> and Fischlin transforms.</html:li>
+        <html:li>Primitives already covered: encryption, signatures, <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocols</fr:link>, and the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> and Fischlin transforms.</html:li>
         <html:li>How ArkLib's adversary model sits on top of this.</html:li>
         <html:li>What a machine-checked reduction proof costs in effort, compared with the paper proof.</html:li></html:ul></html:p>
                 <html:p>

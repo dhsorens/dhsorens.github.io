@@ -179,7 +179,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
+    Logarithmic-size proofs without a trusted setup, over ordinary <fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">elliptic curve groups</fr:link>. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
 </html:p>
                 <html:p>
     Questions this page should answer:

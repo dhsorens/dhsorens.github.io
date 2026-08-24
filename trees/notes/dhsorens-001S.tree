@@ -4,5 +4,10 @@
 \meta{toc}{true}
 
 \p{
-    See my latest on [Clean](dhsorens-002Y) — the embedded [Lean](dhsorens-lean) DSL in which a zk circuit, its specification, and its correctness proof are one artefact. The section covers the circuit representation, the two proof obligations and why neither means anything without the other, and how far the [AIR](dhsorens-002U) and [R1CS](dhsorens-002S) support actually reaches. It ends on [zk.golf](dhsorens-004Z), where the specification is fixed in Lean and the circuit is left free, so an optimised SHA-256 is accepted by the kernel rather than by review — and where the cost of every constraint is itself a theorem.
+    See my latest on [Clean](dhsorens-002Y) — the embedded [Lean](dhsorens-lean) DSL in which a zk
+    circuit, its specification, and its correctness proof are one artefact. The section covers the
+    circuit representation, the two proof obligations and why neither means anything without the
+    other, and how far the [AIR](dhsorens-002U) and [R1CS](dhsorens-002S) support actually reaches.
+    It ends on [zk.golf](dhsorens-0053), where the specification is fixed in Lean and the circuit is
+    left free, so an optimised SHA-256 is accepted by the kernel rather than by review.
 }

@@ -1,0 +1,61 @@
+\title{Arithmetisations and Backends}
+\author{dhsorens}
+\date{2026-08-24}
+
+\p{
+    Clean advertises [AIR](dhsorens-002U), [Plonkish](dhsorens-002T), and [R1CS](dhsorens-002S), and
+    the three are not supported to the same depth. AIR is the one that is built out:
+    \code{Clean.Air} is a row-oriented layer with components, tables, channels, and ensembles, and
+    the plonky3 backend carries a Clean circuit through to an actual plonky3 proof. Plonkish support
+    in the sense of custom gates is a roadmap item. R1CS has no backend at all — and the largest
+    R1CS circuits written in Clean get their arithmetisation guarantee from outside the library,
+    through the [zk.golf](dhsorens-0053) challenge harness, which certifies by a Lean predicate that
+    every assertion in a circuit is a single rank-one row. That is a reasonable division of labour,
+    but it means "targets R1CS" currently describes a property provable about Clean circuits rather
+    than a compilation path out of them.
+}
+
+\p{
+    The AIR style Clean models is \em{flat} AIR: one circuit checked independently on each row, with
+    no reference to adjacent rows. Everything that would classically be a next-row constraint — a VM
+    state transition, a lookup, a link to a public API — is expressed as a channel interaction
+    instead, and correctness comes from those interactions balancing across the whole table
+    ensemble. This matches how modern zkVMs are actually laid out, and it is the reason the
+    circuit-level obligations include channel requirements. A \code{Flat.Component} is a one-row
+    component backed by a \code{GeneralFormalCircuit}; a \code{Flat.Table} is a concrete trace for
+    one component together with its prover data.
+}
+
+\p{
+    An ensemble is components, channels, and a verifier circuit, and its statement is the raw
+    relation a proof system proves: there exists a witness whose table constraints hold and whose
+    channel interactions balance. Ensemble soundness is not a lifting of circuit soundness, and this
+    is the sharpest point in the layer. Local circuit proofs \em{assume} the guarantees on the
+    channels they pull from; the ensemble argument has to establish those unconditionally, from
+    global balance plus the constraints. Clean gives two arguments for two channel disciplines.
+    Ordinary lookup-like channels are handled by a hierarchy condition — every table that pushes to
+    a channel precedes every table that pulls from it — via a relaxed notion of balance that
+    tolerates interactions from tables added later, which is what makes the argument inductive.
+    VM-like components cannot satisfy that condition, since they both pull from and push to the same
+    state channel, so they get a dedicated theorem resting on a reversal of guarantees and
+    requirements. Ensemble completeness is marked TODO.
+}
+
+\p{
+    An older table layer coexists with this one. \code{Clean/Table} models classic AIRs where a
+    transition relates adjacent rows directly, by placing the output of one step in the same
+    relative position as the input of the next, and the
+    [Fibonacci and Keccak inductive tables](dhsorens-0051) are written against it. The two layers
+    are independent for now, with the flat one intended to absorb the other.
+}
+
+\p{
+    The plonky3 backend is a proof of concept by its own description, not a production path: it
+    imports a Clean circuit as a plonky3 AIR, generates the trace, and proves it, demonstrated on
+    the Fibonacci table. What is missing from the picture — and it is the more consequential gap —
+    is verifier challenges. Clean has no model of them yet, so lookup arguments are not proved end
+    to end inside the library: a \code{lookup} operation is an assumption of the circuit layer,
+    discharged either by the channel balance theory above or, in a deployed system, by the backend
+    and nothing in Lean. [Lookups](dhsorens-002W) are where a modern zkVM's prover time goes, so
+    this is the part of the stack where the formalisation is furthest from the engineering.
+}

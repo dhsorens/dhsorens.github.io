@@ -3,16 +3,22 @@
 \date{2026-08-18}
 
 \p{
-    The oldest of the three formats and still the one the [folding](dhsorens-003K) literature is written in. It is also the format the [zk.golf](dhsorens-004Z) challenges are stated in, which makes their published circuits a precise record of what a hash function costs when every constraint has to be rank one and lookups are unavailable.
+    The oldest of the three formats and still the one the [folding](dhsorens-003K) literature is
+    written in. It is also the format the [zk.golf](dhsorens-0053) challenges are stated in, which
+    makes their published circuits a precise record of what a hash function costs when every
+    constraint has to be rank one and lookups are unavailable.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{The format: #{(Az) \circ (Bz) = Cz}, the instance and witness split, and what "satisfying" means.}
-        \li{Sparsity, and why the prover's cost is an MSM or a sparse-polynomial commitment rather than an FFT.}
+        \li{The format: #{(Az) \circ (Bz) = Cz}, the instance and witness split, and what
+        "satisfying" means.}
+        \li{Sparsity, and why the prover's cost is an MSM or a sparse-polynomial commitment rather
+        than an FFT.}
         \li{Relaxed and committed R1CS, the variants folding needs.}
-        \li{The cost of a range check or a bit decomposition here, compared with a [lookup](dhsorens-002W) in a Plonkish system.}
+        \li{The cost of a range check or a bit decomposition here, compared with a
+        [lookup](dhsorens-002W) in a Plonkish system.}
         \li{zkLean as the R1CS-facing circuit DSL in the verified-zkEVM effort.}
     }
 }
