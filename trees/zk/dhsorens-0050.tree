@@ -6,13 +6,13 @@
     Clean advertises [AIR](dhsorens-002U), [Plonkish](dhsorens-002T), and [R1CS](dhsorens-002S), and
     the three are not supported to the same depth. AIR is the one that is built out:
     \code{Clean.Air} is a row-oriented layer with components, tables, channels, and ensembles, and
-    the [plonky3](dhsorens-plonky3) backend carries a Clean circuit through to an actual plonky3 proof. Plonkish support
-    in the sense of custom gates is a roadmap item. R1CS has no backend at all — and the largest
-    R1CS circuits written in Clean get their arithmetisation guarantee from outside the library,
-    through the [zk.golf](dhsorens-0053) challenge harness, which certifies by a Lean predicate that
-    every assertion in a circuit is a single rank-one row. That is a reasonable division of labour,
-    but it means "targets R1CS" currently describes a property provable about Clean circuits rather
-    than a compilation path out of them.
+    the [plonky3](dhsorens-plonky3) backend carries a Clean circuit through to an actual plonky3
+    proof. Plonkish support in the sense of custom gates is a roadmap item. R1CS has no backend at
+    all — and the largest R1CS circuits written in Clean get their arithmetisation guarantee from
+    outside the library, through the [zk.golf](dhsorens-0053) challenge harness, which certifies by
+    a Lean predicate that every assertion in a circuit is a single rank-one row. That is a
+    reasonable division of labour, but it means "targets R1CS" currently describes a property
+    provable about Clean circuits rather than a compilation path out of them.
 }
 
 \p{
@@ -50,12 +50,13 @@
 }
 
 \p{
-    The [plonky3](dhsorens-plonky3) backend is a proof of concept by its own description, not a production path: it
-    imports a Clean circuit as a plonky3 AIR, generates the trace, and proves it, demonstrated on
-    the Fibonacci table. What is missing from the picture — and it is the more consequential gap
-    — is verifier challenges. Clean has no model of them yet, so lookup arguments are not proved
-    end to end inside the library: a \code{lookup} operation is an assumption of the circuit layer,
-    discharged either by the channel balance theory above or, in a deployed system, by the backend
-    and nothing in Lean. [Lookups](dhsorens-002W) are where a modern zkVM's prover time goes, so
-    this is the part of the stack where the formalisation is furthest from the engineering.
+    The [plonky3](dhsorens-plonky3) backend is a proof of concept by its own description, not a
+    production path: it imports a Clean circuit as a plonky3 AIR, generates the trace, and proves
+    it, demonstrated on the Fibonacci table. What is missing from the picture — and it is the more
+    consequential gap — is verifier challenges. Clean has no model of them yet, so lookup
+    arguments are not proved end to end inside the library: a \code{lookup} operation is an
+    assumption of the circuit layer, discharged either by the channel balance theory above or, in a
+    deployed system, by the backend and nothing in Lean. [Lookups](dhsorens-002W) are where a modern
+    zkVM's prover time goes, so this is the part of the stack where the formalisation is furthest
+    from the engineering.
 }

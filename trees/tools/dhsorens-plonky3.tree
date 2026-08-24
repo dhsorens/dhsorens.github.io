@@ -6,8 +6,8 @@
 [https://github.com/Plonky3/Plonky3](https://github.com/Plonky3/Plonky3)
 
 \p{
-    A STARK toolkit — [AIR](dhsorens-002U) plus [FRI](dhsorens-0037), configurable over field, hash,
-    and PCS. The corpus treatment is [STARKs: Plonky3, Stwo, and Circle STARKs](dhsorens-003I).
-    [Clean](dhsorens-002Y) has a proof-of-concept [backend](dhsorens-0050) that compiles a circuit
-    to a Plonky3 AIR.
+    A STARK toolkit — [AIR](dhsorens-002U) plus [FRI](dhsorens-0037), configurable over field,
+    hash, and PCS. The corpus treatment is
+    [STARKs: Plonky3, Stwo, and Circle STARKs](dhsorens-003I). [Clean](dhsorens-002Y) has a
+    proof-of-concept [backend](dhsorens-0050) that compiles a circuit to a Plonky3 AIR.
 }

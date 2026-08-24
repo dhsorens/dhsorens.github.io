@@ -4,11 +4,15 @@
 \meta{toc}{true}
 
 \p{
-    The mathematics the protocols are built out of. Most of the recent performance work lives here rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude faster because the field changed, not because the argument did.
+    The mathematics the protocols are built out of. Most of the recent performance work lives here
+    rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude
+    faster because the field changed, not because the argument did.
 }
 
 \p{
-    This is also the part of the stack [CompPoly](dhsorens-0041) is about — fields, polynomials, and their computable representations — so these pages should stay close to what is actually definable in [Lean](dhsorens-lean).
+    This is also the part of the stack [CompPoly](dhsorens-0041) is about — fields, polynomials,
+    and their computable representations — so these pages should stay close to what is actually
+    definable in [Lean](dhsorens-lean).
 }
 
 \transclude{dhsorens-004W} % cyclic groups and the discrete logarithm

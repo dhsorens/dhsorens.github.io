@@ -14,10 +14,11 @@
 \p{
     The object that carries the correctness claim is \code{FormalCircuit}, and its content is a
     contract. A circuit is bundled with an \code{Assumptions} predicate on its inputs, a \code{Spec}
-    relating inputs to outputs, and proofs of two statements: \em{[soundness](dhsorens-004Z)}, that the constraints
-    together with the assumptions imply the spec, and \em{[completeness](dhsorens-004T)}, that the assumptions imply the
-    circuit's own witness generators satisfy the constraints. Taken together they say the circuit
-    behaves as a function with \code{Assumptions} as precondition and \code{Spec} as postcondition.
+    relating inputs to outputs, and proofs of two statements: \em{[soundness](dhsorens-004Z)}, that
+    the constraints together with the assumptions imply the spec, and
+    \em{[completeness](dhsorens-004T)}, that the assumptions imply the circuit's own witness
+    generators satisfy the constraints. Taken together they say the circuit behaves as a function
+    with \code{Assumptions} as precondition and \code{Spec} as postcondition.
 }
 
 \p{
@@ -33,12 +34,13 @@
 
 \p{
     Clean and [ArkLib](dhsorens-0040) prove complementary halves of a proof system's correctness and
-    do not currently compose (but may do in the future). ArkLib's theorems are about a protocol over a constraint system: given
-    that the system is satisfiable, the argument is knowledge-sound. Clean's theorems are about what
-    satisfiability of that system means for the computation. The protocol theorem assumes the
-    arithmetisation says what it is meant to say, and the circuit theorem is what discharges that
-    assumption — but joining them is an exploratory item on Clean's roadmap, not a result. This is
-    the load-bearing seam between the two libraries, and it is still open.
+    do not currently compose (but may do in the future). ArkLib's theorems are about a protocol over
+    a constraint system: given that the system is satisfiable, the argument is knowledge-sound.
+    Clean's theorems are about what satisfiability of that system means for the computation. The
+    protocol theorem assumes the arithmetisation says what it is meant to say, and the circuit
+    theorem is what discharges that assumption — but joining them is an exploratory item on
+    Clean's roadmap, not a result. This is the load-bearing seam between the two libraries, and it
+    is still open.
 }
 
 \transclude{dhsorens-004Y} % circuits, constraints, witness generation
