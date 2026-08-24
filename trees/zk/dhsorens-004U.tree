@@ -44,9 +44,9 @@
     #{(x, w) \in R}. This is a condition on the algebra of #{V}, not a probability bound, so
     checking it means exhibiting the computation rather than arguing about adversaries. Knowledge
     soundness with error #{1/N} follows generically, by rewinding: run the prover, fork it at the
-    challenge, and collect a second accepting transcript on the same #{a}.
-    [Special soundness](dhsorens-004K) has the multi-round generalisation and what the rewinding
-    costs once the protocol is made non-interactive.
+    challenge, and collect a second accepting transcript on the same #{a}. [Special
+    soundness](dhsorens-004K) has the multi-round generalisation and what the rewinding costs once
+    the protocol is made non-interactive.
 }
 
 \p{

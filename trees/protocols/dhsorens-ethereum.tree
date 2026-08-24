@@ -6,5 +6,7 @@
 [https://ethereum.org](https://ethereum.org)
 
 \p{
-    The protocol, as distinct from the [Ethereum Foundation](dhsorens-ef), where I work on [verifying its snarkification](dhsorens-0020). Its choice of hash functions is the subject of [a separate note](dhsorens-004D).
+    The protocol, as distinct from the [Ethereum Foundation](dhsorens-ef), where I work on
+    [verifying its snarkification](dhsorens-0020). Its choice of hash functions is the subject of [a
+    separate note](dhsorens-004D).
 }

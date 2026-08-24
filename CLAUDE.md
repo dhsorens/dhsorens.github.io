@@ -32,14 +32,14 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 | `find.sh XXXX` | Locate `trees/**/dhsorens-XXXX.tree`. |
 | `commit-trees.sh "msg"` | Commit and push only `trees/` (no build). |
 | `lint.sh` | Lint `trees/`: absolute asset links, and the 100-character line limit. Needs only python3, so cloud sessions can run it; CI runs this same script. |
-| `lint-line-length.py [--fix]` | The line-length check on its own. `--fix` rewraps every line that is over the limit. |
+| `lint-line-length.py [--fix]` | The line-length check on its own. `--fix` reflows every paragraph: write however you like, then run it to repack. |
 
 ## Hard rules
 
 - Asset links in trees must be **absolute** (`/docs/…`, `/slides/…`, `/media/…`, `/img/…`) — pages live at `/<addr>/`, so relative links break. CI lints this.
 - Never hand-edit `docs/` or `output/`.
 - Every paragraph needs `\p{…}`; see `cmds.md` for the markup reference.
-- Lines in `trees/` are wrapped at **100 characters**, so that editing a sentence gives a diff of a sentence rather than of a whole paragraph. `./lint-line-length.py --fix` does the wrapping; CI lints it. A line break is whitespace in forester markup, so wrapping never changes the rendered page — but never break inside `#{…}`, `\code{…}`, or a `](…)` link target, and wrap a `%` comment by commenting out each continuation line too. A line with nowhere left to break (a long link target) is exempt.
+- Lines in `trees/` are wrapped at **100 characters**, so that editing a sentence gives a diff of a sentence rather than of a whole paragraph. Don't wrap by hand: write and edit freely, then run `./lint-line-length.py --fix`, which reflows each paragraph — joining its lines back together and refilling them — so a sentence added mid-paragraph doesn't leave the rest of it ragged. CI lints the limit, not the reflow, so a ragged paragraph never fails a build. A line break is whitespace in forester markup, so neither wrapping nor joining changes the rendered page; the formatter keeps `#{…}`, `\code{…}` and `](…)` link targets unbroken, comments commented, and structural lines (`\p{`, `}`, `\li{…}`) on lines of their own. A line with nowhere left to break (a long link target) is exempt.
 - Publishing flow: work on a branch, commit **sources only** (`./commit-trees.sh` or plain git), push, PR to `main`. CI publishes on merge; allow ~10 minutes for the Cloudflare cache after merging.
 - `trees/notes/dhsorens-001S.tree` is the **Latest Deep-Dive** blurb transcluded at the top of the front page. Its address is load-bearing — rewrite its body, never its address.
 - `trees/dhsorens-notes.tree` **transcludes** its notes, newest first; each renders in place with its own title and date, in the standard forester page format. It is not a bulleted list of links — `dhsorens-talks.tree` and `dhsorens-slides.tree` are lists because a talk has no tree to render, but a note does.

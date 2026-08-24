@@ -23,7 +23,8 @@ fi
 
 # Prose is wrapped at 100 characters, so that editing a sentence produces a
 # diff of a sentence rather than of a whole paragraph. ./lint-line-length.py
-# --fix rewraps anything that is over.
+# --fix reflows the paragraphs; only the limit is checked here, so a paragraph
+# left ragged by an edit is never a failure.
 ./lint-line-length.py trees || status=1
 
 if [ "$status" -eq 0 ]; then

@@ -4,7 +4,11 @@
 \meta{toc}{true}
 
 \p{
-    I am also interested more broadly in type theory and formal proof, especially as they relate to [proof assistants](dhsorens-000B). This has included some [preliminary work](dhsorens-0009) in [HoTT](dhsorens-hott) on the formal side, but ongoing work in the [formalization of mathematics](dhsorens-000Z) in [Lean](dhsorens-lean) is deeply interesting to me as a [peripheral development to my work](dhsorens-0017).
+    I am also interested more broadly in type theory and formal proof, especially as they relate to
+    [proof assistants](dhsorens-000B). This has included some [preliminary work](dhsorens-0009) in
+    [HoTT](dhsorens-hott) on the formal side, but ongoing work in the [formalization of
+    mathematics](dhsorens-000Z) in [Lean](dhsorens-lean) is deeply interesting to me as a
+    [peripheral development to my work](dhsorens-0017).
 }
 
 % \transclude{dhsorens-000Z}

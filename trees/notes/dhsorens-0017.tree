@@ -4,10 +4,10 @@
 \meta{toc}{true}
 
 \p{
-    Most of my [work](dhsorens-rsrch) has been in [smart contract specification and verification](dhsorens-000W),
-often in the context of [proof assistants](dhsorens-000B).
-Proof assistants are also the tool used in the [formalization of mathematics](dhsorens-000Z).
-This has prompted some thinking on the subject.
+    Most of my [work](dhsorens-rsrch) has been in [smart contract specification and
+    verification](dhsorens-000W), often in the context of [proof assistants](dhsorens-000B). Proof
+    assistants are also the tool used in the [formalization of mathematics](dhsorens-000Z). This has
+    prompted some thinking on the subject.
 }
 
 \transclude{dhsorens-001F} % proposition and proof for mathmos/compscis

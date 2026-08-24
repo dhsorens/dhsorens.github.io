@@ -1,14 +1,23 @@
 #!/usr/bin/env python3
-"""Check — and with --fix, repair — the line length of forester tree sources.
+"""Check — and with --fix, reflow — the line length of forester tree sources.
 
 Prose in trees/ is written one paragraph per \\p{...} block. Left alone, a
 paragraph becomes a single enormous line, which makes diffs unreadable: a
 one-word edit shows up as a rewritten paragraph. So every line is kept to
-MAX_WIDTH characters, wrapped at whitespace.
+MAX_WIDTH characters.
 
-A line break in forester markup is whitespace, so wrapping is invisible in the
-rendered page — but only where a break really is whitespace. These constructs
-are never broken:
+--fix reflows: it joins each paragraph back into one stream of words and
+refills it to the limit. Write and edit however you like — a sentence added
+in the middle, a clause deleted — then run --fix and the paragraph is packed
+neatly again. Only the limit is enforced, though; a paragraph left ragged is
+never an error, so nothing fails CI for want of a reflow.
+
+A line break in forester markup is whitespace, so both breaking and joining
+are invisible in the rendered page — but only where a break really is
+whitespace, and only where a newline really was a break. Hence the two halves
+of the reflow:
+
+Wrapping never splits:
 
   * inline and display maths, #{...} and ##{...}
   * \\code{...}
@@ -16,16 +25,26 @@ are never broken:
 
 Link text, [like this], is ordinary inline content and may be wrapped.
 
+Joining never merges across a blank line or a structural one — an opener
+(\\p{), a closer (}), or a block macro (\\li{...}, \\transclude{...}, the rest of
+BLOCK_MACROS, and anything the file \\lets). So a list stays a list and a
+paragraph stays a paragraph; only the lines within one of them are repacked.
+An \\em{...} heading keeps its own line because the blank lines around it are
+boundaries, which is also why a reflow cannot dissolve one: it never produces
+a blank line, so it can never take one away. A comment is reflowed within
+itself, each continuation commented out too, so that a reflow can never
+promote prose into content or bury content in a comment.
+
 Some lines cannot be brought under the limit at all: a link target longer than
 the limit has nowhere to break. So the rule enforced is not "no line exceeds
 MAX_WIDTH" but the strongest rule that is actually satisfiable —
 
-    a line fails if wrapping it would make its longest line shorter.
+    a line fails if reflowing would make its paragraph's longest line shorter.
 
 An over-long line with no break point in it is reported as a note and does not
 fail; shortening it means editing the content, which is an author's decision,
-not a formatter's. --fix applies exactly the wrapping the check asks for, so
-the two agree by construction and the check is stable under repeated fixing.
+not a formatter's. --fix applies exactly the reflow the check asks for, so the
+two agree by construction and the check is stable under repeated fixing.
 
 Usage:
     ./lint-line-length.py [--fix] [--max-width N] [path ...]
@@ -48,7 +67,21 @@ MAX_WIDTH = 100
 # Macros whose argument is typeset verbatim-ish, where a break would show.
 PROTECTED_MACROS = ("code",)
 
+# Macros that introduce a line of their own: structure, frontmatter, list
+# items. A line starting with one of these is never joined onto the line
+# above. Inline macros (\em, \strong, \code, and all of maths) are absent on
+# purpose — they turn up at the head of a continuation line all the time.
+BLOCK_MACROS = frozenset(
+    """
+    p ul ol li
+    title subtitle author authors contributor date taxon tag meta number
+    transclude import export def let scope put get query
+    tex texify
+    """.split()
+)
+
 MACRO_RE = re.compile(r"\\([a-zA-Z]+)")
+LET_RE = re.compile(r"\\let\\([a-zA-Z]+)")
 
 
 def _match_group(text: str, start: int, opener: str, closer: str) -> int:
@@ -159,62 +192,165 @@ def _comment_start(text: str) -> int:
     return -1
 
 
-def rewrap(line: str, width: int) -> list[str] | None:
-    """The line rewrapped, or None if this line must be left alone.
+def _brace_balance(text: str) -> int:
+    """Unescaped { minus unescaped } — how much this text leaves open."""
+    depth = 0
+    i = 0
+    while i < len(text):
+        c = text[i]
+        if c == "\\":
+            i += 2
+            continue
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+        i += 1
+    return depth
 
-    A comment line is rewrapped with each continuation commented out too, so
-    that wrapping cannot promote prose into content. A line with a comment
-    *after* other content is left alone: splitting it would need the comment
-    lifted out, which is a judgement call, not a reflow.
+
+class Line:
+    """One source line, classified for reflow.
+
+    `prefix` is what every line of this line's paragraph is written behind:
+    indentation, and for a comment the % that keeps it a comment. `body` is
+    the content after it. `verbatim` marks a line to be copied out untouched.
     """
-    indent = line[: len(line) - len(line.lstrip())]
-    body = line[len(indent) :]
 
-    comment = _comment_start(body)
-    if comment == 0:
-        rest = body[1:]
-        inner = rest[: len(rest) - len(rest.lstrip())]
-        prefix = indent + "%" + (inner if inner else " ")
-        body = rest.lstrip()
-    elif comment > 0:
-        return None
-    else:
-        prefix = indent
+    __slots__ = ("raw", "prefix", "body", "verbatim", "comment", "opens", "closes")
 
-    atoms = atomize(body)
+    def __init__(self, raw: str, lets: frozenset[str]) -> None:
+        self.raw = raw
+        indent = raw[: len(raw) - len(raw.lstrip())]
+        rest = raw[len(indent) :]
+
+        self.comment = False
+        self.verbatim = False
+
+        at = _comment_start(rest)
+        if at == 0:
+            # A whole-line comment: reflowable behind a % of its own.
+            self.comment = True
+            tail = rest[1:]
+            inner = tail[: len(tail) - len(tail.lstrip())]
+            self.prefix = indent + "%" + (inner if inner else " ")
+            self.body = tail.strip()
+        elif at > 0:
+            # Content, then a comment. Splitting this needs the comment lifted
+            # out of the middle, which is a judgement call, not a reflow.
+            self.prefix = indent
+            self.body = rest.rstrip()
+            self.verbatim = True
+        else:
+            self.prefix = indent
+            self.body = rest.rstrip()
+
+        body = self.body
+        macro = MACRO_RE.match(body)
+        name = macro.group(1) if macro else None
+        block = name is not None and (name in BLOCK_MACROS or name in lets)
+
+        # An opener (\p{) or a closer (}) is structure, not prose: it is left
+        # on its own line, and nothing is packed onto it from either side.
+        alone = bool(body) and (body.endswith("{") or set(body) == {"}"})
+
+        # A } at the head of a line closes a group the line above opened, even
+        # where something follows it — packing it onto that line would bury the
+        # brace mid-paragraph and re-indent what comes after it.
+        self.opens = alone or block or self.verbatim or not body or body.startswith("}")
+        # A block macro that closed everything it opened is a complete item —
+        # \transclude{x}, \li{x} — so the next line belongs to whatever
+        # encloses it, not to this. One left open, \li{x — continues, absorbs.
+        self.closes = (
+            alone
+            or self.verbatim
+            or not body
+            or (block and _brace_balance(body) <= 0)
+            or _brace_balance(body) < 0
+        )
+
+def paragraphs(lines: list[Line]) -> list[list[Line]]:
+    """Group lines into the runs that get filled together."""
+    groups: list[list[Line]] = []
+    for line in lines:
+        last = groups[-1][-1] if groups else None
+        starts = (
+            last is None
+            or line.opens
+            or last.closes
+            or line.comment != last.comment
+            # Indentation is normalised to the first line of the paragraph, but
+            # a comment's % is part of its prefix and has to match.
+            or (line.comment and line.prefix != last.prefix)
+        )
+        if starts:
+            groups.append([line])
+        else:
+            groups[-1].append(line)
+    return groups
+
+
+def refill(group: list[Line], width: int) -> list[str]:
+    """The lines this paragraph becomes."""
+    if group[0].verbatim or not group[0].body:
+        return [line.raw for line in group]
+    atoms: list[str] = []
+    for line in group:
+        atoms.extend(atomize(line.body))
     if not atoms:
-        return None
-    return wrap(prefix, atoms, width)
+        return [line.raw for line in group]
+    return wrap(group[0].prefix, atoms, width)
+
+
+def reflow_groups(text: str, width: int) -> list[tuple[int, list[Line], list[str]]]:
+    """(first line number, source lines, refilled lines) per paragraph."""
+    lets = frozenset(LET_RE.findall(text))
+    lines = [Line(raw, lets) for raw in text.split("\n")]
+
+    out: list[tuple[int, list[Line], list[str]]] = []
+    number = 1
+    for group in paragraphs(lines):
+        out.append((number, group, refill(group, width)))
+        number += len(group)
+    return out
+
+
+def reflow(text: str, width: int) -> str:
+    """The file, with every paragraph refilled to `width`."""
+    return "\n".join(
+        line for _, _, filled in reflow_groups(text, width) for line in filled
+    )
 
 
 def check_file(path: Path, width: int, fix: bool) -> tuple[list[tuple[int, int, bool]], bool]:
-    """Return ((line, length, wrappable) per offender, whether the file changed)."""
+    """Return ((line, length, fixable) per offender, whether the file changed).
+
+    A line over the limit is an error when the reflow would make its
+    paragraph's longest line shorter than it — that is, when there is
+    something to gain. When there is not, the line has no break point left in
+    it, and it is reported as a note rather than a failure.
+    """
     original = path.read_text(encoding="utf-8")
-    lines = original.split("\n")
+    groups = reflow_groups(original, width)
+    fixed = "\n".join(line for _, _, filled in groups for line in filled)
 
     offenders: list[tuple[int, int, bool]] = []
-    out: list[str] = []
-    for number, line in enumerate(lines, start=1):
-        if len(line) <= width:
-            out.append(line)
-            continue
+    if fix:
+        # The reflow has had its go, so whatever is still over the limit is
+        # irreducible by construction. Report it against the file as written.
+        for number, line in enumerate(fixed.split("\n"), start=1):
+            if len(line) > width:
+                offenders.append((number, len(line), False))
+    else:
+        for start, group, filled in groups:
+            longest = max(len(line) for line in filled)
+            for offset, line in enumerate(group):
+                if len(line.raw) > width:
+                    offenders.append((start + offset, len(line.raw), longest < len(line.raw)))
 
-        wrapped = rewrap(line, width)
-        if wrapped is None or max(len(w) for w in wrapped) >= len(line):
-            # Nothing to gain: an unbreakable URL, or a line we do not touch.
-            offenders.append((number, len(line), False))
-            out.append(line)
-            continue
-
-        offenders.append((number, len(line), True))
-        out.extend(wrapped if fix else [line])
-
-    if not fix:
+    if not fix or fixed == original:
         return offenders, False
 
-    fixed = "\n".join(out)
-    if fixed == original:
-        return offenders, False
     path.write_text(fixed, encoding="utf-8")
     return offenders, True
 
@@ -235,7 +371,7 @@ def collect(paths: list[str]) -> list[Path]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("paths", nargs="*", default=["trees"])
-    parser.add_argument("--fix", action="store_true", help="rewrap offending lines in place")
+    parser.add_argument("--fix", action="store_true", help="reflow every paragraph in place")
     parser.add_argument("--max-width", type=int, default=MAX_WIDTH, metavar="N")
     args = parser.parse_args()
 
@@ -244,17 +380,12 @@ def main() -> int:
 
     wrappable = 0
     stuck = 0
-    fixed = 0
     touched = 0
 
     for path in collect(args.paths or ["trees"]):
         offenders, changed = check_file(path, width, args.fix)
         if changed:
             touched += 1
-        if args.fix:
-            fixed += sum(1 for _, _, ok in offenders if ok)
-            # Re-read, so that we report only what is still over the limit.
-            offenders = check_file(path, width, fix=False)[0]
         for number, length, ok in offenders:
             complaint = f"line is {length} characters (limit {width})"
             if ok:
@@ -267,7 +398,7 @@ def main() -> int:
                 print(f"{path}:{number}: note: {complaint}, with no break point in it")
 
     if args.fix:
-        print(f"rewrapped {fixed} line(s) across {touched} file(s)")
+        print(f"reflowed {touched} file(s)")
     if stuck:
         print(
             f"{stuck} line(s) are over {width} characters with nowhere to wrap "

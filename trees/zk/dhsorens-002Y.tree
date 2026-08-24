@@ -38,9 +38,9 @@
     a constraint system: given that the system is satisfiable, the argument is knowledge-sound.
     Clean's theorems are about what satisfiability of that system means for the computation. The
     protocol theorem assumes the arithmetisation says what it is meant to say, and the circuit
-    theorem is what discharges that assumption — but joining them is an exploratory item on
-    Clean's roadmap, not a result. This is the load-bearing seam between the two libraries, and it
-    is still open.
+    theorem is what discharges that assumption — but joining them is an exploratory item on Clean's
+    roadmap, not a result. This is the load-bearing seam between the two libraries, and it is still
+    open.
 }
 
 \transclude{dhsorens-004Y} % circuits, constraints, witness generation
