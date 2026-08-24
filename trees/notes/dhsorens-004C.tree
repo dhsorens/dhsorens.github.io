@@ -3,19 +3,29 @@
 \date{2026-08-18}
 
 \p{
-    [zkVMs and SNARKs](dhsorens-002C) is a new corpus on this site: a systematic study of the cryptography and machine architecture these systems are built from, one page per topic. It follows the pipeline every modern proof system follows, from a computation to a deployed proof, and it is the theory behind the [snarkification work](dhsorens-0020).
+    [zkVMs and SNARKs](dhsorens-002C) is a new corpus on this site: a systematic study of the
+    cryptography and machine architecture these systems are built from, one page per topic. It
+    follows the pipeline every modern proof system follows, from a computation to a deployed proof,
+    and it is the theory behind the [snarkification work](dhsorens-0020).
 }
 
 \p{
     The sections:
     \ul{
-        \li{[The shape of a proof system](dhsorens-002D) — the definitions everything else is stated in, and where security is lost between an interactive protocol and a deployed one.}
-        \li{[The algebraic and coding-theoretic toolkit](dhsorens-002J) — fields, polynomials, Reed–Solomon codes, proximity gaps, sumcheck.}
-        \li{[Arithmetisation](dhsorens-002R) — R1CS, Plonkish, AIR, lookups, and [Clean](dhsorens-002Y).}
-        \li{[Polynomial commitment schemes](dhsorens-002Z), and [low-degree testing](dhsorens-0036) from FRI through STIR to WHIR.}
-        \li{[Proof systems in the wild](dhsorens-003D) and [folding, recursion, and aggregation](dhsorens-003K).}
+        \li{[The shape of a proof system](dhsorens-002D) — the definitions everything else is stated
+        in, and where security is lost between an interactive protocol and a deployed one.}
+        \li{[The algebraic and coding-theoretic toolkit](dhsorens-002J) — fields, polynomials,
+        Reed–Solomon codes, proximity gaps, sumcheck.}
+        \li{[Arithmetisation](dhsorens-002R) — R1CS, Plonkish, AIR, lookups, and
+        [Clean](dhsorens-002Y).}
+        \li{[Polynomial commitment schemes](dhsorens-002Z), and [low-degree testing](dhsorens-0036)
+        from FRI through STIR to WHIR.}
+        \li{[Proof systems in the wild](dhsorens-003D) and [folding, recursion, and
+        aggregation](dhsorens-003K).}
         \li{[zkVMs](dhsorens-003Q) — the stack, the systems in the field, and how they break.}
-        \li{[Formalising the stack](dhsorens-003Z) — [ArkLib](dhsorens-0040), [CompPoly](dhsorens-0041), and the rest of the verified-zkEVM effort.}
-        \li{[The Ethereum setting](dhsorens-0046), and [a reading path](dhsorens-004B) through all of it.}
+        \li{[Formalising the stack](dhsorens-003Z) — [ArkLib](dhsorens-0040),
+        [CompPoly](dhsorens-0041), and the rest of the verified-zkEVM effort.}
+        \li{[The Ethereum setting](dhsorens-0046), and [a reading path](dhsorens-004B) through all
+        of it.}
     }
 }

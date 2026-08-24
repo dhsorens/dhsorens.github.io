@@ -1,9 +1,10 @@
 name: Build check
 
-# Builds the forest on every PR and fails if forester can't parse it.
+# Builds the forest on every PR and fails if forester can't parse it, and
+# lints the tree sources alongside it.
 # Commits nothing, so PR diffs stay source-only and reviewable.
-# The build itself is ./build.sh — the same script used locally — so CI and
-# local builds cannot drift.
+# Both jobs run the same scripts used locally — ./build.sh and ./lint.sh — so
+# CI and local runs cannot drift.
 
 on:
   pull_request:
@@ -75,11 +76,13 @@ jobs:
           done
           echo "render check passed" >> "$GITHUB_STEP_SUMMARY"
 
+  lint:
+    # ./lint.sh is the same script contributors run locally, so the checks
+    # cannot drift. It needs only python3 — no forester — so it runs as its own
+    # job: a fast signal that does not wait on the opam switch, and one that
+    # still reports when the build is broken.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
       - name: Lint tree sources
-        run: |
-          # Asset links must be absolute — pages live at /<addr>/, so relative
-          # links break (see CLAUDE.md).
-          if grep -rnE '\]\((docs|img|media|slides)/' trees --include="*.tree"; then
-            echo "::error::relative asset link(s) found in trees/ — use /docs/..., /slides/..., etc."
-            exit 1
-          fi
+        run: ./lint.sh

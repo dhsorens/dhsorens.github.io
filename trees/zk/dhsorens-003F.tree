@@ -3,7 +3,8 @@
 \date{2026-08-18}
 
 \p{
-    The system that made [Plonkish](dhsorens-002T) a category, and the implementation that most auditors' intuitions were formed on.
+    The system that made [Plonkish](dhsorens-002T) a category, and the implementation that most
+    auditors' intuitions were formed on.
 }
 
 \p{
@@ -11,8 +12,10 @@
     \ul{
         \li{The protocol: gate identity, permutation argument, quotient, and opening.}
         \li{Universal and updatable setup, and what it removed as an operational problem.}
-        \li{Halo2's departures: the table and region model, and the commitment swap from KZG to IPA in some deployments.}
+        \li{Halo2's departures: the table and region model, and the commitment swap from KZG to IPA
+        in some deployments.}
         \li{Where the lookup argument entered, and how it changed circuit design practice.}
-        \li{ArkLib's \code{ProofSystem/Plonk} and \code{ConstraintSystem/Plonk.lean}: which layer each covers.}
+        \li{ArkLib's \code{ProofSystem/Plonk} and \code{ConstraintSystem/Plonk.lean}: which layer
+        each covers.}
     }
 }

@@ -3,8 +3,8 @@
 \date{2026-08-19}
 
 \p{
-    An honest prover with a true statement is accepted, except with small probability — usually
-    with probability one. Unlike [soundness](dhsorens-002F) this is one property, not a family, and
+    An honest prover with a true statement is accepted, except with small probability — usually with
+    probability one. Unlike [soundness](dhsorens-002F) this is one property, not a family, and
     [compilation](dhsorens-004S) preserves it. The obligation that fails is one layer down: a
     circuit is complete when every honest execution has a satisfying witness, which is what
     [Clean](dhsorens-002Y) treats as separate from soundness.
@@ -17,9 +17,9 @@
         when it is not.}
         \li{How completeness composes under [oracle reductions](dhsorens-002I).}
         \li{What [Fiat–Shamir](dhsorens-002G) and [BCS](dhsorens-002H) do to it.}
-        \li{Circuit completeness versus protocol completeness.
-        [The circuit-level obligation](dhsorens-004Z) is written out on the [Clean](dhsorens-002Y)
-        pages; what is missing is the theorem joining it to this one.}
+        \li{Circuit completeness versus protocol completeness. [The circuit-level
+        obligation](dhsorens-004Z) is written out on the [Clean](dhsorens-002Y) pages; what is
+        missing is the theorem joining it to this one.}
         \li{Where [ArkLib](dhsorens-0040) states it.}
     }
 }

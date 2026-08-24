@@ -3,16 +3,20 @@
 \date{2026-08-18}
 
 \p{
-    Two representations of the same data, supporting different arguments. The univariate world pairs with low-degree testing; the multilinear world pairs with [sumcheck](dhsorens-002Q). Knowing which one a protocol lives in explains most of its shape.
+    Two representations of the same data, supporting different arguments. The univariate world pairs
+    with low-degree testing; the multilinear world pairs with [sumcheck](dhsorens-002Q). Knowing
+    which one a protocol lives in explains most of its shape.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{The multilinear extension of a function on the Boolean hypercube; uniqueness; the equality polynomial and its role.}
+        \li{The multilinear extension of a function on the Boolean hypercube; uniqueness; the
+        equality polynomial and its role.}
         \li{Degree versus number of variables as the size parameter, and what each buys.}
         \li{Why FRI wants univariate and Basefold, HyperPlonk, and Binius want multilinear.}
         \li{How [WHIR](dhsorens-003C) unifies the two, and what the translation costs.}
-        \li{Computable representations — dense, sparse, coefficient, evaluation form — and which operations each makes cheap. This is [CompPoly](dhsorens-0041)'s design problem.}
+        \li{Computable representations — dense, sparse, coefficient, evaluation form — and which
+        operations each makes cheap. This is [CompPoly](dhsorens-0041)'s design problem.}
     }
 }

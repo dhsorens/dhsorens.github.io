@@ -4,7 +4,10 @@
 \meta{toc}{true}
 
 \p{
-    Named systems, each a particular choice of [arithmetisation](dhsorens-002R), [commitment](dhsorens-002Z), and field. Once the layers below are understood these should be readable as combinations rather than as separate inventions — and where a system is not just a combination, that is the interesting part.
+    Named systems, each a particular choice of [arithmetisation](dhsorens-002R),
+    [commitment](dhsorens-002Z), and field. Once the layers below are understood these should be
+    readable as combinations rather than as separate inventions — and where a system is not just a
+    combination, that is the interesting part.
 }
 
 \transclude{dhsorens-003E} % Groth16 and pairings

@@ -3,15 +3,23 @@
 \date{2026-08-18}
 
 \p{
-    [Hash Functions in Bitcoin and Ethereum](dhsorens-004D) is about what each chain actually hashes with, and about the Ethereum Foundation abandoning Poseidon for L1 on 13 August 2026. The reason is the interesting part: Poseidon did not break. Proof systems over binary fields made conventional hashes cheap enough to prove that decades of public cryptanalysis became the deciding factor instead.
+    [Hash Functions in Bitcoin and Ethereum](dhsorens-004D) is about what each chain actually hashes
+    with, and about the Ethereum Foundation abandoning Poseidon for L1 on 13 August 2026. The reason
+    is the interesting part: Poseidon did not break. Proof systems over binary fields made
+    conventional hashes cheap enough to prove that decades of public cryptanalysis became the
+    deciding factor instead.
 }
 
 \p{
     The sections:
     \ul{
-        \li{[SHA-2 and the Bitcoin design](dhsorens-004E) — double SHA-256 for proof of work and transaction identifiers, RIPEMD-160 for legacy addresses, tagged hashes for Taproot.}
-        \li{[Keccak and Ethereum](dhsorens-004F) — why \code{keccak256} is not SHA-3, everywhere it names state, and the SHA-256 half of the protocol on the consensus layer.}
-        \li{[The BLAKE family](dhsorens-004G) — 2s against 2b, what BLAKE3's tree mode buys, and which variant is actually a candidate.}
-        \li{[Poseidon, and why Ethereum walked away](dhsorens-004H) — the HADES construction, the cryptanalysis initiative, and the Binius and Flock results that reversed the decision.}
+        \li{[SHA-2 and the Bitcoin design](dhsorens-004E) — double SHA-256 for proof of work and
+        transaction identifiers, RIPEMD-160 for legacy addresses, tagged hashes for Taproot.}
+        \li{[Keccak and Ethereum](dhsorens-004F) — why \code{keccak256} is not SHA-3, everywhere it
+        names state, and the SHA-256 half of the protocol on the consensus layer.}
+        \li{[The BLAKE family](dhsorens-004G) — 2s against 2b, what BLAKE3's tree mode buys, and
+        which variant is actually a candidate.}
+        \li{[Poseidon, and why Ethereum walked away](dhsorens-004H) — the HADES construction, the
+        cryptanalysis initiative, and the Binius and Flock results that reversed the decision.}
     }
 }

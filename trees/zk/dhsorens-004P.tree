@@ -3,20 +3,34 @@
 \date{2026-08-19}
 
 \p{
-    Repetition is how most of a security level is actually bought, and the theorem licensing it is narrower than the practice suggests. The rate at which error decays depends on the round count and on whether the protocol is public-coin, and there are counterexamples where it does not decay at all.
+    Repetition is how most of a security level is actually bought, and the theorem licensing it is
+    narrower than the practice suggests. The rate at which error decays depends on the round count
+    and on whether the protocol is public-coin, and there are counterexamples where it does not
+    decay at all.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{Sequential and parallel repetition, and when #{r} repetitions take a soundness error #{\epsilon} to #{\epsilon^r}.}
-        \li{Bellare, Impagliazzo, and Naor's four-message argument whose #{n}-fold parallel repetition keeps error #{1/2}, and Pietrzak and Wikström's eight-message strengthening. Parallel repetition is only unconditionally safe for arguments of at most three rounds.}
-        \li{Håstad, Pass, Wikström, and Pietrzak: parallel repetition does decay exponentially for public-coin arguments, which is the case every deployed system is in. This is one of the concrete reasons [public-coin matters](dhsorens-002E).}
-        \li{Query repetition in [FRI](dhsorens-0037) is a different operation from repeating the protocol — same exponent, different object. Which one a parameter table means.}
-        \li{How repetition interacts with the [round-by-round error](dhsorens-004L), with [grinding](dhsorens-003A), and with proof size; and whether fixed-weight repetition variants change the accounting.}
+        \li{Sequential and parallel repetition, and when #{r} repetitions take a soundness error
+        #{\epsilon} to #{\epsilon^r}.}
+        \li{Bellare, Impagliazzo, and Naor's four-message argument whose #{n}-fold parallel
+        repetition keeps error #{1/2}, and Pietrzak and Wikström's eight-message strengthening.
+        Parallel repetition is only unconditionally safe for arguments of at most three rounds.}
+        \li{Håstad, Pass, Wikström, and Pietrzak: parallel repetition does decay exponentially for
+        public-coin arguments, which is the case every deployed system is in. This is one of the
+        concrete reasons [public-coin matters](dhsorens-002E).}
+        \li{Query repetition in [FRI](dhsorens-0037) is a different operation from repeating the
+        protocol — same exponent, different object. Which one a parameter table means.}
+        \li{How repetition interacts with the [round-by-round error](dhsorens-004L), with
+        [grinding](dhsorens-003A), and with proof size; and whether fixed-weight repetition variants
+        change the accounting.}
     }
 }
 
 \p{
-    Sources: Bellare, Impagliazzo, and Naor, \em{Does Parallel Repetition Lower the Error in Computationally Sound Protocols?} (FOCS 1997); Pietrzak and Wikström, \em{Parallel Repetition of Computationally Sound Protocols Revisited}; Håstad, Pass, Wikström, and Pietrzak on public-coin arguments.
+    Sources: Bellare, Impagliazzo, and Naor, \em{Does Parallel Repetition Lower the Error in
+    Computationally Sound Protocols?} (FOCS 1997); Pietrzak and Wikström, \em{Parallel Repetition of
+    Computationally Sound Protocols Revisited}; Håstad, Pass, Wikström, and Pietrzak on public-coin
+    arguments.
 }

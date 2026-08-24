@@ -3,20 +3,26 @@
 \date{2026-08-18}
 
 \p{
-    The oracle framework [ArkLib](dhsorens-0040) is built on: computations with oracle effects, handlers that implement them, and a program logic for the game-hopping arguments that security proofs are written as.
+    The oracle framework [ArkLib](dhsorens-0040) is built on: computations with oracle effects,
+    handlers that implement them, and a program logic for the game-hopping arguments that security
+    proofs are written as.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{Oracle computations and \code{simulateQ}: implementing a random oracle, logging queries, performing reductions.}
-        \li{The program logic — relational (pRHL-style) and unary modes — and what a game hop looks like as a tactic step.}
-        \li{Primitives already covered: encryption, signatures, [sigma protocols](dhsorens-004U), and the [Fiat–Shamir](dhsorens-002G) and Fischlin transforms.}
+        \li{Oracle computations and \code{simulateQ}: implementing a random oracle, logging queries,
+        performing reductions.}
+        \li{The program logic — relational (pRHL-style) and unary modes — and what a game hop looks
+        like as a tactic step.}
+        \li{Primitives already covered: encryption, signatures, [sigma protocols](dhsorens-004U),
+        and the [Fiat–Shamir](dhsorens-002G) and Fischlin transforms.}
         \li{How ArkLib's adversary model sits on top of this.}
         \li{What a machine-checked reduction proof costs in effort, compared with the paper proof.}
     }
 }
 
 \p{
-    Sources: [VCV-io](https://github.com/dtumad/VCV-io), [VCVio: Verified Cryptography in Lean via Oracle Effects and Handlers](https://eprint.iacr.org/2026/899).
+    Sources: [VCV-io](https://github.com/dtumad/VCV-io), [VCVio: Verified Cryptography in Lean via
+    Oracle Effects and Handlers](https://eprint.iacr.org/2026/899).
 }

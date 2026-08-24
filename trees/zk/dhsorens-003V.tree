@@ -3,15 +3,20 @@
 \date{2026-08-18}
 
 \p{
-    Hand-written circuits for hot operations — [hashes](dhsorens-004F), elliptic-curve arithmetic, big-integer work — invoked from the VM instead of being proved instruction by instruction. Large speedups, and a large increase in the amount of hand-written constrained code that has to be correct.
+    Hand-written circuits for hot operations — [hashes](dhsorens-004F), elliptic-curve arithmetic,
+    big-integer work — invoked from the VM instead of being proved instruction by instruction. Large
+    speedups, and a large increase in the amount of hand-written constrained code that has to be
+    correct.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{The mechanism: how a precompile attaches to the trace and how its inputs and outputs are tied to VM state.}
+        \li{The mechanism: how a precompile attaches to the trace and how its inputs and outputs are
+        tied to VM state.}
         \li{The speedups claimed, and on which workloads they decide the benchmark.}
-        \li{The soundness surface: an under-constrained precompile is a complete break, with no compiler to catch it.}
+        \li{The soundness surface: an under-constrained precompile is a complete break, with no
+        compiler to catch it.}
         \li{Extensibility as a design goal, and what a user-supplied precompile has to prove.}
         \li{Why this is the most valuable place in the stack to point [Clean](dhsorens-002Y) at.}
     }

@@ -4,7 +4,9 @@
 \meta{toc}{true}
 
 \p{
-    How a proof about a long computation is assembled from proofs about short ones. Every zkVM that proves a real workload is doing this, and it is where the soundness argument becomes hardest to keep track of — the [Nova bug](dhsorens-003M) is the standing example.
+    How a proof about a long computation is assembled from proofs about short ones. Every zkVM that
+    proves a real workload is doing this, and it is where the soundness argument becomes hardest to
+    keep track of — the [Nova bug](dhsorens-003M) is the standing example.
 }
 
 \transclude{dhsorens-003L} % IVC and PCD

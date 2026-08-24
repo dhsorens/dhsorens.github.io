@@ -10,8 +10,8 @@
 }
 
 \p{
-    This is also the part of the stack [CompPoly](dhsorens-0041) is about — fields, polynomials,
-    and their computable representations — so these pages should stay close to what is actually
+    This is also the part of the stack [CompPoly](dhsorens-0041) is about — fields, polynomials, and
+    their computable representations — so these pages should stay close to what is actually
     definable in [Lean](dhsorens-lean).
 }
 
