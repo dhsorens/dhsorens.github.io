@@ -176,7 +176,7 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
+    Logarithmic-size proofs without a trusted setup, over ordinary <fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">elliptic curve groups</fr:link>. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
 </html:p>
                 <html:p>
     Questions this page should answer:
@@ -589,7 +589,7 @@
         <html:li>Where <html:em>succinct</html:em> and <html:em>of knowledge</html:em> enter, and what each costs the construction.</html:li>
         <html:li>Public-coin versus private-coin, and why every deployed system is public-coin.</html:li>
         <html:li><fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">The knowledge extractor</fr:link>: what it is handed, what it must produce, and why rewinding is a problem in the non-interactive setting.</html:li>
-        <html:li>Zero-knowledge — honest-verifier versus malicious, and how much of it a zkVM actually needs. Mostly these systems are bought for succinctness.</html:li></html:ul></html:p>
+        <html:li>Zero-knowledge — honest-verifier versus malicious, as the <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocols</fr:link> exhibit the distinction, and how much of it a zkVM actually needs. Mostly these systems are bought for succinctness.</html:li></html:ul></html:p>
             <html:p>
     Reading: <html:code>ArkLib/OracleReduction/Basic.lean</html:code> as the definitional reference; Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em>, for the textbook chain.
 </html:p>

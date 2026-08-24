@@ -104,6 +104,48 @@ The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</
                 <fr:date>
                   <fr:year>2026</fr:year>
                   <fr:month>8</fr:month>
+                  <fr:day>21</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004X/</fr:uri>
+                <fr:display-uri>dhsorens-004X</fr:display-uri>
+                <fr:route>/dhsorens-004X/</fr:route>
+                <fr:title text="A Note on Sigma Protocols and Schnorr">A Note on Sigma Protocols and Schnorr</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">Sigma protocols</fr:link> are the three-move public-coin proof of knowledge, and
+    <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> is that shape worked through in full — the verification equation, the
+    one subtraction that extracts the witness, and the simulator that is the same equation read
+    backwards. Writing it out settled a naming question I had been sloppy about.
+    <html:em>Zero-knowledge proof of knowledge</html:em> under-specifies Schnorr twice: the zero-knowledge is only
+    <html:em>special honest-verifier</html:em>, and <html:em>of knowledge</html:em> is the half doing the work, because every
+    group element has a discrete logarithm and so plain soundness is a claim about nothing.
+</html:p>
+                <html:p>
+    The pages:
+    <html:ul><html:li><fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">Sigma protocols</fr:link> — the relation, the three messages, and completeness,
+        special soundness, and special honest-verifier zero knowledge as the three defining
+        properties. A sigma protocol is the <fr:tex display="inline"><![CDATA[\mu  = 1]]></fr:tex>, <fr:tex display="inline"><![CDATA[k_1 = 2]]></fr:tex> case of the
+        <fr:link href="/dhsorens-004K/" title="Special Soundness" uri="https://derekhsorensen.com/dhsorens-004K/" display-uri="dhsorens-004K" type="local">transcript trees</fr:link> the rest of the corpus runs on.</html:li>
+        <html:li><fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">The Schnorr protocol</fr:link> — the arithmetic, why each of the three properties
+        holds, and why prime order is what makes extraction work.</html:li>
+        <html:li><fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">Cyclic groups and the discrete logarithm</fr:link> — a stub, opened first in the
+        <fr:link href="/dhsorens-002J/" title="The Algebraic and Coding-Theoretic Toolkit" uri="https://derekhsorensen.com/dhsorens-002J/" display-uri="dhsorens-002J" type="local">algebraic toolkit</fr:link>, for the group setting these protocols are stated over.</html:li></html:ul>
+    What is still open is the gap between honest-verifier and malicious-verifier zero knowledge,
+    which the three moves do not close on their own, and which none of these pages does more than
+    name.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
                   <fr:day>19</fr:day>
                 </fr:date>
                 <fr:uri>https://derekhsorensen.com/dhsorens-004R/</fr:uri>

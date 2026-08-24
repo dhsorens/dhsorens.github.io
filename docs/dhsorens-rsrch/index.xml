@@ -683,7 +683,7 @@ This has prompted some thinking on the subject.
                 <fr:date>
                   <fr:year>2026</fr:year>
                   <fr:month>8</fr:month>
-                  <fr:day>19</fr:day>
+                  <fr:day>21</fr:day>
                 </fr:date>
                 <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
                 <fr:display-uri>dhsorens-001S</fr:display-uri>
@@ -693,7 +693,9 @@ This has prompted some thinking on the subject.
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    See my latest on <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">soundness notions</fr:link> — the five things <html:em>sound</html:em> can mean in the security theorem for a SNARK, the implications between them, and which of them survives <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>. The short version is that compilation chooses a notion rather than inheriting one, which is why a protocol proved sound end-to-end has not yet been proved anything about its deployed form. It is the first written-out section of the <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link> corpus.
+    See my latest on <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocols</fr:link> and <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> — the three-move
+    public-coin proof of knowledge, worked through to the one subtraction that extracts a witness
+    and the simulator that is the same equation read backwards.
 </html:p>
               </fr:mainmatter>
             </fr:tree>

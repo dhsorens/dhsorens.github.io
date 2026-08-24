@@ -81,6 +81,56 @@
                 <fr:date>
                   <fr:year>2026</fr:year>
                   <fr:month>8</fr:month>
+                  <fr:day>21</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004W/</fr:uri>
+                <fr:display-uri>dhsorens-004W</fr:display-uri>
+                <fr:route>/dhsorens-004W/</fr:route>
+                <fr:title text="Cyclic Groups and the Discrete Logarithm">Cyclic Groups and the Discrete Logarithm</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The setting the classical proofs of knowledge are stated over. A cyclic group <fr:tex display="inline"><![CDATA[G]]></fr:tex> of prime
+    order <fr:tex display="inline"><![CDATA[q]]></fr:tex> with generator <fr:tex display="inline"><![CDATA[g]]></fr:tex>: every element of <fr:tex display="inline"><![CDATA[G]]></fr:tex> is <fr:tex display="inline"><![CDATA[g^w]]></fr:tex> for exactly one exponent <fr:tex display="inline"><![CDATA[w]]></fr:tex> in
+    <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex>, so exponentiation is a bijection from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> to <fr:tex display="inline"><![CDATA[G]]></fr:tex> and exponent
+    arithmetic is arithmetic in a prime field. The discrete logarithm problem is to invert that
+    bijection — given <fr:tex display="inline"><![CDATA[h \in  G]]></fr:tex>, find <fr:tex display="inline"><![CDATA[w]]></fr:tex> with <fr:tex display="inline"><![CDATA[g^w = h]]></fr:tex> — and it is assumed hard in the groups
+    used in practice, which are elliptic curve groups over a large prime field.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Cyclic group, order, generator; why prime order rather than merely cyclic, and what
+        breaks at composite order.</html:li>
+        <html:li>Why prime <fr:tex display="inline"><![CDATA[q]]></fr:tex> makes every nonzero exponent difference invertible — the single step
+        <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> extraction turns on.</html:li>
+        <html:li>The discrete logarithm assumption and its relatives, computational and decisional
+        Diffie–Hellman, and which of them a given <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocol</fr:link> actually needs.</html:li>
+        <html:li>What is known about the hardness: generic-group lower bounds, index calculus, and why
+        elliptic curves rather than the multiplicative group of a prime field.</html:li>
+        <html:li>Where the setting reappears later in the corpus: the
+        <fr:link href="/dhsorens-0033/" title="Inner-Product Arguments" uri="https://derekhsorensen.com/dhsorens-0033/" display-uri="dhsorens-0033" type="local">inner-product arguments</fr:link> that scale it to logarithmic proofs, and the
+        <fr:link href="/dhsorens-0032/" title="KZG and the Pairing-Based Line" uri="https://derekhsorensen.com/dhsorens-0032/" display-uri="dhsorens-0032" type="local">pairing-based line</fr:link> that asks more of the curve than a group law.</html:li>
+        <html:li>Why this setting is absent from the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family, and what replaces the
+        group structure there — <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">fields</fr:link> and <fr:link href="/dhsorens-002O/" title="Reed–Solomon and Linear Codes" uri="https://derekhsorensen.com/dhsorens-002O/" display-uri="dhsorens-002O" type="local">codes</fr:link>.</html:li>
+        <html:li>Post-quantum status: Shor breaks all of it, which is the reason the
+        <fr:link href="/dhsorens-0049/" title="Post-Quantum Pressure" uri="https://derekhsorensen.com/dhsorens-0049/" display-uri="dhsorens-0049" type="local">lattice protocols</fr:link> exist.</html:li></html:ul></html:p>
+                <html:p>
+    Reading: Boneh and Shoup, <html:em>A Graduate Course in Applied Cryptography</html:em>, for the assumptions
+    and their relations; Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em>, for how they enter the
+    proof systems.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
                   <fr:day>18</fr:day>
                 </fr:date>
                 <fr:uri>https://derekhsorensen.com/dhsorens-002K/</fr:uri>
@@ -417,7 +467,7 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    Special soundness is a property of the verifier's acceptance predicate, not a probability bound, which is why it is the workhorse. For a three-move sigma protocol it says: from two accepting transcripts <fr:tex display="inline"><![CDATA[(a, c, z)]]></fr:tex> and <fr:tex display="inline"><![CDATA[(a, c', z')]]></fr:tex> sharing the first message with <fr:tex display="inline"><![CDATA[c \neq  c']]></fr:tex>, a witness can be computed in polynomial time. Checking it means exhibiting that computation — for Schnorr, subtracting two linear equations — so it is verifiable by inspecting the algebra rather than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding extractor that collects the transcripts it needs.
+    Special soundness is a property of the verifier's acceptance predicate, not a probability bound, which is why it is the workhorse. For a three-move <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocol</fr:link> it says: from two accepting transcripts <fr:tex display="inline"><![CDATA[(a, c, z)]]></fr:tex> and <fr:tex display="inline"><![CDATA[(a, c', z')]]></fr:tex> sharing the first message with <fr:tex display="inline"><![CDATA[c \neq  c']]></fr:tex>, a witness can be computed in polynomial time. Checking it means exhibiting that computation — for <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link>, subtracting two linear equations — so it is verifiable by inspecting the algebra rather than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding extractor that collects the transcripts it needs.
 </html:p>
             <html:p>
     The multi-round generalisation is <fr:tex display="inline"><![CDATA[(k_1, \dots , k_\mu )]]></fr:tex>-special soundness. Instead of a pair of transcripts the extractor is given a tree: at the <fr:tex display="inline"><![CDATA[i]]></fr:tex>-th challenge round each node branches <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> ways with pairwise distinct challenges, and the tree of accepting leaves yields a witness. Attema and Fehr computed the resulting knowledge error exactly for challenge sets of sizes <fr:tex display="inline"><![CDATA[N_1, \dots , N_\mu ]]></fr:tex>; it is at most <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } (k_i - 1)/N_i]]></fr:tex>, which is the bound worth remembering. Two special soundness at each of <fr:tex display="inline"><![CDATA[\mu ]]></fr:tex> rounds over a field of size <fr:tex display="inline"><![CDATA[q]]></fr:tex> costs <fr:tex display="inline"><![CDATA[\mu  / q]]></fr:tex>, and the tree has <fr:tex display="inline"><![CDATA[\prod _i k_i]]></fr:tex> leaves, so the extractor's cost is what limits how large the <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> can be.

@@ -413,7 +413,7 @@
           <fr:mainmatter>
             <fr:link href="https://bitcoin.org/" type="external">https://bitcoin.org</fr:link>
             <html:p>
-    Its hash functions — double SHA-256 and RIPEMD-160 — are the subject of <fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">SHA-2 and the Bitcoin design</fr:link>.
+    Its hash functions — double SHA-256 and RIPEMD-160 — are the subject of <fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">SHA-2 and the Bitcoin design</fr:link>. Since Taproot its signatures are <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link>, specified as BIP-340.
 </html:p>
           </fr:mainmatter>
         </fr:tree>
