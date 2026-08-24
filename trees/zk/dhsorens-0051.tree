@@ -1,0 +1,70 @@
+\title{Circuits in Clean}
+\author{dhsorens}
+\date{2026-08-24}
+
+\p{
+    The zero-test is the gadget worth reading first, because it is four lines long and every feature
+    of the contract is visible in it. Witness a cell #{z} to be #{x^{-1}} when #{x \neq 0} and #{0}
+    otherwise; constrain #{b = 1 - xz}; assert #{bx = 0}; return #{b}. The spec is that #{b = 1}
+    when #{x = 0} and #{b = 0} otherwise, and both proofs go through by a single tactic call.
+}
+
+\p{
+    Soundness reads off the two constraints without reference to the generator. If #{x = 0} then
+    #{b = 1 - 0 = 1}. If #{x \neq 0} then #{bx = 0} forces #{b = 0}. Nothing about #{z} was used,
+    which is the point — #{z} is adversarial. Completeness is the other direction and does use the
+    generator: at #{x \neq 0} the choice #{z = x^{-1}} gives #{b = 1 - 1 = 0}, so #{bx = 0} holds.
+    Now delete the assertion #{bx = 0}. The circuit is still complete, because the honest generator
+    still produces #{b = 0} at #{x \neq 0}; it is no longer sound, because a prover may set
+    #{z = 0}, obtain #{b = 1}, and claim a nonzero #{x} is zero. That is the whole
+    under-constraining failure mode in four lines, and the reason the two obligations are proved
+    separately.
+}
+
+\p{
+    A field inverse is a witness rather than a constraint because the constraint language has no
+    division, and this is the standard trick everywhere in circuit engineering. What the
+    specification adds is a check on the trick: the equality #{b = 1 - xz} is not obviously a
+    zero-test, and the theorem is what says it is one.
+}
+
+\p{
+    Byte addition shows where assumptions come from. The gadget assumes both inputs are below 256
+    and specifies that the output is their sum modulo 256, and it is built as a thin wrapper around
+    an add-with-carry gadget, whose own proofs discharge both obligations by simplification. The
+    assumption is load-bearing in a way that has nothing to do with bytes: the gadget is stated over
+    a prime field with the hypothesis #{p > 512}, so that #{x + y + c \leq 511} cannot wrap the
+    field before it wraps 256. Drop the range assumption and the spec becomes false, not merely
+    unprovable — the arithmetic being modelled is 256-modular only inside a window the field is
+    large enough to contain.
+}
+
+\p{
+    Tables are where a gadget's spec gets consumed by something larger. The 8-bit Fibonacci table
+    has rows of two field elements; its two-row constraint copies the current row's second value
+    into the next row's first, calls the byte-addition gadget for the next row's second, and a
+    boundary constraint pins row zero to #{(0, 1)}. The table's spec is a statement about the whole
+    trace — at every index #{i} the row holds #{\mathrm{fib}(i)} and #{\mathrm{fib}(i+1)} reduced
+    modulo 256 — and the proof of it consumes the addition gadget's spec, never its constraints.
+    That is the same modularity as at the circuit level, one layer up.
+}
+
+\p{
+    The gadget library is mostly what a hash function needs: byte and 32-bit addition, rotation on
+    32- and 64-bit words, the bitwise operations, boolean and bit decomposition, equality and zero
+    tests, conditional selection — and on top of them SHA-256, Keccak, and BLAKE3 as complete
+    gadgets, with Keccak also available as an inductive table. There is also a port of circomlib
+    into Clean, which is a good instinct: verifying the gadgets the ecosystem already depends on
+    tests the library against circuits whose intended behaviour is settled and whose bugs, if any,
+    matter today.
+}
+
+\p{
+    Alongside the circuits sits a directory of reference semantics — SHA-256, Keccak-256,
+    Poseidon, BLAKE3 — written in Lean over the naturals, and next to those, Python
+    implementations of SHA-256 and Keccak. The Python is there to cross-check the Lean spec against
+    a known-good implementation, which is the [computable specification](dhsorens-0025) argument in
+    miniature. The soundness theorem relates a circuit to a spec, and gives no information about
+    whether the spec is the hash function; running the spec on the standard test vectors is the only
+    thing that does.
+}

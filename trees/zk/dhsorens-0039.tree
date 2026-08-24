@@ -3,21 +3,16 @@
 \date{2026-08-18}
 
 \p{
-    Sampling outside the evaluation domain, which appears in deployed provers for reasons that are
-    not the reason usually given. The SoK's claim that the deployed trick and the low-degree-test
-    modification are routinely conflated needs to be nailed down here.
+    Sampling outside the evaluation domain, which appears in deployed provers for reasons that are not the reason usually given. The SoK's claim that the deployed trick and the low-degree-test modification are routinely conflated needs to be nailed down here.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{DEEP quotienting: what the quotient is, and what an out-of-domain evaluation buys the
-        analysis.}
+        \li{DEEP quotienting: what the quotient is, and what an out-of-domain evaluation buys the analysis.}
         \li{The conjecture on classical list-decodability that DEEP-FRI introduced.}
-        \li{The two distinct uses — constraint batching in a STARK versus the low-degree test itself
-        — and which one production code implements.}
-        \li{Where the extension field is forced (the out-of-domain point lives there), and the
-        cost.}
+        \li{The two distinct uses — constraint batching in a STARK versus the low-degree test itself — and which one production code implements.}
+        \li{Where the extension field is forced (the out-of-domain point lives there), and the cost.}
     }
 }
 

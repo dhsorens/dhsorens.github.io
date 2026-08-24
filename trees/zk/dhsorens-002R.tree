@@ -4,17 +4,11 @@
 \meta{toc}{true}
 
 \p{
-    How a computation becomes algebra. Three formats dominate — [R1CS](dhsorens-002S),
-    [Plonkish](dhsorens-002T), and [AIR](dhsorens-002U) — and [CCS](dhsorens-002V) is the claim that
-    they are one object with different sparsity patterns.
+    How a computation becomes algebra. Three formats dominate — [R1CS](dhsorens-002S), [Plonkish](dhsorens-002T), and [AIR](dhsorens-002U) — and [CCS](dhsorens-002V) is the claim that they are one object with different sparsity patterns.
 }
 
 \p{
-    [Clean](dhsorens-002Y) sits at this layer: an embedded DSL that writes circuits for these
-    formats in [Lean](dhsorens-lean), with the specification and the soundness proof next to the
-    circuit. The open question is what "this circuit implements this specification" should mean, and
-    which arithmetisation makes that statement easiest to prove — the same question as for [smart
-    contract specifications](dhsorens-001J), with better-behaved mathematics.
+    [Clean](dhsorens-002Y) sits at this layer: an embedded DSL that writes circuits for these formats in [Lean](dhsorens-lean), with the specification and the soundness proof next to the circuit. The open question is what "this circuit implements this specification" should mean, and which arithmetisation makes that statement easiest to prove — the same question as for [smart contract specifications](dhsorens-001J), with better-behaved mathematics.
 }
 
 \transclude{dhsorens-002S} % R1CS

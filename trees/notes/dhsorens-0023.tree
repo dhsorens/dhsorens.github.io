@@ -3,10 +3,7 @@
 \date{2026-04-20}
 \taxon{Talk}
 
-\p{\em{Abstract:} The efficacy of formal verification depends on high quality specifications which
-are both correct and complete. This talk will ask: What is an ideal specification? How do we
-evaluate and improve our specifications? And how can Lean help us achieve the highest-assurance
-software possible?}
+\p{\em{Abstract:} The efficacy of formal verification depends on high quality specifications which are both correct and complete. This talk will ask: What is an ideal specification? How do we evaluate and improve our specifications? And how can Lean help us achieve the highest-assurance software possible?}
 
 \p{Links:}
 \ul{

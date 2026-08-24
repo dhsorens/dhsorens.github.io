@@ -3,29 +3,20 @@
 \date{2026-08-19}
 
 \p{
-    The step from an interactive public-coin protocol to a proof that can be sent as a string. When
-    the protocol is an IOP, the [BCS transform](dhsorens-002H) realises the oracles and
-    [Fiat–Shamir](dhsorens-002G) removes the interaction; when it is already an IP, Fiat–Shamir is
-    the whole compilation. A [soundness](dhsorens-002F) theorem about the interactive protocol does
-    not automatically apply to the result.
+    The step from an interactive public-coin protocol to a proof that can be sent as a string. When the protocol is an IOP, the [BCS transform](dhsorens-002H) realises the oracles and [Fiat–Shamir](dhsorens-002G) removes the interaction; when it is already an IP, Fiat–Shamir is the whole compilation. A [soundness](dhsorens-002F) theorem about the interactive protocol does not automatically apply to the result.
 }
 
 \p{
     Questions this page should answer:
     \ul{
         \li{The pipeline: which steps, in which order, and what each assumes about the protocol.}
-        \li{What the compiled adversary can do that the interactive one cannot —
-        [grinding](dhsorens-003A), [restoring prefixes](dhsorens-004M) — and which soundness notions
-        constrain it.}
+        \li{What the compiled adversary can do that the interactive one cannot — [grinding](dhsorens-003A), [restoring prefixes](dhsorens-004M) — and which soundness notions constrain it.}
         \li{When Fiat–Shamir alone is the compilation and when BCS sits in front of it.}
-        \li{The compilation loss: how the interactive error becomes a non-interactive one, and when
-        the bound is vacuous.}
+        \li{The compilation loss: how the interactive error becomes a non-interactive one, and when the bound is vacuous.}
         \li{Where [ArkLib](dhsorens-0040) states the compiled theorems.}
     }
 }
 
 \p{
-    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118); Ben-Sasson, Chiesa,
-    and Spooner, \em{Interactive Oracle Proofs}; [ArkLib](https://github.com/Verified-zkEVM/ArkLib)
-    (\code{OracleReduction/FiatShamir}, \code{OracleReduction/BCS}).
+    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118); Ben-Sasson, Chiesa, and Spooner, \em{Interactive Oracle Proofs}; [ArkLib](https://github.com/Verified-zkEVM/ArkLib) (\code{OracleReduction/FiatShamir}, \code{OracleReduction/BCS}).
 }

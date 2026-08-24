@@ -4,27 +4,15 @@
 \meta{toc}{true}
 
 \p{
-    A systematic study of the cryptography and machine architecture that zkVMs and SNARKs are built
-    from, topic by topic. It is the theory behind the [snarkification work](dhsorens-0020):
-    [ArkLib](dhsorens-0040), [CompPoly](dhsorens-0041), and [Clean](dhsorens-002Y) formalise these
-    protocols in [Lean](dhsorens-lean), and [formalisation](dhsorens-000X) rewards local knowledge —
-    a folding lemma can be proved without holding the whole argument in view. The purpose of a
-    corpus like this one is to hold the whole argument.
+    A systematic study of the cryptography and machine architecture that zkVMs and SNARKs are built from, topic by topic. It is the theory behind the [snarkification work](dhsorens-0020): [ArkLib](dhsorens-0040), [CompPoly](dhsorens-0041), and [Clean](dhsorens-002Y) formalise these protocols in [Lean](dhsorens-lean), and [formalisation](dhsorens-000X) rewards local knowledge — a folding lemma can be proved without holding the whole argument in view. The purpose of a corpus like this one is to hold the whole argument.
 }
 
 \p{
-    The spine is the pipeline every modern proof system follows. A computation becomes a constraint
-    system; the constraint system becomes an interactive oracle proof; the oracles are realised by
-    commitments; the interaction is removed by Fiat–Shamir; the result is made recursive and wrapped
-    around a virtual machine. Each section below is one stage of that pipeline, which is also
-    roughly how ArkLib is organised — so a page here usually has a Lean file behind it.
+    The spine is the pipeline every modern proof system follows. A computation becomes a constraint system; the constraint system becomes an interactive oracle proof; the oracles are realised by commitments; the interaction is removed by Fiat–Shamir; the result is made recursive and wrapped around a virtual machine. Each section below is one stage of that pipeline, which is also roughly how ArkLib is organised — so a page here usually has a Lean file behind it.
 }
 
 \p{
-    Every leaf has the same shape: what the page covers, the questions it should answer, and where
-    to read. A page is complete when its subject can be reconstructed from it without the sources —
-    for a protocol, that means the theorem stated with its assumptions, and what breaks when one of
-    them is dropped.
+    Every leaf has the same shape: what the page covers, the questions it should answer, and where to read. A page is complete when its subject can be reconstructed from it without the sources — for a protocol, that means the theorem stated with its assumptions, and what breaks when one of them is dropped.
 }
 
 \transclude{dhsorens-002D} % the shape of a proof system

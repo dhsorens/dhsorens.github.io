@@ -4,7 +4,9 @@
 
 \p{
     The oldest of the three formats and still the one the [folding](dhsorens-003K) literature is
-    written in.
+    written in. It is also the format the [zk.golf](dhsorens-0053) challenges are stated in, which
+    makes their published circuits a precise record of what a hash function costs when every
+    constraint has to be rank one and lookups are unavailable.
 }
 
 \p{

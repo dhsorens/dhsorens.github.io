@@ -3,23 +3,16 @@
 \date{2026-08-18}
 
 \p{
-    Computable polynomials and finite fields in Lean: an executable mirror of the Mathlib
-    definitions, with transfer theorems so proofs can be done on the noncomputable side. The case
-    for [computable specifications](dhsorens-0025) is made elsewhere; this page is about the
-    artefact.
+    Computable polynomials and finite fields in Lean: an executable mirror of the Mathlib definitions, with transfer theorems so proofs can be done on the noncomputable side. The case for [computable specifications](dhsorens-0025) is made elsewhere; this page is about the artefact.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{The representations chosen, and which operations each makes cheap. See [univariate and
-        multilinear polynomials](dhsorens-002M).}
-        \li{The transfer pattern: computable definition, Mathlib definition, proven equivalence, and
-        how proofs move across it.}
-        \li{Field representations and the small fields that matter — see [the small-field
-        turn](dhsorens-002K).}
-        \li{What running the spec actually buys: testing a specification against a reference
-        implementation.}
+        \li{The representations chosen, and which operations each makes cheap. See [univariate and multilinear polynomials](dhsorens-002M).}
+        \li{The transfer pattern: computable definition, Mathlib definition, proven equivalence, and how proofs move across it.}
+        \li{Field representations and the small fields that matter — see [the small-field turn](dhsorens-002K).}
+        \li{What running the spec actually buys: testing a specification against a reference implementation.}
         \li{Performance in Lean, and whether it is adequate for testing at realistic trace sizes.}
         \li{Which [ArkLib](dhsorens-0040) developments depend on it.}
     }

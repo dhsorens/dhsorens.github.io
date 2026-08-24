@@ -3,29 +3,20 @@
 \date{2026-08-18}
 
 \p{
-    The tower
-    #{\mathbb{F}_2 \subset \mathbb{F}_{2^2} \subset \mathbb{F}_{2^4} \subset \cdots \subset \mathbb{F}_{2^{128}}},
-    built by iterated quadratic extension, and the arithmetic that makes it attractive. This is the
-    ground [Binius](dhsorens-003J) stands on.
+    The tower #{\mathbb{F}_2 \subset \mathbb{F}_{2^2} \subset \mathbb{F}_{2^4} \subset \cdots \subset \mathbb{F}_{2^{128}}}, built by iterated quadratic extension, and the arithmetic that makes it attractive. This is the ground [Binius](dhsorens-003J) stands on.
 }
 
 \p{
     Questions this page should answer:
     \ul{
         \li{The tower construction, and why every subfield embedding is free.}
-        \li{Why binary: no modular reduction, characteristic 2 arithmetic maps onto bit operations,
-        and small values cost small fields.}
+        \li{Why binary: no modular reduction, characteristic 2 arithmetic maps onto bit operations, and small values cost small fields.}
         \li{The claimed cost comparison against Mersenne31, and under what measure it holds.}
-        \li{Multilinear polynomials over a tower, and why the multilinear setting rather than the
-        univariate one.}
+        \li{Multilinear polynomials over a tower, and why the multilinear setting rather than the univariate one.}
         \li{[Ring switching](dhsorens-0035): moving between tower levels inside a single argument.}
     }
 }
 
 \p{
-    Sources: [Binary tower
-    fields](https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing)
-    (Irreducible), [SNARKs on binary
-    fields](https://blog.lambdaclass.com/snarks-on-binary-fields-binius/) (LambdaClass), [The
-    Small-Field Turn](https://eprint.iacr.org/2026/1371).
+    Sources: [Binary tower fields](https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing) (Irreducible), [SNARKs on binary fields](https://blog.lambdaclass.com/snarks-on-binary-fields-binius/) (LambdaClass), [The Small-Field Turn](https://eprint.iacr.org/2026/1371).
 }

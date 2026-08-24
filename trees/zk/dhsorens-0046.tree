@@ -4,11 +4,7 @@
 \meta{toc}{true}
 
 \p{
-    The constraints that come from the deployment target rather than the mathematics.
-    [Ethereum](dhsorens-ethereum) wants blocks proved in seconds, on modest hardware, at a security
-    level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See
-    [protocol snarkification](dhsorens-0020) for the broader effort, and [Safely Snarkifying the
-    Ethereum Protocol](dhsorens-0022) for the talk.
+    The constraints that come from the deployment target rather than the mathematics. [Ethereum](dhsorens-ethereum) wants blocks proved in seconds, on modest hardware, at a security level nobody is willing to negotiate — and increasingly with post-quantum assumptions. See [protocol snarkification](dhsorens-0020) for the broader effort, and [Safely Snarkifying the Ethereum Protocol](dhsorens-0022) for the talk.
 }
 
 \transclude{dhsorens-0047} % real-time proving

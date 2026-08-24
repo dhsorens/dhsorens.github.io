@@ -3,22 +3,16 @@
 \date{2026-08-18}
 
 \p{
-    Whether to prove an existing ISA or design one for provability. RISC-V won the general-purpose
-    end by bringing a compiler toolchain with it; the custom VMs argue the constraint cost is worth
-    the loss.
+    Whether to prove an existing ISA or design one for provability. RISC-V won the general-purpose end by bringing a compiler toolchain with it; the custom VMs argue the constraint cost is worth the loss.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{RISC-V (RV32I and extensions) as a target: what makes each instruction class expensive
-        to constrain.}
-        \li{Register machines versus stack machines (Miden, zkWasm), and what the memory argument
-        looks like in each.}
-        \li{Purpose-built ISAs — Cairo, Valida — and the specific constraint-cost arguments for
-        them.}
-        \li{Instruction decomposition and the [lookup](dhsorens-002W)-based approach to semantics
-        that Jolt takes.}
+        \li{RISC-V (RV32I and extensions) as a target: what makes each instruction class expensive to constrain.}
+        \li{Register machines versus stack machines (Miden, zkWasm), and what the memory argument looks like in each.}
+        \li{Purpose-built ISAs — Cairo, Valida — and the specific constraint-cost arguments for them.}
+        \li{Instruction decomposition and the [lookup](dhsorens-002W)-based approach to semantics that Jolt takes.}
         \li{The formal ISA specification: what the Sail-to-Lean route gives, and what it does not.}
     }
 }

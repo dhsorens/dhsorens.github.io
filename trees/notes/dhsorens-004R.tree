@@ -3,31 +3,17 @@
 \date{2026-08-19}
 
 \p{
-    [Soundness notions](dhsorens-002F) is the first written-out section of the [zkVMs and
-    SNARKs](dhsorens-002C) corpus: the five things \em{sound} can mean in the security theorem for a
-    proof system, and the implications between them. It organises around one claim — compilation
-    chooses a notion rather than inheriting one, so a protocol proved sound end to end has not yet
-    been proved anything about its deployed form. Khovratovich, Rothblum, and Soukhanov proved false
-    statements against a GKR-based argument whose interactive soundness was never in question.
+    [Soundness notions](dhsorens-002F) is the first written-out section of the [zkVMs and SNARKs](dhsorens-002C) corpus: the five things \em{sound} can mean in the security theorem for a proof system, and the implications between them. It organises around one claim — compilation chooses a notion rather than inheriting one, so a protocol proved sound end to end has not yet been proved anything about its deployed form. Khovratovich, Rothblum, and Soukhanov proved false statements against a GKR-based argument whose interactive soundness was never in question.
 }
 
 \p{
     The sections:
     \ul{
-        \li{[Soundness, knowledge soundness, and extraction](dhsorens-004J) — why soundness is
-        vacuous on a trivial language, why [recursion](dhsorens-003L) needs an extractor, and
-        straightline extraction against rewinding.}
-        \li{[Special soundness](dhsorens-004K) — transcript trees, the coordinate-wise variant the
-        lattice commitments run on, and the #{(Q+1)\kappa} Fiat–Shamir bound that makes a many-round
-        protocol analysable at all.}
-        \li{[Round-by-round soundness](dhsorens-004L) — state functions, doomed prefixes, and why
-        the whole error budget sits on the challenge rounds.}
-        \li{[State-restoration soundness](dhsorens-004M) — the retry game the transform actually
-        hands the prover, and its equivalence with round-by-round soundness.}
-        \li{[From soundness error to bits of security](dhsorens-004N) — the five terms in the bound,
-        and the two conventions for quoting a number of bits.}
+        \li{[Soundness, knowledge soundness, and extraction](dhsorens-004J) — why soundness is vacuous on a trivial language, why [recursion](dhsorens-003L) needs an extractor, and straightline extraction against rewinding.}
+        \li{[Special soundness](dhsorens-004K) — transcript trees, the coordinate-wise variant the lattice commitments run on, and the #{(Q+1)\kappa} Fiat–Shamir bound that makes a many-round protocol analysable at all.}
+        \li{[Round-by-round soundness](dhsorens-004L) — state functions, doomed prefixes, and why the whole error budget sits on the challenge rounds.}
+        \li{[State-restoration soundness](dhsorens-004M) — the retry game the transform actually hands the prover, and its equivalence with round-by-round soundness.}
+        \li{[From soundness error to bits of security](dhsorens-004N) — the five terms in the bound, and the two conventions for quoting a number of bits.}
     }
-    Three more are open as stubs: [adaptive soundness](dhsorens-004O), which is what the Fiat–Shamir
-    attacks actually break; [amplification and repetition](dhsorens-004P); and [simulation
-    extractability](dhsorens-004Q).
+    Three more are open as stubs: [adaptive soundness](dhsorens-004O), which is what the Fiat–Shamir attacks actually break; [amplification and repetition](dhsorens-004P); and [simulation extractability](dhsorens-004Q).
 }

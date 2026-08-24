@@ -1,0 +1,28 @@
+\title{Algebraic Varieties}
+\author{dhsorens}
+\date{2026-08-24}
+
+\p{
+    An affine algebraic variety over a field #{F} is the common vanishing set of a family of
+    polynomials in #{F[x_1, \dots, x_n]}. In this corpus that is what a circuit is: each
+    \code{assert} is a polynomial required to vanish on the witness cells, and a satisfying
+    assignment is a point of the variety those polynomials cut out. The computation the circuit was
+    written for is not itself a variety; [arithmetisation](dhsorens-002R) produces one that is
+    supposed to stand for it. [Clean](dhsorens-002Y) soundness is the claim that every point of the
+    variety satisfies the spec; completeness is the claim that every input the spec accepts extends
+    to a point on it.
+}
+
+\p{
+    Questions this page should answer:
+    \ul{
+        \li{The definition, over a finite field rather than an algebraically closed one, and what
+        survives of the usual Nullstellensatz picture.}
+        \li{How [R1CS](dhsorens-002S), [Plonkish](dhsorens-002T), and [AIR](dhsorens-002U) present
+        the same kind of object with different sparsity and degree.}
+        \li{The [zero-test](dhsorens-0051) as the smallest case where the variety and the spec come
+        apart: delete a constraint and the variety grows, completeness stays, soundness fails.}
+        \li{What a lookup or a channel interaction is, geometrically — not a polynomial vanishing,
+        so not a condition that cuts out a variety in the same sense.}
+    }
+}

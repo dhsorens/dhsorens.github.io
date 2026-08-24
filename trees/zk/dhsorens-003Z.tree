@@ -4,16 +4,18 @@
 \meta{toc}{true}
 
 \p{
-    The reason the rest of this corpus is organised the way it is. The [verified
-    zkEVM](https://verified-zkevm.org) effort runs three tracks — the zkVM constraints, the EVM
-    semantics, and the cryptography — and [ArkLib](dhsorens-0040) and [CompPoly](dhsorens-0041) are
-    the cryptography track.
+    The reason the rest of this corpus is organised the way it is. The
+    [verified zkEVM](https://verified-zkevm.org) effort runs three tracks — the zkVM constraints,
+    the EVM semantics, and the cryptography — and [ArkLib](dhsorens-0040) and
+    [CompPoly](dhsorens-0041) are the cryptography track.
 }
 
 \p{
     These pages stay closer to the code than the rest of the corpus, which also makes them the ones
-    most likely to go stale. Related: [protocol snarkification](dhsorens-0020), [computable
-    specifications](dhsorens-0025), [formal verification in proof assistants](dhsorens-0015).
+    most likely to go stale. Related: [protocol snarkification](dhsorens-0020),
+    [computable specifications](dhsorens-0025),
+    [formal verification in proof assistants](dhsorens-0015), and
+    [circuits and their specifications](dhsorens-002Y).
 }
 
 \transclude{dhsorens-0040} % ArkLib

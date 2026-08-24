@@ -187,26 +187,54 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified
-    model of computable polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
-    The purpose of CompPoly is to provide a computable base for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out
+    <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified model of computable
+    polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. The purpose of CompPoly is to provide a computable base
+    for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
 </html:p>
             <html:p>
-    My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKS</fr:link> also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
+    My thoughts on computable specifications are still developing. They are growing out of an
+    interest during my PhD in the integrity of formal specifications
+    <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKS</fr:link> also have
+    complicated specifications, but for a different reason than smart contracts. Whereas smart
+    contract specifications have difficult-to-define, high-level, socio-economic properties that one
+    must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty
+    intense mathematics. Just stating the desired properties requires quite a bit of machinery --
+    see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
 </html:p>
             <html:p>
-    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does computability add to this, or any specification? For one, it lets you run tests. Having tests lets you test the integrity of your spec and test it in sort of a meta- way. It helps build confidence that the spec was built out correctly, something that is difficult (impossible?) to really know.
+    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does
+    computability add to this, or any specification? For one, it lets you run tests. Having tests
+    lets you test the integrity of your spec and test it in sort of a meta- way. It helps build
+    confidence that the spec was built out correctly, something that is difficult (impossible?) to
+    really know. <fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">Clean</fr:link> keeps a Python implementation of SHA-256 beside the Lean
+    specification it proves circuits against, which is the smallest version of this argument I have
+    seen in use.
 </html:p>
             <html:p>
-    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications of specifications, in the context of smart contracts. I really believe that metaspecifications can add a lot to the security of smart contracts, but a lot of theory has to be built up (even just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy for contracts in the wild.
+    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications
+    of specifications, in the context of smart contracts. I really believe that metaspecifications
+    can add a lot to the security of smart contracts, but a lot of theory has to be built up (even
+    just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy
+    for contracts in the wild.
 </html:p>
             <html:p>
-    However, metaspecifications already show up in cryptography! An implementation has a specification, the design of the cryptographic system or protocol (e.g. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>). The system or protocol is defined in mathematical terms, with assumptions, and with associated proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol fails, then some assumption of the system was violated. This is a metaspecification!
+    However, metaspecifications already show up in cryptography! An implementation has a
+    specification, the design of the cryptographic system or protocol (e.g. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>).
+    The system or protocol is defined in mathematical terms, with assumptions, and with associated
+    proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol
+    fails, then some assumption of the system was violated. This is a metaspecification!
 </html:p>
             <html:p>
-    But, as with all specifications, it is very hard to be sure that your specification is correct. This is where computability comes in. Having an executable/computable specification means that you can run tests on it, further extending your specification in an informal way. It makes your spec act more like software, and in some sense makes it stronger as a specification because as a program that runs it is closer to the thing that you're verifying.
+    But, as with all specifications, it is very hard to be sure that your specification is correct.
+    This is where computability comes in. Having an executable/computable specification means that
+    you can run tests on it, further extending your specification in an informal way. It makes your
+    spec act more like software, and in some sense makes it stronger as a specification because as a
+    program that runs it is closer to the thing that you're verifying.
 </html:p>
-            <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable and non-computable terms, spec and implementation, and more and more of the infrastructure of verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+            <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable
+    and non-computable terms, spec and implementation, and more and more of the infrastructure of
+    verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
 </html:p>
           </fr:mainmatter>
         </fr:tree>

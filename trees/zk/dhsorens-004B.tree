@@ -3,34 +3,23 @@
 \date{2026-08-18}
 
 \p{
-    An order to read in, so that filling the corpus out does not turn into breadth-first browsing.
-    Systematisations first, because they fix the vocabulary and the attributions; then the primary
-    sources; then the code.
+    An order to read in, so that filling the corpus out does not turn into breadth-first browsing. Systematisations first, because they fix the vocabulary and the attributions; then the primary sources; then the code.
 }
 
 \p{
     In order:
     \ul{
-        \li{Thaler, \em{Proofs, Arguments, and Zero-Knowledge} — the definitional chain and
-        [sumcheck](dhsorens-002Q).}
-        \li{[SoK: Hash-Based Polynomial Commitments and Low-Degree
-        Tests](https://eprint.iacr.org/2026/1367) — the whole [FRI-to-WHIR](dhsorens-0036) lineage
-        in one place, with the soundness regimes kept straight.}
-        \li{[The Small-Field Turn in Succinct Proofs](https://eprint.iacr.org/2026/1371) — [field
-        choice](dhsorens-002K) as the organising story of recent performance work.}
-        \li{[SoK: Understanding zkVM](https://eprint.iacr.org/2026/525) — the [layer
-        decomposition](dhsorens-003R) and a comparison across real systems.}
+        \li{Thaler, \em{Proofs, Arguments, and Zero-Knowledge} — the definitional chain and [sumcheck](dhsorens-002Q).}
+        \li{[SoK: Hash-Based Polynomial Commitments and Low-Degree Tests](https://eprint.iacr.org/2026/1367) — the whole [FRI-to-WHIR](dhsorens-0036) lineage in one place, with the soundness regimes kept straight.}
+        \li{[The Small-Field Turn in Succinct Proofs](https://eprint.iacr.org/2026/1371) — [field choice](dhsorens-002K) as the organising story of recent performance work.}
+        \li{[SoK: Understanding zkVM](https://eprint.iacr.org/2026/525) — the [layer decomposition](dhsorens-003R) and a comparison across real systems.}
         \li{Primary sources, in lineage order: FRI, DEEP-FRI, STIR, WHIR; then Basefold and Binius.}
-        \li{[How to Prove False Statements](https://eprint.iacr.org/2025/118) — read after the
-        soundness notions, not before.}
-        \li{[ArkLib](https://github.com/Verified-zkEVM/ArkLib), starting from
-        \code{OracleReduction/Basic.lean} and the sumcheck development.}
-        \li{[clean](https://github.com/Verified-zkEVM/clean/) and a Plonky3 AIR side by side — the
-        same circuit in both.}
+        \li{[How to Prove False Statements](https://eprint.iacr.org/2025/118) — read after the soundness notions, not before.}
+        \li{[ArkLib](https://github.com/Verified-zkEVM/ArkLib), starting from \code{OracleReduction/Basic.lean} and the sumcheck development.}
+        \li{[clean](https://github.com/Verified-zkEVM/clean/) and a Plonky3 AIR side by side — the same circuit in both.}
     }
 }
 
 \p{
-    A page in this corpus is done when its main theorem can be stated with its assumptions, and what
-    breaks when one of them is dropped. Everything else is note-taking.
+    A page in this corpus is done when its main theorem can be stated with its assumptions, and what breaks when one of them is dropped. Everything else is note-taking.
 }

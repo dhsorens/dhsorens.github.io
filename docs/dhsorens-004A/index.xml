@@ -150,7 +150,7 @@
 </html:p>
                 <html:p>
     Questions this page should answer:
-    <html:ul><html:li>What is at risk and what is not: discrete-log commitments, hash-based commitments, the ROM analysis in a quantum setting.</html:li>
+    <html:ul><html:li>What is at risk and what is not: <fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">discrete-log</fr:link> commitments, hash-based commitments, the ROM analysis in a quantum setting.</html:li>
         <html:li>Hash-based signatures and aggregation, and why a SNARK is the aggregation mechanism. Which hash they are instantiated with is now <fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">SHA-2 or BLAKE rather than Poseidon</fr:link>.</html:li>
         <html:li>Lattice-based commitments as an alternative, and their cost profile.</html:li>
         <html:li>The consequence for the last step of a pipeline that currently ends in Groth16.</html:li>

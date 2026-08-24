@@ -3,30 +3,20 @@
 \date{2026-08-19}
 
 \p{
-    Whether the statement is fixed before the hash function is public or chosen after it is the
-    qualifier the [Fiat–Shamir](dhsorens-002G) attacks turn on, and it is usually left implicit.
-    This page should make the distinction explicit and say which side deployed claims are on.
+    Whether the statement is fixed before the hash function is public or chosen after it is the qualifier the [Fiat–Shamir](dhsorens-002G) attacks turn on, and it is usually left implicit. This page should make the distinction explicit and say which side deployed claims are on.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{Non-adaptive and adaptive soundness stated side by side, for both the plain and the
-        [knowledge](dhsorens-004J) versions.}
-        \li{Why the [Khovratovich–Rothblum–Soukhanov attack](https://eprint.iacr.org/2025/118) is an
-        adaptive-soundness attack: it embeds the hash function into the circuit, which is a
-        statement chosen after the hash is known.}
-        \li{What adaptivity costs in the random oracle model, and whether the loss is a constant, a
-        factor of the query count, or worse.}
-        \li{Block, Garreta, Tiwari, and Zając: a special-sound IOP Fiat–Shamir-compiles to an
-        adaptively sound non-interactive proof in the QROM. What that covers and what it does not.}
-        \li{Whether a [zkVM](dhsorens-003Q)'s statement is genuinely fixed at circuit-compile time
-        in deployment — including [precompiles](dhsorens-003V) and any circuit chosen by an
-        untrusted party — and who is responsible for checking.}
+        \li{Non-adaptive and adaptive soundness stated side by side, for both the plain and the [knowledge](dhsorens-004J) versions.}
+        \li{Why the [Khovratovich–Rothblum–Soukhanov attack](https://eprint.iacr.org/2025/118) is an adaptive-soundness attack: it embeds the hash function into the circuit, which is a statement chosen after the hash is known.}
+        \li{What adaptivity costs in the random oracle model, and whether the loss is a constant, a factor of the query count, or worse.}
+        \li{Block, Garreta, Tiwari, and Zając: a special-sound IOP Fiat–Shamir-compiles to an adaptively sound non-interactive proof in the QROM. What that covers and what it does not.}
+        \li{Whether a [zkVM](dhsorens-003Q)'s statement is genuinely fixed at circuit-compile time in deployment — including [precompiles](dhsorens-003V) and any circuit chosen by an untrusted party — and who is responsible for checking.}
     }
 }
 
 \p{
-    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118), [On Soundness
-    Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256).
+    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118), [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256).
 }

@@ -3,22 +3,17 @@
 \date{2026-08-18}
 
 \p{
-    One protocol, used everywhere: GKR, [Spartan](dhsorens-003G), [HyperPlonk](dhsorens-003H),
-    Basefold, logUp-GKR, [WHIR](dhsorens-003C). It is the first thing [ArkLib](dhsorens-0040)
-    formalised, and probably the right place to start reading Lean.
+    One protocol, used everywhere: GKR, [Spartan](dhsorens-003G), [HyperPlonk](dhsorens-003H), Basefold, logUp-GKR, [WHIR](dhsorens-003C). It is the first thing [ArkLib](dhsorens-0040) formalised, and probably the right place to start reading Lean.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{The protocol and [its soundness error](dhsorens-004L), stated with the degree and
-        variable count explicit.}
+        \li{The protocol and [its soundness error](dhsorens-004L), stated with the degree and variable count explicit.}
         \li{Prover cost: the linear-time algorithm, and what changes when the base field is small.}
         \li{Batching several sumchecks; zero-knowledge variants.}
-        \li{Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck
-        meets a [commitment scheme](dhsorens-002Z).}
-        \li{Why the [Fiat–Shamir attack](dhsorens-002G) landed on GKR, a sumcheck-based protocol,
-        and what that implies about parameterisation.}
+        \li{Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck meets a [commitment scheme](dhsorens-002Z).}
+        \li{Why the [Fiat–Shamir attack](dhsorens-002G) landed on GKR, a sumcheck-based protocol, and what that implies about parameterisation.}
     }
 }
 

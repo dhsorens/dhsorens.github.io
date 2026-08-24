@@ -263,7 +263,12 @@
               </fr:mainmatter>
             </fr:tree>
             <html:p>
-    The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
+    The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and
+    crypto-economic properties that are difficult to state in a prose specification, much less in a
+    formal way. This in contrast with something like
+    <fr:link href="/dhsorens-0052/" title="Interfaces as Specifications" uri="https://derekhsorensen.com/dhsorens-0052/" display-uri="dhsorens-0052" type="local">ZK circuits, which are an interesting, contrasting case</fr:link>: a hash function's
+    specification is an equation, so fixing an interface in Lean is enough to make optimisation safe
+    — a discipline that would have bought nothing here.
     </html:p>
             <fr:tree show-metadata="false">
               <fr:frontmatter>

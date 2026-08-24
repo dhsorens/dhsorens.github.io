@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/default.xsl"?>
+<fr:tree xmlns:fr="http://www.forester-notes.org" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" root="false" base-url="/">
+  <fr:frontmatter>
+    <fr:authors>
+      <fr:author>
+        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+      </fr:author>
+    </fr:authors>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>8</fr:month>
+      <fr:day>21</fr:day>
+    </fr:date>
+    <fr:uri>https://derekhsorensen.com/dhsorens-004X/</fr:uri>
+    <fr:display-uri>dhsorens-004X</fr:display-uri>
+    <fr:route>/dhsorens-004X/</fr:route>
+    <fr:title text="A Note on Sigma Protocols and Schnorr">A Note on Sigma Protocols and Schnorr</fr:title>
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <html:p><fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">Sigma protocols</fr:link> are the three-move public-coin proof of knowledge, and
+    <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> is that shape worked through in full — the verification equation, the
+    one subtraction that extracts the witness, and the simulator that is the same equation read
+    backwards. Writing it out settled a naming question I had been sloppy about.
+    <html:em>Zero-knowledge proof of knowledge</html:em> under-specifies Schnorr twice: the zero-knowledge is only
+    <html:em>special honest-verifier</html:em>, and <html:em>of knowledge</html:em> is the half doing the work, because every
+    group element has a discrete logarithm and so plain soundness is a claim about nothing.
+</html:p>
+    <html:p>
+    The pages:
+    <html:ul><html:li><fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">Sigma protocols</fr:link> — the relation, the three messages, and completeness,
+        special soundness, and special honest-verifier zero knowledge as the three defining
+        properties. A sigma protocol is the <fr:tex display="inline"><![CDATA[\mu  = 1]]></fr:tex>, <fr:tex display="inline"><![CDATA[k_1 = 2]]></fr:tex> case of the
+        <fr:link href="/dhsorens-004K/" title="Special Soundness" uri="https://derekhsorensen.com/dhsorens-004K/" display-uri="dhsorens-004K" type="local">transcript trees</fr:link> the rest of the corpus runs on.</html:li>
+        <html:li><fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">The Schnorr protocol</fr:link> — the arithmetic, why each of the three properties
+        holds, and why prime order is what makes extraction work.</html:li>
+        <html:li><fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">Cyclic groups and the discrete logarithm</fr:link> — a stub, opened first in the
+        <fr:link href="/dhsorens-002J/" title="The Algebraic and Coding-Theoretic Toolkit" uri="https://derekhsorensen.com/dhsorens-002J/" display-uri="dhsorens-002J" type="local">algebraic toolkit</fr:link>, for the group setting these protocols are stated over.</html:li></html:ul>
+    What is still open is the gap between honest-verifier and malicious-verifier zero knowledge,
+    which the three moves do not close on their own, and which none of these pages does more than
+    name.
+</html:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="References">References</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Context">Context</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:uri>https://derekhsorensen.com/dhsorens-notes/</fr:uri>
+            <fr:display-uri>dhsorens-notes</fr:display-uri>
+            <fr:route>/dhsorens-notes/</fr:route>
+            <fr:title text="Notes">Notes</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    I am interested, broadly speaking, in formal proposition and proof. From a high level, what
+    tends to catch my attention is the nuance of going from an intuitive, abstract idea into
+    something formal—whether it's a formal specification of a program, a formalized theorem
+    statement, or even something simply written out as a program.
+</html:p>
+            <html:p>
+    During my PhD this manifested as written work focused on the problem of (correctly) specifying
+    and formally verifying <fr:link href="/dhsorens-000A/" title="The Main Contributions of my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000A/" display-uri="dhsorens-000A" type="local">financial smart contracts</fr:link>. But I continue to be
+    interested in <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">software verification more broadly</fr:link>, the ongoing work to
+    <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize mathematics</fr:link>, and other developments in using
+    <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> in production.
+</html:p>
+            <html:p>
+    I recently started work on formally verifying <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">all things zero-knowledge</fr:link> on the
+    Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>24</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0054/</fr:uri>
+                <fr:display-uri>dhsorens-0054</fr:display-uri>
+                <fr:route>/dhsorens-0054/</fr:route>
+                <fr:title text="A Note on Clean and Circuit Specifications">A Note on Clean and Circuit Specifications</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> is now written out as a section of the <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>
+    corpus, from the sources rather than from the announcements. The claim it organises around is
+    that a circuit specification is a contract — assumptions as precondition, spec as
+    postcondition — and that the two halves of it have to be proved separately, because each is
+    satisfiable on its own by a circuit that is useless in the opposite direction. What convinced me
+    the framing is more than tidy bookkeeping is <fr:link href="/dhsorens-0053/" title="zk.golf" uri="https://derekhsorensen.com/dhsorens-0053/" display-uri="dhsorens-0053" type="local">zk.golf</fr:link>, where the contract is
+    fixed in Lean and the circuit is left entirely free, so an optimised circuit is accepted or
+    rejected by the kernel and never by review. That works for a hash function because the
+    specification is an equation; it would not have rescued the
+    <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">smart contract specifications</fr:link> I spent a thesis on, and the difference is in the
+    specification problem rather than in the method.
+</html:p>
+                <html:p>
+    The pages:
+    <html:ul><html:li><fr:link href="/dhsorens-004Y/" title="Circuits, Constraints, and Witness Generation" uri="https://derekhsorensen.com/dhsorens-004Y/" display-uri="dhsorens-004Y" type="local">Circuits, constraints, and witness generation</fr:link> — the circuit monad,
+        the five operations, and why witness generation is compiled to a serialisable IR rather than
+        written as a Lean closure.</html:li>
+        <html:li><fr:link href="/dhsorens-004Z/" title="Soundness and Completeness of a Circuit" uri="https://derekhsorensen.com/dhsorens-004Z/" display-uri="dhsorens-004Z" type="local">Soundness and completeness of a circuit</fr:link> — the two obligations stated
+        precisely, and what the three circuit structures are for. The bit-decomposition gadget is
+        the example that forces the general form.</html:li>
+        <html:li><fr:link href="/dhsorens-0050/" title="Arithmetisations and Backends" uri="https://derekhsorensen.com/dhsorens-0050/" display-uri="dhsorens-0050" type="local">Arithmetisations and backends</fr:link> — flat AIR, channels and ensembles, and
+        an honest accounting of how deep the AIR, Plonkish, and <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> support
+        actually goes.</html:li>
+        <html:li><fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">Circuits in Clean</fr:link> — the zero-test read line by line, including what
+        breaks when one constraint is deleted, plus byte addition and the Fibonacci table.</html:li>
+        <html:li><fr:link href="/dhsorens-0055/" title="Algebraic Varieties" uri="https://derekhsorensen.com/dhsorens-0055/" display-uri="dhsorens-0055" type="local">Algebraic varieties</fr:link> — a Clean circuit's constraints cut out a
+        variety; the spec is what that variety is supposed to mean.</html:li>
+        <html:li><fr:link href="/dhsorens-0052/" title="Interfaces as Specifications" uri="https://derekhsorensen.com/dhsorens-0052/" display-uri="dhsorens-0052" type="local">Interfaces as specifications</fr:link> — what an interface has to pin down
+        beyond soundness and completeness, and <fr:link href="/dhsorens-0053/" title="zk.golf" uri="https://derekhsorensen.com/dhsorens-0053/" display-uri="dhsorens-0053" type="local">zk.golf</fr:link> as the worked case, with the
+        SHA-256 cost broken down.</html:li></html:ul></html:p>
+                <html:p>
+    Two things are open and worth naming. Clean and <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> prove complementary
+    halves of a proof system's correctness and do not compose — joining them is an exploratory
+    roadmap item, and until it happens a verified circuit and a verified argument are two theorems
+    with the arithmetisation's satisfiability relation between them. And verifier challenges are not
+    modelled, so <fr:link href="/dhsorens-002W/" title="Lookup Arguments" uri="https://derekhsorensen.com/dhsorens-002W/" display-uri="dhsorens-002W" type="local">lookup arguments</fr:link> are not proved end to end inside Clean, which is
+    awkward given that lookups are where a zkVM's prover time goes.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>21</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004X/</fr:uri>
+                <fr:display-uri>dhsorens-004X</fr:display-uri>
+                <fr:route>/dhsorens-004X/</fr:route>
+                <fr:title text="A Note on Sigma Protocols and Schnorr">A Note on Sigma Protocols and Schnorr</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">Sigma protocols</fr:link> are the three-move public-coin proof of knowledge, and
+    <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> is that shape worked through in full — the verification equation, the
+    one subtraction that extracts the witness, and the simulator that is the same equation read
+    backwards. Writing it out settled a naming question I had been sloppy about.
+    <html:em>Zero-knowledge proof of knowledge</html:em> under-specifies Schnorr twice: the zero-knowledge is only
+    <html:em>special honest-verifier</html:em>, and <html:em>of knowledge</html:em> is the half doing the work, because every
+    group element has a discrete logarithm and so plain soundness is a claim about nothing.
+</html:p>
+                <html:p>
+    The pages:
+    <html:ul><html:li><fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">Sigma protocols</fr:link> — the relation, the three messages, and completeness,
+        special soundness, and special honest-verifier zero knowledge as the three defining
+        properties. A sigma protocol is the <fr:tex display="inline"><![CDATA[\mu  = 1]]></fr:tex>, <fr:tex display="inline"><![CDATA[k_1 = 2]]></fr:tex> case of the
+        <fr:link href="/dhsorens-004K/" title="Special Soundness" uri="https://derekhsorensen.com/dhsorens-004K/" display-uri="dhsorens-004K" type="local">transcript trees</fr:link> the rest of the corpus runs on.</html:li>
+        <html:li><fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">The Schnorr protocol</fr:link> — the arithmetic, why each of the three properties
+        holds, and why prime order is what makes extraction work.</html:li>
+        <html:li><fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">Cyclic groups and the discrete logarithm</fr:link> — a stub, opened first in the
+        <fr:link href="/dhsorens-002J/" title="The Algebraic and Coding-Theoretic Toolkit" uri="https://derekhsorensen.com/dhsorens-002J/" display-uri="dhsorens-002J" type="local">algebraic toolkit</fr:link>, for the group setting these protocols are stated over.</html:li></html:ul>
+    What is still open is the gap between honest-verifier and malicious-verifier zero knowledge,
+    which the three moves do not close on their own, and which none of these pages does more than
+    name.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>19</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004R/</fr:uri>
+                <fr:display-uri>dhsorens-004R</fr:display-uri>
+                <fr:route>/dhsorens-004R/</fr:route>
+                <fr:title text="A Note on Soundness Notions">A Note on Soundness Notions</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">Soundness notions</fr:link> is the first written-out section of the <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link> corpus: the five things <html:em>sound</html:em> can mean in the security theorem for a proof system, and the implications between them. It organises around one claim — compilation chooses a notion rather than inheriting one, so a protocol proved sound end to end has not yet been proved anything about its deployed form. Khovratovich, Rothblum, and Soukhanov proved false statements against a GKR-based argument whose interactive soundness was never in question.
+</html:p>
+                <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">Soundness, knowledge soundness, and extraction</fr:link> — why soundness is vacuous on a trivial language, why <fr:link href="/dhsorens-003L/" title="IVC and Proof-Carrying Data" uri="https://derekhsorensen.com/dhsorens-003L/" display-uri="dhsorens-003L" type="local">recursion</fr:link> needs an extractor, and straightline extraction against rewinding.</html:li>
+        <html:li><fr:link href="/dhsorens-004K/" title="Special Soundness" uri="https://derekhsorensen.com/dhsorens-004K/" display-uri="dhsorens-004K" type="local">Special soundness</fr:link> — transcript trees, the coordinate-wise variant the lattice commitments run on, and the <fr:tex display="inline"><![CDATA[(Q+1)\kappa ]]></fr:tex> Fiat–Shamir bound that makes a many-round protocol analysable at all.</html:li>
+        <html:li><fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">Round-by-round soundness</fr:link> — state functions, doomed prefixes, and why the whole error budget sits on the challenge rounds.</html:li>
+        <html:li><fr:link href="/dhsorens-004M/" title="State-Restoration Soundness" uri="https://derekhsorensen.com/dhsorens-004M/" display-uri="dhsorens-004M" type="local">State-restoration soundness</fr:link> — the retry game the transform actually hands the prover, and its equivalence with round-by-round soundness.</html:li>
+        <html:li><fr:link href="/dhsorens-004N/" title="From Soundness Error to Bits of Security" uri="https://derekhsorensen.com/dhsorens-004N/" display-uri="dhsorens-004N" type="local">From soundness error to bits of security</fr:link> — the five terms in the bound, and the two conventions for quoting a number of bits.</html:li></html:ul>
+    Three more are open as stubs: <fr:link href="/dhsorens-004O/" title="Adaptive Soundness" uri="https://derekhsorensen.com/dhsorens-004O/" display-uri="dhsorens-004O" type="local">adaptive soundness</fr:link>, which is what the Fiat–Shamir attacks actually break; <fr:link href="/dhsorens-004P/" title="Amplification and Repetition" uri="https://derekhsorensen.com/dhsorens-004P/" display-uri="dhsorens-004P" type="local">amplification and repetition</fr:link>; and <fr:link href="/dhsorens-004Q/" title="Simulation Extractability and Malleability" uri="https://derekhsorensen.com/dhsorens-004Q/" display-uri="dhsorens-004Q" type="local">simulation extractability</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004I/</fr:uri>
+                <fr:display-uri>dhsorens-004I</fr:display-uri>
+                <fr:route>/dhsorens-004I/</fr:route>
+                <fr:title text="A Note on Hash Functions in Bitcoin and Ethereum">A Note on Hash Functions in Bitcoin and Ethereum</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-004D/" title="Hash Functions in Bitcoin and Ethereum" uri="https://derekhsorensen.com/dhsorens-004D/" display-uri="dhsorens-004D" type="local">Hash Functions in Bitcoin and Ethereum</fr:link> is about what each chain actually hashes with, and about the Ethereum Foundation abandoning Poseidon for L1 on 13 August 2026. The reason is the interesting part: Poseidon did not break. Proof systems over binary fields made conventional hashes cheap enough to prove that decades of public cryptanalysis became the deciding factor instead.
+</html:p>
+                <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-004E/" title="SHA-2 and the Bitcoin Design" uri="https://derekhsorensen.com/dhsorens-004E/" display-uri="dhsorens-004E" type="local">SHA-2 and the Bitcoin design</fr:link> — double SHA-256 for proof of work and transaction identifiers, RIPEMD-160 for legacy addresses, tagged hashes for Taproot.</html:li>
+        <html:li><fr:link href="/dhsorens-004F/" title="Keccak and Ethereum" uri="https://derekhsorensen.com/dhsorens-004F/" display-uri="dhsorens-004F" type="local">Keccak and Ethereum</fr:link> — why <html:code>keccak256</html:code> is not SHA-3, everywhere it names state, and the SHA-256 half of the protocol on the consensus layer.</html:li>
+        <html:li><fr:link href="/dhsorens-004G/" title="The BLAKE Family: 2s, 2b, and 3" uri="https://derekhsorensen.com/dhsorens-004G/" display-uri="dhsorens-004G" type="local">The BLAKE family</fr:link> — 2s against 2b, what BLAKE3's tree mode buys, and which variant is actually a candidate.</html:li>
+        <html:li><fr:link href="/dhsorens-004H/" title="Poseidon, and Why Ethereum Walked Away" uri="https://derekhsorensen.com/dhsorens-004H/" display-uri="dhsorens-004H" type="local">Poseidon, and why Ethereum walked away</fr:link> — the HADES construction, the cryptanalysis initiative, and the Binius and Flock results that reversed the decision.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004C/</fr:uri>
+                <fr:display-uri>dhsorens-004C</fr:display-uri>
+                <fr:route>/dhsorens-004C/</fr:route>
+                <fr:title text="A Corpus on zkVMs and SNARKs">A Corpus on zkVMs and SNARKs</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link> is a new corpus on this site: a systematic study of the cryptography and machine architecture these systems are built from, one page per topic. It follows the pipeline every modern proof system follows, from a computation to a deployed proof, and it is the theory behind the <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">snarkification work</fr:link>.
+</html:p>
+                <html:p>
+    The sections:
+    <html:ul><html:li><fr:link href="/dhsorens-002D/" title="The Shape of a Proof System" uri="https://derekhsorensen.com/dhsorens-002D/" display-uri="dhsorens-002D" type="local">The shape of a proof system</fr:link> — the definitions everything else is stated in, and where security is lost between an interactive protocol and a deployed one.</html:li>
+        <html:li><fr:link href="/dhsorens-002J/" title="The Algebraic and Coding-Theoretic Toolkit" uri="https://derekhsorensen.com/dhsorens-002J/" display-uri="dhsorens-002J" type="local">The algebraic and coding-theoretic toolkit</fr:link> — fields, polynomials, Reed–Solomon codes, proximity gaps, sumcheck.</html:li>
+        <html:li><fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">Arithmetisation</fr:link> — R1CS, Plonkish, AIR, lookups, and <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link>.</html:li>
+        <html:li><fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">Polynomial commitment schemes</fr:link>, and <fr:link href="/dhsorens-0036/" title="Low-Degree Testing, from FRI to WHIR" uri="https://derekhsorensen.com/dhsorens-0036/" display-uri="dhsorens-0036" type="local">low-degree testing</fr:link> from FRI through STIR to WHIR.</html:li>
+        <html:li><fr:link href="/dhsorens-003D/" title="Proof Systems in the Wild" uri="https://derekhsorensen.com/dhsorens-003D/" display-uri="dhsorens-003D" type="local">Proof systems in the wild</fr:link> and <fr:link href="/dhsorens-003K/" title="Folding, Recursion, and Aggregation" uri="https://derekhsorensen.com/dhsorens-003K/" display-uri="dhsorens-003K" type="local">folding, recursion, and aggregation</fr:link>.</html:li>
+        <html:li><fr:link href="/dhsorens-003Q/" title="zkVMs" uri="https://derekhsorensen.com/dhsorens-003Q/" display-uri="dhsorens-003Q" type="local">zkVMs</fr:link> — the stack, the systems in the field, and how they break.</html:li>
+        <html:li><fr:link href="/dhsorens-003Z/" title="Formalising the Stack" uri="https://derekhsorensen.com/dhsorens-003Z/" display-uri="dhsorens-003Z" type="local">Formalising the stack</fr:link> — <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>, <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>, and the rest of the verified-zkEVM effort.</html:li>
+        <html:li><fr:link href="/dhsorens-0046/" title="The Ethereum Setting" uri="https://derekhsorensen.com/dhsorens-0046/" display-uri="dhsorens-0046" type="local">The Ethereum setting</fr:link>, and <fr:link href="/dhsorens-004B/" title="A Reading Path" uri="https://derekhsorensen.com/dhsorens-004B/" display-uri="dhsorens-004B" type="local">a reading path</fr:link> through all of it.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>3</fr:month>
+                  <fr:day>27</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0027/</fr:uri>
+                <fr:display-uri>dhsorens-0027</fr:display-uri>
+                <fr:route>/dhsorens-0027/</fr:route>
+                <fr:title text="LC3 in Lean">LC3 in Lean</fr:title>
+                <fr:taxon>Blog</fr:taxon>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+ I recently implemented a <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">formally verified virtual machine in Lean</fr:link> on which you can run 2048 in terminal! Try it out!
+</html:p>
+                <html:em>ISA-level model</html:em>
+                <html:p>
+The LC-3 is a small 16-bit instructional architecture: eight general-purpose registers, a program counter, condition flags, and a <fr:tex display="inline"><![CDATA[2^{16}]]></fr:tex>-word address space.
+At each step the machine fetches a word from memory at the PC, decodes it as one of <html:strong>fourteen</html:strong> opcodes (from arithmetic and bitwise operations to loads, stores, branches, jumps, and subroutine calls), then updates registers, memory, and control flow accordingly.
+Beyond those opcodes, LC-3 programs rely on <html:em>trap</html:em> routines for console I/O and on <html:em>memory-mapped I/O</html:em> for the keyboard—so a faithful simulator must implement both the core instructions and this I/O story. For more on the architecture, <fr:link href="https://www.jmeiners.com/lc3-vm/" type="external">see here</fr:link>.
+</html:p>
+                <html:p>
+The code in <fr:link href="https://github.com/dhsorens/LC3-Lean" type="external">LC3-Lean</fr:link> is laid out as follows:
+<html:ol><html:li>register and flag state lives in <html:code>LC3Lean/Registers.lean</html:code>,</html:li>
+    <html:li>the flat memory model in <html:code>LC3Lean/Memory.lean</html:code>,</html:li>
+    <html:li>opcode decoding in <html:code>LC3Lean/Instructions.lean</html:code>,</html:li>
+    <html:li>the fetch–decode–execute step and per-opcode semantics in <html:code>LC3Lean/Execution.lean</html:code>,</html:li>
+    <html:li>
+    The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>. If you open those modules, every informal claim in this paragraph—word size, register count, opcode coverage, traps, MMIO—is meant to be visible as definitions and executable code rather than hand-waving.
+    </html:li></html:ol>
+   The runnable binary wires together loading of <html:code>.obj</html:code> files, the execution loop, and MMIO in <html:code>Main.lean</html:code>.
+</html:p>
+                <html:p>
+    For full details, <fr:link href="/dhsorens-0029/" title="The ISA-level details of LC3-Lean" uri="https://derekhsorensen.com/dhsorens-0029/" display-uri="dhsorens-0029" type="local">see this page</fr:link>.
+</html:p>
+                <html:em>Formal proofs</html:em>
+                <html:p>
+"Formally verified" here means that Lean checks mathematical theorems relating the implementation above to <fr:link href="/dhsorens-0044/" title="Specifying the Machine: Sail, LLZK, zkLean" uri="https://derekhsorensen.com/dhsorens-0044/" display-uri="dhsorens-0044" type="local">an explicit ISA-level specification</fr:link> of how each instruction may read and write registers and memory.
+Those theorems are stated and proved in the <html:code>LC3Correct</html:code> package—especially <html:code>LC3Correct/ExecutionCorrect.lean</html:code>, with supporting lemmas about registers and memory in <html:code>LC3Correct/RegisterLemmas.lean</html:code> and <html:code>LC3Correct/MemoryLemmas.lean</html:code>. Together they aim to capture, opcode by opcode, that the Lean executor’s effect on machine state matches the spec encoded alongside it. All proofs pass without <html:code>sorry</html:code>!
+</html:p>
+                <html:em>Trust Base and Verification Boundary</html:em>
+                <html:p>
+The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</html:code>) used for POSIX terminal raw mode and polling: it affects how characters reach your screen and keyboard, but the LC-3 machine semantics and the correctness proofs live on the Lean side. Readers who want the precise logical statement for a single opcode should start from <html:code>LC3Correct/ExecutionCorrect.lean</html:code> and follow the definitions it references—the prose here is only a map to those lemmas.
+</html:p>
+                <html:p>
+    For full details, <fr:link href="/dhsorens-002A/" title="Details on the Proofs of Correctness for LC3-Lean" uri="https://derekhsorensen.com/dhsorens-002A/" display-uri="dhsorens-002A" type="local">see this page</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>3</fr:month>
+                  <fr:day>11</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0025/</fr:uri>
+                <fr:display-uri>dhsorens-0025</fr:display-uri>
+                <fr:route>/dhsorens-0025/</fr:route>
+                <fr:title text="CompPoly and Computable Specifications">CompPoly and Computable Specifications</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out
+    <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified model of computable
+    polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. The purpose of CompPoly is to provide a computable base
+    for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+</html:p>
+                <html:p>
+    My thoughts on computable specifications are still developing. They are growing out of an
+    interest during my PhD in the integrity of formal specifications
+    <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKS</fr:link> also have
+    complicated specifications, but for a different reason than smart contracts. Whereas smart
+    contract specifications have difficult-to-define, high-level, socio-economic properties that one
+    must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty
+    intense mathematics. Just stating the desired properties requires quite a bit of machinery --
+    see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
+</html:p>
+                <html:p>
+    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does
+    computability add to this, or any specification? For one, it lets you run tests. Having tests
+    lets you test the integrity of your spec and test it in sort of a meta- way. It helps build
+    confidence that the spec was built out correctly, something that is difficult (impossible?) to
+    really know. <fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">Clean</fr:link> keeps a Python implementation of SHA-256 beside the Lean
+    specification it proves circuits against, which is the smallest version of this argument I have
+    seen in use.
+</html:p>
+                <html:p>
+    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications
+    of specifications, in the context of smart contracts. I really believe that metaspecifications
+    can add a lot to the security of smart contracts, but a lot of theory has to be built up (even
+    just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy
+    for contracts in the wild.
+</html:p>
+                <html:p>
+    However, metaspecifications already show up in cryptography! An implementation has a
+    specification, the design of the cryptographic system or protocol (e.g. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>).
+    The system or protocol is defined in mathematical terms, with assumptions, and with associated
+    proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol
+    fails, then some assumption of the system was violated. This is a metaspecification!
+</html:p>
+                <html:p>
+    But, as with all specifications, it is very hard to be sure that your specification is correct.
+    This is where computability comes in. Having an executable/computable specification means that
+    you can run tests on it, further extending your specification in an informal way. It makes your
+    spec act more like software, and in some sense makes it stronger as a specification because as a
+    program that runs it is closer to the thing that you're verifying.
+</html:p>
+                <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable
+    and non-computable terms, spec and implementation, and more and more of the infrastructure of
+    verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>12</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0020/</fr:uri>
+                <fr:display-uri>dhsorens-0020</fr:display-uri>
+                <fr:route>/dhsorens-0020/</fr:route>
+                <fr:title text="Protocol Snarkification">Protocol Snarkification</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    There are ongoing efforts to "snarkify" <fr:link href="/dhsorens-ethereum/" title="Ethereum" uri="https://derekhsorensen.com/dhsorens-ethereum/" display-uri="dhsorens-ethereum" type="local">Ethereum</fr:link>, i.e. to integrate <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zero knowledge proofs</fr:link> into every layer of the Ethereum protocol. I contribute to this via <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. My main focus is currently on <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link> and <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+</html:p>
+                <html:p>
+    See <fr:link href="http://verified-zkevm.org/" type="external">our website</fr:link> for more information.
+</html:p>
+                <html:p>
+    A systematic study of the underlying cryptography, topic by topic, is collected in <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>29</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000U/</fr:uri>
+                <fr:display-uri>dhsorens-000U</fr:display-uri>
+                <fr:route>/dhsorens-000U/</fr:route>
+                <fr:title text="Formal Specification and Verification">Formal Specification and Verification</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Most of my formal research work is in <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal specification and verification</fr:link>, especially in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> like <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>, <fr:link href="/dhsorens-rocq/" title="The Rocq Theorem Prover" uri="https://derekhsorensen.com/dhsorens-rocq/" display-uri="dhsorens-rocq" type="local">Rocq</fr:link>, and the like.
+
+    During my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> and in the years after a lot of time thinking about <fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">smart contract</fr:link> design, specification, and verification.
+    
+    </html:p>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>8</fr:month>
+                      <fr:day>29</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-000W/</fr:uri>
+                    <fr:display-uri>dhsorens-000W</fr:display-uri>
+                    <fr:route>/dhsorens-000W/</fr:route>
+                    <fr:title text="Smart Contract Design, Specification, and Verification">Smart Contract Design, Specification, and Verification</fr:title>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p><fr:link href="/dhsorens-000Y/" title="Smart Contracts" uri="https://derekhsorensen.com/dhsorens-000Y/" display-uri="dhsorens-000Y" type="local">Smart contracts</fr:link> are interesting from the perspective of formal specification and verification because:
+</html:p>
+                    <html:ol><html:li>they are risk- and property-dense,</html:li>
+    <html:li>they are typically small in size, with a deterministic and well-defined execution environment, making them feasible to formally reason about in a short time frame, and</html:li>
+    <html:li>they often manage huge sums of money (so the incentives line up).</html:li></html:ol>
+                    <html:p>
+    Furthermore, because smart contracts act as social and financial intermediaries, they often have extremely <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">interesting (and nontrivia) specifications</fr:link>, which warrants a study not only of the science of going from specification to verification (formal proof), but of the <html:em>specifications themselves</html:em> as independent, mathematical objects.
+</html:p>
+                  </fr:mainmatter>
+                </fr:tree>
+                <fr:tree show-metadata="false">
+                  <fr:frontmatter>
+                    <fr:authors>
+                      <fr:author>
+                        <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                      </fr:author>
+                    </fr:authors>
+                    <fr:date>
+                      <fr:year>2025</fr:year>
+                      <fr:month>9</fr:month>
+                      <fr:day>2</fr:day>
+                    </fr:date>
+                    <fr:uri>https://derekhsorensen.com/dhsorens-0015/</fr:uri>
+                    <fr:display-uri>dhsorens-0015</fr:display-uri>
+                    <fr:route>/dhsorens-0015/</fr:route>
+                    <fr:title text="Formal Verification in Proof Assistants">Formal Verification in Proof Assistants</fr:title>
+                    <fr:meta name="toc">true</fr:meta>
+                  </fr:frontmatter>
+                  <fr:mainmatter>
+                    <html:p>
+    Speaking more broadly, <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal verification</fr:link> in <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> is interesting because in the robustly mathematical setting provided by proof assistants, one can state and prove arbitrary properties.
+
+    This may be a blessing and a curse.
+    Much like with programming languages, being able to state and do arbitrary things is not always an advantage.
+    
+    Due to the extreme flexibility, formal counterparts of informal specifications can vary widely without an obvious way to compare them or evaluate them for correctness or practical utility (for more on this see the introduction to my <fr:link href="/dhsorens-000C/" title="Links and Referencing my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000C/" display-uri="dhsorens-000C" type="local">PhD thesis</fr:link>).
+
+</html:p>
+                    <html:p>
+    In my <fr:link href="/dhsorens-phd/" title="PhD in Formal Methods" uri="https://derekhsorensen.com/dhsorens-phd/" display-uri="dhsorens-phd" type="local">PhD</fr:link> and my subsequent writing (e.g. <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local">this paper</fr:link> or my <fr:link href="/dhsorens-000S/" title="Research Statement" uri="https://derekhsorensen.com/dhsorens-000S/" display-uri="dhsorens-000S" type="local">research statement</fr:link>), I have argued that the robustly mathematical setting of proof assistants offers us an opportunity for unmatched rigor, but we must draw on mathematical practice and tradition and use them in a more sophisticated way than we are using them now.
+    There is much to be learned from the ongoing work in the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> and <fr:link href="/dhsorens-000X/" title="Formal Specification and Verification" uri="https://derekhsorensen.com/dhsorens-000X/" display-uri="dhsorens-000X" type="local">formal specification and verification in proof assistants</fr:link> more broadly,
+    from theoretical and practical perspectives.
+</html:p>
+                  </fr:mainmatter>
+                </fr:tree>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2025</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>29</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-000V/</fr:uri>
+                <fr:display-uri>dhsorens-000V</fr:display-uri>
+                <fr:route>/dhsorens-000V/</fr:route>
+                <fr:title text="Type Theory and Formal Proof">Type Theory and Formal Proof</fr:title>
+                <fr:meta name="toc">true</fr:meta>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    I am also interested more broadly in type theory and formal proof, especially as they relate to <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link>. This has included some <fr:link href="/dhsorens-0009/" title="The Background to my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-0009/" display-uri="dhsorens-0009" type="local">preliminary work</fr:link> in <fr:link href="/dhsorens-hott/" title="Homotopy Type Theory (HoTT)" uri="https://derekhsorensen.com/dhsorens-hott/" display-uri="dhsorens-hott" type="local">HoTT</fr:link> on the formal side, but ongoing work in the <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalization of mathematics</fr:link> in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is deeply interesting to me as a <fr:link href="/dhsorens-0017/" title="How the Formalization of Mathematics Relates to My Work" uri="https://derekhsorensen.com/dhsorens-0017/" display-uri="dhsorens-0017" type="local">peripheral development to my work</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Backlinks">Backlinks</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Related">Related</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>21</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004W/</fr:uri>
+            <fr:display-uri>dhsorens-004W</fr:display-uri>
+            <fr:route>/dhsorens-004W/</fr:route>
+            <fr:title text="Cyclic Groups and the Discrete Logarithm">Cyclic Groups and the Discrete Logarithm</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The setting the classical proofs of knowledge are stated over. A cyclic group <fr:tex display="inline"><![CDATA[G]]></fr:tex> of prime
+    order <fr:tex display="inline"><![CDATA[q]]></fr:tex> with generator <fr:tex display="inline"><![CDATA[g]]></fr:tex>: every element of <fr:tex display="inline"><![CDATA[G]]></fr:tex> is <fr:tex display="inline"><![CDATA[g^w]]></fr:tex> for exactly one exponent <fr:tex display="inline"><![CDATA[w]]></fr:tex> in
+    <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex>, so exponentiation is a bijection from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> to <fr:tex display="inline"><![CDATA[G]]></fr:tex> and exponent
+    arithmetic is arithmetic in a prime field. The discrete logarithm problem is to invert that
+    bijection — given <fr:tex display="inline"><![CDATA[h \in  G]]></fr:tex>, find <fr:tex display="inline"><![CDATA[w]]></fr:tex> with <fr:tex display="inline"><![CDATA[g^w = h]]></fr:tex> — and it is assumed hard in the groups
+    used in practice, which are elliptic curve groups over a large prime field.
+</html:p>
+            <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Cyclic group, order, generator; why prime order rather than merely cyclic, and what
+        breaks at composite order.</html:li>
+        <html:li>Why prime <fr:tex display="inline"><![CDATA[q]]></fr:tex> makes every nonzero exponent difference invertible — the single step
+        <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> extraction turns on.</html:li>
+        <html:li>The discrete logarithm assumption and its relatives, computational and decisional
+        Diffie–Hellman, and which of them a given <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocol</fr:link> actually needs.</html:li>
+        <html:li>What is known about the hardness: generic-group lower bounds, index calculus, and why
+        elliptic curves rather than the multiplicative group of a prime field.</html:li>
+        <html:li>Where the setting reappears later in the corpus: the
+        <fr:link href="/dhsorens-0033/" title="Inner-Product Arguments" uri="https://derekhsorensen.com/dhsorens-0033/" display-uri="dhsorens-0033" type="local">inner-product arguments</fr:link> that scale it to logarithmic proofs, and the
+        <fr:link href="/dhsorens-0032/" title="KZG and the Pairing-Based Line" uri="https://derekhsorensen.com/dhsorens-0032/" display-uri="dhsorens-0032" type="local">pairing-based line</fr:link> that asks more of the curve than a group law.</html:li>
+        <html:li>Why this setting is absent from the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family, and what replaces the
+        group structure there — <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">fields</fr:link> and <fr:link href="/dhsorens-002O/" title="Reed–Solomon and Linear Codes" uri="https://derekhsorensen.com/dhsorens-002O/" display-uri="dhsorens-002O" type="local">codes</fr:link>.</html:li>
+        <html:li>Post-quantum status: Shor breaks all of it, which is the reason the
+        <fr:link href="/dhsorens-0049/" title="Post-Quantum Pressure" uri="https://derekhsorensen.com/dhsorens-0049/" display-uri="dhsorens-0049" type="local">lattice protocols</fr:link> exist.</html:li></html:ul></html:p>
+            <html:p>
+    Reading: Boneh and Shoup, <html:em>A Graduate Course in Applied Cryptography</html:em>, for the assumptions
+    and their relations; Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em>, for how they enter the
+    proof systems.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>21</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004U/</fr:uri>
+            <fr:display-uri>dhsorens-004U</fr:display-uri>
+            <fr:route>/dhsorens-004U/</fr:route>
+            <fr:title text="Sigma Protocols">Sigma Protocols</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    A sigma protocol is a three-move public-coin proof of knowledge. It is the smallest object
+    carrying all three of the properties a security theorem for a proof system has to state, which
+    is why the definitions in this section are easiest to read against one, and why
+    <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> is worth holding in mind throughout.
+</html:p>
+            <html:p><html:strong>The relation.</html:strong> Fix a relation <fr:tex display="inline"><![CDATA[R \subseteq  X \times  W]]></fr:tex>. The public statement is
+    <fr:tex display="inline"><![CDATA[x \in  X]]></fr:tex>; the witness is <fr:tex display="inline"><![CDATA[w]]></fr:tex> with <fr:tex display="inline"><![CDATA[(x, w) \in  R]]></fr:tex>. The prover holds both, the verifier only
+    <fr:tex display="inline"><![CDATA[x]]></fr:tex>. What is proved is not that <fr:tex display="inline"><![CDATA[x]]></fr:tex> has a witness but that the prover knows one, which is why
+    <fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">knowledge soundness</fr:link> rather than soundness is the property with content here.
+</html:p>
+            <html:p><html:strong>The three messages.</html:strong>
+    <html:ul><html:li>The prover sends a commitment <fr:tex display="inline"><![CDATA[a]]></fr:tex>.</html:li>
+        <html:li>The verifier sends a challenge <fr:tex display="inline"><![CDATA[e]]></fr:tex>, drawn uniformly from a challenge set <fr:tex display="inline"><![CDATA[E]]></fr:tex> of size
+        <fr:tex display="inline"><![CDATA[N]]></fr:tex> and independent of <fr:tex display="inline"><![CDATA[a]]></fr:tex>. That independence is what <html:em>public-coin</html:em> means: the
+        verifier's message is its randomness, sent in the clear.</html:li>
+        <html:li>The prover sends a response <fr:tex display="inline"><![CDATA[z]]></fr:tex>.</html:li></html:ul>
+    The verifier accepts exactly when an acceptance predicate <fr:tex display="inline"><![CDATA[V(x, a, e, z)]]></fr:tex> holds. It keeps no
+    state beyond the transcript, so <fr:tex display="inline"><![CDATA[(a, e, z)]]></fr:tex> is accepting or not on its own terms, independently
+    of how it was produced. That is what makes a transcript simulable, and what makes two of them
+    subtractable.
+</html:p>
+            <html:p><html:strong>Completeness.</html:strong> An honest prover holding <fr:tex display="inline"><![CDATA[w]]></fr:tex> with <fr:tex display="inline"><![CDATA[(x, w) \in  R]]></fr:tex> is accepted. In this
+    family it holds with probability one; <fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">completeness</fr:link> is where the general
+    definition and its failure modes live.
+</html:p>
+            <html:p><html:strong>Special soundness.</html:strong> From two accepting transcripts <fr:tex display="inline"><![CDATA[(a, e, z)]]></fr:tex> and <fr:tex display="inline"><![CDATA[(a, e', z')]]></fr:tex>
+    sharing the commitment, with <fr:tex display="inline"><![CDATA[e \neq  e']]></fr:tex>, an efficient algorithm computes a <fr:tex display="inline"><![CDATA[w]]></fr:tex> with
+    <fr:tex display="inline"><![CDATA[(x, w) \in  R]]></fr:tex>. This is a condition on the algebra of <fr:tex display="inline"><![CDATA[V]]></fr:tex>, not a probability bound, so
+    checking it means exhibiting the computation rather than arguing about adversaries. Knowledge
+    soundness with error <fr:tex display="inline"><![CDATA[1/N]]></fr:tex> follows generically, by rewinding: run the prover, fork it at the
+    challenge, and collect a second accepting transcript on the same <fr:tex display="inline"><![CDATA[a]]></fr:tex>.
+    <fr:link href="/dhsorens-004K/" title="Special Soundness" uri="https://derekhsorensen.com/dhsorens-004K/" display-uri="dhsorens-004K" type="local">Special soundness</fr:link> has the multi-round generalisation and what the rewinding
+    costs once the protocol is made non-interactive.
+</html:p>
+            <html:p><html:strong>Special honest-verifier zero knowledge.</html:strong> An efficient simulator, given <fr:tex display="inline"><![CDATA[x]]></fr:tex> and a
+    challenge <fr:tex display="inline"><![CDATA[e]]></fr:tex> fixed in advance, outputs an accepting transcript <fr:tex display="inline"><![CDATA[(a, e, z)]]></fr:tex> distributed
+    exactly as a real one, with no witness. Both qualifiers do work. <html:em>Special</html:em> means the
+    simulator is handed <fr:tex display="inline"><![CDATA[e]]></fr:tex> rather than choosing it, which is what lets the property survive
+    <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link>. <html:em>Honest-verifier</html:em> means the guarantee covers a verifier that
+    draws <fr:tex display="inline"><![CDATA[e]]></fr:tex> uniformly; a malicious verifier choosing <fr:tex display="inline"><![CDATA[e]]></fr:tex> as a function of <fr:tex display="inline"><![CDATA[a]]></fr:tex> is outside the
+    definition, and closing that gap takes more than the three moves provide.
+</html:p>
+            <html:p><html:strong>The definition.</html:strong> A three-move public-coin protocol satisfying completeness, special
+    soundness, and special honest-verifier zero knowledge is a <html:em>sigma protocol</html:em> for <fr:tex display="inline"><![CDATA[R]]></fr:tex>.
+</html:p>
+            <html:p>
+    Three things beyond the definition are worth knowing. Sigma protocols compose: Cramer, Damgård,
+    and Schoenmakers showed that conjunctions and disjunctions of relations have sigma protocols
+    assembled from those for the parts, which is where ring signatures and the older range proofs
+    come from. <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> applied to one gives a signature scheme, Schnorr
+    signatures being the transform of the <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr protocol</fr:link>. And the multi-round
+    protocols the rest of this corpus is about are the generalisation —
+    <fr:tex display="inline"><![CDATA[(k_1, \dots , k_\mu )]]></fr:tex>-special soundness replaces the pair of transcripts with a tree, at which
+    point a sigma protocol is the case <fr:tex display="inline"><![CDATA[\mu  = 1]]></fr:tex>, <fr:tex display="inline"><![CDATA[k_1 = 2]]></fr:tex>.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>21</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004V/</fr:uri>
+                <fr:display-uri>dhsorens-004V</fr:display-uri>
+                <fr:route>/dhsorens-004V/</fr:route>
+                <fr:title text="The Schnorr Protocol">The Schnorr Protocol</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Schnorr is the worked example of a <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocol</fr:link>: three messages in which a
+    prover convinces a verifier that it knows the discrete logarithm of a group element, and reveals
+    nothing else. <html:em>Zero-knowledge proof of knowledge</html:em> is nearly the right name for it, but
+    under-specifies it twice. <html:em>Of knowledge</html:em> is the load-bearing half — every element of a
+    <fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">cyclic group</fr:link> generated by <fr:tex display="inline"><![CDATA[g]]></fr:tex> has a discrete logarithm, so the statement has
+    no false instances and plain <fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">soundness</fr:link> says nothing about it. And the
+    zero-knowledge is <html:em>special honest-verifier</html:em>: the simulator below needs the challenge in
+    advance and assumes it was drawn uniformly. <html:em>Honest-verifier zero-knowledge proof of
+    knowledge of a discrete logarithm</html:em> is the accurate mouthful.
+</html:p>
+                <html:p>
+    The setting is a <fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">cyclic group</fr:link> <fr:tex display="inline"><![CDATA[G]]></fr:tex> of prime order <fr:tex display="inline"><![CDATA[q]]></fr:tex> with generator <fr:tex display="inline"><![CDATA[g]]></fr:tex>, in
+    which the discrete logarithm is hard. The statement is a group element <fr:tex display="inline"><![CDATA[h \in  G]]></fr:tex>; the witness
+    is the exponent <fr:tex display="inline"><![CDATA[w \in  \mathbb {Z}_q]]></fr:tex> with <fr:tex display="inline"><![CDATA[g^w = h]]></fr:tex>.
+</html:p>
+                <html:p>
+    The protocol:
+    <html:ul><html:li>The prover draws <fr:tex display="inline"><![CDATA[r]]></fr:tex> uniformly from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> and sends the commitment
+        <fr:tex display="inline"><![CDATA[a = g^r]]></fr:tex>.</html:li>
+        <html:li>The verifier draws a challenge <fr:tex display="inline"><![CDATA[e]]></fr:tex> uniformly from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> and sends it.</html:li>
+        <html:li>The prover sends the response <fr:tex display="inline"><![CDATA[z = r + e w \bmod  q]]></fr:tex>.</html:li></html:ul>
+    The verifier accepts exactly when
+</html:p>
+                <fr:tex display="block"><![CDATA[g^z = a \cdot  h^e.]]></fr:tex>
+                <html:p><html:strong>Completeness</html:strong> is the exponent arithmetic. Substituting <fr:tex display="inline"><![CDATA[z = r + ew]]></fr:tex>,
+</html:p>
+                <fr:tex display="block"><![CDATA[g^z = g^{r + e w} = g^r (g^w)^e = a \cdot  h^e,]]></fr:tex>
+                <html:p>
+    so an honest prover is always accepted and the completeness error is zero.
+</html:p>
+                <html:p><html:strong>Special soundness</html:strong> is one subtraction. Two accepting transcripts <fr:tex display="inline"><![CDATA[(a, e, z)]]></fr:tex> and
+    <fr:tex display="inline"><![CDATA[(a, e', z')]]></fr:tex> on the same commitment satisfy <fr:tex display="inline"><![CDATA[g^z = a h^e]]></fr:tex> and <fr:tex display="inline"><![CDATA[g^{z'} = a h^{e'}]]></fr:tex>. Dividing
+    the first by the second cancels <fr:tex display="inline"><![CDATA[a]]></fr:tex>:
+</html:p>
+                <fr:tex display="block"><![CDATA[g^{z - z'} = h^{e - e'}.]]></fr:tex>
+                <html:p>
+    Since <fr:tex display="inline"><![CDATA[q]]></fr:tex> is prime and <fr:tex display="inline"><![CDATA[e \neq  e']]></fr:tex>, the difference <fr:tex display="inline"><![CDATA[e - e']]></fr:tex> is invertible in <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex>,
+    so
+</html:p>
+                <fr:tex display="block"><![CDATA[w = (z - z')(e - e')^{-1} \bmod  q]]></fr:tex>
+                <html:p>
+    is the discrete logarithm of <fr:tex display="inline"><![CDATA[h]]></fr:tex>. That is the extractor in full: subtract, invert, stop. Two
+    field operations, and no assumption about the prover beyond its having produced the two
+    transcripts. It is also where the prime order earns its keep — at composite order <fr:tex display="inline"><![CDATA[e - e']]></fr:tex> may
+    fail to be invertible and the step collapses.
+</html:p>
+                <html:p><html:strong>Special honest-verifier zero knowledge</html:strong> is the same equation read backwards. Given <fr:tex display="inline"><![CDATA[h]]></fr:tex>
+    and a challenge <fr:tex display="inline"><![CDATA[e]]></fr:tex>, the simulator draws <fr:tex display="inline"><![CDATA[z]]></fr:tex> uniformly from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> and sets
+    <fr:tex display="inline"><![CDATA[a = g^z h^{-e}]]></fr:tex>, so the transcript <fr:tex display="inline"><![CDATA[(a, e, z)]]></fr:tex> satisfies the verification equation by
+    construction. The distribution matches exactly, not approximately. In a real transcript <fr:tex display="inline"><![CDATA[r]]></fr:tex> is
+    uniform, hence <fr:tex display="inline"><![CDATA[z = r + ew]]></fr:tex> is uniform and independent of <fr:tex display="inline"><![CDATA[e]]></fr:tex>, and <fr:tex display="inline"><![CDATA[a]]></fr:tex> is then pinned down by
+    <fr:tex display="inline"><![CDATA[z]]></fr:tex> and <fr:tex display="inline"><![CDATA[e]]></fr:tex> through the verification equation. Both distributions are therefore uniform <fr:tex display="inline"><![CDATA[z]]></fr:tex>
+    with <fr:tex display="inline"><![CDATA[a]]></fr:tex> determined, so they are the same distribution — and <fr:tex display="inline"><![CDATA[w]]></fr:tex> cannot be recovered from a
+    simulated transcript because it never entered.
+</html:p>
+                <html:p>
+    Three consequences outside the definition. <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> replaces the verifier
+    with a hash, <fr:tex display="inline"><![CDATA[e = H(g, h, a)]]></fr:tex>, turning the protocol into the Schnorr signature scheme —
+    deployed as Ed25519 and, since Taproot, as BIP-340 in <fr:link href="/dhsorens-bitcoin/" title="Bitcoin" uri="https://derekhsorensen.com/dhsorens-bitcoin/" display-uri="dhsorens-bitcoin" type="local">Bitcoin</fr:link> — and the
+    <fr:tex display="inline"><![CDATA[(Q+1)\kappa ]]></fr:tex> bound of <fr:link href="/dhsorens-004K/" title="Special Soundness" uri="https://derekhsorensen.com/dhsorens-004K/" display-uri="dhsorens-004K" type="local">special soundness</fr:link> is what makes the transformed
+    protocol analysable at all. Nonce reuse is the extractor turned against its owner: two
+    signatures sharing <fr:tex display="inline"><![CDATA[a]]></fr:tex> under different challenges hand over <fr:tex display="inline"><![CDATA[w]]></fr:tex> by the subtraction above,
+    which is how signing keys have actually been lost. And the knowledge error <fr:tex display="inline"><![CDATA[1/q]]></fr:tex> is a claim
+    about the challenge set, not the group — a prover with no witness can guess a challenge,
+    simulate a transcript for it, and win with that probability, so a small challenge space has to
+    be <fr:link href="/dhsorens-004P/" title="Amplification and Repetition" uri="https://derekhsorensen.com/dhsorens-004P/" display-uri="dhsorens-004P" type="local">repeated</fr:link> rather than trusted.
+</html:p>
+                <html:p>
+    Sources: Schnorr, <html:em>Efficient Signature Generation by Smart Cards</html:em> (Journal of Cryptology,
+    1991); Damgård, <fr:link href="https://www.cs.au.dk/~ivan/Sigma.pdf" type="external">On Σ-protocols</fr:link>, for the extraction and
+    simulation written out; <fr:link href="/dhsorens-0042/" title="VCV-io and Game-Based Cryptography in Lean" uri="https://derekhsorensen.com/dhsorens-0042/" display-uri="dhsorens-0042" type="local">VCV-io</fr:link> formalises sigma protocols and the Fiat–Shamir
+    transform in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <html:p>
+    Sources: Damgård, <fr:link href="https://www.cs.au.dk/~ivan/Sigma.pdf" type="external">On Σ-protocols</fr:link>, for the definitions in
+    this shape; Cramer, Damgård, and Schoenmakers, <html:em>Proofs of Partial Knowledge and Simplified
+    Design of Witness Hiding Protocols</html:em> (CRYPTO 1994), for the composition; Thaler, <html:em>Proofs,
+    Arguments, and Zero-Knowledge</html:em>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>21</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004V/</fr:uri>
+            <fr:display-uri>dhsorens-004V</fr:display-uri>
+            <fr:route>/dhsorens-004V/</fr:route>
+            <fr:title text="The Schnorr Protocol">The Schnorr Protocol</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Schnorr is the worked example of a <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocol</fr:link>: three messages in which a
+    prover convinces a verifier that it knows the discrete logarithm of a group element, and reveals
+    nothing else. <html:em>Zero-knowledge proof of knowledge</html:em> is nearly the right name for it, but
+    under-specifies it twice. <html:em>Of knowledge</html:em> is the load-bearing half — every element of a
+    <fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">cyclic group</fr:link> generated by <fr:tex display="inline"><![CDATA[g]]></fr:tex> has a discrete logarithm, so the statement has
+    no false instances and plain <fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">soundness</fr:link> says nothing about it. And the
+    zero-knowledge is <html:em>special honest-verifier</html:em>: the simulator below needs the challenge in
+    advance and assumes it was drawn uniformly. <html:em>Honest-verifier zero-knowledge proof of
+    knowledge of a discrete logarithm</html:em> is the accurate mouthful.
+</html:p>
+            <html:p>
+    The setting is a <fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">cyclic group</fr:link> <fr:tex display="inline"><![CDATA[G]]></fr:tex> of prime order <fr:tex display="inline"><![CDATA[q]]></fr:tex> with generator <fr:tex display="inline"><![CDATA[g]]></fr:tex>, in
+    which the discrete logarithm is hard. The statement is a group element <fr:tex display="inline"><![CDATA[h \in  G]]></fr:tex>; the witness
+    is the exponent <fr:tex display="inline"><![CDATA[w \in  \mathbb {Z}_q]]></fr:tex> with <fr:tex display="inline"><![CDATA[g^w = h]]></fr:tex>.
+</html:p>
+            <html:p>
+    The protocol:
+    <html:ul><html:li>The prover draws <fr:tex display="inline"><![CDATA[r]]></fr:tex> uniformly from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> and sends the commitment
+        <fr:tex display="inline"><![CDATA[a = g^r]]></fr:tex>.</html:li>
+        <html:li>The verifier draws a challenge <fr:tex display="inline"><![CDATA[e]]></fr:tex> uniformly from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> and sends it.</html:li>
+        <html:li>The prover sends the response <fr:tex display="inline"><![CDATA[z = r + e w \bmod  q]]></fr:tex>.</html:li></html:ul>
+    The verifier accepts exactly when
+</html:p>
+            <fr:tex display="block"><![CDATA[g^z = a \cdot  h^e.]]></fr:tex>
+            <html:p><html:strong>Completeness</html:strong> is the exponent arithmetic. Substituting <fr:tex display="inline"><![CDATA[z = r + ew]]></fr:tex>,
+</html:p>
+            <fr:tex display="block"><![CDATA[g^z = g^{r + e w} = g^r (g^w)^e = a \cdot  h^e,]]></fr:tex>
+            <html:p>
+    so an honest prover is always accepted and the completeness error is zero.
+</html:p>
+            <html:p><html:strong>Special soundness</html:strong> is one subtraction. Two accepting transcripts <fr:tex display="inline"><![CDATA[(a, e, z)]]></fr:tex> and
+    <fr:tex display="inline"><![CDATA[(a, e', z')]]></fr:tex> on the same commitment satisfy <fr:tex display="inline"><![CDATA[g^z = a h^e]]></fr:tex> and <fr:tex display="inline"><![CDATA[g^{z'} = a h^{e'}]]></fr:tex>. Dividing
+    the first by the second cancels <fr:tex display="inline"><![CDATA[a]]></fr:tex>:
+</html:p>
+            <fr:tex display="block"><![CDATA[g^{z - z'} = h^{e - e'}.]]></fr:tex>
+            <html:p>
+    Since <fr:tex display="inline"><![CDATA[q]]></fr:tex> is prime and <fr:tex display="inline"><![CDATA[e \neq  e']]></fr:tex>, the difference <fr:tex display="inline"><![CDATA[e - e']]></fr:tex> is invertible in <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex>,
+    so
+</html:p>
+            <fr:tex display="block"><![CDATA[w = (z - z')(e - e')^{-1} \bmod  q]]></fr:tex>
+            <html:p>
+    is the discrete logarithm of <fr:tex display="inline"><![CDATA[h]]></fr:tex>. That is the extractor in full: subtract, invert, stop. Two
+    field operations, and no assumption about the prover beyond its having produced the two
+    transcripts. It is also where the prime order earns its keep — at composite order <fr:tex display="inline"><![CDATA[e - e']]></fr:tex> may
+    fail to be invertible and the step collapses.
+</html:p>
+            <html:p><html:strong>Special honest-verifier zero knowledge</html:strong> is the same equation read backwards. Given <fr:tex display="inline"><![CDATA[h]]></fr:tex>
+    and a challenge <fr:tex display="inline"><![CDATA[e]]></fr:tex>, the simulator draws <fr:tex display="inline"><![CDATA[z]]></fr:tex> uniformly from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> and sets
+    <fr:tex display="inline"><![CDATA[a = g^z h^{-e}]]></fr:tex>, so the transcript <fr:tex display="inline"><![CDATA[(a, e, z)]]></fr:tex> satisfies the verification equation by
+    construction. The distribution matches exactly, not approximately. In a real transcript <fr:tex display="inline"><![CDATA[r]]></fr:tex> is
+    uniform, hence <fr:tex display="inline"><![CDATA[z = r + ew]]></fr:tex> is uniform and independent of <fr:tex display="inline"><![CDATA[e]]></fr:tex>, and <fr:tex display="inline"><![CDATA[a]]></fr:tex> is then pinned down by
+    <fr:tex display="inline"><![CDATA[z]]></fr:tex> and <fr:tex display="inline"><![CDATA[e]]></fr:tex> through the verification equation. Both distributions are therefore uniform <fr:tex display="inline"><![CDATA[z]]></fr:tex>
+    with <fr:tex display="inline"><![CDATA[a]]></fr:tex> determined, so they are the same distribution — and <fr:tex display="inline"><![CDATA[w]]></fr:tex> cannot be recovered from a
+    simulated transcript because it never entered.
+</html:p>
+            <html:p>
+    Three consequences outside the definition. <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> replaces the verifier
+    with a hash, <fr:tex display="inline"><![CDATA[e = H(g, h, a)]]></fr:tex>, turning the protocol into the Schnorr signature scheme —
+    deployed as Ed25519 and, since Taproot, as BIP-340 in <fr:link href="/dhsorens-bitcoin/" title="Bitcoin" uri="https://derekhsorensen.com/dhsorens-bitcoin/" display-uri="dhsorens-bitcoin" type="local">Bitcoin</fr:link> — and the
+    <fr:tex display="inline"><![CDATA[(Q+1)\kappa ]]></fr:tex> bound of <fr:link href="/dhsorens-004K/" title="Special Soundness" uri="https://derekhsorensen.com/dhsorens-004K/" display-uri="dhsorens-004K" type="local">special soundness</fr:link> is what makes the transformed
+    protocol analysable at all. Nonce reuse is the extractor turned against its owner: two
+    signatures sharing <fr:tex display="inline"><![CDATA[a]]></fr:tex> under different challenges hand over <fr:tex display="inline"><![CDATA[w]]></fr:tex> by the subtraction above,
+    which is how signing keys have actually been lost. And the knowledge error <fr:tex display="inline"><![CDATA[1/q]]></fr:tex> is a claim
+    about the challenge set, not the group — a prover with no witness can guess a challenge,
+    simulate a transcript for it, and win with that probability, so a small challenge space has to
+    be <fr:link href="/dhsorens-004P/" title="Amplification and Repetition" uri="https://derekhsorensen.com/dhsorens-004P/" display-uri="dhsorens-004P" type="local">repeated</fr:link> rather than trusted.
+</html:p>
+            <html:p>
+    Sources: Schnorr, <html:em>Efficient Signature Generation by Smart Cards</html:em> (Journal of Cryptology,
+    1991); Damgård, <fr:link href="https://www.cs.au.dk/~ivan/Sigma.pdf" type="external">On Σ-protocols</fr:link>, for the extraction and
+    simulation written out; <fr:link href="/dhsorens-0042/" title="VCV-io and Game-Based Cryptography in Lean" uri="https://derekhsorensen.com/dhsorens-0042/" display-uri="dhsorens-0042" type="local">VCV-io</fr:link> formalises sigma protocols and the Fiat–Shamir
+    transform in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>19</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-004K/</fr:uri>
+            <fr:display-uri>dhsorens-004K</fr:display-uri>
+            <fr:route>/dhsorens-004K/</fr:route>
+            <fr:title text="Special Soundness">Special Soundness</fr:title>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    Special soundness is a property of the verifier's acceptance predicate, not a probability bound, which is why it is the workhorse. For a three-move <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocol</fr:link> it says: from two accepting transcripts <fr:tex display="inline"><![CDATA[(a, c, z)]]></fr:tex> and <fr:tex display="inline"><![CDATA[(a, c', z')]]></fr:tex> sharing the first message with <fr:tex display="inline"><![CDATA[c \neq  c']]></fr:tex>, a witness can be computed in polynomial time. Checking it means exhibiting that computation — for <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link>, subtracting two linear equations — so it is verifiable by inspecting the algebra rather than by a probabilistic argument. Knowledge soundness then follows generically, with a rewinding extractor that collects the transcripts it needs.
+</html:p>
+            <html:p>
+    The multi-round generalisation is <fr:tex display="inline"><![CDATA[(k_1, \dots , k_\mu )]]></fr:tex>-special soundness. Instead of a pair of transcripts the extractor is given a tree: at the <fr:tex display="inline"><![CDATA[i]]></fr:tex>-th challenge round each node branches <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> ways with pairwise distinct challenges, and the tree of accepting leaves yields a witness. Attema and Fehr computed the resulting knowledge error exactly for challenge sets of sizes <fr:tex display="inline"><![CDATA[N_1, \dots , N_\mu ]]></fr:tex>; it is at most <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } (k_i - 1)/N_i]]></fr:tex>, which is the bound worth remembering. Two special soundness at each of <fr:tex display="inline"><![CDATA[\mu ]]></fr:tex> rounds over a field of size <fr:tex display="inline"><![CDATA[q]]></fr:tex> costs <fr:tex display="inline"><![CDATA[\mu  / q]]></fr:tex>, and the tree has <fr:tex display="inline"><![CDATA[\prod _i k_i]]></fr:tex> leaves, so the extractor's cost is what limits how large the <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> can be.
+</html:p>
+            <html:p>
+    The reason to care is the Fiat–Shamir accounting. Attema, Fehr, and Klooß showed that the Fiat–Shamir transform of a <fr:tex display="inline"><![CDATA[(k_1, \dots , k_\mu )]]></fr:tex>-special-sound protocol has knowledge error <fr:tex display="inline"><![CDATA[(Q+1)\kappa ]]></fr:tex> against an adversary making <fr:tex display="inline"><![CDATA[Q]]></fr:tex> random-oracle queries, where <fr:tex display="inline"><![CDATA[\kappa ]]></fr:tex> is the interactive knowledge error — linear in <fr:tex display="inline"><![CDATA[Q]]></fr:tex> and <html:em>independent of the number of rounds</html:em>. The general bound for a <fr:tex display="inline"><![CDATA[(2\mu +1)]]></fr:tex>-move protocol is <fr:tex display="inline"><![CDATA[Q^\mu ]]></fr:tex>. For any protocol with more than a handful of rounds that is the difference between a security claim and none, and it is bought entirely by strengthening the hypothesis from soundness to special soundness.
+</html:p>
+            <html:p>
+    The <fr:link href="/dhsorens-0049/" title="Post-Quantum Pressure" uri="https://derekhsorensen.com/dhsorens-0049/" display-uri="dhsorens-0049" type="local">lattice protocols</fr:link> needed the tree reshaped rather than widened. Their challenges are vectors of <fr:tex display="inline"><![CDATA[\ell _i]]></fr:tex> coordinates, and extraction works coordinate by coordinate: two accepting transcripts that differ in one coordinate alone subtract to an equation in the matching block of the witness. Transcripts that differ everywhere subtract to nothing usable. <html:em>Coordinate-wise special soundness</html:em>, introduced by Fenzi, Moghaddas, and Nguyen for their lattice <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">polynomial commitment</fr:link>, makes this the branching condition: each node at round <fr:tex display="inline"><![CDATA[i]]></fr:tex> has <fr:tex display="inline"><![CDATA[\ell _i(k_i - 1) + 1]]></fr:tex> children — a central challenge vector, plus <fr:tex display="inline"><![CDATA[k_i - 1]]></fr:tex> others per coordinate differing from it in that coordinate only. The knowledge error is at most <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } \ell _i k_i / N_i^{\ell _i}]]></fr:tex> for coordinates drawn from sets of size <fr:tex display="inline"><![CDATA[N_i]]></fr:tex>, the tree stays polynomially small, and taking every <fr:tex display="inline"><![CDATA[\ell _i = 1]]></fr:tex> recovers plain special soundness. Their Fiat–Shamir theorem carries over too, so the linear-in-<fr:tex display="inline"><![CDATA[Q]]></fr:tex> accounting above survives the generalisation. Hachi, a lattice multilinear commitment refining Greyhound, states its whole security analysis in this form — down to bundling a pair of <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link> challenge points into one vector of logarithmically many coordinates, so that a coordinate-wise tree supplies enough distinct roots to force a constraint polynomial to vanish.
+</html:p>
+            <html:p>
+    ArkLib formalises both through transcript trees generic in a <html:em>shape</html:em>. <html:code>distinctShape k</html:code> is the shape with branching arity <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> whose node predicate requires the <fr:tex display="inline"><![CDATA[k_i]]></fr:tex> sibling challenges at each round to be pairwise distinct, and <html:code>Verifier.specialSound</html:code> is the instance of the shape-generic <html:code>treeSpecialSound</html:code> at that shape; <html:code>CoordinateWiseSpecialSoundness</html:code> is the coordinate-wise condition above, and ArkLib proves that plain special soundness is the <html:code>distinctShape</html:code> case of it. The genericity is not gratuitous: real protocols keep needing branching conditions other than "all siblings differ."
+</html:p>
+            <html:p>
+    Where special soundness stops is the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family. Extraction there does not go through a transcript tree at all — it goes through <fr:link href="/dhsorens-002P/" title="List Decoding and Proximity Gaps" uri="https://derekhsorensen.com/dhsorens-002P/" display-uri="dhsorens-002P" type="local">list decoding</fr:link>, recovering a codeword close to the prover's oracles, and the argument's structure is a distance bound rather than a system of equations. That is why the low-degree testing pages are analysed <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round</fr:link> instead, and why the two techniques appear side by side in the same system: the algebraic components get special soundness, the proximity components get a state function.
+</html:p>
+            <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2021/1377" type="external">Fiat–Shamir Transformation of Multi-Round Interactive Proofs</fr:link> (Attema, Fehr, Klooß) for the <fr:tex display="inline"><![CDATA[(Q+1)\kappa ]]></fr:tex> bound, <fr:link href="https://eprint.iacr.org/2023/846" type="external">Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency</fr:link> (Fenzi, Moghaddas, Nguyen) for coordinate-wise special soundness and its interactive and Fiat–Shamir knowledge theorems, <fr:link href="https://eprint.iacr.org/2026/156" type="external">Hachi</fr:link> (Nguyen, O'Rourke, Zhang) for the notion in working use, <fr:link href="https://eprint.iacr.org/2023/1256" type="external">On Soundness Notions for Interactive Oracle Proofs</fr:link> for the generalised versions and their implications, and <html:code>ArkLib/OracleReduction/Security/SpecialSoundness.lean</html:code>.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
+              <fr:day>18</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-002J/</fr:uri>
+            <fr:display-uri>dhsorens-002J</fr:display-uri>
+            <fr:route>/dhsorens-002J/</fr:route>
+            <fr:title text="The Algebraic and Coding-Theoretic Toolkit">The Algebraic and Coding-Theoretic Toolkit</fr:title>
+            <fr:meta name="toc">true</fr:meta>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <html:p>
+    The mathematics the protocols are built out of. Most of the recent performance work lives here
+    rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude
+    faster because the field changed, not because the argument did.
+</html:p>
+            <html:p>
+    This is also the part of the stack <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> is about — fields, polynomials,
+    and their computable representations — so these pages should stay close to what is actually
+    definable in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+</html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>21</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-004W/</fr:uri>
+                <fr:display-uri>dhsorens-004W</fr:display-uri>
+                <fr:route>/dhsorens-004W/</fr:route>
+                <fr:title text="Cyclic Groups and the Discrete Logarithm">Cyclic Groups and the Discrete Logarithm</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The setting the classical proofs of knowledge are stated over. A cyclic group <fr:tex display="inline"><![CDATA[G]]></fr:tex> of prime
+    order <fr:tex display="inline"><![CDATA[q]]></fr:tex> with generator <fr:tex display="inline"><![CDATA[g]]></fr:tex>: every element of <fr:tex display="inline"><![CDATA[G]]></fr:tex> is <fr:tex display="inline"><![CDATA[g^w]]></fr:tex> for exactly one exponent <fr:tex display="inline"><![CDATA[w]]></fr:tex> in
+    <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex>, so exponentiation is a bijection from <fr:tex display="inline"><![CDATA[\mathbb {Z}_q]]></fr:tex> to <fr:tex display="inline"><![CDATA[G]]></fr:tex> and exponent
+    arithmetic is arithmetic in a prime field. The discrete logarithm problem is to invert that
+    bijection — given <fr:tex display="inline"><![CDATA[h \in  G]]></fr:tex>, find <fr:tex display="inline"><![CDATA[w]]></fr:tex> with <fr:tex display="inline"><![CDATA[g^w = h]]></fr:tex> — and it is assumed hard in the groups
+    used in practice, which are elliptic curve groups over a large prime field.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Cyclic group, order, generator; why prime order rather than merely cyclic, and what
+        breaks at composite order.</html:li>
+        <html:li>Why prime <fr:tex display="inline"><![CDATA[q]]></fr:tex> makes every nonzero exponent difference invertible — the single step
+        <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> extraction turns on.</html:li>
+        <html:li>The discrete logarithm assumption and its relatives, computational and decisional
+        Diffie–Hellman, and which of them a given <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocol</fr:link> actually needs.</html:li>
+        <html:li>What is known about the hardness: generic-group lower bounds, index calculus, and why
+        elliptic curves rather than the multiplicative group of a prime field.</html:li>
+        <html:li>Where the setting reappears later in the corpus: the
+        <fr:link href="/dhsorens-0033/" title="Inner-Product Arguments" uri="https://derekhsorensen.com/dhsorens-0033/" display-uri="dhsorens-0033" type="local">inner-product arguments</fr:link> that scale it to logarithmic proofs, and the
+        <fr:link href="/dhsorens-0032/" title="KZG and the Pairing-Based Line" uri="https://derekhsorensen.com/dhsorens-0032/" display-uri="dhsorens-0032" type="local">pairing-based line</fr:link> that asks more of the curve than a group law.</html:li>
+        <html:li>Why this setting is absent from the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family, and what replaces the
+        group structure there — <fr:link href="/dhsorens-002K/" title="Finite Fields and the Small-Field Turn" uri="https://derekhsorensen.com/dhsorens-002K/" display-uri="dhsorens-002K" type="local">fields</fr:link> and <fr:link href="/dhsorens-002O/" title="Reed–Solomon and Linear Codes" uri="https://derekhsorensen.com/dhsorens-002O/" display-uri="dhsorens-002O" type="local">codes</fr:link>.</html:li>
+        <html:li>Post-quantum status: Shor breaks all of it, which is the reason the
+        <fr:link href="/dhsorens-0049/" title="Post-Quantum Pressure" uri="https://derekhsorensen.com/dhsorens-0049/" display-uri="dhsorens-0049" type="local">lattice protocols</fr:link> exist.</html:li></html:ul></html:p>
+                <html:p>
+    Reading: Boneh and Shoup, <html:em>A Graduate Course in Applied Cryptography</html:em>, for the assumptions
+    and their relations; Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em>, for how they enter the
+    proof systems.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002K/</fr:uri>
+                <fr:display-uri>dhsorens-002K</fr:display-uri>
+                <fr:route>/dhsorens-002K/</fr:route>
+                <fr:title text="Finite Fields and the Small-Field Turn">Finite Fields and the Small-Field Turn</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Transparent provers migrated from 256-bit scalar fields down to 31-bit primes and then to <fr:tex display="inline"><![CDATA[\mathbb {F}_2]]></fr:tex>. The migration is the single largest source of speedup in the last five years, and it constrains everything above it.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Prime fields, extension fields, and why the prover wants a small base field while soundness wants a large challenge space.</html:li>
+        <html:li>The specific fields and what makes each fast: Mersenne31 (<fr:tex display="inline"><![CDATA[2^{31}-1]]></fr:tex>), BabyBear, KoalaBear, Goldilocks.</html:li>
+        <html:li>Where extension-field arithmetic is unavoidable — challenges, DEEP queries, batching — and how much of the trace can stay in the base field.</html:li>
+        <html:li>Packing and vectorisation: how field choice interacts with the machine.</html:li>
+        <html:li>What is lost: two-adicity, FFT-friendliness, and the <fr:link href="/dhsorens-002N/" title="Evaluation Domains, FFTs, and Circle Groups" uri="https://derekhsorensen.com/dhsorens-002N/" display-uri="dhsorens-002N" type="local">circle</fr:link> workaround.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn in Succinct Proofs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002L/</fr:uri>
+                <fr:display-uri>dhsorens-002L</fr:display-uri>
+                <fr:route>/dhsorens-002L/</fr:route>
+                <fr:title text="Binary Tower Fields">Binary Tower Fields</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The tower <fr:tex display="inline"><![CDATA[\mathbb {F}_2 \subset  \mathbb {F}_{2^2} \subset  \mathbb {F}_{2^4} \subset  \cdots  \subset  \mathbb {F}_{2^{128}}]]></fr:tex>, built by iterated quadratic extension, and the arithmetic that makes it attractive. This is the ground <fr:link href="/dhsorens-003J/" title="Binius" uri="https://derekhsorensen.com/dhsorens-003J/" display-uri="dhsorens-003J" type="local">Binius</fr:link> stands on.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The tower construction, and why every subfield embedding is free.</html:li>
+        <html:li>Why binary: no modular reduction, characteristic 2 arithmetic maps onto bit operations, and small values cost small fields.</html:li>
+        <html:li>The claimed cost comparison against Mersenne31, and under what measure it holds.</html:li>
+        <html:li>Multilinear polynomials over a tower, and why the multilinear setting rather than the univariate one.</html:li>
+        <html:li><fr:link href="/dhsorens-0035/" title="Small-Field Commitments and Ring Switching" uri="https://derekhsorensen.com/dhsorens-0035/" display-uri="dhsorens-0035" type="local">Ring switching</fr:link>: moving between tower levels inside a single argument.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://www.irreducible.com/posts/binary-tower-fields-are-the-future-of-verifiable-computing" type="external">Binary tower fields</fr:link> (Irreducible), <fr:link href="https://blog.lambdaclass.com/snarks-on-binary-fields-binius/" type="external">SNARKs on binary fields</fr:link> (LambdaClass), <fr:link href="https://eprint.iacr.org/2026/1371" type="external">The Small-Field Turn</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002M/</fr:uri>
+                <fr:display-uri>dhsorens-002M</fr:display-uri>
+                <fr:route>/dhsorens-002M/</fr:route>
+                <fr:title text="Univariate and Multilinear Polynomials">Univariate and Multilinear Polynomials</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Two representations of the same data, supporting different arguments. The univariate world pairs with low-degree testing; the multilinear world pairs with <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">sumcheck</fr:link>. Knowing which one a protocol lives in explains most of its shape.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The multilinear extension of a function on the Boolean hypercube; uniqueness; the equality polynomial and its role.</html:li>
+        <html:li>Degree versus number of variables as the size parameter, and what each buys.</html:li>
+        <html:li>Why FRI wants univariate and Basefold, HyperPlonk, and Binius want multilinear.</html:li>
+        <html:li>How <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> unifies the two, and what the translation costs.</html:li>
+        <html:li>Computable representations — dense, sparse, coefficient, evaluation form — and which operations each makes cheap. This is <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>'s design problem.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>24</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0055/</fr:uri>
+                <fr:display-uri>dhsorens-0055</fr:display-uri>
+                <fr:route>/dhsorens-0055/</fr:route>
+                <fr:title text="Algebraic Varieties">Algebraic Varieties</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    An affine algebraic variety over a field <fr:tex display="inline"><![CDATA[F]]></fr:tex> is the common vanishing set of a family of
+    polynomials in <fr:tex display="inline"><![CDATA[F[x_1, \dots , x_n]]]></fr:tex>. In this corpus that is what a circuit is: each
+    <html:code>assert</html:code> is a polynomial required to vanish on the witness cells, and a satisfying
+    assignment is a point of the variety those polynomials cut out. The computation the circuit was
+    written for is not itself a variety; <fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">arithmetisation</fr:link> produces one that is
+    supposed to stand for it. <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> soundness is the claim that every point of the
+    variety satisfies the spec; completeness is the claim that every input the spec accepts extends
+    to a point on it.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The definition, over a finite field rather than an algebraically closed one, and what
+        survives of the usual Nullstellensatz picture.</html:li>
+        <html:li>How <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link>, <fr:link href="/dhsorens-002T/" title="Plonkish Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002T/" display-uri="dhsorens-002T" type="local">Plonkish</fr:link>, and <fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> present
+        the same kind of object with different sparsity and degree.</html:li>
+        <html:li>The <fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">zero-test</fr:link> as the smallest case where the variety and the spec come
+        apart: delete a constraint and the variety grows, completeness stays, soundness fails.</html:li>
+        <html:li>What a lookup or a channel interaction is, geometrically — not a polynomial vanishing,
+        so not a condition that cuts out a variety in the same sense.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002N/</fr:uri>
+                <fr:display-uri>dhsorens-002N</fr:display-uri>
+                <fr:route>/dhsorens-002N/</fr:route>
+                <fr:title text="Evaluation Domains, FFTs, and Circle Groups">Evaluation Domains, FFTs, and Circle Groups</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Where the polynomials get evaluated, which decides both the prover's asymptotics and which fields are usable at all.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Smooth multiplicative subgroups and two-adicity; why Goldilocks and BabyBear were chosen for it.</html:li>
+        <html:li>Cosets and coset shifts, and why <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> folds along them.</html:li>
+        <html:li>Mersenne31 has no large smooth subgroup — hence the circle group, and what circle STARKs change about folding and constraint degrees.</html:li>
+        <html:li>NTT cost in practice: when the prover is FFT-bound versus hash-bound versus witness-generation-bound.</html:li>
+        <html:li>Multilinear systems that avoid FFTs entirely, and what they pay instead.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: Buterin, <fr:link href="https://vitalik.eth.limo/general/2024/07/23/circlestarks.html" type="external">Exploring circle STARKs</fr:link>; <fr:link href="https://blog.lambdaclass.com/an-introduction-to-circle-starks/" type="external">An introduction to circle STARKs</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002O/</fr:uri>
+                <fr:display-uri>dhsorens-002O</fr:display-uri>
+                <fr:route>/dhsorens-002O/</fr:route>
+                <fr:title text="Reed–Solomon and Linear Codes">Reed–Solomon and Linear Codes</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    Proof systems in this family work because a low-degree polynomial is a codeword and a cheating prover is not. The coding theory is therefore not background — it is where soundness comes from.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>Reed–Solomon codes: rate, distance, the Singleton bound.</html:li>
+        <html:li>Rate as the central dial — proof size against prover time — and where deployed systems set it.</html:li>
+        <html:li>General linear codes and tensor codes; the Ligero and Brakedown line as an alternative to RS.</html:li>
+        <html:li>Interleaved codes, and what proximity to a code means for a matrix of columns rather than a single word.</html:li>
+        <html:li>Foldable and linear-time-encodable codes, and which protocols need which property.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2026/1367" type="external">SoK: Hash-Based Polynomial Commitments and Low-Degree Tests</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002P/</fr:uri>
+                <fr:display-uri>dhsorens-002P</fr:display-uri>
+                <fr:route>/dhsorens-002P/</fr:route>
+                <fr:title text="List Decoding and Proximity Gaps">List Decoding and Proximity Gaps</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    The technical core of every soundness proof in the <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link> family, and the place where deployed parameters stop being provably sound and start being conjecturally sound. It is the most load-bearing page in the section. The regime reaches a deployed security claim through the <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">round-by-round error</fr:link>, which is the only place it is actually assumed.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The three regimes — unique decoding, the Johnson bound, capacity — and what parameters each licenses.</html:li>
+        <html:li>What a proximity gap statement says, and why a low-degree test cannot be analysed without one.</html:li>
+        <html:li>Correlated agreement and mutual correlated agreement; which protocols need the stronger form.</html:li>
+        <html:li>The conjectures: which are theorems, which are conjectures, and which deployed systems assume which. The SoK argues these regimes are routinely conflated in the primary sources.</html:li>
+        <html:li>Machine-checked threshold constants, and whether the formalisation can be reused in <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link>.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://eprint.iacr.org/2025/2046" type="external">On Reed–Solomon Proximity Gaps Conjectures</fr:link>, <fr:link href="https://eprint.iacr.org/2026/858" type="external">FRI Soundness Above the Johnson Bound via Threshold Halving</fr:link>, <fr:link href="https://deltastar.computer/" type="external">Pinning <fr:tex display="inline"><![CDATA[\delta ^*]]></fr:tex></fr:link>, <fr:link href="https://hackmd.io/@zkpunk/CS25" type="external">notes on the proximity-gap conjectures</fr:link>.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>18</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-002Q/</fr:uri>
+                <fr:display-uri>dhsorens-002Q</fr:display-uri>
+                <fr:route>/dhsorens-002Q/</fr:route>
+                <fr:title text="The Sumcheck Protocol">The Sumcheck Protocol</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    One protocol, used everywhere: GKR, <fr:link href="/dhsorens-003G/" title="Spartan and Sumcheck-Based SNARKs" uri="https://derekhsorensen.com/dhsorens-003G/" display-uri="dhsorens-003G" type="local">Spartan</fr:link>, <fr:link href="/dhsorens-003H/" title="HyperPlonk and the Multilinear Turn" uri="https://derekhsorensen.com/dhsorens-003H/" display-uri="dhsorens-003H" type="local">HyperPlonk</fr:link>, Basefold, logUp-GKR, <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link>. It is the first thing <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> formalised, and probably the right place to start reading Lean.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The protocol and <fr:link href="/dhsorens-004L/" title="Round-by-Round Soundness" uri="https://derekhsorensen.com/dhsorens-004L/" display-uri="dhsorens-004L" type="local">its soundness error</fr:link>, stated with the degree and variable count explicit.</html:li>
+        <html:li>Prover cost: the linear-time algorithm, and what changes when the base field is small.</html:li>
+        <html:li>Batching several sumchecks; zero-knowledge variants.</html:li>
+        <html:li>Reducing a claim about a polynomial to an evaluation — the interface by which sumcheck meets a <fr:link href="/dhsorens-002Z/" title="Polynomial Commitment Schemes" uri="https://derekhsorensen.com/dhsorens-002Z/" display-uri="dhsorens-002Z" type="local">commitment scheme</fr:link>.</html:li>
+        <html:li>Why the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir attack</fr:link> landed on GKR, a sumcheck-based protocol, and what that implies about parameterisation.</html:li></html:ul></html:p>
+                <html:p>
+    Sources: <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>ProofSystem/Sumcheck</html:code>).
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
+          </fr:mainmatter>
+        </fr:tree>
+      </fr:mainmatter>
+    </fr:tree>
+    <fr:tree show-metadata="false" hidden-when-empty="true">
+      <fr:frontmatter>
+        <fr:authors />
+        <fr:title text="Contributions">Contributions</fr:title>
+      </fr:frontmatter>
+      <fr:mainmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>

@@ -4,9 +4,7 @@
 \meta{toc}{true}
 
 \p{
-    There has been a great deal of community-driven work in the formalization of mathematics in
-    [Lean](dhsorens-lean), [Rocq](dhsorens-rocq), [Isabelle/HOL](dhsorens-0006), and
-    [Agda](dhsorens-0014).
+    There has been a great deal of community-driven work in the formalization of mathematics in [Lean](dhsorens-lean), [Rocq](dhsorens-rocq), [Isabelle/HOL](dhsorens-0006), and [Agda](dhsorens-0014).
 }
 
 \transclude{dhsorens-0010} % formalization in Lean

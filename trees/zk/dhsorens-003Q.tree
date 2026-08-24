@@ -4,15 +4,11 @@
 \meta{toc}{true}
 
 \p{
-    Everything above, wrapped around an instruction set so that a program rather than a circuit is
-    the thing being proved. A zkVM decomposes into three layers — the ISA, the VM architecture, and
-    the proving layer — and most design disagreements are about where to put work between them.
+    Everything above, wrapped around an instruction set so that a program rather than a circuit is the thing being proved. A zkVM decomposes into three layers — the ISA, the VM architecture, and the proving layer — and most design disagreements are about where to put work between them.
 }
 
 \p{
-    This is the object the [verified zkEVM effort](dhsorens-0045) is ultimately aimed at. A machine
-    semantics in Lean is the first half of the statement one wants to prove about a zkVM; [LC3 in
-    Lean](dhsorens-0027) is that half at small scale.
+    This is the object the [verified zkEVM effort](dhsorens-0045) is ultimately aimed at. A machine semantics in Lean is the first half of the statement one wants to prove about a zkVM; [LC3 in Lean](dhsorens-0027) is that half at small scale.
 }
 
 \transclude{dhsorens-003R} % the zkVM stack

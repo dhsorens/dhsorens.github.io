@@ -4,12 +4,9 @@
 \meta{toc}{true}
 
 \p{
-    Most of my formal research work is in [formal specification and verification](dhsorens-000X),
-    especially in [proof assistants](dhsorens-000B) like [Lean](dhsorens-lean),
-    [Rocq](dhsorens-rocq), and the like.
+    Most of my formal research work is in [formal specification and verification](dhsorens-000X), especially in [proof assistants](dhsorens-000B) like [Lean](dhsorens-lean), [Rocq](dhsorens-rocq), and the like.
 
-    During my [PhD](dhsorens-phd) and in the years after a lot of time thinking about [smart
-    contract](dhsorens-000Y) design, specification, and verification.
+    During my [PhD](dhsorens-phd) and in the years after a lot of time thinking about [smart contract](dhsorens-000Y) design, specification, and verification.
     % They are interesting for several reasons, as described below.
 
     % I also think a lot about [type theory and formal proof](dhsorens-000V) more broadly.

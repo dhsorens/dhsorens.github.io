@@ -3,33 +3,17 @@
 \date{2026-08-18}
 
 \p{
-    Ethereum's workhorse is \code{keccak256}, and it is not SHA-3. Keccak won the NIST competition
-    in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and
-    [Ethereum](dhsorens-ethereum) had already shipped the original. The two differ in padding and
-    produce different digests for the same input, which is a reliable source of confusion for anyone
-    reimplementing an Ethereum client.
+    Ethereum's workhorse is \code{keccak256}, and it is not SHA-3. Keccak won the NIST competition in 2012, NIST changed the padding rule before standardising it as FIPS 202 in 2015, and [Ethereum](dhsorens-ethereum) had already shipped the original. The two differ in padding and produce different digests for the same input, which is a reliable source of confusion for anyone reimplementing an Ethereum client.
 }
 
 \p{
-    It is used almost everywhere state is named. An address is the last 20 bytes of the Keccak
-    digest of a public key; a mapping's storage slot is the digest of the key concatenated with the
-    slot number; Merkle–Patricia trie nodes are addressed by the digest of their RLP encoding;
-    function selectors and event topics are digest prefixes; and the \code{KECCAK256} opcode exposes
-    it to contracts directly.
+    It is used almost everywhere state is named. An address is the last 20 bytes of the Keccak digest of a public key; a mapping's storage slot is the digest of the key concatenated with the slot number; Merkle–Patricia trie nodes are addressed by the digest of their RLP encoding; function selectors and event topics are digest prefixes; and the \code{KECCAK256} opcode exposes it to contracts directly.
 }
 
 \p{
-    The consensus layer chose differently. SSZ's \code{hash_tree_root} is SHA-256, so a full node
-    computes both families — Keccak for execution state and SHA-256 for beacon state. The EVM also
-    exposes SHA-256 and RIPEMD-160 as [precompiles](dhsorens-003V) at \code{0x02} and \code{0x03},
-    and BLAKE2b's compression function at \code{0x09} (EIP-152, Istanbul, December 2019, priced at
-    one gas per round).
+    The consensus layer chose differently. SSZ's \code{hash_tree_root} is SHA-256, so a full node computes both families — Keccak for execution state and SHA-256 for beacon state. The EVM also exposes SHA-256 and RIPEMD-160 as [precompiles](dhsorens-003V) at \code{0x02} and \code{0x03}, and BLAKE2b's compression function at \code{0x09} (EIP-152, Istanbul, December 2019, priced at one gas per round).
 }
 
 \p{
-    For a prover this split matters, because the [execution state](dhsorens-0047) is the Keccak
-    half. Keccak is the most expensive of the three to prove — [Flock](dhsorens-004H) reports 30k
-    Keccak permutations per second per core against 42k SHA-256 compressions — though the gap per
-    byte is narrower than the raw rates suggest, since one Keccak-256 permutation absorbs 136 bytes
-    where a SHA-256 compression takes 64.
+    For a prover this split matters, because the [execution state](dhsorens-0047) is the Keccak half. Keccak is the most expensive of the three to prove — [Flock](dhsorens-004H) reports 30k Keccak permutations per second per core against 42k SHA-256 compressions — though the gap per byte is narrower than the raw rates suggest, since one Keccak-256 permutation absorbs 136 bytes where a SHA-256 compression takes 64.
 }

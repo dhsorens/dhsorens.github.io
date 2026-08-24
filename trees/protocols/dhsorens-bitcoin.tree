@@ -6,6 +6,5 @@
 [https://bitcoin.org](https://bitcoin.org)
 
 \p{
-    Its hash functions — double SHA-256 and RIPEMD-160 — are the subject of [SHA-2 and the Bitcoin
-    design](dhsorens-004E).
+    Its hash functions — double SHA-256 and RIPEMD-160 — are the subject of [SHA-2 and the Bitcoin design](dhsorens-004E). Since Taproot its signatures are [Schnorr](dhsorens-004V), specified as BIP-340.
 }

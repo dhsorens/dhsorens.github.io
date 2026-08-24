@@ -4,16 +4,11 @@
 \meta{toc}{true}
 
 \p{
-    Smart contracts are vulnerable due to incorrect code, but equally due to incorrect specification
-    (or design).
-    There are more examples of this that can possibly be included here, but I have written up a few
-    examples.
-    We would recognize each of these exploits as attacks, despite the fact that the contracts were
-    functioning
-    as specified, which tells us that the specifications were erroneous as they did not accurately
-    capture the
-    intended economic behaviors. To the contrary, they permitted unintended and pathological
-    behavior.
+    Smart contracts are vulnerable due to incorrect code, but equally due to incorrect specification (or design).
+    There are more examples of this that can possibly be included here, but I have written up a few examples.
+    We would recognize each of these exploits as attacks, despite the fact that the contracts were functioning
+    as specified, which tells us that the specifications were erroneous as they did not accurately capture the
+    intended economic behaviors. To the contrary, they permitted unintended and pathological behavior.
 }
 
 \transclude{dhsorens-001T} % Beanstalk

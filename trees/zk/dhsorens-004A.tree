@@ -3,21 +3,16 @@
 \date{2026-08-18}
 
 \p{
-    [What bit-security a deployed system actually claims](dhsorens-004N), under which assumptions,
-    and who checked. This is where [soundness regimes](dhsorens-0038) stop being a theoretical
-    distinction.
+    [What bit-security a deployed system actually claims](dhsorens-004N), under which assumptions, and who checked. This is where [soundness regimes](dhsorens-0038) stop being a theoretical distinction.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{The parameters real provers ship: rate, repetitions, [grinding](dhsorens-003A) bits,
-        field size — and the claimed level they add up to.}
-        \li{Which claims depend on a [conjecture](dhsorens-002P), and whether that is documented in
-        the system's own materials.}
+        \li{The parameters real provers ship: rate, repetitions, [grinding](dhsorens-003A) bits, field size — and the claimed level they add up to.}
+        \li{Which claims depend on a [conjecture](dhsorens-002P), and whether that is documented in the system's own materials.}
         \li{The accounting across [recursion](dhsorens-003L) layers, where errors compose.}
         \li{Who is responsible for the number: protocol designers, implementers, or auditors.}
-        \li{What a machine-checked parameter calculation would look like, and whether it is a
-        reasonable thing to build.}
+        \li{What a machine-checked parameter calculation would look like, and whether it is a reasonable thing to build.}
     }
 }

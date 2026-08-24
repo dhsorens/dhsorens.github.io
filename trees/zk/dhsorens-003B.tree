@@ -3,8 +3,7 @@
 \date{2026-08-18}
 
 \p{
-    Shift To Improve Rate. FRI keeps the rate fixed across rounds and pays for it in queries; STIR
-    improves the rate each round instead.
+    Shift To Improve Rate. FRI keeps the rate fixed across rounds and pays for it in queries; STIR improves the rate each round instead.
 }
 
 \p{
@@ -19,6 +18,5 @@
 }
 
 \p{
-    Sources: Arnon, Chiesa, Fenzi, and Yogev, \em{STIR};
-    [ArkLib](https://github.com/Verified-zkEVM/ArkLib).
+    Sources: Arnon, Chiesa, Fenzi, and Yogev, \em{STIR}; [ArkLib](https://github.com/Verified-zkEVM/ArkLib).
 }

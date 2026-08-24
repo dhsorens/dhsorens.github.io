@@ -462,7 +462,7 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    Logarithmic-size proofs without a trusted setup, over ordinary elliptic curve groups. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
+    Logarithmic-size proofs without a trusted setup, over ordinary <fr:link href="/dhsorens-004W/" title="Cyclic Groups and the Discrete Logarithm" uri="https://derekhsorensen.com/dhsorens-004W/" display-uri="dhsorens-004W" type="local">elliptic curve groups</fr:link>. Largely displaced by hash-based schemes in the zkVM setting, so the useful question is where it still wins.
 </html:p>
             <html:p>
     Questions this page should answer:
@@ -500,10 +500,17 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    The reason the rest of this corpus is organised the way it is. The <fr:link href="https://verified-zkevm.org/" type="external">verified zkEVM</fr:link> effort runs three tracks — the zkVM constraints, the EVM semantics, and the cryptography — and <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> and <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> are the cryptography track.
+    The reason the rest of this corpus is organised the way it is. The
+    <fr:link href="https://verified-zkevm.org/" type="external">verified zkEVM</fr:link> effort runs three tracks — the zkVM constraints,
+    the EVM semantics, and the cryptography — and <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> and
+    <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> are the cryptography track.
 </html:p>
             <html:p>
-    These pages stay closer to the code than the rest of the corpus, which also makes them the ones most likely to go stale. Related: <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link>, <fr:link href="/dhsorens-0025/" title="CompPoly and Computable Specifications" uri="https://derekhsorensen.com/dhsorens-0025/" display-uri="dhsorens-0025" type="local">computable specifications</fr:link>, <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">formal verification in proof assistants</fr:link>.
+    These pages stay closer to the code than the rest of the corpus, which also makes them the ones
+    most likely to go stale. Related: <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link>,
+    <fr:link href="/dhsorens-0025/" title="CompPoly and Computable Specifications" uri="https://derekhsorensen.com/dhsorens-0025/" display-uri="dhsorens-0025" type="local">computable specifications</fr:link>,
+    <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">formal verification in proof assistants</fr:link>, and
+    <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">circuits and their specifications</fr:link>.
 </html:p>
             <fr:tree show-metadata="false">
               <fr:frontmatter>
@@ -598,7 +605,7 @@
     Questions this page should answer:
     <html:ul><html:li>Oracle computations and <html:code>simulateQ</html:code>: implementing a random oracle, logging queries, performing reductions.</html:li>
         <html:li>The program logic — relational (pRHL-style) and unary modes — and what a game hop looks like as a tactic step.</html:li>
-        <html:li>Primitives already covered: encryption, signatures, sigma protocols, and the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> and Fischlin transforms.</html:li>
+        <html:li>Primitives already covered: encryption, signatures, <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocols</fr:link>, and the <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> and Fischlin transforms.</html:li>
         <html:li>How ArkLib's adversary model sits on top of this.</html:li>
         <html:li>What a machine-checked reduction proof costs in effort, compared with the paper proof.</html:li></html:ul></html:p>
                 <html:p>
@@ -726,14 +733,20 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    The oldest of the three formats and still the one the <fr:link href="/dhsorens-003K/" title="Folding, Recursion, and Aggregation" uri="https://derekhsorensen.com/dhsorens-003K/" display-uri="dhsorens-003K" type="local">folding</fr:link> literature is written in.
+    The oldest of the three formats and still the one the <fr:link href="/dhsorens-003K/" title="Folding, Recursion, and Aggregation" uri="https://derekhsorensen.com/dhsorens-003K/" display-uri="dhsorens-003K" type="local">folding</fr:link> literature is
+    written in. It is also the format the <fr:link href="/dhsorens-0053/" title="zk.golf" uri="https://derekhsorensen.com/dhsorens-0053/" display-uri="dhsorens-0053" type="local">zk.golf</fr:link> challenges are stated in, which
+    makes their published circuits a precise record of what a hash function costs when every
+    constraint has to be rank one and lookups are unavailable.
 </html:p>
             <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The format: <fr:tex display="inline"><![CDATA[(Az) \circ  (Bz) = Cz]]></fr:tex>, the instance and witness split, and what "satisfying" means.</html:li>
-        <html:li>Sparsity, and why the prover's cost is an MSM or a sparse-polynomial commitment rather than an FFT.</html:li>
+    <html:ul><html:li>The format: <fr:tex display="inline"><![CDATA[(Az) \circ  (Bz) = Cz]]></fr:tex>, the instance and witness split, and what
+        "satisfying" means.</html:li>
+        <html:li>Sparsity, and why the prover's cost is an MSM or a sparse-polynomial commitment rather
+        than an FFT.</html:li>
         <html:li>Relaxed and committed R1CS, the variants folding needs.</html:li>
-        <html:li>The cost of a range check or a bit decomposition here, compared with a <fr:link href="/dhsorens-002W/" title="Lookup Arguments" uri="https://derekhsorensen.com/dhsorens-002W/" display-uri="dhsorens-002W" type="local">lookup</fr:link> in a Plonkish system.</html:li>
+        <html:li>The cost of a range check or a bit decomposition here, compared with a
+        <fr:link href="/dhsorens-002W/" title="Lookup Arguments" uri="https://derekhsorensen.com/dhsorens-002W/" display-uri="dhsorens-002W" type="local">lookup</fr:link> in a Plonkish system.</html:li>
         <html:li>zkLean as the R1CS-facing circuit DSL in the verified-zkEVM effort.</html:li></html:ul></html:p>
           </fr:mainmatter>
         </fr:tree>

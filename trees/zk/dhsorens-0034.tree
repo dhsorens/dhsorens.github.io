@@ -3,25 +3,20 @@
 \date{2026-08-18}
 
 \p{
-    The tensor-commitment lineage: commit to a matrix whose rows are codewords, and test proximity
-    by sampling columns. Basefold is where this line and the [FRI](dhsorens-0037) line merge.
+    The tensor-commitment lineage: commit to a matrix whose rows are codewords, and test proximity by sampling columns. Basefold is where this line and the [FRI](dhsorens-0037) line merge.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{The tensor structure and the proximity test; why the verifier's work is #{O(\sqrt{n})}
-        in the plain construction.}
+        \li{The tensor structure and the proximity test; why the verifier's work is #{O(\sqrt{n})} in the plain construction.}
         \li{Brakedown's linear-time encodable codes, and the tradeoff against proof size.}
-        \li{Basefold: foldable codes plus [sumcheck](dhsorens-002Q), giving a multilinear commitment
-        from a code that need not be Reed–Solomon.}
+        \li{Basefold: foldable codes plus [sumcheck](dhsorens-002Q), giving a multilinear commitment from a code that need not be Reed–Solomon.}
         \li{Which codes are admissible, and what the soundness proof needs from them.}
-        \li{How this family compares with [WHIR](dhsorens-003C) on verifier cost and on argument
-        size.}
+        \li{How this family compares with [WHIR](dhsorens-003C) on verifier cost and on argument size.}
     }
 }
 
 \p{
-    Sources: [SoK: Hash-Based Polynomial Commitments and Low-Degree
-    Tests](https://eprint.iacr.org/2026/1367).
+    Sources: [SoK: Hash-Based Polynomial Commitments and Low-Degree Tests](https://eprint.iacr.org/2026/1367).
 }

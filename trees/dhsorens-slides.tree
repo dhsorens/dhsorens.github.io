@@ -4,6 +4,5 @@
 
 \ul{
     \li{[Formally Specifying Contract Optimizations With Bisimulations in Coq](/slides/fmbc-25.pdf)}
-    \li{[When Is a Smart Contract Specification Correct, and How Can We Evaluate
-    It?](/slides/spec-correct.pdf)}
+    \li{[When Is a Smart Contract Specification Correct, and How Can We Evaluate It?](/slides/spec-correct.pdf)}
 }
