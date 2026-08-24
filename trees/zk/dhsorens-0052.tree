@@ -18,10 +18,9 @@
     invisible to the honest prover, and beyond the reach of review at the scale of a hash function
     with hundreds of thousands of rows. Against a machine-checked interface the calculus inverts: an
     optimisation that breaks soundness fails to compile, so the class of bug that is hardest to find
-    becomes the class that is hardest to ship. My own [earlier answer](dhsorens-000J) went the other
-    way: verify an optimised contract by proving it bisimilar to a readable reference
-    implementation, leaving the reference as the specification. Fixing an interface dispenses with
-    the reference, which is possible here only because the specification is a total function.
+    becomes the class that is hardest to ship. The specification is a total function (in contrast to 
+    my [previous work](dhsorens-000J) where a specification is not known to be total, so a reference 
+    implementation is treated as a "total" specification).
 }
 
 \p{
