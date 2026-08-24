@@ -60,11 +60,11 @@
 }
 
 \p{
-    Alongside the circuits sits a directory of reference semantics — SHA-256, Keccak-256, Poseidon,
-    BLAKE3 — written in Lean over the naturals, and next to those, Python implementations of SHA-256
-    and Keccak. The Python is there to cross-check the Lean spec against a known-good
-    implementation, which is the [computable specification](dhsorens-0025) argument in miniature.
-    The soundness theorem relates a circuit to a spec, and gives no information about whether the
-    spec is the hash function; running the spec on the standard test vectors is the only thing that
-    does.
+    Alongside the circuits sits a directory of reference semantics — SHA-256, Keccak-256,
+    Poseidon, BLAKE3 — written in Lean over the naturals, and next to those, Python
+    implementations of SHA-256 and Keccak. The Python is there to cross-check the Lean spec against
+    a known-good implementation, which is the [computable specification](dhsorens-0025) argument in
+    miniature. The soundness theorem relates a circuit to a spec, and gives no information about
+    whether the spec is the hash function; running the spec on the standard test vectors is the only
+    thing that does.
 }

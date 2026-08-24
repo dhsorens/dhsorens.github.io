@@ -3,8 +3,8 @@
 \date{2026-08-19}
 
 \p{
-    An honest prover with a true statement is accepted, except with small probability — usually with
-    probability one. Unlike [soundness](dhsorens-002F) this is one property, not a family, and
+    An honest prover with a true statement is accepted, except with small probability — usually
+    with probability one. Unlike [soundness](dhsorens-002F) this is one property, not a family, and
     [compilation](dhsorens-004S) preserves it. The obligation that fails is one layer down: a
     circuit is complete when every honest execution has a satisfying witness, which is what
     [Clean](dhsorens-002Y) treats as separate from soundness.

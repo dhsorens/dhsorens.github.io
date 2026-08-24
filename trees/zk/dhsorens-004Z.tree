@@ -14,9 +14,9 @@
 
 \p{
     Soundness in Clean quantifies over arbitrary environments. For every offset, every assignment of
-    field elements to cells — no honesty assumed — and every input, if the assumptions hold on the
-    input and the constraints hold under that assignment, then the spec holds of the input and the
-    circuit's output. Quantifying over all environments is what makes this a statement about a
+    field elements to cells — no honesty assumed — and every input, if the assumptions hold on
+    the input and the constraints hold under that assignment, then the spec holds of the input and
+    the circuit's output. Quantifying over all environments is what makes this a statement about a
     cheating prover: the witness cells are adversarial, and the constraints are the only thing the
     proof has to work with.
 }
@@ -59,11 +59,11 @@
 
 \p{
     Soundness carries a second conjunct that is easy to overlook. Alongside the spec, the circuit
-    must discharge the \code{Requirements} of every channel interaction it emits — the obligations a
-    component takes on when it pushes to a channel, as opposed to the guarantees it may assume when
-    it pulls. At the level of a single circuit these are assumed and re-exported; establishing them
-    unconditionally is a property of the whole [ensemble](dhsorens-0050), and it does not follow
-    from the circuit-level proofs.
+    must discharge the \code{Requirements} of every channel interaction it emits — the obligations
+    a component takes on when it pushes to a channel, as opposed to the guarantees it may assume
+    when it pulls. At the level of a single circuit these are assumed and re-exported; establishing
+    them unconditionally is a property of the whole [ensemble](dhsorens-0050), and it does not
+    follow from the circuit-level proofs.
 }
 
 \p{

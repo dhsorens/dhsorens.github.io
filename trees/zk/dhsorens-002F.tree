@@ -4,31 +4,74 @@
 \meta{toc}{true}
 
 \p{
-    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement, except with small probability. [Completeness](dhsorens-004T) is the matching guarantee for an honest prover with a true statement, and is almost never where a protocol fails. The definition has to name the adversary: which provers, in which game, with which oracles.
+    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement,
+    except with small probability. [Completeness](dhsorens-004T) is the matching guarantee for an
+    honest prover with a true statement, and is almost never where a protocol fails. The definition
+    has to name the adversary: which provers, in which game, with which oracles. A circuit carries
+    [a soundness obligation of its own](dhsorens-004Z), about what a satisfying assignment implies
+    rather than about which provers can produce one.
 }
 
 \p{
-    \em{Sound} names a family of properties. Most papers prove the weakest member; [compilation](dhsorens-004S) (interactive protocol to deployed non-interactive argument) needs a stronger one. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed [GKR-based argument](dhsorens-002Q) whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
+    \em{Sound} names a family of properties. Most papers prove the weakest member;
+    [compilation](dhsorens-004S) (interactive protocol to deployed non-interactive argument) needs a
+    stronger one. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed
+    [GKR-based argument](dhsorens-002Q) whose interactive soundness was never in question. The
+    interactive theorem was true; it was the wrong theorem.
 }
 
 \p{
-    The notions, weakest first, for a public-coin protocol #{\Pi} with #{\mu} challenge rounds deciding membership in a language #{L}.
+    The notions, weakest first, for a public-coin protocol #{\Pi} with #{\mu} challenge rounds
+    deciding membership in a language #{L}.
     \ul{
-        \li{\strong{Soundness} — no prover convinces the verifier of a false statement except with probability at most #{\epsilon}. Which provers are admitted is the whole content of the definition: unbounded ones make #{\Pi} a proof, computationally bounded ones an argument.}
-        \li{\strong{Knowledge soundness} — an efficient extractor recovers a witness from any prover that convinces #{V}. Strictly stronger, and the only one of the two with content when every statement is in the language.}
-        \li{\strong{Special soundness} — a combinatorial condition on the verifier: a tree of accepting transcripts, branching at each challenge round, yields a witness. Not a security guarantee but a hypothesis that implies one, and checkable by inspecting the algebra. Lattice protocols, whose challenges are vectors, run on a coordinate-wise variant that branches per coordinate rather than per challenge.}
-        \li{\strong{Round-by-round soundness} — every transcript prefix carries a state, a false statement starts \em{doomed}, and a single round escapes doom with probability at most #{\epsilon_i}.}
-        \li{\strong{State-restoration soundness} — soundness against a prover that may return to any prefix it has already built and draw a fresh challenge there, as often as its budget allows.}
+        \li{\strong{Soundness} — no prover convinces the verifier of a false statement except with
+        probability at most #{\epsilon}. Which provers are admitted is the whole content of the
+        definition: unbounded ones make #{\Pi} a proof, computationally bounded ones an argument.}
+        \li{\strong{Knowledge soundness} — an efficient extractor recovers a witness from any
+        prover that convinces #{V}. Strictly stronger, and the only one of the two with content when
+        every statement is in the language.}
+        \li{\strong{Special soundness} — a combinatorial condition on the verifier: a tree of
+        accepting transcripts, branching at each challenge round, yields a witness. Not a security
+        guarantee but a hypothesis that implies one, and checkable by inspecting the algebra.
+        Lattice protocols, whose challenges are vectors, run on a coordinate-wise variant that
+        branches per coordinate rather than per challenge.}
+        \li{\strong{Round-by-round soundness} — every transcript prefix carries a state, a false
+        statement starts \em{doomed}, and a single round escapes doom with probability at most
+        #{\epsilon_i}.}
+        \li{\strong{State-restoration soundness} — soundness against a prover that may return to
+        any prefix it has already built and draw a fresh challenge there, as often as its budget
+        allows.}
     }
-    Three qualifiers cut across all five and are quoted less often than they should be: whether the statement is fixed before the hash function or [chosen after](dhsorens-004O), whether the extractor may [rewind or must work straightline](dhsorens-004J), and which oracles the adversary is given. A soundness claim missing any of the three is not yet a claim.
+    Three qualifiers cut across all five and are quoted less often than they should be: whether the
+    statement is fixed before the hash function or [chosen after](dhsorens-004O), whether the
+    extractor may [rewind or must work straightline](dhsorens-004J), and which oracles the adversary
+    is given. A soundness claim missing any of the three is not yet a claim.
 }
 
 \p{
-    The implications make the family a hierarchy rather than a list. Knowledge soundness implies soundness once the knowledge error is below one. Round-by-round soundness implies soundness with error #{\sum_{i=1}^{\mu} \epsilon_i}, by a union bound over rounds. State-restoration soundness implies soundness with the error preserved, and is equivalent to round-by-round soundness up to a polynomial loss. Special soundness implies round-by-round soundness — Block, Garreta, Tiwari, and Zając prove this for generalised forms of both. Each notion has a knowledge counterpart, and round-by-round knowledge soundness implies both round-by-round soundness and plain knowledge soundness. [ArkLib](dhsorens-0040) states these arrows as theorems in \code{OracleReduction/Security/Implications.lean} — knowledge soundness to soundness, round-by-round to plain in both directions, state restoration to both — which is a useful check on the decomposition, since each arrow has to be proved rather than asserted.
+    The implications make the family a hierarchy rather than a list. Knowledge soundness implies
+    soundness once the knowledge error is below one. Round-by-round soundness implies soundness with
+    error #{\sum_{i=1}^{\mu} \epsilon_i}, by a union bound over rounds. State-restoration soundness
+    implies soundness with the error preserved, and is equivalent to round-by-round soundness up to
+    a polynomial loss. Special soundness implies round-by-round soundness — Block, Garreta,
+    Tiwari, and Zając prove this for generalised forms of both. Each notion has a knowledge
+    counterpart, and round-by-round knowledge soundness implies both round-by-round soundness and
+    plain knowledge soundness. [ArkLib](dhsorens-0040) states these arrows as theorems in
+    \code{OracleReduction/Security/Implications.lean} — knowledge soundness to soundness,
+    round-by-round to plain in both directions, state restoration to both — which is a useful
+    check on the decomposition, since each arrow has to be proved rather than asserted.
 }
 
 \p{
-    [Compilation](dhsorens-004S) is where a notion gets chosen, not merely inherited. [Sequential composition](dhsorens-002I) preserves plain soundness, with the errors accumulating. The [Fiat–Shamir transform](dhsorens-002G) does not: analysed from plain soundness alone, a #{(2\mu+1)}-move protocol loses a factor #{Q^\mu} in the adversary's random-oracle query count #{Q}, which says nothing at all for the twenty-odd rounds of a folding argument. From special soundness the loss is #{Q+1} regardless of round count; from round-by-round soundness it is likewise linear in #{Q}. The [BCS transform](dhsorens-002H) is analysed against state restoration directly. A many-round protocol therefore has to be analysed round-by-round from the start, because an end-to-end soundness bound cannot be repaired after the fact.
+    [Compilation](dhsorens-004S) is where a notion gets chosen, not merely inherited.
+    [Sequential composition](dhsorens-002I) preserves plain soundness, with the errors accumulating.
+    The [Fiat–Shamir transform](dhsorens-002G) does not: analysed from plain soundness alone, a
+    #{(2\mu+1)}-move protocol loses a factor #{Q^\mu} in the adversary's random-oracle query count
+    #{Q}, which says nothing at all for the twenty-odd rounds of a folding argument. From special
+    soundness the loss is #{Q+1} regardless of round count; from round-by-round soundness it is
+    likewise linear in #{Q}. The [BCS transform](dhsorens-002H) is analysed against state
+    restoration directly. A many-round protocol therefore has to be analysed round-by-round from the
+    start, because an end-to-end soundness bound cannot be repaired after the fact.
 }
 
 \transclude{dhsorens-004J} % soundness, knowledge soundness, extraction
@@ -41,5 +84,9 @@
 \transclude{dhsorens-004Q} % simulation extractability
 
 \p{
-    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118) for why the distinctions are not academic; [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256) for the implications between them; [ArkLib](https://github.com/Verified-zkEVM/ArkLib)'s \code{OracleReduction/Security} for the same map in Lean.
+    Sources: [How to Prove False Statements](https://eprint.iacr.org/2025/118) for why the
+    distinctions are not academic;
+    [On Soundness Notions for Interactive Oracle Proofs](https://eprint.iacr.org/2023/1256) for the
+    implications between them; [ArkLib](https://github.com/Verified-zkEVM/ArkLib)'s
+    \code{OracleReduction/Security} for the same map in Lean.
 }
