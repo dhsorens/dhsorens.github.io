@@ -12,7 +12,7 @@
         \li{The definition, and the completeness error. When a protocol is perfectly complete and when it is not.}
         \li{How completeness composes under [oracle reductions](dhsorens-002I).}
         \li{What [Fiat–Shamir](dhsorens-002G) and [BCS](dhsorens-002H) do to it.}
-        \li{Circuit completeness versus protocol completeness, and the form of the obligation in [Clean](dhsorens-002Y).}
+        \li{Circuit completeness versus protocol completeness. [The circuit-level obligation](dhsorens-004V) is written out on the [Clean](dhsorens-002Y) pages; what is missing is the theorem joining it to this one.}
         \li{Where [ArkLib](dhsorens-0040) states it.}
     }
 }

@@ -1,8 +1,8 @@
 \title{Latest Deep-Dive}
 \author{dhsorens}
-\date{2026-08-19}
+\date{2026-08-24}
 \meta{toc}{true}
 
 \p{
-    See my latest on [soundness notions](dhsorens-002F) — the five things \em{sound} can mean in the security theorem for a SNARK, the implications between them, and which of them survives [Fiat–Shamir](dhsorens-002G). The short version is that compilation chooses a notion rather than inheriting one, which is why a protocol proved sound end-to-end has not yet been proved anything about its deployed form. It is the first written-out section of the [zkVMs and SNARKs](dhsorens-002C) corpus.
+    See my latest on [Clean](dhsorens-002Y) — the embedded [Lean](dhsorens-lean) DSL in which a zk circuit, its specification, and its correctness proof are one artefact. The section covers the circuit representation, the two proof obligations and why neither means anything without the other, and how far the [AIR](dhsorens-002U) and [R1CS](dhsorens-002S) support actually reaches. It ends on [zk.golf](dhsorens-004Z), where the specification is fixed in Lean and the circuit is left free, so an optimised SHA-256 is accepted by the kernel rather than by review — and where the cost of every constraint is itself a theorem.
 }

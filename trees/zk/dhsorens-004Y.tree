@@ -1,0 +1,22 @@
+\title{Interfaces as Specifications}
+\author{dhsorens}
+\date{2026-08-24}
+\meta{toc}{true}
+
+\p{
+    Once the contract is written in Lean, it is a complete description of what a circuit must do and says nothing about how. Fix the input and output types, the assumptions, the spec, and the exact statements to be proved, and the circuit itself becomes free — any implementation is acceptable if its exported proofs have the right types. Acceptance is then decided by the kernel rather than by review, and the provenance of the circuit stops mattering.
+}
+
+\p{
+    The consequence is for optimisation, which is otherwise the most dangerous change one can make to a circuit. Optimising a circuit means removing constraints, and the failure mode of removing a constraint is not a wrong answer but a permitted wrong answer — invisible to tests, invisible to the honest prover, and beyond the reach of review at the scale of a hash function with hundreds of thousands of rows. Against a machine-checked interface the calculus inverts: an optimisation that breaks soundness fails to compile, so the class of bug that is hardest to find becomes the class that is hardest to ship.
+}
+
+\p{
+    An interface that fixes only soundness and completeness is not enough for this, and the omissions are instructive. Cost has to be in the interface, or "optimised" is not a measurable claim. The shape of the constraint system has to be fixed too, or the cost number is not comparable between submissions — a submitter who is allowed to write assertions of arbitrary degree can pack several rows into one and report a smaller count. Computability of the witnesses has to be required, or a circuit can satisfy both correctness obligations while no prover can actually run it. And the axioms have to be bounded, since a proof is only as good as what it is allowed to assume. [zk.golf](dhsorens-004Z) pins down all four alongside the spec, and that combination is what makes an arbitrary submission — including a machine-generated one — safe to accept unread.
+}
+
+\p{
+    Whether this generalises past circuits is a separate question, and my own answer is that it generalises less than it looks. The technique works here because the specifications are easy: SHA-256 is a total function on byte strings and the spec is an equation, so writing the interface is bookkeeping. The [difficulty with smart contract specifications](dhsorens-001J) was never the proof, it was that the properties worth having were socio-economic and resisted statement — and an interface-as-specification discipline would have inherited that difficulty rather than dissolved it. Circuits are the setting where the discipline pays, and the reason is the shape of the specification problem, not the strength of the method.
+}
+
+\transclude{dhsorens-004Z} % zk.golf

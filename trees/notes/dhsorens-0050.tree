@@ -1,0 +1,22 @@
+\title{A Note on Clean and Circuit Specifications}
+\author{dhsorens}
+\date{2026-08-24}
+
+\p{
+    [Clean](dhsorens-002Y) is now written out as a section of the [zkVMs and SNARKs](dhsorens-002C) corpus, from the sources rather than from the announcements. The claim it organises around is that a circuit specification is a contract — assumptions as precondition, spec as postcondition — and that the two halves of it have to be proved separately, because each is satisfiable on its own by a circuit that is useless in the opposite direction. What convinced me the framing is more than tidy bookkeeping is [zk.golf](dhsorens-004Z), where the contract is fixed in Lean and the circuit is left entirely free, so an optimised circuit is accepted or rejected by the kernel and never by review. That works for a hash function because the specification is an equation; it would not have rescued the [smart contract specifications](dhsorens-001J) I spent a thesis on, and the difference is in the specification problem rather than in the method.
+}
+
+\p{
+    The pages:
+    \ul{
+        \li{[Circuits, constraints, and witness generation](dhsorens-004U) — the circuit monad, the five operations, and why witness generation is compiled to a serialisable IR rather than written as a Lean closure.}
+        \li{[Soundness and completeness of a circuit](dhsorens-004V) — the two obligations stated precisely, and what the three circuit structures are for. The bit-decomposition gadget is the example that forces the general form.}
+        \li{[Arithmetisations and backends](dhsorens-004W) — flat AIR, channels and ensembles, and an honest accounting of how deep the AIR, Plonkish, and [R1CS](dhsorens-002S) support actually goes.}
+        \li{[Circuits in Clean](dhsorens-004X) — the zero-test read line by line, including what breaks when one constraint is deleted, plus byte addition and the Fibonacci table.}
+        \li{[Interfaces as specifications](dhsorens-004Y) — what an interface has to pin down beyond soundness and completeness, and [zk.golf](dhsorens-004Z) as the worked case, with the SHA-256 cost broken down.}
+    }
+}
+
+\p{
+    Two things are open and worth naming. Clean and [ArkLib](dhsorens-0040) prove complementary halves of a proof system's correctness and do not compose — joining them is an exploratory roadmap item, and until it happens a verified circuit and a verified argument are two theorems with the arithmetisation's satisfiability relation between them. And verifier challenges are not modelled, so [lookup arguments](dhsorens-002W) are not proved end to end inside Clean, which is awkward given that lookups are where a zkVM's prover time goes.
+}
