@@ -30,6 +30,8 @@
         actually goes.}
         \li{[Circuits in Clean](dhsorens-0051) — the zero-test read line by line, including what
         breaks when one constraint is deleted, plus byte addition and the Fibonacci table.}
+        \li{[Algebraic varieties](dhsorens-0055) — a Clean circuit's constraints cut out a
+        variety; the spec is what that variety is supposed to mean.}
         \li{[Interfaces as specifications](dhsorens-0052) — what an interface has to pin down
         beyond soundness and completeness, and [zk.golf](dhsorens-0053) as the worked case, with the
         SHA-256 cost broken down.}

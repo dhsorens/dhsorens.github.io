@@ -6,7 +6,7 @@
     Clean advertises [AIR](dhsorens-002U), [Plonkish](dhsorens-002T), and [R1CS](dhsorens-002S), and
     the three are not supported to the same depth. AIR is the one that is built out:
     \code{Clean.Air} is a row-oriented layer with components, tables, channels, and ensembles, and
-    the plonky3 backend carries a Clean circuit through to an actual plonky3 proof. Plonkish support
+    the [plonky3](dhsorens-plonky3) backend carries a Clean circuit through to an actual plonky3 proof. Plonkish support
     in the sense of custom gates is a roadmap item. R1CS has no backend at all — and the largest
     R1CS circuits written in Clean get their arithmetisation guarantee from outside the library,
     through the [zk.golf](dhsorens-0053) challenge harness, which certifies by a Lean predicate that
@@ -50,7 +50,7 @@
 }
 
 \p{
-    The plonky3 backend is a proof of concept by its own description, not a production path: it
+    The [plonky3](dhsorens-plonky3) backend is a proof of concept by its own description, not a production path: it
     imports a Clean circuit as a plonky3 AIR, generates the trace, and proves it, demonstrated on
     the Fibonacci table. What is missing from the picture — and it is the more consequential gap
     — is verifier challenges. Clean has no model of them yet, so lookup arguments are not proved

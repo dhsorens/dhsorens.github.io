@@ -3,14 +3,14 @@
 \date{2026-08-18}
 
 \p{
-    [AIR](dhsorens-002U) plus [FRI](dhsorens-0037), over a small field, as a reusable toolkit rather than a single protocol. This is the layer the [Rust-to-Lean extraction work](dhsorens-0043) targets: Plonky3 in Lean, with proofs about what it computes.
+    [AIR](dhsorens-002U) plus [FRI](dhsorens-0037), over a small field, as a reusable toolkit rather than a single protocol. This is the layer the [Rust-to-Lean extraction work](dhsorens-0043) targets: [Plonky3](dhsorens-plonky3) in Lean, with proofs about what it computes.
 }
 
 \p{
     Questions this page should answer:
     \ul{
         \li{The STARK protocol end to end: trace, constraints, quotient, commitment, low-degree test.}
-        \li{Plonky3 as a toolkit — what is configurable (field, hash, PCS, folding factor) and what is fixed.}
+        \li{[Plonky3](dhsorens-plonky3) as a toolkit — what is configurable (field, hash, PCS, folding factor) and what is fixed.}
         \li{Stwo and the circle domain: Mersenne31 has no large smooth subgroup, so what replaces it and what changes in the constraint system.}
         \li{Circle STARKs' vanishing polynomials and the extra care their boundary constraints need.}
         \li{Where the two toolkits agree, since both consume an AIR — and what that means for [Clean](dhsorens-002Y) targeting both.}
