@@ -4,17 +4,22 @@
 \meta{toc}{true}
 
 \p{
-    The mathematics the protocols are built out of. Most of the recent performance work lives here rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude faster because the field changed, not because the argument did.
+    The mathematics the protocols are built out of. Most of the recent performance work lives here
+    rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude
+    faster because the field changed, not because the argument did.
 }
 
 \p{
-    This is also the part of the stack [CompPoly](dhsorens-0041) is about — fields, polynomials, and their computable representations — so these pages should stay close to what is actually definable in [Lean](dhsorens-lean).
+    This is also the part of the stack [CompPoly](dhsorens-0041) is about — fields, polynomials,
+    and their computable representations — so these pages should stay close to what is actually
+    definable in [Lean](dhsorens-lean).
 }
 
 \transclude{dhsorens-004W} % cyclic groups and the discrete logarithm
 \transclude{dhsorens-002K} % fields and the small-field turn
 \transclude{dhsorens-002L} % binary tower fields
 \transclude{dhsorens-002M} % univariate and multilinear polynomials
+\transclude{dhsorens-0055} % algebraic varieties
 \transclude{dhsorens-002N} % domains, FFTs, circle groups
 \transclude{dhsorens-002O} % Reed-Solomon and linear codes
 \transclude{dhsorens-002P} % list decoding and proximity gaps

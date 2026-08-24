@@ -10,7 +10,12 @@
 \transclude{dhsorens-001N} % dexter2 verification
 
 \p{
-    The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and crypto-economic properties that are difficult to state in a prose specification, much less in a formal way.
+    The problem that Dexter2 illustrates is that smart contracts have social, game theoretic, and
+    crypto-economic properties that are difficult to state in a prose specification, much less in a
+    formal way. This in contrast with something like
+    [ZK circuits, which are an interesting, contrasting case](dhsorens-0052): a hash function's
+    specification is an equation, so fixing an interface in Lean is enough to make optimisation safe
+    — a discipline that would have bought nothing here.
     % The best contract specifications of smart contracts use time-tested approaches to capture the most important aspects of code security—\em{e.g.} solvency, sovereignty, or key safety properties.
     % If there is a liquidity pool of some kind involved, then a formal specification might target solvency properties, or properties of sovereignty over one's assets.
 }

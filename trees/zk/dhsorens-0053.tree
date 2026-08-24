@@ -1,0 +1,95 @@
+\title{zk.golf}
+\author{dhsorens}
+\date{2026-08-24}
+
+\p{
+    A competition, run by zkSecurity, to write the cheapest circuit satisfying a fixed formal
+    interface, with correctness proved in Lean using [Clean](dhsorens-002Y). Each challenge is a
+    directory of Lean files rather than a prose problem statement, and the interesting design
+    decision is which files are trusted. The interface file owns the input and output types, the
+    assumptions, and the spec. The challenge file — described in its own header as the trusted
+    boundary — declares the circuit and the theorems with their bodies left as \code{sorry}, so
+    the obligation is exactly to supply terms of those types. A configuration file names the
+    declarations that must be present and the axioms they may depend on. The implementation is
+    unconstrained.
+}
+
+\p{
+    The SHA-256 instance makes the interface concrete. Input is a 256-byte buffer encoded one byte
+    per field element, plus a length; output is the digest as eight 32-bit words. The assumptions
+    are that every buffer entry is a byte and that the length is below the buffer size. The spec is
+    an equation: the digest equals SHA-256 of the first #{n} bytes, where SHA-256 is defined in the
+    challenge repository over the naturals, with padding and compression written out. It is stated
+    as a \code{GeneralFormalCircuit} rather than a \code{FormalCircuit}, and the reason is precise
+    — the honest prover is additionally required to zero the buffer beyond the message length,
+    which is an obligation on the prover and not an assumption the verifier may make. Coupling the
+    two statements, as the simpler structure does, would have put a padding condition into the
+    soundness theorem.
+}
+
+\p{
+    Five theorems are required, and the three beyond soundness and completeness are the ones that
+    make the score mean anything. Cost is a pair — witness allocations and constraint rows — and
+    the requirement is that the circuit's count equals a declared pair for \em{every} input and at
+    every offset, so the number is a property of the circuit rather than the outcome of a benchmark.
+    Because it is a theorem, a submitted score is certified rather than measured.
+}
+
+\p{
+    The second, \code{isR1CS}, fixes the shape of the constraint system. A single row is an asserted
+    expression in which, along the addition spine, every summand is affine and at most one is a
+    product of two affine forms — the shape #{A \cdot B - C}, one rank-one constraint
+    #{\langle A, z \rangle \cdot \langle B, z \rangle = \langle C, z \rangle}. Degree three and
+    above is rejected, and so is a sum of two products, which genuinely needs an auxiliary witness
+    and a second row. The check is documented as a sound over-approximation: it counts products
+    syntactically, so it can over-reject — #{ab + ac} is rank one but counts as two — and never
+    under-counts, which is the direction that matters, because a true multi-row assertion is never
+    certified as one row. Lookups and channel interactions are forbidden outright.
+}
+
+\p{
+    That prohibition is what shapes every number in the competition. With no lookups, bitwise
+    operations are bit-blasted: in the published SHA-256 solution a 32-bit XOR costs 32 allocations
+    and 32 constraints, a 32-bit addition 33 and 34, and the majority function 64 of each. One round
+    is two #{\Sigma} functions, a choice, a majority, and seven additions — 455 allocations and
+    462 constraints. Sixty-four rounds, the message schedule, and the feed-forward addition make one
+    block cost 40,280 and 40,880; five blocks with the padding checks and digest selection give the
+    interface total, 204,224 allocations and 209,586 constraints. A single 256-byte SHA-256
+    therefore scores 413,810, on the convention that the score is the sum of the two — and the
+    same accounting puts a Keccak permutation at 153,600 of each, a 4096-bit RSA-with-SHA-256
+    signature check at 412,130 and 415,006, and a secp256k1 scalar multiplication above eight
+    million of each.
+}
+
+\p{
+    The third theorem, \code{computableWitness}, requires that every witness generator depend only
+    on the circuit's input and on cells already allocated. This is the obligation that keeps the
+    other four honest. Nothing in soundness or completeness prevents a generator from reading a cell
+    it has not yet assigned, or from being defined by a non-executable choice; a circuit with such a
+    generator can be correct on both counts and still be one no prover can run. Requiring the
+    property as a theorem is how the interface says \em{runnable} without saying anything about the
+    implementation.
+}
+
+\p{
+    Validation is then mechanical, and deliberately so. The submission must typecheck against the
+    declared types, and its axiom dependencies must stay inside a whitelist — propositional
+    extensionality, quotient soundness, classical choice, and, per instance, the assertion that the
+    target prime is prime, which is asserted rather than proved because checking it in the kernel is
+    expensive. There is a flag for re-checking with an independent kernel implementation, currently
+    off. Nothing in the pipeline reads the circuit. zkSecurity's own framing of why this matters is
+    that frontier models can now produce deeply optimised circuits with proofs in days; I cannot
+    check that claim from the repository, but it is not the load-bearing one. The structural point
+    is that the interface makes the question of who wrote the circuit irrelevant to whether it can
+    be accepted, and a competition is a clean way to demonstrate it.
+}
+
+\p{
+    Sources: the [zk-golf-challenges](https://github.com/zksecurity/zk-golf-challenges) repository,
+    read at the initial public-challenge commit — \code{Challenge/Instances/SHA256} for the
+    interface and the trusted boundary, \code{Challenge/Utils/CostR1CS.lean} for the cost and
+    rank-one certification, \code{configs/} for the axiom whitelists, and \code{Solution/} for the
+    published reference circuits and their costs; [zk.golf](https://zk.golf/) and
+    [Fearless and Collaborative Optimization of Circuits](https://blog.zksecurity.xyz/posts/zkgolf/)
+    for the competition's own account of scoring, which I have not read directly.
+}

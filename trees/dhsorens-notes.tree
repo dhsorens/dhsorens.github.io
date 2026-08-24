@@ -3,22 +3,29 @@
 \meta{toc}{true}
 
 \p{
-    I am interested, broadly speaking, in formal proposition and proof.
-    From a high level, what tends to catch my attention is the nuance of going from an intuitive, abstract idea into something formal—whether it's a formal specification of a program, a formalized theorem statement, or even something simply written out as a program.
+    I am interested, broadly speaking, in formal proposition and proof. From a high level, what
+    tends to catch my attention is the nuance of going from an intuitive, abstract idea into
+    something formal—whether it's a formal specification of a program, a formalized theorem
+    statement, or even something simply written out as a program.
 }
 
 \p{
-    During my PhD this manifested as written work focused on the problem of (correctly) specifying and formally verifying [financial smart contracts](dhsorens-000A).
-    But I continue to be interested in [software verification more broadly](dhsorens-0015), the ongoing work to [formalize mathematics](dhsorens-000Z), and other developments in using [proof assistants](dhsorens-000B) in production.
+    During my PhD this manifested as written work focused on the problem of (correctly) specifying
+    and formally verifying [financial smart contracts](dhsorens-000A). But I continue to be
+    interested in [software verification more broadly](dhsorens-0015), the ongoing work to
+    [formalize mathematics](dhsorens-000Z), and other developments in using
+    [proof assistants](dhsorens-000B) in production.
 }
 
 \p{
-    I recently started work on formally verifying [all things zero-knowledge](dhsorens-0020) on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
+    I recently started work on formally verifying [all things zero-knowledge](dhsorens-0020) on the
+    Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
 }
 
 % Anything with sections goes in through a blurb tree rather than by transcluding
 % the thing itself, which would pull in everything beneath it: dhsorens-004D has
 % four sections, dhsorens-002C is 72 trees. A short standalone note goes in whole.
+\transclude{dhsorens-0054} % a note on Clean and circuit specifications
 \transclude{dhsorens-004X} % a note on sigma protocols and Schnorr
 \transclude{dhsorens-004R} % a note on soundness notions
 \transclude{dhsorens-004I} % a note on hash functions in Bitcoin and Ethereum
