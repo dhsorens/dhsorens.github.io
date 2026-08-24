@@ -244,16 +244,80 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    I am interested, broadly speaking, in formal proposition and proof.
-    From a high level, what tends to catch my attention is the nuance of going from an intuitive, abstract idea into something formal—whether it's a formal specification of a program, a formalized theorem statement, or even something simply written out as a program.
+    I am interested, broadly speaking, in formal proposition and proof. From a high level, what
+    tends to catch my attention is the nuance of going from an intuitive, abstract idea into
+    something formal—whether it's a formal specification of a program, a formalized theorem
+    statement, or even something simply written out as a program.
 </html:p>
             <html:p>
-    During my PhD this manifested as written work focused on the problem of (correctly) specifying and formally verifying <fr:link href="/dhsorens-000A/" title="The Main Contributions of my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000A/" display-uri="dhsorens-000A" type="local">financial smart contracts</fr:link>.
-    But I continue to be interested in <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">software verification more broadly</fr:link>, the ongoing work to <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize mathematics</fr:link>, and other developments in using <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> in production.
+    During my PhD this manifested as written work focused on the problem of (correctly) specifying
+    and formally verifying <fr:link href="/dhsorens-000A/" title="The Main Contributions of my PhD Thesis" uri="https://derekhsorensen.com/dhsorens-000A/" display-uri="dhsorens-000A" type="local">financial smart contracts</fr:link>. But I continue to be
+    interested in <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">software verification more broadly</fr:link>, the ongoing work to
+    <fr:link href="/dhsorens-000Z/" title="Formalization of Mathematics" uri="https://derekhsorensen.com/dhsorens-000Z/" display-uri="dhsorens-000Z" type="local">formalize mathematics</fr:link>, and other developments in using
+    <fr:link href="/dhsorens-000B/" title="Interactive Theorem Provers" uri="https://derekhsorensen.com/dhsorens-000B/" display-uri="dhsorens-000B" type="local">proof assistants</fr:link> in production.
 </html:p>
             <html:p>
-    I recently started work on formally verifying <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">all things zero-knowledge</fr:link> on the Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
+    I recently started work on formally verifying <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">all things zero-knowledge</fr:link> on the
+    Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
 </html:p>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>24</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0054/</fr:uri>
+                <fr:display-uri>dhsorens-0054</fr:display-uri>
+                <fr:route>/dhsorens-0054/</fr:route>
+                <fr:title text="A Note on Clean and Circuit Specifications">A Note on Clean and Circuit Specifications</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p><fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> is now written out as a section of the <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKs</fr:link>
+    corpus, from the sources rather than from the announcements. The claim it organises around is
+    that a circuit specification is a contract — assumptions as precondition, spec as
+    postcondition — and that the two halves of it have to be proved separately, because each is
+    satisfiable on its own by a circuit that is useless in the opposite direction. What convinced me
+    the framing is more than tidy bookkeeping is <fr:link href="/dhsorens-0053/" title="zk.golf" uri="https://derekhsorensen.com/dhsorens-0053/" display-uri="dhsorens-0053" type="local">zk.golf</fr:link>, where the contract is
+    fixed in Lean and the circuit is left entirely free, so an optimised circuit is accepted or
+    rejected by the kernel and never by review. That works for a hash function because the
+    specification is an equation; it would not have rescued the
+    <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">smart contract specifications</fr:link> I spent a thesis on, and the difference is in the
+    specification problem rather than in the method.
+</html:p>
+                <html:p>
+    The pages:
+    <html:ul><html:li><fr:link href="/dhsorens-004Y/" title="Circuits, Constraints, and Witness Generation" uri="https://derekhsorensen.com/dhsorens-004Y/" display-uri="dhsorens-004Y" type="local">Circuits, constraints, and witness generation</fr:link> — the circuit monad,
+        the five operations, and why witness generation is compiled to a serialisable IR rather than
+        written as a Lean closure.</html:li>
+        <html:li><fr:link href="/dhsorens-004Z/" title="Soundness and Completeness of a Circuit" uri="https://derekhsorensen.com/dhsorens-004Z/" display-uri="dhsorens-004Z" type="local">Soundness and completeness of a circuit</fr:link> — the two obligations stated
+        precisely, and what the three circuit structures are for. The bit-decomposition gadget is
+        the example that forces the general form.</html:li>
+        <html:li><fr:link href="/dhsorens-0050/" title="Arithmetisations and Backends" uri="https://derekhsorensen.com/dhsorens-0050/" display-uri="dhsorens-0050" type="local">Arithmetisations and backends</fr:link> — flat AIR, channels and ensembles, and
+        an honest accounting of how deep the AIR, Plonkish, and <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> support
+        actually goes.</html:li>
+        <html:li><fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">Circuits in Clean</fr:link> — the zero-test read line by line, including what
+        breaks when one constraint is deleted, plus byte addition and the Fibonacci table.</html:li>
+        <html:li><fr:link href="/dhsorens-0055/" title="Algebraic Varieties" uri="https://derekhsorensen.com/dhsorens-0055/" display-uri="dhsorens-0055" type="local">Algebraic varieties</fr:link> — a Clean circuit's constraints cut out a
+        variety; the spec is what that variety is supposed to mean.</html:li>
+        <html:li><fr:link href="/dhsorens-0052/" title="Interfaces as Specifications" uri="https://derekhsorensen.com/dhsorens-0052/" display-uri="dhsorens-0052" type="local">Interfaces as specifications</fr:link> — what an interface has to pin down
+        beyond soundness and completeness, and <fr:link href="/dhsorens-0053/" title="zk.golf" uri="https://derekhsorensen.com/dhsorens-0053/" display-uri="dhsorens-0053" type="local">zk.golf</fr:link> as the worked case, with the
+        SHA-256 cost broken down.</html:li></html:ul></html:p>
+                <html:p>
+    Two things are open and worth naming. Clean and <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> prove complementary
+    halves of a proof system's correctness and do not compose — joining them is an exploratory
+    roadmap item, and until it happens a verified circuit and a verified argument are two theorems
+    with the arithmetisation's satisfiability relation between them. And verifier challenges are not
+    modelled, so <fr:link href="/dhsorens-002W/" title="Lookup Arguments" uri="https://derekhsorensen.com/dhsorens-002W/" display-uri="dhsorens-002W" type="local">lookup arguments</fr:link> are not proved end to end inside Clean, which is
+    awkward given that lookups are where a zkVM's prover time goes.
+</html:p>
+              </fr:mainmatter>
+            </fr:tree>
             <fr:tree show-metadata="false">
               <fr:frontmatter>
                 <fr:authors>
@@ -462,26 +526,54 @@ The boundary worth keeping in mind is the thin C shim (<html:code>c/terminal.c</
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified
-    model of computable polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
-    The purpose of CompPoly is to provide a computable base for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out
+    <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified model of computable
+    polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. The purpose of CompPoly is to provide a computable base
+    for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
 </html:p>
                 <html:p>
-    My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKS</fr:link> also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
+    My thoughts on computable specifications are still developing. They are growing out of an
+    interest during my PhD in the integrity of formal specifications
+    <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKS</fr:link> also have
+    complicated specifications, but for a different reason than smart contracts. Whereas smart
+    contract specifications have difficult-to-define, high-level, socio-economic properties that one
+    must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty
+    intense mathematics. Just stating the desired properties requires quite a bit of machinery --
+    see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
 </html:p>
                 <html:p>
-    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does computability add to this, or any specification? For one, it lets you run tests. Having tests lets you test the integrity of your spec and test it in sort of a meta- way. It helps build confidence that the spec was built out correctly, something that is difficult (impossible?) to really know.
+    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does
+    computability add to this, or any specification? For one, it lets you run tests. Having tests
+    lets you test the integrity of your spec and test it in sort of a meta- way. It helps build
+    confidence that the spec was built out correctly, something that is difficult (impossible?) to
+    really know. <fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">Clean</fr:link> keeps a Python implementation of SHA-256 beside the Lean
+    specification it proves circuits against, which is the smallest version of this argument I have
+    seen in use.
 </html:p>
                 <html:p>
-    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications of specifications, in the context of smart contracts. I really believe that metaspecifications can add a lot to the security of smart contracts, but a lot of theory has to be built up (even just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy for contracts in the wild.
+    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications
+    of specifications, in the context of smart contracts. I really believe that metaspecifications
+    can add a lot to the security of smart contracts, but a lot of theory has to be built up (even
+    just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy
+    for contracts in the wild.
 </html:p>
                 <html:p>
-    However, metaspecifications already show up in cryptography! An implementation has a specification, the design of the cryptographic system or protocol (e.g. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>). The system or protocol is defined in mathematical terms, with assumptions, and with associated proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol fails, then some assumption of the system was violated. This is a metaspecification!
+    However, metaspecifications already show up in cryptography! An implementation has a
+    specification, the design of the cryptographic system or protocol (e.g. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>).
+    The system or protocol is defined in mathematical terms, with assumptions, and with associated
+    proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol
+    fails, then some assumption of the system was violated. This is a metaspecification!
 </html:p>
                 <html:p>
-    But, as with all specifications, it is very hard to be sure that your specification is correct. This is where computability comes in. Having an executable/computable specification means that you can run tests on it, further extending your specification in an informal way. It makes your spec act more like software, and in some sense makes it stronger as a specification because as a program that runs it is closer to the thing that you're verifying.
+    But, as with all specifications, it is very hard to be sure that your specification is correct.
+    This is where computability comes in. Having an executable/computable specification means that
+    you can run tests on it, further extending your specification in an informal way. It makes your
+    spec act more like software, and in some sense makes it stronger as a specification because as a
+    program that runs it is closer to the thing that you're verifying.
 </html:p>
-                <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable and non-computable terms, spec and implementation, and more and more of the infrastructure of verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+                <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable
+    and non-computable terms, spec and implementation, and more and more of the infrastructure of
+    verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
 </html:p>
               </fr:mainmatter>
             </fr:tree>

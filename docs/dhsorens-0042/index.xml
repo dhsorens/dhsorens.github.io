@@ -66,10 +66,17 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    The reason the rest of this corpus is organised the way it is. The <fr:link href="https://verified-zkevm.org/" type="external">verified zkEVM</fr:link> effort runs three tracks — the zkVM constraints, the EVM semantics, and the cryptography — and <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> and <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> are the cryptography track.
+    The reason the rest of this corpus is organised the way it is. The
+    <fr:link href="https://verified-zkevm.org/" type="external">verified zkEVM</fr:link> effort runs three tracks — the zkVM constraints,
+    the EVM semantics, and the cryptography — and <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> and
+    <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> are the cryptography track.
 </html:p>
             <html:p>
-    These pages stay closer to the code than the rest of the corpus, which also makes them the ones most likely to go stale. Related: <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link>, <fr:link href="/dhsorens-0025/" title="CompPoly and Computable Specifications" uri="https://derekhsorensen.com/dhsorens-0025/" display-uri="dhsorens-0025" type="local">computable specifications</fr:link>, <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">formal verification in proof assistants</fr:link>.
+    These pages stay closer to the code than the rest of the corpus, which also makes them the ones
+    most likely to go stale. Related: <fr:link href="/dhsorens-0020/" title="Protocol Snarkification" uri="https://derekhsorensen.com/dhsorens-0020/" display-uri="dhsorens-0020" type="local">protocol snarkification</fr:link>,
+    <fr:link href="/dhsorens-0025/" title="CompPoly and Computable Specifications" uri="https://derekhsorensen.com/dhsorens-0025/" display-uri="dhsorens-0025" type="local">computable specifications</fr:link>,
+    <fr:link href="/dhsorens-0015/" title="Formal Verification in Proof Assistants" uri="https://derekhsorensen.com/dhsorens-0015/" display-uri="dhsorens-0015" type="local">formal verification in proof assistants</fr:link>, and
+    <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">circuits and their specifications</fr:link>.
 </html:p>
             <fr:tree show-metadata="false">
               <fr:frontmatter>

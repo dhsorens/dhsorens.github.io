@@ -119,7 +119,7 @@
                 <fr:date>
                   <fr:year>2026</fr:year>
                   <fr:month>8</fr:month>
-                  <fr:day>21</fr:day>
+                  <fr:day>24</fr:day>
                 </fr:date>
                 <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
                 <fr:display-uri>dhsorens-001S</fr:display-uri>
@@ -129,9 +129,12 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    See my latest on <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocols</fr:link> and <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> — the three-move
-    public-coin proof of knowledge, worked through to the one subtraction that extracts a witness
-    and the simulator that is the same equation read backwards.
+    See my latest on <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> — the embedded <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> DSL in which a zk
+    circuit, its specification, and its correctness proof are one artefact. The section covers the
+    circuit representation, the two proof obligations and why neither means anything without the
+    other, and how far the <fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> and <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link> support actually reaches.
+    It ends on <fr:link href="/dhsorens-0053/" title="zk.golf" uri="https://derekhsorensen.com/dhsorens-0053/" display-uri="dhsorens-0053" type="local">zk.golf</fr:link>, where the specification is fixed in Lean and the circuit is
+    left free, so an optimised SHA-256 is accepted by the kernel rather than by review.
 </html:p>
               </fr:mainmatter>
             </fr:tree>

@@ -66,10 +66,14 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    The mathematics the protocols are built out of. Most of the recent performance work lives here rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude faster because the field changed, not because the argument did.
+    The mathematics the protocols are built out of. Most of the recent performance work lives here
+    rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude
+    faster because the field changed, not because the argument did.
 </html:p>
             <html:p>
-    This is also the part of the stack <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> is about — fields, polynomials, and their computable representations — so these pages should stay close to what is actually definable in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+    This is also the part of the stack <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> is about — fields, polynomials,
+    and their computable representations — so these pages should stay close to what is actually
+    definable in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
 </html:p>
             <fr:tree show-metadata="false">
               <fr:frontmatter>
@@ -215,6 +219,46 @@
         <html:li>Why FRI wants univariate and Basefold, HyperPlonk, and Binius want multilinear.</html:li>
         <html:li>How <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> unifies the two, and what the translation costs.</html:li>
         <html:li>Computable representations — dense, sparse, coefficient, evaluation form — and which operations each makes cheap. This is <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>'s design problem.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>24</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0055/</fr:uri>
+                <fr:display-uri>dhsorens-0055</fr:display-uri>
+                <fr:route>/dhsorens-0055/</fr:route>
+                <fr:title text="Algebraic Varieties">Algebraic Varieties</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    An affine algebraic variety over a field <fr:tex display="inline"><![CDATA[F]]></fr:tex> is the common vanishing set of a family of
+    polynomials in <fr:tex display="inline"><![CDATA[F[x_1, \dots , x_n]]]></fr:tex>. In this corpus that is what a circuit is: each
+    <html:code>assert</html:code> is a polynomial required to vanish on the witness cells, and a satisfying
+    assignment is a point of the variety those polynomials cut out. The computation the circuit was
+    written for is not itself a variety; <fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">arithmetisation</fr:link> produces one that is
+    supposed to stand for it. <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> soundness is the claim that every point of the
+    variety satisfies the spec; completeness is the claim that every input the spec accepts extends
+    to a point on it.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The definition, over a finite field rather than an algebraically closed one, and what
+        survives of the usual Nullstellensatz picture.</html:li>
+        <html:li>How <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link>, <fr:link href="/dhsorens-002T/" title="Plonkish Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002T/" display-uri="dhsorens-002T" type="local">Plonkish</fr:link>, and <fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> present
+        the same kind of object with different sparsity and degree.</html:li>
+        <html:li>The <fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">zero-test</fr:link> as the smallest case where the variety and the spec come
+        apart: delete a constraint and the variety grows, completeness stays, soundness fails.</html:li>
+        <html:li>What a lookup or a channel interaction is, geometrically — not a polynomial vanishing,
+        so not a condition that cuts out a variety in the same sense.</html:li></html:ul></html:p>
               </fr:mainmatter>
             </fr:tree>
             <fr:tree show-metadata="false">
@@ -379,23 +423,66 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement, except with small probability. <fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> is the matching guarantee for an honest prover with a true statement, and is almost never where a protocol fails. The definition has to name the adversary: which provers, in which game, with which oracles.
+    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement,
+    except with small probability. <fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> is the matching guarantee for an
+    honest prover with a true statement, and is almost never where a protocol fails. The definition
+    has to name the adversary: which provers, in which game, with which oracles. A circuit carries
+    <fr:link href="/dhsorens-004Z/" title="Soundness and Completeness of a Circuit" uri="https://derekhsorensen.com/dhsorens-004Z/" display-uri="dhsorens-004Z" type="local">a soundness obligation of its own</fr:link>, about what a satisfying assignment implies
+    rather than about which provers can produce one.
 </html:p>
-            <html:p><html:em>Sound</html:em> names a family of properties. Most papers prove the weakest member; <fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">compilation</fr:link> (interactive protocol to deployed non-interactive argument) needs a stronger one. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">GKR-based argument</fr:link> whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
+            <html:p><html:em>Sound</html:em> names a family of properties. Most papers prove the weakest member;
+    <fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">compilation</fr:link> (interactive protocol to deployed non-interactive argument) needs a
+    stronger one. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed
+    <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">GKR-based argument</fr:link> whose interactive soundness was never in question. The
+    interactive theorem was true; it was the wrong theorem.
 </html:p>
             <html:p>
-    The notions, weakest first, for a public-coin protocol <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> with <fr:tex display="inline"><![CDATA[\mu ]]></fr:tex> challenge rounds deciding membership in a language <fr:tex display="inline"><![CDATA[L]]></fr:tex>.
-    <html:ul><html:li><html:strong>Soundness</html:strong> — no prover convinces the verifier of a false statement except with probability at most <fr:tex display="inline"><![CDATA[\epsilon ]]></fr:tex>. Which provers are admitted is the whole content of the definition: unbounded ones make <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> a proof, computationally bounded ones an argument.</html:li>
-        <html:li><html:strong>Knowledge soundness</html:strong> — an efficient extractor recovers a witness from any prover that convinces <fr:tex display="inline"><![CDATA[V]]></fr:tex>. Strictly stronger, and the only one of the two with content when every statement is in the language.</html:li>
-        <html:li><html:strong>Special soundness</html:strong> — a combinatorial condition on the verifier: a tree of accepting transcripts, branching at each challenge round, yields a witness. Not a security guarantee but a hypothesis that implies one, and checkable by inspecting the algebra. Lattice protocols, whose challenges are vectors, run on a coordinate-wise variant that branches per coordinate rather than per challenge.</html:li>
-        <html:li><html:strong>Round-by-round soundness</html:strong> — every transcript prefix carries a state, a false statement starts <html:em>doomed</html:em>, and a single round escapes doom with probability at most <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex>.</html:li>
-        <html:li><html:strong>State-restoration soundness</html:strong> — soundness against a prover that may return to any prefix it has already built and draw a fresh challenge there, as often as its budget allows.</html:li></html:ul>
-    Three qualifiers cut across all five and are quoted less often than they should be: whether the statement is fixed before the hash function or <fr:link href="/dhsorens-004O/" title="Adaptive Soundness" uri="https://derekhsorensen.com/dhsorens-004O/" display-uri="dhsorens-004O" type="local">chosen after</fr:link>, whether the extractor may <fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">rewind or must work straightline</fr:link>, and which oracles the adversary is given. A soundness claim missing any of the three is not yet a claim.
+    The notions, weakest first, for a public-coin protocol <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> with <fr:tex display="inline"><![CDATA[\mu ]]></fr:tex> challenge rounds
+    deciding membership in a language <fr:tex display="inline"><![CDATA[L]]></fr:tex>.
+    <html:ul><html:li><html:strong>Soundness</html:strong> — no prover convinces the verifier of a false statement except with
+        probability at most <fr:tex display="inline"><![CDATA[\epsilon ]]></fr:tex>. Which provers are admitted is the whole content of the
+        definition: unbounded ones make <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> a proof, computationally bounded ones an argument.</html:li>
+        <html:li><html:strong>Knowledge soundness</html:strong> — an efficient extractor recovers a witness from any
+        prover that convinces <fr:tex display="inline"><![CDATA[V]]></fr:tex>. Strictly stronger, and the only one of the two with content when
+        every statement is in the language.</html:li>
+        <html:li><html:strong>Special soundness</html:strong> — a combinatorial condition on the verifier: a tree of
+        accepting transcripts, branching at each challenge round, yields a witness. Not a security
+        guarantee but a hypothesis that implies one, and checkable by inspecting the algebra.
+        Lattice protocols, whose challenges are vectors, run on a coordinate-wise variant that
+        branches per coordinate rather than per challenge.</html:li>
+        <html:li><html:strong>Round-by-round soundness</html:strong> — every transcript prefix carries a state, a false
+        statement starts <html:em>doomed</html:em>, and a single round escapes doom with probability at most
+        <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex>.</html:li>
+        <html:li><html:strong>State-restoration soundness</html:strong> — soundness against a prover that may return to
+        any prefix it has already built and draw a fresh challenge there, as often as its budget
+        allows.</html:li></html:ul>
+    Three qualifiers cut across all five and are quoted less often than they should be: whether the
+    statement is fixed before the hash function or <fr:link href="/dhsorens-004O/" title="Adaptive Soundness" uri="https://derekhsorensen.com/dhsorens-004O/" display-uri="dhsorens-004O" type="local">chosen after</fr:link>, whether the
+    extractor may <fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">rewind or must work straightline</fr:link>, and which oracles the adversary
+    is given. A soundness claim missing any of the three is not yet a claim.
 </html:p>
             <html:p>
-    The implications make the family a hierarchy rather than a list. Knowledge soundness implies soundness once the knowledge error is below one. Round-by-round soundness implies soundness with error <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } \epsilon _i]]></fr:tex>, by a union bound over rounds. State-restoration soundness implies soundness with the error preserved, and is equivalent to round-by-round soundness up to a polynomial loss. Special soundness implies round-by-round soundness — Block, Garreta, Tiwari, and Zając prove this for generalised forms of both. Each notion has a knowledge counterpart, and round-by-round knowledge soundness implies both round-by-round soundness and plain knowledge soundness. <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> states these arrows as theorems in <html:code>OracleReduction/Security/Implications.lean</html:code> — knowledge soundness to soundness, round-by-round to plain in both directions, state restoration to both — which is a useful check on the decomposition, since each arrow has to be proved rather than asserted.
+    The implications make the family a hierarchy rather than a list. Knowledge soundness implies
+    soundness once the knowledge error is below one. Round-by-round soundness implies soundness with
+    error <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } \epsilon _i]]></fr:tex>, by a union bound over rounds. State-restoration soundness
+    implies soundness with the error preserved, and is equivalent to round-by-round soundness up to
+    a polynomial loss. Special soundness implies round-by-round soundness — Block, Garreta,
+    Tiwari, and Zając prove this for generalised forms of both. Each notion has a knowledge
+    counterpart, and round-by-round knowledge soundness implies both round-by-round soundness and
+    plain knowledge soundness. <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> states these arrows as theorems in
+    <html:code>OracleReduction/Security/Implications.lean</html:code> — knowledge soundness to soundness,
+    round-by-round to plain in both directions, state restoration to both — which is a useful
+    check on the decomposition, since each arrow has to be proved rather than asserted.
 </html:p>
-            <html:p><fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">Compilation</fr:link> is where a notion gets chosen, not merely inherited. <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">Sequential composition</fr:link> preserves plain soundness, with the errors accumulating. The <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link> does not: analysed from plain soundness alone, a <fr:tex display="inline"><![CDATA[(2\mu +1)]]></fr:tex>-move protocol loses a factor <fr:tex display="inline"><![CDATA[Q^\mu ]]></fr:tex> in the adversary's random-oracle query count <fr:tex display="inline"><![CDATA[Q]]></fr:tex>, which says nothing at all for the twenty-odd rounds of a folding argument. From special soundness the loss is <fr:tex display="inline"><![CDATA[Q+1]]></fr:tex> regardless of round count; from round-by-round soundness it is likewise linear in <fr:tex display="inline"><![CDATA[Q]]></fr:tex>. The <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS transform</fr:link> is analysed against state restoration directly. A many-round protocol therefore has to be analysed round-by-round from the start, because an end-to-end soundness bound cannot be repaired after the fact.
+            <html:p><fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">Compilation</fr:link> is where a notion gets chosen, not merely inherited.
+    <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">Sequential composition</fr:link> preserves plain soundness, with the errors accumulating.
+    The <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link> does not: analysed from plain soundness alone, a
+    <fr:tex display="inline"><![CDATA[(2\mu +1)]]></fr:tex>-move protocol loses a factor <fr:tex display="inline"><![CDATA[Q^\mu ]]></fr:tex> in the adversary's random-oracle query count
+    <fr:tex display="inline"><![CDATA[Q]]></fr:tex>, which says nothing at all for the twenty-odd rounds of a folding argument. From special
+    soundness the loss is <fr:tex display="inline"><![CDATA[Q+1]]></fr:tex> regardless of round count; from round-by-round soundness it is
+    likewise linear in <fr:tex display="inline"><![CDATA[Q]]></fr:tex>. The <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS transform</fr:link> is analysed against state
+    restoration directly. A many-round protocol therefore has to be analysed round-by-round from the
+    start, because an end-to-end soundness bound cannot be repaired after the fact.
 </html:p>
             <fr:tree show-metadata="false">
               <fr:frontmatter>
@@ -702,7 +789,11 @@
               </fr:mainmatter>
             </fr:tree>
             <html:p>
-    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic; <fr:link href="https://eprint.iacr.org/2023/1256" type="external">On Soundness Notions for Interactive Oracle Proofs</fr:link> for the implications between them; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>'s <html:code>OracleReduction/Security</html:code> for the same map in Lean.
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the
+    distinctions are not academic;
+    <fr:link href="https://eprint.iacr.org/2023/1256" type="external">On Soundness Notions for Interactive Oracle Proofs</fr:link> for the
+    implications between them; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>'s
+    <html:code>OracleReduction/Security</html:code> for the same map in Lean.
 </html:p>
           </fr:mainmatter>
         </fr:tree>

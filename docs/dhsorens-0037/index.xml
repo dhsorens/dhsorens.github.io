@@ -287,6 +287,34 @@
             <fr:date>
               <fr:year>2026</fr:year>
               <fr:month>8</fr:month>
+              <fr:day>24</fr:day>
+            </fr:date>
+            <fr:uri>https://derekhsorensen.com/dhsorens-plonky3/</fr:uri>
+            <fr:display-uri>dhsorens-plonky3</fr:display-uri>
+            <fr:route>/dhsorens-plonky3/</fr:route>
+            <fr:title text="Plonky3">Plonky3</fr:title>
+            <fr:taxon>Tool</fr:taxon>
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:link href="https://github.com/Plonky3/Plonky3" type="external">https://github.com/Plonky3/Plonky3</fr:link>
+            <html:p>
+    A STARK toolkit — <fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> plus <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, configurable over field,
+    hash, and PCS. The corpus treatment is
+    <fr:link href="/dhsorens-003I/" title="STARKs: Plonky3, Stwo, and Circle STARKs" uri="https://derekhsorensen.com/dhsorens-003I/" display-uri="dhsorens-003I" type="local">STARKs: Plonky3, Stwo, and Circle STARKs</fr:link>. <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> has a
+    proof-of-concept <fr:link href="/dhsorens-0050/" title="Arithmetisations and Backends" uri="https://derekhsorensen.com/dhsorens-0050/" display-uri="dhsorens-0050" type="local">backend</fr:link> that compiles a circuit to a Plonky3 AIR.
+</html:p>
+          </fr:mainmatter>
+        </fr:tree>
+        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
+          <fr:frontmatter>
+            <fr:authors>
+              <fr:author>
+                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+              </fr:author>
+            </fr:authors>
+            <fr:date>
+              <fr:year>2026</fr:year>
+              <fr:month>8</fr:month>
               <fr:day>21</fr:day>
             </fr:date>
             <fr:uri>https://derekhsorensen.com/dhsorens-004W/</fr:uri>
@@ -893,17 +921,26 @@
             <fr:title text="STARKs: Plonky3, Stwo, and Circle STARKs">STARKs: Plonky3, Stwo, and Circle STARKs</fr:title>
           </fr:frontmatter>
           <fr:mainmatter>
-            <html:p><fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> plus <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, over a small field, as a reusable toolkit rather than a single protocol. This is the layer the <fr:link href="/dhsorens-0043/" title="From Rust to Lean" uri="https://derekhsorensen.com/dhsorens-0043/" display-uri="dhsorens-0043" type="local">Rust-to-Lean extraction work</fr:link> targets: Plonky3 in Lean, with proofs about what it computes.
+            <html:p><fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> plus <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, over a small field, as a reusable toolkit rather
+    than a single protocol. This is the layer the <fr:link href="/dhsorens-0043/" title="From Rust to Lean" uri="https://derekhsorensen.com/dhsorens-0043/" display-uri="dhsorens-0043" type="local">Rust-to-Lean extraction work</fr:link>
+    targets: <fr:link href="/dhsorens-plonky3/" title="Plonky3" uri="https://derekhsorensen.com/dhsorens-plonky3/" display-uri="dhsorens-plonky3" type="local">Plonky3</fr:link> in Lean, with proofs about what it computes.
 </html:p>
             <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The STARK protocol end to end: trace, constraints, quotient, commitment, low-degree test.</html:li>
-        <html:li>Plonky3 as a toolkit — what is configurable (field, hash, PCS, folding factor) and what is fixed.</html:li>
-        <html:li>Stwo and the circle domain: Mersenne31 has no large smooth subgroup, so what replaces it and what changes in the constraint system.</html:li>
-        <html:li>Circle STARKs' vanishing polynomials and the extra care their boundary constraints need.</html:li>
-        <html:li>Where the two toolkits agree, since both consume an AIR — and what that means for <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> targeting both.</html:li></html:ul></html:p>
+    <html:ul><html:li>The STARK protocol end to end: trace, constraints, quotient, commitment, low-degree
+        test.</html:li>
+        <html:li><fr:link href="/dhsorens-plonky3/" title="Plonky3" uri="https://derekhsorensen.com/dhsorens-plonky3/" display-uri="dhsorens-plonky3" type="local">Plonky3</fr:link> as a toolkit — what is configurable (field, hash, PCS,
+        folding factor) and what is fixed.</html:li>
+        <html:li>Stwo and the circle domain: Mersenne31 has no large smooth subgroup, so what replaces it
+        and what changes in the constraint system.</html:li>
+        <html:li>Circle STARKs' vanishing polynomials and the extra care their boundary constraints
+        need.</html:li>
+        <html:li>Where the two toolkits agree, since both consume an AIR — and what that means for
+        <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> targeting both.</html:li></html:ul></html:p>
             <html:p>
-    Sources: <fr:link href="https://github.com/Plonky3/Plonky3" type="external">Plonky3</fr:link>, <fr:link href="https://github.com/starkware-libs/stwo" type="external">stwo</fr:link>, Buterin, <fr:link href="https://vitalik.eth.limo/general/2024/07/23/circlestarks.html" type="external">Exploring circle STARKs</fr:link>.
+    Sources: <fr:link href="https://github.com/Plonky3/Plonky3" type="external">Plonky3</fr:link>,
+    <fr:link href="https://github.com/starkware-libs/stwo" type="external">stwo</fr:link>, Buterin,
+    <fr:link href="https://vitalik.eth.limo/general/2024/07/23/circlestarks.html" type="external">Exploring circle STARKs</fr:link>.
 </html:p>
           </fr:mainmatter>
         </fr:tree>
@@ -1162,17 +1199,25 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    An honest prover with a true statement is accepted, except with small probability — usually with probability one. Unlike <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">soundness</fr:link> this is one property, not a family, and <fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">compilation</fr:link> preserves it. The obligation that fails is one layer down: a circuit is complete when every honest execution has a satisfying witness, which is what <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> treats as separate from soundness.
+    An honest prover with a true statement is accepted, except with small probability — usually
+    with probability one. Unlike <fr:link href="/dhsorens-002F/" title="Soundness Notions" uri="https://derekhsorensen.com/dhsorens-002F/" display-uri="dhsorens-002F" type="local">soundness</fr:link> this is one property, not a family, and
+    <fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">compilation</fr:link> preserves it. The obligation that fails is one layer down: a
+    circuit is complete when every honest execution has a satisfying witness, which is what
+    <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> treats as separate from soundness.
 </html:p>
                 <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The definition, and the completeness error. When a protocol is perfectly complete and when it is not.</html:li>
+    <html:ul><html:li>The definition, and the completeness error. When a protocol is perfectly complete and
+        when it is not.</html:li>
         <html:li>How completeness composes under <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">oracle reductions</fr:link>.</html:li>
         <html:li>What <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir</fr:link> and <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS</fr:link> do to it.</html:li>
-        <html:li>Circuit completeness versus protocol completeness, and the form of the obligation in <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link>.</html:li>
+        <html:li>Circuit completeness versus protocol completeness.
+        <fr:link href="/dhsorens-004Z/" title="Soundness and Completeness of a Circuit" uri="https://derekhsorensen.com/dhsorens-004Z/" display-uri="dhsorens-004Z" type="local">The circuit-level obligation</fr:link> is written out on the <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link>
+        pages; what is missing is the theorem joining it to this one.</html:li>
         <html:li>Where <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> states it.</html:li></html:ul></html:p>
                 <html:p>
-    Sources: Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em>; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>OracleReduction</html:code>).
+    Sources: Thaler, <html:em>Proofs, Arguments, and Zero-Knowledge</html:em>;
+    <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link> (<html:code>OracleReduction</html:code>).
 </html:p>
               </fr:mainmatter>
             </fr:tree>
@@ -1196,23 +1241,66 @@
               </fr:frontmatter>
               <fr:mainmatter>
                 <html:p>
-    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement, except with small probability. <fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> is the matching guarantee for an honest prover with a true statement, and is almost never where a protocol fails. The definition has to name the adversary: which provers, in which game, with which oracles.
+    Soundness is the claim that a cheating prover cannot make the verifier accept a false statement,
+    except with small probability. <fr:link href="/dhsorens-004T/" title="Completeness" uri="https://derekhsorensen.com/dhsorens-004T/" display-uri="dhsorens-004T" type="local">Completeness</fr:link> is the matching guarantee for an
+    honest prover with a true statement, and is almost never where a protocol fails. The definition
+    has to name the adversary: which provers, in which game, with which oracles. A circuit carries
+    <fr:link href="/dhsorens-004Z/" title="Soundness and Completeness of a Circuit" uri="https://derekhsorensen.com/dhsorens-004Z/" display-uri="dhsorens-004Z" type="local">a soundness obligation of its own</fr:link>, about what a satisfying assignment implies
+    rather than about which provers can produce one.
 </html:p>
-                <html:p><html:em>Sound</html:em> names a family of properties. Most papers prove the weakest member; <fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">compilation</fr:link> (interactive protocol to deployed non-interactive argument) needs a stronger one. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">GKR-based argument</fr:link> whose interactive soundness was never in question. The interactive theorem was true; it was the wrong theorem.
+                <html:p><html:em>Sound</html:em> names a family of properties. Most papers prove the weakest member;
+    <fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">compilation</fr:link> (interactive protocol to deployed non-interactive argument) needs a
+    stronger one. Khovratovich, Rothblum, and Soukhanov proved false statements against a deployed
+    <fr:link href="/dhsorens-002Q/" title="The Sumcheck Protocol" uri="https://derekhsorensen.com/dhsorens-002Q/" display-uri="dhsorens-002Q" type="local">GKR-based argument</fr:link> whose interactive soundness was never in question. The
+    interactive theorem was true; it was the wrong theorem.
 </html:p>
                 <html:p>
-    The notions, weakest first, for a public-coin protocol <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> with <fr:tex display="inline"><![CDATA[\mu ]]></fr:tex> challenge rounds deciding membership in a language <fr:tex display="inline"><![CDATA[L]]></fr:tex>.
-    <html:ul><html:li><html:strong>Soundness</html:strong> — no prover convinces the verifier of a false statement except with probability at most <fr:tex display="inline"><![CDATA[\epsilon ]]></fr:tex>. Which provers are admitted is the whole content of the definition: unbounded ones make <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> a proof, computationally bounded ones an argument.</html:li>
-        <html:li><html:strong>Knowledge soundness</html:strong> — an efficient extractor recovers a witness from any prover that convinces <fr:tex display="inline"><![CDATA[V]]></fr:tex>. Strictly stronger, and the only one of the two with content when every statement is in the language.</html:li>
-        <html:li><html:strong>Special soundness</html:strong> — a combinatorial condition on the verifier: a tree of accepting transcripts, branching at each challenge round, yields a witness. Not a security guarantee but a hypothesis that implies one, and checkable by inspecting the algebra. Lattice protocols, whose challenges are vectors, run on a coordinate-wise variant that branches per coordinate rather than per challenge.</html:li>
-        <html:li><html:strong>Round-by-round soundness</html:strong> — every transcript prefix carries a state, a false statement starts <html:em>doomed</html:em>, and a single round escapes doom with probability at most <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex>.</html:li>
-        <html:li><html:strong>State-restoration soundness</html:strong> — soundness against a prover that may return to any prefix it has already built and draw a fresh challenge there, as often as its budget allows.</html:li></html:ul>
-    Three qualifiers cut across all five and are quoted less often than they should be: whether the statement is fixed before the hash function or <fr:link href="/dhsorens-004O/" title="Adaptive Soundness" uri="https://derekhsorensen.com/dhsorens-004O/" display-uri="dhsorens-004O" type="local">chosen after</fr:link>, whether the extractor may <fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">rewind or must work straightline</fr:link>, and which oracles the adversary is given. A soundness claim missing any of the three is not yet a claim.
+    The notions, weakest first, for a public-coin protocol <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> with <fr:tex display="inline"><![CDATA[\mu ]]></fr:tex> challenge rounds
+    deciding membership in a language <fr:tex display="inline"><![CDATA[L]]></fr:tex>.
+    <html:ul><html:li><html:strong>Soundness</html:strong> — no prover convinces the verifier of a false statement except with
+        probability at most <fr:tex display="inline"><![CDATA[\epsilon ]]></fr:tex>. Which provers are admitted is the whole content of the
+        definition: unbounded ones make <fr:tex display="inline"><![CDATA[\Pi ]]></fr:tex> a proof, computationally bounded ones an argument.</html:li>
+        <html:li><html:strong>Knowledge soundness</html:strong> — an efficient extractor recovers a witness from any
+        prover that convinces <fr:tex display="inline"><![CDATA[V]]></fr:tex>. Strictly stronger, and the only one of the two with content when
+        every statement is in the language.</html:li>
+        <html:li><html:strong>Special soundness</html:strong> — a combinatorial condition on the verifier: a tree of
+        accepting transcripts, branching at each challenge round, yields a witness. Not a security
+        guarantee but a hypothesis that implies one, and checkable by inspecting the algebra.
+        Lattice protocols, whose challenges are vectors, run on a coordinate-wise variant that
+        branches per coordinate rather than per challenge.</html:li>
+        <html:li><html:strong>Round-by-round soundness</html:strong> — every transcript prefix carries a state, a false
+        statement starts <html:em>doomed</html:em>, and a single round escapes doom with probability at most
+        <fr:tex display="inline"><![CDATA[\epsilon _i]]></fr:tex>.</html:li>
+        <html:li><html:strong>State-restoration soundness</html:strong> — soundness against a prover that may return to
+        any prefix it has already built and draw a fresh challenge there, as often as its budget
+        allows.</html:li></html:ul>
+    Three qualifiers cut across all five and are quoted less often than they should be: whether the
+    statement is fixed before the hash function or <fr:link href="/dhsorens-004O/" title="Adaptive Soundness" uri="https://derekhsorensen.com/dhsorens-004O/" display-uri="dhsorens-004O" type="local">chosen after</fr:link>, whether the
+    extractor may <fr:link href="/dhsorens-004J/" title="Soundness, Knowledge Soundness, and Extraction" uri="https://derekhsorensen.com/dhsorens-004J/" display-uri="dhsorens-004J" type="local">rewind or must work straightline</fr:link>, and which oracles the adversary
+    is given. A soundness claim missing any of the three is not yet a claim.
 </html:p>
                 <html:p>
-    The implications make the family a hierarchy rather than a list. Knowledge soundness implies soundness once the knowledge error is below one. Round-by-round soundness implies soundness with error <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } \epsilon _i]]></fr:tex>, by a union bound over rounds. State-restoration soundness implies soundness with the error preserved, and is equivalent to round-by-round soundness up to a polynomial loss. Special soundness implies round-by-round soundness — Block, Garreta, Tiwari, and Zając prove this for generalised forms of both. Each notion has a knowledge counterpart, and round-by-round knowledge soundness implies both round-by-round soundness and plain knowledge soundness. <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> states these arrows as theorems in <html:code>OracleReduction/Security/Implications.lean</html:code> — knowledge soundness to soundness, round-by-round to plain in both directions, state restoration to both — which is a useful check on the decomposition, since each arrow has to be proved rather than asserted.
+    The implications make the family a hierarchy rather than a list. Knowledge soundness implies
+    soundness once the knowledge error is below one. Round-by-round soundness implies soundness with
+    error <fr:tex display="inline"><![CDATA[\sum _{i=1}^{\mu } \epsilon _i]]></fr:tex>, by a union bound over rounds. State-restoration soundness
+    implies soundness with the error preserved, and is equivalent to round-by-round soundness up to
+    a polynomial loss. Special soundness implies round-by-round soundness — Block, Garreta,
+    Tiwari, and Zając prove this for generalised forms of both. Each notion has a knowledge
+    counterpart, and round-by-round knowledge soundness implies both round-by-round soundness and
+    plain knowledge soundness. <fr:link href="/dhsorens-0040/" title="ArkLib" uri="https://derekhsorensen.com/dhsorens-0040/" display-uri="dhsorens-0040" type="local">ArkLib</fr:link> states these arrows as theorems in
+    <html:code>OracleReduction/Security/Implications.lean</html:code> — knowledge soundness to soundness,
+    round-by-round to plain in both directions, state restoration to both — which is a useful
+    check on the decomposition, since each arrow has to be proved rather than asserted.
 </html:p>
-                <html:p><fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">Compilation</fr:link> is where a notion gets chosen, not merely inherited. <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">Sequential composition</fr:link> preserves plain soundness, with the errors accumulating. The <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link> does not: analysed from plain soundness alone, a <fr:tex display="inline"><![CDATA[(2\mu +1)]]></fr:tex>-move protocol loses a factor <fr:tex display="inline"><![CDATA[Q^\mu ]]></fr:tex> in the adversary's random-oracle query count <fr:tex display="inline"><![CDATA[Q]]></fr:tex>, which says nothing at all for the twenty-odd rounds of a folding argument. From special soundness the loss is <fr:tex display="inline"><![CDATA[Q+1]]></fr:tex> regardless of round count; from round-by-round soundness it is likewise linear in <fr:tex display="inline"><![CDATA[Q]]></fr:tex>. The <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS transform</fr:link> is analysed against state restoration directly. A many-round protocol therefore has to be analysed round-by-round from the start, because an end-to-end soundness bound cannot be repaired after the fact.
+                <html:p><fr:link href="/dhsorens-004S/" title="Compilation" uri="https://derekhsorensen.com/dhsorens-004S/" display-uri="dhsorens-004S" type="local">Compilation</fr:link> is where a notion gets chosen, not merely inherited.
+    <fr:link href="/dhsorens-002I/" title="Oracle Reductions and Composition" uri="https://derekhsorensen.com/dhsorens-002I/" display-uri="dhsorens-002I" type="local">Sequential composition</fr:link> preserves plain soundness, with the errors accumulating.
+    The <fr:link href="/dhsorens-002G/" title="Fiat–Shamir and the Random Oracle Model" uri="https://derekhsorensen.com/dhsorens-002G/" display-uri="dhsorens-002G" type="local">Fiat–Shamir transform</fr:link> does not: analysed from plain soundness alone, a
+    <fr:tex display="inline"><![CDATA[(2\mu +1)]]></fr:tex>-move protocol loses a factor <fr:tex display="inline"><![CDATA[Q^\mu ]]></fr:tex> in the adversary's random-oracle query count
+    <fr:tex display="inline"><![CDATA[Q]]></fr:tex>, which says nothing at all for the twenty-odd rounds of a folding argument. From special
+    soundness the loss is <fr:tex display="inline"><![CDATA[Q+1]]></fr:tex> regardless of round count; from round-by-round soundness it is
+    likewise linear in <fr:tex display="inline"><![CDATA[Q]]></fr:tex>. The <fr:link href="/dhsorens-002H/" title="The BCS Transform" uri="https://derekhsorensen.com/dhsorens-002H/" display-uri="dhsorens-002H" type="local">BCS transform</fr:link> is analysed against state
+    restoration directly. A many-round protocol therefore has to be analysed round-by-round from the
+    start, because an end-to-end soundness bound cannot be repaired after the fact.
 </html:p>
                 <fr:tree show-metadata="false">
                   <fr:frontmatter>
@@ -1519,7 +1607,11 @@
                   </fr:mainmatter>
                 </fr:tree>
                 <html:p>
-    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the distinctions are not academic; <fr:link href="https://eprint.iacr.org/2023/1256" type="external">On Soundness Notions for Interactive Oracle Proofs</fr:link> for the implications between them; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>'s <html:code>OracleReduction/Security</html:code> for the same map in Lean.
+    Sources: <fr:link href="https://eprint.iacr.org/2025/118" type="external">How to Prove False Statements</fr:link> for why the
+    distinctions are not academic;
+    <fr:link href="https://eprint.iacr.org/2023/1256" type="external">On Soundness Notions for Interactive Oracle Proofs</fr:link> for the
+    implications between them; <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">ArkLib</fr:link>'s
+    <html:code>OracleReduction/Security</html:code> for the same map in Lean.
 </html:p>
               </fr:mainmatter>
             </fr:tree>
@@ -1675,26 +1767,54 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified
-    model of computable polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
-    The purpose of CompPoly is to provide a computable base for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
+    During <fr:link href="/dhsorens-0026/" title="Q1 2026" uri="https://derekhsorensen.com/dhsorens-0026/" display-uri="dhsorens-0026" type="local">Q1 of 2026</fr:link> we worked building out
+    <fr:link href="https://github.com/Verified-zkEVM/CompPoly" type="external">CompPoly</fr:link>, a formally verified model of computable
+    polynomials in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>. The purpose of CompPoly is to provide a computable base
+    for the specs in <fr:link href="https://github.com/Verified-zkEVM/ArkLib" type="external">Arklib</fr:link>.
 </html:p>
             <html:p>
-    My thoughts on computable specifications are still developing. They are growing out of an interest during my PhD in the integrity of formal specifications <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKS</fr:link> also have complicated specifications, but for a different reason than smart contracts. Whereas smart contract specifications have difficult-to-define, high-level, socio-economic properties that one must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense mathematics. Just stating the desired properties requires quite a bit of machinery -- see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
+    My thoughts on computable specifications are still developing. They are growing out of an
+    interest during my PhD in the integrity of formal specifications
+    <fr:link href="/dhsorens-001J/" title="Smart Contract Specification" uri="https://derekhsorensen.com/dhsorens-001J/" display-uri="dhsorens-001J" type="local">in the case of smart contracts</fr:link>. <fr:link href="/dhsorens-002C/" title="zkVMs and SNARKs" uri="https://derekhsorensen.com/dhsorens-002C/" display-uri="dhsorens-002C" type="local">zkVMs and SNARKS</fr:link> also have
+    complicated specifications, but for a different reason than smart contracts. Whereas smart
+    contract specifications have difficult-to-define, high-level, socio-economic properties that one
+    must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty
+    intense mathematics. Just stating the desired properties requires quite a bit of machinery --
+    see <fr:link href="https://github.com/Verified-zkEVM/ArkLib/" type="external">Arklib</fr:link> for a taste of that.
 </html:p>
             <html:p>
-    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does computability add to this, or any specification? For one, it lets you run tests. Having tests lets you test the integrity of your spec and test it in sort of a meta- way. It helps build confidence that the spec was built out correctly, something that is difficult (impossible?) to really know.
+    So, we can write complex mathematical specifications in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> - great, what does
+    computability add to this, or any specification? For one, it lets you run tests. Having tests
+    lets you test the integrity of your spec and test it in sort of a meta- way. It helps build
+    confidence that the spec was built out correctly, something that is difficult (impossible?) to
+    really know. <fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">Clean</fr:link> keeps a Python implementation of SHA-256 beside the Lean
+    specification it proves circuits against, which is the smallest version of this argument I have
+    seen in use.
 </html:p>
             <html:p>
-    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications of specifications, in the context of smart contracts. I really believe that metaspecifications can add a lot to the security of smart contracts, but a lot of theory has to be built up (even just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy for contracts in the wild.
+    I have written before about <fr:link href="/dhsorens-000L/" title="(In)Correct Smart Contract Specifications" uri="https://derekhsorensen.com/dhsorens-000L/" display-uri="dhsorens-000L" type="local"><html:em>metaspecifications</html:em></fr:link>, or formal specifications
+    of specifications, in the context of smart contracts. I really believe that metaspecifications
+    can add a lot to the security of smart contracts, but a lot of theory has to be built up (even
+    just developed from a cryptoeconomic point of view) before this becomes a reasonable strategy
+    for contracts in the wild.
 </html:p>
             <html:p>
-    However, metaspecifications already show up in cryptography! An implementation has a specification, the design of the cryptographic system or protocol (e.g. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>). The system or protocol is defined in mathematical terms, with assumptions, and with associated proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol fails, then some assumption of the system was violated. This is a metaspecification!
+    However, metaspecifications already show up in cryptography! An implementation has a
+    specification, the design of the cryptographic system or protocol (e.g. <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>).
+    The system or protocol is defined in mathematical terms, with assumptions, and with associated
+    proofs of security. Security proofs (reduction proofs) show that if the cryptographic protocol
+    fails, then some assumption of the system was violated. This is a metaspecification!
 </html:p>
             <html:p>
-    But, as with all specifications, it is very hard to be sure that your specification is correct. This is where computability comes in. Having an executable/computable specification means that you can run tests on it, further extending your specification in an informal way. It makes your spec act more like software, and in some sense makes it stronger as a specification because as a program that runs it is closer to the thing that you're verifying.
+    But, as with all specifications, it is very hard to be sure that your specification is correct.
+    This is where computability comes in. Having an executable/computable specification means that
+    you can run tests on it, further extending your specification in an informal way. It makes your
+    spec act more like software, and in some sense makes it stronger as a specification because as a
+    program that runs it is closer to the thing that you're verifying.
 </html:p>
-            <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable and non-computable terms, spec and implementation, and more and more of the infrastructure of verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+            <html:p><fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link> is of course a great place for this. It is easy to go between computable
+    and non-computable terms, spec and implementation, and more and more of the infrastructure of
+    verification is becoming available in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
 </html:p>
           </fr:mainmatter>
         </fr:tree>

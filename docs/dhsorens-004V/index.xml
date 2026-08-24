@@ -396,32 +396,6 @@
               <fr:month>8</fr:month>
               <fr:day>21</fr:day>
             </fr:date>
-            <fr:uri>https://derekhsorensen.com/dhsorens-001S/</fr:uri>
-            <fr:display-uri>dhsorens-001S</fr:display-uri>
-            <fr:route>/dhsorens-001S/</fr:route>
-            <fr:title text="Latest Deep-Dive">Latest Deep-Dive</fr:title>
-            <fr:meta name="toc">true</fr:meta>
-          </fr:frontmatter>
-          <fr:mainmatter>
-            <html:p>
-    See my latest on <fr:link href="/dhsorens-004U/" title="Sigma Protocols" uri="https://derekhsorensen.com/dhsorens-004U/" display-uri="dhsorens-004U" type="local">sigma protocols</fr:link> and <fr:link href="/dhsorens-004V/" title="The Schnorr Protocol" uri="https://derekhsorensen.com/dhsorens-004V/" display-uri="dhsorens-004V" type="local">Schnorr</fr:link> — the three-move
-    public-coin proof of knowledge, worked through to the one subtraction that extracts a witness
-    and the simulator that is the same equation read backwards.
-</html:p>
-          </fr:mainmatter>
-        </fr:tree>
-        <fr:tree show-metadata="true" expanded="false" toc="false" numbered="false">
-          <fr:frontmatter>
-            <fr:authors>
-              <fr:author>
-                <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
-              </fr:author>
-            </fr:authors>
-            <fr:date>
-              <fr:year>2026</fr:year>
-              <fr:month>8</fr:month>
-              <fr:day>21</fr:day>
-            </fr:date>
             <fr:uri>https://derekhsorensen.com/dhsorens-004U/</fr:uri>
             <fr:display-uri>dhsorens-004U</fr:display-uri>
             <fr:route>/dhsorens-004U/</fr:route>

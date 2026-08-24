@@ -63,10 +63,14 @@
           </fr:frontmatter>
           <fr:mainmatter>
             <html:p>
-    The mathematics the protocols are built out of. Most of the recent performance work lives here rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude faster because the field changed, not because the argument did.
+    The mathematics the protocols are built out of. Most of the recent performance work lives here
+    rather than in the protocol layer: the same FRI-shaped argument became an order of magnitude
+    faster because the field changed, not because the argument did.
 </html:p>
             <html:p>
-    This is also the part of the stack <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> is about — fields, polynomials, and their computable representations — so these pages should stay close to what is actually definable in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
+    This is also the part of the stack <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link> is about — fields, polynomials,
+    and their computable representations — so these pages should stay close to what is actually
+    definable in <fr:link href="/dhsorens-lean/" title="The Lean Theorem Prover" uri="https://derekhsorensen.com/dhsorens-lean/" display-uri="dhsorens-lean" type="local">Lean</fr:link>.
 </html:p>
             <fr:tree show-metadata="false">
               <fr:frontmatter>
@@ -212,6 +216,46 @@
         <html:li>Why FRI wants univariate and Basefold, HyperPlonk, and Binius want multilinear.</html:li>
         <html:li>How <fr:link href="/dhsorens-003C/" title="WHIR" uri="https://derekhsorensen.com/dhsorens-003C/" display-uri="dhsorens-003C" type="local">WHIR</fr:link> unifies the two, and what the translation costs.</html:li>
         <html:li>Computable representations — dense, sparse, coefficient, evaluation form — and which operations each makes cheap. This is <fr:link href="/dhsorens-0041/" title="CompPoly" uri="https://derekhsorensen.com/dhsorens-0041/" display-uri="dhsorens-0041" type="local">CompPoly</fr:link>'s design problem.</html:li></html:ul></html:p>
+              </fr:mainmatter>
+            </fr:tree>
+            <fr:tree show-metadata="false">
+              <fr:frontmatter>
+                <fr:authors>
+                  <fr:author>
+                    <fr:link href="/dhsorens/" title="Derek Sorensen" uri="https://derekhsorensen.com/dhsorens/" display-uri="dhsorens" type="local">Derek Sorensen</fr:link>
+                  </fr:author>
+                </fr:authors>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>8</fr:month>
+                  <fr:day>24</fr:day>
+                </fr:date>
+                <fr:uri>https://derekhsorensen.com/dhsorens-0055/</fr:uri>
+                <fr:display-uri>dhsorens-0055</fr:display-uri>
+                <fr:route>/dhsorens-0055/</fr:route>
+                <fr:title text="Algebraic Varieties">Algebraic Varieties</fr:title>
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <html:p>
+    An affine algebraic variety over a field <fr:tex display="inline"><![CDATA[F]]></fr:tex> is the common vanishing set of a family of
+    polynomials in <fr:tex display="inline"><![CDATA[F[x_1, \dots , x_n]]]></fr:tex>. In this corpus that is what a circuit is: each
+    <html:code>assert</html:code> is a polynomial required to vanish on the witness cells, and a satisfying
+    assignment is a point of the variety those polynomials cut out. The computation the circuit was
+    written for is not itself a variety; <fr:link href="/dhsorens-002R/" title="Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002R/" display-uri="dhsorens-002R" type="local">arithmetisation</fr:link> produces one that is
+    supposed to stand for it. <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> soundness is the claim that every point of the
+    variety satisfies the spec; completeness is the claim that every input the spec accepts extends
+    to a point on it.
+</html:p>
+                <html:p>
+    Questions this page should answer:
+    <html:ul><html:li>The definition, over a finite field rather than an algebraically closed one, and what
+        survives of the usual Nullstellensatz picture.</html:li>
+        <html:li>How <fr:link href="/dhsorens-002S/" title="R1CS" uri="https://derekhsorensen.com/dhsorens-002S/" display-uri="dhsorens-002S" type="local">R1CS</fr:link>, <fr:link href="/dhsorens-002T/" title="Plonkish Arithmetisation" uri="https://derekhsorensen.com/dhsorens-002T/" display-uri="dhsorens-002T" type="local">Plonkish</fr:link>, and <fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> present
+        the same kind of object with different sparsity and degree.</html:li>
+        <html:li>The <fr:link href="/dhsorens-0051/" title="Circuits in Clean" uri="https://derekhsorensen.com/dhsorens-0051/" display-uri="dhsorens-0051" type="local">zero-test</fr:link> as the smallest case where the variety and the spec come
+        apart: delete a constraint and the variety grows, completeness stays, soundness fails.</html:li>
+        <html:li>What a lookup or a channel interaction is, geometrically — not a polynomial vanishing,
+        so not a condition that cuts out a variety in the same sense.</html:li></html:ul></html:p>
               </fr:mainmatter>
             </fr:tree>
             <fr:tree show-metadata="false">

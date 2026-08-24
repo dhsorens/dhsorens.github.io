@@ -204,17 +204,26 @@
                 <fr:title text="STARKs: Plonky3, Stwo, and Circle STARKs">STARKs: Plonky3, Stwo, and Circle STARKs</fr:title>
               </fr:frontmatter>
               <fr:mainmatter>
-                <html:p><fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> plus <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, over a small field, as a reusable toolkit rather than a single protocol. This is the layer the <fr:link href="/dhsorens-0043/" title="From Rust to Lean" uri="https://derekhsorensen.com/dhsorens-0043/" display-uri="dhsorens-0043" type="local">Rust-to-Lean extraction work</fr:link> targets: Plonky3 in Lean, with proofs about what it computes.
+                <html:p><fr:link href="/dhsorens-002U/" title="AIR" uri="https://derekhsorensen.com/dhsorens-002U/" display-uri="dhsorens-002U" type="local">AIR</fr:link> plus <fr:link href="/dhsorens-0037/" title="FRI" uri="https://derekhsorensen.com/dhsorens-0037/" display-uri="dhsorens-0037" type="local">FRI</fr:link>, over a small field, as a reusable toolkit rather
+    than a single protocol. This is the layer the <fr:link href="/dhsorens-0043/" title="From Rust to Lean" uri="https://derekhsorensen.com/dhsorens-0043/" display-uri="dhsorens-0043" type="local">Rust-to-Lean extraction work</fr:link>
+    targets: <fr:link href="/dhsorens-plonky3/" title="Plonky3" uri="https://derekhsorensen.com/dhsorens-plonky3/" display-uri="dhsorens-plonky3" type="local">Plonky3</fr:link> in Lean, with proofs about what it computes.
 </html:p>
                 <html:p>
     Questions this page should answer:
-    <html:ul><html:li>The STARK protocol end to end: trace, constraints, quotient, commitment, low-degree test.</html:li>
-        <html:li>Plonky3 as a toolkit — what is configurable (field, hash, PCS, folding factor) and what is fixed.</html:li>
-        <html:li>Stwo and the circle domain: Mersenne31 has no large smooth subgroup, so what replaces it and what changes in the constraint system.</html:li>
-        <html:li>Circle STARKs' vanishing polynomials and the extra care their boundary constraints need.</html:li>
-        <html:li>Where the two toolkits agree, since both consume an AIR — and what that means for <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> targeting both.</html:li></html:ul></html:p>
+    <html:ul><html:li>The STARK protocol end to end: trace, constraints, quotient, commitment, low-degree
+        test.</html:li>
+        <html:li><fr:link href="/dhsorens-plonky3/" title="Plonky3" uri="https://derekhsorensen.com/dhsorens-plonky3/" display-uri="dhsorens-plonky3" type="local">Plonky3</fr:link> as a toolkit — what is configurable (field, hash, PCS,
+        folding factor) and what is fixed.</html:li>
+        <html:li>Stwo and the circle domain: Mersenne31 has no large smooth subgroup, so what replaces it
+        and what changes in the constraint system.</html:li>
+        <html:li>Circle STARKs' vanishing polynomials and the extra care their boundary constraints
+        need.</html:li>
+        <html:li>Where the two toolkits agree, since both consume an AIR — and what that means for
+        <fr:link href="/dhsorens-002Y/" title="Clean: Circuits and Their Specifications in Lean" uri="https://derekhsorensen.com/dhsorens-002Y/" display-uri="dhsorens-002Y" type="local">Clean</fr:link> targeting both.</html:li></html:ul></html:p>
                 <html:p>
-    Sources: <fr:link href="https://github.com/Plonky3/Plonky3" type="external">Plonky3</fr:link>, <fr:link href="https://github.com/starkware-libs/stwo" type="external">stwo</fr:link>, Buterin, <fr:link href="https://vitalik.eth.limo/general/2024/07/23/circlestarks.html" type="external">Exploring circle STARKs</fr:link>.
+    Sources: <fr:link href="https://github.com/Plonky3/Plonky3" type="external">Plonky3</fr:link>,
+    <fr:link href="https://github.com/starkware-libs/stwo" type="external">stwo</fr:link>, Buterin,
+    <fr:link href="https://vitalik.eth.limo/general/2024/07/23/circlestarks.html" type="external">Exploring circle STARKs</fr:link>.
 </html:p>
               </fr:mainmatter>
             </fr:tree>
