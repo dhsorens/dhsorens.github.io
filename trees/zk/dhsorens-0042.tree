@@ -11,7 +11,7 @@
     \ul{
         \li{Oracle computations and \code{simulateQ}: implementing a random oracle, logging queries, performing reductions.}
         \li{The program logic — relational (pRHL-style) and unary modes — and what a game hop looks like as a tactic step.}
-        \li{Primitives already covered: encryption, signatures, sigma protocols, and the [Fiat–Shamir](dhsorens-002G) and Fischlin transforms.}
+        \li{Primitives already covered: encryption, signatures, [sigma protocols](dhsorens-004U), and the [Fiat–Shamir](dhsorens-002G) and Fischlin transforms.}
         \li{How ArkLib's adversary model sits on top of this.}
         \li{What a machine-checked reduction proof costs in effort, compared with the paper proof.}
     }

@@ -19,6 +19,7 @@
 % Anything with sections goes in through a blurb tree rather than by transcluding
 % the thing itself, which would pull in everything beneath it: dhsorens-004D has
 % four sections, dhsorens-002C is 72 trees. A short standalone note goes in whole.
+\transclude{dhsorens-004X} % a note on sigma protocols and Schnorr
 \transclude{dhsorens-004R} % a note on soundness notions
 \transclude{dhsorens-004I} % a note on hash functions in Bitcoin and Ethereum
 \transclude{dhsorens-004C} % a corpus on zkVMs and SNARKs

@@ -12,6 +12,7 @@
 }
 
 \transclude{dhsorens-002E} % IPs, arguments, IOPs
+\transclude{dhsorens-004U} % sigma protocols, and Schnorr beneath it
 \transclude{dhsorens-004T} % completeness
 \transclude{dhsorens-002F} % soundness notions
 \transclude{dhsorens-004S} % compilation
