@@ -1,0 +1,1491 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine-Checked</title><link rel="stylesheet" href="lib/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/theme/black.css">
+    <link rel="stylesheet" href="lib/monokai.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lib/highlighting.css">
+    <link rel="stylesheet" href="lib/tippy-border.css">
+    <link rel="stylesheet" href="lib/slides-highlight.css">
+    <link rel="stylesheet" href="lib/panel.css">
+    <link rel="stylesheet" href="lib/lightbox.css">
+    <link rel="stylesheet" href="lib/diagram.css">
+    <link rel="stylesheet" href="lib/illuminate-anim.css">
+    <link rel="stylesheet" href="lib/table.css">
+    <link rel="stylesheet" href="lib/katex/dist/katex.min.css">
+    </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>
+            Machine-Checked ✅</h2>
+          <p class="subtitle">
+            The journey to verifying bytecode directly</p>
+          <p>
+            Derek Sorensen (Ethereum Foundation)</p>
+          </section>
+        <section>
+          <section>
+            <h2>
+              Setting the Scene</h2>
+            <p>
+              &nbsp;</p>
+            </section>
+          <section>
+            <h3>
+              High-level Language Verification</h3>
+            <div class="diagram high-level-diagram r-stretch" style="width: 56.100000vw">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-280.5 -84.5 561 169">
+<g transform="scale(1,-1)">
+<g transform="matrix(1,0,0,1,-0,50.75)">
+<g transform="matrix(1,0,0,1,-159.75,-0)">
+<g transform="matrix(1,0,0,1,318.75,0)">
+<path d="M-107 28 L107 28 A8 8 0 0 0 115 20 L115 -20 A8 8 0 0 0 107 -28 L-107 -28 A8 8 0 0 0 -115 -20 L-115 20 A8 8 0 0 0 -107 28 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 28 L107 28 A8 8 0 0 0 115 20 L115 -20 A8 8 0 0 0 107 -28 L-107 -28 A8 8 0 0 0 -115 -20 L-115 20 A8 8 0 0 0 -107 28 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-28.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-28.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-28.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)"><tspan x="0" dy="-9.6">Specification</tspan><tspan x="0" dy="19.2">(in Lean)</tspan></text>
+</g>
+</g>
+<g transform="matrix(1,0,0,1,0,-101.5)">
+<g transform="matrix(1,0,0,1,-159.75,-0)">
+<path d="M-107 28 L107 28 A8 8 0 0 0 115 20 L115 -20 A8 8 0 0 0 107 -28 L-107 -28 A8 8 0 0 0 -115 -20 L-115 20 A8 8 0 0 0 -107 28 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 28 L107 28 A8 8 0 0 0 115 20 L115 -20 A8 8 0 0 0 107 -28 L-107 -28 A8 8 0 0 0 -115 -20 L-115 20 A8 8 0 0 0 -107 28 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-28.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-28.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-28.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)"><tspan x="0" dy="-9.6">Source code</tspan><tspan x="0" dy="19.2">(Rust)</tspan></text>
+<g transform="matrix(1,0,0,1,319.5,0)">
+<path d="M-107 28 L107 28 A8 8 0 0 0 115 20 L115 -20 A8 8 0 0 0 107 -28 L-107 -28 A8 8 0 0 0 -115 -20 L-115 20 A8 8 0 0 0 -107 28 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 28 L107 28 A8 8 0 0 0 115 20 L115 -20 A8 8 0 0 0 107 -28 L-107 -28 A8 8 0 0 0 -115 -20 L-115 20 A8 8 0 0 0 -107 28 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-28.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,28.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-28.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-28.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">Lean</text>
+</g>
+</g>
+</g>
+</g>
+<path d="M-44 -50.75 L40 -50.75" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M44 -50.75 L36.6315 -53.8653 L40 -50.75 L36.6315 -47.6347 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<g transform="matrix(1,0,0,1,0,-17.45)">
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">hax / Aeneas</text>
+</g>
+<path d="M159 22 L159.6818 -18.0006" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M159.75 -22 L156.5095 -14.6857 L159.6818 -18.0006 L162.7393 -14.5795 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+</g>
+</svg></div>
+            </section>
+          <section>
+            <h3>
+              Low-level Verification</h3>
+            <p>
+              Problem: tedious and unintelligible</p>
+            <ul>
+              <li>
+                <p>
+                  SMT solvers</p>
+                </li>
+              <li>
+                <p>
+                  Decompipler/tooling</p>
+                </li>
+              </ul>
+            </section>
+          <section>
+            <h3>
+              TCB</h3>
+            <ul>
+              <li>
+                <p>
+                  the compiler</p>
+                </li>
+              <li>
+                <p>
+                  tooling</p>
+                </li>
+              <li>
+                <p>
+                  etc ..</p>
+                </li>
+              </ul>
+            <p class="fragment">
+              <em>can we forego trust in the compiler and/or interpreter?</em></p>
+            <aside class="notes"><p>
+                some nuance - what about various compilers?</p>
+              </aside></section>
+          </section>
+        <section>
+          <section>
+            <h2>
+              History of the Problem</h2>
+            <p>
+              &nbsp;</p>
+            </section>
+          <section>
+            <h3>
+              <a href="https://github.com/Verified-zkEVM/evm-asm/"><code>evm-asm</code></a></h3>
+            <ul>
+              <li>
+                <p>
+                  Yoichi had the wild idea</p>
+                </li>
+              <li>
+                <p>
+                  Built it fron scratch (separation logic, etc.)</p>
+                </li>
+              <li>
+                <p>
+                  Out of this came <a href="https://github.com/Verified-zkEVM/riscv-zkvm/"><code>riscv-zkvm</code></a></p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                MAYBE show some of the separation logic statements,
+or some of the statements for an opcode, e.g. <code>ADD</code></p>
+              </aside></section>
+          <section>
+            <h3>
+              <a href="https://github.com/dhsorens/xmss-verify-asm">xmss-verify-asm</a></h3>
+            <div class="r-hstack xmss-row">
+              <ul>
+                <li>
+                  <p>
+                    XMSS verifier in RV bytecode</p>
+                  </li>
+                <li>
+                  <p>
+                    <strong>Goal:</strong> minimise RV cycles</p>
+                  </li>
+                <li>
+                  <p>
+                    <a href="https://github.com/leanEthereum/leanVM/blob/680c9c1cf3c8c58690033704964a5b1e4c650a54/formal/xmss/XmssSecurity/Scheme.lean#L315">The spec</a></p>
+                  </li>
+                <li>
+                  <p>
+                    Took <strong>one afternoon</strong></p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/ots-golf-2.png" alt="ots.golf one-time signature leaderboard" class="slide-aside"></p>
+              </div>
+            </section>
+          <section>
+            <h3>
+              <a href="https://zips.z.cash/zip-2005">zip-2005-asm</a></h3>
+            <p>
+              <img src="images/zip-2005-img.png" alt="ZIP 2005 header" class="slide-wide"></p>
+            <ul>
+              <li>
+                <p>
+                  Justin called</p>
+                </li>
+              <li>
+                <p>
+                  Chat with Pierre</p>
+                </li>
+              </ul>
+            <aside class="notes"><ul>
+                <li>
+                  <p>
+                    compiler-agnostic</p>
+                  </li>
+                <li>
+                  <p>
+                    challenges included</p>
+                  </li>
+                </ul>
+              </aside></section>
+          </section>
+        <section>
+          <section>
+            <h2>
+              Tour of ZIP-2005-asm</h2>
+            <p>
+              &nbsp;</p>
+            </section>
+          <section>
+            <h3>
+              Main idea</h3>
+            <div class="diagram" style="width: 50.900000vw">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-254.5 -179.25 509 358.5">
+<g transform="scale(1,-1)">
+<g transform="matrix(1,0,0,1,-133.75,-0)">
+<g transform="matrix(1,0,0,1,-0,165.25)">
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">outside Lean</text>
+<g transform="matrix(1,0,0,1,0,-176.75)">
+<g transform="matrix(1,0,0,1,-0,137.5)">
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-23.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">ZIP 2005</text>
+<g transform="matrix(1,0,0,1,0,-68.75)">
+<g transform="matrix(1,0,0,1,0,23)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23)">
+</g>
+<g transform="matrix(1,0,0,1,115,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115,0)">
+</g>
+<g transform="matrix(1,0,0,1,115,23)">
+</g>
+<g transform="matrix(1,0,0,1,-115,23)">
+</g>
+<g transform="matrix(1,0,0,1,115,-23)">
+</g>
+<g transform="matrix(1,0,0,1,-115,-23)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">?</text>
+</g>
+<g transform="matrix(1,0,0,1,0,-137.5)">
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-23.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">Rust source</text>
+</g>
+<g transform="matrix(1,0,0,1,0,-206.25)">
+<g transform="matrix(1,0,0,1,0,23)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23)">
+</g>
+<g transform="matrix(1,0,0,1,115,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115,0)">
+</g>
+<g transform="matrix(1,0,0,1,115,23)">
+</g>
+<g transform="matrix(1,0,0,1,-115,23)">
+</g>
+<g transform="matrix(1,0,0,1,115,-23)">
+</g>
+<g transform="matrix(1,0,0,1,-115,-23)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)"></text>
+</g>
+<g transform="matrix(1,0,0,1,0,-275)">
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-23.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">guest ELF</text>
+</g>
+</g>
+</g>
+</g>
+<g transform="matrix(1,0,0,1,267.5,0)">
+<g transform="matrix(1,0,0,1,-0,166.75)">
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">Lean</text>
+<g transform="matrix(1,0,0,1,0,-178.25)">
+<g transform="matrix(1,0,0,1,-0,139)">
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-23.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">GuestStatement</text>
+<g transform="matrix(1,0,0,1,0,-69.5)">
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-23.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">Ironwood Fp, Fq, Point</text>
+</g>
+<g transform="matrix(1,0,0,1,0,-139)">
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-23.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">nat arithmetic</text>
+</g>
+<g transform="matrix(1,0,0,1,0,-208.5)">
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-23.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">continuation theorem</text>
+</g>
+<g transform="matrix(1,0,0,1,0,-278)">
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 23 L107 23 A8 8 0 0 0 115 15 L115 -15 A8 8 0 0 0 107 -23 L-107 -23 A8 8 0 0 0 -115 -15 L-115 15 A8 8 0 0 0 -107 23 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,23.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-23.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-23.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">decoded RV64</text>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<path d="M-18 126 L14.0035 127.3335" fill="none" stroke="rgb(138,180,248)" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="1.6 1.6"/>
+<path d="M18 127.5 L10.7676 124.0806 L14.0035 127.3335 L10.5082 130.3059 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<g transform="matrix(1,0,0,1,-0.6656,158.7247)">
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">autoformalised</text>
+</g>
+<path d="M-133.75 -35.25 L-133.75 -121.25" fill="none" stroke="rgb(138,180,248)" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M-133.75 -125.25 L-136.8653 -117.8815 L-133.75 -121.25 L-130.6347 -117.8815 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<g transform="matrix(1,0,0,1,-40.675,-80.25)">
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">rustc, SP1</text>
+</g>
+<path d="M-18 -149 L14.0035 -150.3335" fill="none" stroke="rgb(138,180,248)" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M18 -150.5 L10.5082 -153.3059 L14.0035 -150.3335 L10.7676 -147.0806 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<g transform="matrix(1,0,0,1,0.6324,-118.5729)">
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">elf2lean</text>
+</g>
+<path d="M133.75 -126.75 L133.75 -108.75" fill="none" stroke="rgb(138,180,248)" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M133.75 -104.75 L136.8653 -112.1185 L133.75 -108.75 L130.6347 -112.1185 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M133.75 -57.25 L133.75 -39.25" fill="none" stroke="rgb(138,180,248)" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M133.75 -35.25 L136.8653 -42.6185 L133.75 -39.25 L130.6347 -42.6185 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M133.75 12.25 L133.75 30.25" fill="none" stroke="rgb(138,180,248)" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M133.75 34.25 L136.8653 26.8815 L133.75 30.25 L130.6347 26.8815 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M133.75 81.75 L133.75 99.75" fill="none" stroke="rgb(138,180,248)" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M133.75 103.75 L136.8653 96.3815 L133.75 99.75 L130.6347 96.3815 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+</g>
+</svg></div>
+            </section>
+          <section>
+            <h3>
+              The word</h3>
+            <p>
+              <img src="images/word.png" alt="ZIP 2005 header" class="slide-wide"></p>
+            <p>
+              <a href="https://github.com/dhsorens/asm-verif/blob/main/Cases/Zip2005/Image/F_7801bcd0.lean"><code>F_7801bcd0.lean</code></a></p>
+            </section>
+          <section>
+            <h3>
+              Going Higher</h3>
+            <p>
+              <img src="images/higher.png" alt="ZIP 2005 header" class="slide-wide"></p>
+            <p>
+              <a href="https://github.com/dhsorens/asm-verif/blob/main/Cases/Zip2005/Runtime/Start.lean#L26"><code>start_to_main</code></a> steps <code>prog</code> from this entry and reaches <code>main</code></p>
+            </section>
+          <section>
+            <h3>
+              Top-Level Result</h3>
+            <p>
+              Trusted base outside the statement:</p>
+            <ul>
+              <li>
+                <p>
+                  The machine model (SP1 backend of riscv-zkvm)</p>
+                </li>
+              <li>
+                <p>
+                  The loaded image</p>
+                </li>
+              <li>
+                <p>
+                  The Lean kernel (elaborator, axioms)</p>
+                </li>
+              </ul>
+            <p>
+              <strong>Top-level proofs:</strong></p>
+            <ul>
+              <li>
+                <p>
+                  <a href="https://github.com/dhsorens/asm-verif/blob/main/Cases/Zip2005/Top/Accepting.lean#L21">theorem statement</a></p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://github.com/dhsorens/asm-verif/blob/main/Cases/Zip2005/Top/Assumptions.lean#472">proof</a></p>
+                </li>
+              </ul>
+            </section>
+          <section>
+            <h3>
+              Top-Level Result</h3>
+            <p>
+              <img src="images/main-thm2.png" alt="ZIP 2005 header" class="slide-wide"></p>
+            <aside class="notes"><p>
+                Trusted base outside the statement</p>
+              <ul>
+                <li>
+                  <p>
+                    The machine model. <code>stepSp1</code> from riscv-zkvm (unmodified, pinned) is taken to be SP1's actual semantics, including how it handles syscalls (hint reads, halt).</p>
+                  </li>
+                <li>
+                  <p>
+                    The loaded image. start I is built from image data generated from the ELF. The gen-image tool cross-checks that data against riscv-zkvm's own loader, and every fact about it is kernel-checked. Still, what we prove about is "the image as generated", so the generator and that cross-check are part of the trust story.</p>
+                  </li>
+                <li>
+                  <p>
+                    Lean itself. That's the kernel and the three standard axioms, plus <code>bv_decide</code>'s Lean.ofReduceBool if it's on this theorem's path. That last one trusts the compiler much as <code>native_decide</code> does; your policy allows it, and <code>#print axioms</code> will tell us whether it appears.</p>
+                  </li>
+                <li>
+                  <p>
+                    Not in the base anymore: the Pallas <code>native_decide</code> is gone. The spec audit now proves all 13 entries on standard axioms, Pallas group included.</p>
+                  </li>
+                </ul>
+              </aside></section>
+          </section>
+        <section>
+          <section>
+            <h2>
+              Learnings</h2>
+            <p>
+              &nbsp;</p>
+            </section>
+          <section>
+            <h3>
+              Bots are great at this</h3>
+            <ul>
+              <li>
+                <p>
+                  success in autoresearch at the asm level</p>
+                </li>
+              <li>
+                <p>
+                  good at synthesizing low-level proofs</p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                the bots are excellent at the <strong>logic of this</strong>.</p>
+              </aside></section>
+          <section>
+            <h3>
+              The ELF (and other things) are huge</h3>
+            <ul>
+              <li>
+                <p>
+                  there is a LOT that goes into compilers</p>
+                </li>
+              <li>
+                <p>
+                  large build times</p>
+                </li>
+              <li>
+                <p>
+                  huge complexity</p>
+                </li>
+              <li>
+                <p>
+                  devops/scaling problems</p>
+                </li>
+              </ul>
+            <aside class="notes"><ul>
+                <li>
+                  <p>
+                    I am grappling with the size of it, getting my head wrapped around this.</p>
+                  </li>
+                <li>
+                  <p>
+                    I have alreay gotten really good feedback on this</p>
+                  </li>
+                </ul>
+              </aside></section>
+          </section>
+        <section>
+          <section>
+            <h2>
+              Machine-Checked ✅</h2>
+            <p>
+              &nbsp;</p>
+            </section>
+          <section>
+            <h3>
+              The main idea</h3>
+            <div class="diagram" style="width: 57.500000vw">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-287.5 -98.5 575 197">
+<g transform="scale(1,-1)">
+<g transform="matrix(1,0,0,1,-166.75,-0)">
+<g transform="matrix(1,0,0,1,-0,60.75)">
+<path d="M-107 32 L107 32 A8 8 0 0 0 115 24 L115 -24 A8 8 0 0 0 107 -32 L-107 -32 A8 8 0 0 0 -115 -24 L-115 24 A8 8 0 0 0 -107 32 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 32 L107 32 A8 8 0 0 0 115 24 L115 -24 A8 8 0 0 0 107 -32 L-107 -32 A8 8 0 0 0 -115 -24 L-115 24 A8 8 0 0 0 -107 32 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-32.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-32.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-32.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)"><tspan x="0" dy="-9.6">Source</tspan><tspan x="0" dy="19.2">(Rust, C, etc.)</tspan></text>
+<g transform="matrix(1,0,0,1,0,-121.5)">
+<path d="M-107 32 L107 32 A8 8 0 0 0 115 24 L115 -24 A8 8 0 0 0 107 -32 L-107 -32 A8 8 0 0 0 -115 -24 L-115 24 A8 8 0 0 0 -107 32 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-107 32 L107 32 A8 8 0 0 0 115 24 L115 -24 A8 8 0 0 0 107 -32 L-107 -32 A8 8 0 0 0 -115 -24 L-115 24 A8 8 0 0 0 -107 32 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-32.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,115.75,-32.75)">
+</g>
+<g transform="matrix(1,0,0,1,-115.75,-32.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)"><tspan x="0" dy="-9.6">ELF</tspan><tspan x="0" dy="19.2">(riscv, x86, ARM)</tspan></text>
+</g>
+</g>
+<g transform="matrix(1,0,0,1,318.5,0)">
+<g transform="matrix(1,0,0,1,-0,60.75)">
+<path d="M-122 32 L122 32 A8 8 0 0 0 130 24 L130 -24 A8 8 0 0 0 122 -32 L-122 -32 A8 8 0 0 0 -130 -24 L-130 24 A8 8 0 0 0 -122 32 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-122 32 L122 32 A8 8 0 0 0 130 24 L130 -24 A8 8 0 0 0 122 -32 L-122 -32 A8 8 0 0 0 -130 -24 L-130 24 A8 8 0 0 0 -122 32 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-32.75)">
+</g>
+<g transform="matrix(1,0,0,1,130.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-130.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,130.75,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,-130.75,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,130.75,-32.75)">
+</g>
+<g transform="matrix(1,0,0,1,-130.75,-32.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">Formal specification</text>
+<g transform="matrix(1,0,0,1,0,-121.5)">
+<path d="M-122 32 L122 32 A8 8 0 0 0 130 24 L130 -24 A8 8 0 0 0 122 -32 L-122 -32 A8 8 0 0 0 -130 -24 L-130 24 A8 8 0 0 0 -122 32 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-122 32 L122 32 A8 8 0 0 0 130 24 L130 -24 A8 8 0 0 0 122 -32 L-122 -32 A8 8 0 0 0 -130 -24 L-130 24 A8 8 0 0 0 -122 32 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-32.75)">
+</g>
+<g transform="matrix(1,0,0,1,130.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-130.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,130.75,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,-130.75,32.75)">
+</g>
+<g transform="matrix(1,0,0,1,130.75,-32.75)">
+</g>
+<g transform="matrix(1,0,0,1,-130.75,-32.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">decoded instructions</text>
+</g>
+</g>
+</g>
+</g>
+<path d="M-166.75 28 L-166.75 -24" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M-166.75 -28 L-169.8653 -20.6315 L-166.75 -24 L-163.6347 -20.6315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M151.75 -28 L151.75 24" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M151.75 28 L154.8653 20.6315 L151.75 24 L148.6347 20.6315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M-51 -60.75 L17 -60.75" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M21 -60.75 L13.6315 -63.8653 L17 -60.75 L13.6315 -57.6347 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<g transform="matrix(1,0,0,1,-15,-27.45)">
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="rgb(214,226,255)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">elf2lean</text>
+</g>
+</g>
+</svg></div>
+            <ul>
+              <li>
+                <p>
+                  binary can come from any compiler</p>
+                </li>
+              <li>
+                <p>
+                  binary can be hand-optimised</p>
+                </li>
+              </ul>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              ISA Diversity</h3>
+            <div class="diagram" style="width: 60.400000vw">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-302 -92 604 184">
+<g transform="scale(1,-1)">
+<g transform="matrix(1,0,0,1,-189.5,-0)">
+<g transform="matrix(1,0,0,1,-0,86.5)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-65.25)">
+<path d="M-76 24 L76 24 A8 8 0 0 0 84 16 L84 -16 A8 8 0 0 0 76 -24 L-76 -24 A8 8 0 0 0 -84 -16 L-84 16 A8 8 0 0 0 -76 24 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-76 24 L76 24 A8 8 0 0 0 84 16 L84 -16 A8 8 0 0 0 76 -24 L-76 -24 A8 8 0 0 0 -84 -16 L-84 16 A8 8 0 0 0 -76 24 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-24.75)">
+</g>
+<g transform="matrix(1,0,0,1,84.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-84.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,84.75,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,-84.75,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,84.75,-24.75)">
+</g>
+<g transform="matrix(1,0,0,1,-84.75,-24.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">riscv</text>
+</g>
+<g transform="matrix(1,0,0,1,0,-151.75)">
+<g transform="matrix(1,0,0,1,-56.75,-0)">
+<path d="M-42 21 L42 21 A8 8 0 0 0 50 13 L50 -13 A8 8 0 0 0 42 -21 L-42 -21 A8 8 0 0 0 -50 -13 L-50 13 A8 8 0 0 0 -42 21 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-42 21 L42 21 A8 8 0 0 0 50 13 L50 -13 A8 8 0 0 0 42 -21 L-42 -21 A8 8 0 0 0 -50 -13 L-50 13 A8 8 0 0 0 -42 21 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-21.75)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,-21.75)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,-21.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">SP1</text>
+<g transform="matrix(1,0,0,1,113.5,0)">
+<path d="M-42 21 L42 21 A8 8 0 0 0 50 13 L50 -13 A8 8 0 0 0 42 -21 L-42 -21 A8 8 0 0 0 -50 -13 L-50 13 A8 8 0 0 0 -42 21 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-42 21 L42 21 A8 8 0 0 0 50 13 L50 -13 A8 8 0 0 0 42 -21 L-42 -21 A8 8 0 0 0 -50 -13 L-50 13 A8 8 0 0 0 -42 21 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-21.75)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,-21.75)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,-21.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">Zisk</text>
+</g>
+</g>
+</g>
+</g>
+<g transform="matrix(1,0,0,1,226.25,0)">
+<g transform="matrix(1,0,0,1,-0,86.5)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-65.25)">
+<path d="M-62 24 L62 24 A8 8 0 0 0 70 16 L70 -16 A8 8 0 0 0 62 -24 L-62 -24 A8 8 0 0 0 -70 -16 L-70 16 A8 8 0 0 0 -62 24 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-62 24 L62 24 A8 8 0 0 0 70 16 L70 -16 A8 8 0 0 0 62 -24 L-62 -24 A8 8 0 0 0 -70 -16 L-70 16 A8 8 0 0 0 -62 24 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-24.75)">
+</g>
+<g transform="matrix(1,0,0,1,70.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-70.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,70.75,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,-70.75,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,70.75,-24.75)">
+</g>
+<g transform="matrix(1,0,0,1,-70.75,-24.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">x86</text>
+</g>
+<g transform="matrix(1,0,0,1,0,-151.75)">
+<path d="M-42 21 L42 21 A8 8 0 0 0 50 13 L50 -13 A8 8 0 0 0 42 -21 L-42 -21 A8 8 0 0 0 -50 -13 L-50 13 A8 8 0 0 0 -42 21 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-42 21 L42 21 A8 8 0 0 0 50 13 L50 -13 A8 8 0 0 0 42 -21 L-42 -21 A8 8 0 0 0 -50 -13 L-50 13 A8 8 0 0 0 -42 21 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-21.75)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,-21.75)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,-21.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">…</text>
+</g>
+</g>
+</g>
+<g transform="matrix(1,0,0,1,415.75,0)">
+<g transform="matrix(1,0,0,1,-0,86.5)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-65.25)">
+<path d="M-62 24 L62 24 A8 8 0 0 0 70 16 L70 -16 A8 8 0 0 0 62 -24 L-62 -24 A8 8 0 0 0 -70 -16 L-70 16 A8 8 0 0 0 -62 24 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-62 24 L62 24 A8 8 0 0 0 70 16 L70 -16 A8 8 0 0 0 62 -24 L-62 -24 A8 8 0 0 0 -70 -16 L-70 16 A8 8 0 0 0 -62 24 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-24.75)">
+</g>
+<g transform="matrix(1,0,0,1,70.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-70.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,70.75,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,-70.75,24.75)">
+</g>
+<g transform="matrix(1,0,0,1,70.75,-24.75)">
+</g>
+<g transform="matrix(1,0,0,1,-70.75,-24.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">arm</text>
+</g>
+<g transform="matrix(1,0,0,1,0,-151.75)">
+<path d="M-42 21 L42 21 A8 8 0 0 0 50 13 L50 -13 A8 8 0 0 0 42 -21 L-42 -21 A8 8 0 0 0 -50 -13 L-50 13 A8 8 0 0 0 -42 21 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-42 21 L42 21 A8 8 0 0 0 50 13 L50 -13 A8 8 0 0 0 42 -21 L-42 -21 A8 8 0 0 0 -50 -13 L-50 13 A8 8 0 0 0 -42 21 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-21.75)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,21.75)">
+</g>
+<g transform="matrix(1,0,0,1,50.75,-21.75)">
+</g>
+<g transform="matrix(1,0,0,1,-50.75,-21.75)">
+</g>
+<text x="0" y="0" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="rgb(28,36,48)" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)">…</text>
+</g>
+</g>
+</g>
+</g>
+<path d="M-189.5 86 L-189.5 50" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="1.8 1.8"/>
+<path d="M-189.5 46 L-192.6153 53.3685 L-189.5 50 L-186.3847 53.3685 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M36.75 86 L36.75 50" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="1.8 1.8"/>
+<path d="M36.75 46 L33.6347 53.3685 L36.75 50 L39.8653 53.3685 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M226.25 86 L226.25 50" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="1.8 1.8"/>
+<path d="M226.25 46 L223.1347 53.3685 L226.25 50 L229.3653 53.3685 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M-189.5 -3.5 L-242.9805 -41.1955" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M-246.25 -43.5 L-242.022 -36.7085 L-242.9805 -41.1955 L-238.4324 -41.8013 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M-189.5 -3.5 L-136.0195 -41.1955" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M-132.75 -43.5 L-140.5676 -41.8013 L-136.0195 -41.1955 L-136.978 -36.7085 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M36.75 -3.5 L36.75 -39.5" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M36.75 -43.5 L33.6347 -36.1315 L36.75 -39.5 L39.8653 -36.1315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+<path d="M226.25 -3.5 L226.25 -39.5" fill="none" stroke="rgb(138,180,248)" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M226.25 -43.5 L223.1347 -36.1315 L226.25 -39.5 L229.3653 -36.1315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+</g>
+</svg></div>
+            <p>
+              Note that Zisk and SP1 differ in:</p>
+            <ul>
+              <li>
+                <p>
+                  Calling convention for special operations</p>
+                </li>
+              <li>
+                <p>
+                  Memory layout and access rules</p>
+                </li>
+              <li>
+                <p>
+                  Input and output, etc.</p>
+                </li>
+              </ul>
+            <aside class="notes"><ul>
+                <li>
+                  <p>
+                    <strong>Calling convention for special operations:</strong> ZisK and SP1 use different mechanisms to request accelerated cryptography and other host services.</p>
+                  </li>
+                <li>
+                  <p>
+                    <strong>Memory layout and access rules:</strong> they place the program, stack, heap, and input differently and enforce different valid-address rules.</p>
+                  </li>
+                <li>
+                  <p>
+                    <strong>Input and output:</strong> SP1 has its own conventions for reading private input and committing public output.</p>
+                  </li>
+                <li>
+                  <p>
+                    <strong>Available special operations:</strong> each zkVM exposes a somewhat different collection of built-in operations.</p>
+                  </li>
+                </ul>
+              </aside></section>
+          <section>
+            <h3>
+              Machine-Checked ✅ Proof Pipeline</h3>
+            <div class="diagram" style="width: 45.150000vw">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-225.75 -273.5 451.5 547">
+<g transform="scale(1,-1)">
+<g transform="matrix(1,0,0,1,-0,233.75)">
+<path d="M-212 34 L212 34 A8 8 0 0 0 220 26 L220 -26 A8 8 0 0 0 212 -34 L-212 -34 A8 8 0 0 0 -220 -26 L-220 26 A8 8 0 0 0 -212 34 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-212 34 L212 34 A8 8 0 0 0 220 26 L220 -26 A8 8 0 0 0 212 -34 L-212 -34 A8 8 0 0 0 -220 -26 L-220 26 A8 8 0 0 0 -212 34 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-34.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,-34.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,-34.75)">
+</g>
+<text x="0" y="0" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)" xml:space="preserve"><tspan x="0" dy="-16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="rgb(26,39,68)">CRYPTOGRAPHIC THEOREMS</tspan><tspan x="0" dy="16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(36,48,68)">XMSS security / quantum recovery /</tspan><tspan x="0" dy="16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(36,48,68)">collision resistance assumptions</tspan></text>
+<g transform="matrix(1,0,0,1,0,-52.75)">
+<g transform="matrix(1,0,0,1,-0,11.5)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+</g>
+</g>
+<path d="M0 -11 L-0 7" fill="none" stroke="rgb(138,180,248)" stroke-width="1.7" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M0 11 L3.1153 3.6315 L-0 7 L-3.1153 3.6315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+</g>
+<g transform="matrix(1,0,0,1,0,-97.5)">
+<path d="M-212 26 L212 26 A8 8 0 0 0 220 18 L220 -18 A8 8 0 0 0 212 -26 L-212 -26 A8 8 0 0 0 -220 -18 L-220 18 A8 8 0 0 0 -212 26 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-212 26 L212 26 A8 8 0 0 0 220 18 L220 -18 A8 8 0 0 0 212 -26 L-212 -26 A8 8 0 0 0 -220 -18 L-220 18 A8 8 0 0 0 -212 26 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,26.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-26.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,26.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,26.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,-26.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,-26.75)">
+</g>
+<text x="0" y="0" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)" xml:space="preserve"><tspan x="0" dy="-8.4" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="rgb(26,39,68)">ALGORITHM SPEC</tspan><tspan x="0" dy="16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(36,48,68)">SHA256.compress · XMSS.verify · WOTS.verify</tspan></text>
+</g>
+<g transform="matrix(1,0,0,1,0,-142.25)">
+<g transform="matrix(1,0,0,1,-0,11.5)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+</g>
+</g>
+<path d="M0 -11 L-0 7" fill="none" stroke="rgb(138,180,248)" stroke-width="1.7" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M0 11 L3.1153 3.6315 L-0 7 L-3.1153 3.6315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+</g>
+<g transform="matrix(1,0,0,1,0,-195)">
+<path d="M-212 34 L212 34 A8 8 0 0 0 220 26 L220 -26 A8 8 0 0 0 212 -34 L-212 -34 A8 8 0 0 0 -220 -26 L-220 26 A8 8 0 0 0 -212 34 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-212 34 L212 34 A8 8 0 0 0 220 26 L220 -26 A8 8 0 0 0 212 -34 L-212 -34 A8 8 0 0 0 -220 -26 L-220 26 A8 8 0 0 0 -212 34 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-34.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,-34.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,-34.75)">
+</g>
+<text x="0" y="0" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)" xml:space="preserve"><tspan x="0" dy="-16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="rgb(26,39,68)">PROGRAM LOGIC(S)</tspan><tspan x="0" dy="16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(36,48,68)">Hoare / refinement / separation</tspan><tspan x="0" dy="16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(36,48,68)">relational / cost / information flow</tspan></text>
+</g>
+<g transform="matrix(1,0,0,1,0,-247.75)">
+<g transform="matrix(1,0,0,1,-0,11.5)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+</g>
+</g>
+<path d="M0 -11 L-0 7" fill="none" stroke="rgb(138,180,248)" stroke-width="1.7" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M0 11 L3.1153 3.6315 L-0 7 L-3.1153 3.6315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+</g>
+<g transform="matrix(1,0,0,1,0,-300.5)">
+<path d="M-212 34 L212 34 A8 8 0 0 0 220 26 L220 -26 A8 8 0 0 0 212 -34 L-212 -34 A8 8 0 0 0 -220 -26 L-220 26 A8 8 0 0 0 -212 34 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-212 34 L212 34 A8 8 0 0 0 220 26 L220 -26 A8 8 0 0 0 212 -34 L-212 -34 A8 8 0 0 0 -220 -26 L-220 26 A8 8 0 0 0 -212 34 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-34.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,34.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,-34.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,-34.75)">
+</g>
+<text x="0" y="0" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)" xml:space="preserve"><tspan x="0" dy="-16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="rgb(26,39,68)">LOGICAL MACHINE PROGRAM</tspan><tspan x="0" dy="16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(36,48,68)">variables + CFG + expressions</tspan><tspan x="0" dy="16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(36,48,68)">loads/stores + effects</tspan></text>
+</g>
+<g transform="matrix(1,0,0,1,0,-353.25)">
+<g transform="matrix(1,0,0,1,-0,11.5)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+</g>
+</g>
+<path d="M0 -11 L-0 7" fill="none" stroke="rgb(138,180,248)" stroke-width="1.7" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M0 11 L3.1153 3.6315 L-0 7 L-3.1153 3.6315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+</g>
+<g transform="matrix(1,0,0,1,0,-398)">
+<path d="M-212 26 L212 26 A8 8 0 0 0 220 18 L220 -18 A8 8 0 0 0 212 -26 L-212 -26 A8 8 0 0 0 -220 -18 L-220 18 A8 8 0 0 0 -212 26 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-212 26 L212 26 A8 8 0 0 0 220 18 L220 -18 A8 8 0 0 0 212 -26 L-212 -26 A8 8 0 0 0 -220 -18 L-220 18 A8 8 0 0 0 -212 26 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,26.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-26.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,26.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,26.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,-26.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,-26.75)">
+</g>
+<text x="0" y="0" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)" xml:space="preserve"><tspan x="0" dy="-8.4" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="rgb(26,39,68)">ARCHITECTURAL PROGRAM</tspan><tspan x="0" dy="16.8" alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="rgb(36,48,68)">PC + registers + memory + ISA</tspan></text>
+</g>
+<g transform="matrix(1,0,0,1,0,-442.75)">
+<g transform="matrix(1,0,0,1,-0,11.5)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-23)">
+<g transform="matrix(1,0,0,1,0,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,0.5)">
+</g>
+<g transform="matrix(1,0,0,1,0.5,-0.5)">
+</g>
+<g transform="matrix(1,0,0,1,-0.5,-0.5)">
+</g>
+</g>
+</g>
+<path d="M0 -11 L-0 7" fill="none" stroke="rgb(138,180,248)" stroke-width="1.7" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<path d="M0 11 L3.1153 3.6315 L-0 7 L-3.1153 3.6315 Z" fill="rgb(138,180,248)" fill-opacity="1"/>
+</g>
+<g transform="matrix(1,0,0,1,0,-481.5)">
+<path d="M-212 20 L212 20 A8 8 0 0 0 220 12 L220 -12 A8 8 0 0 0 212 -20 L-212 -20 A8 8 0 0 0 -220 -12 L-220 12 A8 8 0 0 0 -212 20 Z" fill="rgb(244,247,251)" fill-opacity="1"/>
+<path d="M-212 20 L212 20 A8 8 0 0 0 220 12 L220 -12 A8 8 0 0 0 212 -20 L-212 -20 A8 8 0 0 0 -220 -12 L-220 12 A8 8 0 0 0 -212 20 Z" fill="none" stroke="rgb(61,90,128)" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-dasharray="none"/>
+<g transform="matrix(1,0,0,1,0,20.75)">
+</g>
+<g transform="matrix(1,0,0,1,0,-20.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,0)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,20.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,20.75)">
+</g>
+<g transform="matrix(1,0,0,1,220.75,-20.75)">
+</g>
+<g transform="matrix(1,0,0,1,-220.75,-20.75)">
+</g>
+<text x="0" y="0" text-anchor="middle" dominant-baseline="central" transform="scale(1,-1)" xml:space="preserve"><tspan alignment-baseline="central" font-family="Source Sans Pro, Helvetica, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="rgb(26,39,68)">ELF</tspan></text>
+</g>
+</g>
+</g>
+</svg></div>
+            </section>
+          </section>
+        <section>
+          <section>
+            <h2>
+              Questions</h2>
+            <p>
+              &nbsp;</p>
+            </section>
+          <section>
+            <h3>
+              ISA Diversity</h3>
+            <ul>
+              <li>
+                <p>
+                  Raw semantics?</p>
+                </li>
+              <li>
+                <p>
+                  Proof-optimised interpreter?</p>
+                </li>
+              <li>
+                <p>
+                  Something else?</p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                Do we just use the SAIL/"canonical" specs?
+Or is a proof-optimised interpreter?</p>
+              </aside></section>
+          <section>
+            <h3>
+              Context-aware?</h3>
+            <ul>
+              <li>
+                <p>
+                  Beyond the ISA, how much does the context matter?</p>
+                </li>
+              <li>
+                <p>
+                  (e.g. SP1 vs Zisk)</p>
+                </li>
+              <li>
+                <p>
+                  Can we abstract this? What trust does this introduce?</p>
+                </li>
+              </ul>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              Scalability</h3>
+            <ul>
+              <li>
+                <p>
+                  Will this scale?</p>
+                </li>
+              <li>
+                <p>
+                  Will copmlexity grow exponentially?</p>
+                </li>
+              <li>
+                <p>
+                  What is the appropriate target for something like this?</p>
+                </li>
+              </ul>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              Process</h3>
+            <ul>
+              <li>
+                <p>
+                  Is this basically just a logical decompiler?</p>
+                </li>
+              <li>
+                <p>
+                  Do we give agents the tools, or build an algorithm that runs over arbitrary code?</p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                main question - do agents build proofs every time?</p>
+              </aside></section>
+          <section>
+            <h3>
+              What am I Missing?</h3>
+            <ul>
+              <li>
+                <p>
+                  Probably a lot!</p>
+                </li>
+              </ul>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              Discussion</h3>
+            </section>
+          </section>
+        </div>
+      </div>
+    <script src="lib/reveal.js/dist/reveal.js"></script>
+    <script src="lib/reveal.js/plugin/notes/notes.js"></script>
+    <script src="lib/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="lib/katex/dist/katex.min.js"></script>
+    <script src="lib/math.js"></script>
+    <script>
+      
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        center: false,
+        transition: 'slide',
+        width: 960,
+        height: 700,
+        margin: 0.040000,
+        navigationMode: 'default',
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: null,
+        plugins: [ RevealNotes, RevealHighlight ]
+      });
+    </script>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/popper.js"></script>
+    <script src="lib/tippy.js"></script>
+    <script src="lib/tippy-panel-filter.js"></script>
+    <script src="lib/highlighting.js"></script>
+    <script src="lib/code-block-bg.js"></script>
+    <script src="lib/pretty.js"></script>
+    <script src="lib/panel.js"></script>
+    <script src="lib/lightbox.js"></script>
+    <script src="lib/illuminate-reveal.js"></script>
+    </body>
+  </html>

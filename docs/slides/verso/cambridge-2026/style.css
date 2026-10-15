@@ -1,0 +1,73 @@
+.reveal .slides section,
+.reveal .slides section > section {
+  text-align: left;
+}
+
+.reveal .slides section p.subtitle {
+  margin-top: -0.15em;
+  margin-bottom: 1.1em;
+  font-size: 0.85em;
+  font-weight: 400;
+  color: #c5cdd8;
+}
+
+.reveal .slides section pre {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.reveal .slides section .diagram {
+  max-width: 100%;
+  margin-top: 0.4em;
+}
+
+.reveal .slides section .diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+.reveal .slides section .high-level-diagram {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.reveal .slides section .xmss-row {
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2em;
+  width: 100%;
+}
+
+.reveal .slides section .xmss-row > ul {
+  flex: 1 1 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.reveal .slides section .xmss-row > p {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.reveal .slides section img.slide-aside {
+  display: block;
+  width: auto;
+  height: 580px;
+  max-width: 560px;
+  max-height: 580px;
+  margin: 0;
+  border-radius: 8px;
+}
+
+.reveal .slides section img.slide-wide {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: none;
+  margin: 0.6em 0 0;
+  border-radius: 8px;
+}
