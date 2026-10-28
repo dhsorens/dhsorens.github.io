@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 416" width="640" height="416" font-family="Fira Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect width="640" height="416" fill="#ffffff"/>
+<text x="12" y="28" font-size="18" font-weight="700" fill="#14161f">Lean time ÷ Rust time</text>
+<text x="628" y="28" font-size="14" fill="#6b6f7b" text-anchor="end">below 1 = Lean is faster</text>
+<line x1="524.3" y1="58" x2="524.3" y2="400" stroke="#14161f" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="524.3" y="412" font-size="12" fill="#14161f" text-anchor="middle">parity</text>
+<text x="12" y="82" font-size="14" font-weight="700" fill="#6b6f7b" letter-spacing="0.04em">FIELD MULTIPLICATION, ONE CORE</text>
+<text x="300" y="111" font-size="15" fill="#14161f" text-anchor="end">KoalaBear · Plonky3</text>
+<rect x="310" y="97" width="229.3" height="20" rx="3" fill="#b9b4a6"/>
+<text x="545.3" y="112" font-size="14" font-weight="700" fill="#6b6f7b" stroke="#ffffff" stroke-width="5" paint-order="stroke">1.07×</text>
+<text x="300" y="141" font-size="15" fill="#14161f" text-anchor="end">Mersenne31 · Plonky3</text>
+<rect x="310" y="127" width="229.3" height="20" rx="3" fill="#b9b4a6"/>
+<text x="545.3" y="142" font-size="14" font-weight="700" fill="#6b6f7b" stroke="#ffffff" stroke-width="5" paint-order="stroke">1.07×</text>
+<text x="300" y="171" font-size="15" fill="#14161f" text-anchor="end">Goldilocks · Plonky3</text>
+<rect x="310" y="157" width="274.3" height="20" rx="3" fill="#b9b4a6"/>
+<text x="590.3" y="172" font-size="14" font-weight="700" fill="#6b6f7b" stroke="#ffffff" stroke-width="5" paint-order="stroke">1.28×</text>
+<text x="300" y="201" font-size="15" fill="#14161f" text-anchor="end">BN254 scalar · arkworks</text>
+<rect x="310" y="187" width="248.6" height="20" rx="3" fill="#b9b4a6"/>
+<text x="564.6" y="202" font-size="14" font-weight="700" fill="#6b6f7b" stroke="#ffffff" stroke-width="5" paint-order="stroke">1.16×</text>
+<text x="300" y="231" font-size="15" fill="#14161f" text-anchor="end">Binary tower 128-bit · Binius</text>
+<rect x="310" y="217" width="145.7" height="20" rx="3" fill="#4338ca"/>
+<text x="461.7" y="232" font-size="14" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">0.68×</text>
+<text x="12" y="266" font-size="14" font-weight="700" fill="#6b6f7b" letter-spacing="0.04em">POLYNOMIAL OPERATIONS</text>
+<text x="300" y="295" font-size="15" fill="#14161f" text-anchor="end">NTT, 2²⁰ points, 1 worker · Plonky3</text>
+<rect x="310" y="281" width="177.9" height="20" rx="3" fill="#4338ca"/>
+<text x="493.9" y="296" font-size="14" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">0.83×</text>
+<text x="300" y="325" font-size="15" fill="#14161f" text-anchor="end">NTT, 2²⁰ points, 8 workers · Plonky3</text>
+<rect x="310" y="311" width="158.6" height="20" rx="3" fill="#4338ca"/>
+<text x="474.6" y="326" font-size="14" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">0.74×</text>
+<text x="300" y="355" font-size="15" fill="#14161f" text-anchor="end">Coset LDE, 2¹⁸ × 64 · Plonky3</text>
+<rect x="310" y="341" width="199.3" height="20" rx="3" fill="#4338ca"/>
+<text x="515.3" y="356" font-size="14" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">0.93×</text>
+<text x="300" y="385" font-size="15" fill="#14161f" text-anchor="end">Evaluation, Goldilocks · arkworks</text>
+<rect x="310" y="371" width="150.0" height="20" rx="3" fill="#4338ca"/>
+<text x="466.0" y="386" font-size="14" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">0.70×</text>
+</svg>

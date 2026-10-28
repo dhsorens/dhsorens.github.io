@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 474" width="720" height="474" font-family="Fira Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#14161f"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b9b4a6"/></marker></defs>
+<rect x="0" y="0" width="720" height="474" fill="#ffffff"/>
+<rect x="10" y="10" width="700" height="70" rx="10" fill="#4338ca"/>
+<text x="30" y="42" font-size="23" font-weight="700" fill="#ffffff">EVM spec</text>
+<text x="30" y="67" font-size="16" fill="#dcdaf7">Ethereum's Python execution-specs, ported to Lean</text>
+<rect x="10" y="394" width="700" height="70" rx="10" fill="#4338ca"/>
+<text x="30" y="426" font-size="23" font-weight="700" fill="#ffffff">RISC-V spec</text>
+<text x="30" y="451" font-size="16" fill="#dcdaf7">the official Sail model, exported to Lean</text>
+<path d="M210,394 L210,374" stroke="#14161f" stroke-width="2.5" marker-end="url(#arr)"/>
+<path d="M210,320 L210,302" stroke="#14161f" stroke-width="2.5" marker-end="url(#arr)"/>
+<path d="M210,248 L210,230" stroke="#14161f" stroke-width="2.5" marker-end="url(#arr)"/>
+<path d="M210,176 L210,158" stroke="#b9b4a6" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#arrG)"/>
+<path d="M210,104 L210,84" stroke="#b9b4a6" stroke-width="2.5" stroke-dasharray="5 4" marker-end="url(#arrG)"/>
+<rect x="20" y="104" width="380" height="50" rx="10" fill="#ffffff" stroke="#b9b4a6" stroke-width="2.5" stroke-dasharray="7 5"/>
+<text x="210" y="127" font-size="20" font-weight="700" fill="#6b6f7b" text-anchor="middle">Stateless guest: check a block</text>
+<text x="210" y="147" font-size="15" fill="#6b6f7b" text-anchor="middle">in progress</text>
+<rect x="20" y="176" width="380" height="50" rx="10" fill="#ffffff" stroke="#14161f" stroke-width="2.5"/>
+<text x="210" y="199" font-size="20" font-weight="700" fill="#14161f" text-anchor="middle">EVM opcodes on 256-bit words</text>
+<text x="210" y="219" font-size="15" fill="#6b6f7b" text-anchor="middle">each word is four 64-bit limbs</text>
+<rect x="20" y="248" width="380" height="50" rx="10" fill="#ffffff" stroke="#14161f" stroke-width="2.5"/>
+<text x="210" y="271" font-size="20" font-weight="700" fill="#14161f" text-anchor="middle">Hoare triples + separation logic</text>
+<text x="210" y="291" font-size="15" fill="#6b6f7b" text-anchor="middle">{P} code {Q}, in at most N steps</text>
+<rect x="20" y="320" width="380" height="50" rx="10" fill="#ffffff" stroke="#14161f" stroke-width="2.5"/>
+<text x="210" y="343" font-size="20" font-weight="700" fill="#14161f" text-anchor="middle">RISC-V instructions in Lean</text>
+<text x="210" y="363" font-size="15" fill="#6b6f7b" text-anchor="middle">proved equivalent to Sail</text>
+<rect x="440" y="104" width="270" height="66" rx="10" fill="#ffffff" stroke="#14161f" stroke-width="2.5"/>
+<text x="575" y="132" font-size="20" font-weight="700" fill="#14161f" text-anchor="middle">Agent writes assembly</text>
+<text x="575" y="156" font-size="15" fill="#6b6f7b" text-anchor="middle">and the proof for every layer</text>
+<path d="M440,137 L408,137" stroke="#14161f" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="440" y="190" width="270" height="180" rx="10" fill="#f4f2ec" stroke="#b9b4a6" stroke-width="2"/>
+<text x="458" y="216" font-size="15" font-weight="700" fill="#14161f">EVM AND, by hand:</text>
+<g xml:space="preserve" style="white-space:pre" font-family="Fira Mono, Menlo, Consolas, monospace" font-size="15" fill="#14161f">
+<text x="458" y="244">ld   x7, 0(x12)</text>
+<text x="458" y="265">ld   x6, 32(x12)</text>
+<text x="458" y="286">and  x7, x7, x6</text>
+<text x="458" y="307">sd   x7, 32(x12)</text>
+<text x="458" y="328" fill="#6b6f7b">&#8230; &#215; 4 limbs</text>
+<text x="458" y="349">addi x12, x12, 32</text>
+</g>
+<text x="692" y="216" font-size="14" fill="#6b6f7b" text-anchor="end">&#8804; 17 steps</text>
+</svg>
