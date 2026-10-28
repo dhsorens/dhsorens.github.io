@@ -4,7 +4,11 @@
 \date{2025-12-18}
 
 \p{
-    There are ongoing efforts to "snarkify" [Ethereum](dhsorens-ethereum), i.e. to integrate [zero knowledge proofs](dhsorens-002C) into every layer of the Ethereum protocol. I contribute to this via [formal verification](dhsorens-000X) in [Lean](dhsorens-lean). My main focus is currently on [CompPoly](https://github.com/Verified-zkEVM/CompPoly) and [Arklib](https://github.com/Verified-zkEVM/ArkLib).
+    There are ongoing efforts to "snarkify" [Ethereum](dhsorens-ethereum), i.e. to integrate [zero
+    knowledge proofs](dhsorens-002C) into every layer of the Ethereum protocol. I contribute to this
+    via [formal verification](dhsorens-000X) in [Lean](dhsorens-lean). My main focus is currently on
+    [CompPoly](https://github.com/Verified-zkEVM/CompPoly) and
+    [Arklib](https://github.com/Verified-zkEVM/ArkLib).
 }
 
 \p{
@@ -12,7 +16,8 @@
 }
 
 \p{
-    A systematic study of the underlying cryptography, topic by topic, is collected in [zkVMs and SNARKs](dhsorens-002C).
+    A systematic study of the underlying cryptography, topic by topic, is collected in [zkVMs and
+    SNARKs](dhsorens-002C).
 }
 
 % \p{Some links:}

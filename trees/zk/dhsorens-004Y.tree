@@ -3,13 +3,13 @@
 \date{2026-08-24}
 
 \p{
-    A \code{Circuit F α} in Clean is a function from an offset to a value and a list of operations
-    — \code{ℕ → α × List (Operation F)} — which is a writer monad accumulating operations
-    mixed with a state monad threading the offset. The offset is the index of the next unallocated
-    witness cell, and \code{bind} advances it by the number of cells the preceding operations
-    allocated. That is the whole of the representation, and the \code{do} notation is what makes it
-    readable: a circuit is written as a straight-line program that allocates cells and asserts
-    equations, and the monad turns it into a list.
+    A \code{Circuit F α} in Clean is a function from an offset to a value and a list of operations —
+    \code{ℕ → α × List (Operation F)} — which is a writer monad accumulating operations mixed with a
+    state monad threading the offset. The offset is the index of the next unallocated witness cell,
+    and \code{bind} advances it by the number of cells the preceding operations allocated. That is
+    the whole of the representation, and the \code{do} notation is what makes it readable: a circuit
+    is written as a straight-line program that allocates cells and asserts equations, and the monad
+    turns it into a list.
 }
 
 \p{
@@ -17,8 +17,8 @@
     them; \code{assert e} requires the expression #{e} to vanish; \code{lookup} requires a row to
     appear in a table; \code{interact} emits a channel interaction; \code{subcircuit} nests an
     already-proved circuit. Only three of the five are checked by the verifier. \code{witness}
-    carries no constraint whatsoever — it is instruction to the prover, invisible in the
-    constraint system.
+    carries no constraint whatsoever — it is instruction to the prover, invisible in the constraint
+    system.
 }
 
 \p{
@@ -32,8 +32,8 @@
 }
 
 \p{
-    Expressions are a small inductive type — variable, constant, addition, multiplication — so
-    an \code{Expression F} is a polynomial in the witness cells, and \code{assertZero} is the only
+    Expressions are a small inductive type — variable, constant, addition, multiplication — so an
+    \code{Expression F} is a polynomial in the witness cells, and \code{assertZero} is the only
     primitive constraint. Two pieces of notation cover most circuit code: \code{x === y} asserts an
     equality, and \code{let b <== e} allocates a cell and constrains it equal to #{e}, which is the
     idiom for naming an intermediate value that the verifier can refer to.
@@ -53,8 +53,8 @@
 
 \p{
     Two supporting classes make gadgets composable. \code{ProvableType} equips a type former with a
-    \code{size}, maps to and from a flat vector of that many elements, and round-trip proofs —
-    this is how a structured input becomes a run of witness cells, and record types get it by
+    \code{size}, maps to and from a flat vector of that many elements, and round-trip proofs — this
+    is how a structured input becomes a run of witness cells, and record types get it by
     \code{deriving ProvableStruct}. \code{ElaboratedCircuit} carries the offset-independent facts
     about a circuit: how many cells it allocates and what it outputs, each with a proof that it
     agrees with actually running the circuit. Elaboration is what lets a caller use a gadget without

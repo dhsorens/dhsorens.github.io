@@ -3,16 +3,20 @@
 \date{2026-08-18}
 
 \p{
-    What a polynomial commitment scheme has to provide, stated precisely enough that a protocol can be proved secure against the interface rather than against a particular scheme.
+    What a polynomial commitment scheme has to provide, stated precisely enough that a protocol can
+    be proved secure against the interface rather than against a particular scheme.
 }
 
 \p{
     Questions this page should answer:
     \ul{
         \li{Syntax: setup, commit, open, verify — and which parameters are public.}
-        \li{Binding, evaluation binding, and extractability; which one a [BCS-style](dhsorens-002H) compilation actually needs.}
-        \li{Batch openings and homomorphism, and how much of a protocol's efficiency depends on them.}
-        \li{Functional commitments as the generalisation, and why ArkLib separates \code{Commitments/Functional} from \code{Commitments/Ordinary}.}
+        \li{Binding, evaluation binding, and extractability; which one a [BCS-style](dhsorens-002H)
+        compilation actually needs.}
+        \li{Batch openings and homomorphism, and how much of a protocol's efficiency depends on
+        them.}
+        \li{Functional commitments as the generalisation, and why ArkLib separates
+        \code{Commitments/Functional} from \code{Commitments/Ordinary}.}
         \li{Multilinear versus univariate interfaces, and the adapters between them.}
     }
 }

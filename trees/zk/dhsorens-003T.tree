@@ -3,16 +3,20 @@
 \date{2026-08-18}
 
 \p{
-    How an execution becomes a set of tables. In practice this is where a zkVM's engineering lives, and the details are what [Clean](dhsorens-002Y) has to be able to express.
+    How an execution becomes a set of tables. In practice this is where a zkVM's engineering lives,
+    and the details are what [Clean](dhsorens-002Y) has to be able to express.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{Chips as separate [AIRs](dhsorens-002U), one per operation class, connected by cross-table lookups.}
+        \li{Chips as separate [AIRs](dhsorens-002U), one per operation class, connected by
+        cross-table lookups.}
         \li{The main trace against auxiliary and preprocessed columns; what each costs to commit.}
         \li{Padding to a power of two, and the constraints that must hold on padded rows.}
-        \li{Witness generation as a first-class cost, and whether the generator is verified against the constraints.}
-        \li{How a single instruction's semantics is spread across chips, and how the pieces are tied back together.}
+        \li{Witness generation as a first-class cost, and whether the generator is verified against
+        the constraints.}
+        \li{How a single instruction's semantics is spread across chips, and how the pieces are tied
+        back together.}
     }
 }

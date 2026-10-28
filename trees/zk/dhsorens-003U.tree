@@ -3,20 +3,25 @@
 \date{2026-08-18}
 
 \p{
-    Random-access memory is the hardest part of a zkVM to constrain and the most common source of unsoundness. The general machinery is in [permutation and memory arguments](dhsorens-002X); this page is about what the systems actually do.
+    Random-access memory is the hardest part of a zkVM to constrain and the most common source of
+    unsoundness. The general machinery is in [permutation and memory arguments](dhsorens-002X); this
+    page is about what the systems actually do.
 }
 
 \p{
     Questions this page should answer:
     \ul{
         \li{Read-write RAM by offline memory checking, as in SP1, Jolt, and RISC Zero.}
-        \li{Paged memory with Merkle verification, which RISC Zero also supports, and when that is preferable.}
+        \li{Paged memory with Merkle verification, which RISC Zero also supports, and when that is
+        preferable.}
         \li{Stack-based models (Miden, zkWasm) and how their consistency arguments differ.}
-        \li{Memory across [shard boundaries](dhsorens-003O) — the argument that ties independent segments together.}
+        \li{Memory across [shard boundaries](dhsorens-003O) — the argument that ties independent
+        segments together.}
         \li{The concrete cost of a load or store, counted in trace cells and lookups.}
     }
 }
 
 \p{
-    Sources: [SoK: Understanding zkVM](https://eprint.iacr.org/2026/525), [Nebula](https://eprint.iacr.org/2024/1605).
+    Sources: [SoK: Understanding zkVM](https://eprint.iacr.org/2026/525),
+    [Nebula](https://eprint.iacr.org/2024/1605).
 }

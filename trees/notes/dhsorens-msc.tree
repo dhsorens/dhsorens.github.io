@@ -4,15 +4,26 @@
 \meta{toc}{true}
 
 \p{
-    I did my [MSc](dhsorens-msc) during the 2016-2017 academic year at [St Peter's College](dhsorens-spc), [Oxford](dhsorens-oxf). The course spanned through areas of pure mathematics and theoretical computer science. I focused mostly on algebraic topology, homotopy theory, homological algebra, and category theory. Chris Douglas and Andre Henriques were two standout professors to whom I am very grateful.
+    I did my [MSc](dhsorens-msc) during the 2016-2017 academic year at [St Peter's
+    College](dhsorens-spc), [Oxford](dhsorens-oxf). The course spanned through areas of pure
+    mathematics and theoretical computer science. I focused mostly on algebraic topology, homotopy
+    theory, homological algebra, and category theory. Chris Douglas and Andre Henriques were two
+    standout professors to whom I am very grateful.
 }
 
 \p{
-    My [MSc dissertation](/docs/sorensen-msc-dissertation.pdf) was essentially commentary on one of Oscar Randal-Williams' papers on \em{tautological rings} on the connected sums of n-dimensional tauri. It deals with spectral sequences (in particular the Serre spectral sequence) and characteristic classes, among other things. The paper in question proved a result for odd-dimensional spheres, and my masters dissertation was an exploration on why the proof failed to generalize to the even-dimensional case.
+    My [MSc dissertation](/docs/sorensen-msc-dissertation.pdf) was essentially commentary on one of
+    Oscar Randal-Williams' papers on \em{tautological rings} on the connected sums of n-dimensional
+    tauri. It deals with spectral sequences (in particular the Serre spectral sequence) and
+    characteristic classes, among other things. The paper in question proved a result for
+    odd-dimensional spheres, and my masters dissertation was an exploration on why the proof failed
+    to generalize to the even-dimensional case.
 }
 
 \p{
-    I have my dissertation [here](/docs/sorensen-msc-dissertation.pdf), but the dissertation included introductory appendices to various useful topics, which I have separated into their individual notes below.
+    I have my dissertation [here](/docs/sorensen-msc-dissertation.pdf), but the dissertation
+    included introductory appendices to various useful topics, which I have separated into their
+    individual notes below.
 }
 
 \transclude{dhsorens-000T}

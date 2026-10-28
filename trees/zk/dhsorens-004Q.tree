@@ -3,16 +3,24 @@
 \date{2026-08-19}
 
 \p{
-    [Knowledge soundness](dhsorens-004J) says a prover who convinces the verifier knows a witness. It does not say a prover who has \em{seen} valid proofs cannot produce a new one without knowing anything, and that is the property an [on-chain verifier](dhsorens-003P) needs, since every proof it has ever accepted is public.
+    [Knowledge soundness](dhsorens-004J) says a prover who convinces the verifier knows a witness.
+    It does not say a prover who has \em{seen} valid proofs cannot produce a new one without knowing
+    anything, and that is the property an [on-chain verifier](dhsorens-003P) needs, since every
+    proof it has ever accepted is public.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{Simulation extractability, weak and strong, and how each differs from knowledge soundness — the extractor now works against an adversary with access to simulated proofs.}
-        \li{Groth16's malleability, the concrete attacks it has enabled, and why proof uniqueness is a separate property from soundness.}
-        \li{Whether Fiat–Shamir in the random oracle model gives simulation extractability for free, and for which classes of protocol.}
-        \li{What a contract actually needs: replay protection by binding the proof to the statement, or the cryptographic property. Where nullifiers and domain separation substitute for it.}
-        \li{Whether anything in [ArkLib](dhsorens-0040) states it, and what a Lean statement would have to quantify over.}
+        \li{Simulation extractability, weak and strong, and how each differs from knowledge
+        soundness — the extractor now works against an adversary with access to simulated proofs.}
+        \li{Groth16's malleability, the concrete attacks it has enabled, and why proof uniqueness is
+        a separate property from soundness.}
+        \li{Whether Fiat–Shamir in the random oracle model gives simulation extractability for free,
+        and for which classes of protocol.}
+        \li{What a contract actually needs: replay protection by binding the proof to the statement,
+        or the cryptographic property. Where nullifiers and domain separation substitute for it.}
+        \li{Whether anything in [ArkLib](dhsorens-0040) states it, and what a Lean statement would
+        have to quantify over.}
     }
 }

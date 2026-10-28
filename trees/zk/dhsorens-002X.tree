@@ -3,20 +3,25 @@
 \date{2026-08-18}
 
 \p{
-    The arguments that enforce global consistency across a trace, as opposed to row-local constraints. [Memory](dhsorens-003U) is the hard case and the usual source of unsoundness.
+    The arguments that enforce global consistency across a trace, as opposed to row-local
+    constraints. [Memory](dhsorens-003U) is the hard case and the usual source of unsoundness.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{Permutation and multiset-equality arguments; the grand product and its logUp replacement.}
-        \li{Offline memory checking: reads and writes as multisets of #{(address, value, timestamp)} tuples, and the conditions that make it sound.}
+        \li{Permutation and multiset-equality arguments; the grand product and its logUp
+        replacement.}
+        \li{Offline memory checking: reads and writes as multisets of #{(address, value, timestamp)}
+        tuples, and the conditions that make it sound.}
         \li{Address-sorted versus timestamp-sorted formulations, and what each costs.}
         \li{Read-write memory in the folding setting.}
-        \li{The constraint that is always forgotten: monotonicity of timestamps, and what a missing range check on it permits.}
+        \li{The constraint that is always forgotten: monotonicity of timestamps, and what a missing
+        range check on it permits.}
     }
 }
 
 \p{
-    Sources: [Nebula: efficient read-write memory](https://eprint.iacr.org/2024/1605), ArkLib's \code{ProofSystem/ConstraintSystem/MemoryChecking.lean}.
+    Sources: [Nebula: efficient read-write memory](https://eprint.iacr.org/2024/1605), ArkLib's
+    \code{ProofSystem/ConstraintSystem/MemoryChecking.lean}.
 }

@@ -3,25 +3,55 @@
 \date{2026-08-18}
 
 \p{
-    Poseidon (Grassi, Khovratovich, Rechberger, Roy, and Schofnegger, 2019) is a sponge over a prime field rather than over bits. Its permutation follows the HADES strategy: a few full rounds, where an S-box — typically #{x \mapsto x^5} — is applied to every element, and many partial rounds applying it to one, with an MDS matrix mixing the state between them. Poseidon2 later reworked the linear layer for speed. Because the whole function is field arithmetic, its cost inside a [prime-field circuit](dhsorens-002K) is counted in multiplications, and it beat SHA-256 there by orders of magnitude.
+    Poseidon (Grassi, Khovratovich, Rechberger, Roy, and Schofnegger, 2019) is a sponge over a prime
+    field rather than over bits. Its permutation follows the HADES strategy: a few full rounds,
+    where an S-box — typically #{x \mapsto x^5} — is applied to every element, and many partial
+    rounds applying it to one, with an MDS matrix mixing the state between them. Poseidon2 later
+    reworked the linear layer for speed. Because the whole function is field arithmetic, its cost
+    inside a [prime-field circuit](dhsorens-002K) is counted in multiplications, and it beat SHA-256
+    there by orders of magnitude.
 }
 
 \p{
-    The objection was always that the same algebraic structure that makes it cheap to arithmetise is what algebraic cryptanalysis attacks, and that parameters are generated per field and per state width rather than fixed once and studied for decades. The Ethereum Foundation took this seriously enough to fund the [Poseidon Cryptanalysis Initiative](https://www.poseidon-initiative.info/), with bounties up to $1 million scheduled to run through December 2026.
+    The objection was always that the same algebraic structure that makes it cheap to arithmetise is
+    what algebraic cryptanalysis attacks, and that parameters are generated per field and per state
+    width rather than fixed once and studied for decades. The Ethereum Foundation took this
+    seriously enough to fund the [Poseidon Cryptanalysis
+    Initiative](https://www.poseidon-initiative.info/), with bounties up to $1 million scheduled to
+    run through December 2026.
 }
 
 \p{
-    It was paused on 1 August 2026, and on 13 August Justin Drake [announced](https://x.com/drakefjustin/status/2087905684180418733) that the Foundation is abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
+    It was paused on 1 August 2026, and on 13 August Justin Drake
+    [announced](https://x.com/drakefjustin/status/2087905684180418733) that the Foundation is
+    abandoning Poseidon for L1 in favour of SHA or BLAKE, calling it "an epic 8-year, 8-figure
+    rabbit hole in post-quantum cryptography" reaching "its dream conclusion." His diagnosis is the
+    memorable part: "In hindsight the key was not SNARK-friendly hashes, but hash-friendly SNARKs."
 }
 
 \p{
-    What changed is the proving side. [Binius](dhsorens-003J) moved the arithmetic into towers of [binary fields](dhsorens-002L), where a Boolean computation costs what it should instead of paying to embed single bits into a large prime field. Flock (eprint 2026/1329) took that further for the specific shape of the problem — large batches of the same Boolean circuit — and reports 82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second on one core of an M4 Max, more than 660k BLAKE3 compressions per second on ten, over 9 times faster than Binius64 on SHA-256 and more than 500 times faster than the fastest elliptic-curve SNARK it measured against. Drake's figure for the resulting designs is roughly one million conventional hash calls per second on a laptop, at about 100 times the cost of native execution.
+    What changed is the proving side. [Binius](dhsorens-003J) moved the arithmetic into towers of
+    [binary fields](dhsorens-002L), where a Boolean computation costs what it should instead of
+    paying to embed single bits into a large prime field. Flock (eprint 2026/1329) took that further
+    for the specific shape of the problem — large batches of the same Boolean circuit — and reports
+    82k BLAKE3 compressions, 42k SHA-256 compressions, and 30k Keccak permutations per second on one
+    core of an M4 Max, more than 660k BLAKE3 compressions per second on ten, over 9 times faster
+    than Binius64 on SHA-256 and more than 500 times faster than the fastest elliptic-curve SNARK it
+    measured against. Drake's figure for the resulting designs is roughly one million conventional
+    hash calls per second on a laptop, at about 100 times the cost of native execution.
 }
 
 \p{
-    Poseidon was not broken, and nothing here says it will be. An engineering decision was reversed because a different part of the stack improved, which is worth separating clearly from a cryptanalytic result — the [security argument](dhsorens-0038) never changed, only what it had to buy. The stated roadmap puts a production-grade leanVM in 2027 and consensus, data, and execution layer deployment in 2028.
+    Poseidon was not broken, and nothing here says it will be. An engineering decision was reversed
+    because a different part of the stack improved, which is worth separating clearly from a
+    cryptanalytic result — the [security argument](dhsorens-0038) never changed, only what it had to
+    buy. The stated roadmap puts a production-grade leanVM in 2027 and consensus, data, and
+    execution layer deployment in 2028.
 }
 
 \p{
-    Sources: [Drake's announcement](https://x.com/drakefjustin/status/2087905684180418733), [Flock](https://eprint.iacr.org/2026/1329) and its [implementation](https://github.com/succinctlabs/flock), the [Poseidon Cryptanalysis Initiative](https://www.poseidon-initiative.info/).
+    Sources: [Drake's announcement](https://x.com/drakefjustin/status/2087905684180418733),
+    [Flock](https://eprint.iacr.org/2026/1329) and its
+    [implementation](https://github.com/succinctlabs/flock), the [Poseidon Cryptanalysis
+    Initiative](https://www.poseidon-initiative.info/).
 }

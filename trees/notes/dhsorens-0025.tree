@@ -13,13 +13,13 @@
 
 \p{
     My thoughts on computable specifications are still developing. They are growing out of an
-    interest during my PhD in the integrity of formal specifications
-    [in the case of smart contracts](dhsorens-001J). [zkVMs and SNARKS](dhsorens-002C) also have
-    complicated specifications, but for a different reason than smart contracts. Whereas smart
-    contract specifications have difficult-to-define, high-level, socio-economic properties that one
-    must aim at with a spec, the specs of zkVMs are complex because they correspond to some pretty
-    intense mathematics. Just stating the desired properties requires quite a bit of machinery --
-    see [Arklib](https://github.com/Verified-zkEVM/ArkLib/) for a taste of that.
+    interest during my PhD in the integrity of formal specifications [in the case of smart
+    contracts](dhsorens-001J). [zkVMs and SNARKS](dhsorens-002C) also have complicated
+    specifications, but for a different reason than smart contracts. Whereas smart contract
+    specifications have difficult-to-define, high-level, socio-economic properties that one must aim
+    at with a spec, the specs of zkVMs are complex because they correspond to some pretty intense
+    mathematics. Just stating the desired properties requires quite a bit of machinery -- see
+    [Arklib](https://github.com/Verified-zkEVM/ArkLib/) for a taste of that.
 }
 
 \p{

@@ -3,39 +3,80 @@
 \date{2025-09-05}
 
 \p{
-    Dexter2 is an AMM on the Tezos blockchain that has been formally verified by [at least three different groups using three different formal verification tools](dhsorens-0010).
-    Each was based on the [same informal specification](dhsorens-0010). The informal specification describes the contract interface, including its entrypoint functions, error messages, outgoing transactions, the contents of its storage, some invariants of the storage (including that its store of tokens never fully depletes), fees, and the logic of each of the entrypoint functions. This is a standard and detailed contract specification.
+    Dexter2 is an AMM on the Tezos blockchain that has been formally verified by [at least three
+    different groups using three different formal verification tools](dhsorens-0010). Each was based
+    on the [same informal specification](dhsorens-0010). The informal specification describes the
+    contract interface, including its entrypoint functions, error messages, outgoing transactions,
+    the contents of its storage, some invariants of the storage (including that its store of tokens
+    never fully depletes), fees, and the logic of each of the entrypoint functions. This is a
+    standard and detailed contract specification.
 }
 
 \p{
-    However, while the specification is detailed on the contract design and interface, it doesn’t include anything about expected or desired behavior from an economic perspective. This is not because the expected or desired economic behavior is unknown or uninteresting. It was clearly articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of tokens along an indifference curve:
+    However, while the specification is detailed on the contract design and interface, it doesn’t
+    include anything about expected or desired behavior from an economic perspective. This is not
+    because the expected or desired economic behavior is unknown or uninteresting. It was clearly
+    articulated by Vitalik Buterin, co-founder of Ethereum, in what he wrote in March 2018 about
+    AMMs on the online forum Ethereum Research. Buterin proposed that AMMs trade between a pair of
+    tokens along an indifference curve:
 }
 
 ##{x y = k}
 
 \p{
-    where #{x} represents the quantity held by the contract of the token being traded in, #{y} represents the quantity held by the contract of the token being traded out, and #{k} is a constant. The tokens held by the contract come from liquidity providers, which are investors who deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees. That #{k} is constant means that a trade of #{\Delta x} of one token yields #{\Delta y} of another such that the product from above stays constant at #{k}:
+    where #{x} represents the quantity held by the contract of the token being traded in, #{y}
+    represents the quantity held by the contract of the token being traded out, and #{k} is a
+    constant. The tokens held by the contract come from liquidity providers, which are investors who
+    deposit tokens into the AMM in exchange for a reward, most often a share of transaction fees.
+    That #{k} is constant means that a trade of #{\Delta x} of one token yields #{\Delta y} of
+    another such that the product from above stays constant at #{k}:
 }
 
 ##{(x+ \Delta x)(y− \Delta y) = k.}
 
 \p{
-    Buterin argued that an AMM that trades along this indifference curve features efficient price discovery. He also argued that it can properly incentivize liquidity providers by charging a #{0.3}\% fee on each trade to give to them.
+    Buterin argued that an AMM that trades along this indifference curve features efficient price
+    discovery. He also argued that it can properly incentivize liquidity providers by charging a
+    #{0.3}\% fee on each trade to give to them.
 }
 
 \p{
-    We can probably convince ourselves that the [informal specification](dhsorens-001O) of Dexter2 features these economic qualities described by Buterin, including efficient price discovery and some suitable incentive mechanism so that investors deposit tokens into the AMM contract and provide liquidity to the market; however, concluding that the [informal specification or its formal counterparts](dhsorens-001O) actually imply any of these economic behaviors is not a given fact. AMM fees and liquidity provision alone are highly complex topics, and are the subject of several economic studies, including on choosing optimal transaction fees, how liquidity providers react to market changes, and how all of that relates to the curvature of the indifference curve #{xy= k}.
-    It was also shown that front-running attacks can warp the incentive scheme of the blockchain itself in such a way that could compromise its underlying security.
+    We can probably convince ourselves that the [informal specification](dhsorens-001O) of Dexter2
+    features these economic qualities described by Buterin, including efficient price discovery and
+    some suitable incentive mechanism so that investors deposit tokens into the AMM contract and
+    provide liquidity to the market; however, concluding that the [informal specification or its
+    formal counterparts](dhsorens-001O) actually imply any of these economic behaviors is not a
+    given fact. AMM fees and liquidity provision alone are highly complex topics, and are the
+    subject of several economic studies, including on choosing optimal transaction fees, how
+    liquidity providers react to market changes, and how all of that relates to the curvature of the
+    indifference curve #{xy= k}. It was also shown that front-running attacks can warp the incentive
+    scheme of the blockchain itself in such a way that could compromise its underlying security.
 }
 
 \p{
-    There is then an outstanding question of whether any of Dexter2’s specifications are correct with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of the resulting AMM. Not only do these important economic and game-theoretic factors not make it into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief study of the [three formalizations of Dexter2’s informal specification](dhsorens-001O) reveals that each differs substantively both in how the properties of the informal specification are formalized, and in what assumptions are made in the process of verification.
+    There is then an outstanding question of whether any of Dexter2’s specifications are correct
+    with regards to the desired—indeed, essential—high-level economic and game-theoretic behavior of
+    the resulting AMM. Not only do these important economic and game-theoretic factors not make it
+    into any of Dexter2’s specifications, formal or informal, but to complicate matters a brief
+    study of the [three formalizations of Dexter2’s informal specification](dhsorens-001O) reveals
+    that each differs substantively both in how the properties of the informal specification are
+    formalized, and in what assumptions are made in the process of verification.
 }
 
-\p{   
-    Furthermore, were we to try to formally specify some of the aforementioned high-level economic and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go about doing so. Most specification languages and models of computation are too low-level to easily admit clear specifications of such properties. What model or framework would we use, for example, to specify that Dexter2 facilitate an efficient market?
+\p{
+    Furthermore, were we to try to formally specify some of the aforementioned high-level economic
+    and game-theoretic behaviors on the Dexter2 contract it is not at all obvious how we would go
+    about doing so. Most specification languages and models of computation are too low-level to
+    easily admit clear specifications of such properties. What model or framework would we use, for
+    example, to specify that Dexter2 facilitate an efficient market?
 }
     
 \p{
-    As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2 routinely manage billions of USD worth of funds, much is also at risk in case of a bug. Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of the economic properties that we have just mentioned, directly or indirectly. It is, however, not obvious that these properties hold by reading any of the aforementioned specifications.
+    As codebases go, Dexter2 is quite small—only a few thousand lines—but as we’ve seen much is
+    expected of it in terms of its economic and game-theoretic behavior; because AMMs like Dexter2
+    routinely manage billions of USD worth of funds, much is also at risk in case of a bug.
+    Furthermore, despite the fact that they are not present in any of Dexter2’s specifications, it
+    is difficult to conceptualize a notion of Dexter2’s correctness that does not include some of
+    the economic properties that we have just mentioned, directly or indirectly. It is, however, not
+    obvious that these properties hold by reading any of the aforementioned specifications.
 }

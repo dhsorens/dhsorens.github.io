@@ -3,7 +3,9 @@
 \taxon{Talk}
 \date{2026-04-02}
 
-\p{\em{Abstract:} I will discuss ongoing work to safely snarkify the Ethereum protocol using formal verification. Expect to learn how formal verification delivers high-assurance code, and how we're using it on zkVMs, SNARKS, and the rest of the Ethereum protocol.}
+\p{\em{Abstract:} I will discuss ongoing work to safely snarkify the Ethereum protocol using formal
+verification. Expect to learn how formal verification delivers high-assurance code, and how we're
+using it on zkVMs, SNARKS, and the rest of the Ethereum protocol.}
 
 \p{links:
     \ul{

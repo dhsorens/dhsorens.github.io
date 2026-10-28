@@ -3,8 +3,12 @@
 \date{2025-10-09}
 
 \p{
-    Nomad is (was) a cross-chain bridge protocol. In August 2022, [more than 500 hacker addresses exploited a bug](https://x.com/samczsun/status/1554252024723546112) introduced by a faulty upgrade to one of the Nomad smart contracts. The upgrade incorrectly added the null address (\code{0x000...000}) as a trusted root, which turned off
-    a key safety check, allowing anyone to withdraw arbitrary amounts of funds from the Nomad contract to
-    their wallet by calling the contract with a particular payload. The [attack](https://etherscan.io/tx/0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460) resulted in 190 million USD
-    in lost funds.
+    Nomad is (was) a cross-chain bridge protocol. In August 2022, [more than 500 hacker addresses
+    exploited a bug](https://x.com/samczsun/status/1554252024723546112) introduced by a faulty
+    upgrade to one of the Nomad smart contracts. The upgrade incorrectly added the null address
+    (\code{0x000...000}) as a trusted root, which turned off a key safety check, allowing anyone to
+    withdraw arbitrary amounts of funds from the Nomad contract to their wallet by calling the
+    contract with a particular payload. The
+    [attack](https://etherscan.io/tx/0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460)
+    resulted in 190 million USD in lost funds.
 }

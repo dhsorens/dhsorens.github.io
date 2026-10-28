@@ -4,7 +4,7 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 
 **Publishing model: CI is the single writer to `docs/`.** Sessions commit *sources only* (`trees/`, `assets/`, scripts, skills); on every push to `main`, `publish.yml` rebuilds the site and commits the fresh `docs/`. Merging a content PR is what publishes it. Never hand-edit `docs/`, and don't commit locally-built `docs/` unless CI is broken (`./commit.sh` remains as that manual fallback).
 
-**Cloud sessions (claude.ai) have no forester and can't install it.** They can write `.tree` sources, allocate addresses with `.claude/scripts/next-tree-id.sh <n>`, and open PRs; `build-check.yml` on the PR is their build verification. Never attempt `./build.sh`, `./view.sh`, or `./commit.sh` from a cloud session.
+**Cloud sessions (claude.ai) have no forester and can't install it.** They can write `.tree` sources, allocate addresses with `.claude/scripts/next-tree-id.sh <n>`, and open PRs; `build-check.yml` on the PR is their build verification. They *can* run `./lint.sh`, which needs only python3. Never attempt `./build.sh`, `./view.sh`, or `./commit.sh` from a cloud session.
 
 ## Repo map
 
@@ -31,12 +31,15 @@ Personal website of Derek Sorensen, built with [forester](https://sr.ht/~jonster
 | `log.sh` | Same as `new.sh` but defaults to `trees/logs/`. |
 | `find.sh XXXX` | Locate `trees/**/dhsorens-XXXX.tree`. |
 | `commit-trees.sh "msg"` | Commit and push only `trees/` (no build). |
+| `lint.sh` | Lint `trees/`: absolute asset links, and the 100-character line limit. Needs only python3, so cloud sessions can run it; CI runs this same script. |
+| `lint-line-length.py [--fix]` | The line-length check on its own. `--fix` reflows every paragraph: write however you like, then run it to repack. |
 
 ## Hard rules
 
 - Asset links in trees must be **absolute** (`/docs/…`, `/slides/…`, `/media/…`, `/img/…`) — pages live at `/<addr>/`, so relative links break. CI lints this.
 - Never hand-edit `docs/` or `output/`.
 - Every paragraph needs `\p{…}`; see `cmds.md` for the markup reference.
+- Lines in `trees/` are wrapped at **100 characters**, so that editing a sentence gives a diff of a sentence rather than of a whole paragraph. Don't wrap by hand: write and edit freely, then run `./lint-line-length.py --fix`, which reflows each paragraph — joining its lines back together and refilling them — so a sentence added mid-paragraph doesn't leave the rest of it ragged. CI lints the limit, not the reflow, so a ragged paragraph never fails a build. A line break is whitespace in forester markup, so neither wrapping nor joining changes the rendered page; the formatter keeps `#{…}`, `\code{…}` and `](…)` link targets unbroken, comments commented, and structural lines (`\p{`, `}`, `\li{…}`) on lines of their own. A line with nowhere left to break (a long link target) is exempt.
 - Publishing flow: work on a branch, commit **sources only** (`./commit-trees.sh` or plain git), push, PR to `main`. CI publishes on merge; allow ~10 minutes for the Cloudflare cache after merging.
 - `trees/notes/dhsorens-001S.tree` is the **Latest Deep-Dive** blurb transcluded at the top of the front page. Its address is load-bearing — rewrite its body, never its address.
 - `trees/dhsorens-notes.tree` **transcludes** its notes, newest first; each renders in place with its own title and date, in the standard forester page format. It is not a bulleted list of links — `dhsorens-talks.tree` and `dhsorens-slides.tree` are lists because a talk has no tree to render, but a note does.

@@ -3,29 +3,70 @@
 \date{2026-08-19}
 
 \p{
-    Soundness quantifies over a class of provers, and the choice of class is the whole content of the definition. A verifier #{V} for a language #{L} is sound with error #{\epsilon} if for every #{x \notin L} and every admitted prover strategy #{P^*}, #{\Pr(\langle P^*, V\rangle(x) = 1) \le \epsilon}. Admitting all strategies gives an [interactive proof](dhsorens-002E); admitting only polynomial-time ones gives an argument. Every deployed system is an argument, because statistical soundness with communication shorter than the witness would carry complexity-theoretic consequences nobody expects, and succinctness is the property these systems are bought for.
+    Soundness quantifies over a class of provers, and the choice of class is the whole content of
+    the definition. A verifier #{V} for a language #{L} is sound with error #{\epsilon} if for every
+    #{x \notin L} and every admitted prover strategy #{P^*},
+    #{\Pr(\langle P^*, V\rangle(x) = 1) \le \epsilon}. Admitting all strategies gives an
+    [interactive proof](dhsorens-002E); admitting only polynomial-time ones gives an argument. Every
+    deployed system is an argument, because statistical soundness with communication shorter than
+    the witness would carry complexity-theoretic consequences nobody expects, and succinctness is
+    the property these systems are bought for.
 }
 
 \p{
-    Soundness is vacuous whenever the language is trivial. "There is an #{a} with #{g^a = h}" holds for every #{h} in a [cyclic group](dhsorens-004W), so a [Schnorr](dhsorens-004V) proof has no false statements to be sound about, and the property the application wants — that this prover holds #{a} — is not soundness at all. Knowledge soundness is the property with content: there is an efficient extractor #{E} such that any #{P^*} convincing #{V} with probability #{\epsilon^*} yields a witness from #{E} with probability at least #{\epsilon^* - \kappa}, where #{\kappa} is the knowledge error. It implies soundness whenever #{\kappa < 1}, since for #{x \notin L} there is no witness to extract and acceptance is bounded by #{\kappa} — ArkLib's \code{knowledgeSoundness_implies_soundness}.
+    Soundness is vacuous whenever the language is trivial. "There is an #{a} with #{g^a = h}" holds
+    for every #{h} in a [cyclic group](dhsorens-004W), so a [Schnorr](dhsorens-004V) proof has no
+    false statements to be sound about, and the property the application wants — that this prover
+    holds #{a} — is not soundness at all. Knowledge soundness is the property with content: there is
+    an efficient extractor #{E} such that any #{P^*} convincing #{V} with probability #{\epsilon^*}
+    yields a witness from #{E} with probability at least #{\epsilon^* - \kappa}, where #{\kappa} is
+    the knowledge error. It implies soundness whenever #{\kappa < 1}, since for #{x \notin L} there
+    is no witness to extract and acceptance is bounded by #{\kappa} — ArkLib's
+    \code{knowledgeSoundness_implies_soundness}.
 }
 
 \p{
-    It is also what makes [recursion](dhsorens-003L) possible. The outer circuit's statement is that a valid inner proof exists, which is a claim about the existence of a string rather than about the computation anyone cares about; only an extractor turns it back into the inner claim. Soundness of the outer proof would establish nothing about the inner one, which is why every folding and aggregation scheme is stated with a knowledge hypothesis and why the extractors compose one layer at a time.
+    It is also what makes [recursion](dhsorens-003L) possible. The outer circuit's statement is that
+    a valid inner proof exists, which is a claim about the existence of a string rather than about
+    the computation anyone cares about; only an extractor turns it back into the inner claim.
+    Soundness of the outer proof would establish nothing about the inner one, which is why every
+    folding and aggregation scheme is stated with a knowledge hypothesis and why the extractors
+    compose one layer at a time.
 }
 
 \p{
-    What the extractor is handed is the distinction that survives compilation. A \strong{rewinding} extractor runs #{P^*} repeatedly from a saved state with fresh challenges; this is how [special soundness](dhsorens-004K) yields extraction, and it is unobjectionable while the protocol is interactive. A \strong{straightline} extractor is given one transcript, plus the prover's and verifier's oracle query logs, and must produce the witness without re-running anything. After [Fiat–Shamir](dhsorens-002G) the prover is a single algorithm querying a hash, so the query log is available and rewinding is not free: rewinding a non-interactive prover is exactly what the #{Q^\mu} loss in the naive analysis pays for.
+    What the extractor is handed is the distinction that survives compilation. A \strong{rewinding}
+    extractor runs #{P^*} repeatedly from a saved state with fresh challenges; this is how [special
+    soundness](dhsorens-004K) yields extraction, and it is unobjectionable while the protocol is
+    interactive. A \strong{straightline} extractor is given one transcript, plus the prover's and
+    verifier's oracle query logs, and must produce the witness without re-running anything. After
+    [Fiat–Shamir](dhsorens-002G) the prover is a single algorithm querying a hash, so the query log
+    is available and rewinding is not free: rewinding a non-interactive prover is exactly what the
+    #{Q^\mu} loss in the naive analysis pays for.
 }
 
 \p{
-    ArkLib takes straightline extraction as primary. \code{Extractor.Straightline} is deterministic, with type #{\mathrm{StmtIn} \to \mathrm{WitOut} \to \mathrm{FullTranscript} \to \mathrm{QueryLog} \to \mathrm{QueryLog} \to \mathrm{WitIn}} in the option monad over the oracle computation, and \code{knowledgeSoundness} is stated as the existence of such an extractor. Rewinding lives in a separate file and is still unfinished, for a reason worth recording: the extractor needs to update and maintain the prover's state across its queries, which the current representation of a prover does not support. That the harder definition is the one that resisted formalisation is not a coincidence — rewinding is where informal proofs are most often loose about what the extractor may do.
+    ArkLib takes straightline extraction as primary. \code{Extractor.Straightline} is deterministic,
+    with type
+    #{\mathrm{StmtIn} \to \mathrm{WitOut} \to \mathrm{FullTranscript} \to \mathrm{QueryLog} \to \mathrm{QueryLog} \to \mathrm{WitIn}}
+    in the option monad over the oracle computation, and \code{knowledgeSoundness} is stated as the
+    existence of such an extractor. Rewinding lives in a separate file and is still unfinished, for
+    a reason worth recording: the extractor needs to update and maintain the prover's state across
+    its queries, which the current representation of a prover does not support. That the harder
+    definition is the one that resisted formalisation is not a coincidence — rewinding is where
+    informal proofs are most often loose about what the extractor may do.
 }
 
 \p{
-    Two refinements belong to the same layer. Witness-extended emulation — Lindell's formulation, and the one the Bulletproofs lineage proves — asks the extractor to reproduce the transcript distribution as well as the witness, which is what composition needs. And soundness may be stated with the statement fixed in advance or [chosen adaptively](dhsorens-004O) after the hash function is public; the two differ by more than a constant, and the difference is where the practical Fiat–Shamir attacks live.
+    Two refinements belong to the same layer. Witness-extended emulation — Lindell's formulation,
+    and the one the Bulletproofs lineage proves — asks the extractor to reproduce the transcript
+    distribution as well as the witness, which is what composition needs. And soundness may be
+    stated with the statement fixed in advance or [chosen adaptively](dhsorens-004O) after the hash
+    function is public; the two differ by more than a constant, and the difference is where the
+    practical Fiat–Shamir attacks live.
 }
 
 \p{
-    Reading: \code{ArkLib/OracleReduction/Security/Basic.lean} and \code{Rewinding.lean}; Thaler, \em{Proofs, Arguments, and Zero-Knowledge}, for the textbook development.
+    Reading: \code{ArkLib/OracleReduction/Security/Basic.lean} and \code{Rewinding.lean}; Thaler,
+    \em{Proofs, Arguments, and Zero-Knowledge}, for the textbook development.
 }

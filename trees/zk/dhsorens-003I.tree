@@ -26,6 +26,6 @@
 
 \p{
     Sources: [Plonky3](https://github.com/Plonky3/Plonky3),
-    [stwo](https://github.com/starkware-libs/stwo), Buterin,
-    [Exploring circle STARKs](https://vitalik.eth.limo/general/2024/07/23/circlestarks.html).
+    [stwo](https://github.com/starkware-libs/stwo), Buterin, [Exploring circle
+    STARKs](https://vitalik.eth.limo/general/2024/07/23/circlestarks.html).
 }

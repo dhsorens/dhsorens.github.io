@@ -6,17 +6,17 @@
 \p{
     Once the contract is written in Lean, it is a complete description of what a circuit must do and
     says nothing about how. Fix the input and output types, the assumptions, the spec, and the exact
-    statements to be proved, and the circuit itself becomes free — any implementation is
-    acceptable if its exported proofs have the right types. Acceptance is then decided by the kernel
-    rather than by review, and the provenance of the circuit stops mattering.
+    statements to be proved, and the circuit itself becomes free — any implementation is acceptable
+    if its exported proofs have the right types. Acceptance is then decided by the kernel rather
+    than by review, and the provenance of the circuit stops mattering.
 }
 
 \p{
     The consequence is for optimisation, which is otherwise the most dangerous change one can make
     to a circuit. Optimising a circuit means removing constraints, and the failure mode of removing
-    a constraint is not a wrong answer but a permitted wrong answer — invisible to tests,
-    invisible to the honest prover, and beyond the reach of review at the scale of a hash function
-    with hundreds of thousands of rows. Against a machine-checked interface the calculus inverts: an
+    a constraint is not a wrong answer but a permitted wrong answer — invisible to tests, invisible
+    to the honest prover, and beyond the reach of review at the scale of a hash function with
+    hundreds of thousands of rows. Against a machine-checked interface the calculus inverts: an
     optimisation that breaks soundness fails to compile, so the class of bug that is hardest to find
     becomes the class that is hardest to ship. The specification is a total function (in contrast to
     my [previous work](dhsorens-000J) where a specification is not known to be total, so a reference
@@ -32,8 +32,8 @@
     has to be required, or a circuit can satisfy both correctness obligations while no prover can
     actually run it. And the axioms have to be bounded, since a proof is only as good as what it is
     allowed to assume. [zk.golf](dhsorens-0053) pins down all four alongside the spec, and that
-    combination is what makes an arbitrary submission — including a machine-generated one — safe
-    to accept unread.
+    combination is what makes an arbitrary submission — including a machine-generated one — safe to
+    accept unread.
 }
 
 \p{

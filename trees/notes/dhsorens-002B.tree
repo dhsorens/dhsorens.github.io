@@ -4,15 +4,25 @@
 \date{2026-05-10}
 
 \p{
-    We have spent the last few months travelling. I'm writing this in May 2026 from Rome.
-    The most recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract [Plonky3](dhsorens-003I) from Rust into Lean and formally prove things!
+    We have spent the last few months travelling. I'm writing this in May 2026 from Rome. The most
+    recent two trips were Cannes (for EthCC) and Paris (for SViL26). SViL26 was one of the most
+    productive trips yet, only rivaled by HACS. We are now at a point where we can feasibly extract
+    [Plonky3](dhsorens-003I) from Rust into Lean and formally prove things!
 }
 
 \p{
-    In my talk today at zkproofs8, I showed a minimal example of formally verifying [Koalabear](dhsorens-002K) in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib, and now with the tooling where it's at it looks like it's time to start to marry them and actually formally verifying real code in Lean!
+    In my talk today at zkproofs8, I showed a minimal example of formally verifying
+    [Koalabear](dhsorens-002K) in Plonky3, in Lean. We're making fast progress on CompPoly, Arklib,
+    and now with the tooling where it's at it looks like it's time to start to marry them and
+    actually formally verifying real code in Lean!
 }
 
 \p{
-    Once I'm back from Rome, I will basically be full-time on this problem. This is good for me because I have so far avoided learning \em{too much} about cryptography, and now that I'll be staring at the implementations in Rust as well as the formal specs, it will be hard to avoid actually understanding things. I'm hoping that this process will stimulate Arklib into grater maturity, starting with CompPoly;
-    I'm also hoping that the tooling will get a lot better (with my help) through this project. This will be the main thing this summer, hoping that by the end of the summer we have serious formal proofs of Plonky3!
+    Once I'm back from Rome, I will basically be full-time on this problem. This is good for me
+    because I have so far avoided learning \em{too much} about cryptography, and now that I'll be
+    staring at the implementations in Rust as well as the formal specs, it will be hard to avoid
+    actually understanding things. I'm hoping that this process will stimulate Arklib into grater
+    maturity, starting with CompPoly; I'm also hoping that the tooling will get a lot better (with
+    my help) through this project. This will be the main thing this summer, hoping that by the end
+    of the summer we have serious formal proofs of Plonky3!
 }

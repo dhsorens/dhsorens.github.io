@@ -4,11 +4,16 @@
 \meta{toc}{true}
 
 \p{
-    The heart of the transparent stack. The lineage is short and each step answers one specific complaint: [FRI](dhsorens-0037) tests proximity to a Reed–Solomon code by folding, [STIR](dhsorens-003B) attacks its query cost at constant rate, and [WHIR](dhsorens-003C) attacks STIR's verification cost while joining the univariate and multilinear worlds.
+    The heart of the transparent stack. The lineage is short and each step answers one specific
+    complaint: [FRI](dhsorens-0037) tests proximity to a Reed–Solomon code by folding,
+    [STIR](dhsorens-003B) attacks its query cost at constant rate, and [WHIR](dhsorens-003C) attacks
+    STIR's verification cost while joining the univariate and multilinear worlds.
 }
 
 \p{
-    These pages should be the most careful in the corpus. The soundness statements are where the [regimes](dhsorens-0038) matter, where the deployed parameters are conjectural, and where [ArkLib](dhsorens-0040)'s hardest formalisation work sits.
+    These pages should be the most careful in the corpus. The soundness statements are where the
+    [regimes](dhsorens-0038) matter, where the deployed parameters are conjectural, and where
+    [ArkLib](dhsorens-0040)'s hardest formalisation work sits.
 }
 
 \transclude{dhsorens-0037} % FRI

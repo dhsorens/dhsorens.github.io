@@ -3,20 +3,28 @@
 \date{2026-08-18}
 
 \p{
-    The same protocol has different soundness depending on how far from the code you are willing to reason, and the parameters used in production sit in the regime where the analysis is conjectural. This page is the reason [list decoding](dhsorens-002P) is in this corpus at all.
+    The same protocol has different soundness depending on how far from the code you are willing to
+    reason, and the parameters used in production sit in the regime where the analysis is
+    conjectural. This page is the reason [list decoding](dhsorens-002P) is in this corpus at all.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the parameters each licenses.}
-        \li{What must be conjectured to reach capacity, and the precise statement of each conjecture.}
+        \li{Unique decoding, the Johnson bound, and capacity: the guarantee each yields and the
+        parameters each licenses.}
+        \li{What must be conjectured to reach capacity, and the precise statement of each
+        conjecture.}
         \li{Threshold halving, and what it establishes above the Johnson bound.}
-        \li{The accounting [from soundness error to bits of security](dhsorens-004N), including [grinding](dhsorens-003A).}
-        \li{Which deployed systems set parameters in which regime — and whether the choice is documented anywhere citable.}
+        \li{The accounting [from soundness error to bits of security](dhsorens-004N), including
+        [grinding](dhsorens-003A).}
+        \li{Which deployed systems set parameters in which regime — and whether the choice is
+        documented anywhere citable.}
     }
 }
 
 \p{
-    Sources: [SoK: Hash-Based Polynomial Commitments](https://eprint.iacr.org/2026/1367), [On Reed–Solomon Proximity Gaps Conjectures](https://eprint.iacr.org/2025/2046), [FRI Soundness Above the Johnson Bound](https://eprint.iacr.org/2026/858).
+    Sources: [SoK: Hash-Based Polynomial Commitments](https://eprint.iacr.org/2026/1367), [On
+    Reed–Solomon Proximity Gaps Conjectures](https://eprint.iacr.org/2025/2046), [FRI Soundness
+    Above the Johnson Bound](https://eprint.iacr.org/2026/858).
 }

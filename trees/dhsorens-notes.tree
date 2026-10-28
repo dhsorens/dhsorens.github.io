@@ -13,8 +13,8 @@
     During my PhD this manifested as written work focused on the problem of (correctly) specifying
     and formally verifying [financial smart contracts](dhsorens-000A). But I continue to be
     interested in [software verification more broadly](dhsorens-0015), the ongoing work to
-    [formalize mathematics](dhsorens-000Z), and other developments in using
-    [proof assistants](dhsorens-000B) in production.
+    [formalize mathematics](dhsorens-000Z), and other developments in using [proof
+    assistants](dhsorens-000B) in production.
 }
 
 \p{
@@ -22,9 +22,9 @@
     Ethereum protocol, so my interests are broadening but are still rooted in the same topics.
 }
 
-% Anything with sections goes in through a blurb tree rather than by transcluding
-% the thing itself, which would pull in everything beneath it: dhsorens-004D has
-% four sections, dhsorens-002C is 72 trees. A short standalone note goes in whole.
+% Anything with sections goes in through a blurb tree rather than by transcluding the thing itself,
+% which would pull in everything beneath it: dhsorens-004D has four sections, dhsorens-002C is 72
+% trees. A short standalone note goes in whole.
 \transclude{dhsorens-0054} % a note on Clean and circuit specifications
 \transclude{dhsorens-004X} % a note on sigma protocols and Schnorr
 \transclude{dhsorens-004R} % a note on soundness notions

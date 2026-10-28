@@ -3,14 +3,18 @@
 \date{2026-08-18}
 
 \p{
-    The definitions that folding and recursion are trying to achieve, and the overhead problem that shapes every construction: the verifier has to be expressible as a circuit in the system it verifies.
+    The definitions that folding and recursion are trying to achieve, and the overhead problem that
+    shapes every construction: the verifier has to be expressible as a circuit in the system it
+    verifies.
 }
 
 \p{
     Questions this page should answer:
     \ul{
-        \li{Incrementally verifiable computation and proof-carrying data: the statements, and [the knowledge soundness they require](dhsorens-004J).}
-        \li{Recursion overhead: what a verifier-in-circuit costs, and which components dominate (hashing, MSM, field arithmetic).}
+        \li{Incrementally verifiable computation and proof-carrying data: the statements, and [the
+        knowledge soundness they require](dhsorens-004J).}
+        \li{Recursion overhead: what a verifier-in-circuit costs, and which components dominate
+        (hashing, MSM, field arithmetic).}
         \li{Cycles of curves, and why hash-based systems avoid the problem differently.}
         \li{[How the security loss compounds over recursion depth](dhsorens-004N).}
     }

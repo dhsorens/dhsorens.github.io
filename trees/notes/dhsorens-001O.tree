@@ -4,15 +4,20 @@
 \meta{toc}{true}
 
 \p{
-    Dexter2 has been formally verified by three different groups, using three different verification tools. These are:
+    Dexter2 has been formally verified by three different groups, using three different verification
+    tools. These are:
     \ol{
-        \li{Runtime Verification, using K Framework: [link](https://runtimeverification.com/blog/dexter-2-s-formal-verification)}
-        \li{Nomadic Labs, using Mi-Cho-Coq: [link](https://gitlab.com/nomadic-labs/mi-cho-coq/-/merge_requests/100)}
+        \li{Runtime Verification, using K Framework:
+        [link](https://runtimeverification.com/blog/dexter-2-s-formal-verification)}
+        \li{Nomadic Labs, using Mi-Cho-Coq:
+        [link](https://gitlab.com/nomadic-labs/mi-cho-coq/-/merge_requests/100)}
         \li{Bas Spitters' team, using ConCert: [link](https://arxiv.org/pdf/2203.08016)}
     }
-    Each is based on the same informal specification: [link](https://gitlab.com/dexter2tz/dexter2tz/-/blob/master/docs/informal-spec/dexter2-cpmm.md)
+    Each is based on the same informal specification:
+    [link](https://gitlab.com/dexter2tz/dexter2tz/-/blob/master/docs/informal-spec/dexter2-cpmm.md)
 }
 
 \p{
-    For an analysis on similarities and differences, see the Introduction and Chapter 2 of my [PhD](dhsorens-phd) [thesis](/docs/sorensen-phd-thesis.pdf).
+    For an analysis on similarities and differences, see the Introduction and Chapter 2 of my
+    [PhD](dhsorens-phd) [thesis](/docs/sorensen-phd-thesis.pdf).
 }
