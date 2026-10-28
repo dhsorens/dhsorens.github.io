@@ -1,0 +1,831 @@
+/* reveal.js "white" theme (MIT, Hakim El Hattab), vendored from verso-slides 4118a25 as the base
+   layer of the Lambda World theme. Only change: the Source Sans Pro @import is removed. */
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff;
+}
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+:root {
+  --r-background-color: #fff;
+  --r-main-font: Source Sans Pro, Helvetica, sans-serif;
+  --r-main-font-size: 42px;
+  --r-main-color: #222;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
+  --r-heading-color: #222;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 600;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #2a76dd;
+  --r-link-color-dark: rgb(30.7720647773, 99.5566801619, 192.7779352227);
+  --r-link-color-hover: rgb(73.95, 138.55, 226.1);
+  --r-selection-background-color: rgb(95.25, 152.25, 229.5);
+  --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 0, 0, 0;
+  --r-overlay-element-fg-color: 240, 240, 240;
+}
+
+.reveal-viewport {
+  background: #fff;
+  background-color: var(--r-background-color);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: normal;
+  color: var(--r-main-color);
+}
+
+.reveal ::selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal ::-moz-selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: var(--r-heading-margin);
+  color: var(--r-heading-color);
+  font-family: var(--r-heading-font);
+  font-weight: var(--r-heading-font-weight);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: var(--r-heading-letter-spacing);
+  text-transform: var(--r-heading-text-transform);
+  text-shadow: var(--r-heading-text-shadow);
+  word-wrap: break-word;
+}
+
+.reveal h1 {
+  font-size: var(--r-heading1-size);
+}
+
+.reveal h2 {
+  font-size: var(--r-heading2-size);
+}
+
+.reveal h3 {
+  font-size: var(--r-heading3-size);
+}
+
+.reveal h4 {
+  font-size: var(--r-heading4-size);
+}
+
+.reveal h1 {
+  text-shadow: var(--r-heading1-text-shadow);
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: var(--r-block-margin) 0;
+  line-height: 1.3;
+}
+
+/* Remove trailing margins after titles */
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: var(--r-block-margin) auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: var(--r-block-margin) auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: var(--r-code-font);
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  tab-size: 2;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+
+.reveal .code-wrapper {
+  white-space: normal;
+}
+
+.reveal .code-wrapper code {
+  white-space: pre;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+.reveal img {
+  margin: var(--r-block-margin) 0;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--r-link-color-dark);
+}
+
+/*********************************************
+ * Frame helper
+ *********************************************/
+.reveal .r-frame {
+  border: 4px solid var(--r-main-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal a .r-frame {
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover .r-frame {
+  border-color: var(--r-link-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: var(--r-link-color);
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--r-link-color);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: var(--r-background-color);
+  }
+}
+/*
+ * Lambda World theme for VersoSlides.
+ *
+ * Light, projector-safe base; Lambda World amber as the accent for shapes
+ * (never for text on light backgrounds); indigo for readable emphasis.
+ * Fira Sans + JetBrains Mono are bundled in assets/fonts (SIL OFL), so the
+ * deck works offline.
+ *
+ * Per-slide layouts, set in the slide's %%% block:
+ *   state := some "lw-title"      dark title / closing slide, big amber λ
+ *   state := some "lw-section"    full-bleed amber section divider
+ *   state := some "lw-statement"  one big centered sentence
+ * Helpers:
+ *   :::class "lw-chips"   on a list: render items as a wrapping grid of chips
+ *   :::class "lw-muted"   on a paragraph: secondary, smaller text
+ *
+ * Deck-specific values (footer text, …) go in the deck's custom.css.
+ */
+
+/* Fonts -------------------------------------------------------------------- */
+
+@font-face { font-family: "Fira Sans"; font-weight: 400; font-style: normal; font-display: block; src: url("assets/fonts/FiraSans-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 400; font-style: italic; font-display: block; src: url("assets/fonts/FiraSans-Italic.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 500; font-style: normal; font-display: block; src: url("assets/fonts/FiraSans-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 600; font-style: normal; font-display: block; src: url("assets/fonts/FiraSans-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 700; font-style: normal; font-display: block; src: url("assets/fonts/FiraSans-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 800; font-style: normal; font-display: block; src: url("assets/fonts/FiraSans-ExtraBold.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 400; font-style: normal; font-display: block; src: url("assets/fonts/JetBrainsMono-Regular.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 400; font-style: italic; font-display: block; src: url("assets/fonts/JetBrainsMono-Italic.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 500; font-style: normal; font-display: block; src: url("assets/fonts/JetBrainsMono-Medium.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 700; font-style: normal; font-display: block; src: url("assets/fonts/JetBrainsMono-Bold.woff2") format("woff2"); }
+
+/* Palette and reveal.js variables -------------------------------------------- */
+
+:root {
+  --lw-paper: #faf8f3;
+  --lw-ink: #14161f;
+  --lw-ink-soft: #3d4150;
+  --lw-muted: #6b6f7b;
+  --lw-rule: #e3dfd3;
+  --lw-amber: #ffb800;
+  --lw-amber-soft: #fff1cc;
+  --lw-indigo: #4338ca;
+  --lw-indigo-dark: #3730a3;
+  --lw-code-bg: #f2f0e9;
+  --lw-night: #14161f;
+  --lw-night-text: #f5f3ee;
+  --lw-night-muted: #a9adbd;
+
+  --lw-sans: "Fira Sans", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  --lw-mono: "JetBrains Mono", "Menlo", "DejaVu Sans Mono", monospace;
+  --lw-footer: "";
+
+  --r-background-color: var(--lw-paper);
+  --r-main-font: var(--lw-sans);
+  --r-main-font-size: 34px;
+  --r-main-color: var(--lw-ink);
+  --r-block-margin: 0.6em;
+  --r-heading-margin: 0 0 0.7em 0;
+  --r-heading-font: var(--lw-sans);
+  --r-heading-color: var(--lw-ink);
+  --r-heading-line-height: 1.12;
+  --r-heading-letter-spacing: -0.015em;
+  --r-heading-text-transform: none;
+  --r-heading-font-weight: 700;
+  --r-heading1-size: 2.1em;
+  --r-heading2-size: 1.55em;
+  --r-heading3-size: 1.55em;
+  --r-heading4-size: 1.1em;
+  --r-code-font: var(--lw-mono);
+  --r-link-color: var(--lw-indigo);
+  --r-link-color-dark: var(--lw-indigo-dark);
+  --r-link-color-hover: var(--lw-indigo-dark);
+  --r-selection-background-color: var(--lw-amber);
+  --r-selection-color: var(--lw-ink);
+}
+
+/* Verso's Lean highlighting reads these. Verso's slides-highlight.css loads
+   after the theme and sets its own token colors on `.reveal` and
+   `.reveal section.slide-light-bg`, so these selectors are one notch more
+   specific. */
+html .reveal,
+html .reveal .slides section,
+html .reveal .r-overlay-lean-hover {
+  --verso-code-font-family: var(--lw-mono);
+  --verso-text-font-family: var(--lw-sans);
+  --verso-code-color: var(--lw-ink);
+  --verso-code-keyword-color: var(--lw-indigo);
+  --verso-code-const-color: #9a3412;
+  --verso-code-var-color: #0f766e;
+  --verso-code-comment-color: var(--lw-muted);
+  --verso-code-hover-bg-color: var(--lw-amber-soft);
+  --verso-tooltip-bg-color: #ffffff;
+  --verso-tooltip-border-color: var(--lw-rule);
+}
+
+/* Headings ------------------------------------------------------------------ */
+
+/* Slide titles are h2 (top level) and h3 (vertical sub-slides): same look. */
+.reveal .slides section h2,
+.reveal .slides section h3 {
+  max-width: 22em;
+}
+.reveal .slides section h2::after,
+.reveal .slides section h3::after {
+  content: "";
+  display: block;
+  width: 2.4em;
+  height: 0.16em;
+  margin-top: 0.32em;
+  border-radius: 0.08em;
+  background: var(--lw-amber);
+}
+.reveal .slides section h4 {
+  color: var(--lw-ink-soft);
+  font-weight: 600;
+}
+
+/* Body ---------------------------------------------------------------------- */
+
+.reveal .slides section {
+  text-align: left;
+  line-height: 1.4;
+}
+.reveal .slides section p {
+  max-width: 28em;
+  line-height: 1.4;
+}
+.reveal strong,
+.reveal b {
+  font-weight: 700;
+  /* highlighter stroke under the lower half of the text */
+  background: linear-gradient(transparent 60%, rgba(255, 184, 0, 0.45) 60%);
+  padding: 0 0.06em;
+}
+.reveal a {
+  color: var(--lw-indigo);
+  text-decoration: underline;
+  text-decoration-color: var(--lw-amber);
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.16em;
+}
+.reveal .lw-muted,
+.reveal .slides section p.lw-muted {
+  color: var(--lw-muted);
+  font-size: 0.8em;
+}
+
+/* Lists: amber square markers; Verso wraps item text in <p>. */
+.reveal .slides section ul,
+.reveal .slides section ol {
+  display: block;
+  margin: 0.4em 0 0.4em 0;
+  padding: 0;
+}
+.reveal .slides section li {
+  margin: 0.38em 0;
+  line-height: 1.35;
+}
+.reveal .slides section li > p {
+  margin: 0;
+}
+.reveal .slides section ul > li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.15em;
+}
+.reveal .slides section ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.1em;
+  top: 0.5em;
+  width: 0.42em;
+  height: 0.42em;
+  border-radius: 0.08em;
+  background: var(--lw-amber);
+}
+.reveal .slides section ul ul {
+  margin: 0.2em 0 0.2em 0;
+  font-size: 0.85em;
+}
+.reveal .slides section ul ul > li::before {
+  top: 0.62em;
+  width: 0.5em;
+  height: 0.12em;
+  background: var(--lw-muted);
+}
+.reveal .slides section ol {
+  padding-left: 1.4em;
+}
+.reveal .slides section ol > li::marker {
+  color: var(--lw-indigo);
+  font-weight: 700;
+}
+
+/* Chip grid: :::class "lw-chips" around a list. */
+.reveal .slides section ul.lw-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em 0.5em;
+  max-width: 26em;
+  margin-top: 0.6em;
+}
+.reveal .slides section ul.lw-chips > li {
+  margin: 0;
+  padding: 0.28em 0.75em;
+  border: 2px solid var(--lw-ink);
+  border-radius: 999px;
+  background: #ffffff;
+  font-family: var(--lw-mono);
+  font-size: 0.72em;
+  font-weight: 500;
+}
+.reveal .slides section ul.lw-chips > li::before {
+  display: none;
+}
+
+.reveal blockquote {
+  width: auto;
+  max-width: 26em;
+  margin: 0.8em 0;
+  padding: 0.2em 0 0.2em 0.9em;
+  border-left: 0.18em solid var(--lw-amber);
+  background: none;
+  box-shadow: none;
+  font-style: italic;
+  color: var(--lw-ink-soft);
+}
+
+.reveal table th {
+  font-weight: 700;
+  border-bottom: 2px solid var(--lw-ink);
+}
+.reveal table td {
+  border-bottom: 1px solid var(--lw-rule);
+}
+
+/* Code ---------------------------------------------------------------------- */
+
+/* Lean blocks. Extra specificity: Verso's slides-highlight.css loads later. */
+.reveal .slides section code.hl.lean.block,
+.reveal .slides section pre {
+  font-family: var(--lw-mono);
+  font-size: 0.66em;
+  line-height: 1.5;
+  background: var(--lw-code-bg);
+  border: 1px solid var(--lw-rule);
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 0.8em 1em;
+  /* show `=>`, `:=`, `->` as typed rather than as ligatures */
+  font-variant-ligatures: none;
+}
+.reveal .slides section pre {
+  width: 95%;
+  margin: 0.6em auto 0.6em 0;
+}
+.reveal .slides section pre > code {
+  max-height: none;
+  padding: 0;
+  background: none;
+}
+/* Code + click-to-inspect info panel read as one card; code gets most of it. */
+.reveal .slides section .code-with-panel {
+  --code-ratio: 5fr;
+  --panel-ratio: 2fr;
+}
+.reveal .slides section .code-with-panel > code.hl.lean.block {
+  margin: 0;
+  border-radius: 12px 0 0 12px;
+}
+.reveal .slides section .code-with-panel .panel-cell {
+  background: #ffffff;
+  border: 1px solid var(--lw-rule);
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+}
+.reveal .slides section .code-with-panel .panel-divider {
+  background: var(--lw-rule);
+}
+.reveal .hl.lean .keyword {
+  font-weight: 600;
+}
+
+/* Inline code in running text: Lean ({lean}…) and plain `code`. */
+.reveal .slides section code.hl.lean.inline,
+.reveal .slides section :is(p, li, td, th, h2, h3, h4) > code:not(.hl) {
+  font-family: var(--lw-mono);
+  font-size: 0.84em;
+  background: var(--lw-amber-soft);
+  color: var(--lw-ink);
+  border-radius: 0.25em;
+  padding: 0.04em 0.28em;
+  font-variant-ligatures: none;
+}
+
+/* Info panel and tooltips. */
+.reveal .info-panel {
+  font-family: var(--lw-sans);
+}
+.tippy-box {
+  font-family: var(--lw-sans);
+}
+
+/* Chrome: progress, slide number, controls, footer --------------------------- */
+
+.reveal .progress {
+  height: 5px;
+  background: transparent;
+  color: var(--lw-amber);
+}
+.reveal .controls {
+  color: var(--lw-indigo);
+}
+.reveal .slide-number {
+  right: 1.6vmin;
+  bottom: 1.4vmin;
+  padding: 0;
+  background: transparent;
+  color: var(--lw-muted);
+  font-family: var(--lw-sans);
+  font-size: clamp(11px, 1.8vmin, 20px);
+  font-weight: 600;
+}
+.reveal .slide-number a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Footer line from --lw-footer (set it in the deck's custom.css). */
+.reveal::after {
+  content: var(--lw-footer);
+  position: absolute;
+  left: 2vmin;
+  bottom: 1.4vmin;
+  z-index: 30;
+  color: var(--lw-muted);
+  font-family: var(--lw-sans);
+  font-size: clamp(11px, 1.8vmin, 20px);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+html.print-pdf .reveal::after {
+  display: none;
+}
+
+/* Layout: title / closing (lw-title) ----------------------------------------- */
+
+/* Fade the page color along with reveal's fade transition. */
+.reveal-viewport {
+  transition: background-color 0.4s ease;
+}
+
+.reveal-viewport.lw-title {
+  background:
+    radial-gradient(circle at 82% 30%, rgba(255, 184, 0, 0.16), transparent 42%),
+    var(--lw-night);
+}
+/* reveal.js sets the slide number's display inline, hence !important. */
+.reveal-viewport.lw-title .reveal::after,
+.reveal-viewport.lw-section .reveal::after,
+.reveal-viewport.lw-title .slide-number,
+.reveal-viewport.lw-section .slide-number {
+  display: none !important;
+}
+.reveal .slides section[data-state~="lw-title"] {
+  color: var(--lw-night-text);
+}
+.reveal .slides section[data-state~="lw-title"]::before {
+  content: "λ";
+  position: absolute;
+  right: 0.2em;
+  top: 50%;
+  transform: translateY(-52%);
+  color: var(--lw-amber);
+  font-family: var(--lw-sans);
+  font-size: 9.5em;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+.reveal .slides section[data-state~="lw-title"] :is(h2, h3) {
+  max-width: 13em;
+  margin-bottom: 0.9em;
+  color: var(--lw-night-text);
+  font-size: 2.1em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.reveal .slides section[data-state~="lw-title"] p {
+  max-width: 24em;
+  margin: 0.15em 0;
+  color: var(--lw-night-muted);
+  font-size: 0.9em;
+}
+.reveal .slides section[data-state~="lw-title"] :is(h2, h3) + p {
+  color: var(--lw-night-text);
+  font-size: 1.05em;
+  font-weight: 600;
+}
+.reveal .slides section[data-state~="lw-title"] a {
+  color: var(--lw-amber);
+}
+.reveal .slides section[data-state~="lw-title"] strong {
+  background: none;
+  color: var(--lw-amber);
+}
+
+/* Layout: section divider (lw-section) ---------------------------------------- */
+
+.reveal-viewport.lw-section {
+  background: var(--lw-amber);
+}
+.reveal-viewport.lw-section .progress {
+  color: var(--lw-ink);
+}
+.reveal .slides section[data-state~="lw-section"] :is(h2, h3) {
+  max-width: 15em;
+  font-size: 2.2em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.reveal .slides section[data-state~="lw-section"] :is(h2, h3)::after {
+  background: var(--lw-ink);
+}
+.reveal .slides section[data-state~="lw-section"] p {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.reveal .slides section[data-state~="lw-section"] ul > li::before {
+  background: var(--lw-ink);
+}
+.reveal .slides section[data-state~="lw-section"] strong {
+  background: linear-gradient(transparent 60%, rgba(255, 255, 255, 0.55) 60%);
+}
+.reveal .slides section[data-state~="lw-section"] a {
+  color: var(--lw-ink);
+  text-decoration-color: var(--lw-ink);
+}
+
+/* Layout: one big statement (lw-statement) ------------------------------------- */
+
+.reveal .slides section[data-state~="lw-statement"] {
+  text-align: center;
+}
+.reveal .slides section[data-state~="lw-statement"] :is(h2, h3) {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.3em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.reveal .slides section[data-state~="lw-statement"] :is(h2, h3)::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+.reveal .slides section[data-state~="lw-statement"] :is(p, ul) {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* PDF export (?print-pdf): the state classes above live on the viewport, which
+   print mode doesn't use, so paint each page from its slide instead. */
+.reveal .pdf-page:has(> section[data-state~="lw-title"]) {
+  background: var(--lw-night);
+}
+.reveal .pdf-page:has(> section[data-state~="lw-section"]) {
+  background: var(--lw-amber);
+}

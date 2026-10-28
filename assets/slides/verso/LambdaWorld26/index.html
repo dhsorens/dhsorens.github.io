@@ -1,0 +1,1698 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean is More Than a Proof Language</title><link rel="stylesheet" href="lib/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="theme/lambda.css">
+    <link rel="stylesheet" href="lib/github.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="lib/highlighting.css">
+    <link rel="stylesheet" href="lib/tippy-border.css">
+    <link rel="stylesheet" href="lib/slides-highlight.css">
+    <link rel="stylesheet" href="lib/panel.css">
+    <link rel="stylesheet" href="lib/lightbox.css">
+    <link rel="stylesheet" href="lib/diagram.css">
+    <link rel="stylesheet" href="lib/illuminate-anim.css">
+    <link rel="stylesheet" href="lib/table.css">
+    <link rel="stylesheet" href="lib/katex/dist/katex.min.css">
+    </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-state="lw-title">
+          <h2>
+            Lean is More Than a Proof Language</h2>
+          <p>
+            Derek Sorensen</p>
+          <p>
+            Ethereum Foundation</p>
+          <p>
+            Lambda World</p>
+          <aside class="notes"><p>
+              main things to cover:</p>
+            <p>
+              Beginning of the story ..</p>
+            <ul>
+              <li>
+                <p>
+                  Computable specifications ...</p>
+                </li>
+              </ul>
+            <p>
+              "LLMs as compilers" story - evm-asm, xmss verifier, etc.</p>
+            <ul>
+              <li>
+                <p>
+                  low-level languages with semantics in Lean are probably the sweet spot here!</p>
+                </li>
+              </ul>
+            <p>
+              Autoresearch</p>
+            <ul>
+              <li>
+                <p>
+                  CompPoly fast field wins!</p>
+                </li>
+              <li>
+                <p>
+                  Hex, Kim morrisson generally</p>
+                </li>
+              <li>
+                <p>
+                  all the different autoresearch competitions</p>
+                <ul>
+                  <li>
+                    <p>
+                      INCLUDING EVM.FAST (!!)</p>
+                    </li>
+                  </ul>
+                </li>
+              <li>
+                <p>
+                  SEVEN auto-research challenges</p>
+                </li>
+              </ul>
+            </aside></section>
+        <section data-state="lw-section">
+          <section>
+            <h2>
+              Setting the Scene</h2>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              What is Lean?</h3>
+            <div class="r-hstack">
+              <div class="r-vstack">
+                <p>
+                  Lean is:</p>
+                <ul>
+                  <li>
+                    <p>
+                      a functional programming language,</p>
+                    </li>
+                  <li>
+                    <p>
+                      with dependent types,</p>
+                    </li>
+                  <li>
+                    <p>
+                      such that you can state/prove arbitrary mathematical theorems.</p>
+                    </li>
+                  </ul>
+                </div>
+              <p>
+                <img src="images/lean-logo.svg" alt="The Lean logo" style="width: 360px;" class="explicit-size lw-logo"></p>
+              </div>
+            </section>
+          <section>
+            <h3>
+              What is Lean?</h3>
+            <code class="hl lean block r-stretch"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.definition-1117">def</span><span class="inter-text"> </span><span class="const token" data-binding="const-f" data-verso-hover="0">f</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1123">(</span><span class="var token" data-binding="var-_uniq.2" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1123">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="2">Nat</span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1123">)</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.typeSpec-1133">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="2">Nat</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Command.declValSimple-1139">:=</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">2</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_*_»-1142">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_+_»-1142">+</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">1</span><span class="inter-text">
+
+</span><span class="has-info information"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.eval-1153" data-verso-hover="4">#eval</span><span class="hover-info messages" style="display:none"><code class="verso-message information"><span class="text"></span><span class="highlighted"><span class="inter-text"></span><span class="unknown token" data-binding="">7</span><span class="inter-text"></span></span></code></span></span><span class="inter-text"> </span><span class="const token" data-binding="const-f" data-verso-hover="5">f</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">3</span><span class="inter-text">
+
+</span><div class="command-output information"><code class="verso-message information"><span class="text"></span><span class="highlighted"><span class="inter-text"></span><span class="unknown token" data-binding="">7</span><span class="inter-text"></span></span></code></div><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.theorem-1164">theorem</span><span class="inter-text"> </span><span class="const token" data-binding="const-two_add_two" data-verso-hover="6">two_add_two</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.typeSpec-1184">:</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">2</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_+_»-1186">+</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">2</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_=_»-1186">=</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">4</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Command.declValSimple-1196">:=</span><span class="inter-text"> </span><span class="const token" data-binding="const-rfl" data-verso-hover="7">rfl</span><span class="inter-text">
+
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.theorem-1204">theorem</span><span class="inter-text"> </span><span class="const token" data-binding="const-f_mono" data-verso-hover="8">f_mono</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.typeSpec-1219">:</span><span class="inter-text"> </span><span class="unknown token" data-binding="">∀</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.620" data-verso-hover="1">m</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.623" data-verso-hover="1">n</span><span class="punctuation separator token" data-binding="kw-occ-Lean.Parser.Term.forall-1221">,</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.620" data-verso-hover="1">m</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_≤_»-1230">≤</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.623" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-Lean.Parser.Term.arrow-1230">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-f" data-verso-hover="9">f</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.620" data-verso-hover="1">m</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_≤_»-1242">≤</span><span class="inter-text"> </span><span class="const token" data-binding="const-f" data-verso-hover="9">f</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.623" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Command.declValSimple-1254">:=</span><span class="inter-text"> </span><span class="tactic" data-tactic-range="1257-1259"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.byTactic-1257" data-verso-hover="10">by</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1345\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.965\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;1364\&quot;:{\&quot;binding\&quot;:\&quot;const-f\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;1365\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.967\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;20\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;3\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.967\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;337\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.967\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;5444\&quot;:{\&quot;binding\&quot;:\&quot;const-f\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;5445\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.965\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,\&quot;∀\&quot;,[4,1,[4,[6,[3,2,[4,\&quot;(\&quot;,[4,[4,\&quot;m\&quot;,1],[4,[7,3,\&quot;n\&quot;],[4,\&quot; :\&quot;,[4,1,[4,[6,[3,2,[7,20,\&quot;Nat\&quot;]]],\&quot;)\&quot;]]]]]]]],[4,\&quot;,\&quot;,[4,1,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1345,\&quot;m\&quot;]]],[4,[4,\&quot; ≤\&quot;,1],[6,[3,2,[7,337,\&quot;n\&quot;]]]]]]],[4,\&quot; →\&quot;,[4,1,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,5444,\&quot;f\&quot;]]],[4,1,[6,[3,2,[7,5445,\&quot;m\&quot;]]]]]]],[4,[4,\&quot; ≤\&quot;,1],[6,[3,2,[4,[6,[3,2,[7,1364,\&quot;f\&quot;]]],[4,1,[6,[3,2,[7,1365,\&quot;n\&quot;]]]]]]]]]]]]]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="unknown token" data-binding="">∀</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.965" data-verso-hover="3">m</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.967" data-verso-hover="3">n</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="11">Nat</span><span class="unknown token" data-binding="">),</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.965" data-verso-hover="3">m</span><span class="inter-text"> </span><span class="const token" data-binding="const-LE.le" data-verso-hover="12">≤</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.967" data-verso-hover="3">n</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-f" data-verso-hover="13">f</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.965" data-verso-hover="3">m</span><span class="inter-text"> </span><span class="const token" data-binding="const-LE.le" data-verso-hover="12">≤</span><span class="inter-text"> </span><span class="const token" data-binding="const-f" data-verso-hover="13">f</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.967" data-verso-hover="3">n</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="1262-1273"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.intro-1262">intro</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.692" data-verso-hover="1">m</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.695" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.698" data-verso-hover="14">h</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;m&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;h&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.692\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;5\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.695\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;m\&quot;]]],[4,[4,\&quot; ≤\&quot;,1],[6,[3,2,[7,5,\&quot;n\&quot;]]]]]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;20\&quot;:{\&quot;binding\&quot;:\&quot;const-f\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;21\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.695\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;68\&quot;:{\&quot;binding\&quot;:\&quot;const-f\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;69\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.692\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,68,\&quot;f\&quot;]]],[4,1,[6,[3,2,[7,69,\&quot;m\&quot;]]]]]]],[4,[4,\&quot; ≤\&quot;,1],[6,[3,2,[4,[6,[3,2,[7,20,\&quot;f\&quot;]]],[4,1,[6,[3,2,[7,21,\&quot;n\&quot;]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.692" data-verso-hover="3">m</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="11">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.695" data-verso-hover="3">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="11">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.698" data-verso-hover="15">h</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="var token" data-binding="var-_uniq.692" data-verso-hover="3">m</span><span class="inter-text"> </span><span class="const token" data-binding="const-LE.le" data-verso-hover="12">≤</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.695" data-verso-hover="3">n</span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-f" data-verso-hover="13">f</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.692" data-verso-hover="3">m</span><span class="inter-text"> </span><span class="const token" data-binding="const-LE.le" data-verso-hover="12">≤</span><span class="inter-text"> </span><span class="const token" data-binding="const-f" data-verso-hover="13">f</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.695" data-verso-hover="3">n</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="1276-1284"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.unfold-1276">unfold</span><span class="inter-text"> </span><span class="const token" data-binding="const-f" data-verso-hover="9">f</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;m&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;h&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.692\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;5\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.695\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;m\&quot;]]],[4,[4,\&quot; ≤\&quot;,1],[6,[3,2,[7,5,\&quot;n\&quot;]]]]]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1093\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.692\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;325\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.695\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,4369,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,1093,\&quot;m\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,69,\&quot;1\&quot;]]]]]]],[4,[4,\&quot; ≤\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;n\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.692" data-verso-hover="3">m</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="11">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.695" data-verso-hover="3">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="11">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.698" data-verso-hover="15">h</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="var token" data-binding="var-_uniq.692" data-verso-hover="3">m</span><span class="inter-text"> </span><span class="const token" data-binding="const-LE.le" data-verso-hover="12">≤</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.695" data-verso-hover="3">n</span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="16">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.692" data-verso-hover="3">m</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="17">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="inter-text"> </span><span class="const token" data-binding="const-LE.le" data-verso-hover="12">≤</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="16">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.695" data-verso-hover="3">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="17">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="1287-1292"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.omega-1287">omega</span><span class="tactic-state" style="display:none">All goals completed! 🐙</span></span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><aside class="notes"><p>
+                these should be in the same codeblock so that</p>
+              </aside></section>
+          <section>
+            <h3>
+              What is Formal Verification?</h3>
+            <p>
+              <strong>Formal verification</strong> is the practice of stating and proving theorems about code, to show that the code <strong>conforms to a specification.</strong></p>
+            <code class="hl lean block r-stretch"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.definition-1542">def</span><span class="inter-text"> </span><span class="const token" data-binding="const-g" data-verso-hover="18">g</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1548">(</span><span class="var token" data-binding="var-_uniq.2" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1548">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="2">Nat</span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1548">)</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.typeSpec-1558">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Id" data-verso-hover="19">Id</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="2">Nat</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Command.declValSimple-1567">:=</span><span class="inter-text"> </span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.do-1570">do</span><span class="inter-text">
+  </span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.doLet-1575">let</span><span class="inter-text"> </span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.doLet-1575">mut</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">x</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.letIdDecl-1583">:=</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2" data-verso-hover="1">n</span><span class="inter-text">
+  </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">x</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.letIdDeclNoBinders-1592">:=</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">2</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_*_»-1597">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">x</span><span class="inter-text">
+  </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">x</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.letIdDeclNoBinders-1605">:=</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">x</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_+_»-1610">+</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">1</span><span class="inter-text">
+  </span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.doReturn-1618" data-verso-hover="20">return</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">x</span><span class="inter-text">
+
+</span><span class="comment delimiter token" data-binding="">--</span><span class="comment line token" data-binding=""> for any input n, g n returns 2 * n + 1</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.theorem-1670">theorem</span><span class="inter-text"> </span><span class="const token" data-binding="const-g_spec" data-verso-hover="21">g_spec</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1685">(</span><span class="var token" data-binding="var-_uniq.373" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1685">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="2">Nat</span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-1685">)</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.typeSpec-1695">:</span><span class="inter-text">
+    </span><span class="punctuation bracket token" data-binding="kw-occ-Std.Do.triple-1701">⦃</span><span class="unknown token" data-binding="">⌜</span><span class="const token" data-binding="const-True" data-verso-hover="22">True</span><span class="unknown token" data-binding="">⌝</span><span class="punctuation bracket token" data-binding="kw-occ-Std.Do.triple-1701">⦄</span><span class="inter-text"> </span><span class="const token" data-binding="const-g" data-verso-hover="23">g</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.373" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Std.Do.triple-1701">⦃</span><span class="punctuation operator token" data-binding="kw-occ-Std.Do.«term_⇓_=>_»-1725">⇓</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.422" data-verso-hover="1">r</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Std.Do.«term_⇓_=>_»-1725">=&gt;</span><span class="inter-text"> </span><span class="unknown token" data-binding="">⌜</span><span class="var token" data-binding="var-_uniq.422" data-verso-hover="1">r</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_=_»-1737">=</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">2</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_*_»-1741">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.373" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_+_»-1741">+</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="3">1</span><span class="unknown token" data-binding="">⌝</span><span class="punctuation bracket token" data-binding="kw-occ-Std.Do.triple-1701">⦄</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Command.declValSimple-1757">:=</span><span class="inter-text"> </span><span class="tactic" data-tactic-range="1760-1762"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.byTactic-1760" data-verso-hover="10">by</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1360\&quot;:{\&quot;binding\&quot;:\&quot;const-Std.Do.SPred.pure\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;16384\&quot;:{\&quot;binding\&quot;:\&quot;const-Std.Do.Triple\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;2\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.923\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;260\&quot;:{\&quot;binding\&quot;:\&quot;const-g\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;261\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.373\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;272\&quot;:{\&quot;binding\&quot;:\&quot;const-Std.Do.SPred.pure\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;320\&quot;:{\&quot;binding\&quot;:\&quot;const-Std.Do.PostCond.noThrow\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;5457\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.923\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;69\&quot;:{\&quot;binding\&quot;:\&quot;const-True\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;87365\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.373\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[7,16384,\&quot;⦃\&quot;],[4,[6,[3,2,[4,[7,272,\&quot;⌜\&quot;],[4,[6,[3,2,[7,69,\&quot;True\&quot;]]],[7,272,\&quot;⌝\&quot;]]]]],[4,[4,\&quot;⦄\&quot;,1],[4,[6,[3,2,[4,[6,[3,2,[7,260,\&quot;g\&quot;]]],[4,1,[6,[3,2,[7,261,\&quot;n\&quot;]]]]]]],[4,[4,\&quot; \&quot;,[7,16384,\&quot;⦃\&quot;]],[4,[6,[3,2,[4,[6,[3,2,[7,320,\&quot;PostCond.noThrow\&quot;]]],[4,1,[4,\&quot;fun\&quot;,[4,[6,[3,2,[4,1,[4,[6,[3,2,[7,2,\&quot;r\&quot;]]],\&quot; =>\&quot;]]]],[4,1,[6,[3,2,[4,[7,1360,\&quot;⌜\&quot;],[4,[6,[3,2,[4,[6,[3,2,[7,5457,\&quot;r\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,349457,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,87365,\&quot;n\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,5461,\&quot;1\&quot;]]]]]]]]]]],[7,1360,\&quot;⌝\&quot;]]]]]]]]]]]],[7,16384,\&quot;⦄\&quot;]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.373" data-verso-hover="3">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="11">Nat</span><span class="inter-text"></span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Std.Do.Triple" data-verso-hover="24">⦃</span><span class="inter-text"></span><span class="const token" data-binding="const-Std.Do.SPred.pure" data-verso-hover="25">⌜</span><span class="const token" data-binding="const-True" data-verso-hover="26">True</span><span class="const token" data-binding="const-Std.Do.SPred.pure" data-verso-hover="25">⌝</span><span class="const token" data-binding="const-Std.Do.Triple" data-verso-hover="24">⦄</span><span class="inter-text"> </span><span class="const token" data-binding="const-g" data-verso-hover="27">g</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.373" data-verso-hover="3">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-Std.Do.Triple" data-verso-hover="24">⦃</span><span class="const token" data-binding="const-Std.Do.PostCond.noThrow" data-verso-hover="28">PostCond.noThrow</span><span class="inter-text"> </span><span class="keyword token" data-binding="">fun</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.923" data-verso-hover="3">r</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=&gt;</span><span class="inter-text"> </span><span class="const token" data-binding="const-Std.Do.SPred.pure" data-verso-hover="25">⌜</span><span class="var token" data-binding="var-_uniq.923" data-verso-hover="3">r</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="29">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="16">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.373" data-verso-hover="3">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="17">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-Std.Do.SPred.pure" data-verso-hover="25">⌝</span><span class="const token" data-binding="const-Std.Do.Triple" data-verso-hover="24">⦄</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="1765-1775"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.mvcgen-1765">mvcgen</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Tactic.mvcgen-1765">[</span><span class="const token" data-binding="const-g" data-verso-hover="23">g</span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Tactic.mvcgen-1765">]</span><span class="tactic-state" style="display:none">All goals completed! 🐙</span></span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code></section>
+          <section>
+            <h3>
+              Until Now ...</h3>
+            <ul>
+              <li>
+                <p>
+                  Theorem provers (like Lean) have been niche, <strong>"experts only."</strong></p>
+                </li>
+              <li>
+                <p>
+                  Verification projects <strong>take months or years,</strong> with huge demands on expertise.</p>
+                </li>
+              <li>
+                <p>
+                  Formal verification has been <strong>selectively applied,</strong> only to the most security-critical software.</p>
+                </li>
+              </ul>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              CompCert</h3>
+            <p>
+              A C compiler, proved in Coq never to miscompile.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">100,000</span> lines of Coq</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">¾</span> of it is proof, not compiler</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">6</span> person-years of specialist work</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">11</span> years, 2005 to 2016</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/compcert.png" alt="CompCert homepage" style="width: 500px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              And the result is still niche: ~20% behind <code>gcc -O2</code>, with a licence for commercial use.</p>
+            <aside class="notes"><p>
+                The first optimizing C compiler proved, in Coq, not to miscompile.</p>
+              <p>
+                Team size: there is no published head count. The honest figure is Leroy's "six person-years" (ERTS 2016), spread over a small named core (see below).</p>
+              <p>
+                "¾ of it is proof" is the CACM 2009 breakdown (76% proof, 14% compiler, 10% semantics), taken from the 42,000-line version.</p>
+              </aside><aside class="notes"><p>
+                The exhibit for the previous slide: a monumental proof, done by specialists, applied only where miscompilation is unacceptable.</p>
+              <p>
+                Accomplishment. CompCert (Xavier Leroy, Inria, from 2005) compiles a large subset of C to assembly, with a machine-checked proof of semantic preservation: if compilation succeeds, every behavior of the assembly is a behavior allowed by the C semantics (or a defined refinement of an undefined one). The 2016 line is "the first commercially available optimizing compiler" proved exempt from miscompilation.</p>
+              <p>
+                The demo that sells it: Yang, Chen, Eide, and Regehr, PLDI 2011, hunted wrong-code bugs with Csmith. They found them in GCC and LLVM. "CompCert is the only compiler we have tested for which Csmith cannot find wrong-code errors."</p>
+              <p>
+                What it cost. Two published snapshots, both Leroy's:</p>
+              <ul>
+                <li>
+                  <p>
+                    CACM 2009: 42,000 lines of Coq, about three person-years. Of that, 14% is the compiler, 10% the semantics, 76% the proof.</p>
+                  </li>
+                <li>
+                  <p>
+                    ERTS 2016 (repeated in "Closing the Gap", 2017, and still the figure AbsInt quotes): 100,000 lines of Coq, six person-years.</p>
+                  </li>
+                </ul>
+              <p>
+                Say "six person-years," not "a team of N for Y years." The named core is small — Leroy, Sandrine Blazy, Zaynah Dargaye, Jacques-Henri Jourdan, Michael Schmidt, Bernhard Schommer, Jean-Baptiste Tristan — and six person-years from 2005 to 2016 is well under one full-time person. No newer effort total has been published; the compiler is still maintained.</p>
+              <p>
+                Why it stayed niche.</p>
+              <ul>
+                <li>
+                  <p>
+                    Speed: on the published benchmarks, about 10% behind <code>gcc -O1</code> and about 20% behind <code>gcc -O2</code>, and further behind where aggressive loop optimizations matter. Fine for critical embedded code, not a GCC replacement. (AbsInt's summary: about 2× <code>gcc -O0</code>, ~10% behind <code>-O1</code>, ~20% behind <code>-O3</code>.)</p>
+                  </li>
+                <li>
+                  <p>
+                    License: the public sources are for evaluation, research, teaching, and personal use. Commercial use is an AbsInt license.</p>
+                  </li>
+                <li>
+                  <p>
+                    The users match that: life- and mission-critical embedded software (MTU Friedrichshafen is the published story), not ordinary C.</p>
+                  </li>
+                </ul>
+              <p>
+                Applications have been niche (efficiency issues, licensing)</p>
+              </aside></section>
+          <section>
+            <h3>
+              Scaling (Mathematics)</h3>
+            <p>
+              Navier–Stokes: OpenAI's claimed resolution of a Millennium Prize Problem, September 2026.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">88 hours</span> from first agent to proof</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">10,000</span> concurrent agents</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">616,000</span> lines of Lean</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">17 hours</span> to formalize it</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/navier-stokes-dark-master.png.webp" alt="Navier–Stokes blowup vortex" style="height: 360px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              Open since 1934. Proved, and machine-checked, in under five days.</p>
+            <aside class="notes"><p>
+                Sources: OpenAI, "On the Navier–Stokes Millennium Prize Problem" (8 Sept 2026); github.com/openai/NavierStokesAndEuler.</p>
+              <ul>
+                <li>
+                  <p>
+                    Agents launched 1 Sept; resolution on Sat 5 Sept, about 88 hours later. Lean formalization and verification took a further 17 hours, via GPT-6 Astra.</p>
+                  </li>
+                <li>
+                  <p>
+                    On the order of 10,000 concurrent agents in the group that found it.</p>
+                  </li>
+                <li>
+                  <p>
+                    Cost: no dollar figure published. For Navier–Stokes alone, 2.7 million agent messages and about 130 billion output tokens.</p>
+                  </li>
+                <li>
+                  <p>
+                    Lean: 2,484 files, 616,274 lines (Stanford Tech Review count, 8 Sept), no sorry, standard axioms only.</p>
+                  </li>
+                <li>
+                  <p>
+                    The result is blowup: alternatives (C) and (D) of the Clay statement.</p>
+                  </li>
+                <li>
+                  <p>
+                    Hedge: review status is "self-assessed." The kernel checks the proof; humans still have to check the definitions match Clay's statement.</p>
+                  </li>
+                <li>
+                  <p>
+                    Concurrent: Buckmaster and Alpöge (Anthropic model) on forced Euler, 1.68 million lines of Lean.</p>
+                  </li>
+                </ul>
+              <p>
+                The image is the blowup itself: a vortex spiralling inward and stretching along its axis.</p>
+              </aside></section>
+          <section>
+            <h3>
+              Scaling (Mathematics)</h3>
+            <p>
+              OpenAI's research catalog: a frontier model turned loose on open problems, October 2026.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">~4,000</span> open problems posed</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">721</span> manuscripts in 373 families</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">26.1M</span> lines of Lean</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">11×</span> the size of Mathlib</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/openai-math.png" alt="OpenAI: Sharing AI progress in mathematics" style="width: 500px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              Mathlib took hundreds of contributors nearly a decade. Here, each result averaged about three hours of compute.</p>
+            <aside class="notes"><p>
+                Sources: OpenAI, "Sharing AI progress in mathematics" (6 Oct 2026); github.com/openai/math; nealmcb/openai-math-lean-tooling (independent rebuild); math.vet.</p>
+              <ul>
+                <li>
+                  <p>
+                    Released 6 Oct 2026, four weeks after Navier–Stokes. No start date for the evaluation is published.</p>
+                  </li>
+                <li>
+                  <p>
+                    About 4,000 problems posed; filtered by significance into 721 manuscripts in 373 families.</p>
+                  </li>
+                <li>
+                  <p>
+                    Cost: about three hours of ChatGPT Pro thinking compute per result, on average. No dollar figure.</p>
+                  </li>
+                <li>
+                  <p>
+                    Lean: 122,458 files, 26.1 million lines after the 8 Oct update. About 42% of top-line results formalized; 416 Comparator challenges.</p>
+                  </li>
+                <li>
+                  <p>
+                    "11× Mathlib" and "reading it once would take 13 person-years" are from Neal McBurnett's independent rebuild. Rebuilding everything: 3.8 days on a laptop, or 13.8 hours and $85 on a 32-vCPU cloud machine. Everything checks.</p>
+                  </li>
+                <li>
+                  <p>
+                    Headline results include the irrationality exponent of π, the Mahler conjectures, and isomorphism of free group factors.</p>
+                  </li>
+                <li>
+                  <p>
+                    Earlier, 1 Aug 2026: "Ten advances", ten long-standing problems each with a Lean certificate (sphere packing, Erdős problems 146, 180, and 183, non-sofic groups, …).</p>
+                  </li>
+                </ul>
+              </aside></section>
+          <section>
+            <h3>
+              Scaling (Mathematics)</h3>
+            <p>
+              The classification of finite simple groups, formalized by Axiom, October 2026.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">15,000</span> pages by ~100 mathematicians, over decades</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">24 days</span> to formalize all of it</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">43.1M</span> lines of Lean</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">34</span> serious deviations found in the literature</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/cfsg-blueprint-hero.png" alt="CFSG proof map" style="width: 520px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              For scale: Feit–Thompson, one early step of the classification, took a team six years in Coq.</p>
+            <aside class="notes"><p>
+                Sources: Axiom, "Formalizing the Enormous Theorem" (26 Oct 2026); github.com/AxiomMath/CFSG; cfsg.axiommath.ai.</p>
+              <ul>
+                <li>
+                  <p>
+                    "The enormous theorem": roughly 15,000 pages in more than 500 articles by about 100 mathematicians. Every finite simple group is cyclic, alternating, of Lie type, or one of 26 sporadic groups.</p>
+                  </li>
+                <li>
+                  <p>
+                    Timeline: Slack channel opened 1 Oct, first swarm live 2 Oct, "WE PROVED MONSTER IS SIMPLE" 10 Oct, released 26 Oct. 108 milestones, about 380 tasks.</p>
+                  </li>
+                <li>
+                  <p>
+                    Swarms of dozens of agents, directed by Axiom engineers and mathematicians, using a mix of models.</p>
+                  </li>
+                <li>
+                  <p>
+                    43.1 million lines of Lean, sorry-free, standard axioms, no <code>native_decide</code>. The full build takes nearly 24 hours, even with Lake changes they plan to upstream.</p>
+                  </li>
+                <li>
+                  <p>
+                    Includes about 1.2 million lines from Qiuzhen-CFSG.</p>
+                  </li>
+                <li>
+                  <p>
+                    Found 34 noteworthy deviations from the published record, the biggest in the Unbalanced Group Theorem, and produced a new result to repair it. An errata list is coming.</p>
+                  </li>
+                <li>
+                  <p>
+                    Cost: not published.</p>
+                  </li>
+                <li>
+                  <p>
+                    Contrast: Gonthier's team finished Feit–Thompson (255 pages, one early step) in Coq in 2012, after six years.</p>
+                  </li>
+                </ul>
+              <p>
+                The image is the proof map: every dot is a piece of the proof.</p>
+              </aside></section>
+          <section>
+            <h3>
+              Scaling (Formal Verification)</h3>
+            <p>
+              Anthropic and Theorem: real C libraries, proved crash-free at the binary level, Oct 2026.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">123</span> open-source libraries proved crash-free</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">180M</span> lines of Rocq</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">weeks</span> not person-years</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">100s</span> of bugs found along the way</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/anthropic-fv-proofs.png" alt="What each proof is made of" style="width: 600px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              For scale: seL4 took 20 person-years to verify. Meanwhile, agents verified the xv6 kernel down to the hardware in 77 days.</p>
+            <aside class="notes"><p>
+                Sources: Anthropic Frontier Red Team, "LLMs are making formal software verification feasible at a much larger scale" (22 Oct 2026), with Theorem, plus its appendix; Kaashoek and Zeldovich, arXiv:2609.04043 (3 Sept 2026).</p>
+              <ul>
+                <li>
+                  <p>
+                    The spec is the library's own OSS-Fuzz test. For every input under 64 MB, the compiled program exits normally, with no memory-safety error (ASan) and no failed assertion.</p>
+                  </li>
+                <li>
+                  <p>
+                    Proved for 239 entry points across 123 OSS-Fuzz libraries, "over the span of a few weeks." Claude patched the bugs it found, then proved the patched code.</p>
+                  </li>
+                <li>
+                  <p>
+                    The proofs are on RISC-V executables, not source, using Theorem's RISC-V and Linux process semantics. Assumes a single-threaded static binary with a fixed memory budget.</p>
+                  </li>
+                <li>
+                  <p>
+                    About 180 million lines of Rocq passed the checker, out of about a billion written. A typical proof is ~600,000 lines in ~1,400 files, for a binary with a median of 18,000 instructions. cJSON's 391-line parser got a 630,000-line proof. Only the trusted base needs reviewing: Rocq, the RISC-V and Linux semantics, and the spec.</p>
+                  </li>
+                <li>
+                  <p>
+                    Bugs a fuzzer would never find: an out-of-bounds write needing a ~20 MB input with one rare layout, and an out-of-bounds read needing 64 MB of input and 2 GB of memory. It also rediscovered CVE-2026-56132 in libexpat. On a PDF reader, it found a year's worth of security bugs in one week.</p>
+                  </li>
+                <li>
+                  <p>
+                    In the same post: the Linux kernel's zlib proved correct against RFC 1950 on the x86 binary, and a Python interpreter in Rust proved (in Verus) to follow CPython semantics.</p>
+                  </li>
+                <li>
+                  <p>
+                    Cost: no dollar figure. Proofs "can take hundreds of millions of tokens." Opus 5.5 needs ~40% fewer tokens than Opus 5.</p>
+                  </li>
+                <li>
+                  <p>
+                    xv6: 6,593 lines of C and assembly, multicore, verified against Sail RISC-V semantics with concurrent separation logic (MachCSL, built on Iris). It found nine bugs in xv6 and one in the Sail spec. The 77 days include building the framework.</p>
+                  </li>
+                <li>
+                  <p>
+                    The seL4 figures are Anthropic's own framing in the post.</p>
+                  </li>
+                </ul>
+              <p>
+                The image shows what each proof is made of: most of it is shared machinery (allocator, sanitizer runtime, libc) reused across libraries.</p>
+              </aside></section>
+          <section>
+            <h3>
+              The New Reality</h3>
+            <ul>
+              <li>
+                <p>
+                  Theorem provers (like Lean) <span class="fragment strike" data-fragment-index="1">have been niche, <strong>"experts only."</strong></span> <span class="fragment swap-in" data-fragment-index="1"><strong>are going mainstream.</strong></span></p>
+                </li>
+              <li>
+                <p>
+                  Verification projects <span class="fragment strike" data-fragment-index="2"><strong>take months or years,</strong> with huge demands on expertise.</span> <span class="fragment swap-in" data-fragment-index="2"><strong>take weeks, sometimes days.</strong></span></p>
+                </li>
+              <li>
+                <p>
+                  Formal verification <span class="fragment strike" data-fragment-index="3">has been <strong>selectively applied,</strong> only to the most security-critical software.</span> <span class="fragment swap-in" data-fragment-index="3"><strong>will be applied everywhere.</strong></span></p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                The slide opens word for word as "Until Now ...". Each click strikes the old claim and brings in the new one; let the audience recognise it before the first click.</p>
+              </aside></section>
+          <section>
+            <h3>
+              The Future</h3>
+            <p>
+              <strong>Lean will transform software development at every level</strong>  as:</p>
+            <ul>
+              <li>
+                <p>
+                  a performant functional programming language,</p>
+                </li>
+              <li>
+                <p>
+                  a powerful harness for LLMs,</p>
+                </li>
+              <li>
+                <p>
+                  a (near-)<em>universally applicable verification tool</em>, and</p>
+                </li>
+              <li>
+                <p>
+                  a <em>universal specification language</em>.</p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                my "thesis statement" slide</p>
+              </aside></section>
+          <section>
+            <h3>
+              Outline</h3>
+            <ol start="1">
+              <li>
+                <p>
+                  <strong>Performant Lean:</strong> verified code that keeps up with C and Rust</p>
+                </li>
+              <li>
+                <p>
+                  <strong>Autoresearch:</strong> a proof as the goal for an optimizing agent</p>
+                </li>
+              <li>
+                <p>
+                  <strong>LLMs as Compilers:</strong> agent-written assembly, proved correct</p>
+                </li>
+              <li>
+                <p>
+                  <strong>Conclusion:</strong> what this means for software</p>
+                </li>
+              </ol>
+            <aside class="notes"></aside></section>
+          </section>
+        <section data-state="lw-section">
+          <section>
+            <h2>
+              Performant Lean</h2>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              Performant Lean</h3>
+            <p>
+              <strong>Classic objection:</strong>
+functional languages are slower than imperative, low-level languages like C and Rust.</p>
+            <p>
+              <strong>The reason:</strong> functional languages don't have the same fine-grained control over memory as low-level languages.</p>
+            <p>
+              <strong>The new reality:</strong> if your functional language has <em>proofs</em>, then you can make radical, agent-led optimization passes.</p>
+            <p>
+              <strong>The result:</strong> verified Lean code that keeps up with C and Rust, and sometimes beats them.</p>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              Lean-Zip</h3>
+            <p>
+              DEFLATE in pure Lean, proved <code>inflate (deflate x) = x</code>, then optimised by agents.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">4.57s</span> vs 5.77s in Rust, on the 212 MB Silesia corpus</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">30%</span> faster than Rust at the default level</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">2×</span> faster than Rust at maximum compression</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">1 proof</span> keeps every agent optimisation honest</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/leanzip-vs-rust.svg" alt="lean-zip vs Rust, animated through the git history" style="width: 560px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              Beats Rust's <code>miniz_oxide</code> and C's reference <code>zlib</code> at every level. Heavily optimised C (zlib-ng, libdeflate) is still faster.</p>
+            <aside class="notes"><p>
+                Sources: Kim Morrison, "Why Lean is faster than Rust" (24 July 2026); github.com/kim-em/lean-zip and <code>lean-zip-benchmark</code>.</p>
+              <p>
+                The demo: <code>time</code> on <code>silesia.tar</code> (212 MB), level 6. <code>miniz_oxide</code> (pure Rust, no unsafe): 68,112,144 bytes in 5.77s. lean-zip: 68,054,183 bytes in 4.57s, so smaller and faster.</p>
+              <p>
+                The chart: further left is better compression, further up is faster (log scale). Green is <code>miniz_oxide</code> across its levels. Red is lean-zip, replayed one frame per commit of the project's history, June to July 2026. It starts far below everything and climbs past Rust.</p>
+              <p>
+                Why it works: the theorem <code>inflate (deflateRaw data level) = .ok data</code> holds for all inputs. Essentially all the performance work was done autonomously by Claude and Codex agents, and no PR could merge unless the round-trip proof still went through. "The proof is the ratchet." You could point agents at <code>miniz_oxide</code> too, but you'd have to audit everything they produced.</p>
+              <p>
+                Against the wider field (README, at matched compression ratio):</p>
+              <ul>
+                <li>
+                  <p>
+                    <code>miniz_oxide</code>: beaten at every level L1–L9 (one asterisk at L3). +16% at L1 with 8.8% smaller output, ~30% at L6, ~2× at L9.</p>
+                  </li>
+                <li>
+                  <p>
+                    zlib (the C reference): dominated at every level.</p>
+                  </li>
+                <li>
+                  <p>
+                    JS fflate: 1.5–2× faster; OCaml decompress: 3–9× faster.</p>
+                  </li>
+                <li>
+                  <p>
+                    Go and Zig: they win the low levels, lean-zip wins the dense end.</p>
+                  </li>
+                <li>
+                  <p>
+                    zlib-ng (C) and zlib-rs (Rust): faster across most of the range; lean-zip is level or slightly ahead at their densest setting.</p>
+                  </li>
+                <li>
+                  <p>
+                    libdeflate (hand-tuned C + SIMD): ~2× faster at mid ratios, up to ~10× at the dense end.</p>
+                  </li>
+                </ul>
+              <p>
+                Honest caveats (Kim's own): higher memory use; decompression is ~1.45× slower than <code>miniz_oxide</code>; a few <code>@[extern]</code> helpers (word-sized ByteArray reads) are trusted.</p>
+              <p>
+                The Lean bug: in April 2026 Kiran Gopinathan pointed a Claude agent with AFL++ and sanitizers at lean-zip, for 105 million executions. It found zero memory bugs in the verified code, a DoS in the unverified archive parser, and a heap buffer overflow in the Lean runtime itself (<code>lean_io_prim_handle_read</code>, lean4#13388). Fixed the same day (PR #13392) and shipped in Lean 4.28.1. Moral: verification moves the trust boundary; it doesn't remove it.</p>
+              </aside></section>
+          <section>
+            <h3>
+              Hex</h3>
+            <p>
+              Verified computer algebra in Lean, against the verified state of the art in Isabelle.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">53×</span> faster verified lattice reduction, worst case</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">7×</span> faster verified lattice-based factoring</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">15%</span> faster verified classical factoring</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">1st</span> formally verified van Hoeij factorizer</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/hex-factor-cactus.svg" alt="Hex polynomial factorization vs FLINT, NTL, PARI and Isabelle" style="width: 540px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              Not yet competitive with unverified C: about 5× FLINT on factoring, and 5–12× nauty on graph isomorphism.</p>
+            <aside class="notes"><p>
+                Sources: Kim Morrison's blog (7 July, 10 Aug, 5 Sept, 8 Sept 2026); leanprover/hex-lll PERFORMANCE.md; kim-em/hex-dev <code>reports/bz-vs-isabelle-investigation.md</code> (30 July 2026); the Hex manual (kim-em.github.io/hex-dev).</p>
+              <p>
+                Against verified Isabelle (the stats):</p>
+              <ul>
+                <li>
+                  <p>
+                    "53×": LLL on the worst-case Ajtai family at d = 36. Hex's certified path takes 97 ms; Isabelle's verified native reducer takes 5,167 ms. Across the other five lattice families it's 2.6–15× (q-ary 24 vs 82 ms, knapsack 10 vs 26 ms, NTRU 133 vs 1,444 ms, harsh-cubic 59 vs 909 ms, random-bounded 936 vs 7,108 ms). Like for like: this is the fastest verified option each system has. Hex's own exact reducer is only at parity with or slightly ahead of Isabelle's (4,805 vs 5,167 ms on Ajtai).</p>
+                  </li>
+                <li>
+                  <p>
+                    "7×": the lattice-based factorizer against Isabelle's verified LLL factorizer, median ratio 0.137× over 230 eligible polynomials (Hex faster on 182, Isabelle on 48). Hex's lattice route solves 369 of 392 test polynomials; Isabelle's solves 314.</p>
+                  </li>
+                <li>
+                  <p>
+                    "15%": the public classical (Berlekamp–Zassenhaus) factorizer against Isabelle's verified BZ, median ratio 0.852× over 234 polynomials. It's an aggregate lead, not uniform: Isabelle still wins on 91 of them, and on the Chebyshev (1.26×) and Legendre (1.25×) families.</p>
+                  </li>
+                <li>
+                  <p>
+                    These factoring numbers are from 30 July; the August release may be faster again.</p>
+                  </li>
+                </ul>
+              <p>
+                What Hex is: a computational algebra library for Lean, built by "spec-driven development". Humans write the specification first; AIs implement both the executable code and its proofs. The computational libraries are Mathlib-free, and separate <code>*Theory</code> libraries connect them to Mathlib. No <code>native_decide</code>; everything is kernel-checkable. Released so far:</p>
+              <ul>
+                <li>
+                  <p>
+                    July: dense matrices, row reduction, Gram–Schmidt, LLL lattice basis reduction.</p>
+                  </li>
+                <li>
+                  <p>
+                    August: integer polynomial factorization (Berlekamp, Hensel lifting, Berlekamp–Zassenhaus, van Hoeij), with <code>irreducibility</code> and factoring tactics.</p>
+                  </li>
+                <li>
+                  <p>
+                    September: certified graph isomorphism (a re-implementation of nauty's dense mode, with a <code>graph_iso</code> tactic), then exact algebraic numbers and number fields.</p>
+                  </li>
+                <li>
+                  <p>
+                    October: fast dense polynomials (Karatsuba, fast division, half-gcd, multipoint evaluation).</p>
+                  </li>
+                </ul>
+              <p>
+                Against unverified C/C++ (the muted line):</p>
+              <ul>
+                <li>
+                  <p>
+                    LLL: Hex's certified path is fpLLL's answer checked by a verified Lean checker, so it inherits fpLLL's speed. Ajtai d = 36: 97 vs 73 ms (1.3×). On the other families: q-ary 2.4×, knapsack 2.5×, NTRU 1.2×, random-bounded 2.8×, harsh-cubic 12.6× (59 vs 4.7 ms). PERFORMANCE.md's prose says "1.2–2.5× everywhere", but its own table contradicts that, so don't quote it.</p>
+                  </li>
+                <li>
+                  <p>
+                    Factorization: same asymptotics as FLINT, NTL and PARI, at about 5× FLINT. Van Hoeij has never been formally verified before.</p>
+                  </li>
+                <li>
+                  <p>
+                    Graph isomorphism: 5–12× slower than nauty; the kernel-replayed non-isomorphism tactic is ~5000× slower again. Kim: "nauty is fast!"</p>
+                  </li>
+                </ul>
+              <p>
+                The chart is a cactus plot: instances solved (x) against cumulative time (y, log scale), so lower and further right is better. Hex (blue) sits between verified Isabelle (orange, olive) and the unverified C libraries (FLINT, NTL, PARI).</p>
+              <p>
+                Framing: Hex beats the previous best verified libraries, often by a lot, but it doesn't beat C yet. The certify-a-fast-answer architecture is the trick behind the LLL numbers: it gets you proofs at nearly floating-point speed.</p>
+              </aside></section>
+          <section>
+            <h3>
+              CompPoly</h3>
+            <p>
+              Verified field and polynomial arithmetic for zero-knowledge proofs, against the Rust libraries they're used in.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">0.74×</span> Plonky3's time for a proved million-point NTT</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">1.07×</span> Plonky3's latency for KoalaBear multiplication</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">0.93×</span> Plonky3's time for the STARK commit step</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">0</span> <code>sorry</code>s across 12,489 declarations</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/comppoly-vs-rust.svg" alt="CompPoly vs Plonky3, arkworks and Binius" style="width: 560px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              At the start of October, CompPoly's NTT took 15× as long as Plonky3's. Every number here comes with a correctness proof.</p>
+            <aside class="notes"><p>
+                Sources: CompPoly PRs, Sept–Oct 2026. Most are still open and stacked: #390 (fields vs Rust) → #395 (NTT) → #398 (evaluation), #399 (quartic extension) → #401 (coset LDE) → #402 (quintic extension). #389 (secp256k1) and #392 (Goldilocks) are merged; #391 (four-limb Montgomery) is open. Machine: AMD Ryzen 7 3700X, Lean 4.34.0, Rust nightly with <code>target-cpu=native</code> on both sides.</p>
+              <p>
+                How to read the chart: Lean time divided by Rust time. Below 1 (indigo) means Lean wins.</p>
+              <p>
+                Field arithmetic, one core, latency of dependent multiplication chains (#390):</p>
+              <ul>
+                <li>
+                  <p>
+                    KoalaBear 3.41 vs 3.19 ns (1.07×); Mersenne31 1.87 vs 1.75 ns (1.07×); Goldilocks 3.14 vs 2.45 ns (1.28×); all vs Plonky3.</p>
+                  </li>
+                <li>
+                  <p>
+                    BN254 scalar vs arkworks: 20.7 vs 17.9 ns (1.16×), after a 40% speedup in the same PR.</p>
+                  </li>
+                <li>
+                  <p>
+                    Binary towers vs Binius: Lean wins at 64-bit (0.56×) and 128-bit (0.68×), loses at 8-bit (1.71×).</p>
+                  </li>
+                <li>
+                  <p>
+                    Small-field inversion takes 37–66% of Rust's time. Pure Lean: no externs, no compiler changes.</p>
+                  </li>
+                </ul>
+              <p>
+                NTT, KoalaBear, 2^20 points, vs Plonky3's parallel AVX2 NTT (#395):</p>
+              <ul>
+                <li>
+                  <p>
+                    1 worker 7.4 vs 9.2 ms (0.80–0.86×); 4 workers 1.13–1.17×; 8 workers 2.35 vs 3.27 ms (0.72–0.76×).</p>
+                  </li>
+                <li>
+                  <p>
+                    Proved equal to the NTT spec for every input, parallel or not. Trusted base: two ByteArray word accessors, a backport of lean4#14053.</p>
+                  </li>
+                <li>
+                  <p>
+                    The fully extern-free plan is slower: ~4× Plonky3's time on 1 or 4 workers, 2.2–2.4× on 8.</p>
+                  </li>
+                <li>
+                  <p>
+                    "15× as long": on 1 Oct the pre-PR sequential Lean NTT took 49.7 ms against Plonky3's 3.3 ms on 16 threads (comment on #395). It's sequential versus parallel, so say "took 15× as long", not "was 15× slower per core". The same comment had the proved packed version still at 3.5×; it got under 1× later in October.</p>
+                  </li>
+                </ul>
+              <p>
+                Coset LDE, the main cost of a STARK commitment (#401): 2^18 × 64 in 81.9 vs 88.2 ms (0.93×), and roughly parity on mid-size and large matrices (0.93–1.24×). Small matrices lose to task overhead (1.7×). On one thread, Plonky3's hand-written AVX2 is 2–3× faster per element; Lean makes it up with parallelism.</p>
+              <p>
+                Evaluation of one polynomial at one point, 8 workers vs ark-poly (#398): Goldilocks 0.70×, KoalaBear 0.94×, BN254 1.21×. arkworks has no native KoalaBear or Goldilocks, so those rows use its generic Montgomery backend.</p>
+              <p>
+                Who: the benchmark and polynomial PRs are from mitschabaude-bot ("Gregor's Bots"); the secp256k1, Montgomery and Goldilocks PRs are from Georgios Raikos. The "0 sorry / 12,489 declarations" figure is from #395's axiom sweep.</p>
+              </aside></section>
+          <section>
+            <h3>
+              Gaps</h3>
+            <p>
+              The proofs held up. Here's what these projects still had to work around.</p>
+            <ul>
+              <li>
+                <p>
+                  <strong>Low-level control.</strong> Core lacks fast packed-word access, so CompPoly backports it in C. No SIMD types.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>Per-core speed.</strong> Hand-tuned C and Rust still win on one core.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>A young runtime.</strong> Lean-Zip found a bug in Lean's own runtime.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>Ecosystem.</strong> Async and HTTP just landed. No TLS, few libraries, hand-written C bindings.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>Stability.</strong> Monthly releases, breaking changes, no LTS.</p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                Purpose: the last three slides say "verified Lean can match C and Rust". This is the honest caveat, and every gap is one the case studies actually hit.</p>
+              <ul>
+                <li>
+                  <p>
+                    Low-level control: CompPoly's fast NTT relies on two C functions for reading and writing 32-bit words in a <code>ByteArray</code>. Core Lean doesn't have them yet; lean4#14053 proposes adding them, and CompPoly's are a backport. It's tiny: 774 bytes of C, with byte-level Lean definitions that the proofs use and a test checks the C against. They're the trusted base of an otherwise kernel-proved NTT. Without them, the extern-free NTT takes ~4× Plonky3's time (2.2–2.4× on 8 workers). The field arithmetic (#390) uses no externs at all. The vector kernels are plain Lean loops that clang happens to compile to AVX2; there's no way to ask for SIMD directly.</p>
+                  </li>
+                <li>
+                  <p>
+                    Per-core speed: on one thread, Plonky3's hand-written AVX2 is 2–3× faster per element than CompPoly's coset LDE (#401). Hex is about 5× FLINT on factoring and 5–12× nauty on graph isomorphism. Say it out loud: Lean caught up with parallelism (CompPoly) and better algorithms or architecture, such as certifying a fast unverified answer (Hex with fpLLL).</p>
+                  </li>
+                <li>
+                  <p>
+                    Young runtime: Lean-Zip turned up lean4#13388, fixed in #13392 and shipped in 4.28.1. It's a good sign that it was found and fixed quickly, but it's a sign of maturity too.</p>
+                  </li>
+                <li>
+                  <p>
+                    Ecosystem: <code>Std.Async</code>, <code>Std.Net</code> and an HTTP server (<code>Std.Http</code>) are in core as of the 4.3x releases, but there's no TLS in the standard library, few database or cloud clients, and FFI means writing <code>@[extern]</code> C shims by hand. No source-level debugger for compiled Lean either.</p>
+                  </li>
+                <li>
+                  <p>
+                    Stability: a new toolchain roughly every month, often with breaking changes. Projects pin a toolchain and port forward; there's no long-term-support release.</p>
+                  </li>
+                </ul>
+              <p>
+                Suggested line: "None of this is fundamental. It's engineering, and a lot of it is exactly the kind of engineering agents are getting good at." That leads into Autoresearch.</p>
+              </aside></section>
+          </section>
+        <section data-state="lw-section">
+          <section>
+            <h2>
+              Autoresearch</h2>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              Autoresearch</h3>
+            <p>
+              Give an agent a cost to minimise and a proof it must keep. Then let it loop, overnight.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats lw-stack">
+                <li>
+                  <p>
+                    <span class="lw-num">cost ↓</span> what the agent minimises: time, cycles, code size</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">⊢ spec</span> what it can never break: the proof must still check</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/autoresearch-loop.svg" alt="The autoresearch loop, gated by a Lean proof" style="width: 620px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              The main idea: a proof is the clearest goal you can give an agent. It can't game the score, so the only way to win is better code that's still correct.</p>
+            <aside class="notes"><p>
+                What autoresearch is: Andrej Karpathy's autoresearch (March 2026, github.com/karpathy/autoresearch). An agent edits one file (<code>train.py</code>), trains for a fixed 5 minutes, checks whether validation loss improved, keeps or discards the change, and repeats overnight. The human doesn't edit the code; they edit the instructions (<code>program.md</code>).</p>
+              <p>
+                What Lean adds: one gate in the loop. Before a change is even benchmarked, Lean has to accept the proof that the code still meets its spec. If it doesn't, the change is thrown away.</p>
+              <p>
+                Walk the diagram clockwise:</p>
+              <ol start="1">
+                <li>
+                  <p>
+                    The agent changes the code, however it likes: new algorithm, new data layout, unrolled loops.</p>
+                  </li>
+                <li>
+                  <p>
+                    Lean checks the proof. This is the constraint, the indigo box. A failed proof sends the agent straight back (the dashed arrow).</p>
+                  </li>
+                <li>
+                  <p>
+                    Only correct code gets measured against the cost function.</p>
+                  </li>
+                <li>
+                  <p>
+                    Keep it if it's cheaper than the best so far; otherwise revert and try again.</p>
+                  </li>
+                </ol>
+              <p>
+                The cost function is whatever you want: wall-clock time (Lean-Zip, CompPoly), cycle counts (zkVM proving), code size, gas. It's formally "minimise cost(p) subject to ⊢ spec(p)".</p>
+              <p>
+                Why it matters: an unconstrained optimiser will happily game its metric (Goodhart's law). Return a constant, skip the hard case, overfit the benchmark. With a machine-checked spec, every trick that breaks correctness is rejected automatically, and no human has to review each attempt. That's why it can run unattended, and why the earlier case studies could be optimised by agents at all.</p>
+              <p>
+                Transition: the competitions that follow are exactly this setup, a fixed spec and a public cost.</p>
+              </aside></section>
+          <section>
+            <h3>
+              Finished Competitions</h3>
+            <ul>
+              <li>
+                <p>
+                  <a href="zk.golf">zk.golf</a></p>
+                </li>
+              <li>
+                <p>
+                  <a href="better.codes">better.codes</a></p>
+                </li>
+              <li>
+                <p>
+                  <a href="ots.golf">ots.golf</a></p>
+                </li>
+              <li>
+                <p>
+                  <a href="sig.golf">sig.golf</a></p>
+                </li>
+              <li>
+                <p>
+                  <a href="precompile.fast">precompile.fast</a></p>
+                </li>
+              <li>
+                <p>
+                  <a href="ecdsa.fail">ecdsa.fail</a></p>
+                </li>
+              <li>
+                <p>
+                  <a href="hash.smash">hash.smash</a></p>
+                </li>
+              <li>
+                <p>
+                  <strong>etc.</strong></p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                possible tease: <a href="evm.fast">evm.fast</a> (new!)</p>
+              </aside></section>
+          <section>
+            <h3>
+              <a href="https://better.codes">better.codes</a></h3>
+            <p>
+              Prove that a hash-based proof system stays secure with fewer queries. The live companion to the Ethereum Foundation's $1M Proximity Prize.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">+4.15</span> bits past the best soundness bound in the literature</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">81</span> records, each accepted by Lean's kernel</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">22</span> solvers, working with AI agents</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">6</span> weeks from first submission to current record</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/better-codes-progress.png" alt="better.codes soundness bound climbing past the literature baseline" style="width: 540px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              This isn't faster code; it's new mathematics. A better bound means fewer queries, so smaller and cheaper zero-knowledge proofs.</p>
+            <aside class="notes"><p>
+                Source: better.codes ("The Proximity Prize", by the Ethereum Foundation, Yukon and zkSecurity), read 28 Oct 2026.</p>
+              <p>
+                The problem, for a general audience: modern zero-knowledge proof systems (STARKs, zkVMs) rest on properties of Reed–Solomon codes, "proximity gaps", that nobody fully understands. The Ethereum Foundation's Proximity Prize (proximityprize.org; judges Dan Boneh, Giacomo Fenzi and Gal Arnon) offers $1M for resolving the open conjectures. better.codes is the live companion: a toy protocol from Arnon–Boneh–Fenzi 2026 (Construction 6.9), at a pinned parameter point (KoalaBear field, n = 2^18, 128 repetitions). Solvers submit Lean proofs of a lower bound ("Soundness") or an upper bound ("Attack"). Higher proven soundness means fewer queries, which means smaller proofs.</p>
+              <p>
+                The numbers (KoalaBear track):</p>
+              <ul>
+                <li>
+                  <p>
+                    The literature baseline interval was 64.00 to 116.49 bits. Proved soundness is now 68.15 bits; the attack ceiling is 116.13. The site reports the gap narrowed by 8.6%.</p>
+                  </li>
+                <li>
+                  <p>
+                    First submission 20 Aug at 53.12 bits (below the literature). recmo's +10.45-bit jump on 21 Aug took it to 63.58; it crossed the published bound on 27 Aug, and the current record is 1 Oct.</p>
+                  </li>
+                <li>
+                  <p>
+                    81 promoted submissions from 22 solvers. Models listed include Claude Opus, GPT-5.6 Sol, GPT-6 Astra and Claude Fable.</p>
+                  </li>
+                <li>
+                  <p>
+                    Every ranked claim is exported, compared against the pinned statement, and accepted by the Lean kernel.</p>
+                  </li>
+                </ul>
+              <p>
+                Why it's the clearest "Lean as a constraint" story: the score is a theorem. There's no benchmark to game.</p>
+              <p>
+                TODO (Derek): list any papers that have come out of better.codes results.</p>
+              </aside></section>
+          <section>
+            <h3>
+              <a href="https://zk.golf">zk.golf</a></h3>
+            <p>
+              Build the smallest zero-knowledge circuit for a task, proved in Lean to match its spec.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">7.4×</span> smaller secp256k1 circuit than circom-ecdsa</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">2.6×</span> smaller RSA check than zk-email's</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">1.9×</span> smaller SHA-256 than xJsnark's</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">0</span> under-constrained circuits: each one is proved</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/zk-golf-vs-libraries.svg" alt="zk.golf records against the best existing circuits" style="width: 560px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              A smaller circuit means a cheaper proof. And here, a smaller circuit can't be a broken one.</p>
+            <aside class="notes"><p>
+                Source: zk.golf challenge API (zk.golf/api/challenges), read 28 Oct 2026. Run by zkSecurity; challenges at github.com/zksecurity/zk-golf-challenges; circuits are written in Clean, a Lean circuit DSL.</p>
+              <p>
+                What it is: a zero-knowledge circuit is the arithmetic "program" a prover runs to prove a computation without revealing its inputs. Cost (allocations plus constraints) is roughly proving cost. Each submission must come with a Lean proof that the circuit implements the challenge spec; no <code>native_decide</code>, only permitted axioms.</p>
+              <p>
+                Record vs best existing circuit (the comparison points zk.golf publishes):</p>
+              <ul>
+                <li>
+                  <p>
+                    secp256k1 fixed-base scalar mul: 25,724 vs circom-ecdsa 190,360 (7.4×).</p>
+                  </li>
+                <li>
+                  <p>
+                    secp256k1 scalar mul: 202,281 vs gnark 1,311,228 (6.5×) and circom-ecdsa 2,790,986 (13.8×).</p>
+                  </li>
+                <li>
+                  <p>
+                    RSA-4096 PKCS#1 v1.5 verification: 292,727 vs zk-email 752,852 (2.6×).</p>
+                  </li>
+                <li>
+                  <p>
+                    SHA-256 (256-byte message): 131,995 vs xJsnark 255,380 (1.9×), circomlib 305,565, zk-email 313,655.</p>
+                  </li>
+                <li>
+                  <p>
+                    Keccak-f 1600: 168,960 vs vocdoni 307,200 (1.8×).</p>
+                  </li>
+                <li>
+                  <p>
+                    Binary-field (GF2) BLAKE3 and SHA-256 compression: 1.4× smaller than Flock.</p>
+                  </li>
+                <li>
+                  <p>
+                    Against zk.golf's own baselines: BLS12-381 G1 scalar mul 25.2M → 565K (45×); secp256k1 16.5M → 202K (81×).</p>
+                  </li>
+                </ul>
+              <p>
+                Caveats: costs are in zk.golf's cost model, and the comparisons are zk.golf's (gnark's is "R1CS, no lookups"; Flock's are "interface-normalized"). Different proof systems price things differently, so treat these as indicative rather than exact.</p>
+              <p>
+                "0 under-constrained": under-constrained circuits, where the constraints accept wrong answers, are the most common class of real ZK bugs. A Lean proof against the spec rules them out.</p>
+              </aside></section>
+          <section>
+            <h3>
+              <a href="https://sig.golf">sig.golf</a></h3>
+            <p>
+              Shrink post-quantum signatures for Ethereum, with security and verification cost proved in Lean.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">−51%</span> signature bytes × verification cycles, in four weeks</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">−39%</span> verification cycles: 11,573 to 7,007</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">−19%</span> signature size: 6,404 to 5,195 bytes</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">313</span> records, each with a new Lean proof</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/sig-golf-progress.png" alt="sig.golf score falling from 74M to 36M byte-cycles" style="width: 560px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              Each record is proved in Lean to keep 127-bit security and to stay within its RISC-V cycle bound.</p>
+            <aside class="notes"><p>
+                Source: sig.golf (Yukon, with the Ethereum Foundation; harness Layr-Labs/sig.golf), read 28 Oct 2026.</p>
+              <p>
+                What it is: Ethereum needs signatures that survive quantum computers. Stateless hash-based signatures (SPHINCS+-style) are the conservative choice, but they're big and slow to verify. sig.golf's score is "spacetime": signature bytes × RISC-V verification cycles. Lower is better.</p>
+              <p>
+                The numbers:</p>
+              <ul>
+                <li>
+                  <p>
+                    Baseline (30 Sep): 6,404 bytes × 11,573 cycles = 74.1M.</p>
+                  </li>
+                <li>
+                  <p>
+                    Best spacetime now: 5,195 bytes × 7,007 cycles = 36.4M (Rob1Ham, DeepSeek-V4, 27 Oct). The site reports 50.88% leaner.</p>
+                  </li>
+                <li>
+                  <p>
+                    Size record 5,195 bytes; cycles record 6,963 (Th0rgal, at 5,239 bytes).</p>
+                  </li>
+                <li>
+                  <p>
+                    313 promoted results, every one advancing the size/cycles frontier.</p>
+                  </li>
+                </ul>
+              <p>
+                What Lean checks, per the site: that each scheme works, has 127-bit security, and stays within its declared cycle bound. Submissions cite the SPHINCS+ security literature (e.g. Hülsing–Kudinov) and replace FORS with PORS plus forced pruning, among many smaller tricks.</p>
+              </aside></section>
+          <section>
+            <h3>
+              <a href="https://precompile.fast">precompile.fast</a></h3>
+            <p>
+              Replace two of Ethereum's built-in functions with ordinary EVM code, proved correct for every input.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">3,600×</span> less gas for MODEXP than the reference EVM code</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">31×</span> less gas for the RIPEMD‑160 hash</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">773</span> Lean-checked records across both tracks</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">8</span> weeks since the first submission</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/precompile-fast-progress.png" alt="precompile.fast MODEXP gas falling from 1.3 billion to near zero" style="width: 560px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted">
+              A cheaper version only counts if Lean proves it returns the right answer for every valid input, checked against the exact bytecode.</p>
+            <aside class="notes"><p>
+                Source: precompile.fast (Yukon, with powdr; harness Layr-Labs/eip8200-challenges), read 28 Oct 2026.</p>
+              <p>
+                What it is: Ethereum clients run a few built-in functions, "precompiles", as native code. EIP-8200 proposes replacing some with ordinary EVM code, so clients have less special code to maintain. That only works if the EVM code is cheap. MODEXP is modular exponentiation (RSA-style arithmetic); RIPEMD-160 is a hash function.</p>
+              <p>
+                The numbers:</p>
+              <ul>
+                <li>
+                  <p>
+                    MODEXP: the reference EVM version uses 1,313,215,999 gas over 44 public test inputs; the record is 365.72K gas (i34-9, Opus 5.5, 28 Oct). That's 99.97% cheaper, about 3,590×. 242 promoted submissions from 30 solvers, first on 5 Sep.</p>
+                  </li>
+                <li>
+                  <p>
+                    RIPEMD-160: the record is 618.53K gas (aerugo-ef, GPT-6 Astra, 28 Oct), 96.8% cheaper than its reference, about 31×. 531 promoted submissions from 32 solvers.</p>
+                  </li>
+                <li>
+                  <p>
+                    "773" is 242 + 531 records; solvers overlap between the tracks, so don't add those up.</p>
+                  </li>
+                </ul>
+              <p>
+                What Lean checks: Solution.lean must prove the theorem "Correct bytecode": the code returns the right answer for every valid input. Comparator checks the theorem is about the exact submitted bytes and rechecks the proof with a separately built kernel. No <code>sorry</code>, <code>native_decide</code> or extra axioms.</p>
+              <p>
+                Caveat: "3,600×" is against the challenge's own reference implementation (1,284 bytes of EVM code). I haven't checked how optimised that reference is, so don't claim 3,600× over the best existing EVM MODEXP. Say "than the reference".</p>
+              </aside></section>
+          <section>
+            <h3>
+              Takeaways</h3>
+            <p>
+              If you can:</p>
+            <ul>
+              <li>
+                <p>
+                  <strong>constrain</strong> an LLM with formal proof,</p>
+                </li>
+              <li>
+                <p>
+                  <strong>state</strong> your goal extremely clearly,</p>
+                </li>
+              <li>
+                <p>
+                  define the correct <strong>cost function</strong> to minimize ...</p>
+                </li>
+              </ul>
+            <p>
+              ... you can get <strong>world-leading results</strong>.</p>
+            <aside class="notes"><p>
+                world-leading in software and in proof!</p>
+              </aside></section>
+          </section>
+        <section data-state="lw-section">
+          <section>
+            <h2>
+              LLMs as Compilers</h2>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              LLMs as Compilers</h3>
+            <p>
+              <strong>The usual pipeline:</strong> write high-level code, then trust the compiler to get the machine code right.</p>
+            <p>
+              <strong>The new pipeline:</strong> give an agent a spec of the program and a spec of the machine, and have it write the machine code directly.</p>
+            <p>
+              <strong>Lean checks the result:</strong> the code is proved against the spec, so there's no compiler left to trust.</p>
+            <aside class="notes"><p>
+                The idea: a compiler is a trusted translator from source to machine code. Here the agent does the translation, and a Lean proof replaces the trust. You never have to trust the agent, because Lean checks its output.</p>
+              <p>
+                Why it matters for Ethereum: a zkVM proof covers the execution trace, not the compiler that produced the program. If the guest is written in Rust, rustc and LLVM are in the trusted base. Write the guest in proved assembly and they drop out.</p>
+              <p>
+                Roadmap for this section:</p>
+              <ul>
+                <li>
+                  <p>
+                    evm-asm: the big version, a whole EVM.</p>
+                  </li>
+                <li>
+                  <p>
+                    xmss-verify-asm: the same method on a small target, done in one sitting, which became the RISC-V track of ots.golf.</p>
+                  </li>
+                <li>
+                  <p>
+                    flapjack: what we learned at scale. Hand-writing everything doesn't scale, so we went back to a compiler, but a verified one.</p>
+                  </li>
+                </ul>
+              </aside></section>
+          <section>
+            <h3>
+              <a href="https://github.com/Verified-zkEVM/evm-asm">evm-asm</a></h3>
+            <p>
+              Agent-written RISC-V, proved against the EVM spec.</p>
+            <p>
+              <img src="images/evm-asm-stack.svg" alt="evm-asm: proof layers between the Sail RISC-V spec and the EVM spec" style="width: 580px;" class="explicit-size lw-shot lw-gap"></p>
+            <p class="lw-muted lw-wide">
+              Every solid layer is a Lean theorem; checking a whole block is still being proved.</p>
+            <aside class="notes"><p>
+                The idea, bottom to top:</p>
+              <ul>
+                <li>
+                  <p>
+                    Bottom: the official Sail model of RISC-V, exported to Lean (the <code>riscv-zkvm</code> package, RV64IM). That's the trust anchor.</p>
+                  </li>
+                <li>
+                  <p>
+                    evm-asm's own RISC-V instruction semantics are proved equivalent to Sail (<code>EvmAsm/Rv64/SailEquiv/</code>), so "is this really RISC-V?" is a theorem rather than a hope.</p>
+                  </li>
+                <li>
+                  <p>
+                    On top, separation logic and Hoare triples with a step bound: <code>cpsTripleWithin N</code>. The bound N is a worst-case cycle count, which matters for zkVM cycle limits and for pricing gas.</p>
+                  </li>
+                <li>
+                  <p>
+                    EVM opcodes: a 256-bit word is four 64-bit limbs. The example on the slide is the real AND: 17 instructions, proved to compute <code>a &amp;&amp;&amp; b</code> on <code>BitVec 256</code> in at most 17 steps.</p>
+                  </li>
+                <li>
+                  <p>
+                    Top: the stateless guest, which takes a block plus a witness and outputs the post-state root. Its spec, <code>SpecRef</code>, is a Lean port of the Python execution-specs. This top layer is dashed because it's tested but not yet proved.</p>
+                  </li>
+                </ul>
+              <p>
+                Why bother: a zkVM proof covers the execution trace, not the compiler that produced the code. If you write the guest in Rust, rustc and LLVM are in the trusted base. evm-asm removes the compiler from the trust story completely. The lineage is Kennedy et al., "Coq: The world's best macro assembler?" (PPDP 2013).</p>
+              <p>
+                History:</p>
+              <ul>
+                <li>
+                  <p>
+                    Yoichi Hirai started it on 6 Feb 2026. The first real commit was co-authored by Claude.</p>
+                  </li>
+                <li>
+                  <p>
+                    It was slow at first (96 commits in February, 230 in March), then the agents took over: 4,070 commits in April and 19,126 in May.</p>
+                  </li>
+                <li>
+                  <p>
+                    The opcodes came first, then codegen (the Lean <code>Program</code> is emitted as assembly and run on the ZisK emulator), then a whole stateless guest.</p>
+                  </li>
+                </ul>
+              <p>
+                Where it got to (dashboard snapshot, 4 Sep 2026):</p>
+              <ul>
+                <li>
+                  <p>
+                    68 of 85 opcode entries are proved, 3 are conditional, and 14 have only an executable spec. The 14 are the stateful ones: SLOAD/SSTORE, CALL family, CREATE, LOG, KECCAK256. The PUSH/DUP/SWAP/LOG families count once each.</p>
+                  </li>
+                <li>
+                  <p>
+                    The emitted guest passed the Ethereum test suite except 27 failures and 6 errors out of 25,687 fixtures (PLAN.md, July). That's testing, not proof.</p>
+                  </li>
+                <li>
+                  <p>
+                    2 of the 10 top-level obligations for the north-star theorem (<code>run_stateless_guest_spec</code>) are done.</p>
+                  </li>
+                <li>
+                  <p>
+                    The core has 0 <code>sorry</code> and 0 extra axioms, enforced by CI. The guest-level codegen helpers are unproved scaffolding.</p>
+                  </li>
+                </ul>
+              <p>
+                Tease: evm.fast, the autoresearch challenge on making an EVM fast, with the proof as the gate.</p>
+              </aside></section>
+          <section>
+            <h3>
+              <a href="https://github.com/dhsorens/xmss-verify-asm">xmss-verify-asm</a> → <a href="https://github.com/leanEthereum/ots.golf-dev">ots.golf</a></h3>
+            <p>
+              The same method, at small scale: an XMSS verifier, proved in one sitting.</p>
+            <div class="r-hstack">
+              <ul class="lw-stats">
+                <li>
+                  <p>
+                    <span class="lw-num">9 h</span> from first commit to the full proof</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">179</span> RISC-V instructions, proved for any hash function</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">−34%</span> cycles the next day, from autoresearch</p>
+                  </li>
+                <li>
+                  <p>
+                    <span class="lw-num">670×</span> fewer cycles on ots.golf in 10 days: 229,113 → 341</p>
+                  </li>
+                </ul>
+              <p>
+                <img src="images/xmss-one-shot-timeline.svg" alt="Timeline from the first commit to the ots.golf RISC-V track" style="width: 440px;" class="explicit-size lw-shot"></p>
+              </div>
+            <p class="lw-muted lw-wide">
+              The next day, its machine design became the basis of ots.golf's RISC-V track.</p>
+            <aside class="notes"><p>
+                Your story: the phone call with Pierre and Justin.</p>
+              <p>
+                The one-shot afternoon (all times from the git log, BST):</p>
+              <ul>
+                <li>
+                  <p>
+                    14:38 on 17 Sep: first commit. The goal was "in the style of evm-asm", an RV64IM implementation of the XMSS verifier, proved against the leanVM team's Lean spec (<code>XmssSecurity.Concrete.verify</code>, imported verbatim).</p>
+                  </li>
+                <li>
+                  <p>
+                    17:17: machine contract, verifier program and test harness. 18:23: the chain walk proved. 19:14: init, the 42-chain loop and the leaf. 20:06: decode. 23:17: the 32-level authentication path and the final compare.</p>
+                  </li>
+                <li>
+                  <p>
+                    23:29: the end-to-end theorem <code>xmss_verify_correct</code>, merged at 23:40 from a branch literally called <code>one-shot</code>.</p>
+                  </li>
+                </ul>
+              <p>
+                What the theorem says: for every hash oracle H, starting from memory that represents (pk, epoch, msg, sig), the 179-instruction program halts with <code>a0</code> equal to the spec's <code>verify</code> result, and writes nothing outside its scratch area. It uses only the standard axioms (<code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>). The proof is six region contracts composed together. Even the step count is a theorem: the authentication path takes <code>1090 + 3·popcount(epoch)</code> steps. Separately, 104 end-to-end fixtures and 243 component cases pass in an interpreter.</p>
+              <p>
+                Caveat: the hash is an abstract oracle reached through one <code>ECALL</code>. leanVM uses BLAKE2s, but implementing it in RISC-V was explicitly out of scope. The project is about 4,100 lines of Lean with about 270 theorems.</p>
+              <p>
+                The next day (18 Sep), I wrapped it in an autoresearch harness: a statement pin, a committed baseline, and one accept command, plus <code>AUTORESEARCH.md</code> as the agent's prompt. The one-time-signature part went from 3,231 to 2,139 steps (−34%), and the full worst-case verification from 4,427 to 3,335. Every record is in <code>bench/baseline.txt</code>.</p>
+              <p>
+                ots.golf (leanEthereum; the core repo was created on 16 Sep): "how cheaply can a hash-based one-time signature be verified?" It has five tracks. The RISC-V track runs on the same riscv-zkvm semantics, and its machine file says: "The oracle boundary and counted execution follow Derek Sorensen's <code>xmss-verify-asm</code> design." The cycle count, all on ots.golf's own RISC-V verifier task:</p>
+              <ul>
+                <li>
+                  <p>
+                    18 Sep, 15:26: the first certified RISC-V root, at 229,113 cycles (Tom Wambsgans, co-authored by me).</p>
+                  </li>
+                <li>
+                  <p>
+                    18 Sep, 18:24: 24,053. 19 Sep, 01:13: 1,632. 19 Sep, 07:52: 1,628. These were the maintainers' seed roots.</p>
+                  </li>
+                <li>
+                  <p>
+                    19 Sep, 19:22: the first competitor record, 702 (PR #5). That's under 1,000 within two days.</p>
+                  </li>
+                <li>
+                  <p>
+                    28 Sep: 341 (PR #64). 229,113 / 341 ≈ 670×. From the first competitor record alone it's about 2×.</p>
+                  </li>
+                <li>
+                  <p>
+                    There were 68 records across all five tracks.</p>
+                  </li>
+                </ul>
+              <p>
+                Caveat: the contract changed along the way, for example to a 128-bit nonce and a smaller signature budget, so the 670× spans contract revisions. Each number was checked by the official verifier at its own contract.</p>
+              <p>
+                Don't compare the 341 with xmss-verify-asm's 2,139: ots.golf lets you design your own OTS scheme (with 127-bit security proved in Lean), so it's a different problem. Its own attribution note says as much.</p>
+              <p>
+                The site (ots.golf) currently returns 502, so the title links to the GitHub repo.</p>
+              </aside></section>
+          <section>
+            <h3>
+              <a href="https://github.com/Verified-zkEVM/evm-asm">evm-asm</a> → <a href="https://github.com/flamingoponderado/flapjack">flapjack</a></h3>
+            <p>
+              At EVM scale, we stopped hand-writing assembly and ported a verified compiler to Lean.</p>
+            <div class="r-hstack">
+              <div class="r-vstack">
+                <p>
+                  <strong>evm-asm</strong>: verified assembly, Feb–Sep</p>
+                <ul class="lw-stats">
+                  <li>
+                    <p>
+                      <span class="lw-num">42,676</span> commits</p>
+                    </li>
+                  <li>
+                    <p>
+                      <span class="lw-num">1.25M</span> lines of Lean</p>
+                    </li>
+                  <li>
+                    <p>
+                      <span class="lw-num">29k</span> theorems</p>
+                    </li>
+                  <li>
+                    <p>
+                      <span class="lw-num">68/85</span> EVM opcodes proved</p>
+                    </li>
+                  </ul>
+                </div>
+              <div class="r-vstack">
+                <p>
+                  <strong>flapjack</strong>: verified compiler, 8 weeks</p>
+                <ul class="lw-stats">
+                  <li>
+                    <p>
+                      <span class="lw-num">27,900</span> commits</p>
+                    </li>
+                  <li>
+                    <p>
+                      <span class="lw-num">1.08M</span> lines of Lean</p>
+                    </li>
+                  <li>
+                    <p>
+                      <span class="lw-num">24k</span> theorems</p>
+                    </li>
+                  <li>
+                    <p>
+                      <span class="lw-num">100%</span> of 33,614 Ethereum tests passed</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            <p class="lw-muted lw-wide">
+              flapjack is CakeML's verified Pancake compiler, ported to Lean. The guest is now written in Pancake instead of assembly.</p>
+            <aside class="notes"><p>
+                The story:</p>
+              <ul>
+                <li>
+                  <p>
+                    On 2 Sep 2026, Yoichi started <code>stateless-pancaketh</code>: the same stateless guest, written in Pancake instead of assembly. Pancake is a low-level language from the CakeML project, with a compiler verified in HOL4.</p>
+                  </li>
+                <li>
+                  <p>
+                    On 4 Sep, flapjack started: a Lean port of that compiler. The same day, evm-asm's README changed to "project direction is under reconsideration", and its main branch stopped there. It's merged PR #13263, so roughly 9,500 merged PRs in seven months.</p>
+                  </li>
+                <li>
+                  <p>
+                    In 8 weeks flapjack reached about 27,900 commits and about 1.08M lines of Lean.</p>
+                  </li>
+                </ul>
+              <p>
+                Where flapjack is now:</p>
+              <ul>
+                <li>
+                  <p>
+                    The Pancake-to-RISC-V correctness theorem is proved in Lean, under explicit assumptions. It's a port of CakeML's <code>pan_to_target</code> theorem.</p>
+                  </li>
+                <li>
+                  <p>
+                    On the 30-fixture baseline, flapjack's output is identical, instruction for instruction, to the original HOL-verified <code>cake</code> compiler: same bytes and same step counts.</p>
+                  </li>
+                <li>
+                  <p>
+                    The flapjack-compiled guest passes the whole <code>tests-zkevm@v21.0.1</code> corpus: 33,614 of 33,614 records, under both Spike and ziskemu. It also reproduced a real <code>glamsterdam-devnet-7</code> block (65.3M gas) byte for byte.</p>
+                  </li>
+                <li>
+                  <p>
+                    Backends for MIPS32 (Ziren) and ARMv8 are experimental.</p>
+                  </li>
+                </ul>
+              <p>
+                What's not done (be honest on stage):</p>
+              <ul>
+                <li>
+                  <p>
+                    The compiler theorem is about flapjack's own L3-derived RISC-V model, not about Sail. A separate repo proves the two models run in lockstep, but only on the 37 instructions flapjack emits, and only under restrictions. The theorem hasn't been carried over to Sail yet.</p>
+                  </li>
+                <li>
+                  <p>
+                    The Pancake guest itself isn't yet proved against the spec. The README says "no meaningful proof of correctness anywhere in this project yet". Today we have a verified compiler plus a guest that's tested, not proved.</p>
+                  </li>
+                <li>
+                  <p>
+                    flapjack's README says the theorem "might not mean anything" until someone examines it carefully.</p>
+                  </li>
+                </ul>
+              <p>
+                Agents: most evm-asm commits carry agent co-author trailers, mainly Claude Sonnet and Opus and OpenAI Codex. Yoichi has about 41k commits under his two identities, and Derek about 1.4k.</p>
+              <p>
+                Counts are from my local clones: <code>git rev-list --count</code>, Lean line counts, and <code>theorem</code>/<code>lemma</code> declarations, so the theorem counts are approximate. flapjack's commit count is from the GitHub API on 28 Oct.</p>
+              </aside></section>
+          <section>
+            <h3>
+              Assembly-level Code</h3>
+            <p>
+              These experiments have shown:</p>
+            <ul>
+              <li>
+                <p>
+                  agents can <strong>write assembly-level code</strong> and <strong>prove it correct</strong></p>
+                </li>
+              <li>
+                <p>
+                  assembly can be <strong>customized and optimized</strong></p>
+                </li>
+              </ul>
+            <p class="lw-gap-above">
+              Limitations right now:</p>
+            <ul>
+              <li>
+                <p>
+                  scalability (Lean build times)</p>
+                </li>
+              <li>
+                <p>
+                  the formal specification</p>
+                </li>
+              </ul>
+            <aside class="notes"></aside></section>
+          </section>
+        <section data-state="lw-section">
+          <section>
+            <h2>
+              Conclusion</h2>
+            <aside class="notes"></aside></section>
+          <section>
+            <h3>
+              Conclusion</h3>
+            <p>
+              <strong>Lean is more than a proof language.</strong> It is:</p>
+            <ul>
+              <li>
+                <p>
+                  a performant functional programming language,</p>
+                </li>
+              <li>
+                <p>
+                  a powerful harness for LLMs,</p>
+                </li>
+              <li>
+                <p>
+                  a (near-)<em>universally applicable verification tool</em>,</p>
+                </li>
+              <li>
+                <p>
+                  a <em>universal specification language</em>.</p>
+                </li>
+              </ul>
+            <aside class="notes"><p>
+                this mimics the "thesis statement" slide from above.</p>
+              </aside></section>
+          <section>
+            <h3>
+              Predictions</h3>
+            <p>
+              A few predictions:</p>
+            <ul>
+              <li>
+                <p>
+                  Lean's super-powers let us write:</p>
+                <ul>
+                  <li>
+                    <p>
+                      the <strong>most performant</strong> code we've ever written, and</p>
+                    </li>
+                  <li>
+                    <p>
+                      the <strong>most secure code</strong> we've ever written.</p>
+                    </li>
+                  </ul>
+                </li>
+              <li>
+                <p>
+                  <strong>Formal proof will be a standard fixture</strong> of languages, and of codebases.</p>
+                </li>
+              </ul>
+            <p>
+              The obvious question is ...</p>
+            <p class="fragment">
+              <strong>... do we just rewrite everything in Lean?</strong></p>
+            <aside class="notes"><p>
+                What's the future?</p>
+              <ul>
+                <li>
+                  <p>
+                    write everything in Lean?!</p>
+                  </li>
+                <li>
+                  <p>
+                    new operating system .. in Lean?!</p>
+                  </li>
+                <li>
+                  <p>
+                    PROOFS WILL BE A STANDARD FIXTURE OF ALL LANGUAGES; they HAVE TO BE!</p>
+                  </li>
+                </ul>
+              </aside></section>
+          </section>
+        <section data-state="lw-title">
+          <h2>
+            Thank You</h2>
+          <p>
+            Questions?
+</p>
+          </section>
+        </div>
+      </div>
+    <script src="lib/reveal.js/dist/reveal.js"></script>
+    <script src="lib/reveal.js/plugin/notes/notes.js"></script>
+    <script src="lib/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="lib/katex/dist/katex.min.js"></script>
+    <script src="lib/math.js"></script>
+    <script src="theme/assets/lambda.js"></script>
+    <script>
+      
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        center: false,
+        transition: 'fade',
+        width: 1280,
+        height: 720,
+        margin: 0.060000,
+        navigationMode: 'default',
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: null,
+        plugins: [ RevealNotes, RevealHighlight ]
+      });
+    </script>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/popper.js"></script>
+    <script src="lib/tippy.js"></script>
+    <script src="lib/tippy-panel-filter.js"></script>
+    <script src="lib/highlighting.js"></script>
+    <script src="lib/code-block-bg.js"></script>
+    <script src="lib/pretty.js"></script>
+    <script src="lib/panel.js"></script>
+    <script src="lib/lightbox.js"></script>
+    <script src="lib/illuminate-reveal.js"></script>
+    </body>
+  </html>

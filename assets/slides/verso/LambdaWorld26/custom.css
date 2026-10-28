@@ -1,0 +1,129 @@
+/* Deck-specific tweaks on top of theme/lambda.css. */
+
+:root {
+  --lw-footer: "Derek Sorensen · Ethereum Foundation · Lambda World 2026";
+}
+
+/* `{fragment (style := strike)}`: visible from the start, struck through when its step fires. */
+.reveal .slides section .fragment.strike {
+  opacity: 1;
+  visibility: inherit;
+  text-decoration: line-through transparent;
+  text-decoration-thickness: 0.09em;
+  transition: color 0.4s ease, text-decoration-color 0.4s ease;
+}
+.reveal .slides section .fragment.strike.visible {
+  color: var(--lw-muted);
+  text-decoration-color: var(--lw-ink);
+}
+.reveal .slides section .fragment.strike.visible strong {
+  background: none;
+}
+
+/* `{fragment (style := swapIn)}`: takes no space until shown, so lines don't reflow early. */
+.reveal .slides section .fragment.swap-in:not(.visible) {
+  display: none;
+}
+.reveal .slides section .fragment.swap-in.visible {
+  animation: lw-fade-in 0.5s ease;
+}
+@keyframes lw-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Italics: a quieter emphasis than bold's highlighter, distinct from links (which are underlined). */
+.reveal .slides section :is(p, li) em {
+  color: var(--lw-indigo-dark);
+  font-weight: 500;
+}
+
+/* Logo beside a short list ("What is Lean?"). */
+.reveal .slides section .r-hstack:has(img.lw-logo) {
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+.reveal .slides section .r-hstack:has(img.lw-logo) > .r-vstack {
+  align-items: flex-start;
+}
+.reveal .slides section img.lw-logo {
+  display: block;
+  margin: 0;
+}
+
+/* Big-number grid beside a bordered image (CompCert, scaling slides). */
+.reveal .slides section .r-hstack:has(> .lw-stats) {
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2em;
+  margin: 0;
+}
+.reveal .slides section .r-hstack:has(> .lw-stats) > p {
+  margin: 0;
+}
+.reveal .slides section ul.lw-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9em 1.2em;
+  max-width: 15em;
+  margin: 0;
+}
+.reveal .slides section ul.lw-stats > li {
+  margin: 0;
+  padding: 0;
+  font-size: 0.72em;
+  line-height: 1.25;
+  color: var(--lw-ink-soft);
+}
+.reveal .slides section ul.lw-stats > li::before {
+  display: none;
+}
+.reveal .slides section ul.lw-stats .lw-num {
+  display: block;
+  color: var(--lw-indigo);
+  font-size: 2.3em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.reveal .slides section ul.lw-stats.lw-stack { grid-template-columns: 1fr; gap: 1.2em; max-width: 11em; }
+.reveal .slides section .r-hstack:has(> .lw-stats) ~ p.lw-muted {
+  max-width: 40em;
+  margin-top: 0.8em;
+}
+/* Two captioned stat grids side by side (evm-asm → flapjack). */
+.reveal .slides section .r-hstack:has(> .r-vstack > .lw-stats) {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2em;
+  margin: 0.6em 0 0;
+}
+.reveal .slides section .r-vstack:has(> .lw-stats) {
+  align-items: flex-start;
+}
+.reveal .slides section .r-vstack:has(> .lw-stats) > p {
+  margin: 0 0 0.6em;
+  font-size: 0.8em;
+}
+.reveal .slides section .r-vstack > ul.lw-stats {
+  max-width: 13em;
+}
+.reveal .slides section img.lw-shot.lw-gap {
+  margin: 0.4em auto;
+}
+.reveal .slides section p:has(> img.lw-gap) {
+  max-width: none;
+}
+.reveal .slides section p.lw-wide {
+  max-width: none;
+}
+.reveal .slides section p.lw-gap-above {
+  margin-top: 3em;
+}
+.reveal .slides section img.lw-shot {
+  display: block;
+  margin: 0;
+  border: 3px solid var(--lw-ink);
+  border-radius: 6px;
+}

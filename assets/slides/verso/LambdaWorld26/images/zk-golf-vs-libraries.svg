@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24 0 684 358" width="684" height="358" font-family="Fira Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect x="-24" width="684" height="358" fill="#ffffff"/>
+<text x="14" y="30" font-size="20" font-weight="700" fill="#14161f">How many times smaller than the best existing circuit</text>
+<line x1="363.2" y1="62" x2="363.2" y2="332" stroke="#14161f" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="363.2" y="348" font-size="14" fill="#6b6f7b" text-anchor="middle">same size</text>
+<text x="318" y="86" font-size="17" fill="#14161f" text-anchor="end">secp256k1 fixed-base mul · circom-ecdsa</text>
+<rect x="328" y="69" width="260.9" height="24" rx="3" fill="#4338ca"/>
+<text x="595.9" y="87" font-size="17" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">7.4×</text>
+<text x="318" y="124" font-size="17" fill="#14161f" text-anchor="end">secp256k1 scalar mul · gnark</text>
+<rect x="328" y="107" width="228.5" height="24" rx="3" fill="#4338ca"/>
+<text x="563.5" y="125" font-size="17" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">6.5×</text>
+<text x="318" y="162" font-size="17" fill="#14161f" text-anchor="end">RSA-4096 signature check · zk-email</text>
+<rect x="328" y="145" width="90.7" height="24" rx="3" fill="#4338ca"/>
+<text x="425.7" y="163" font-size="17" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">2.6×</text>
+<text x="318" y="200" font-size="17" fill="#14161f" text-anchor="end">SHA-256 · xJsnark</text>
+<rect x="328" y="183" width="68.2" height="24" rx="3" fill="#4338ca"/>
+<text x="403.2" y="201" font-size="17" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">1.9×</text>
+<text x="318" y="238" font-size="17" fill="#14161f" text-anchor="end">Keccak-f[1600] · vocdoni</text>
+<rect x="328" y="221" width="64.1" height="24" rx="3" fill="#4338ca"/>
+<text x="399.1" y="239" font-size="17" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">1.8×</text>
+<text x="318" y="276" font-size="17" fill="#14161f" text-anchor="end">BLAKE3 compression · Flock</text>
+<rect x="328" y="259" width="49.7" height="24" rx="3" fill="#4338ca"/>
+<text x="384.7" y="277" font-size="17" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">1.4×</text>
+<text x="318" y="314" font-size="17" fill="#14161f" text-anchor="end">SHA-256 compression · Flock</text>
+<rect x="328" y="297" width="48.6" height="24" rx="3" fill="#4338ca"/>
+<text x="383.6" y="315" font-size="17" font-weight="700" fill="#4338ca" stroke="#ffffff" stroke-width="5" paint-order="stroke">1.4×</text>
+</svg>
